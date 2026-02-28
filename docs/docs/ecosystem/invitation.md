@@ -1,4 +1,4 @@
-# 🌟 EVA Ecosystem: An Invitation to Collaborate
+# EVA Ecosystem: An Invitation to Collaborate
 
 ## What is EVA?
 
@@ -28,7 +28,7 @@ eva/                          # Namespace
 
 Each module solves its own specific task, but they all speak the same language—the language of EVA.
 
-## 🤝 An Invitation to Collaborate
+## An Invitation to Collaborate
 
 You are an Arduino library author. Your project solves a specific hardware problem: SoftwareSerial, SIM800L, GPS, sensors, displays. It has its own logic, its own complexities, its own hard-earned solutions.
 
@@ -59,7 +59,7 @@ I propose we join forces.
 - A link to your project from the EVA documentation
 - Word about your library as part of the ecosystem
 
-## 📬 How to Start
+## How to Start
 
 If this idea resonates with you—write me. I'll send a small template showing how your library might look in the EVA architecture. From there, it's up to you: use it, decline it, or just take a look.
 
