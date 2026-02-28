@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="structeva_1_1_s_w___e_v_e_n_t_s" kind="struct" language="C++" prot="public">
+    <compoundname>eva::SW_EVENTS</compoundname>
+    <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="structeva_1_1_s_w___e_v_e_n_t_s_1a0ab267ed6b7dde50949db2fb66656e52" prot="public" static="yes" mutable="no">
+        <type>const unsigned short</type>
+        <definition>const unsigned short eva::SW_EVENTS::ON_ACTIVE</definition>
+        <argsstring></argsstring>
+        <name>ON_ACTIVE</name>
+        <qualifiedname>eva::SW_EVENTS::ON_ACTIVE</qualifiedname>
+        <initializer>= 0x1000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Общий/Desktop/eva-core-sk/src/evaToggle.h" line="14" column="33" bodyfile="C:/Users/Общий/Desktop/eva-core-sk/src/evaToggle.h" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structeva_1_1_s_w___e_v_e_n_t_s_1a0abac3b6f398a3dfecc7170d473f3c66" prot="public" static="yes" mutable="no">
+        <type>const unsigned short</type>
+        <definition>const unsigned short eva::SW_EVENTS::ON_INACTIVE</definition>
+        <argsstring></argsstring>
+        <name>ON_INACTIVE</name>
+        <qualifiedname>eva::SW_EVENTS::ON_INACTIVE</qualifiedname>
+        <initializer>= 0x2000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Общий/Desktop/eva-core-sk/src/evaToggle.h" line="15" column="33" bodyfile="C:/Users/Общий/Desktop/eva-core-sk/src/evaToggle.h" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structeva_1_1_s_w___e_v_e_n_t_s_1a076e085980982b2e542837c269f525d2" prot="public" static="yes" mutable="no">
+        <type>const unsigned short</type>
+        <definition>const unsigned short eva::SW_EVENTS::ON_CHANGE</definition>
+        <argsstring></argsstring>
+        <name>ON_CHANGE</name>
+        <qualifiedname>eva::SW_EVENTS::ON_CHANGE</qualifiedname>
+        <initializer>= 0x3000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Общий/Desktop/eva-core-sk/src/evaToggle.h" line="16" column="33" bodyfile="C:/Users/Общий/Desktop/eva-core-sk/src/evaToggle.h" bodystart="16" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/Общий/Desktop/eva-core-sk/src/evaToggle.h" line="12" column="3" bodyfile="C:/Users/Общий/Desktop/eva-core-sk/src/evaToggle.h" bodystart="13" bodyend="17"/>
+    <listofallmembers>
+      <member refid="structeva_1_1_s_w___e_v_e_n_t_s_1a0ab267ed6b7dde50949db2fb66656e52" prot="public" virt="non-virtual"><scope>eva::SW_EVENTS</scope><name>ON_ACTIVE</name></member>
+      <member refid="structeva_1_1_s_w___e_v_e_n_t_s_1a076e085980982b2e542837c269f525d2" prot="public" virt="non-virtual"><scope>eva::SW_EVENTS</scope><name>ON_CHANGE</name></member>
+      <member refid="structeva_1_1_s_w___e_v_e_n_t_s_1a0abac3b6f398a3dfecc7170d473f3c66" prot="public" virt="non-virtual"><scope>eva::SW_EVENTS</scope><name>ON_INACTIVE</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

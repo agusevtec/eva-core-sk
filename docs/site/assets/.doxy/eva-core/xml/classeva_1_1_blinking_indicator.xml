@@ -1,0 +1,302 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="classeva_1_1_blinking_indicator" kind="class" language="C++" prot="public">
+    <compoundname>eva::BlinkingIndicator</compoundname>
+    <basecompoundref refid="classeva_1_1_indicator" prot="public" virt="non-virtual">eva::Indicator</basecompoundref>
+    <basecompoundref refid="classeva_1_1_i_handler" prot="public" virt="non-virtual">eva::IHandler</basecompoundref>
+    <derivedcompoundref refid="classeva_1_1_countdown_indicator" prot="public" virt="non-virtual">eva::CountdownIndicator</derivedcompoundref>
+    <includes refid="eva_blinking_indicator_8h" local="no">evaBlinkingIndicator.h</includes>
+    <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classeva_1_1_blinking_indicator_1ae4aacd65df101c369f0505b256554501" prot="protected" static="no" mutable="no">
+        <type><ref refid="classeva_1_1_delay_timer" kindref="compound">DelayTimer</ref></type>
+        <definition>DelayTimer eva::BlinkingIndicator::heartbeatTimer</definition>
+        <argsstring></argsstring>
+        <name>heartbeatTimer</name>
+        <qualifiedname>eva::BlinkingIndicator::heartbeatTimer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Общий/Desktop/eva-core-sk/src/evaBlinkingIndicator.h" line="43" column="16" bodyfile="C:/Users/Общий/Desktop/eva-core-sk/src/evaBlinkingIndicator.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeva_1_1_blinking_indicator_1a9d2c6ec0d96f3a61b76fd5925792fcec" prot="protected" static="no" mutable="no">
+        <type><ref refid="classeva_1_1_delay_timer" kindref="compound">DelayTimer</ref></type>
+        <definition>DelayTimer eva::BlinkingIndicator::dutycycleTimer</definition>
+        <argsstring></argsstring>
+        <name>dutycycleTimer</name>
+        <qualifiedname>eva::BlinkingIndicator::dutycycleTimer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Общий/Desktop/eva-core-sk/src/evaBlinkingIndicator.h" line="44" column="16" bodyfile="C:/Users/Общий/Desktop/eva-core-sk/src/evaBlinkingIndicator.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeva_1_1_blinking_indicator_1a88e67083cd04c9f1f1b6c7b55c7e00bf" prot="protected" static="no" mutable="no">
+        <type>unsigned short</type>
+        <definition>unsigned short eva::BlinkingIndicator::period</definition>
+        <argsstring></argsstring>
+        <name>period</name>
+        <qualifiedname>eva::BlinkingIndicator::period</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Общий/Desktop/eva-core-sk/src/evaBlinkingIndicator.h" line="45" column="20" bodyfile="C:/Users/Общий/Desktop/eva-core-sk/src/evaBlinkingIndicator.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeva_1_1_blinking_indicator_1a5dda788ae17df90c5a64108fe3d8773c" prot="protected" static="no" mutable="no">
+        <type>unsigned char</type>
+        <definition>unsigned char eva::BlinkingIndicator::dutycyclePercent</definition>
+        <argsstring></argsstring>
+        <name>dutycyclePercent</name>
+        <qualifiedname>eva::BlinkingIndicator::dutycyclePercent</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Общий/Desktop/eva-core-sk/src/evaBlinkingIndicator.h" line="46" column="19" bodyfile="C:/Users/Общий/Desktop/eva-core-sk/src/evaBlinkingIndicator.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classeva_1_1_blinking_indicator_1a987af6bb4ca1c2c112274cde4d9a9088" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void eva::BlinkingIndicator::on</definition>
+        <argsstring>()</argsstring>
+        <name>on</name>
+        <qualifiedname>eva::BlinkingIndicator::on</qualifiedname>
+        <briefdescription>
+<para>Turns on the indicator continuously. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Общий/Desktop/eva-core-sk/src/evaBlinkingIndicator.h" line="22" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classeva_1_1_blinking_indicator_1ab3f73cc4ea348e04ed9a1221ce65d928" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void eva::BlinkingIndicator::off</definition>
+        <argsstring>()</argsstring>
+        <name>off</name>
+        <qualifiedname>eva::BlinkingIndicator::off</qualifiedname>
+        <briefdescription>
+<para>Turns off the indicator. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Общий/Desktop/eva-core-sk/src/evaBlinkingIndicator.h" line="27" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classeva_1_1_blinking_indicator_1a41787cfbc1be93c04e26c9e2fa8a307e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void eva::BlinkingIndicator::on</definition>
+        <argsstring>(unsigned short period, unsigned char dutycyclePercent)</argsstring>
+        <name>on</name>
+        <qualifiedname>eva::BlinkingIndicator::on</qualifiedname>
+        <param>
+          <type>unsigned short</type>
+          <declname>period</declname>
+        </param>
+        <param>
+          <type>unsigned char</type>
+          <declname>dutycyclePercent</declname>
+        </param>
+        <briefdescription>
+<para>Turns on the indicator with blinking pattern. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>period</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Blinking period in milliseconds </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dutycyclePercent</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>On-time percentage (0-100) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Общий/Desktop/eva-core-sk/src/evaBlinkingIndicator.h" line="34" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classeva_1_1_blinking_indicator_1ac381219f25099518c68e9c2d97ac4de2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>eva::Indicator::Indicator</definition>
+        <argsstring>(unsigned pin, int activationLevel=HIGH)</argsstring>
+        <name>Indicator</name>
+        <qualifiedname>eva::BlinkingIndicator::Indicator</qualifiedname>
+        <param>
+          <type>unsigned</type>
+          <declname>pin</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>activationLevel</declname>
+          <defval>HIGH</defval>
+        </param>
+        <briefdescription>
+<para>Constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Arduino pin number </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>activationLevel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Level that turns indicator on (LOW, HIGH, or PWM value) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Общий/Desktop/eva-core-sk/src/evaBlinkingIndicator.h" line="17" column="5"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classeva_1_1_blinking_indicator_1a660e6581f7608426c1a761c54c7f85e7" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void eva::BlinkingIndicator::startCycle</definition>
+        <argsstring>()</argsstring>
+        <name>startCycle</name>
+        <qualifiedname>eva::BlinkingIndicator::startCycle</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Общий/Desktop/eva-core-sk/src/evaBlinkingIndicator.h" line="37" column="10"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classeva_1_1_blinking_indicator_1a92dd3758d4e2d5a19c382ca5e1533408" prot="private" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void eva::BlinkingIndicator::invoke</definition>
+        <argsstring>(void *msgSender, long args) override</argsstring>
+        <name>invoke</name>
+        <qualifiedname>eva::BlinkingIndicator::invoke</qualifiedname>
+        <reimplements refid="classeva_1_1_i_handler_1a81dab5d3b9bed6a215f357a75e11b4e6">invoke</reimplements>
+        <reimplementedby refid="classeva_1_1_countdown_indicator_1ab73371b500e4d0b8688c70f3daddc6d1">invoke</reimplementedby>
+        <param>
+          <type>void *</type>
+          <declname>msgSender</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Общий/Desktop/eva-core-sk/src/evaBlinkingIndicator.h" line="40" column="10"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para><ref refid="classeva_1_1_indicator" kindref="compound">Indicator</ref> that blinks with specified period and duty cycle. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>eva::BlinkingIndicator</label>
+        <link refid="classeva_1_1_blinking_indicator"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>eva::CountdownIndicator</label>
+        <link refid="classeva_1_1_countdown_indicator"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>eva::IHandler</label>
+        <link refid="classeva_1_1_i_handler"/>
+      </node>
+      <node id="2">
+        <label>eva::Indicator</label>
+        <link refid="classeva_1_1_indicator"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>eva::BlinkingIndicator</label>
+        <link refid="classeva_1_1_blinking_indicator"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>dutycycleTimer</edgelabel>
+          <edgelabel>heartbeatTimer</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>eva::DelayTimer</label>
+        <link refid="classeva_1_1_delay_timer"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>listener</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>eva::IHandler</label>
+        <link refid="classeva_1_1_i_handler"/>
+      </node>
+      <node id="2">
+        <label>eva::Indicator</label>
+        <link refid="classeva_1_1_indicator"/>
+      </node>
+      <node id="5">
+        <label>eva::Tickable</label>
+        <link refid="classeva_1_1_tickable"/>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/Общий/Desktop/eva-core-sk/src/evaBlinkingIndicator.h" line="14" column="3" bodyfile="C:/Users/Общий/Desktop/eva-core-sk/src/evaBlinkingIndicator.h" bodystart="15" bodyend="47"/>
+    <listofallmembers>
+      <member refid="classeva_1_1_blinking_indicator_1a5dda788ae17df90c5a64108fe3d8773c" prot="protected" virt="non-virtual"><scope>eva::BlinkingIndicator</scope><name>dutycyclePercent</name></member>
+      <member refid="classeva_1_1_blinking_indicator_1a9d2c6ec0d96f3a61b76fd5925792fcec" prot="protected" virt="non-virtual"><scope>eva::BlinkingIndicator</scope><name>dutycycleTimer</name></member>
+      <member refid="classeva_1_1_blinking_indicator_1ae4aacd65df101c369f0505b256554501" prot="protected" virt="non-virtual"><scope>eva::BlinkingIndicator</scope><name>heartbeatTimer</name></member>
+      <member refid="classeva_1_1_blinking_indicator_1ac381219f25099518c68e9c2d97ac4de2" prot="public" virt="non-virtual"><scope>eva::BlinkingIndicator</scope><name>Indicator</name></member>
+      <member refid="classeva_1_1_blinking_indicator_1a92dd3758d4e2d5a19c382ca5e1533408" prot="private" virt="virtual"><scope>eva::BlinkingIndicator</scope><name>invoke</name></member>
+      <member refid="classeva_1_1_blinking_indicator_1ab3f73cc4ea348e04ed9a1221ce65d928" prot="public" virt="non-virtual"><scope>eva::BlinkingIndicator</scope><name>off</name></member>
+      <member refid="classeva_1_1_blinking_indicator_1a987af6bb4ca1c2c112274cde4d9a9088" prot="public" virt="non-virtual"><scope>eva::BlinkingIndicator</scope><name>on</name></member>
+      <member refid="classeva_1_1_blinking_indicator_1a41787cfbc1be93c04e26c9e2fa8a307e" prot="public" virt="non-virtual"><scope>eva::BlinkingIndicator</scope><name>on</name></member>
+      <member refid="classeva_1_1_blinking_indicator_1a88e67083cd04c9f1f1b6c7b55c7e00bf" prot="protected" virt="non-virtual"><scope>eva::BlinkingIndicator</scope><name>period</name></member>
+      <member refid="classeva_1_1_blinking_indicator_1a660e6581f7608426c1a761c54c7f85e7" prot="protected" virt="non-virtual"><scope>eva::BlinkingIndicator</scope><name>startCycle</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

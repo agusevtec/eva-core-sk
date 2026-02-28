@@ -1,0 +1,119 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="classeva_1_1_quantize_decor" kind="class" language="C++" prot="public">
+    <compoundname>eva::QuantizeDecor</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">READER</basecompoundref>
+    <includes refid="eva_reader_decors_8h" local="no">evaReaderDecors.h</includes>
+    <templateparamlist>
+      <param>
+        <type>class READER</type>
+      </param>
+      <param>
+        <type>signed short...</type>
+        <declname>LEVELS</declname>
+        <defname>LEVELS</defname>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classeva_1_1_quantize_decor_1a197c3c2878c6ca5fa79e815cb7fbec55" prot="private" static="no" mutable="no">
+        <type>const signed short</type>
+        <definition>const signed short eva::QuantizeDecor&lt; READER, LEVELS &gt;::levels[sizeof...(LEVELS)]</definition>
+        <argsstring>[sizeof...(LEVELS)]</argsstring>
+        <name>levels</name>
+        <qualifiedname>eva::QuantizeDecor::levels</qualifiedname>
+        <initializer>= {LEVELS...}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Общий/Desktop/eva-core-sk/src/evaReaderDecors.h" line="100" column="28" bodyfile="C:/Users/Общий/Desktop/eva-core-sk/src/evaReaderDecors.h" bodystart="100" bodyend="100"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classeva_1_1_quantize_decor_1af9835250527826076402e3591535890c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>signed short</type>
+        <definition>signed short eva::QuantizeDecor&lt; READER, LEVELS &gt;::getValue</definition>
+        <argsstring>()</argsstring>
+        <name>getValue</name>
+        <qualifiedname>eva::QuantizeDecor::getValue</qualifiedname>
+        <briefdescription>
+<para>Gets quantized level index. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Level index (0 for no input, 1..n for specific levels) </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Общий/Desktop/eva-core-sk/src/evaReaderDecors.h" line="75" column="22" bodyfile="C:/Users/Общий/Desktop/eva-core-sk/src/evaReaderDecors.h" bodystart="75" bodyend="85"/>
+      </memberdef>
+      <memberdef kind="function" id="classeva_1_1_quantize_decor_1a4531ca88488c8b52918ae83f74f5f670" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>signed short</type>
+        <definition>signed short eva::QuantizeDecor&lt; READER, LEVELS &gt;::getLevel</definition>
+        <argsstring>(unsigned char index)</argsstring>
+        <name>getLevel</name>
+        <qualifiedname>eva::QuantizeDecor::getLevel</qualifiedname>
+        <param>
+          <type>unsigned char</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+<para>Gets threshold value for a level. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Level index </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Threshold value </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Общий/Desktop/eva-core-sk/src/evaReaderDecors.h" line="92" column="22" bodyfile="C:/Users/Общий/Desktop/eva-core-sk/src/evaReaderDecors.h" bodystart="92" bodyend="97"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Decorator that quantizes analog readings to discrete levels. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>READER</label>
+      </node>
+      <node id="1">
+        <label>eva::QuantizeDecor&lt; READER, LEVELS &gt;</label>
+        <link refid="classeva_1_1_quantize_decor"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>READER</label>
+      </node>
+      <node id="1">
+        <label>eva::QuantizeDecor&lt; READER, LEVELS &gt;</label>
+        <link refid="classeva_1_1_quantize_decor"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/Общий/Desktop/eva-core-sk/src/evaReaderDecors.h" line="68" column="5" bodyfile="C:/Users/Общий/Desktop/eva-core-sk/src/evaReaderDecors.h" bodystart="69" bodyend="101"/>
+    <listofallmembers>
+      <member refid="classeva_1_1_quantize_decor_1a4531ca88488c8b52918ae83f74f5f670" prot="public" virt="non-virtual"><scope>eva::QuantizeDecor</scope><name>getLevel</name></member>
+      <member refid="classeva_1_1_quantize_decor_1af9835250527826076402e3591535890c" prot="public" virt="non-virtual"><scope>eva::QuantizeDecor</scope><name>getValue</name></member>
+      <member refid="classeva_1_1_quantize_decor_1a197c3c2878c6ca5fa79e815cb7fbec55" prot="private" virt="non-virtual"><scope>eva::QuantizeDecor</scope><name>levels</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

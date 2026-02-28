@@ -1,0 +1,143 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="classeva_1_1_indicator" kind="class" language="C++" prot="public">
+    <compoundname>eva::Indicator</compoundname>
+    <derivedcompoundref refid="classeva_1_1_blinking_indicator" prot="public" virt="non-virtual">eva::BlinkingIndicator</derivedcompoundref>
+    <includes refid="eva_indicator_8h" local="no">evaIndicator.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classeva_1_1_indicator_1a7443f4b6153bf4e1946b98f42ce17ea3" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int eva::Indicator::pin</definition>
+        <argsstring></argsstring>
+        <name>pin</name>
+        <qualifiedname>eva::Indicator::pin</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Общий/Desktop/eva-core-sk/src/evaIndicator.h" line="33" column="9" bodyfile="C:/Users/Общий/Desktop/eva-core-sk/src/evaIndicator.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeva_1_1_indicator_1aa23194baf70e5c9792f641cd5bb05de2" prot="private" static="no" mutable="no">
+        <type>unsigned char</type>
+        <definition>unsigned char eva::Indicator::activationLevel</definition>
+        <argsstring></argsstring>
+        <name>activationLevel</name>
+        <qualifiedname>eva::Indicator::activationLevel</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Общий/Desktop/eva-core-sk/src/evaIndicator.h" line="34" column="19" bodyfile="C:/Users/Общий/Desktop/eva-core-sk/src/evaIndicator.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classeva_1_1_indicator_1ac381219f25099518c68e9c2d97ac4de2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>eva::Indicator::Indicator</definition>
+        <argsstring>(unsigned pin, int activationLevel=HIGH)</argsstring>
+        <name>Indicator</name>
+        <qualifiedname>eva::Indicator::Indicator</qualifiedname>
+        <param>
+          <type>unsigned</type>
+          <declname>pin</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>activationLevel</declname>
+          <defval>HIGH</defval>
+        </param>
+        <briefdescription>
+<para>Constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Arduino pin number </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>activationLevel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Level that turns indicator on (LOW, HIGH, or PWM value) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Общий/Desktop/eva-core-sk/src/evaIndicator.h" line="20" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classeva_1_1_indicator_1a3287280c79946ab3096d2fa125ce8bfa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void eva::Indicator::on</definition>
+        <argsstring>()</argsstring>
+        <name>on</name>
+        <qualifiedname>eva::Indicator::on</qualifiedname>
+        <briefdescription>
+<para>Turns the indicator on. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Общий/Desktop/eva-core-sk/src/evaIndicator.h" line="25" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classeva_1_1_indicator_1aea0f797fec22c9fef94097dc376a2910" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void eva::Indicator::off</definition>
+        <argsstring>()</argsstring>
+        <name>off</name>
+        <qualifiedname>eva::Indicator::off</qualifiedname>
+        <briefdescription>
+<para>Turns the indicator off. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Общий/Desktop/eva-core-sk/src/evaIndicator.h" line="30" column="10"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Basic indicator (LED) control. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>eva::BlinkingIndicator</label>
+        <link refid="classeva_1_1_blinking_indicator"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>eva::CountdownIndicator</label>
+        <link refid="classeva_1_1_countdown_indicator"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>eva::Indicator</label>
+        <link refid="classeva_1_1_indicator"/>
+      </node>
+    </inheritancegraph>
+    <location file="C:/Users/Общий/Desktop/eva-core-sk/src/evaIndicator.h" line="12" column="3" bodyfile="C:/Users/Общий/Desktop/eva-core-sk/src/evaIndicator.h" bodystart="13" bodyend="35"/>
+    <listofallmembers>
+      <member refid="classeva_1_1_indicator_1aa23194baf70e5c9792f641cd5bb05de2" prot="private" virt="non-virtual"><scope>eva::Indicator</scope><name>activationLevel</name></member>
+      <member refid="classeva_1_1_indicator_1ac381219f25099518c68e9c2d97ac4de2" prot="public" virt="non-virtual"><scope>eva::Indicator</scope><name>Indicator</name></member>
+      <member refid="classeva_1_1_indicator_1aea0f797fec22c9fef94097dc376a2910" prot="public" virt="non-virtual"><scope>eva::Indicator</scope><name>off</name></member>
+      <member refid="classeva_1_1_indicator_1a3287280c79946ab3096d2fa125ce8bfa" prot="public" virt="non-virtual"><scope>eva::Indicator</scope><name>on</name></member>
+      <member refid="classeva_1_1_indicator_1a7443f4b6153bf4e1946b98f42ce17ea3" prot="private" virt="non-virtual"><scope>eva::Indicator</scope><name>pin</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

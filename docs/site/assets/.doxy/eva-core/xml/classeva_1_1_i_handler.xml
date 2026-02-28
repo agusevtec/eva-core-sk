@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="classeva_1_1_i_handler" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>eva::IHandler</compoundname>
+    <derivedcompoundref refid="classeva_1_1_blinking_indicator" prot="public" virt="non-virtual">eva::BlinkingIndicator</derivedcompoundref>
+    <derivedcompoundref refid="classeva_1_1_handler" prot="public" virt="non-virtual">eva::Handler&lt; T &gt;</derivedcompoundref>
+    <derivedcompoundref refid="classeva_1_1_handler_f" prot="public" virt="non-virtual">eva::HandlerF</derivedcompoundref>
+    <includes refid="eva_handler_8h" local="no">evaHandler.h</includes>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classeva_1_1_i_handler_1a81dab5d3b9bed6a215f357a75e11b4e6" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void eva::IHandler::invoke</definition>
+        <argsstring>(void *msgSender, long argsMask)=0</argsstring>
+        <name>invoke</name>
+        <qualifiedname>eva::IHandler::invoke</qualifiedname>
+        <reimplementedby refid="classeva_1_1_blinking_indicator_1a92dd3758d4e2d5a19c382ca5e1533408">invoke</reimplementedby>
+        <reimplementedby refid="classeva_1_1_countdown_indicator_1ab73371b500e4d0b8688c70f3daddc6d1">invoke</reimplementedby>
+        <reimplementedby refid="classeva_1_1_handler_1ae2118456916e862e1f4e376bcc368db4">invoke</reimplementedby>
+        <reimplementedby refid="classeva_1_1_handler_f_1a9029b5e5bf78f933dc9299de8a9b0d3b">invoke</reimplementedby>
+        <param>
+          <type>void *</type>
+          <declname>msgSender</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>argsMask</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Общий/Desktop/eva-core-sk/src/evaHandler.h" line="13" column="22"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Interface for message handlers. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>eva::BlinkingIndicator</label>
+        <link refid="classeva_1_1_blinking_indicator"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>eva::CountdownIndicator</label>
+        <link refid="classeva_1_1_countdown_indicator"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>eva::Handler&lt; T &gt;</label>
+        <link refid="classeva_1_1_handler"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>eva::HandlerF</label>
+        <link refid="classeva_1_1_handler_f"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>eva::IHandler</label>
+        <link refid="classeva_1_1_i_handler"/>
+      </node>
+    </inheritancegraph>
+    <location file="C:/Users/Общий/Desktop/eva-core-sk/src/evaHandler.h" line="10" column="5" bodyfile="C:/Users/Общий/Desktop/eva-core-sk/src/evaHandler.h" bodystart="11" bodyend="14"/>
+    <listofallmembers>
+      <member refid="classeva_1_1_i_handler_1a81dab5d3b9bed6a215f357a75e11b4e6" prot="public" virt="pure-virtual"><scope>eva::IHandler</scope><name>invoke</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

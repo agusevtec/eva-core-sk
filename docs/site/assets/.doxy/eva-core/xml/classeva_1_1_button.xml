@@ -1,0 +1,180 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="classeva_1_1_button" kind="class" language="C++" prot="public">
+    <compoundname>eva::Button</compoundname>
+    <basecompoundref refid="classeva_1_1_toggle" prot="public" virt="non-virtual">eva::Toggle&lt; READER &gt;</basecompoundref>
+    <derivedcompoundref refid="classeva_1_1_multi_button" prot="public" virt="non-virtual">eva::MultiButton&lt; QuantizeDecor&lt; StabilizeDecor&lt; AnalogPinReader&lt; PIN, PIN_MODE &gt; &gt;, LEVELS... &gt; &gt;</derivedcompoundref>
+    <derivedcompoundref refid="classeva_1_1_multi_button" prot="public" virt="non-virtual">eva::MultiButton&lt; READER &gt;</derivedcompoundref>
+    <includes refid="eva_button_8h" local="no">evaButton.h</includes>
+    <templateparamlist>
+      <param>
+        <type>class READER</type>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classeva_1_1_button_1a3d2aa61b3ce3991af47071a4ee5cc94f" prot="protected" static="no" mutable="no">
+        <type>unsigned long</type>
+        <definition>unsigned long eva::Button&lt; READER &gt;::pressTime</definition>
+        <argsstring></argsstring>
+        <name>pressTime</name>
+        <qualifiedname>eva::Button::pressTime</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Общий/Desktop/eva-core-sk/src/evaButton.h" line="64" column="19" bodyfile="C:/Users/Общий/Desktop/eva-core-sk/src/evaButton.h" bodystart="64" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classeva_1_1_button_1aaf757ae9cd6c09b1561d94a973743f93" prot="private" static="yes" mutable="no">
+        <type>const unsigned char</type>
+        <definition>const unsigned char eva::Button&lt; READER &gt;::ISPRESSED</definition>
+        <argsstring></argsstring>
+        <name>ISPRESSED</name>
+        <qualifiedname>eva::Button::ISPRESSED</qualifiedname>
+        <initializer>= 0x01</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Общий/Desktop/eva-core-sk/src/evaButton.h" line="67" column="32" bodyfile="C:/Users/Общий/Desktop/eva-core-sk/src/evaButton.h" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeva_1_1_button_1a7dbe9e1df40aec7af26f20c51b732b0f" prot="private" static="yes" mutable="no">
+        <type>const unsigned char</type>
+        <definition>const unsigned char eva::Button&lt; READER &gt;::ENABLED</definition>
+        <argsstring></argsstring>
+        <name>ENABLED</name>
+        <qualifiedname>eva::Button::ENABLED</qualifiedname>
+        <initializer>= 0x04</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Общий/Desktop/eva-core-sk/src/evaButton.h" line="68" column="32" bodyfile="C:/Users/Общий/Desktop/eva-core-sk/src/evaButton.h" bodystart="68" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classeva_1_1_button_1a5e79a839c64b5c5fdde2a68536e73096" prot="private" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>short</type>
+        <definition>short eva::Button&lt; READER &gt;::tick</definition>
+        <argsstring>() override</argsstring>
+        <name>tick</name>
+        <qualifiedname>eva::Button::tick</qualifiedname>
+        <reimplements refid="classeva_1_1_tickable_1afc78886ffa282153328bffab36c347fc">tick</reimplements>
+        <reimplementedby refid="classeva_1_1_multi_button_1a1ac5f74cc1c6e729a755e18851684838">tick</reimplementedby>
+        <reimplementedby refid="classeva_1_1_multi_button_1a1ac5f74cc1c6e729a755e18851684838">tick</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Общий/Desktop/eva-core-sk/src/evaButton.h" line="31" column="11" bodyfile="C:/Users/Общий/Desktop/eva-core-sk/src/evaButton.h" bodystart="31" bodyend="61"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para><ref refid="classeva_1_1_button" kindref="compound">Button</ref> with press, release, short click and long click detection. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>READER</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Input reader type that provides <ref refid="classeva_1_1_toggle_1ab9ac42f4e89aaafedc10c77df1ff9b70" kindref="member">getValue()</ref> </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>READER</label>
+      </node>
+      <node id="1">
+        <label>eva::Button&lt; READER &gt;</label>
+        <link refid="classeva_1_1_button"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>eva::MultiButton&lt; QuantizeDecor&lt; StabilizeDecor&lt; AnalogPinReader&lt; PIN, PIN_MODE &gt; &gt;, LEVELS... &gt; &gt;</label>
+        <link refid="classeva_1_1_multi_button"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>eva::MultiButton&lt; READER &gt;</label>
+        <link refid="classeva_1_1_multi_button"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>eva::Tickable</label>
+        <link refid="classeva_1_1_tickable"/>
+      </node>
+      <node id="2">
+        <label>eva::Toggle&lt; READER &gt;</label>
+        <link refid="classeva_1_1_toggle"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>READER</label>
+      </node>
+      <node id="1">
+        <label>eva::Button&lt; READER &gt;</label>
+        <link refid="classeva_1_1_button"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>eva::IHandler</label>
+        <link refid="classeva_1_1_i_handler"/>
+      </node>
+      <node id="4">
+        <label>eva::Tickable</label>
+        <link refid="classeva_1_1_tickable"/>
+      </node>
+      <node id="2">
+        <label>eva::Toggle&lt; READER &gt;</label>
+        <link refid="classeva_1_1_toggle"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>listener</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/Общий/Desktop/eva-core-sk/src/evaButton.h" line="25" column="3" bodyfile="C:/Users/Общий/Desktop/eva-core-sk/src/evaButton.h" bodystart="26" bodyend="69"/>
+    <listofallmembers>
+      <member refid="classeva_1_1_tickable_1a3f1a1833bfd4a2d9aea504a84cb1438d" prot="public" virt="non-virtual"><scope>eva::Button</scope><name>chain</name></member>
+      <member refid="classeva_1_1_toggle_1af10a291e9bfe02b121ac290fc0ba8c1f" prot="public" virt="non-virtual"><scope>eva::Button</scope><name>enable</name></member>
+      <member refid="classeva_1_1_button_1a7dbe9e1df40aec7af26f20c51b732b0f" prot="private" virt="non-virtual"><scope>eva::Button</scope><name>ENABLED</name></member>
+      <member refid="classeva_1_1_toggle_1a2dbbb3067083224bee445d675a7a0d75" prot="protected" virt="non-virtual"><scope>eva::Button</scope><name>encodedState</name></member>
+      <member refid="classeva_1_1_toggle_1ab9ac42f4e89aaafedc10c77df1ff9b70" prot="public" virt="non-virtual"><scope>eva::Button</scope><name>getValue</name></member>
+      <member refid="classeva_1_1_button_1aaf757ae9cd6c09b1561d94a973743f93" prot="private" virt="non-virtual"><scope>eva::Button</scope><name>ISPRESSED</name></member>
+      <member refid="classeva_1_1_toggle_1a906b20261956f639f178108022191919" prot="protected" virt="non-virtual"><scope>eva::Button</scope><name>listener</name></member>
+      <member refid="classeva_1_1_toggle_1ad4bc028f355b5553fe7990d2e4ac0ec1" prot="protected" virt="non-virtual"><scope>eva::Button</scope><name>notify</name></member>
+      <member refid="classeva_1_1_button_1a3d2aa61b3ce3991af47071a4ee5cc94f" prot="protected" virt="non-virtual"><scope>eva::Button</scope><name>pressTime</name></member>
+      <member refid="classeva_1_1_toggle_1a4c0a992449877824c9a04d3d321c5764" prot="public" virt="non-virtual"><scope>eva::Button</scope><name>setListener</name></member>
+      <member refid="classeva_1_1_tickable_1ad13287a77a330b14272d3e1ccdbb3de7" prot="public" virt="non-virtual"><scope>eva::Button</scope><name>tac</name></member>
+      <member refid="classeva_1_1_button_1a5e79a839c64b5c5fdde2a68536e73096" prot="private" virt="virtual"><scope>eva::Button</scope><name>tick</name></member>
+      <member refid="classeva_1_1_tickable_1a667f47cdee5f03eed323cebb27e8ab8e" prot="public" virt="non-virtual"><scope>eva::Button</scope><name>Tickable</name></member>
+      <member refid="classeva_1_1_toggle_1a1ac570228af87b504205ee29ab360f3c" prot="public" virt="non-virtual"><scope>eva::Button</scope><name>Toggle</name></member>
+      <member refid="classeva_1_1_toggle_1a69d9c9485aeddfef30bba34a81de64d2" prot="public" virt="non-virtual"><scope>eva::Button</scope><name>Toggle</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

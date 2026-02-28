@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="eva_slider_8h" kind="file" language="C++">
+    <compoundname>evaSlider.h</compoundname>
+    <includes refid="eva_std_readers_8h" local="yes">evaStdReaders.h</includes>
+    <includes local="no">Arduino.h</includes>
+    <incdepgraph>
+      <node id="3">
+        <label>Arduino.h</label>
+      </node>
+      <node id="1">
+        <label>C:/Users/Общий/Desktop/eva-core-sk/src/evaSlider.h</label>
+        <link refid="eva_slider_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>evaStdReaders.h</label>
+        <link refid="eva_std_readers_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <innerclass refid="classeva_1_1_slider" prot="public">eva::Slider</innerclass>
+    <innernamespace refid="namespaceeva">eva</innernamespace>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="eva_slider_8h_1ac25f947babf736afd3bf6cbef6097eb8" prot="public" static="no">
+        <name>EVASLIDER_H</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Общий/Desktop/eva-core-sk/src/evaSlider.h" line="2" column="9" bodyfile="C:/Users/Общий/Desktop/eva-core-sk/src/evaSlider.h" bodystart="2" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>EVASLIDER_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EVASLIDER_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;evaStdReaders.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;Arduino.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">eva</highlight></codeline>
+<codeline lineno="8"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>READER,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>MIN,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>MAX&gt;</highlight></codeline>
+<codeline lineno="13" refid="classeva_1_1_slider" refkind="compound"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classeva_1_1_slider" kindref="compound">Slider</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>READER</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="20" refid="classeva_1_1_slider_1a79d81c2a90db92ed470fc64d2b950caf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">signed</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/><ref refid="classeva_1_1_slider_1a79d81c2a90db92ed470fc64d2b950caf" kindref="member">getValue</ref>()</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>constrain(map(READER::getValue(),<sp/>MIN,<sp/>MAX,<sp/>0,<sp/>255),<sp/>0,<sp/>255);</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>PIN,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>PIN_MODE,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>MIN,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>MAX&gt;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">PinSlider<sp/>=<sp/>Slider&lt;AnalogPinReader&lt;PIN,<sp/>PIN_MODE&gt;,<sp/>MIN,<sp/>MAX&gt;;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="C:/Users/Общий/Desktop/eva-core-sk/src/evaSlider.h"/>
+  </compounddef>
+</doxygen>

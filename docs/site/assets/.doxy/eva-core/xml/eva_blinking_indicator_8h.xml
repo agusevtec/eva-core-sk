@@ -1,0 +1,102 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="eva_blinking_indicator_8h" kind="file" language="C++">
+    <compoundname>evaBlinkingIndicator.h</compoundname>
+    <includes refid="eva_indicator_8h" local="yes">evaIndicator.h</includes>
+    <includes refid="eva_handler_8h" local="yes">evaHandler.h</includes>
+    <includedby refid="eva_countdown_indicator_8h" local="yes">C:/Users/Общий/Desktop/eva-core-sk/src/evaCountdownIndicator.h</includedby>
+    <incdepgraph>
+      <node id="6">
+        <label>Arduino.h</label>
+      </node>
+      <node id="1">
+        <label>C:/Users/Общий/Desktop/eva-core-sk/src/evaBlinkingIndicator.h</label>
+        <link refid="eva_blinking_indicator_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>evaDelayTimer.h</label>
+        <link refid="eva_delay_timer_8h_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>evaHandler.h</label>
+        <link refid="eva_handler_8h_source"/>
+      </node>
+      <node id="2">
+        <label>evaIndicator.h</label>
+        <link refid="eva_indicator_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>evaTickable.h</label>
+        <link refid="eva_tickable_8h_source"/>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>C:/Users/Общий/Desktop/eva-core-sk/src/evaBlinkingIndicator.h</label>
+        <link refid="eva_blinking_indicator_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>C:/Users/Общий/Desktop/eva-core-sk/src/evaCountdownIndicator.h</label>
+        <link refid="eva_countdown_indicator_8h_source"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classeva_1_1_blinking_indicator" prot="public">eva::BlinkingIndicator</innerclass>
+    <innernamespace refid="namespaceeva">eva</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>EVABLINKINGINDICATOR_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EVABLINKINGINDICATOR_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;evaIndicator.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;evaHandler.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">eva</highlight></codeline>
+<codeline lineno="10"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="14" refid="classeva_1_1_blinking_indicator" refkind="compound"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classeva_1_1_blinking_indicator" kindref="compound">BlinkingIndicator</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classeva_1_1_blinking_indicator_1ac381219f25099518c68e9c2d97ac4de2" kindref="member">Indicator</ref>,<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classeva_1_1_i_handler" kindref="compound">IHandler</ref></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="classeva_1_1_indicator_1ac381219f25099518c68e9c2d97ac4de2" kindref="member">Indicator::Indicator</ref>;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22" refid="classeva_1_1_blinking_indicator_1a987af6bb4ca1c2c112274cde4d9a9088" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classeva_1_1_blinking_indicator_1a987af6bb4ca1c2c112274cde4d9a9088" kindref="member">on</ref>();</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27" refid="classeva_1_1_blinking_indicator_1ab3f73cc4ea348e04ed9a1221ce65d928" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classeva_1_1_blinking_indicator_1ab3f73cc4ea348e04ed9a1221ce65d928" kindref="member">off</ref>();</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34" refid="classeva_1_1_blinking_indicator_1a41787cfbc1be93c04e26c9e2fa8a307e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classeva_1_1_blinking_indicator_1a41787cfbc1be93c04e26c9e2fa8a307e" kindref="member">on</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/>period,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>dutycyclePercent);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>startCycle();</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>invoke(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*msgSender,<sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>args)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classeva_1_1_delay_timer" kindref="compound">DelayTimer</ref><sp/>heartbeatTimer;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classeva_1_1_delay_timer" kindref="compound">DelayTimer</ref><sp/>dutycycleTimer;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/>period;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>dutycyclePercent;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline lineno="48"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="C:/Users/Общий/Desktop/eva-core-sk/src/evaBlinkingIndicator.h"/>
+  </compounddef>
+</doxygen>

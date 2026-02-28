@@ -1,0 +1,234 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="classeva_1_1_list" kind="class" language="C++" prot="public">
+    <compoundname>eva::List</compoundname>
+    <includes refid="eva_list_8h" local="no">evaList.h</includes>
+    <templateparamlist>
+      <param>
+        <type>class ItemClass</type>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classeva_1_1_list_1af62b22e278861f9d633714308917a0db" prot="private" static="no" mutable="no">
+        <type><ref refid="structeva_1_1_list_iterator" kindref="compound">ListIterator</ref>&lt; ItemClass &gt; *</type>
+        <definition>ListIterator&lt;ItemClass&gt;* eva::List&lt; ItemClass &gt;::head</definition>
+        <argsstring></argsstring>
+        <name>head</name>
+        <qualifiedname>eva::List::head</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Общий/Desktop/eva-core-sk/src/evaList.h" line="24" column="18" bodyfile="C:/Users/Общий/Desktop/eva-core-sk/src/evaList.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeva_1_1_list_1aca0d3cbc84e5f5cdf4397d1440eb1559" prot="private" static="no" mutable="no">
+        <type><ref refid="structeva_1_1_list_iterator" kindref="compound">ListIterator</ref>&lt; ItemClass &gt; *</type>
+        <definition>ListIterator&lt;ItemClass&gt;* eva::List&lt; ItemClass &gt;::tail</definition>
+        <argsstring></argsstring>
+        <name>tail</name>
+        <qualifiedname>eva::List::tail</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Общий/Desktop/eva-core-sk/src/evaList.h" line="25" column="18" bodyfile="C:/Users/Общий/Desktop/eva-core-sk/src/evaList.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeva_1_1_list_1a764b5d92ff4eb5078a4096b79a906eba" prot="private" static="no" mutable="no">
+        <type>unsigned</type>
+        <definition>unsigned eva::List&lt; ItemClass &gt;::length</definition>
+        <argsstring></argsstring>
+        <name>length</name>
+        <qualifiedname>eva::List::length</qualifiedname>
+        <initializer>= {0}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Общий/Desktop/eva-core-sk/src/evaList.h" line="26" column="14" bodyfile="C:/Users/Общий/Desktop/eva-core-sk/src/evaList.h" bodystart="26" bodyend="26"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classeva_1_1_list_1a4fc9e7864d26ac9d1fc60fc7dadb14a6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>eva::List&lt; ItemClass &gt;::List</definition>
+        <argsstring>(const List &amp;)=delete</argsstring>
+        <name>List</name>
+        <qualifiedname>eva::List::List</qualifiedname>
+        <param>
+          <type>const List &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Общий/Desktop/eva-core-sk/src/evaList.h" line="29" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classeva_1_1_list_1aa17c3bdf4dd0425eec109d591a096eaa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>List &amp;</type>
+        <definition>List &amp; eva::List&lt; ItemClass &gt;::operator=</definition>
+        <argsstring>(const List &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>eva::List::operator=</qualifiedname>
+        <param>
+          <type>const List &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Общий/Desktop/eva-core-sk/src/evaList.h" line="31" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classeva_1_1_list_1aeac16ea2dd410c8d2655252fca0604ba" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>eva::List&lt; ItemClass &gt;::~List</definition>
+        <argsstring>()</argsstring>
+        <name>~List</name>
+        <qualifiedname>eva::List::~List</qualifiedname>
+        <briefdescription>
+<para>Destructor - frees all nodes. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Общий/Desktop/eva-core-sk/src/evaList.h" line="36" column="5" bodyfile="C:/Users/Общий/Desktop/eva-core-sk/src/evaList.h" bodystart="36" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="classeva_1_1_list_1af8613606cbc1f80f0eb652d385e8ca6e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void eva::List&lt; ItemClass &gt;::append</definition>
+        <argsstring>(ItemClass item)</argsstring>
+        <name>append</name>
+        <qualifiedname>eva::List::append</qualifiedname>
+        <param>
+          <type>ItemClass</type>
+          <declname>item</declname>
+        </param>
+        <briefdescription>
+<para>Appends an item to the list. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>item</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Item to append </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Общий/Desktop/eva-core-sk/src/evaList.h" line="51" column="10" bodyfile="C:/Users/Общий/Desktop/eva-core-sk/src/evaList.h" bodystart="51" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="function" id="classeva_1_1_list_1a8739655e45ea8b1913c34601ac7c669f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structeva_1_1_list_iterator" kindref="compound">ListIterator</ref>&lt; ItemClass &gt; *</type>
+        <definition>ListIterator&lt; ItemClass &gt; * eva::List&lt; ItemClass &gt;::first</definition>
+        <argsstring>()</argsstring>
+        <name>first</name>
+        <qualifiedname>eva::List::first</qualifiedname>
+        <briefdescription>
+<para>Gets first iterator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Pointer to first iterator </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Общий/Desktop/eva-core-sk/src/evaList.h" line="64" column="18" bodyfile="C:/Users/Общий/Desktop/eva-core-sk/src/evaList.h" bodystart="64" bodyend="67"/>
+      </memberdef>
+      <memberdef kind="function" id="classeva_1_1_list_1acbf7e85bd62da1664670f535eb7952fb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>ItemClass &amp;</type>
+        <definition>ItemClass &amp; eva::List&lt; ItemClass &gt;::operator[]</definition>
+        <argsstring>(unsigned index)</argsstring>
+        <name>operator[]</name>
+        <qualifiedname>eva::List::operator[]</qualifiedname>
+        <param>
+          <type>unsigned</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+<para>Array-style access by index. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Index (0-based) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Reference to item </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Общий/Desktop/eva-core-sk/src/evaList.h" line="74" column="15" bodyfile="C:/Users/Общий/Desktop/eva-core-sk/src/evaList.h" bodystart="74" bodyend="80"/>
+      </memberdef>
+      <memberdef kind="function" id="classeva_1_1_list_1ad87a7727925cc0ebd3787200fd262f89" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>unsigned</type>
+        <definition>unsigned eva::List&lt; ItemClass &gt;::count</definition>
+        <argsstring>()</argsstring>
+        <name>count</name>
+        <qualifiedname>eva::List::count</qualifiedname>
+        <briefdescription>
+<para>Gets number of items in list. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Item count </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Общий/Desktop/eva-core-sk/src/evaList.h" line="86" column="21" bodyfile="C:/Users/Общий/Desktop/eva-core-sk/src/evaList.h" bodystart="86" bodyend="89"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Simple singly-linked list container. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>ItemClass</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of items to store </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+    </detaileddescription>
+    <location file="C:/Users/Общий/Desktop/eva-core-sk/src/evaList.h" line="22" column="3" bodyfile="C:/Users/Общий/Desktop/eva-core-sk/src/evaList.h" bodystart="23" bodyend="90"/>
+    <listofallmembers>
+      <member refid="classeva_1_1_list_1af8613606cbc1f80f0eb652d385e8ca6e" prot="public" virt="non-virtual"><scope>eva::List</scope><name>append</name></member>
+      <member refid="classeva_1_1_list_1ad87a7727925cc0ebd3787200fd262f89" prot="public" virt="non-virtual"><scope>eva::List</scope><name>count</name></member>
+      <member refid="classeva_1_1_list_1a8739655e45ea8b1913c34601ac7c669f" prot="public" virt="non-virtual"><scope>eva::List</scope><name>first</name></member>
+      <member refid="classeva_1_1_list_1af62b22e278861f9d633714308917a0db" prot="private" virt="non-virtual"><scope>eva::List</scope><name>head</name></member>
+      <member refid="classeva_1_1_list_1a764b5d92ff4eb5078a4096b79a906eba" prot="private" virt="non-virtual"><scope>eva::List</scope><name>length</name></member>
+      <member refid="classeva_1_1_list_1a4fc9e7864d26ac9d1fc60fc7dadb14a6" prot="public" virt="non-virtual"><scope>eva::List</scope><name>List</name></member>
+      <member refid="classeva_1_1_list_1aa17c3bdf4dd0425eec109d591a096eaa" prot="public" virt="non-virtual"><scope>eva::List</scope><name>operator=</name></member>
+      <member refid="classeva_1_1_list_1acbf7e85bd62da1664670f535eb7952fb" prot="public" virt="non-virtual"><scope>eva::List</scope><name>operator[]</name></member>
+      <member refid="classeva_1_1_list_1aca0d3cbc84e5f5cdf4397d1440eb1559" prot="private" virt="non-virtual"><scope>eva::List</scope><name>tail</name></member>
+      <member refid="classeva_1_1_list_1aeac16ea2dd410c8d2655252fca0604ba" prot="public" virt="non-virtual"><scope>eva::List</scope><name>~List</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

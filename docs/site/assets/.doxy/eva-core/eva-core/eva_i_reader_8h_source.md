@@ -1,0 +1,38 @@
+
+
+# File evaIReader.h
+
+[**File List**](files.md) **>** [**src**](dir_68267d1309a1af8e8297ef4c3efbcdba.md) **>** [**evaIReader.h**](eva_i_reader_8h.md)
+
+[Go to the documentation of this file](eva_i_reader_8h.md)
+
+
+```C++
+#ifndef EVAIREADER_H
+#define EVAIREADER_H
+
+#pragma once
+
+namespace eva
+{
+    class IReader
+    {
+    public:
+        virtual signed short getValue() = 0;
+    };
+
+    template <class T>
+    class IReaderAdapter : public IReader, public T
+    {
+    public:
+        virtual signed short getValue() override
+        {
+            return T::getValue();
+        }
+    };
+};
+
+#endif
+```
+
+
