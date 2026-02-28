@@ -1,0 +1,179 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="classeva_1_1_joystick" kind="class" language="C++" prot="public">
+    <compoundname>eva::Joystick</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">READER</basecompoundref>
+    <includes refid="eva_joystick_8h" local="no">evaJoystick.h</includes>
+    <templateparamlist>
+      <param>
+        <type>class READER</type>
+      </param>
+      <param>
+        <type>int</type>
+        <declname>MIN</declname>
+        <defname>MIN</defname>
+      </param>
+      <param>
+        <type>int</type>
+        <declname>MIDDLE</declname>
+        <defname>MIDDLE</defname>
+      </param>
+      <param>
+        <type>int</type>
+        <declname>MAX</declname>
+        <defname>MAX</defname>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classeva_1_1_joystick_1a9b3227cbf2fee627535e01ad65199fa6" prot="private" static="no" mutable="no">
+        <type>signed short</type>
+        <definition>signed short eva::Joystick&lt; READER, MIN, MIDDLE, MAX &gt;::trim</definition>
+        <argsstring></argsstring>
+        <name>trim</name>
+        <qualifiedname>eva::Joystick::trim</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evaJoystick.h" line="50" column="18" bodyfile="src/evaJoystick.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classeva_1_1_joystick_1ae97cb6c9ab9e38d004f425fa161c3ce2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>signed char</type>
+        <definition>signed char eva::Joystick&lt; READER, MIN, MIDDLE, MAX &gt;::getValue</definition>
+        <argsstring>()</argsstring>
+        <name>getValue</name>
+        <qualifiedname>eva::Joystick::getValue</qualifiedname>
+        <briefdescription>
+<para>Gets normalized joystick position (-127 to 127). </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Signed char value </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evaJoystick.h" line="22" column="17" bodyfile="src/evaJoystick.h" bodystart="22" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="function" id="classeva_1_1_joystick_1a3db635e97473a9c8e2a7be61db84a0a9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void eva::Joystick&lt; READER, MIN, MIDDLE, MAX &gt;::setTrim</definition>
+        <argsstring>(short trim)</argsstring>
+        <name>setTrim</name>
+        <qualifiedname>eva::Joystick::setTrim</qualifiedname>
+        <param>
+          <type>short</type>
+          <declname>trim</declname>
+        </param>
+        <briefdescription>
+<para>Sets trim adjustment value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>trim</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Trim value </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evaJoystick.h" line="35" column="10" bodyfile="src/evaJoystick.h" bodystart="35" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="function" id="classeva_1_1_joystick_1adc8f58454b523885d8da94f8ba4e1c1b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>signed short</type>
+        <definition>signed short eva::Joystick&lt; READER, MIN, MIDDLE, MAX &gt;::getTrim</definition>
+        <argsstring>()</argsstring>
+        <name>getTrim</name>
+        <qualifiedname>eva::Joystick::getTrim</qualifiedname>
+        <briefdescription>
+<para>Gets current trim value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Trim value </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evaJoystick.h" line="44" column="18" bodyfile="src/evaJoystick.h" bodystart="44" bodyend="47"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para><ref refid="classeva_1_1_joystick" kindref="compound">Joystick</ref> axis reader with trim adjustment. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>READER</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Underlying reader type </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>MIN</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Minimum analog value </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>MIDDLE</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Center value </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>MAX</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Maximum analog value </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>READER</label>
+      </node>
+      <node id="1">
+        <label>eva::Joystick&lt; READER, MIN, MIDDLE, MAX &gt;</label>
+        <link refid="classeva_1_1_joystick"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>READER</label>
+      </node>
+      <node id="1">
+        <label>eva::Joystick&lt; READER, MIN, MIDDLE, MAX &gt;</label>
+        <link refid="classeva_1_1_joystick"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/evaJoystick.h" line="15" column="3" bodyfile="src/evaJoystick.h" bodystart="16" bodyend="51"/>
+    <listofallmembers>
+      <member refid="classeva_1_1_joystick_1adc8f58454b523885d8da94f8ba4e1c1b" prot="public" virt="non-virtual"><scope>eva::Joystick</scope><name>getTrim</name></member>
+      <member refid="classeva_1_1_joystick_1ae97cb6c9ab9e38d004f425fa161c3ce2" prot="public" virt="non-virtual"><scope>eva::Joystick</scope><name>getValue</name></member>
+      <member refid="classeva_1_1_joystick_1a3db635e97473a9c8e2a7be61db84a0a9" prot="public" virt="non-virtual"><scope>eva::Joystick</scope><name>setTrim</name></member>
+      <member refid="classeva_1_1_joystick_1a9b3227cbf2fee627535e01ad65199fa6" prot="private" virt="non-virtual"><scope>eva::Joystick</scope><name>trim</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

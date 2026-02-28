@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="classeva_1_1_stabilize_decor" kind="class" language="C++" prot="public">
+    <compoundname>eva::StabilizeDecor</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">READER</basecompoundref>
+    <includes refid="eva_reader_decors_8h" local="no">evaReaderDecors.h</includes>
+    <templateparamlist>
+      <param>
+        <type>class READER</type>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classeva_1_1_stabilize_decor_1a59ee155ba90cf493a00b9ba21146f68c" prot="private" static="no" mutable="no">
+        <type>unsigned long</type>
+        <definition>unsigned long eva::StabilizeDecor&lt; READER &gt;::keepValueTill</definition>
+        <argsstring></argsstring>
+        <name>keepValueTill</name>
+        <qualifiedname>eva::StabilizeDecor::keepValueTill</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evaReaderDecors.h" line="34" column="23" bodyfile="src/evaReaderDecors.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeva_1_1_stabilize_decor_1a3f0d4de6e9d6b144a67ab3378f1f180f" prot="private" static="no" mutable="no">
+        <type>signed short</type>
+        <definition>signed short eva::StabilizeDecor&lt; READER &gt;::keepedValue</definition>
+        <argsstring></argsstring>
+        <name>keepedValue</name>
+        <qualifiedname>eva::StabilizeDecor::keepedValue</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evaReaderDecors.h" line="35" column="22" bodyfile="src/evaReaderDecors.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classeva_1_1_stabilize_decor_1aaa25725a97619b2158239d649b280ec3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>signed short</type>
+        <definition>signed short eva::StabilizeDecor&lt; READER &gt;::getValue</definition>
+        <argsstring>()</argsstring>
+        <name>getValue</name>
+        <qualifiedname>eva::StabilizeDecor::getValue</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evaReaderDecors.h" line="19" column="22" bodyfile="src/evaReaderDecors.h" bodystart="19" bodyend="31"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Decorator that stabilizes readings by requiring value to be stable for a period. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>READER</label>
+      </node>
+      <node id="1">
+        <label>eva::StabilizeDecor&lt; READER &gt;</label>
+        <link refid="classeva_1_1_stabilize_decor"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>READER</label>
+      </node>
+      <node id="1">
+        <label>eva::StabilizeDecor&lt; READER &gt;</label>
+        <link refid="classeva_1_1_stabilize_decor"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/evaReaderDecors.h" line="16" column="5" bodyfile="src/evaReaderDecors.h" bodystart="17" bodyend="36"/>
+    <listofallmembers>
+      <member refid="classeva_1_1_stabilize_decor_1aaa25725a97619b2158239d649b280ec3" prot="public" virt="non-virtual"><scope>eva::StabilizeDecor</scope><name>getValue</name></member>
+      <member refid="classeva_1_1_stabilize_decor_1a3f0d4de6e9d6b144a67ab3378f1f180f" prot="private" virt="non-virtual"><scope>eva::StabilizeDecor</scope><name>keepedValue</name></member>
+      <member refid="classeva_1_1_stabilize_decor_1a59ee155ba90cf493a00b9ba21146f68c" prot="private" virt="non-virtual"><scope>eva::StabilizeDecor</scope><name>keepValueTill</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

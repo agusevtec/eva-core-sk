@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="structeva_1_1_list_iterator" kind="struct" language="C++" prot="public">
+    <compoundname>eva::ListIterator</compoundname>
+    <includes refid="eva_list_8h" local="no">evaList.h</includes>
+    <templateparamlist>
+      <param>
+        <type>class ItemClass</type>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structeva_1_1_list_iterator_1a673ff85eaf58de491d4710d7fb6c5226" prot="public" static="no" mutable="no">
+        <type>ItemClass</type>
+        <definition>ItemClass eva::ListIterator&lt; ItemClass &gt;::item</definition>
+        <argsstring></argsstring>
+        <name>item</name>
+        <qualifiedname>eva::ListIterator::item</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evaList.h" line="12" column="15" bodyfile="src/evaList.h" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structeva_1_1_list_iterator_1a1d2a502a56ce139f3a250cdd1213bba6" prot="public" static="no" mutable="no">
+        <type>ListIterator&lt; ItemClass &gt; *</type>
+        <definition>ListIterator&lt;ItemClass&gt;* eva::ListIterator&lt; ItemClass &gt;::next</definition>
+        <argsstring></argsstring>
+        <name>next</name>
+        <qualifiedname>eva::ListIterator::next</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evaList.h" line="13" column="18" bodyfile="src/evaList.h" bodystart="13" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structeva_1_1_list_iterator_1acc56acea81145467c6a08e57325898f7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>eva::ListIterator&lt; ItemClass &gt;::ListIterator</definition>
+        <argsstring>(ItemClass &amp;item)</argsstring>
+        <name>ListIterator</name>
+        <qualifiedname>eva::ListIterator::ListIterator</qualifiedname>
+        <param>
+          <type>ItemClass &amp;</type>
+          <declname>item</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evaList.h" line="14" column="5" bodyfile="src/evaList.h" bodystart="14" bodyend="14"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Iterator node for <ref refid="classeva_1_1_list" kindref="compound">List</ref>. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/evaList.h" line="10" column="3" bodyfile="src/evaList.h" bodystart="11" bodyend="15"/>
+    <listofallmembers>
+      <member refid="structeva_1_1_list_iterator_1a673ff85eaf58de491d4710d7fb6c5226" prot="public" virt="non-virtual"><scope>eva::ListIterator</scope><name>item</name></member>
+      <member refid="structeva_1_1_list_iterator_1acc56acea81145467c6a08e57325898f7" prot="public" virt="non-virtual"><scope>eva::ListIterator</scope><name>ListIterator</name></member>
+      <member refid="structeva_1_1_list_iterator_1a1d2a502a56ce139f3a250cdd1213bba6" prot="public" virt="non-virtual"><scope>eva::ListIterator</scope><name>next</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

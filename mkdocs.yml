@@ -1,0 +1,42 @@
+site_name: EVA Core | EVA Survival Kit
+site_description: Architectural core with essential components for event-driven Arduino applications
+repo_url: https://github.com/agusevtec/eva-core-sk
+theme: material
+docs_dir: 'src-docs'
+site_dir: 'docs'
+nav:
+  - Why EVA: index.md
+  - QuickStart:
+    - The Loop Cycle: quickstart/loop-cycle.md
+    - Working with buttons: quickstart/working-with-buttons.md
+    - Flexibility: quickstart/flexibility.md
+    - Optimization: quickstart/optimization.md
+  - Ecosystem:
+    - Invitation: ecosystem/invitation.md
+
+  - API Reference:
+      - Classes: eva-core/annotated.md
+      - Hierarchy: eva-core/hierarchy.md
+      - Files: eva-core/files.md
+
+markdown_extensions:
+  - admonition
+  - codehilite
+  - toc:
+      permalink: true
+
+plugins:
+  - search
+  - mkdoxy:
+      projects:
+        eva-core:
+          src-dirs: ./src
+          full-doc: True
+          doxy-cfg:
+            FILE_PATTERNS: "*.h"
+            RECURSIVE: True
+            EXTRACT_ALL: NO 
+            EXTRACT_STRUCT: NO
+            EXTRACT_PRIVATE: NO
+            EXTRACT_STATIC: YES
+

@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="classeva_1_1_i_reader" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>eva::IReader</compoundname>
+    <derivedcompoundref refid="classeva_1_1_i_reader_adapter" prot="public" virt="non-virtual">eva::IReaderAdapter&lt; T &gt;</derivedcompoundref>
+    <includes refid="eva_i_reader_8h" local="no">evaIReader.h</includes>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classeva_1_1_i_reader_1a5d1954d1483e24890d9d8ada880be70c" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>signed short</type>
+        <definition>virtual signed short eva::IReader::getValue</definition>
+        <argsstring>()=0</argsstring>
+        <name>getValue</name>
+        <qualifiedname>eva::IReader::getValue</qualifiedname>
+        <reimplementedby refid="classeva_1_1_i_reader_adapter_1aa76060a13929f9ee0bd7a8112cb40866">getValue</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evaIReader.h" line="26" column="30"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Interface for value readers. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The library uses templates internally for maximum performance and flexibility, and never uses interfaces internally. However, forcing users to write template code everywhere can be cumbersome. All readers can be converted to this interface using the companion <ref refid="classeva_1_1_i_reader_adapter" kindref="compound">IReaderAdapter</ref> for further use in polymorphic contexts.</para>
+<para>This two-tier approach gives us benefits:<orderedlist>
+<listitem><para>Use templates directly for maximum performance</para>
+</listitem><listitem><para>Use this interface for simpler integration and loose coupling</para>
+</listitem></orderedlist>
+</para>
+<para><simplesect kind="see"><para><ref refid="classeva_1_1_i_reader_adapter" kindref="compound">IReaderAdapter</ref> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>eva::IReader</label>
+        <link refid="classeva_1_1_i_reader"/>
+      </node>
+      <node id="2">
+        <label>eva::IReaderAdapter&lt; T &gt;</label>
+        <link refid="classeva_1_1_i_reader_adapter"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="src/evaIReader.h" line="23" column="5" bodyfile="src/evaIReader.h" bodystart="24" bodyend="27"/>
+    <listofallmembers>
+      <member refid="classeva_1_1_i_reader_1a5d1954d1483e24890d9d8ada880be70c" prot="public" virt="pure-virtual"><scope>eva::IReader</scope><name>getValue</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

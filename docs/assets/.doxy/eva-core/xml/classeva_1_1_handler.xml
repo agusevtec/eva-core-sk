@@ -1,0 +1,136 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="classeva_1_1_handler" kind="class" language="C++" prot="public">
+    <compoundname>eva::Handler</compoundname>
+    <basecompoundref refid="classeva_1_1_i_handler" prot="public" virt="non-virtual">eva::IHandler</basecompoundref>
+    <includes refid="eva_handler_8h" local="no">evaHandler.h</includes>
+    <templateparamlist>
+      <param>
+        <type>class T</type>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classeva_1_1_handler_1a71f11aa1b5b0044f0a6b1bf550eb355c" prot="private" static="no" mutable="no">
+        <type>void(T::*</type>
+        <definition>void(T::* eva::Handler&lt; T &gt;::method) (void *, long)</definition>
+        <argsstring>)(void *, long)</argsstring>
+        <name>method</name>
+        <qualifiedname>eva::Handler::method</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evaHandler.h" line="35" column="9" bodyfile="src/evaHandler.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeva_1_1_handler_1a56ae4c93826addbcb15564ac71760c9a" prot="private" static="no" mutable="no">
+        <type>T *</type>
+        <definition>T* eva::Handler&lt; T &gt;::msgReceiver</definition>
+        <argsstring></argsstring>
+        <name>msgReceiver</name>
+        <qualifiedname>eva::Handler::msgReceiver</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evaHandler.h" line="36" column="11" bodyfile="src/evaHandler.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classeva_1_1_handler_1a30bdc87b2ac842d48cb97df834d8ded3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>eva::Handler&lt; T &gt;::Handler</definition>
+        <argsstring>(T *msgReceiver, void(T::*method)(void *, long))</argsstring>
+        <name>Handler</name>
+        <qualifiedname>eva::Handler::Handler</qualifiedname>
+        <param>
+          <type>T *</type>
+          <declname>msgReceiver</declname>
+        </param>
+        <param>
+          <type>void(T::*)(void *, long)</type>
+          <declname>method</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evaHandler.h" line="24" column="9" bodyfile="src/evaHandler.h" bodystart="24" bodyend="27"/>
+      </memberdef>
+      <memberdef kind="function" id="classeva_1_1_handler_1ae2118456916e862e1f4e376bcc368db4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void eva::Handler&lt; T &gt;::invoke</definition>
+        <argsstring>(void *msgSender, long argsMask) override</argsstring>
+        <name>invoke</name>
+        <qualifiedname>eva::Handler::invoke</qualifiedname>
+        <reimplements refid="classeva_1_1_i_handler_1a81dab5d3b9bed6a215f357a75e11b4e6">invoke</reimplements>
+        <param>
+          <type>void *</type>
+          <declname>msgSender</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>argsMask</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evaHandler.h" line="29" column="14" bodyfile="src/evaHandler.h" bodystart="29" bodyend="32"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para><ref refid="classeva_1_1_handler" kindref="compound">Handler</ref> that calls a member method. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Class type of the receiver </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>eva::Handler&lt; T &gt;</label>
+        <link refid="classeva_1_1_handler"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>eva::IHandler</label>
+        <link refid="classeva_1_1_i_handler"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>eva::Handler&lt; T &gt;</label>
+        <link refid="classeva_1_1_handler"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>eva::IHandler</label>
+        <link refid="classeva_1_1_i_handler"/>
+      </node>
+    </collaborationgraph>
+    <location file="src/evaHandler.h" line="21" column="5" bodyfile="src/evaHandler.h" bodystart="22" bodyend="37"/>
+    <listofallmembers>
+      <member refid="classeva_1_1_handler_1a30bdc87b2ac842d48cb97df834d8ded3" prot="public" virt="non-virtual"><scope>eva::Handler</scope><name>Handler</name></member>
+      <member refid="classeva_1_1_handler_1ae2118456916e862e1f4e376bcc368db4" prot="public" virt="virtual"><scope>eva::Handler</scope><name>invoke</name></member>
+      <member refid="classeva_1_1_handler_1a71f11aa1b5b0044f0a6b1bf550eb355c" prot="private" virt="non-virtual"><scope>eva::Handler</scope><name>method</name></member>
+      <member refid="classeva_1_1_handler_1a56ae4c93826addbcb15564ac71760c9a" prot="private" virt="non-virtual"><scope>eva::Handler</scope><name>msgReceiver</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

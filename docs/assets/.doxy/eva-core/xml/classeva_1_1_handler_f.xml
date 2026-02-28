@@ -1,0 +1,102 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="classeva_1_1_handler_f" kind="class" language="C++" prot="public">
+    <compoundname>eva::HandlerF</compoundname>
+    <basecompoundref refid="classeva_1_1_i_handler" prot="public" virt="non-virtual">eva::IHandler</basecompoundref>
+    <includes refid="eva_handler_8h" local="no">evaHandler.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classeva_1_1_handler_f_1af9867008eee8d78c6f089522667b23ab" prot="private" static="no" mutable="no">
+        <type>void(*</type>
+        <definition>void(* eva::HandlerF::function) (void *, long)</definition>
+        <argsstring>)(void *, long)</argsstring>
+        <name>function</name>
+        <qualifiedname>eva::HandlerF::function</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evaHandler.h" line="56" column="9" bodyfile="src/evaHandler.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classeva_1_1_handler_f_1a4d1b2c1556498118e6b5aca57162c74a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>eva::HandlerF::HandlerF</definition>
+        <argsstring>(void(*function)(void *, long))</argsstring>
+        <name>HandlerF</name>
+        <qualifiedname>eva::HandlerF::HandlerF</qualifiedname>
+        <param>
+          <type>void(*)(void *, long)</type>
+          <declname>function</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evaHandler.h" line="45" column="9" bodyfile="src/evaHandler.h" bodystart="45" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="function" id="classeva_1_1_handler_f_1a9029b5e5bf78f933dc9299de8a9b0d3b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void eva::HandlerF::invoke</definition>
+        <argsstring>(void *msgSender, long argsMask) override</argsstring>
+        <name>invoke</name>
+        <qualifiedname>eva::HandlerF::invoke</qualifiedname>
+        <reimplements refid="classeva_1_1_i_handler_1a81dab5d3b9bed6a215f357a75e11b4e6">invoke</reimplements>
+        <param>
+          <type>void *</type>
+          <declname>msgSender</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>argsMask</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evaHandler.h" line="50" column="14" bodyfile="src/evaHandler.h" bodystart="50" bodyend="53"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para><ref refid="classeva_1_1_handler" kindref="compound">Handler</ref> that calls a free function. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>eva::HandlerF</label>
+        <link refid="classeva_1_1_handler_f"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>eva::IHandler</label>
+        <link refid="classeva_1_1_i_handler"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>eva::HandlerF</label>
+        <link refid="classeva_1_1_handler_f"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>eva::IHandler</label>
+        <link refid="classeva_1_1_i_handler"/>
+      </node>
+    </collaborationgraph>
+    <location file="src/evaHandler.h" line="42" column="5" bodyfile="src/evaHandler.h" bodystart="43" bodyend="57"/>
+    <listofallmembers>
+      <member refid="classeva_1_1_handler_f_1af9867008eee8d78c6f089522667b23ab" prot="private" virt="non-virtual"><scope>eva::HandlerF</scope><name>function</name></member>
+      <member refid="classeva_1_1_handler_f_1a4d1b2c1556498118e6b5aca57162c74a" prot="public" virt="non-virtual"><scope>eva::HandlerF</scope><name>HandlerF</name></member>
+      <member refid="classeva_1_1_handler_f_1a9029b5e5bf78f933dc9299de8a9b0d3b" prot="public" virt="virtual"><scope>eva::HandlerF</scope><name>invoke</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

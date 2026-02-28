@@ -1,0 +1,191 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="classeva_1_1_tickable" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>eva::Tickable</compoundname>
+    <derivedcompoundref refid="classeva_1_1_toggle" prot="public" virt="non-virtual">eva::Toggle&lt; BinarizeDecor&lt; StabilizeDecor&lt; DigitalPinReader&lt; PIN, PIN_MODE &gt; &gt;, ACTIVE_LEVEL &gt; &gt;</derivedcompoundref>
+    <derivedcompoundref refid="classeva_1_1_toggle" prot="public" virt="non-virtual">eva::Toggle&lt; BinarizeDecor&lt; AnalogPinReader&lt; PIN, INPUT &gt;, THRESHOLD &gt; &gt;</derivedcompoundref>
+    <derivedcompoundref refid="classeva_1_1_delay_timer" prot="public" virt="non-virtual">eva::DelayTimer</derivedcompoundref>
+    <derivedcompoundref refid="classeva_1_1_toggle" prot="public" virt="non-virtual">eva::Toggle&lt; READER &gt;</derivedcompoundref>
+    <includes refid="eva_tickable_8h" local="no">evaTickable.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classeva_1_1_tickable_1a31b3f41cac1a6044d3a9439bdad50513" prot="private" static="no" mutable="no">
+        <type>Tickable *</type>
+        <definition>Tickable* eva::Tickable::next</definition>
+        <argsstring></argsstring>
+        <name>next</name>
+        <qualifiedname>eva::Tickable::next</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evaTickable.h" line="30" column="14" bodyfile="src/evaTickable.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classeva_1_1_tickable_1a667f47cdee5f03eed323cebb27e8ab8e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>eva::Tickable::Tickable</definition>
+        <argsstring>()</argsstring>
+        <name>Tickable</name>
+        <qualifiedname>eva::Tickable::Tickable</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evaTickable.h" line="12" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classeva_1_1_tickable_1ad13287a77a330b14272d3e1ccdbb3de7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void eva::Tickable::tac</definition>
+        <argsstring>()</argsstring>
+        <name>tac</name>
+        <qualifiedname>eva::Tickable::tac</qualifiedname>
+        <briefdescription>
+<para>Triggers tick on this and all linked tickables. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evaTickable.h" line="24" column="10"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classeva_1_1_tickable_1a3f1a1833bfd4a2d9aea504a84cb1438d" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Tickable *</type>
+        <definition>static Tickable * eva::Tickable::chain</definition>
+        <argsstring>(Tickable *mount=0)</argsstring>
+        <name>chain</name>
+        <qualifiedname>eva::Tickable::chain</qualifiedname>
+        <param>
+          <type>Tickable *</type>
+          <declname>mount</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+<para>Gets or sets the head of the tickable chain. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>mount</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If provided, adds to chain; if null, returns chain head </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Head of chain </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evaTickable.h" line="19" column="21"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classeva_1_1_tickable_1afc78886ffa282153328bffab36c347fc" prot="private" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>short</type>
+        <definition>virtual short eva::Tickable::tick</definition>
+        <argsstring>()=0</argsstring>
+        <name>tick</name>
+        <qualifiedname>eva::Tickable::tick</qualifiedname>
+        <reimplementedby refid="classeva_1_1_button_1a5e79a839c64b5c5fdde2a68536e73096">tick</reimplementedby>
+        <reimplementedby refid="classeva_1_1_button_1a5e79a839c64b5c5fdde2a68536e73096">tick</reimplementedby>
+        <reimplementedby refid="classeva_1_1_delay_timer_1ac0c9ae90c288cc506947239ee3d99d17">tick</reimplementedby>
+        <reimplementedby refid="classeva_1_1_multi_button_1a1ac5f74cc1c6e729a755e18851684838">tick</reimplementedby>
+        <reimplementedby refid="classeva_1_1_multi_button_1a1ac5f74cc1c6e729a755e18851684838">tick</reimplementedby>
+        <reimplementedby refid="classeva_1_1_repeat_timer_1a62ca81919b7873454b88e43467d7c448">tick</reimplementedby>
+        <reimplementedby refid="classeva_1_1_toggle_1adb132d8fc1e96f77840d2c66a59a5160">tick</reimplementedby>
+        <reimplementedby refid="classeva_1_1_toggle_1adb132d8fc1e96f77840d2c66a59a5160">tick</reimplementedby>
+        <reimplementedby refid="classeva_1_1_toggle_1adb132d8fc1e96f77840d2c66a59a5160">tick</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evaTickable.h" line="27" column="19"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Base class for objects that need periodic updates. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="7">
+        <label>eva::Button&lt; BinarizeDecor&lt; StabilizeDecor&lt; DigitalPinReader&lt; PIN, PIN_MODE &gt; &gt;, ACTIVATES_ON &gt; &gt;</label>
+        <link refid="classeva_1_1_button"/>
+        <childnode refid="6" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>eva::Button&lt; READER &gt;</label>
+        <link refid="classeva_1_1_button"/>
+        <childnode refid="6" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>eva::DelayTimer</label>
+        <link refid="classeva_1_1_delay_timer"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>eva::MultiButton&lt; QuantizeDecor&lt; StabilizeDecor&lt; AnalogPinReader&lt; PIN, PIN_MODE &gt; &gt;, LEVELS... &gt; &gt;</label>
+        <link refid="classeva_1_1_multi_button"/>
+        <childnode refid="8" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>eva::MultiButton&lt; READER &gt;</label>
+        <link refid="classeva_1_1_multi_button"/>
+        <childnode refid="8" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>eva::RepeatTimer</label>
+        <link refid="classeva_1_1_repeat_timer"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>eva::Tickable</label>
+        <link refid="classeva_1_1_tickable"/>
+      </node>
+      <node id="6">
+        <label>eva::Toggle&lt; READER &gt;</label>
+        <link refid="classeva_1_1_toggle"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>eva::Toggle&lt; BinarizeDecor&lt; AnalogPinReader&lt; PIN, INPUT &gt;, THRESHOLD &gt; &gt;</label>
+        <link refid="classeva_1_1_toggle"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>eva::Toggle&lt; BinarizeDecor&lt; StabilizeDecor&lt; DigitalPinReader&lt; PIN, PIN_MODE &gt; &gt;, ACTIVE_LEVEL &gt; &gt;</label>
+        <link refid="classeva_1_1_toggle"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="src/evaTickable.h" line="9" column="3" bodyfile="src/evaTickable.h" bodystart="10" bodyend="31"/>
+    <listofallmembers>
+      <member refid="classeva_1_1_tickable_1a3f1a1833bfd4a2d9aea504a84cb1438d" prot="public" virt="non-virtual"><scope>eva::Tickable</scope><name>chain</name></member>
+      <member refid="classeva_1_1_tickable_1a31b3f41cac1a6044d3a9439bdad50513" prot="private" virt="non-virtual"><scope>eva::Tickable</scope><name>next</name></member>
+      <member refid="classeva_1_1_tickable_1ad13287a77a330b14272d3e1ccdbb3de7" prot="public" virt="non-virtual"><scope>eva::Tickable</scope><name>tac</name></member>
+      <member refid="classeva_1_1_tickable_1afc78886ffa282153328bffab36c347fc" prot="private" virt="pure-virtual"><scope>eva::Tickable</scope><name>tick</name></member>
+      <member refid="classeva_1_1_tickable_1a667f47cdee5f03eed323cebb27e8ab8e" prot="public" virt="non-virtual"><scope>eva::Tickable</scope><name>Tickable</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
