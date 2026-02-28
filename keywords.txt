@@ -1,0 +1,43 @@
+#######################################
+# Classes
+#######################################
+Button	KEYWORD1
+MultiButton	KEYWORD1
+Switch	KEYWORD1
+DelayTimer	KEYWORD1
+IntervalTimer	KEYWORD1
+Indicator	KEYWORD1
+Joystick	KEYWORD1
+Slider	KEYWORD1
+List	KEYWORD1
+Loopable	KEYWORD1
+Delegate	KEYWORD1
+DelegateF	KEYWORD1
+
+#######################################
+# Methods
+#######################################
+setListener	KEYWORD2
+enable	KEYWORD2
+getValue	KEYWORD2
+start	KEYWORD2
+stop	KEYWORD2
+repeat	KEYWORD2
+on	KEYWORD2
+off	KEYWORD2
+append	KEYWORD2
+first	KEYWORD2
+count	KEYWORD2
+tac	KEYWORD2
+chain	KEYWORD2
+
+#######################################
+# Events
+#######################################
+ON_PRESS	LITERAL1
+ON_RELEASE	LITERAL1
+ON_SHORTCLICK	LITERAL1
+ON_LONGCLICK	LITERAL1
+ON_ACTIVE	LITERAL1
+ON_INACTIVE	LITERAL1
+ON_CHANGE	LITERAL1
