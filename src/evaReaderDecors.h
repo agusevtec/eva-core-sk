@@ -9,6 +9,9 @@
 
 namespace eva
 {
+    /**
+     * @brief Decorator that stabilizes readings by requiring value to be stable for a period
+     */
     template <class READER>
     class StabilizeDecor : public READER
     {
@@ -32,6 +35,9 @@ namespace eva
         signed short keepedValue = 0;
     };
 
+    /**
+     * @brief Decorator that converts analog reading to binary based on level
+     */
     template <class READER, int LEVEL>
     class BinarizeDecor : public READER
     {
@@ -42,6 +48,9 @@ namespace eva
         }
     };
 
+    /**
+     * @brief Decorator that normalizes readings to -1, 0, 1 based on threshold
+     */
     template <class READER, int LEVEL>
     class PolarizeDecor : public READER
     {
@@ -52,10 +61,17 @@ namespace eva
         }
     };
 
+    /**
+     * @brief Decorator that quantizes analog readings to discrete levels
+     */
     template <class READER, signed short... LEVELS>
     class QuantizeDecor : public READER
     {
     public:
+        /**
+         * @brief Gets quantized level index
+         * @return Level index (0 for no input, 1..n for specific levels)
+         */
         signed short getValue()
         {
             signed short value = READER::getValue() * 2;
@@ -68,6 +84,11 @@ namespace eva
             return 0;
         }
 
+        /**
+         * @brief Gets threshold value for a level
+         * @param index Level index
+         * @return Threshold value
+         */
         signed short getLevel(unsigned char index)
         {
             if ((index < 0) || (index > sizeof...(LEVELS)))

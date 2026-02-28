@@ -6,13 +6,16 @@
 
 namespace eva
 {
-    template <int PIN, int PINMODE>
+    /**
+     * @brief Reads digital pin value
+     */
+    template <int PIN, int PIN_MODE>
     class DigitalPinReader
     {
     public:
         DigitalPinReader()
         {
-            pinMode(PIN, PINMODE);
+            pinMode(PIN, PIN_MODE);
         }
 
         signed short getValue()
@@ -21,13 +24,16 @@ namespace eva
         }
     };
 
-    template <int PIN, int PINMODE>
+    /**
+     * @brief Reads analog pin value
+     */
+    template <int PIN, int PIN_MODE>
     class AnalogPinReader
     {
     public:
         AnalogPinReader()
         {
-            pinMode(PIN, PINMODE);
+            pinMode(PIN, PIN_MODE);
         }
 
         signed short getValue()

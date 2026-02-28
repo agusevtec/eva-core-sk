@@ -12,7 +12,7 @@ namespace eva
   struct SW_EVENTS
   {
     static const unsigned short ON_ACTIVE = 0x1000;
-    static const unsigned short ON_INACTIVE = 0x2000; 
+    static const unsigned short ON_INACTIVE = 0x2000;
     static const unsigned short ON_CHANGE = 0x3000;
   };
 
@@ -58,6 +58,11 @@ namespace eva
       return this;
     }
 
+    /**
+     * @brief Enables or disables the toggle
+     * @param enabled True to enable, false to disable
+     * @return Pointer to this
+     */
     Toggle *enable(bool enabled)
     {
       this->encodedState = (enabled) ? this->encodedState | ENABLED : this->encodedState & ~ENABLED;
@@ -106,17 +111,34 @@ namespace eva
     static const unsigned char ENABLED = 0x04;
   };
 
-  // Удобные алиасы для разных типов переключателей
-  template <int PIN, int PINMODE, int ACTIVE_LEVEL>
-  using PinSwitch = Toggle<BinarizeDecor<StabilizeDecor<DigitalPinReader<PIN, PINMODE>>, ACTIVE_LEVEL>>;
+  /**
+   * @brief Pin-based switch with specified active level
+   * @tparam PIN Arduino pin number
+   * @tparam PIN_MODE Pin mode (INPUT_PULLUP, INPUT, etc.)
+   * @tparam ACTIVE_LEVEL Level that means active (LOW or HIGH)
+   */
+  template <int PIN, int PIN_MODE, int ACTIVE_LEVEL>
+  using PinSwitch = Toggle<BinarizeDecor<StabilizeDecor<DigitalPinReader<PIN, PIN_MODE>>, ACTIVE_LEVEL>>;
 
+  /**
+   * @brief Pull-up switch (button connected to GND)
+   * @tparam PIN Arduino pin number with INPUT_PULLUP
+   */
   template <int PIN>
   using PullupSwitch = PinSwitch<PIN, INPUT_PULLUP, LOW>; // кнопка на GND
 
+  /**
+   * @brief Pull-down switch (button connected to VCC)
+   * @tparam PIN Arduino pin number with INPUT
+   */
   template <int PIN>
   using PulldownSwitch = PinSwitch<PIN, INPUT, HIGH>; // кнопка на VCC
 
-  // Для аналоговых датчиков с порогом
+  /**
+   * @brief Threshold-based switch using analog input
+   * @tparam PIN Arduino analog pin number
+   * @tparam THRESHOLD Value that separates active/inactive states
+   */
   template <int PIN, int THRESHOLD>
   using ThresholdSwitch = Toggle<BinarizeDecor<AnalogPinReader<PIN, INPUT>, THRESHOLD>>;
 

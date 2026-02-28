@@ -4,12 +4,19 @@
 #pragma once
 namespace eva
 {
+    /**
+     * @brief Interface for message handlers
+     */
     class IHandler
     {
     public:
         virtual void invoke(void *msgSender, long argsMask) = 0;
     };
 
+    /**
+     * @brief Handler that calls a member method
+     * @tparam T Class type of the receiver
+     */
     template <class T>
     class Handler : public IHandler
     {
@@ -29,6 +36,9 @@ namespace eva
         T *msgReceiver;
     };
 
+    /**
+     * @brief Handler that calls a free function
+     */
     class HandlerF : public IHandler
     {
     public:

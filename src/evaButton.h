@@ -15,30 +15,10 @@ namespace eva
   };
 
   /**
-   * @brief Button behavior in an Event-Driven manner
-   * This implementation is based on an abstract source (@see IReader). However, for the most commonly used case
-   * (the pin button), a factory method is also provided. See the example below.
-   * @code {.cpp}
-   * #include <evaButton.h>
-   * #include <evaTac.h>
-   * using namespace eva;
-   * class MyApp1
-   * {
-   * public:
-   * void onMyButton1(void *msgSender, long argsMask)
-   *   {
-   *     if ((Button *)msgSender == &this->myButton1)
-   *       if (argsMask & Button::ONRELEASED) {}
-   *   }
-   * private:
-   *   Button &myButton1 = Button::Create<3, INPUT_PULLUP, LOW>()
-   *                         .setListener(new Handler<MyApp1>(this, &onMyButton1), Button::ON_SHORTCLICK | Button::ON_LONGCLICK);
-   * } myapp1;
-   * void tick()
-   * {
-   *   Ticker::tac();
-   * }
-   * @endcode
+   * @brief Button with press, release, short click and long click detection
+   *
+   * @tparam READER Input reader type that provides getValue()
+   *
    */
 
   template <class READER>
@@ -53,8 +33,8 @@ namespace eva
       if (!(this->encodedState & ENABLED))
         return 0;
 
-      this->encodedState = (this->encodedState & 0xfc) | ((this->encodedState << 1) & 0x03);
-      this->encodedState = (this->encodedState & 0xfe) | (READER::getValue());
+      unsigned char wasPressed = this->encodedState & ISPRESSED;
+      unsigned char isPressed = READER::getValue();
 
       if (this->pressTime and (millis() - this->pressTime) > 750)
       {
@@ -62,16 +42,18 @@ namespace eva
         this->pressTime = 0;
       }
 
-      if ((this->encodedState & 0x3) == 0x02) // 1 -> 0
+      if (wasPressed && !isPressed)
       {
+        this->encodedState = this->encodedState & ~ISPRESSED;
         if (this->pressTime and (millis() - this->pressTime < 750))
           notify(B_EVENTS::ON_SHORTCLICK);
         notify(B_EVENTS::ON_RELEASE);
         this->pressTime = 0;
       }
 
-      if ((this->encodedState & 0x3) == 0x01) // 0 -> 1
+      if (!wasPressed && isPressed)
       {
+        this->encodedState = this->encodedState | ISPRESSED;
         this->pressTime = millis();
         notify(B_EVENTS::ON_PRESS);
       }
@@ -83,20 +65,22 @@ namespace eva
 
   private:
     static const unsigned char ISPRESSED = 0x01;
-    static const unsigned char WASPRESSED = 0x02;
     static const unsigned char ENABLED = 0x04;
   };
 
   /**
-   * @brief factory method for the pin button case
+   * @brief Button connected directly to a digital pin
+   * Includes stabilization and binarization decorators.
+   * Debounces input and generates events based on button state changes.
+   * Long click threshold is fixed at 750ms.
    *
    * @tparam PIN
-   * @tparam PINMODE
-   * @tparam ACTIVATESON - the level of a signal corresponding to the pressed state (LOW OR HIGH)
+   * @tparam PIN_MODE
+   * @tparam ACTIVATES_ON - the level of a signal corresponding to the pressed state (LOW OR HIGH)
    * @return Button&
    */
-  template <int PIN, int PINMODE, int ACTIVATESON>
-  using PinButton = Button<BinarizeDecor<StabilizeDecor<DigitalPinReader<PIN, PINMODE>>, ACTIVATESON>>;
+  template <int PIN, int PIN_MODE, int ACTIVATES_ON>
+  using PinButton = Button<BinarizeDecor<StabilizeDecor<DigitalPinReader<PIN, PIN_MODE>>, ACTIVATES_ON>>;
 };
 
 #endif

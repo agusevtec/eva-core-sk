@@ -3,6 +3,9 @@
 
 namespace eva
 {
+  /**
+   * @brief Iterator node for List
+   */
   template <class ItemClass>
   struct ListIterator
   {
@@ -11,6 +14,10 @@ namespace eva
     ListIterator(ItemClass &item) : item(item), next(0) {}
   };
 
+  /**
+   * @brief Simple singly-linked list container
+   * @tparam ItemClass Type of items to store
+   */
   template <class ItemClass>
   class List
   {
@@ -23,6 +30,9 @@ namespace eva
 
     List &operator=(const List &) = delete;
 
+    /**
+     * @brief Destructor - frees all nodes
+     */
     ~List()
     {
       ListIterator<ItemClass> *current = this->head;
@@ -34,6 +44,10 @@ namespace eva
       }
     }
 
+    /**
+     * @brief Appends an item to the list
+     * @param item Item to append
+     */
     void append(ItemClass item)
     {
       if (!this->head)
@@ -43,11 +57,20 @@ namespace eva
       this->length++;
     }
 
+    /**
+     * @brief Gets first iterator
+     * @return Pointer to first iterator
+     */
     ListIterator<ItemClass> *first()
     {
       return this->head;
     }
 
+    /**
+     * @brief Array-style access by index
+     * @param index Index (0-based)
+     * @return Reference to item
+     */
     ItemClass &operator[](unsigned index)
     {
       int i = 0;
@@ -56,6 +79,10 @@ namespace eva
           return iter->item;
     }
 
+    /**
+     * @brief Gets number of items in list
+     * @return Item count
+     */
     unsigned inline count()
     {
       return this->length;

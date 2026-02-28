@@ -7,10 +7,21 @@
 
 namespace eva
 {
+    /**
+     * @brief Indicator that blinks a specified number of times then notifies listener
+     */
     class CountdownIndicator : public BlinkingIndicator
     {
     public:
         using BlinkingIndicator::BlinkingIndicator;
+        
+        /**
+         * @brief Starts countdown blinking
+         * @param period Blinking period in milliseconds
+         * @param dutycyclePercent On-time percentage
+         * @param count Number of blinks before stopping
+         * @param listener Handler to notify when countdown completes
+         */
         void on(unsigned short period, unsigned short dutycyclePercent, unsigned char count, IHandler *listener);
 
     private:

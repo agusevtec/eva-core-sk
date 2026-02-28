@@ -6,11 +6,26 @@
 
 namespace eva
 {
+    /**
+     * @brief Timer that fires repeatedly at fixed intervals
+     */
     class RepeatTimer : public DelayTimer
     {
     public:
         using DelayTimer::DelayTimer;
+        
+        /**
+         * @brief Constructor that starts the timer
+         * @param period Interval in milliseconds
+         * @param listener Handler to invoke on each tick
+         */
         RepeatTimer(unsigned period, IHandler *listener);
+        
+        /**
+         * @brief Starts or restarts the repeating timer
+         * @param period Interval in milliseconds
+         * @param listener Handler to invoke on each tick
+         */
         void start(unsigned period, IHandler *listener);
 
     private:
