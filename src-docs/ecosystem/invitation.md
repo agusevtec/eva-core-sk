@@ -10,7 +10,7 @@ Projects in the EVA ecosystem live in the `eva` namespace and are built around t
 - **Handler** — events instead of polling
 - **Template composition** — flexibility without performance loss
 
-## 🧩 Ecosystem Structure
+## Ecosystem Structure
 
 ```
 eva/                          # Namespace

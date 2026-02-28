@@ -78,8 +78,11 @@ public:
 ```
 
 **What's happening:**
+
 - `DifferentialReader` reads the difference between two analog pins, canceling common-mode noise
+
 - `ZoneMapper` translates the continuous difference into three discrete states: left (1), center (0), right (2)
+
 - `MultiButton` provides press/release semantics for zone entry/exit
 
 ## Example 2: Virtual Button from External Events
@@ -113,11 +116,13 @@ using VirtualButton = Button<StabilizeDecor<ExternalStateReader>>;
 // ExternalStateReader::update(0);  // Release
 ```
 
-**Key concept:** The `Button` class then handles all timing and generates appropriate press/release/click events automatically.
+**What's happening** 
+
+The `Button` class then handles all timing and generates appropriate press/release/click events automatically.
 
 ## The Big Picture
 
-The library doesn't care **where** the values come from. Whether it's:
+The library doesn't care where the values come from. Whether it's:
 - Physical pins through standard readers
 - Differential calculations like the joystick example
 - External signals injected by callbacks
@@ -127,4 +132,4 @@ The same `Button` and `MultiButton` classes work unchanged. They just need a `ge
 - `0` meaning "nothing is happening"
 - Positive values meaning "something is happening" (with different codes for different sources)
 
-This separation of **value production** from **state management** is what makes the library truly flexible. You can adapt it to virtually any input scenario without modifying the core classes.
+This separation of value production from state management is what makes the library truly flexible. You can adapt it to virtually any input scenario without modifying the core classes.
