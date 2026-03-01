@@ -14,7 +14,7 @@
         <link rel="prev" href="../working-with-buttons/">
       
       
-        <link rel="next" href="../optimization/">
+        <link rel="next" href="../performance/">
       
       
         
@@ -462,14 +462,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../optimization/" class="md-nav__link">
+      <a href="../performance/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Optimization
+    Performance
   
 
     
@@ -863,10 +863,18 @@
 <span class="p">};</span>
 </code></pre></div>
 
-<p><strong>What's happening:</strong>
-- <code>DifferentialReader</code> reads the difference between two analog pins, canceling common-mode noise
-- <code>ZoneMapper</code> translates the continuous difference into three discrete states: left (1), center (0), right (2)
-- <code>MultiButton</code> provides press/release semantics for zone entry/exit</p>
+<p><strong>What's happening:</strong></p>
+<ul>
+<li>
+<p><code>DifferentialReader</code> reads the difference between two analog pins, canceling common-mode noise</p>
+</li>
+<li>
+<p><code>ZoneMapper</code> translates the continuous difference into three discrete states: left (1), center (0), right (2)</p>
+</li>
+<li>
+<p><code>MultiButton</code> provides press/release semantics for zone entry/exit</p>
+</li>
+</ul>
 <h2 id="example-2-virtual-button-from-external-events">Example 2: Virtual Button from External Events<a class="headerlink" href="#example-2-virtual-button-from-external-events" title="Permanent link">&para;</a></h2>
 <p>The same pattern works when values come from outside the normal polling loop—like interrupts, callbacks, or message decoders:</p>
 <div class="codehilite"><pre><span></span><code><span class="c1">// A reader that stores the last known state</span>
@@ -895,9 +903,10 @@
 <span class="c1">// ExternalStateReader::update(0);  // Release</span>
 </code></pre></div>
 
-<p><strong>Key concept:</strong> The <code>Button</code> class then handles all timing and generates appropriate press/release/click events automatically.</p>
+<p><strong>What's happening</strong> </p>
+<p>The <code>Button</code> class then handles all timing and generates appropriate press/release/click events automatically.</p>
 <h2 id="the-big-picture">The Big Picture<a class="headerlink" href="#the-big-picture" title="Permanent link">&para;</a></h2>
-<p>The library doesn't care <strong>where</strong> the values come from. Whether it's:
+<p>The library doesn't care where the values come from. Whether it's:
 - Physical pins through standard readers
 - Differential calculations like the joystick example
 - External signals injected by callbacks
@@ -905,7 +914,7 @@
 <p>The same <code>Button</code> and <code>MultiButton</code> classes work unchanged. They just need a <code>getValue()</code> that returns:
 - <code>0</code> meaning "nothing is happening"
 - Positive values meaning "something is happening" (with different codes for different sources)</p>
-<p>This separation of <strong>value production</strong> from <strong>state management</strong> is what makes the library truly flexible. You can adapt it to virtually any input scenario without modifying the core classes.</p>
+<p>This separation of value production from state management is what makes the library truly flexible. You can adapt it to virtually any input scenario without modifying the core classes.</p>
 
 
 
