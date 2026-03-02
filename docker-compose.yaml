@@ -1,0 +1,10 @@
+services:
+  test-runner:
+    build:
+      context: ./test_runner
+      dockerfile: Dockerfile
+    volumes:
+      - ./src:/libraries/code_under_test
+      - ./tests:/sketch/tests
+    stdin_open: true
+    tty: true

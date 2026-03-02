@@ -2,6 +2,7 @@
 set -euo pipefail
 
 compile_arduino_sketch() {
+    echo "$1" "$2"
     local sketch_dir="$1"
     local target_filename="$2"
 
@@ -46,6 +47,7 @@ compile_arduino_sketch() {
     if ! arduino-cli compile \
         --fqbn "$fqbn" \
         $build_property_flag \
+        --libraries /libraries \
         --output-dir "$target_dir" \
         "$sketch_dir"; then
         echo "Compilation failed" >&2

@@ -1,7 +1,7 @@
 #ifndef EVAJOYSTICK_H_
 #define EVAJOYSTICK_H_
 #include "evaStdReaders.h"
-
+#include "evaCommon.h"
 namespace eva
 {
   /**
@@ -57,7 +57,7 @@ namespace eva
    * @tparam MAX Maximum analog reading
    */
   template <int PIN, int PIN_MODE, int MIN, int MAX>
-  using PinJoystick = Joystick<AnalogPinReader<PIN, PIN_MODE>, MIN, (MAX - MIN) / 2, MAX>;
+  using PinSymmetricJoystick = Joystick<AnalogPinReader<PIN, PIN_MODE>, MIN, (MAX - MIN) / 2, MAX>;
   /**
    * @brief Pin-based joystick with custom center position
    * @tparam PIN Arduino pin number

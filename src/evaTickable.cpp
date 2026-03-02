@@ -27,3 +27,18 @@ void Tickable::tac()
   if (this->next)
     this->next->tac();
 }
+
+inline unsigned long eva::Tickable::millis()
+{
+#ifndef UNIT_TESTING
+  return millis();
+#else
+  return self->millisMock;
+#endif
+}
+#ifdef UNIT_TESTING
+void setMillis(unsigned long millisMock)
+{
+  self->millisMock = millisMock;
+}
+#endif
