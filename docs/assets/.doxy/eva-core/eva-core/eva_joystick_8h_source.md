@@ -11,7 +11,7 @@
 #ifndef EVAJOYSTICK_H_
 #define EVAJOYSTICK_H_
 #include "evaStdReaders.h"
-
+#include "evaCommon.h"
 namespace eva
 {
   template <class READER, int MIN, int MIDDLE, int MAX>
@@ -41,7 +41,7 @@ namespace eva
     signed short trim;
   };
   template <int PIN, int PIN_MODE, int MIN, int MAX>
-  using PinJoystick = Joystick<AnalogPinReader<PIN, PIN_MODE>, MIN, (MAX - MIN) / 2, MAX>;
+  using PinSymmetricJoystick = Joystick<AnalogPinReader<PIN, PIN_MODE>, MIN, (MAX - MIN) / 2, MAX>;
   template <int PIN, int PIN_MODE, int MIN, int MIDDLE, int MAX>
   using PinJoystick = Joystick<AnalogPinReader<PIN, PIN_MODE>, MIN, MIDDLE, MAX>;
 };

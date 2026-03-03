@@ -6,15 +6,7 @@ Like most myths, this one contains a grain of truth—but only a grain.
 
 The overhead in OOP comes almost exclusively from one feature: virtual methods. 
 
-Each virtual method adds:
-
-- A vtable pointer per object (2-4 bytes of RAM)
-
-- A vtable per class (stored in flash, negligible)
-
-- Indirect function call overhead (a few cycles)
-
-The eva library is designed around this reality. 
+The eva-core-sk library is designed around this reality. 
 Look at how buttons are built:
 
 ```cpp

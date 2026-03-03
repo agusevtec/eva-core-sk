@@ -7,6 +7,7 @@ Here is a list of all files with brief descriptions:
 * **dir** [**src**](dir_68267d1309a1af8e8297ef4c3efbcdba.md)     
     * **file** [**evaBlinkingIndicator.h**](eva_blinking_indicator_8h.md)     
     * **file** [**evaButton.h**](eva_button_8h.md)     
+    * **file** [**evaCommon.h**](eva_common_8h.md)     
     * **file** [**evaCountdownIndicator.h**](eva_countdown_indicator_8h.md)     
     * **file** [**evaDelayTimer.h**](eva_delay_timer_8h.md)     
     * **file** [**evaHandler.h**](eva_handler_8h.md)     

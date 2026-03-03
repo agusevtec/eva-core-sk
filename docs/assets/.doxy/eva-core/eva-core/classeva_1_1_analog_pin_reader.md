@@ -18,7 +18,7 @@ _Reads analog pin value._
 
 
 
-Inherited by the following classes: [eva::Joystick](classeva_1_1_joystick.md),  [eva::Slider](classeva_1_1_slider.md)
+Inherited by the following classes: [eva::Joystick](classeva_1_1_joystick.md),  [eva::Joystick](classeva_1_1_joystick.md),  [eva::Slider](classeva_1_1_slider.md)
 
 
 

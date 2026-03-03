@@ -71,7 +71,6 @@
 ## l
 
 * **listener** ([**eva::CountdownIndicator**](classeva_1_1_countdown_indicator.md), [**eva::DelayTimer**](classeva_1_1_delay_timer.md), [**eva::Toggle**](classeva_1_1_toggle.md))
-* **List** ([**eva::List**](classeva_1_1_list.md))
 * **length** ([**eva::List**](classeva_1_1_list.md))
 * **ListIterator** ([**eva::ListIterator**](structeva_1_1_list_iterator.md))
 * **levelCode** ([**eva::MultiButton**](classeva_1_1_multi_button.md))
@@ -82,6 +81,7 @@
 
 * **method** ([**eva::Handler**](classeva_1_1_handler.md))
 * **msgReceiver** ([**eva::Handler**](classeva_1_1_handler.md))
+* **millis** ([**eva::Tickable**](classeva_1_1_tickable.md))
 
 
 ## n
@@ -99,7 +99,6 @@
 * **ON\_SHORTCLICK** ([**eva::B\_EVENTS**](structeva_1_1_b___e_v_e_n_t_s.md), [**eva::MB\_EVENTS**](structeva_1_1_m_b___e_v_e_n_t_s.md))
 * **off** ([**eva::BlinkingIndicator**](classeva_1_1_blinking_indicator.md), [**eva::Indicator**](classeva_1_1_indicator.md))
 * **on** ([**eva::BlinkingIndicator**](classeva_1_1_blinking_indicator.md), [**eva::CountdownIndicator**](classeva_1_1_countdown_indicator.md), [**eva::Indicator**](classeva_1_1_indicator.md))
-* **operator=** ([**eva::List**](classeva_1_1_list.md))
 * **operator[]** ([**eva::List**](classeva_1_1_list.md))
 * **ON\_ACTIVE** ([**eva::SW\_EVENTS**](structeva_1_1_s_w___e_v_e_n_t_s.md))
 * **ON\_CHANGE** ([**eva::SW\_EVENTS**](structeva_1_1_s_w___e_v_e_n_t_s.md))

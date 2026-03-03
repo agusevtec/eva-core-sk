@@ -14,8 +14,7 @@
 #pragma once
 
 #include <Arduino.h>
-
-#define SIGN(x) (((x) > 0) - ((x) < 0))
+#include "evaCommon.h"
 
 namespace eva
 {

@@ -332,6 +332,7 @@
       <member refid="classeva_1_1_toggle_1ab9ac42f4e89aaafedc10c77df1ff9b70" prot="public" virt="non-virtual"><scope>eva::Toggle</scope><name>getValue</name></member>
       <member refid="classeva_1_1_toggle_1aa49bd6f28380c354bb7f4934379bec81" prot="private" virt="non-virtual"><scope>eva::Toggle</scope><name>ISACTIVE</name></member>
       <member refid="classeva_1_1_toggle_1a906b20261956f639f178108022191919" prot="protected" virt="non-virtual"><scope>eva::Toggle</scope><name>listener</name></member>
+      <member refid="classeva_1_1_tickable_1a828ad5f4e70189311b93c6a504e088b0" prot="public" virt="non-virtual"><scope>eva::Toggle</scope><name>millis</name></member>
       <member refid="classeva_1_1_toggle_1ad4bc028f355b5553fe7990d2e4ac0ec1" prot="protected" virt="non-virtual"><scope>eva::Toggle</scope><name>notify</name></member>
       <member refid="classeva_1_1_toggle_1a4c0a992449877824c9a04d3d321c5764" prot="public" virt="non-virtual"><scope>eva::Toggle</scope><name>setListener</name></member>
       <member refid="classeva_1_1_tickable_1ad13287a77a330b14272d3e1ccdbb3de7" prot="public" virt="non-virtual"><scope>eva::Toggle</scope><name>tac</name></member>

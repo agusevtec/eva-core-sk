@@ -7,11 +7,12 @@ site_dir: 'docs'
 nav:
   - Why EVA: index.md
   - QuickStart:
-    - The Loop Cycle: quickstart/loop-cycle.md
+    - The loop-cycle: quickstart/loop-cycle.md
     - Working with buttons: quickstart/working-with-buttons.md
     - Flexibility: quickstart/flexibility.md
     - Performance: quickstart/performance.md
   - Ecosystem:
+    - Motivation: ecosystem/motivation.md
     - Invitation: ecosystem/invitation.md
 
   - API Reference:

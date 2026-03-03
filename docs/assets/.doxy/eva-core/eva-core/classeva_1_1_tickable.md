@@ -54,6 +54,7 @@ Inherited by the following classes: [eva::Toggle](classeva_1_1_toggle.md),  [eva
 | Type | Name |
 | ---: | :--- |
 |   | [**Tickable**](#function-tickable) () <br> |
+|  unsigned long | [**millis**](#function-millis) () <br> |
 |  void | [**tac**](#function-tac) () <br>_Triggers tick on this and all linked tickables._  |
 
 
@@ -97,6 +98,19 @@ Inherited by the following classes: [eva::Toggle](classeva_1_1_toggle.md),  [eva
 
 ```C++
 eva::Tickable::Tickable () 
+```
+
+
+
+
+<hr>
+
+
+
+### function millis 
+
+```C++
+inline unsigned long eva::Tickable::millis () 
 ```
 
 

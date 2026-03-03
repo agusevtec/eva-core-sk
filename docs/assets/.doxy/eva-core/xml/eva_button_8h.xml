@@ -14,6 +14,10 @@
         <childnode refid="2" relation="include">
         </childnode>
       </node>
+      <node id="8">
+        <label>evaCommon.h</label>
+        <link refid="eva_common_8h_source"/>
+      </node>
       <node id="4">
         <label>evaHandler.h</label>
         <link refid="eva_handler_8h_source"/>
@@ -22,6 +26,8 @@
         <label>evaReaderDecors.h</label>
         <link refid="eva_reader_decors_8h_source"/>
         <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
         </childnode>
       </node>
       <node id="5">

@@ -27,7 +27,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaReaderDecors.h" line="58" column="22" bodyfile="src/evaReaderDecors.h" bodystart="58" bodyend="61"/>
+        <location file="src/evaReaderDecors.h" line="57" column="22" bodyfile="src/evaReaderDecors.h" bodystart="57" bodyend="60"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -57,7 +57,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="src/evaReaderDecors.h" line="55" column="5" bodyfile="src/evaReaderDecors.h" bodystart="56" bodyend="62"/>
+    <location file="src/evaReaderDecors.h" line="54" column="5" bodyfile="src/evaReaderDecors.h" bodystart="55" bodyend="61"/>
     <listofallmembers>
       <member refid="classeva_1_1_polarize_decor_1a9ab30ae418244dcc2d15dc8e03525ce7" prot="public" virt="non-virtual"><scope>eva::PolarizeDecor</scope><name>getValue</name></member>
     </listofallmembers>

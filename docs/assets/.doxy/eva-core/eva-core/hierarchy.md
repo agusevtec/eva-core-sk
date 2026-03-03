@@ -6,6 +6,7 @@ This inheritance list is sorted roughly, but not completely, alphabetically:
 
 * **class** [**eva::AnalogPinReader**](classeva_1_1_analog_pin_reader.md) _Reads analog pin value._     
     * **class** [**eva::Joystick**](classeva_1_1_joystick.md) [_**Joystick**_](classeva_1_1_joystick.md) _axis reader with trim adjustment._
+    * **class** [**eva::Joystick**](classeva_1_1_joystick.md) [_**Joystick**_](classeva_1_1_joystick.md) _axis reader with trim adjustment._
     * **class** [**eva::Slider**](classeva_1_1_slider.md) _Maps analog readings to 0-255 range._ 
 * **class** [**eva::Indicator**](classeva_1_1_indicator.md) _Basic indicator (LED) control._     
     * **class** [**eva::BlinkingIndicator**](classeva_1_1_blinking_indicator.md) [_**Indicator**_](classeva_1_1_indicator.md) _that blinks with specified period and duty cycle._    

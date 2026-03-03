@@ -10,6 +10,7 @@
 * **PinMultiButton** ([**eva**](namespaceeva.md))
 * **PinSlider** ([**eva**](namespaceeva.md))
 * **PinSwitch** ([**eva**](namespaceeva.md))
+* **PinSymmetricJoystick** ([**eva**](namespaceeva.md))
 * **PulldownSwitch** ([**eva**](namespaceeva.md))
 * **PullupSwitch** ([**eva**](namespaceeva.md))
 

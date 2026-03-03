@@ -167,6 +167,7 @@
       <member refid="classeva_1_1_toggle_1ab9ac42f4e89aaafedc10c77df1ff9b70" prot="public" virt="non-virtual"><scope>eva::Button</scope><name>getValue</name></member>
       <member refid="classeva_1_1_button_1aaf757ae9cd6c09b1561d94a973743f93" prot="private" virt="non-virtual"><scope>eva::Button</scope><name>ISPRESSED</name></member>
       <member refid="classeva_1_1_toggle_1a906b20261956f639f178108022191919" prot="protected" virt="non-virtual"><scope>eva::Button</scope><name>listener</name></member>
+      <member refid="classeva_1_1_tickable_1a828ad5f4e70189311b93c6a504e088b0" prot="public" virt="non-virtual"><scope>eva::Button</scope><name>millis</name></member>
       <member refid="classeva_1_1_toggle_1ad4bc028f355b5553fe7990d2e4ac0ec1" prot="protected" virt="non-virtual"><scope>eva::Button</scope><name>notify</name></member>
       <member refid="classeva_1_1_button_1a3d2aa61b3ce3991af47071a4ee5cc94f" prot="protected" virt="non-virtual"><scope>eva::Button</scope><name>pressTime</name></member>
       <member refid="classeva_1_1_toggle_1a4c0a992449877824c9a04d3d321c5764" prot="public" virt="non-virtual"><scope>eva::Button</scope><name>setListener</name></member>

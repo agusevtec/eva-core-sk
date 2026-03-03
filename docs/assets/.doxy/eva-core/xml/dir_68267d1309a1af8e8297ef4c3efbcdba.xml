@@ -4,6 +4,7 @@
     <compoundname>src</compoundname>
     <innerfile refid="eva_blinking_indicator_8h">evaBlinkingIndicator.h</innerfile>
     <innerfile refid="eva_button_8h">evaButton.h</innerfile>
+    <innerfile refid="eva_common_8h">evaCommon.h</innerfile>
     <innerfile refid="eva_countdown_indicator_8h">evaCountdownIndicator.h</innerfile>
     <innerfile refid="eva_delay_timer_8h">evaDelayTimer.h</innerfile>
     <innerfile refid="eva_handler_8h">evaHandler.h</innerfile>

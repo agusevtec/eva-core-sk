@@ -299,7 +299,7 @@
   <span class="md-ellipsis">
     
   
-    The Loop Cycle
+    The loop-cycle
   
 
     
@@ -450,6 +450,34 @@
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ecosystem/motication.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Motication
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -751,6 +779,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#typedef-pinsymmetricjoystick" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        typedef PinSymmetricJoystick
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#typedef-pulldownswitch" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -971,8 +1010,8 @@
 <td style="text-align: left;"><a href="#typedef-pinbutton"><strong>PinButton</strong></a>  <br><a href="../classeva_1_1_button/"><em><strong>Button</strong></em></a> <em>connected directly to a digital pin Includes stabilization and binarization decorators. Debounces input and generates events based on button state changes. Long click threshold is fixed at 750ms.</em></td>
 </tr>
 <tr>
-<td style="text-align: right;">typedef <a href="../classeva_1_1_joystick/"><strong>Joystick</strong></a>&lt; <a href="../classeva_1_1_analog_pin_reader/"><strong>AnalogPinReader</strong></a>&lt; PIN, PIN_MODE &gt;, MIN,(MAX - MIN)/2, MAX &gt;</td>
-<td style="text-align: left;"><a href="#typedef-pinjoystick"><strong>PinJoystick</strong></a>  <br><em>Pin-based joystick with symmetric range (MIN to MAX, center at midpoint).</em></td>
+<td style="text-align: right;">typedef <a href="../classeva_1_1_joystick/"><strong>Joystick</strong></a>&lt; <a href="../classeva_1_1_analog_pin_reader/"><strong>AnalogPinReader</strong></a>&lt; PIN, PIN_MODE &gt;, MIN, MIDDLE, MAX &gt;</td>
+<td style="text-align: left;"><a href="#typedef-pinjoystick"><strong>PinJoystick</strong></a>  <br><em>Pin-based joystick with custom center position.</em></td>
 </tr>
 <tr>
 <td style="text-align: right;">typedef <a href="../classeva_1_1_multi_button/"><strong>MultiButton</strong></a>&lt; <a href="../classeva_1_1_quantize_decor/"><strong>QuantizeDecor</strong></a>&lt; <a href="../classeva_1_1_stabilize_decor/"><strong>StabilizeDecor</strong></a>&lt; <a href="../classeva_1_1_analog_pin_reader/"><strong>AnalogPinReader</strong></a>&lt; PIN, PIN_MODE &gt; &gt;, LEVELS... &gt; &gt;</td>
@@ -985,6 +1024,10 @@
 <tr>
 <td style="text-align: right;">typedef <a href="../classeva_1_1_toggle/"><strong>Toggle</strong></a>&lt; <a href="../classeva_1_1_binarize_decor/"><strong>BinarizeDecor</strong></a>&lt; <a href="../classeva_1_1_stabilize_decor/"><strong>StabilizeDecor</strong></a>&lt; <a href="../classeva_1_1_digital_pin_reader/"><strong>DigitalPinReader</strong></a>&lt; PIN, PIN_MODE &gt; &gt;, ACTIVE_LEVEL &gt; &gt;</td>
 <td style="text-align: left;"><a href="#typedef-pinswitch"><strong>PinSwitch</strong></a>  <br><em>Pin-based switch with specified active level.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">typedef <a href="../classeva_1_1_joystick/"><strong>Joystick</strong></a>&lt; <a href="../classeva_1_1_analog_pin_reader/"><strong>AnalogPinReader</strong></a>&lt; PIN, PIN_MODE &gt;, MIN,(MAX - MIN)/2, MAX &gt;</td>
+<td style="text-align: left;"><a href="#typedef-pinsymmetricjoystick"><strong>PinSymmetricJoystick</strong></a>  <br><em>Pin-based joystick with symmetric range (MIN to MAX, center at midpoint).</em></td>
 </tr>
 <tr>
 <td style="text-align: right;">typedef PinSwitch&lt; PIN, INPUT, HIGH &gt;</td>
@@ -1032,17 +1075,12 @@
 <hr>
 
 <h3 id="typedef-pinjoystick">typedef PinJoystick<a class="headerlink" href="#typedef-pinjoystick" title="Permanent link">&para;</a></h3>
-<p><em>Pin-based joystick with symmetric range (MIN to MAX, center at midpoint).</em> </p>
-<div class="codehilite"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">PinJoystick</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Joystick</span><span class="o">&lt;</span><span class="n">AnalogPinReader</span><span class="o">&lt;</span><span class="n">PIN</span><span class="p">,</span><span class="w"> </span><span class="n">PIN_MODE</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">MIN</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">MAX</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">MIN</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">MAX</span><span class="o">&gt;</span><span class="p">;</span>
+<p><em>Pin-based joystick with custom center position.</em> </p>
+<div class="codehilite"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">PinJoystick</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Joystick</span><span class="o">&lt;</span><span class="n">AnalogPinReader</span><span class="o">&lt;</span><span class="n">PIN</span><span class="p">,</span><span class="w"> </span><span class="n">PIN_MODE</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">MIN</span><span class="p">,</span><span class="w"> </span><span class="n">MIDDLE</span><span class="p">,</span><span class="w"> </span><span class="n">MAX</span><span class="o">&gt;</span><span class="p">;</span>
 </code></pre></div>
 
-<p>Pin-based joystick with custom center position.</p>
 <p><strong>Template parameters:</strong></p>
 <ul>
-<li><code>PIN</code> Arduino pin number </li>
-<li><code>PIN_MODE</code> Pin mode (usually INPUT) </li>
-<li><code>MIN</code> Minimum analog reading </li>
-<li><code>MAX</code> Maximum analog reading</li>
 <li><code>PIN</code> Arduino pin number </li>
 <li><code>PIN_MODE</code> Pin mode (usually INPUT) </li>
 <li><code>MIN</code> Minimum analog reading </li>
@@ -1090,6 +1128,20 @@
 <li><code>PIN</code> Arduino pin number </li>
 <li><code>PIN_MODE</code> Pin mode (INPUT_PULLUP, INPUT, etc.) </li>
 <li><code>ACTIVE_LEVEL</code> Level that means active (LOW or HIGH) </li>
+</ul>
+<hr>
+
+<h3 id="typedef-pinsymmetricjoystick">typedef PinSymmetricJoystick<a class="headerlink" href="#typedef-pinsymmetricjoystick" title="Permanent link">&para;</a></h3>
+<p><em>Pin-based joystick with symmetric range (MIN to MAX, center at midpoint).</em> </p>
+<div class="codehilite"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">PinSymmetricJoystick</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Joystick</span><span class="o">&lt;</span><span class="n">AnalogPinReader</span><span class="o">&lt;</span><span class="n">PIN</span><span class="p">,</span><span class="w"> </span><span class="n">PIN_MODE</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">MIN</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">MAX</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">MIN</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">MAX</span><span class="o">&gt;</span><span class="p">;</span>
+</code></pre></div>
+
+<p><strong>Template parameters:</strong></p>
+<ul>
+<li><code>PIN</code> Arduino pin number </li>
+<li><code>PIN_MODE</code> Pin mode (usually INPUT) </li>
+<li><code>MIN</code> Minimum analog reading </li>
+<li><code>MAX</code> Maximum analog reading </li>
 </ul>
 <hr>
 

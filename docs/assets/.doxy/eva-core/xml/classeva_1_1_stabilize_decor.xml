@@ -23,7 +23,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaReaderDecors.h" line="34" column="23" bodyfile="src/evaReaderDecors.h" bodystart="34" bodyend="-1"/>
+        <location file="src/evaReaderDecors.h" line="33" column="23" bodyfile="src/evaReaderDecors.h" bodystart="33" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classeva_1_1_stabilize_decor_1a3f0d4de6e9d6b144a67ab3378f1f180f" prot="private" static="no" mutable="no">
         <type>signed short</type>
@@ -38,7 +38,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaReaderDecors.h" line="35" column="22" bodyfile="src/evaReaderDecors.h" bodystart="35" bodyend="-1"/>
+        <location file="src/evaReaderDecors.h" line="34" column="22" bodyfile="src/evaReaderDecors.h" bodystart="34" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -54,7 +54,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaReaderDecors.h" line="19" column="22" bodyfile="src/evaReaderDecors.h" bodystart="19" bodyend="31"/>
+        <location file="src/evaReaderDecors.h" line="18" column="22" bodyfile="src/evaReaderDecors.h" bodystart="18" bodyend="30"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -84,7 +84,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="src/evaReaderDecors.h" line="16" column="5" bodyfile="src/evaReaderDecors.h" bodystart="17" bodyend="36"/>
+    <location file="src/evaReaderDecors.h" line="15" column="5" bodyfile="src/evaReaderDecors.h" bodystart="16" bodyend="35"/>
     <listofallmembers>
       <member refid="classeva_1_1_stabilize_decor_1aaa25725a97619b2158239d649b280ec3" prot="public" virt="non-virtual"><scope>eva::StabilizeDecor</scope><name>getValue</name></member>
       <member refid="classeva_1_1_stabilize_decor_1a3f0d4de6e9d6b144a67ab3378f1f180f" prot="private" virt="non-virtual"><scope>eva::StabilizeDecor</scope><name>keepedValue</name></member>

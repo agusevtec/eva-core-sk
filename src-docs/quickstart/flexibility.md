@@ -122,14 +122,5 @@ The `Button` class then handles all timing and generates appropriate press/relea
 
 ## The Big Picture
 
-The library doesn't care where the values come from. Whether it's:
-- Physical pins through standard readers
-- Differential calculations like the joystick example
-- External signals injected by callbacks
-- Any other source that can provide numerical codes
+The library doesn't care where the values come from. Whether it's: physical pins through standard readers, differential calculations like the joystick example, external signals injected by callbacks, any other source that can provide numerical codes
 
-The same `Button` and `MultiButton` classes work unchanged. They just need a `getValue()` that returns:
-- `0` meaning "nothing is happening"
-- Positive values meaning "something is happening" (with different codes for different sources)
-
-This separation of value production from state management is what makes the library truly flexible. You can adapt it to virtually any input scenario without modifying the core classes.

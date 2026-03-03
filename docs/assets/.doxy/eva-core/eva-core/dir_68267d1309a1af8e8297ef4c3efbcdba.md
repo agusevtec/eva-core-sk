@@ -23,6 +23,7 @@
 | ---: | :--- |
 | file | [**evaBlinkingIndicator.h**](eva_blinking_indicator_8h.md) <br> |
 | file | [**evaButton.h**](eva_button_8h.md) <br> |
+| file | [**evaCommon.h**](eva_common_8h.md) <br> |
 | file | [**evaCountdownIndicator.h**](eva_countdown_indicator_8h.md) <br> |
 | file | [**evaDelayTimer.h**](eva_delay_timer_8h.md) <br> |
 | file | [**evaHandler.h**](eva_handler_8h.md) <br> |

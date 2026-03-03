@@ -176,6 +176,7 @@
       <member refid="classeva_1_1_multi_button_1ad6286f57370873e38ebfa7d565a87cfb" prot="public" virt="non-virtual"><scope>eva::MultiButton</scope><name>getValue</name></member>
       <member refid="classeva_1_1_multi_button_1ab6dc935abfcfed85fae08e59883ae02c" prot="private" virt="non-virtual"><scope>eva::MultiButton</scope><name>levelCode</name></member>
       <member refid="classeva_1_1_toggle_1a906b20261956f639f178108022191919" prot="protected" virt="non-virtual"><scope>eva::MultiButton</scope><name>listener</name></member>
+      <member refid="classeva_1_1_tickable_1a828ad5f4e70189311b93c6a504e088b0" prot="public" virt="non-virtual"><scope>eva::MultiButton</scope><name>millis</name></member>
       <member refid="classeva_1_1_toggle_1ad4bc028f355b5553fe7990d2e4ac0ec1" prot="protected" virt="non-virtual"><scope>eva::MultiButton</scope><name>notify</name></member>
       <member refid="classeva_1_1_button_1a3d2aa61b3ce3991af47071a4ee5cc94f" prot="protected" virt="non-virtual"><scope>eva::MultiButton</scope><name>pressTime</name></member>
       <member refid="classeva_1_1_toggle_1a4c0a992449877824c9a04d3d321c5764" prot="public" virt="non-virtual"><scope>eva::MultiButton</scope><name>setListener</name></member>

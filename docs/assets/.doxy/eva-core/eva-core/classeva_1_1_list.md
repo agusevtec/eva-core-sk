@@ -54,12 +54,10 @@ _Simple singly-linked list container._ [More...](#detailed-description)
 
 | Type | Name |
 | ---: | :--- |
-|   | [**List**](#function-list) (const List &) = delete<br> |
 |  void | [**append**](#function-append) (ItemClass item) <br>_Appends an item to the list._  |
 |  unsigned | [**count**](#function-count) () <br>_Gets number of items in list._  |
 |  [**ListIterator**](structeva_1_1_list_iterator.md)&lt; ItemClass &gt; \* | [**first**](#function-first) () <br>_Gets first iterator._  |
-|  List & | [**operator=**](#function-operator) (const List &) = delete<br> |
-|  ItemClass & | [**operator[]**](#function-operator_1) (unsigned index) <br>_Array-style access by index._  |
+|  ItemClass & | [**operator[]**](#function-operator) (unsigned index) <br>_Array-style access by index._  |
 |   | [**~List**](#function-list) () <br>_Destructor - frees all nodes._  |
 
 
@@ -105,21 +103,6 @@ _Simple singly-linked list container._ [More...](#detailed-description)
     
 ## Public Functions Documentation
 
-
-
-
-### function List 
-
-```C++
-eva::List::List (
-    const List &
-) = delete
-```
-
-
-
-
-<hr>
 
 
 
@@ -195,21 +178,6 @@ Pointer to first iterator
 
 
         
-
-<hr>
-
-
-
-### function operator= 
-
-```C++
-List & eva::List::operator= (
-    const List &
-) = delete
-```
-
-
-
 
 <hr>
 

@@ -3,6 +3,7 @@
   <compounddef id="classeva_1_1_analog_pin_reader" kind="class" language="C++" prot="public">
     <compoundname>eva::AnalogPinReader</compoundname>
     <derivedcompoundref refid="classeva_1_1_joystick" prot="public" virt="non-virtual">eva::Joystick&lt; AnalogPinReader&lt; PIN, PIN_MODE &gt;, MIN,(MAX - MIN)/2, MAX &gt;</derivedcompoundref>
+    <derivedcompoundref refid="classeva_1_1_joystick" prot="public" virt="non-virtual">eva::Joystick&lt; AnalogPinReader&lt; PIN, PIN_MODE &gt;, MIN, MIDDLE, MAX &gt;</derivedcompoundref>
     <derivedcompoundref refid="classeva_1_1_slider" prot="public" virt="non-virtual">eva::Slider&lt; AnalogPinReader&lt; PIN, PIN_MODE &gt;, MIN, MAX &gt;</derivedcompoundref>
     <includes refid="eva_std_readers_8h" local="no">evaStdReaders.h</includes>
     <templateparamlist>
@@ -57,13 +58,19 @@
         <label>eva::AnalogPinReader&lt; PIN, PIN_MODE &gt;</label>
         <link refid="classeva_1_1_analog_pin_reader"/>
       </node>
+      <node id="3">
+        <label>eva::Joystick&lt; AnalogPinReader&lt; PIN, PIN_MODE &gt;, MIN, MIDDLE, MAX &gt;</label>
+        <link refid="classeva_1_1_joystick"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
       <node id="2">
         <label>eva::Joystick&lt; AnalogPinReader&lt; PIN, PIN_MODE &gt;, MIN,(MAX - MIN)/2, MAX &gt;</label>
         <link refid="classeva_1_1_joystick"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="3">
+      <node id="4">
         <label>eva::Slider&lt; AnalogPinReader&lt; PIN, PIN_MODE &gt;, MIN, MAX &gt;</label>
         <link refid="classeva_1_1_slider"/>
         <childnode refid="1" relation="public-inheritance">

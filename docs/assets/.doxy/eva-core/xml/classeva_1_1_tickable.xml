@@ -21,7 +21,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaTickable.h" line="30" column="14" bodyfile="src/evaTickable.h" bodystart="30" bodyend="-1"/>
+        <location file="src/evaTickable.h" line="32" column="14" bodyfile="src/evaTickable.h" bodystart="32" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -53,6 +53,20 @@
         <inbodydescription>
         </inbodydescription>
         <location file="src/evaTickable.h" line="24" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classeva_1_1_tickable_1a828ad5f4e70189311b93c6a504e088b0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>unsigned long</type>
+        <definition>unsigned long eva::Tickable::millis</definition>
+        <argsstring>()</argsstring>
+        <name>millis</name>
+        <qualifiedname>eva::Tickable::millis</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evaTickable.h" line="26" column="26"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-static-func">
@@ -111,7 +125,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaTickable.h" line="27" column="19"/>
+        <location file="src/evaTickable.h" line="29" column="19"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -179,9 +193,10 @@
         </childnode>
       </node>
     </inheritancegraph>
-    <location file="src/evaTickable.h" line="9" column="3" bodyfile="src/evaTickable.h" bodystart="10" bodyend="31"/>
+    <location file="src/evaTickable.h" line="9" column="3" bodyfile="src/evaTickable.h" bodystart="10" bodyend="38"/>
     <listofallmembers>
       <member refid="classeva_1_1_tickable_1a3f1a1833bfd4a2d9aea504a84cb1438d" prot="public" virt="non-virtual"><scope>eva::Tickable</scope><name>chain</name></member>
+      <member refid="classeva_1_1_tickable_1a828ad5f4e70189311b93c6a504e088b0" prot="public" virt="non-virtual"><scope>eva::Tickable</scope><name>millis</name></member>
       <member refid="classeva_1_1_tickable_1a31b3f41cac1a6044d3a9439bdad50513" prot="private" virt="non-virtual"><scope>eva::Tickable</scope><name>next</name></member>
       <member refid="classeva_1_1_tickable_1ad13287a77a330b14272d3e1ccdbb3de7" prot="public" virt="non-virtual"><scope>eva::Tickable</scope><name>tac</name></member>
       <member refid="classeva_1_1_tickable_1afc78886ffa282153328bffab36c347fc" prot="private" virt="pure-virtual"><scope>eva::Tickable</scope><name>tick</name></member>

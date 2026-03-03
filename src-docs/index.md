@@ -1,26 +1,39 @@
-# Why Publish Another "Button Library"?
+# Why EVA?
 
-EVA it's a concept.
+EVA is a concept of comfortable user code. A set of principles that make Arduino development enjoyable rather than painful:
 
-The idea is simple: instead of fighting with `loop()` and filling it with ever-growing state-checking code, you build your application from components that know how to update themselves. One call to `eva::tac()` drives everything.
+- **Self-documenting** — code reads like a story, not a puzzle
+- **Testability** — components can be verified in isolation
+- **Performance** — optimization focused on critical paths, not dogma
+- **Refactoring-friendly** — changing structure doesn't break behavior
 
-For years, I waited for Arduino to release something similar as an official standard. That never happened.
+**eva-core-sk** is a concrete implementation of this concept—a library that puts these principles into practice.
 
-So I built **eva-core-sk** — a concrete implementation of this concept, packaged as a library. It comes in two parts:
+---
 
-- **Core** — the engine: `Tickable`, `Handler`, `IReader`
+### The Four Pillars
 
-- **Survival Kit (SK)** — ready‑to‑use components: `Button`, `Switch`, `Timer`, `Indicator` and more.
+**First**, many components—either explicitly or implicitly—claim their own slice of the famous Arduino `loop()`, and user code is encouraged to do the same. Timings become a natural part of the contract between objects—whether between user objects and library objects, or among user objects themselves.
 
-The individual pieces are trivial. But bringing a few key techniques together changes everything.
+**Second**, the library provides everything needed to structure user code in an object-oriented way, which gives predictable initialization. Everything can be built as static objects and starts running in `setup()`. When you refactor—moving members, splitting classes—the initialization order follows automatically. You never have to hunt for a forgotten `init()` call.
 
-- Many components either explicitly or implicitly—claim their own slice of the famous Arduino `loop()`, and user code is encouraged to do the same. Time management becomes a natural part of the contract between objects—whether between user objects and library objects, or among user objects themselves.
+**Third**, delegates via `Handler` bind events to methods naturally. Components do not poll. They notify when something happens.
 
-- The library provides everything needed to structure user code in an object-oriented way, which gives predictable initialization. Everything can be built as static objects and starts running in `setup()`. When you refactor—moving members, splitting classes—the initialization order follows automatically. You never have to hunt for a forgotten `init()` call.
+**Fourth**, the layered architecture continues into user code, creating many connection points and making testing simple.
 
-- Delegates via `Handler` bind events to methods naturally. Components do not poll. They notify when something happens.
+---
 
-- The layered architecture continues into user code, creating many connection points and making testing simple.
+### Two Domains
 
-And that changes everything. Coding application logic—and coming back to your own code later—is now simply enjoyable.
+eva-core-sk is organized into two distinct layers:
 
+- **Core** — the engine: `Tickable`, `Handler`, `IReader`. These are the fundamental building blocks that make the concept work.
+- **Survival Kit (SK)** — ready-to-use components: `Button`, `Switch`, `Timer`, `Indicator`, and more. These are what you reach for when building actual applications.
+
+---
+
+### The Result
+
+When you write code in the spirit of EVA—composing components, letting them manage their own time, communicating through events—something unexpected happens.
+
+Coming back to your own code later becomes **genuinely pleasant**. EVA makes your code feel like it was written by someone who **cared** about the person who would read it next—even if that person is future you.

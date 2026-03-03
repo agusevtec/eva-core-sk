@@ -52,8 +52,12 @@
 
 ## l
 
-* **List** ([**eva::List**](classeva_1_1_list.md))
 * **ListIterator** ([**eva::ListIterator**](structeva_1_1_list_iterator.md))
+
+
+## m
+
+* **millis** ([**eva::Tickable**](classeva_1_1_tickable.md))
 
 
 ## n
@@ -65,7 +69,6 @@
 
 * **off** ([**eva::BlinkingIndicator**](classeva_1_1_blinking_indicator.md), [**eva::Indicator**](classeva_1_1_indicator.md))
 * **on** ([**eva::BlinkingIndicator**](classeva_1_1_blinking_indicator.md), [**eva::CountdownIndicator**](classeva_1_1_countdown_indicator.md), [**eva::Indicator**](classeva_1_1_indicator.md))
-* **operator=** ([**eva::List**](classeva_1_1_list.md))
 * **operator[]** ([**eva::List**](classeva_1_1_list.md))
 
 

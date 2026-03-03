@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="eva_common_8h" kind="file" language="C++">
+    <compoundname>evaCommon.h</compoundname>
+    <includedby refid="eva_joystick_8h" local="yes">src/evaJoystick.h</includedby>
+    <includedby refid="eva_reader_decors_8h" local="yes">src/evaReaderDecors.h</includedby>
+    <invincdepgraph>
+      <node id="5">
+        <label>src/evaButton.h</label>
+        <link refid="eva_button_8h_source"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>src/evaCommon.h</label>
+        <link refid="eva_common_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>src/evaJoystick.h</label>
+        <link refid="eva_joystick_8h_source"/>
+      </node>
+      <node id="6">
+        <label>src/evaMultiButton.h</label>
+        <link refid="eva_multi_button_8h_source"/>
+      </node>
+      <node id="3">
+        <label>src/evaReaderDecors.h</label>
+        <link refid="eva_reader_decors_8h_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>src/evaToggle.h</label>
+        <link refid="eva_toggle_8h_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="eva_common_8h_1a8c5ff70b6b28cd0157c50a22406f92c4" prot="public" static="no">
+        <name>SIGN</name>
+        <param><defname>x</defname></param>
+        <initializer>(((x) &gt; 0) - ((x) &lt; 0))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evaCommon.h" line="6" column="9" bodyfile="src/evaCommon.h" bodystart="6" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>EVACOMMON_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EVACOMMON_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SIGN(x)<sp/>(((x)<sp/>&gt;<sp/>0)<sp/>-<sp/>((x)<sp/>&lt;<sp/>0))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="src/evaCommon.h"/>
+  </compounddef>
+</doxygen>

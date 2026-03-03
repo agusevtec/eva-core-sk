@@ -299,7 +299,7 @@
   <span class="md-ellipsis">
     
   
-    The Loop Cycle
+    The loop-cycle
   
 
     
@@ -450,6 +450,34 @@
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ecosystem/motication.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Motication
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -685,17 +713,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#function-list" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        function List
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#function-append" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -732,17 +749,6 @@
   <a href="#function-operator" class="md-nav__link">
     <span class="md-ellipsis">
       
-        function operator=
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#function-operator_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
         function operator[]
       
     </span>
@@ -751,7 +757,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#function-list_1" class="md-nav__link">
+  <a href="#function-list" class="md-nav__link">
     <span class="md-ellipsis">
       
         function ~List
@@ -803,10 +809,6 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: right;"></td>
-<td style="text-align: left;"><a href="#function-list"><strong>List</strong></a> (const List &amp;) = delete<br></td>
-</tr>
-<tr>
 <td style="text-align: right;">void</td>
 <td style="text-align: left;"><a href="#function-append"><strong>append</strong></a> (ItemClass item) <br><em>Appends an item to the list.</em></td>
 </tr>
@@ -819,12 +821,8 @@
 <td style="text-align: left;"><a href="#function-first"><strong>first</strong></a> () <br><em>Gets first iterator.</em></td>
 </tr>
 <tr>
-<td style="text-align: right;">List &amp;</td>
-<td style="text-align: left;"><a href="#function-operator"><strong>operator=</strong></a> (const List &amp;) = delete<br></td>
-</tr>
-<tr>
 <td style="text-align: right;">ItemClass &amp;</td>
-<td style="text-align: left;"><a href="#function-operator_1"><strong>operator[]</strong></a> (unsigned index) <br><em>Array-style access by index.</em></td>
+<td style="text-align: left;"><a href="#function-operator"><strong>operator[]</strong></a> (unsigned index) <br><em>Array-style access by index.</em></td>
 </tr>
 <tr>
 <td style="text-align: right;"></td>
@@ -838,14 +836,6 @@
 <li><code>ItemClass</code> Type of items to store </li>
 </ul>
 <h2 id="public-functions-documentation">Public Functions Documentation<a class="headerlink" href="#public-functions-documentation" title="Permanent link">&para;</a></h2>
-<h3 id="function-list">function List<a class="headerlink" href="#function-list" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><code><span class="n">eva</span><span class="o">::</span><span class="n">List</span><span class="o">::</span><span class="n">List</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">List</span><span class="w"> </span><span class="o">&amp;</span>
-<span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">delete</span>
-</code></pre></div>
-
-<hr>
-
 <h3 id="function-append">function append<a class="headerlink" href="#function-append" title="Permanent link">&para;</a></h3>
 <p><em>Appends an item to the list.</em> </p>
 <div class="codehilite"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">List</span><span class="o">::</span><span class="n">append</span><span class="w"> </span><span class="p">(</span>
@@ -877,15 +867,7 @@
 <p>Pointer to first iterator </p>
 <hr>
 
-<h3 id="function-operator">function operator=<a class="headerlink" href="#function-operator" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><code><span class="n">List</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">List</span><span class="o">::</span><span class="k">operator</span><span class="o">=</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">List</span><span class="w"> </span><span class="o">&amp;</span>
-<span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">delete</span>
-</code></pre></div>
-
-<hr>
-
-<h3 id="function-operator_1">function operator[]<a class="headerlink" href="#function-operator_1" title="Permanent link">&para;</a></h3>
+<h3 id="function-operator">function operator[]<a class="headerlink" href="#function-operator" title="Permanent link">&para;</a></h3>
 <p><em>Array-style access by index.</em> </p>
 <div class="codehilite"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="n">ItemClass</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">List</span><span class="o">::</span><span class="k">operator</span><span class="p">[]</span><span class="w"> </span><span class="p">(</span>
 <span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="n">index</span>
@@ -900,7 +882,7 @@
 <p>Reference to item </p>
 <hr>
 
-<h3 id="function-list_1">function ~List<a class="headerlink" href="#function-list_1" title="Permanent link">&para;</a></h3>
+<h3 id="function-list">function ~List<a class="headerlink" href="#function-list" title="Permanent link">&para;</a></h3>
 <p><em>Destructor - frees all nodes.</em> </p>
 <div class="codehilite"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">List</span><span class="o">::~</span><span class="n">List</span><span class="w"> </span><span class="p">()</span><span class="w"> </span>
 </code></pre></div>

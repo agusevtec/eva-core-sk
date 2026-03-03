@@ -11,6 +11,7 @@
 
 
 * `#include <Arduino.h>`
+* `#include "evaCommon.h"`
 
 
 
@@ -88,30 +89,7 @@
 
 
 
-## Macros
 
-| Type | Name |
-| ---: | :--- |
-| define  | [**SIGN**](eva_reader_decors_8h.md#define-sign) (x) `(((x) &gt; 0) - ((x) &lt; 0))`<br> |
-
-## Macro Definition Documentation
-
-
-
-
-
-### define SIGN 
-
-```C++
-#define SIGN (
-    x
-) `(((x) > 0) - ((x) < 0))`
-```
-
-
-
-
-<hr>
 
 ------------------------------
 The documentation for this class was generated from the following file `src/evaReaderDecors.h`

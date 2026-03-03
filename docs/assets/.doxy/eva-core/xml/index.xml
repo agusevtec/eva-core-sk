@@ -86,8 +86,6 @@
     <member refid="classeva_1_1_list_1af62b22e278861f9d633714308917a0db" kind="variable"><name>head</name></member>
     <member refid="classeva_1_1_list_1aca0d3cbc84e5f5cdf4397d1440eb1559" kind="variable"><name>tail</name></member>
     <member refid="classeva_1_1_list_1a764b5d92ff4eb5078a4096b79a906eba" kind="variable"><name>length</name></member>
-    <member refid="classeva_1_1_list_1a4fc9e7864d26ac9d1fc60fc7dadb14a6" kind="function"><name>List</name></member>
-    <member refid="classeva_1_1_list_1aa17c3bdf4dd0425eec109d591a096eaa" kind="function"><name>operator=</name></member>
     <member refid="classeva_1_1_list_1aeac16ea2dd410c8d2655252fca0604ba" kind="function"><name>~List</name></member>
     <member refid="classeva_1_1_list_1af8613606cbc1f80f0eb652d385e8ca6e" kind="function"><name>append</name></member>
     <member refid="classeva_1_1_list_1a8739655e45ea8b1913c34601ac7c669f" kind="function"><name>first</name></member>
@@ -143,6 +141,7 @@
     <member refid="classeva_1_1_tickable_1a31b3f41cac1a6044d3a9439bdad50513" kind="variable"><name>next</name></member>
     <member refid="classeva_1_1_tickable_1a667f47cdee5f03eed323cebb27e8ab8e" kind="function"><name>Tickable</name></member>
     <member refid="classeva_1_1_tickable_1ad13287a77a330b14272d3e1ccdbb3de7" kind="function"><name>tac</name></member>
+    <member refid="classeva_1_1_tickable_1a828ad5f4e70189311b93c6a504e088b0" kind="function"><name>millis</name></member>
     <member refid="classeva_1_1_tickable_1a3f1a1833bfd4a2d9aea504a84cb1438d" kind="function"><name>chain</name></member>
     <member refid="classeva_1_1_tickable_1afc78886ffa282153328bffab36c347fc" kind="function"><name>tick</name></member>
   </compound>
@@ -161,7 +160,8 @@
   </compound>
   <compound refid="namespaceeva" kind="namespace"><name>eva</name>
     <member refid="eva_button_8h_1a804d7cf3975aa0e32ae48917d18f5d12" kind="typedef"><name>PinButton</name></member>
-    <member refid="eva_joystick_8h_1a9826d3730247ef729e5ce5af981b3906" kind="typedef"><name>PinJoystick</name></member>
+    <member refid="eva_joystick_8h_1aff092189042321d52ea4475f0ed0d0dc" kind="typedef"><name>PinSymmetricJoystick</name></member>
+    <member refid="eva_joystick_8h_1a0fd39256f892cf4cd8c58d66131769c5" kind="typedef"><name>PinJoystick</name></member>
     <member refid="eva_multi_button_8h_1a36997583762603d10c54f59a9fc73207" kind="typedef"><name>PinMultiButton</name></member>
     <member refid="eva_slider_8h_1a62d965ecb30757f74e3dcc7ebcb15b2b" kind="typedef"><name>PinSlider</name></member>
     <member refid="eva_toggle_8h_1ad9b496dfd4c759bf719a272d50ec36ca" kind="typedef"><name>PinSwitch</name></member>
@@ -173,6 +173,9 @@
   <compound refid="eva_blinking_indicator_8h" kind="file"><name>evaBlinkingIndicator.h</name>
   </compound>
   <compound refid="eva_button_8h" kind="file"><name>evaButton.h</name>
+  </compound>
+  <compound refid="eva_common_8h" kind="file"><name>evaCommon.h</name>
+    <member refid="eva_common_8h_1a8c5ff70b6b28cd0157c50a22406f92c4" kind="define"><name>SIGN</name></member>
   </compound>
   <compound refid="eva_countdown_indicator_8h" kind="file"><name>evaCountdownIndicator.h</name>
   </compound>
@@ -191,7 +194,6 @@
   <compound refid="eva_multi_button_8h" kind="file"><name>evaMultiButton.h</name>
   </compound>
   <compound refid="eva_reader_decors_8h" kind="file"><name>evaReaderDecors.h</name>
-    <member refid="eva_reader_decors_8h_1a8c5ff70b6b28cd0157c50a22406f92c4" kind="define"><name>SIGN</name></member>
   </compound>
   <compound refid="eva_repeat_timer_8h" kind="file"><name>evaRepeatTimer.h</name>
   </compound>

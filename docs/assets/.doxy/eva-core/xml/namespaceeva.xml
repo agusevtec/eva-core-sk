@@ -90,7 +90,7 @@
         </inbodydescription>
         <location file="src/evaButton.h" line="83" column="3" bodyfile="src/evaButton.h" bodystart="83" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="eva_joystick_8h_1a9826d3730247ef729e5ce5af981b3906" prot="public" static="no">
+      <memberdef kind="typedef" id="eva_joystick_8h_1aff092189042321d52ea4475f0ed0d0dc" prot="public" static="no">
         <templateparamlist>
           <param>
             <type>int</type>
@@ -114,15 +114,14 @@
           </param>
         </templateparamlist>
         <type><ref refid="classeva_1_1_joystick" kindref="compound">Joystick</ref>&lt; <ref refid="classeva_1_1_analog_pin_reader" kindref="compound">AnalogPinReader</ref>&lt; PIN, PIN_MODE &gt;, MIN,(MAX - MIN)/2, MAX &gt;</type>
-        <definition>using eva::PinJoystick = Joystick&lt;AnalogPinReader&lt;PIN, PIN_MODE&gt;, MIN, (MAX - MIN) / 2, MAX&gt;</definition>
+        <definition>using eva::PinSymmetricJoystick = Joystick&lt;AnalogPinReader&lt;PIN, PIN_MODE&gt;, MIN, (MAX - MIN) / 2, MAX&gt;</definition>
         <argsstring></argsstring>
-        <name>PinJoystick</name>
-        <qualifiedname>eva::PinJoystick</qualifiedname>
+        <name>PinSymmetricJoystick</name>
+        <qualifiedname>eva::PinSymmetricJoystick</qualifiedname>
         <briefdescription>
 <para>Pin-based joystick with symmetric range (MIN to MAX, center at midpoint). </para>
         </briefdescription>
         <detaileddescription>
-<para>Pin-based joystick with custom center position.</para>
 <para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
 <parametername>PIN</parametername>
@@ -152,10 +151,54 @@
 <parametername>MAX</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Maximum analog reading</para>
+<para>Maximum analog reading </para>
 </parameterdescription>
 </parameteritem>
-<parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evaJoystick.h" line="60" column="3" bodyfile="src/evaJoystick.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="eva_joystick_8h_1a0fd39256f892cf4cd8c58d66131769c5" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type>int</type>
+            <declname>PIN</declname>
+            <defname>PIN</defname>
+          </param>
+          <param>
+            <type>int</type>
+            <declname>PIN_MODE</declname>
+            <defname>PIN_MODE</defname>
+          </param>
+          <param>
+            <type>int</type>
+            <declname>MIN</declname>
+            <defname>MIN</defname>
+          </param>
+          <param>
+            <type>int</type>
+            <declname>MIDDLE</declname>
+            <defname>MIDDLE</defname>
+          </param>
+          <param>
+            <type>int</type>
+            <declname>MAX</declname>
+            <defname>MAX</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classeva_1_1_joystick" kindref="compound">Joystick</ref>&lt; <ref refid="classeva_1_1_analog_pin_reader" kindref="compound">AnalogPinReader</ref>&lt; PIN, PIN_MODE &gt;, MIN, MIDDLE, MAX &gt;</type>
+        <definition>using eva::PinJoystick = Joystick&lt;AnalogPinReader&lt;PIN, PIN_MODE&gt;, MIN, MIDDLE, MAX&gt;</definition>
+        <argsstring></argsstring>
+        <name>PinJoystick</name>
+        <qualifiedname>eva::PinJoystick</qualifiedname>
+        <briefdescription>
+<para>Pin-based joystick with custom center position. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
 <parametername>PIN</parametername>
 </parameternamelist>
@@ -200,7 +243,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaJoystick.h" line="60" column="3" bodyfile="src/evaJoystick.h" bodystart="60" bodyend="-1"/>
+        <location file="src/evaJoystick.h" line="70" column="3" bodyfile="src/evaJoystick.h" bodystart="70" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="eva_multi_button_8h_1a36997583762603d10c54f59a9fc73207" prot="public" static="no">
         <templateparamlist>

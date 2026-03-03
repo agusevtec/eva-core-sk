@@ -305,7 +305,7 @@
   <span class="md-ellipsis">
     
   
-    The Loop Cycle
+    The loop-cycle
   
 
     
@@ -536,6 +536,34 @@
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ecosystem/motication.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Motication
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -906,15 +934,7 @@
 <p><strong>What's happening</strong> </p>
 <p>The <code>Button</code> class then handles all timing and generates appropriate press/release/click events automatically.</p>
 <h2 id="the-big-picture">The Big Picture<a class="headerlink" href="#the-big-picture" title="Permanent link">&para;</a></h2>
-<p>The library doesn't care where the values come from. Whether it's:
-- Physical pins through standard readers
-- Differential calculations like the joystick example
-- External signals injected by callbacks
-- Any other source that can provide numerical codes</p>
-<p>The same <code>Button</code> and <code>MultiButton</code> classes work unchanged. They just need a <code>getValue()</code> that returns:
-- <code>0</code> meaning "nothing is happening"
-- Positive values meaning "something is happening" (with different codes for different sources)</p>
-<p>This separation of value production from state management is what makes the library truly flexible. You can adapt it to virtually any input scenario without modifying the core classes.</p>
+<p>The library doesn't care where the values come from. Whether it's: physical pins through standard readers, differential calculations like the joystick example, external signals injected by callbacks, any other source that can provide numerical codes</p>
 
 
 

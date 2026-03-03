@@ -305,7 +305,7 @@
   <span class="md-ellipsis">
     
   
-    The Loop Cycle
+    The loop-cycle
   
 
     
@@ -603,6 +603,34 @@
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ecosystem/motication.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Motication
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -927,19 +955,7 @@
 <p>There's a persistent myth in the Arduino world: object-oriented programming means overhead.</p>
 <p>Like most myths, this one contains a grain of truth—but only a grain.</p>
 <p>The overhead in OOP comes almost exclusively from one feature: virtual methods. </p>
-<p>Each virtual method adds:</p>
-<ul>
-<li>
-<p>A vtable pointer per object (2-4 bytes of RAM)</p>
-</li>
-<li>
-<p>A vtable per class (stored in flash, negligible)</p>
-</li>
-<li>
-<p>Indirect function call overhead (a few cycles)</p>
-</li>
-</ul>
-<p>The eva library is designed around this reality. 
+<p>The eva-core-sk library is designed around this reality. 
 Look at how buttons are built:</p>
 <div class="codehilite"><pre><span></span><code><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">int</span><span class="w"> </span><span class="n">PIN</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">PINMODE</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">ACTIVATESON</span><span class="o">&gt;</span>
 <span class="k">using</span><span class="w"> </span><span class="n">PinButton</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Button</span><span class="o">&lt;</span><span class="n">BinarizeDecor</span><span class="o">&lt;</span><span class="n">StabilizeDecor</span><span class="o">&lt;</span><span class="n">DigitalPinReader</span><span class="o">&lt;</span><span class="n">PIN</span><span class="p">,</span><span class="w"> </span><span class="n">PINMODE</span><span class="o">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">ACTIVATESON</span><span class="o">&gt;&gt;</span><span class="p">;</span>

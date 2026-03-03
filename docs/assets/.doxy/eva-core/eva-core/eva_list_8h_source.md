@@ -29,9 +29,9 @@ namespace eva
     unsigned length = {0};
 
   public:
-    List(const List &) = delete;
+//    List(const List &) = delete;
 
-    List &operator=(const List &) = delete;
+//    List &operator=(const List &) = delete;
 
     ~List()
     {

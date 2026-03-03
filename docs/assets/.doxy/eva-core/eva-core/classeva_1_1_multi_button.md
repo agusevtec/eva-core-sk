@@ -140,6 +140,7 @@ See [eva::Tickable](classeva_1_1_tickable.md)
 | Type | Name |
 | ---: | :--- |
 |   | [**Tickable**](classeva_1_1_tickable.md#function-tickable) () <br> |
+|  unsigned long | [**millis**](classeva_1_1_tickable.md#function-millis) () <br> |
 |  void | [**tac**](classeva_1_1_tickable.md#function-tac) () <br>_Triggers tick on this and all linked tickables._  |
 
 

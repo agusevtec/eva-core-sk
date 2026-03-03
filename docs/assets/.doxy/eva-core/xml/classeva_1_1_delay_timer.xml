@@ -173,6 +173,7 @@
       <member refid="classeva_1_1_tickable_1a3f1a1833bfd4a2d9aea504a84cb1438d" prot="public" virt="non-virtual"><scope>eva::DelayTimer</scope><name>chain</name></member>
       <member refid="classeva_1_1_delay_timer_1a971246536c3cca838038b493c4da414c" prot="public" virt="non-virtual"><scope>eva::DelayTimer</scope><name>DelayTimer</name></member>
       <member refid="classeva_1_1_delay_timer_1a79cfcb6054cd07ae88faa66e96e1a29f" prot="protected" virt="non-virtual"><scope>eva::DelayTimer</scope><name>listener</name></member>
+      <member refid="classeva_1_1_tickable_1a828ad5f4e70189311b93c6a504e088b0" prot="public" virt="non-virtual"><scope>eva::DelayTimer</scope><name>millis</name></member>
       <member refid="classeva_1_1_delay_timer_1aaa15353150b005949a4cb0345ebf83ca" prot="protected" virt="non-virtual"><scope>eva::DelayTimer</scope><name>nextFire</name></member>
       <member refid="classeva_1_1_delay_timer_1ac89ce16917c542808ad25318c826ad1a" prot="public" virt="non-virtual"><scope>eva::DelayTimer</scope><name>start</name></member>
       <member refid="classeva_1_1_delay_timer_1a0e61d51bcd42b77a47381496ddb8445c" prot="public" virt="non-virtual"><scope>eva::DelayTimer</scope><name>stop</name></member>

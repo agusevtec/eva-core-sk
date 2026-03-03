@@ -63,10 +63,11 @@
 | Type | Name |
 | ---: | :--- |
 | typedef [**Button**](classeva_1_1_button.md)&lt; [**BinarizeDecor**](classeva_1_1_binarize_decor.md)&lt; [**StabilizeDecor**](classeva_1_1_stabilize_decor.md)&lt; [**DigitalPinReader**](classeva_1_1_digital_pin_reader.md)&lt; PIN, PIN\_MODE &gt; &gt;, ACTIVATES\_ON &gt; &gt; | [**PinButton**](#typedef-pinbutton)  <br>[_**Button**_](classeva_1_1_button.md) _connected directly to a digital pin Includes stabilization and binarization decorators. Debounces input and generates events based on button state changes. Long click threshold is fixed at 750ms._ |
-| typedef [**Joystick**](classeva_1_1_joystick.md)&lt; [**AnalogPinReader**](classeva_1_1_analog_pin_reader.md)&lt; PIN, PIN\_MODE &gt;, MIN,(MAX - MIN)/2, MAX &gt; | [**PinJoystick**](#typedef-pinjoystick)  <br>_Pin-based joystick with symmetric range (MIN to MAX, center at midpoint)._  |
+| typedef [**Joystick**](classeva_1_1_joystick.md)&lt; [**AnalogPinReader**](classeva_1_1_analog_pin_reader.md)&lt; PIN, PIN\_MODE &gt;, MIN, MIDDLE, MAX &gt; | [**PinJoystick**](#typedef-pinjoystick)  <br>_Pin-based joystick with custom center position._  |
 | typedef [**MultiButton**](classeva_1_1_multi_button.md)&lt; [**QuantizeDecor**](classeva_1_1_quantize_decor.md)&lt; [**StabilizeDecor**](classeva_1_1_stabilize_decor.md)&lt; [**AnalogPinReader**](classeva_1_1_analog_pin_reader.md)&lt; PIN, PIN\_MODE &gt; &gt;, LEVELS... &gt; &gt; | [**PinMultiButton**](#typedef-pinmultibutton)  <br>_Multiple buttons on single ADC pin using resistor ladder._  |
 | typedef [**Slider**](classeva_1_1_slider.md)&lt; [**AnalogPinReader**](classeva_1_1_analog_pin_reader.md)&lt; PIN, PIN\_MODE &gt;, MIN, MAX &gt; | [**PinSlider**](#typedef-pinslider)  <br>_Pin-based slider mapping analog readings to 0-255 range._  |
 | typedef [**Toggle**](classeva_1_1_toggle.md)&lt; [**BinarizeDecor**](classeva_1_1_binarize_decor.md)&lt; [**StabilizeDecor**](classeva_1_1_stabilize_decor.md)&lt; [**DigitalPinReader**](classeva_1_1_digital_pin_reader.md)&lt; PIN, PIN\_MODE &gt; &gt;, ACTIVE\_LEVEL &gt; &gt; | [**PinSwitch**](#typedef-pinswitch)  <br>_Pin-based switch with specified active level._  |
+| typedef [**Joystick**](classeva_1_1_joystick.md)&lt; [**AnalogPinReader**](classeva_1_1_analog_pin_reader.md)&lt; PIN, PIN\_MODE &gt;, MIN,(MAX - MIN)/2, MAX &gt; | [**PinSymmetricJoystick**](#typedef-pinsymmetricjoystick)  <br>_Pin-based joystick with symmetric range (MIN to MAX, center at midpoint)._  |
 | typedef PinSwitch&lt; PIN, INPUT, HIGH &gt; | [**PulldownSwitch**](#typedef-pulldownswitch)  <br>_Pull-down switch (button connected to VCC)._  |
 | typedef PinSwitch&lt; PIN, INPUT\_PULLUP, LOW &gt; | [**PullupSwitch**](#typedef-pullupswitch)  <br>_Pull-up switch (button connected to GND)._  |
 | typedef [**Toggle**](classeva_1_1_toggle.md)&lt; [**BinarizeDecor**](classeva_1_1_binarize_decor.md)&lt; [**AnalogPinReader**](classeva_1_1_analog_pin_reader.md)&lt; PIN, INPUT &gt;, THRESHOLD &gt; &gt; | [**ThresholdSwitch**](#typedef-thresholdswitch)  <br>_Threshold-based switch using analog input._  |
@@ -164,14 +165,11 @@ using eva::PinButton = Button<BinarizeDecor<StabilizeDecor<DigitalPinReader<PIN,
 
 ### typedef PinJoystick 
 
-_Pin-based joystick with symmetric range (MIN to MAX, center at midpoint)._ 
+_Pin-based joystick with custom center position._ 
 ```C++
-using eva::PinJoystick = Joystick<AnalogPinReader<PIN, PIN_MODE>, MIN, (MAX - MIN) / 2, MAX>;
+using eva::PinJoystick = Joystick<AnalogPinReader<PIN, PIN_MODE>, MIN, MIDDLE, MAX>;
 ```
 
-
-
-Pin-based joystick with custom center position.
 
 
 
@@ -179,10 +177,6 @@ Pin-based joystick with custom center position.
 **Template parameters:**
 
 
-* `PIN` Arduino pin number 
-* `PIN_MODE` Pin mode (usually INPUT) 
-* `MIN` Minimum analog reading 
-* `MAX` Maximum analog reading
 * `PIN` Arduino pin number 
 * `PIN_MODE` Pin mode (usually INPUT) 
 * `MIN` Minimum analog reading 
@@ -273,6 +267,34 @@ using eva::PinSwitch = Toggle<BinarizeDecor<StabilizeDecor<DigitalPinReader<PIN,
 * `PIN` Arduino pin number 
 * `PIN_MODE` Pin mode (INPUT\_PULLUP, INPUT, etc.) 
 * `ACTIVE_LEVEL` Level that means active (LOW or HIGH) 
+
+
+
+
+        
+
+<hr>
+
+
+
+### typedef PinSymmetricJoystick 
+
+_Pin-based joystick with symmetric range (MIN to MAX, center at midpoint)._ 
+```C++
+using eva::PinSymmetricJoystick = Joystick<AnalogPinReader<PIN, PIN_MODE>, MIN, (MAX - MIN) / 2, MAX>;
+```
+
+
+
+
+
+**Template parameters:**
+
+
+* `PIN` Arduino pin number 
+* `PIN_MODE` Pin mode (usually INPUT) 
+* `MIN` Minimum analog reading 
+* `MAX` Maximum analog reading 
 
 
 

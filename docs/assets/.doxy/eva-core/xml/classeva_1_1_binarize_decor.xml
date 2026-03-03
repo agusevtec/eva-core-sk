@@ -29,7 +29,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaReaderDecors.h" line="45" column="22" bodyfile="src/evaReaderDecors.h" bodystart="45" bodyend="48"/>
+        <location file="src/evaReaderDecors.h" line="44" column="22" bodyfile="src/evaReaderDecors.h" bodystart="44" bodyend="47"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -71,7 +71,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="src/evaReaderDecors.h" line="42" column="5" bodyfile="src/evaReaderDecors.h" bodystart="43" bodyend="49"/>
+    <location file="src/evaReaderDecors.h" line="41" column="5" bodyfile="src/evaReaderDecors.h" bodystart="42" bodyend="48"/>
     <listofallmembers>
       <member refid="classeva_1_1_binarize_decor_1ac5cdfc4823ad576bc240a47c07fe2bf1" prot="public" virt="non-virtual"><scope>eva::BinarizeDecor</scope><name>getValue</name></member>
     </listofallmembers>
