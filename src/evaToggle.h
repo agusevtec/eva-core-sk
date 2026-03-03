@@ -37,7 +37,6 @@ namespace eva
   public:
     Toggle()
     {
-      lll;
       enable(true);
     }
 

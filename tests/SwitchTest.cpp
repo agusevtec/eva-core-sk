@@ -28,7 +28,6 @@ test(switch_detects_activation) {
     assertEqual(sw.getValue(), 1);
     assertEqual(handler.callCount, 1);
     assertEqual((long)handler.lastArgs, (long)SW_EVENTS::ON_ACTIVE);
-    xxx;
 }
 
 // test(switch_detects_deactivation) {

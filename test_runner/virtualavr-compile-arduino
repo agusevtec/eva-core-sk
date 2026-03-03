@@ -43,8 +43,7 @@ compile_arduino_sketch() {
 
     local target_dir="$(mktemp -d /tmp/arduino-build-XXXXXX)"
     # Compile
-    echo DIR!!! $sketch_dir
-    if ! arduino-cli compile --fqbn "$fqbn" $build_property_flag --libraries /libraries --output-dir "$target_dir" "$sketch_dir" --json | jq -r --arg sketch_dir "$sketch_dir/" '.compiler_out, (.builder_result.diagnostics[]? | "\(.file | gsub($sketch_dir; "")):\(.line):\(.column // 1): \(.severity): \(.message | gsub("\n"; " ") | gsub("\r"; ""))")'; then
+    if ! arduino-cli compile --fqbn "$fqbn" $build_property_flag --libraries /libraries --output-dir "$target_dir" "$sketch_dir" --json | jq -r '.compiler_out, (.builder_result.diagnostics[]? | "\(.file | gsub("/libraries"; "..")):\(.line):\(.column // 1): \(.severity): \(.message | gsub("\n"; " ") | gsub("\r"; ""))")'; then
         echo "Compilation failed" >&2
         rm -rf "$target_dir"
         return 1

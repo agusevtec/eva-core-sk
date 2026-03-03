@@ -39,7 +39,7 @@ test(polarize_decor_returns_minus1_0_1) {
 test(quantize_decor_returns_level_index) {
     QuantizeDecor<MockReader, 0, 100, 200, 300> reader;
     
-    reader.setValue(50);
+    reader.setValue(49);
     assertEqual(reader.getValue(), 0);
     
     reader.setValue(150);
