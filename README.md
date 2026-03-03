@@ -30,10 +30,10 @@ public:
   }
 };
 
-App app;
 
 void setup() {
   Serial.begin(9600);
+  static App app;
 }
 
 void loop() {
@@ -102,7 +102,7 @@ EVA is growing. Future modules include:
 
 ## Installation
 
-### Using Arduino Library Manager (recommended)
+### Using Arduino Library Manager
 1. Open Arduino IDE
 2. Go to **Sketch’ Include Library’ Manage Libraries**
 3. Search for **"eva-core-sk"**

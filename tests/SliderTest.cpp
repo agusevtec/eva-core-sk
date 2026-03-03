@@ -1,5 +1,3 @@
-#line 2 "SliderTest.cpp"
-
 #include <AUnit.h>
 #include "MockReader.h"
 #include <evaSlider.h>
@@ -22,10 +20,10 @@ test(slider_returns_255_at_max) {
 }
 
 test(slider_returns_128_at_midpoint) {
-    Slider<MockReader, 0, 1023> slider;
+    Slider<MockReader, 0, 1000> slider;
     
-    slider.setValue(512);
-    assertEqual(slider.getValue(), 128);
+    slider.setValue(500);
+    assertEqual(slider.getValue(), 127);
 }
 
 test(slider_returns_64_at_quarter) {

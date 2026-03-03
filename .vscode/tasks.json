@@ -1,0 +1,40 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Запустить тесты Arduino",
+            "type": "shell",
+            "command": "docker compose -f docker-compose.tests.yaml up",
+            "group": "test",
+            "problemMatcher": [
+                {
+                    "owner": "cpp",
+                    "fileLocation": ["relative", "${workspaceFolder}/tests"],
+                    "pattern": [
+                        {
+                            "regexp": "^test-runner-1  \\| (.+):(\\d+):(\\d+): (.+): (.*)$",
+                            "file": 1,
+                            "line": 2,
+                            "column": 3,
+                            "severity": 4,
+                            "message": 5
+                        }
+                    ]
+                },
+                {
+                    "owner": "cpp",
+                    "fileLocation": ["relative", "${workspaceFolder}/tests"],
+                    "pattern": [
+                        {
+                            "regexp": "^test-runner-1  \\| (.+):(\\d+): (.+): (.*)$",
+                            "file": 1,
+                            "line": 2,
+                            "severity": 3,
+                            "message": 4
+                        }
+                    ]
+                },
+            ]
+        }
+    ]
+}

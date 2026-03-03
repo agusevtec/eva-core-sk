@@ -42,14 +42,9 @@ compile_arduino_sketch() {
     fi
 
     local target_dir="$(mktemp -d /tmp/arduino-build-XXXXXX)"
-
     # Compile
-    if ! arduino-cli compile \
-        --fqbn "$fqbn" \
-        $build_property_flag \
-        --libraries /libraries \
-        --output-dir "$target_dir" \
-        "$sketch_dir"; then
+    echo DIR!!! $sketch_dir
+    if ! arduino-cli compile --fqbn "$fqbn" $build_property_flag --libraries /libraries --output-dir "$target_dir" "$sketch_dir" --json | jq -r --arg sketch_dir "$sketch_dir/" '.compiler_out, (.builder_result.diagnostics[]? | "\(.file | gsub($sketch_dir; "")):\(.line):\(.column // 1): \(.severity): \(.message | gsub("\n"; " ") | gsub("\r"; ""))")'; then
         echo "Compilation failed" >&2
         rm -rf "$target_dir"
         return 1
@@ -69,48 +64,4 @@ compile_arduino_sketch() {
     rm -rf "$target_dir"
 }
 
-
-build_hex() {
-    local input_filename="$1"
-    local target_filename="$2"
-
-    local tmp_dir
-    tmp_dir="$(mktemp -d /tmp/arduino-sketch-XXXXXX)"
-
-    if [[ "$input_filename" == *.hex ]]; then
-        cp "$input_filename" "$target_filename"
-
-    elif [[ "$input_filename" == *.zip ]]; then
-        local copy_target="$tmp_dir/sketch"
-        mkdir -p "$copy_target"
-
-        unzip -q "$input_filename" -d "$copy_target"
-        compile_arduino_sketch "$copy_target" "$target_filename"
-
-    elif [[ "$input_filename" == *.ino ]]; then
-        local base_name
-        base_name="$(basename "$input_filename" .ino)"
-
-        local copy_target="$tmp_dir/$base_name"
-        mkdir -p "$copy_target"
-
-        cp -R "$(dirname "$input_filename")/"* "$copy_target/"
-        compile_arduino_sketch "$copy_target" "$target_filename"
-
-    elif [[ -d "$input_filename" ]]; then
-        local base_name
-        base_name="$(basename "$input_filename")"
-
-        local copy_target="$tmp_dir/$base_name"
-        mkdir -p "$copy_target"
-
-        cp -R "$input_filename/"* "$copy_target/"
-        compile_arduino_sketch "$copy_target" "$target_filename"
-
-    else
-        compile_arduino_sketch "$(dirname "$input_filename")" "$target_filename"
-    fi
-    rm -rf "$tmp_dir"
-}
-
-build_hex "$1" "$2"
+compile_arduino_sketch "$1" "$2"
