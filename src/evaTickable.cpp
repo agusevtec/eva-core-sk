@@ -1,44 +1,57 @@
+// evaTickable.cpp (обновленный)
 #include "evaTickable.h"
 
 using namespace eva;
 
-Tickable::Tickable()
+Tickable *Tickable::first = nullptr;
+Tickable *Tickable::last = nullptr;
+
+Tickable::Tickable() : next(nullptr)
 {
-  chain(this);
+  if (first == nullptr)
+  {
+    first = this;
+    last = this;
+  }
+  else
+  {
+    last->next = this;
+    last = this;
+  }
 }
 
-Tickable *Tickable::chain(Tickable *mount)
+Tickable::~Tickable()
 {
-  static Tickable *first = 0;
-  if (!mount)
-    return first;
-  if (!first)
-    first = mount;
-  static Tickable *last = 0;
-  if (last)
-    last->next = mount;
-  last = mount;
+  Tickable *prev = nullptr;
+  Tickable *current = first;
+
+  while (current != this && current != nullptr)
+  {
+    prev = current;
+    current = current->next;
+  }
+
+  if (current == this)
+  {
+    if (prev == nullptr)
+      first = this->next;
+    else
+      prev->next = this->next;
+
+    if (this == last)
+      last = prev;
+  }
+  this->next = nullptr;
+}
+
+Tickable *Tickable::chain()
+{
   return first;
 }
 
 void Tickable::tac()
 {
   tick();
-  if (this->next)
-    this->next->tac();
+  if (next)
+    next->tac();
 }
-
-inline unsigned long eva::Tickable::millis()
-{
-#ifndef UNIT_TESTING
-  return millis();
-#else
-  return self->millisMock;
-#endif
-}
-#ifdef UNIT_TESTING
-void setMillis(unsigned long millisMock)
-{
-  self->millisMock = millisMock;
-}
-#endif

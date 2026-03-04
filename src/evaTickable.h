@@ -10,13 +10,13 @@ namespace eva
   {
   public:
     Tickable();
+    ~Tickable();
 
     /**
      * @brief Gets or sets the head of the tickable chain
-     * @param mount If provided, adds to chain; if null, returns chain head
      * @return Head of chain
      */
-    static Tickable *chain(Tickable *mount = 0);
+    static Tickable *chain();
 
     /**
      * @brief Triggers tick on this and all linked tickables
@@ -30,11 +30,8 @@ namespace eva
 
   private:
     Tickable *next = 0;
-#ifdef UNIT_TESTING
-  public:
-    unsigned long millisMock;
-    void setMillis(unsigned long);
-#endif
+    static Tickable *last;
+    static Tickable *first;
   };
 };
 #endif

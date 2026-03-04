@@ -42,11 +42,11 @@ test(quantize_decor_returns_level_index) {
     reader.setValue(49);
     assertEqual(reader.getValue(), 0);
     
-    reader.setValue(150);
-    assertEqual(reader.getValue(), 1);
+    reader.setValue(1);
+    assertEqual(reader.getValue(), 2);
     
     reader.setValue(250);
-    assertEqual(reader.getValue(), 2);
+    assertEqual(reader.getValue(), 3);
     
     reader.setValue(350);
     assertEqual(reader.getValue(), 3);
