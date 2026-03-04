@@ -60,14 +60,14 @@ namespace eva
                 this->pressTime = 0;
             }
 
-            if ((wasLevelCode > 0) and (this->levelCode == 0)) // any -> 0
+            if ((wasLevelCode > 0) and (wasLevelCode != this->levelCode)) // any_pos -> 0  
             {
                 if (this->pressTime and (millis() - this->pressTime < 750))
                     notify(MB_EVENTS::ON_SHORTCLICK | wasLevelCode);
                 notify(MB_EVENTS::ON_RELEASE | wasLevelCode);
                 this->pressTime = 0;
             }
-            if ((wasLevelCode == 0) and (this->levelCode > 0)) // 0 -> any
+            if ((wasLevelCode != this->levelCode) and (this->levelCode > 0)) // 0 -> any_pos
             {
                 this->pressTime = millis();
                 notify(MB_EVENTS::ON_PRESS | this->levelCode);

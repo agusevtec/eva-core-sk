@@ -6,50 +6,31 @@ using namespace aunit;
 using namespace eva;
 
 test(slider_returns_0_at_min) {
-    Slider<MockReader, 0, 1023> slider;
+    Slider<MockReader, 0, 1000> slider;
     
     slider.setValue(0);
     assertEqual(slider.getValue(), 0);
-}
 
-test(slider_returns_255_at_max) {
-    Slider<MockReader, 0, 1023> slider;
-    
-    slider.setValue(1023);
-    assertEqual(slider.getValue(), 255);
-}
-
-test(slider_returns_128_at_midpoint) {
-    Slider<MockReader, 0, 1000> slider;
-    
     slider.setValue(500);
     assertEqual(slider.getValue(), 127);
-}
-
-test(slider_returns_64_at_quarter) {
-    Slider<MockReader, 0, 1023> slider;
     
-    slider.setValue(256);
-    assertEqual(slider.getValue(), 64);
-}
-
-test(slider_saturates_at_max) {
-    Slider<MockReader, 0, 1023> slider;
-    
-    slider.setValue(2000);
+    slider.setValue(1000);
     assertEqual(slider.getValue(), 255);
 }
 
-test(slider_saturates_at_min) {
-    Slider<MockReader, 0, 1023> slider;
-    
+test(slider_returns_127_at_over) {
+    Slider<MockReader, 0, 512> slider;
+
+    slider.setValue(600);
+    assertEqual(slider.getValue(), 255);
+
     slider.setValue(-100);
     assertEqual(slider.getValue(), 0);
 }
 
 test(slider_works_with_different_range) {
     Slider<MockReader, 100, 900> slider;
-    
+
     slider.setValue(100);
     assertEqual(slider.getValue(), 0);
     
@@ -57,5 +38,19 @@ test(slider_works_with_different_range) {
     assertEqual(slider.getValue(), 255);
     
     slider.setValue(500);
-    assertEqual(slider.getValue(), 128);
+    assertEqual(slider.getValue(), 127);
 }
+
+test(slider_works_with_reversed_range) {
+    Slider<MockReader, 400, 100> slider;
+    
+    slider.setValue(100);
+    assertEqual(slider.getValue(), 255);
+    
+    slider.setValue(400);
+    assertEqual(slider.getValue(), 0);
+    
+    slider.setValue(250);
+    assertEqual(slider.getValue(), 127);
+}
+

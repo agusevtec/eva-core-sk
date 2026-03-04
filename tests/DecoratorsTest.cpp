@@ -1,5 +1,3 @@
-#line 2 "DecoratorsTest.cpp"
-
 #include <AUnit.h>
 #include "MockReader.h"
 #include <evaReaderDecors.h>
@@ -39,29 +37,29 @@ test(polarize_decor_returns_minus1_0_1) {
 test(quantize_decor_returns_level_index) {
     QuantizeDecor<MockReader, 0, 100, 200, 300> reader;
     
-    reader.setValue(49);
+    reader.setValue(22);
     assertEqual(reader.getValue(), 0);
     
-    reader.setValue(1);
-    assertEqual(reader.getValue(), 2);
+    reader.setValue(120);
+    assertEqual(reader.getValue(), 1);
     
     reader.setValue(250);
-    assertEqual(reader.getValue(), 3);
+    assertEqual(reader.getValue(), 2);
     
-    reader.setValue(350);
+    reader.setValue(330);
     assertEqual(reader.getValue(), 3);
 }
 
 test(quantize_decor_handles_boundaries) {
-    QuantizeDecor<MockReader, 0, 100, 200, 300> reader;
+    QuantizeDecor<MockReader, 1000, 750, 500, 250> reader;
     
-    reader.setValue(149);
+    reader.setValue(1020);
+    assertEqual(reader.getValue(), 0);
+    
+    reader.setValue(700);
     assertEqual(reader.getValue(), 1);
     
-    reader.setValue(151);
-    assertEqual(reader.getValue(), 2);
-    
-    reader.setValue(249);
+    reader.setValue(520);
     assertEqual(reader.getValue(), 2);
     
     reader.setValue(300);

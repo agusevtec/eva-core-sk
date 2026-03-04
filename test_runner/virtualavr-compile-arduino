@@ -2,7 +2,6 @@
 set -euo pipefail
 
 compile_arduino_sketch() {
-    echo "$1" "$2"
     local sketch_dir="$1"
     local target_filename="$2"
 
@@ -43,12 +42,14 @@ compile_arduino_sketch() {
 
     local target_dir="$(mktemp -d /tmp/arduino-build-XXXXXX)"
     # Compile
-    if ! arduino-cli compile --fqbn "$fqbn" $build_property_flag --libraries /libraries --output-dir "$target_dir" "$sketch_dir" --json | jq -r '.compiler_out, (.builder_result.diagnostics[]? | "\(.file | gsub("/libraries"; "..")):\(.line):\(.column // 1): \(.severity): \(.message | gsub("\n"; " ") | gsub("\r"; ""))")'; then
+#    if ! arduino-cli compile --fqbn "$fqbn" $build_property_flag --libraries /libraries --output-dir "$target_dir" "$sketch_dir" --json;
+    if ! arduino-cli compile --fqbn "$fqbn" $build_property_flag --libraries /libraries --output-dir "$target_dir" "$sketch_dir" --json \
+        | jq -r --arg sketch_dir "$sketch_dir" '(.builder_result.diagnostics[]? | (last(.notes[]?| select(.message | contains("candidate:") | not)) // .) as $note | "\($note.file | gsub("/libraries"; "..") | gsub($sketch_dir; "")):\($note.line // 1):\($note.column // 1): \(.severity): \($note.message | gsub("\n"; " ") | gsub("\r"; ""))") // .compiler_err';
+    then
         echo "Compilation failed" >&2
         rm -rf "$target_dir"
         return 1
     fi
-
     local sketch_name="$(basename "$sketch_dir")"
     local hex_file="$target_dir/${sketch_name}.ino.hex"
 

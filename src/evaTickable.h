@@ -23,8 +23,6 @@ namespace eva
      */
     void tac();
 
-    inline unsigned long millis();
-
   private:
     virtual short tick() = 0;
 

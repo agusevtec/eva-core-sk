@@ -1,6 +1,6 @@
 #include "evaDelayTimer.h"
 #include <Arduino.h>
-
+#include "evaCommon.h"
 using namespace eva;
 
 DelayTimer::DelayTimer()
@@ -26,7 +26,7 @@ short DelayTimer::tick()
     if (!this->nextFire)
         return 0;
 
-    if (millis() < this->nextFire)
+    if (IS_BEFORE(millis(), this->nextFire))
         return 0;
 
     this->nextFire = 0;
