@@ -9,7 +9,7 @@ DelayTimer::DelayTimer()
     stop();
 }
 
-void DelayTimer::start(unsigned delay, IHandler *listener)
+void DelayTimer::start(unsigned short delay, IHandler *listener)
 {
     if (listener)
         this->listener = listener;

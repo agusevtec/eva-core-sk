@@ -19,14 +19,14 @@ namespace eva
          * @param period Interval in milliseconds
          * @param listener Handler to invoke on each tick
          */
-        RepeatTimer(unsigned period, IHandler *listener);
+        RepeatTimer(unsigned short  period, IHandler *listener);
         
         /**
          * @brief Starts or restarts the repeating timer
          * @param period Interval in milliseconds
          * @param listener Handler to invoke on each tick
          */
-        void start(unsigned period, IHandler *listener);
+        void start(unsigned short period, IHandler *listener);
 
     private:
         short tick() override;

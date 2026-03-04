@@ -3,12 +3,12 @@
 
 using namespace eva;
 
-RepeatTimer::RepeatTimer(unsigned period, IHandler *listener)
+RepeatTimer::RepeatTimer(unsigned short period, IHandler *listener)
 {
     start(period, listener);
 }
 
-void RepeatTimer::start(unsigned period, IHandler *listener)
+void RepeatTimer::start(unsigned short  period, IHandler *listener)
 {
     DelayTimer::start(period, listener);
     this->period = period;

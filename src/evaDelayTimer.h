@@ -20,7 +20,7 @@ namespace eva
          * @param delay Delay in milliseconds
          * @param listener Handler to invoke when timer expires
          */
-        void start(unsigned delay, IHandler *listener = 0);
+        void start(unsigned short  delay, IHandler *listener = 0);
         
         /**
          * @brief Stops the timer
