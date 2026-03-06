@@ -13,23 +13,29 @@ namespace eva
     {
     public:
         using DelayTimer::DelayTimer;
-        
+       
         /**
          * @brief Constructor that starts the timer
          * @param period Interval in milliseconds
          * @param listener Handler to invoke on each tick
          */
-        RepeatTimer(unsigned short  period, IHandler *listener);
+        RepeatTimer(unsigned short period, IHandler *listener);
+
+        RepeatTimer* setPeriod(unsigned short period);
+        
+        RepeatTimer* setListener(IHandler *listener);
         
         /**
          * @brief Starts or restarts the repeating timer
-         * @param period Interval in milliseconds
+         * @param period Interval in milliseconds 
          * @param listener Handler to invoke on each tick
          */
         void start(unsigned short period, IHandler *listener);
+        void start(unsigned short period);
+        void start();
 
     private:
-        short tick() override;
+        void tick() override;
 
     private:
         unsigned short period;

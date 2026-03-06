@@ -28,7 +28,7 @@ namespace eva
     using Toggle<READER>::Toggle;
 
   private:
-    short tick() override
+    void tick() override
     {
       if (!(this->encodedState & ENABLED))
         return 0;
@@ -57,7 +57,6 @@ namespace eva
         this->pressTime = millis();
         notify(B_EVENTS::ON_PRESS);
       }
-      return 0;
     }
 
   protected:

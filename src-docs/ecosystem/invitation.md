@@ -10,27 +10,11 @@ Projects in the EVA ecosystem live in the `eva` namespace and are built around t
 - **Handler** — events instead of polling
 - **Template composition** — flexibility without performance loss
 
-## Ecosystem Structure
-
-```
-eva/                          # Namespace
-├── core/                     # Core: Tickable, Handler, IReader
-├── sk/                       # Survival Kit (current project)
-│   ├── Button, Switch, MultiButton
-│   ├── DelayTimer, IntervalTimer
-│   ├── Indicator, Joystick, Slider
-│   └── List
-├── boxy/                     # GUI / windowing library
-├── frequencymeter/           # Frequency measurement
-├── serial/                   # Serial port handling
-└── ...                       # Your project could be next
-```
-
 Each module solves its own specific task, but they all speak the same language—the language of EVA.
 
 ## An Invitation to Collaborate
 
-You are an Arduino library author. Your project solves a specific hardware problem: SoftwareSerial, SIM800L, GPS, sensors, displays. It has its own logic, its own complexities, its own hard-earned solutions.
+You are an Arduino library author. Your project solves a specific hardware problem: GMS, GPS, or any other sensors - its own hard-earned solutions, great!
 
 I propose we join forces.
 
@@ -39,9 +23,8 @@ I propose we join forces.
 1. **Your library becomes part of an ecosystem** — EVA users will use it "out of the box," knowing it follows the same architectural principles.
 
 2. **Clean examples** — Instead of code with `millis()` and flags, you can show examples where your library is embedded in a solid architecture:
-   - GPS parser as a `Tickable` component
-   - GSM modem with callbacks instead of AT commands in `loop()`
-   - Software serial that doesn't block the rest of the logic
+   - GPS parser could be a `Tickable` component
+   - GSM modem could be with callbacks instead of blocking on serial answers of AT commands
 
 3. **Less support burden** — Many user problems stem not from your library, but from how they call it. EVA-core-sk takes care of time management and events, leaving you with just the logic.
 

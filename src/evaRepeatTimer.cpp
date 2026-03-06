@@ -8,15 +8,44 @@ RepeatTimer::RepeatTimer(unsigned short period, IHandler *listener)
     start(period, listener);
 }
 
-void RepeatTimer::start(unsigned short  period, IHandler *listener)
+void RepeatTimer::start(unsigned short period, IHandler *listener)
 {
-    DelayTimer::start(period, listener);
-    this->period = period;
+    setPeriod(period);
+    setListener(listener);
+    if (this->period > 0)
+        DelayTimer::start(this->period, this->listener);
+    else
+        stop();
 }
 
-short RepeatTimer::tick()
+void eva::RepeatTimer::start(unsigned short period)
 {
-    if (DelayTimer::tick())
+    start(period, this->listener);
+}
+
+void eva::RepeatTimer::start()
+{
+    start(this->period, this->listener);
+}
+
+void RepeatTimer::tick()
+{
+    if (!isRunning())
+        return;
+
+    DelayTimer::tick();
+
+    if (!isRunning())
         this->nextFire += this->period;
-    return 0;
+}
+
+RepeatTimer *RepeatTimer::setPeriod(unsigned short period)
+{
+    this->period = period;
+    return this;
+}
+
+RepeatTimer *RepeatTimer::setListener(IHandler *listener)
+{
+    return DelayTimer::setListener(listener);
 }

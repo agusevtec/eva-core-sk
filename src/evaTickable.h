@@ -24,7 +24,7 @@ namespace eva
     void tac();
 
   private:
-    virtual short tick() = 0;
+    virtual void tick() = 0;
 
   private:
     Tickable *next = 0;

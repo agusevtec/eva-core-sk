@@ -11,9 +11,8 @@ public:
     int tickCount = 0;
     
 protected:
-    short tick() override {
+    void tick() override {
         tickCount++;
-        return 0;
     }
 };
 
@@ -30,7 +29,7 @@ public:
     }
     
 protected:
-    short tick() override {
+    void tick() override {
         return 0;
     }
 };

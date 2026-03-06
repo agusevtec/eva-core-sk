@@ -15,12 +15,20 @@ namespace eva
     public:
         DelayTimer();
         
+        DelayTimer(IHandler *listener);
+
         /**
          * @brief Starts the timer
          * @param delay Delay in milliseconds
          * @param listener Handler to invoke when timer expires
          */
-        void start(unsigned short  delay, IHandler *listener = 0);
+        void start(unsigned short delay, IHandler *listener);
+
+        void start(unsigned short delay);
+
+        bool isRunning();
+
+        DelayTimer* setListener(IHandler *listener);
         
         /**
          * @brief Stops the timer
@@ -28,7 +36,7 @@ namespace eva
         void stop();
 
     protected:
-        short tick() override;
+        void tick() override;
 
     protected:
         unsigned long nextFire;

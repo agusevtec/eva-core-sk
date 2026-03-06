@@ -79,7 +79,7 @@ namespace eva
     }
 
   protected:
-    short tick() override
+    void tick() override
     {
       if (!(this->encodedState & ENABLED))
         return 0;
@@ -92,7 +92,6 @@ namespace eva
         this->encodedState = (this->encodedState & ~ISACTIVE) | isActive;
         notify(isActive ? SW_EVENTS::ON_ACTIVE : SW_EVENTS::ON_INACTIVE);
       }
-      return 0;
     }
 
     void notify(unsigned short eventTypeMask)

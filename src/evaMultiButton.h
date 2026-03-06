@@ -47,7 +47,7 @@ namespace eva
         }
 
     private:
-        short tick() override
+        void tick() override
         {
             if ((this->encodedState & ENABLED) != ENABLED)
                 return 0;
@@ -72,7 +72,6 @@ namespace eva
                 this->pressTime = millis();
                 notify(MB_EVENTS::ON_PRESS | this->levelCode);
             }
-            return 0;
         }
 
     private:
