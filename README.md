@@ -25,7 +25,7 @@ public:
   App() {
     button.setListener(
       new Handler<App>(this, &App::onButtonClick),
-      B_EVENTS::ON_SHORTCLICK
+      ON_SHORTCLICK
     );
   }
 };
@@ -104,7 +104,7 @@ EVA is growing. Future modules include:
 
 ### Using Arduino Library Manager
 1. Open Arduino IDE
-2. Go to **Sketch’ Include Library’ Manage Libraries**
+2. Go to **Sketchï¿½ Include Libraryï¿½ Manage Libraries**
 3. Search for **"eva-core-sk"**
 4. Click **Install**
 

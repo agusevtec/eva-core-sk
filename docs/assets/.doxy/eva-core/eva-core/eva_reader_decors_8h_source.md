@@ -18,19 +18,28 @@
 
 namespace eva
 {
+    inline static bool in_beetween(signed short x, signed short a, signed short b)
+    {
+        if ((a <= b) && (a <= x) && (x <= b))
+            return true;
+        if ((b <= a) && (b <= x) && (x <= a))
+            return true;
+        return false;
+    }
     template <class READER>
     class StabilizeDecor : public READER
     {
     public:
         signed short getValue()
         {
-            if (this->keepValueTill and (millis() < this->keepValueTill))
+            unsigned long now = millis();
+            if (this->keepValueTill and (now < this->keepValueTill))
                 return this->keepedValue;
 
             signed short value = READER::getValue();
             if (value != this->keepedValue)
             {
-                this->keepValueTill = millis() + 120;
+                this->keepValueTill = now + 120;
                 this->keepedValue = value;
             }
             return this->keepedValue;
@@ -41,23 +50,23 @@ namespace eva
         signed short keepedValue = 0;
     };
 
-    template <class READER, int LEVEL>
+    template <class READER, int ACTICATES_ON>
     class BinarizeDecor : public READER
     {
     public:
         signed short getValue()
         {
-            return READER::getValue() == LEVEL;
+            return READER::getValue() == ACTICATES_ON;
         }
     };
 
-    template <class READER, int LEVEL>
+    template <class READER, int THRESHOLD>
     class PolarizeDecor : public READER
     {
     public:
         signed short getValue()
         {
-            return constrain(READER::getValue() / LEVEL, -1, 1);
+            return constrain(READER::getValue() / THRESHOLD, -1, 1);
         }
     };
 
@@ -70,10 +79,10 @@ namespace eva
             signed short value = READER::getValue() * 2;
             unsigned char i;
             for (i = 1; i < sizeof...(LEVELS) - 1; i++)
-                if ((this->levels[i - 1] + this->levels[i]) <= value && value < (this->levels[i] + this->levels[i + 1]))
+                if (in_beetween(value, this->levels[i - 1] + this->levels[i], this->levels[i] + this->levels[i + 1]))
                     return i;
-            if ((this->levels[i - 1] + this->levels[i] <= value) && (value < 3 * this->levels[i] - this->levels[i - 1]))
-              return i;
+            if (in_beetween(value, this->levels[i - 1] + this->levels[i], 3 * this->levels[i] - this->levels[i - 1]))
+                return i;
             return 0;
         }
 

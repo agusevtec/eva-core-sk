@@ -8,8 +8,6 @@
       <node id="5">
         <label>src/evaButton.h</label>
         <link refid="eva_button_8h_source"/>
-        <childnode refid="6" relation="include">
-        </childnode>
       </node>
       <node id="1">
         <label>src/evaCommon.h</label>
@@ -22,10 +20,6 @@
       <node id="2">
         <label>src/evaJoystick.h</label>
         <link refid="eva_joystick_8h_source"/>
-      </node>
-      <node id="6">
-        <label>src/evaMultiButton.h</label>
-        <link refid="eva_multi_button_8h_source"/>
       </node>
       <node id="3">
         <label>src/evaReaderDecors.h</label>
@@ -53,6 +47,19 @@
         </inbodydescription>
         <location file="src/evaCommon.h" line="6" column="9" bodyfile="src/evaCommon.h" bodystart="6" bodyend="-1"/>
       </memberdef>
+      <memberdef kind="define" id="eva_common_8h_1a2d3ed49820ead661b0e93608528b8def" prot="public" static="no">
+        <name>IS_BEFORE</name>
+        <param><defname>t1</defname></param>
+        <param><defname>t2</defname></param>
+        <initializer>(((t2) - (t1)) &lt;= 0x7FFFFFFFUL)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evaCommon.h" line="7" column="9" bodyfile="src/evaCommon.h" bodystart="7" bodyend="-1"/>
+      </memberdef>
     </sectiondef>
     <briefdescription>
     </briefdescription>
@@ -65,8 +72,9 @@
 <codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="5"><highlight class="normal"></highlight></codeline>
 <codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SIGN(x)<sp/>(((x)<sp/>&gt;<sp/>0)<sp/>-<sp/>((x)<sp/>&lt;<sp/>0))</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="7"><highlight class="normal"></highlight></codeline>
-<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IS_BEFORE(t1,<sp/>t2)<sp/>(((t2)<sp/>-<sp/>(t1))<sp/>&lt;=<sp/>0x7FFFFFFFUL)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
     </programlisting>
     <location file="src/evaCommon.h"/>
   </compounddef>

@@ -757,10 +757,21 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#function-delaytimer" class="md-nav__link">
+  <a href="#function-delaytimer-12" class="md-nav__link">
     <span class="md-ellipsis">
       
-        function DelayTimer
+        function DelayTimer [1/2]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-delaytimer-22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        function DelayTimer [2/2]
       
     </span>
   </a>
@@ -779,10 +790,54 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#function-start" class="md-nav__link">
+  <a href="#function-setlistener" class="md-nav__link">
     <span class="md-ellipsis">
       
-        function start
+        function setListener
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-setperiod" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        function setPeriod
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-start-13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        function start [1/3]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-start-23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        function start [2/3]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-start-33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        function start [3/3]
       
     </span>
   </a>
@@ -832,15 +887,35 @@
 <tbody>
 <tr>
 <td style="text-align: right;"></td>
-<td style="text-align: left;"><a href="#function-delaytimer"><strong>DelayTimer</strong></a> () <br></td>
+<td style="text-align: left;"><a href="#function-delaytimer-12"><strong>DelayTimer</strong></a> () <br></td>
 </tr>
 <tr>
 <td style="text-align: right;"></td>
-<td style="text-align: left;"><a href="#function-repeattimer"><strong>RepeatTimer</strong></a> (unsigned period, <a href="../classeva_1_1_i_handler/"><strong>IHandler</strong></a> * listener) <br><em>Constructor that starts the timer.</em></td>
+<td style="text-align: left;"><a href="#function-delaytimer-22"><strong>DelayTimer</strong></a> (<a href="../classeva_1_1_i_handler/"><strong>IHandler</strong></a> * listener) <br></td>
+</tr>
+<tr>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"><a href="#function-repeattimer"><strong>RepeatTimer</strong></a> (unsigned short period, <a href="../classeva_1_1_i_handler/"><strong>IHandler</strong></a> * listener) <br><em>Constructor that starts the timer.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;"><a href="./#function-repeattimer"><strong>RepeatTimer</strong></a> *</td>
+<td style="text-align: left;"><a href="#function-setlistener"><strong>setListener</strong></a> (<a href="../classeva_1_1_i_handler/"><strong>IHandler</strong></a> * listener) <br></td>
+</tr>
+<tr>
+<td style="text-align: right;"><a href="./#function-repeattimer"><strong>RepeatTimer</strong></a> *</td>
+<td style="text-align: left;"><a href="#function-setperiod"><strong>setPeriod</strong></a> (unsigned short period) <br></td>
 </tr>
 <tr>
 <td style="text-align: right;">void</td>
-<td style="text-align: left;"><a href="#function-start"><strong>start</strong></a> (unsigned period, <a href="../classeva_1_1_i_handler/"><strong>IHandler</strong></a> * listener) <br><em>Starts or restarts the repeating timer.</em></td>
+<td style="text-align: left;"><a href="#function-start-13"><strong>start</strong></a> (unsigned short period, <a href="../classeva_1_1_i_handler/"><strong>IHandler</strong></a> * listener) <br><em>Starts or restarts the repeating timer.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">void</td>
+<td style="text-align: left;"><a href="#function-start-23"><strong>start</strong></a> (unsigned short period) <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">void</td>
+<td style="text-align: left;"><a href="#function-start-33"><strong>start</strong></a> () <br></td>
 </tr>
 </tbody>
 </table>
@@ -856,11 +931,27 @@
 <tbody>
 <tr>
 <td style="text-align: right;"></td>
-<td style="text-align: left;"><a href="../classeva_1_1_delay_timer/#function-delaytimer"><strong>DelayTimer</strong></a> () <br></td>
+<td style="text-align: left;"><a href="../classeva_1_1_delay_timer/#function-delaytimer-12"><strong>DelayTimer</strong></a> () <br></td>
+</tr>
+<tr>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"><a href="../classeva_1_1_delay_timer/#function-delaytimer-22"><strong>DelayTimer</strong></a> (<a href="../classeva_1_1_i_handler/"><strong>IHandler</strong></a> * listener) <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">bool</td>
+<td style="text-align: left;"><a href="../classeva_1_1_delay_timer/#function-isrunning"><strong>isRunning</strong></a> () <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">DelayTimer *</td>
+<td style="text-align: left;"><a href="../classeva_1_1_delay_timer/#function-setlistener"><strong>setListener</strong></a> (<a href="../classeva_1_1_i_handler/"><strong>IHandler</strong></a> * listener) <br></td>
 </tr>
 <tr>
 <td style="text-align: right;">void</td>
-<td style="text-align: left;"><a href="../classeva_1_1_delay_timer/#function-start"><strong>start</strong></a> (unsigned delay, <a href="../classeva_1_1_i_handler/"><strong>IHandler</strong></a> * listener=0) <br><em>Starts the timer.</em></td>
+<td style="text-align: left;"><a href="../classeva_1_1_delay_timer/#function-start-12"><strong>start</strong></a> (unsigned short delay, <a href="../classeva_1_1_i_handler/"><strong>IHandler</strong></a> * listener) <br><em>Starts the timer.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">void</td>
+<td style="text-align: left;"><a href="../classeva_1_1_delay_timer/#function-start-22"><strong>start</strong></a> (unsigned short delay) <br></td>
 </tr>
 <tr>
 <td style="text-align: right;">void</td>
@@ -883,12 +974,12 @@
 <td style="text-align: left;"><a href="../classeva_1_1_tickable/#function-tickable"><strong>Tickable</strong></a> () <br></td>
 </tr>
 <tr>
-<td style="text-align: right;">unsigned long</td>
-<td style="text-align: left;"><a href="../classeva_1_1_tickable/#function-millis"><strong>millis</strong></a> () <br></td>
-</tr>
-<tr>
 <td style="text-align: right;">void</td>
 <td style="text-align: left;"><a href="../classeva_1_1_tickable/#function-tac"><strong>tac</strong></a> () <br><em>Triggers tick on this and all linked tickables.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"><a href="../classeva_1_1_tickable/#function-tickable"><strong>~Tickable</strong></a> () <br></td>
 </tr>
 </tbody>
 </table>
@@ -904,7 +995,7 @@
 <tbody>
 <tr>
 <td style="text-align: right;">Tickable *</td>
-<td style="text-align: left;"><a href="../classeva_1_1_tickable/#function-chain"><strong>chain</strong></a> (Tickable * mount=0) <br><em>Gets or sets the head of the tickable chain.</em></td>
+<td style="text-align: left;"><a href="../classeva_1_1_tickable/#function-chain"><strong>chain</strong></a> () <br><em>Gets or sets the head of the tickable chain.</em></td>
 </tr>
 </tbody>
 </table>
@@ -939,14 +1030,22 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: right;">virtual short</td>
+<td style="text-align: right;">virtual void</td>
 <td style="text-align: left;"><a href="../classeva_1_1_delay_timer/#function-tick"><strong>tick</strong></a> () override<br></td>
 </tr>
 </tbody>
 </table>
 <h2 id="public-functions-documentation">Public Functions Documentation<a class="headerlink" href="#public-functions-documentation" title="Permanent link">&para;</a></h2>
-<h3 id="function-delaytimer">function DelayTimer<a class="headerlink" href="#function-delaytimer" title="Permanent link">&para;</a></h3>
+<h3 id="function-delaytimer-12">function DelayTimer [1/2]<a class="headerlink" href="#function-delaytimer-12" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><code><span class="n">eva</span><span class="o">::</span><span class="n">RepeatTimer</span><span class="o">::</span><span class="n">DelayTimer</span><span class="w"> </span><span class="p">()</span><span class="w"> </span>
+</code></pre></div>
+
+<hr>
+
+<h3 id="function-delaytimer-22">function DelayTimer [2/2]<a class="headerlink" href="#function-delaytimer-22" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="n">eva</span><span class="o">::</span><span class="n">RepeatTimer</span><span class="o">::</span><span class="n">DelayTimer</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="n">IHandler</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">listener</span>
+<span class="p">)</span><span class="w"> </span>
 </code></pre></div>
 
 <hr>
@@ -954,7 +1053,7 @@
 <h3 id="function-repeattimer">function RepeatTimer<a class="headerlink" href="#function-repeattimer" title="Permanent link">&para;</a></h3>
 <p><em>Constructor that starts the timer.</em> </p>
 <div class="codehilite"><pre><span></span><code><span class="n">eva</span><span class="o">::</span><span class="n">RepeatTimer</span><span class="o">::</span><span class="n">RepeatTimer</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="n">period</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">period</span><span class="p">,</span>
 <span class="w">    </span><span class="n">IHandler</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">listener</span>
 <span class="p">)</span><span class="w"> </span>
 </code></pre></div>
@@ -966,10 +1065,26 @@
 </ul>
 <hr>
 
-<h3 id="function-start">function start<a class="headerlink" href="#function-start" title="Permanent link">&para;</a></h3>
+<h3 id="function-setlistener">function setListener<a class="headerlink" href="#function-setlistener" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="n">RepeatTimer</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">RepeatTimer</span><span class="o">::</span><span class="n">setListener</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="n">IHandler</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">listener</span>
+<span class="p">)</span><span class="w"> </span>
+</code></pre></div>
+
+<hr>
+
+<h3 id="function-setperiod">function setPeriod<a class="headerlink" href="#function-setperiod" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="n">RepeatTimer</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">RepeatTimer</span><span class="o">::</span><span class="n">setPeriod</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">period</span>
+<span class="p">)</span><span class="w"> </span>
+</code></pre></div>
+
+<hr>
+
+<h3 id="function-start-13">function start [1/3]<a class="headerlink" href="#function-start-13" title="Permanent link">&para;</a></h3>
 <p><em>Starts or restarts the repeating timer.</em> </p>
 <div class="codehilite"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">RepeatTimer</span><span class="o">::</span><span class="n">start</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="n">period</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">period</span><span class="p">,</span>
 <span class="w">    </span><span class="n">IHandler</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">listener</span>
 <span class="p">)</span><span class="w"> </span>
 </code></pre></div>
@@ -979,6 +1094,20 @@
 <li><code>period</code> Interval in milliseconds </li>
 <li><code>listener</code> <a href="../classeva_1_1_handler/"><strong>Handler</strong></a> to invoke on each tick </li>
 </ul>
+<hr>
+
+<h3 id="function-start-23">function start [2/3]<a class="headerlink" href="#function-start-23" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">RepeatTimer</span><span class="o">::</span><span class="n">start</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">period</span>
+<span class="p">)</span><span class="w"> </span>
+</code></pre></div>
+
+<hr>
+
+<h3 id="function-start-33">function start [3/3]<a class="headerlink" href="#function-start-33" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">RepeatTimer</span><span class="o">::</span><span class="n">start</span><span class="w"> </span><span class="p">()</span><span class="w"> </span>
+</code></pre></div>
+
 <hr>
 
 <hr />

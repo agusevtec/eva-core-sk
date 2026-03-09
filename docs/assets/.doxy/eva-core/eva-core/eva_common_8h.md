@@ -78,11 +78,28 @@
 
 | Type | Name |
 | ---: | :--- |
+| define  | [**IS\_BEFORE**](eva_common_8h.md#define-is_before) (t1, t2) `(((t2) - (t1)) &lt;= 0x7FFFFFFFUL)`<br> |
 | define  | [**SIGN**](eva_common_8h.md#define-sign) (x) `(((x) &gt; 0) - ((x) &lt; 0))`<br> |
 
 ## Macro Definition Documentation
 
 
+
+
+
+### define IS\_BEFORE 
+
+```C++
+#define IS_BEFORE (
+    t1,
+    t2
+) `(((t2) - (t1)) <= 0x7FFFFFFFUL)`
+```
+
+
+
+
+<hr>
 
 
 

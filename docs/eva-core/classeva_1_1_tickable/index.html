@@ -724,10 +724,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#function-millis" class="md-nav__link">
+  <a href="#function-tac" class="md-nav__link">
     <span class="md-ellipsis">
       
-        function millis
+        function tac
       
     </span>
   </a>
@@ -735,10 +735,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#function-tac" class="md-nav__link">
+  <a href="#function-tickable_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        function tac
+        function ~Tickable
       
     </span>
   </a>
@@ -819,12 +819,12 @@
 <td style="text-align: left;"><a href="#function-tickable"><strong>Tickable</strong></a> () <br></td>
 </tr>
 <tr>
-<td style="text-align: right;">unsigned long</td>
-<td style="text-align: left;"><a href="#function-millis"><strong>millis</strong></a> () <br></td>
-</tr>
-<tr>
 <td style="text-align: right;">void</td>
 <td style="text-align: left;"><a href="#function-tac"><strong>tac</strong></a> () <br><em>Triggers tick on this and all linked tickables.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"><a href="#function-tickable"><strong>~Tickable</strong></a> () <br></td>
 </tr>
 </tbody>
 </table>
@@ -839,7 +839,7 @@
 <tbody>
 <tr>
 <td style="text-align: right;">Tickable *</td>
-<td style="text-align: left;"><a href="#function-chain"><strong>chain</strong></a> (Tickable * mount=0) <br><em>Gets or sets the head of the tickable chain.</em></td>
+<td style="text-align: left;"><a href="#function-chain"><strong>chain</strong></a> () <br><em>Gets or sets the head of the tickable chain.</em></td>
 </tr>
 </tbody>
 </table>
@@ -850,30 +850,24 @@
 
 <hr>
 
-<h3 id="function-millis">function millis<a class="headerlink" href="#function-millis" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">Tickable</span><span class="o">::</span><span class="n">millis</span><span class="w"> </span><span class="p">()</span><span class="w"> </span>
-</code></pre></div>
-
-<hr>
-
 <h3 id="function-tac">function tac<a class="headerlink" href="#function-tac" title="Permanent link">&para;</a></h3>
 <p><em>Triggers tick on this and all linked tickables.</em> </p>
 <div class="codehilite"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">Tickable</span><span class="o">::</span><span class="n">tac</span><span class="w"> </span><span class="p">()</span><span class="w"> </span>
 </code></pre></div>
 
 <hr>
+
+<h3 id="function-tickable_1">function ~Tickable<a class="headerlink" href="#function-tickable_1" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="n">eva</span><span class="o">::</span><span class="n">Tickable</span><span class="o">::~</span><span class="n">Tickable</span><span class="w"> </span><span class="p">()</span><span class="w"> </span>
+</code></pre></div>
+
+<hr>
 <h2 id="public-static-functions-documentation">Public Static Functions Documentation<a class="headerlink" href="#public-static-functions-documentation" title="Permanent link">&para;</a></h2>
 <h3 id="function-chain">function chain<a class="headerlink" href="#function-chain" title="Permanent link">&para;</a></h3>
 <p><em>Gets or sets the head of the tickable chain.</em> </p>
-<div class="codehilite"><pre><span></span><code><span class="k">static</span><span class="w"> </span><span class="n">Tickable</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">Tickable</span><span class="o">::</span><span class="n">chain</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="n">Tickable</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">mount</span><span class="o">=</span><span class="mi">0</span>
-<span class="p">)</span><span class="w"> </span>
+<div class="codehilite"><pre><span></span><code><span class="k">static</span><span class="w"> </span><span class="n">Tickable</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">Tickable</span><span class="o">::</span><span class="n">chain</span><span class="w"> </span><span class="p">()</span><span class="w"> </span>
 </code></pre></div>
 
-<p><strong>Parameters:</strong></p>
-<ul>
-<li><code>mount</code> If provided, adds to chain; if null, returns chain head </li>
-</ul>
 <p><strong>Returns:</strong></p>
 <p>Head of chain </p>
 <hr>

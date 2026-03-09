@@ -54,15 +54,15 @@ Inherited by the following classes: [eva::Toggle](classeva_1_1_toggle.md),  [eva
 | Type | Name |
 | ---: | :--- |
 |   | [**Tickable**](#function-tickable) () <br> |
-|  unsigned long | [**millis**](#function-millis) () <br> |
 |  void | [**tac**](#function-tac) () <br>_Triggers tick on this and all linked tickables._  |
+|   | [**~Tickable**](#function-tickable) () <br> |
 
 
 ## Public Static Functions
 
 | Type | Name |
 | ---: | :--- |
-|  Tickable \* | [**chain**](#function-chain) (Tickable \* mount=0) <br>_Gets or sets the head of the tickable chain._  |
+|  Tickable \* | [**chain**](#function-chain) () <br>_Gets or sets the head of the tickable chain._  |
 
 
 
@@ -107,10 +107,11 @@ eva::Tickable::Tickable ()
 
 
 
-### function millis 
+### function tac 
 
+_Triggers tick on this and all linked tickables._ 
 ```C++
-inline unsigned long eva::Tickable::millis () 
+void eva::Tickable::tac () 
 ```
 
 
@@ -120,11 +121,10 @@ inline unsigned long eva::Tickable::millis ()
 
 
 
-### function tac 
+### function ~Tickable 
 
-_Triggers tick on this and all linked tickables._ 
 ```C++
-void eva::Tickable::tac () 
+eva::Tickable::~Tickable () 
 ```
 
 
@@ -140,19 +140,10 @@ void eva::Tickable::tac ()
 
 _Gets or sets the head of the tickable chain._ 
 ```C++
-static Tickable * eva::Tickable::chain (
-    Tickable * mount=0
-) 
+static Tickable * eva::Tickable::chain () 
 ```
 
 
-
-
-
-**Parameters:**
-
-
-* `mount` If provided, adds to chain; if null, returns chain head 
 
 
 

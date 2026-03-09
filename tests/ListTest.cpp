@@ -16,7 +16,7 @@ test(list_can_add_one_item) {
     list.append(42);
     
     assertEqual(list.count(), 1u);
-    assertEqual(list[0], 42);
+    assertEqual(*list[0], 42);
 }
 
 test(list_can_add_multiple_items) {
@@ -26,9 +26,9 @@ test(list_can_add_multiple_items) {
     list.append(30);
     
     assertEqual(list.count(), 3u);
-    assertEqual(list[0], 10);
-    assertEqual(list[1], 20);
-    assertEqual(list[2], 30);
+    assertEqual(*list[0], 10);
+    assertEqual(*list[1], 20);
+    assertEqual(*list[2], 30);
 }
 
 test(list_can_iterate) {
@@ -51,8 +51,8 @@ test(list_works_with_strings) {
     list.append("world");
     
     assertEqual(list.count(), 2u);
-    assertEqual(list[0], "hello");
-    assertEqual(list[1], "world");
+    assertEqual(*list[0], "hello");
+    assertEqual(*list[1], "world");
 }
 
 test(list_handles_empty) {

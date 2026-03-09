@@ -19,10 +19,10 @@ private:
   PinButton<2, INPUT_PULLUP, LOW> button;
   
   void onButtonEvent(void* sender, long events) {
-    if (events & B_EVENTS::ON_SHORTCLICK) {
+    if (events & ON_SHORTCLICK) {
       Serial.println("Button clicked!");
     }
-    if (events & B_EVENTS::ON_LONGCLICK) {
+    if (events & ON_LONGCLICK) {
       Serial.println("Button long pressed!");
     }
   }
@@ -32,7 +32,7 @@ public:
     // Set up the button handler
     button.setListener(
       new Handler<App>(this, &App::onButtonEvent),
-      B_EVENTS::ON_SHORTCLICK | B_EVENTS::ON_LONGCLICK
+      ON_SHORTCLICK | ON_LONGCLICK
     );
   }
 };
@@ -119,11 +119,11 @@ private:
     Serial.print(threshold);
     Serial.println(")");
 
-    if (events & MB_EVENTS::ON_SHORTCLICK) {
+    if (events & ON_SHORTCLICK) {
       Serial.println("short clicked");
     }
     
-    if (events & MB_EVENTS::ON_LONGCLICK) {
+    if (events & ON_LONGCLICK) {
       Serial.println("long pressed");
     }
   }
@@ -132,7 +132,7 @@ public:
   App() {
     buttonBank.setListener(
       new Handler<App>(this, &App::onButtonEvent),
-      MB_EVENTS::ON_SHORTCLICK | MB_EVENTS::ON_LONGCLICK
+      ON_SHORTCLICK | ON_LONGCLICK
     );
   }
 };

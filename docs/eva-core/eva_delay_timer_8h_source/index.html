@@ -707,12 +707,20 @@
 <span class="w">    </span><span class="k">public</span><span class="o">:</span>
 <span class="w">        </span><span class="n">DelayTimer</span><span class="p">();</span>
 
-<span class="w">        </span><span class="kt">void</span><span class="w"> </span><span class="nf">start</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="n">delay</span><span class="p">,</span><span class="w"> </span><span class="n">IHandler</span><span class="w"> </span><span class="o">*</span><span class="n">listener</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="w">        </span><span class="n">DelayTimer</span><span class="p">(</span><span class="n">IHandler</span><span class="w"> </span><span class="o">*</span><span class="n">listener</span><span class="p">);</span>
+
+<span class="w">        </span><span class="kt">void</span><span class="w"> </span><span class="nf">start</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">delay</span><span class="p">,</span><span class="w"> </span><span class="n">IHandler</span><span class="w"> </span><span class="o">*</span><span class="n">listener</span><span class="p">);</span>
+
+<span class="w">        </span><span class="kt">void</span><span class="w"> </span><span class="nf">start</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">delay</span><span class="p">);</span>
+
+<span class="w">        </span><span class="kt">bool</span><span class="w"> </span><span class="nf">isRunning</span><span class="p">();</span>
+
+<span class="w">        </span><span class="n">DelayTimer</span><span class="o">*</span><span class="w"> </span><span class="nf">setListener</span><span class="p">(</span><span class="n">IHandler</span><span class="w"> </span><span class="o">*</span><span class="n">listener</span><span class="p">);</span>
 
 <span class="w">        </span><span class="kt">void</span><span class="w"> </span><span class="nf">stop</span><span class="p">();</span>
 
 <span class="w">    </span><span class="k">protected</span><span class="o">:</span>
-<span class="w">        </span><span class="kt">short</span><span class="w"> </span><span class="n">tick</span><span class="p">()</span><span class="w"> </span><span class="k">override</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">void</span><span class="w"> </span><span class="n">tick</span><span class="p">()</span><span class="w"> </span><span class="k">override</span><span class="p">;</span>
 
 <span class="w">    </span><span class="k">protected</span><span class="o">:</span>
 <span class="w">        </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">nextFire</span><span class="p">;</span>

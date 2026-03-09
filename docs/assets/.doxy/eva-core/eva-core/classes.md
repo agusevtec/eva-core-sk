@@ -10,8 +10,6 @@
 
 ## b
 
-* [**B\_EVENTS**](structeva_1_1_b___e_v_e_n_t_s.md)
-([**eva**](namespaceeva.md))
 * [**BinarizeDecor**](classeva_1_1_binarize_decor.md)
 ([**eva**](namespaceeva.md))
 * [**BlinkingIndicator**](classeva_1_1_blinking_indicator.md)
@@ -68,14 +66,6 @@
 ([**eva**](namespaceeva.md))
 
 
-## m
-
-* [**MB\_EVENTS**](structeva_1_1_m_b___e_v_e_n_t_s.md)
-([**eva**](namespaceeva.md))
-* [**MultiButton**](classeva_1_1_multi_button.md)
-([**eva**](namespaceeva.md))
-
-
 ## p
 
 * [**PolarizeDecor**](classeva_1_1_polarize_decor.md)
@@ -99,8 +89,6 @@
 * [**Slider**](classeva_1_1_slider.md)
 ([**eva**](namespaceeva.md))
 * [**StabilizeDecor**](classeva_1_1_stabilize_decor.md)
-([**eva**](namespaceeva.md))
-* [**SW\_EVENTS**](structeva_1_1_s_w___e_v_e_n_t_s.md)
 ([**eva**](namespaceeva.md))
 
 

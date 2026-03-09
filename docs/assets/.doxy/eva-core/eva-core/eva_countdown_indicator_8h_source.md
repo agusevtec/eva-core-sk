@@ -21,11 +21,13 @@ namespace eva
     {
     public:
         using BlinkingIndicator::BlinkingIndicator;
+        using BlinkingIndicator::on;
         
-        void on(unsigned short period, unsigned short dutycyclePercent, unsigned char count, IHandler *listener);
+        
+        void on(unsigned short period, unsigned short dutycyclePercent, unsigned char count, IHandler *listener = 0);
 
     private:
-        void invoke(void *msgSender, long args) override;
+        void invoke(void *msgSender, union Message message) override;
 
     private:
         unsigned char countdown;

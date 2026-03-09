@@ -17,7 +17,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaCountdownIndicator.h" line="31" column="23" bodyfile="src/evaCountdownIndicator.h" bodystart="31" bodyend="-1"/>
+        <location file="src/evaCountdownIndicator.h" line="33" column="23" bodyfile="src/evaCountdownIndicator.h" bodystart="33" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classeva_1_1_countdown_indicator_1a2fcaad8cf80b8e888f689e98fddc4778" prot="private" static="no" mutable="no">
         <type><ref refid="classeva_1_1_i_handler" kindref="compound">IHandler</ref> *</type>
@@ -31,14 +31,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaCountdownIndicator.h" line="32" column="18" bodyfile="src/evaCountdownIndicator.h" bodystart="32" bodyend="-1"/>
+        <location file="src/evaCountdownIndicator.h" line="34" column="18" bodyfile="src/evaCountdownIndicator.h" bodystart="34" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
-      <memberdef kind="function" id="classeva_1_1_countdown_indicator_1a6a2c021c0f38201b2fe305f4c608ed3c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classeva_1_1_countdown_indicator_1a009b3fb2dc47e9789ce9275a2ab50406" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void eva::CountdownIndicator::on</definition>
-        <argsstring>(unsigned short period, unsigned short dutycyclePercent, unsigned char count, IHandler *listener)</argsstring>
+        <argsstring>(unsigned short period, unsigned short dutycyclePercent, unsigned char count, IHandler *listener=0)</argsstring>
         <name>on</name>
         <qualifiedname>eva::CountdownIndicator::on</qualifiedname>
         <param>
@@ -56,6 +56,7 @@
         <param>
           <type><ref refid="classeva_1_1_i_handler" kindref="compound">IHandler</ref> *</type>
           <declname>listener</declname>
+          <defval>0</defval>
         </param>
         <briefdescription>
 <para>Starts countdown blinking. </para>
@@ -98,14 +99,70 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaCountdownIndicator.h" line="25" column="14"/>
+        <location file="src/evaCountdownIndicator.h" line="27" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classeva_1_1_countdown_indicator_1a987af6bb4ca1c2c112274cde4d9a9088" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void eva::BlinkingIndicator::on</definition>
+        <argsstring>()</argsstring>
+        <name>on</name>
+        <qualifiedname>eva::CountdownIndicator::on</qualifiedname>
+        <briefdescription>
+<para>Turns on the indicator continuously. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evaCountdownIndicator.h" line="17" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classeva_1_1_countdown_indicator_1a41787cfbc1be93c04e26c9e2fa8a307e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void eva::BlinkingIndicator::on</definition>
+        <argsstring>(unsigned short period, unsigned char dutycyclePercent)</argsstring>
+        <name>on</name>
+        <qualifiedname>eva::CountdownIndicator::on</qualifiedname>
+        <param>
+          <type>unsigned short</type>
+          <declname>period</declname>
+        </param>
+        <param>
+          <type>unsigned char</type>
+          <declname>dutycyclePercent</declname>
+        </param>
+        <briefdescription>
+<para>Turns on the indicator with blinking pattern. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>period</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Blinking period in milliseconds </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dutycyclePercent</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>On-time percentage (0-100) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evaCountdownIndicator.h" line="17" column="9"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="private-func">
       <memberdef kind="function" id="classeva_1_1_countdown_indicator_1ab73371b500e4d0b8688c70f3daddc6d1" prot="private" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
         <definition>void eva::CountdownIndicator::invoke</definition>
-        <argsstring>(void *msgSender, long args) override</argsstring>
+        <argsstring>(void *msgSender, union Message message) override</argsstring>
         <name>invoke</name>
         <qualifiedname>eva::CountdownIndicator::invoke</qualifiedname>
         <reimplements refid="classeva_1_1_blinking_indicator_1a92dd3758d4e2d5a19c382ca5e1533408">invoke</reimplements>
@@ -123,7 +180,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaCountdownIndicator.h" line="28" column="14"/>
+        <location file="src/evaCountdownIndicator.h" line="30" column="14"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -196,7 +253,7 @@
         <link refid="classeva_1_1_tickable"/>
       </node>
     </collaborationgraph>
-    <location file="src/evaCountdownIndicator.h" line="13" column="5" bodyfile="src/evaCountdownIndicator.h" bodystart="14" bodyend="33"/>
+    <location file="src/evaCountdownIndicator.h" line="13" column="5" bodyfile="src/evaCountdownIndicator.h" bodystart="14" bodyend="35"/>
     <listofallmembers>
       <member refid="classeva_1_1_countdown_indicator_1a514ba44ea102faa908eca8e27164e67b" prot="private" virt="non-virtual"><scope>eva::CountdownIndicator</scope><name>countdown</name></member>
       <member refid="classeva_1_1_blinking_indicator_1a5dda788ae17df90c5a64108fe3d8773c" prot="protected" virt="non-virtual"><scope>eva::CountdownIndicator</scope><name>dutycyclePercent</name></member>
@@ -206,9 +263,9 @@
       <member refid="classeva_1_1_countdown_indicator_1ab73371b500e4d0b8688c70f3daddc6d1" prot="private" virt="virtual"><scope>eva::CountdownIndicator</scope><name>invoke</name></member>
       <member refid="classeva_1_1_countdown_indicator_1a2fcaad8cf80b8e888f689e98fddc4778" prot="private" virt="non-virtual"><scope>eva::CountdownIndicator</scope><name>listener</name></member>
       <member refid="classeva_1_1_blinking_indicator_1ab3f73cc4ea348e04ed9a1221ce65d928" prot="public" virt="non-virtual"><scope>eva::CountdownIndicator</scope><name>off</name></member>
-      <member refid="classeva_1_1_countdown_indicator_1a6a2c021c0f38201b2fe305f4c608ed3c" prot="public" virt="non-virtual"><scope>eva::CountdownIndicator</scope><name>on</name></member>
-      <member refid="classeva_1_1_blinking_indicator_1a987af6bb4ca1c2c112274cde4d9a9088" prot="public" virt="non-virtual" ambiguityscope="eva::BlinkingIndicator::"><scope>eva::CountdownIndicator</scope><name>on</name></member>
-      <member refid="classeva_1_1_blinking_indicator_1a41787cfbc1be93c04e26c9e2fa8a307e" prot="public" virt="non-virtual" ambiguityscope="eva::BlinkingIndicator::"><scope>eva::CountdownIndicator</scope><name>on</name></member>
+      <member refid="classeva_1_1_countdown_indicator_1a009b3fb2dc47e9789ce9275a2ab50406" prot="public" virt="non-virtual"><scope>eva::CountdownIndicator</scope><name>on</name></member>
+      <member refid="classeva_1_1_countdown_indicator_1a987af6bb4ca1c2c112274cde4d9a9088" prot="public" virt="non-virtual"><scope>eva::CountdownIndicator</scope><name>on</name></member>
+      <member refid="classeva_1_1_countdown_indicator_1a41787cfbc1be93c04e26c9e2fa8a307e" prot="public" virt="non-virtual"><scope>eva::CountdownIndicator</scope><name>on</name></member>
       <member refid="classeva_1_1_blinking_indicator_1a88e67083cd04c9f1f1b6c7b55c7e00bf" prot="protected" virt="non-virtual"><scope>eva::CountdownIndicator</scope><name>period</name></member>
       <member refid="classeva_1_1_blinking_indicator_1a660e6581f7608426c1a761c54c7f85e7" prot="protected" virt="non-virtual"><scope>eva::CountdownIndicator</scope><name>startCycle</name></member>
     </listofallmembers>

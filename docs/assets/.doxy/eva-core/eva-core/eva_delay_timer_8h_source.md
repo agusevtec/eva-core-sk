@@ -22,12 +22,20 @@ namespace eva
     public:
         DelayTimer();
         
-        void start(unsigned delay, IHandler *listener = 0);
+        DelayTimer(IHandler *listener);
+
+        void start(unsigned short delay, IHandler *listener);
+
+        void start(unsigned short delay);
+
+        bool isRunning();
+
+        DelayTimer* setListener(IHandler *listener);
         
         void stop();
 
     protected:
-        short tick() override;
+        void tick() override;
 
     protected:
         unsigned long nextFire;

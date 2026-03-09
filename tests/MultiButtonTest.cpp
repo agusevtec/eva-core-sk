@@ -4,25 +4,25 @@
 #include <AUnit.h>
 #include "MockReader.h"
 #include "TestHandler.h"
-#include <evaMultiButton.h>
+#include <evaButton.h>
 
 using namespace aunit;
 using namespace eva;
 
-using TestMultiButton = MultiButton<MockReader>;
+using TestMultiButton = Button<MockReader>;
 
 test(multibutton_detects_press_with_code) {
     TestMultiButton btn;
     TestHandler handler;
     
-    btn.setListener(&handler, MB_EVENTS::ON_PRESS);
+    btn.setListener(&handler, ON_PRESS);
     
     // Нажимаем кнопку с кодом 3
     btn.setValue(3);
     btn.tick();
     
     assertEqual(handler.callCount, 1);
-    assertEqual((long)handler.lastArgs, (long) MB_EVENTS::ON_PRESS | 3);
+    assertEqual((long)handler.lastArgs, (long) ON_PRESS | 3);
     assertEqual(btn.getValue(), 3);
 }
 
@@ -30,7 +30,7 @@ test(multibutton_detects_release_with_code) {
     TestMultiButton btn;
     TestHandler handler;
     
-    btn.setListener(&handler, MB_EVENTS::ON_RELEASE);
+    btn.setListener(&handler, ON_RELEASE);
     
     // Сначала нажимаем кнопку 2
     btn.setValue(2);
@@ -42,14 +42,14 @@ test(multibutton_detects_release_with_code) {
     btn.tick();
     
     assertEqual(handler.callCount, 1);
-    assertEqual((long)handler.lastArgs, (long)MB_EVENTS::ON_RELEASE | 2);
+    assertEqual((long)handler.lastArgs, (long)ON_RELEASE | 2);
 }
 
 test(multibutton_short_click_with_code) {
     TestMultiButton btn;
     TestHandler handler;
     
-    btn.setListener(&handler, MB_EVENTS::ON_SHORTCLICK);
+    btn.setListener(&handler, ON_SHORTCLICK);
     
     // Нажимаем кнопку 4
     btn.setValue(4);
@@ -62,14 +62,14 @@ test(multibutton_short_click_with_code) {
     btn.tick();
     
     assertEqual(handler.callCount, 1);
-    assertEqual((long)handler.lastArgs, (long)MB_EVENTS::ON_SHORTCLICK | 4);
+    assertEqual((long)handler.lastArgs, (long)ON_SHORTCLICK | 4);
 }
 
 test(multibutton_long_click_with_code) {
     TestMultiButton btn;
     TestHandler handler;
     
-    btn.setListener(&handler, MB_EVENTS::ON_LONGCLICK);
+    btn.setListener(&handler, ON_LONGCLICK);
     
     // Нажимаем кнопку 1
     btn.setValue(1);
@@ -81,20 +81,21 @@ test(multibutton_long_click_with_code) {
     btn.tick();
     
     assertEqual(handler.callCount, 1);
-    assertEqual((long)handler.lastArgs, (long)MB_EVENTS::ON_LONGCLICK | 1);
+    assertEqual((int)handler.lastEventType, (int)ON_LONGCLICK);
+    assertEqual((int)handler.lastArgs, 1);
 }
 
 test(multibutton_switch_directly) {
     TestMultiButton btn;
     TestHandler handler;
     
-    btn.setListener(&handler, MB_EVENTS::ON_PRESS | MB_EVENTS::ON_RELEASE);
+    btn.setListener(&handler, ON_PRESS | ON_RELEASE);
     
     // Нажимаем кнопку 1
     btn.setValue(1);
     btn.tick();
     assertEqual(handler.callCount, 1);
-    assertEqual((long)handler.lastArgs, (long)MB_EVENTS::ON_PRESS | 1);
+    assertEqual((long)handler.lastArgs, (long)ON_PRESS | 1);
     
     handler.reset();
     
@@ -111,7 +112,7 @@ test(multibutton_zero_is_no_button) {
     TestMultiButton btn;
     TestHandler handler;
     
-    btn.setListener(&handler, MB_EVENTS::ON_PRESS);
+    btn.setListener(&handler, ON_PRESS);
     
     btn.setValue(0);
     btn.tick();
@@ -124,14 +125,15 @@ test(multibutton_multiple_buttons) {
     TestMultiButton btn;
     TestHandler handler;
     
-    btn.setListener(&handler, MB_EVENTS::ON_PRESS);
+    btn.setListener(&handler, ON_PRESS);
     
     // Проверяем разные коды
     for(int code = 1; code <= 5; code++) {
         btn.setValue(code);
         btn.tick();
         
-        assertEqual((long)handler.lastArgs, (long)MB_EVENTS::ON_PRESS | code);
+        assertEqual((int)handler.lastEventType, (int)ON_PRESS);
+        assertEqual((int)handler.lastArgs, (int)code);
         assertEqual(btn.getValue(), code);
         
         handler.reset();
@@ -144,7 +146,7 @@ test(multibutton_can_be_disabled) {
     TestMultiButton btn;
     TestHandler handler;
     
-    btn.setListener(&handler, MB_EVENTS::ON_PRESS);
+    btn.setListener(&handler, ON_PRESS);
     btn.enable(false);
     
     btn.setValue(3);

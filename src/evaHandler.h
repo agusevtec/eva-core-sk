@@ -4,13 +4,15 @@
 #pragma once
 namespace eva
 {
+
+
     /**
      * @brief Interface for message handlers
      */
     class IHandler
     {
     public:
-        virtual void invoke(void *msgSender, long argsMask) = 0;
+        virtual void invoke(void *msgSender, unsigned char eventType, signed short eventArg) = 0;
     };
 
     /**
@@ -21,18 +23,18 @@ namespace eva
     class Handler : public IHandler
     {
     public:
-        Handler(T *msgReceiver, void (T::*method)(void *, long))
+        Handler(T *msgReceiver, void (T::*method)(void *, unsigned char, signed short))
             : msgReceiver(msgReceiver), method(method)
         {
         }
 
-        void invoke(void *msgSender, long argsMask) override
+        void invoke(void *msgSender, unsigned char eventType, signed short eventArg) override
         {
-            (this->msgReceiver->*method)(msgSender, argsMask);
+            (this->msgReceiver->*method)(msgSender, eventType, eventArg);
         }
 
     private:
-        void (T::*method)(void *, long);
+        void (T::*method)(void *, unsigned char, signed short);
         T *msgReceiver;
     };
 
@@ -42,18 +44,18 @@ namespace eva
     class HandlerF : public IHandler
     {
     public:
-        HandlerF(void (*function)(void *, long))
+        HandlerF(void (*function)(void *, unsigned char, signed short))
             : function(function)
         {
         }
 
-        void invoke(void *msgSender, long argsMask) override
+        void invoke(void *msgSender, unsigned char eventType, signed short eventArg) override
         {
-            (*function)(msgSender, argsMask);
+            (*function)(msgSender, eventType, eventArg);
         }
 
     private:
-        void (*function)(void *, long);
+        void (*function)(void *, unsigned char, signed short);
     };
 }
 #endif

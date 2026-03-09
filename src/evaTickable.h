@@ -10,7 +10,7 @@ namespace eva
   {
   public:
     Tickable();
-    ~Tickable();
+    virtual ~Tickable();
 
     /**
      * @brief Gets or sets the head of the tickable chain

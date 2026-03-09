@@ -829,10 +829,21 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#variable-encodedstate" class="md-nav__link">
+  <a href="#variable-isenabled" class="md-nav__link">
     <span class="md-ellipsis">
       
-        variable encodedState
+        variable isEnabled
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variable-levelcode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        variable levelCode
       
     </span>
   </a>
@@ -922,7 +933,7 @@
 <li><code>#include &lt;evaToggle.h&gt;</code></li>
 </ul>
 <p>Inherits the following classes: READER,  <a href="../classeva_1_1_tickable/">eva::Tickable</a></p>
-<p>Inherited by the following classes: <a href="../classeva_1_1_button/">eva::Button</a>,  <a href="../classeva_1_1_button/">eva::Button</a></p>
+<p>Inherited by the following classes: <a href="../classeva_1_1_button/">eva::Button</a>,  <a href="../classeva_1_1_button/">eva::Button</a>,  <a href="../classeva_1_1_button/">eva::Button</a>,  <a href="../classeva_1_1_button/">eva::Button</a></p>
 <h2 id="public-functions">Public Functions<a class="headerlink" href="#public-functions" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -946,7 +957,7 @@
 </tr>
 <tr>
 <td style="text-align: right;">signed short</td>
-<td style="text-align: left;"><a href="#function-getvalue"><strong>getValue</strong></a> () <br><em>Current state of the switch.</em></td>
+<td style="text-align: left;"><a href="#function-getvalue"><strong>getValue</strong></a> () <br><em>Gets the button level code identifying which button was pressed.</em></td>
 </tr>
 <tr>
 <td style="text-align: right;">Toggle *</td>
@@ -969,12 +980,12 @@
 <td style="text-align: left;"><a href="../classeva_1_1_tickable/#function-tickable"><strong>Tickable</strong></a> () <br></td>
 </tr>
 <tr>
-<td style="text-align: right;">unsigned long</td>
-<td style="text-align: left;"><a href="../classeva_1_1_tickable/#function-millis"><strong>millis</strong></a> () <br></td>
-</tr>
-<tr>
 <td style="text-align: right;">void</td>
 <td style="text-align: left;"><a href="../classeva_1_1_tickable/#function-tac"><strong>tac</strong></a> () <br><em>Triggers tick on this and all linked tickables.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"><a href="../classeva_1_1_tickable/#function-tickable"><strong>~Tickable</strong></a> () <br></td>
 </tr>
 </tbody>
 </table>
@@ -990,7 +1001,7 @@
 <tbody>
 <tr>
 <td style="text-align: right;">Tickable *</td>
-<td style="text-align: left;"><a href="../classeva_1_1_tickable/#function-chain"><strong>chain</strong></a> (Tickable * mount=0) <br><em>Gets or sets the head of the tickable chain.</em></td>
+<td style="text-align: left;"><a href="../classeva_1_1_tickable/#function-chain"><strong>chain</strong></a> () <br><em>Gets or sets the head of the tickable chain.</em></td>
 </tr>
 </tbody>
 </table>
@@ -1004,8 +1015,12 @@
 </thead>
 <tbody>
 <tr>
+<td style="text-align: right;">bool</td>
+<td style="text-align: left;"><a href="#variable-isenabled"><strong>isEnabled</strong></a>   = <code>true</code><br></td>
+</tr>
+<tr>
 <td style="text-align: right;">unsigned char</td>
-<td style="text-align: left;"><a href="#variable-encodedstate"><strong>encodedState</strong></a>   = <code>0</code><br></td>
+<td style="text-align: left;"><a href="#variable-levelcode"><strong>levelCode</strong></a>   = <code>0</code><br></td>
 </tr>
 <tr>
 <td style="text-align: right;"><a href="../classeva_1_1_i_handler/"><strong>IHandler</strong></a> *</td>
@@ -1027,17 +1042,14 @@
 <td style="text-align: left;"><a href="#function-notify"><strong>notify</strong></a> (unsigned short eventTypeMask) <br></td>
 </tr>
 <tr>
-<td style="text-align: right;">virtual short</td>
+<td style="text-align: right;">virtual void</td>
 <td style="text-align: left;"><a href="#function-tick"><strong>tick</strong></a> () override<br></td>
 </tr>
 </tbody>
 </table>
 <h2 id="detailed-description">Detailed Description<a class="headerlink" href="#detailed-description" title="Permanent link">&para;</a></h2>
 <p>Отличается от <a href="../classeva_1_1_button/"><strong>Button</strong></a>:
-* Не хранит pressTime (экономия 4 байта!)
-* Только события ON_ACTIVE/ON_INACTIVE
-* Меньше кода в tick()
-* Быстрее работает</p>
+* Не хранит pressTime (экономия 4 байта!)</p>
 <p>Идеально для:
 * Тумблеров
 * Концевых выключателей
@@ -1075,12 +1087,12 @@
 <hr>
 
 <h3 id="function-getvalue">function getValue<a class="headerlink" href="#function-getvalue" title="Permanent link">&para;</a></h3>
-<p><em>Current state of the switch.</em> </p>
+<p><em>Gets the button level code identifying which button was pressed.</em> </p>
 <div class="codehilite"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="kt">signed</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">Toggle</span><span class="o">::</span><span class="n">getValue</span><span class="w"> </span><span class="p">()</span><span class="w"> </span>
 </code></pre></div>
 
 <p><strong>Returns:</strong></p>
-<p>1 - active (closed), 0 - inactive (open) </p>
+<p>Level code (0 for no button, &gt;0 for specific button) </p>
 <hr>
 
 <h3 id="function-setlistener">function setListener<a class="headerlink" href="#function-setlistener" title="Permanent link">&para;</a></h3>
@@ -1094,12 +1106,18 @@
 <p><strong>Parameters:</strong></p>
 <ul>
 <li><code>listener</code> - callback method </li>
-<li><code>eventMask</code> - SW_EVENTS::ON_ACTIVE, ON_INACTIVE, ON_CHANGE </li>
+<li><code>eventMask</code> - ON_ACTIVE, ON_INACTIVE, ON_CHANGE </li>
 </ul>
 <hr>
 <h2 id="protected-attributes-documentation">Protected Attributes Documentation<a class="headerlink" href="#protected-attributes-documentation" title="Permanent link">&para;</a></h2>
-<h3 id="variable-encodedstate">variable encodedState<a class="headerlink" href="#variable-encodedstate" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><code><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">Toggle</span><span class="o">&lt;</span><span class="w"> </span><span class="n">READER</span><span class="w"> </span><span class="o">&gt;::</span><span class="n">encodedState</span><span class="p">;</span>
+<h3 id="variable-isenabled">variable isEnabled<a class="headerlink" href="#variable-isenabled" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kt">bool</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">Toggle</span><span class="o">&lt;</span><span class="w"> </span><span class="n">READER</span><span class="w"> </span><span class="o">&gt;::</span><span class="n">isEnabled</span><span class="p">;</span>
+</code></pre></div>
+
+<hr>
+
+<h3 id="variable-levelcode">variable levelCode<a class="headerlink" href="#variable-levelcode" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">Toggle</span><span class="o">&lt;</span><span class="w"> </span><span class="n">READER</span><span class="w"> </span><span class="o">&gt;::</span><span class="n">levelCode</span><span class="p">;</span>
 </code></pre></div>
 
 <hr>
@@ -1119,7 +1137,7 @@
 <hr>
 
 <h3 id="function-tick">function tick<a class="headerlink" href="#function-tick" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="k">virtual</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">Toggle</span><span class="o">::</span><span class="n">tick</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">override</span>
+<div class="codehilite"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="k">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">Toggle</span><span class="o">::</span><span class="n">tick</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">override</span>
 </code></pre></div>
 
 <p>Implements <a href="../classeva_1_1_tickable/#function-tick"><em>eva::Tickable::tick</em></a></p>

@@ -871,12 +871,12 @@
 <span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">onZoneEvent</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">events</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">zone</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">events</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="mh">0xFF</span><span class="p">;</span><span class="w">  </span><span class="c1">// 1 or 2</span>
 
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">events</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">MB_EVENTS</span><span class="o">::</span><span class="n">ON_ACTIVE</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">events</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">ON_ACTIVE</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">      </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Entered zone &quot;</span><span class="p">);</span>
 <span class="w">      </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">zone</span><span class="p">);</span>
 <span class="w">    </span><span class="p">}</span>
 
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">events</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">MB_EVENTS</span><span class="o">::</span><span class="n">ON_INACTIVE</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">events</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">ON_INACTIVE</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">      </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Returned to center&quot;</span><span class="p">);</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">}</span>
@@ -885,7 +885,7 @@
 <span class="w">  </span><span class="n">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="n">joystickZone</span><span class="p">.</span><span class="n">setListener</span><span class="p">(</span>
 <span class="w">      </span><span class="k">new</span><span class="w"> </span><span class="n">Handler</span><span class="o">&lt;</span><span class="n">App</span><span class="o">&gt;</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">App</span><span class="o">::</span><span class="n">onZoneEvent</span><span class="p">),</span>
-<span class="w">      </span><span class="n">MB_EVENTS</span><span class="o">::</span><span class="n">ON_ACTIVE</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">MB_EVENTS</span><span class="o">::</span><span class="n">ON_INACTIVE</span>
+<span class="w">      </span><span class="n">ON_ACTIVE</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">ON_INACTIVE</span>
 <span class="w">    </span><span class="p">);</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">};</span>

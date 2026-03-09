@@ -74,8 +74,12 @@ Inherited by the following classes: [eva::RepeatTimer](classeva_1_1_repeat_timer
 
 | Type | Name |
 | ---: | :--- |
-|   | [**DelayTimer**](#function-delaytimer) () <br> |
-|  void | [**start**](#function-start) (unsigned delay, [**IHandler**](classeva_1_1_i_handler.md) \* listener=0) <br>_Starts the timer._  |
+|   | [**DelayTimer**](#function-delaytimer-12) () <br> |
+|   | [**DelayTimer**](#function-delaytimer-22) ([**IHandler**](classeva_1_1_i_handler.md) \* listener) <br> |
+|  bool | [**isRunning**](#function-isrunning) () <br> |
+|  DelayTimer \* | [**setListener**](#function-setlistener) ([**IHandler**](classeva_1_1_i_handler.md) \* listener) <br> |
+|  void | [**start**](#function-start-12) (unsigned short delay, [**IHandler**](classeva_1_1_i_handler.md) \* listener) <br>_Starts the timer._  |
+|  void | [**start**](#function-start-22) (unsigned short delay) <br> |
 |  void | [**stop**](#function-stop) () <br>_Stops the timer._  |
 
 
@@ -86,8 +90,8 @@ See [eva::Tickable](classeva_1_1_tickable.md)
 | Type | Name |
 | ---: | :--- |
 |   | [**Tickable**](classeva_1_1_tickable.md#function-tickable) () <br> |
-|  unsigned long | [**millis**](classeva_1_1_tickable.md#function-millis) () <br> |
 |  void | [**tac**](classeva_1_1_tickable.md#function-tac) () <br>_Triggers tick on this and all linked tickables._  |
+|   | [**~Tickable**](classeva_1_1_tickable.md#function-tickable) () <br> |
 
 
 
@@ -98,7 +102,7 @@ See [eva::Tickable](classeva_1_1_tickable.md)
 
 | Type | Name |
 | ---: | :--- |
-|  Tickable \* | [**chain**](classeva_1_1_tickable.md#function-chain) (Tickable \* mount=0) <br>_Gets or sets the head of the tickable chain._  |
+|  Tickable \* | [**chain**](classeva_1_1_tickable.md#function-chain) () <br>_Gets or sets the head of the tickable chain._  |
 
 
 
@@ -151,7 +155,7 @@ See [eva::Tickable](classeva_1_1_tickable.md)
 
 | Type | Name |
 | ---: | :--- |
-| virtual short | [**tick**](#function-tick) () override<br> |
+| virtual void | [**tick**](#function-tick) () override<br> |
 
 
 
@@ -165,7 +169,7 @@ See [eva::Tickable](classeva_1_1_tickable.md)
 
 
 
-### function DelayTimer 
+### function DelayTimer [1/2]
 
 ```C++
 eva::DelayTimer::DelayTimer () 
@@ -178,13 +182,56 @@ eva::DelayTimer::DelayTimer ()
 
 
 
-### function start 
+### function DelayTimer [2/2]
+
+```C++
+eva::DelayTimer::DelayTimer (
+    IHandler * listener
+) 
+```
+
+
+
+
+<hr>
+
+
+
+### function isRunning 
+
+```C++
+bool eva::DelayTimer::isRunning () 
+```
+
+
+
+
+<hr>
+
+
+
+### function setListener 
+
+```C++
+DelayTimer * eva::DelayTimer::setListener (
+    IHandler * listener
+) 
+```
+
+
+
+
+<hr>
+
+
+
+### function start [1/2]
 
 _Starts the timer._ 
 ```C++
 void eva::DelayTimer::start (
-    unsigned delay,
-    IHandler * listener=0
+    unsigned short delay,
+    IHandler * listener
 ) 
 ```
 
@@ -202,6 +249,21 @@ void eva::DelayTimer::start (
 
 
         
+
+<hr>
+
+
+
+### function start [2/2]
+
+```C++
+void eva::DelayTimer::start (
+    unsigned short delay
+) 
+```
+
+
+
 
 <hr>
 
@@ -254,7 +316,7 @@ unsigned long eva::DelayTimer::nextFire;
 ### function tick 
 
 ```C++
-virtual short eva::DelayTimer::tick () override
+virtual void eva::DelayTimer::tick () override
 ```
 
 

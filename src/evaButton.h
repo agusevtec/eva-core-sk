@@ -1,85 +1,103 @@
 #ifndef EVABUTTON_H
 #define EVABUTTON_H
+
 #pragma once
 
 #include "evaToggle.h"
+#include "evaConstants.h"
 
 namespace eva
 {
-  struct B_EVENTS
-  {
-    static const unsigned short ON_PRESS = 0x1000;
-    static const unsigned short ON_RELEASE = 0x2000;
-    static const unsigned short ON_SHORTCLICK = 0x4000;
-    static const unsigned short ON_LONGCLICK = 0x8000;
-  };
-
-  /**
-   * @brief Button with press, release, short click and long click detection
-   *
-   * @tparam READER Input reader type that provides getValue()
-   *
-   */
-
-  template <class READER>
-  class Button : public Toggle<READER>
-  {
-  public:
-    using Toggle<READER>::Toggle;
-
-  private:
-    void tick() override
+    /**
+     * @brief Multi-state button that identifies which button was pressed via level code
+     *
+     * Generic button class that works with any multi-valued input source.
+     * The input reader can return different numeric codes representing different
+     * states. Typical applications:
+     * -# Resistor ladder buttons on single ADC pin
+     * -# Custom encoding schemes
+     * -# Multiplexed inputs
+     *
+     * Events include the level code in argsMask, allowing identification of
+     * which specific button triggered the event.
+     * Long click threshold is fixed at 750ms.
+     *
+     * @tparam READER Input reader type that returns numeric codes (0 = no button, >0 = button index)
+     */
+    template <class READER>
+    class Button : public Toggle<READER>
     {
-      if (!(this->encodedState & ENABLED))
-        return 0;
+    public:
+        using Toggle<READER>::Toggle;
 
-      unsigned char wasPressed = this->encodedState & ISPRESSED;
-      unsigned char isPressed = READER::getValue();
+    private:
+        void tick() override
+        {
+            if (this->levelCode < 0)
+                return;
 
-      if (this->pressTime and (millis() - this->pressTime) > 750)
-      {
-        notify(B_EVENTS::ON_LONGCLICK);
-        this->pressTime = 0;
-      }
+            unsigned char wasLevelCode = this->levelCode;
+            this->levelCode = READER::getValue();
 
-      if (wasPressed && !isPressed)
-      {
-        this->encodedState = this->encodedState & ~ISPRESSED;
-        if (this->pressTime and (millis() - this->pressTime < 750))
-          notify(B_EVENTS::ON_SHORTCLICK);
-        notify(B_EVENTS::ON_RELEASE);
-        this->pressTime = 0;
-      }
+            if (this->pressTime and (millis() - this->pressTime) > 750)
+            {
+                this->notify(ON_LONGCLICK, this->levelCode);
+                this->pressTime = 0;
+            }
 
-      if (!wasPressed && isPressed)
-      {
-        this->encodedState = this->encodedState | ISPRESSED;
-        this->pressTime = millis();
-        notify(B_EVENTS::ON_PRESS);
-      }
-    }
+            if ((wasLevelCode > 0) and (wasLevelCode != this->levelCode)) // any_pos -> 0
+            {
+                if (this->pressTime and (millis() - this->pressTime < 750))
+                    this->notify(ON_SHORTCLICK , wasLevelCode);
+                this->notify(ON_RELEASE, wasLevelCode);
+                this->pressTime = 0;
+            }
+            if ((wasLevelCode != this->levelCode) and (this->levelCode > 0)) // 0 -> any_pos
+            {
+                this->pressTime = millis();
+                this->notify(ON_PRESS , this->levelCode);
+            }
+        }
 
-  protected:
-    unsigned long pressTime;
+    private:
+        unsigned long pressTime;
+    };
 
-  private:
-    static const unsigned char ISPRESSED = 0x01;
-    static const unsigned char ENABLED = 0x04;
-  };
+    /**
+     * @brief Multiple buttons on single ADC pin using resistor ladder
+     *
+     * Hardware connection:
+     *    ADC IN   -----+--R1--+--R2--+-- ... -Rn-+
+     *   (pullup)       |      |      |           |
+     *                   \      \      \           \
+     *                  |      |      |           |
+     *      GND    -----+------+------+-- ... ----+
+     *
+     * Each button produces different ADC value which is mapped to levelCode.
+     * Debounces input and generates events based on button state changes.
+     * @tparam PIN Arduino analog pin number
+     * @tparam PIN_MODE Pin mode (usually INPUT)
+     * @tparam LEVELS Threshold values for different buttons
+     */
+    template <int PIN, int PIN_MODE, signed short... LEVELS>
+    using PinMultiButton = Button<QuantizeDecor<StabilizeDecor<AnalogPinReader<PIN, PIN_MODE>>, LEVELS...>>;
 
-  /**
-   * @brief Button connected directly to a digital pin
-   * Includes stabilization and binarization decorators.
-   * Debounces input and generates events based on button state changes.
-   * Long click threshold is fixed at 750ms.
-   *
-   * @tparam PIN
-   * @tparam PIN_MODE
-   * @tparam ACTIVATES_ON - the level of a signal corresponding to the pressed state (LOW OR HIGH)
-   * @return Button&
-   */
-  template <int PIN, int PIN_MODE, int ACTIVATES_ON>
-  using PinButton = Button<BinarizeDecor<StabilizeDecor<DigitalPinReader<PIN, PIN_MODE>>, ACTIVATES_ON>>;
+    /**
+     * @brief Button connected directly to a digital pin
+     * Includes stabilization and binarization decorators.
+     * Debounces input and generates events based on button state changes.
+     * Long click threshold is fixed at 750ms.
+     *
+     * @tparam PIN
+     * @tparam PIN_MODE
+     * @tparam ACTIVATES_ON - the level of a signal corresponding to the pressed state (LOW OR HIGH)
+     * @return Button&
+     */
+    template <int PIN, int PIN_MODE, int ACTIVATES_ON> 
+    using PinButton = Button<BinarizeDecor<StabilizeDecor<DigitalPinReader<PIN, PIN_MODE>>, ACTIVATES_ON>>;
+
+    template <int PIN>
+    using PinPullUpButton = Button<BinarizeDecor<StabilizeDecor<DigitalPinReader<PIN, INPUT_PULLUP>>, LOW>>;
+
 };
-
 #endif

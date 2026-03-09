@@ -21,20 +21,20 @@ test(switch_detects_activation) {
     TestSwitch sw;
     TestHandler handler;
     
-    sw.setListener(&handler, SW_EVENTS::ON_ACTIVE);
+    sw.setListener(&handler, ON_ACTIVE);
     sw.setValue(1);
     sw.tick();
     
     assertEqual(sw.getValue(), 1);
     assertEqual(handler.callCount, 1);
-    assertEqual((long)handler.lastArgs, (long)SW_EVENTS::ON_ACTIVE);
+    assertEqual((int)handler.lastEventType, (int)ON_ACTIVE);
 }
 
 test(switch_detects_deactivation) {
     TestSwitch sw;
     TestHandler handler;
     
-    sw.setListener(&handler, SW_EVENTS::ON_INACTIVE);
+    sw.setListener(&handler, ON_INACTIVE);
     
     // Сначала активируем
     sw.setValue(1);
@@ -47,14 +47,14 @@ test(switch_detects_deactivation) {
     
     assertEqual(sw.getValue(), 0);
     assertEqual(handler.callCount, 1);
-    assertEqual((long)handler.lastArgs, (long)SW_EVENTS::ON_INACTIVE);
+    assertEqual((int)handler.lastEventType, (int)ON_RELEASE);
 }
 
 test(switch_sends_change_event) {
     TestSwitch sw;
     TestHandler handler;
     
-    sw.setListener(&handler, SW_EVENTS::ON_CHANGE);
+    sw.setListener(&handler, ON_ACTIVE|ON_INACTIVE);
     
     sw.setValue(1);
     sw.tick();
@@ -69,7 +69,7 @@ test(switch_no_event_when_no_change) {
     TestSwitch sw;
     TestHandler handler;
     
-    sw.setListener(&handler, SW_EVENTS::ON_ACTIVE);
+    sw.setListener(&handler, ON_ACTIVE);
     sw.setValue(1);
     sw.tick();
     assertEqual(handler.callCount, 1);
@@ -83,7 +83,7 @@ test(switch_can_be_disabled) {
     TestSwitch sw;
     TestHandler handler;
     
-    sw.setListener(&handler, SW_EVENTS::ON_ACTIVE);
+    sw.setListener(&handler, ON_ACTIVE);
     sw.enable(false);
     
     sw.setValue(1);
@@ -96,7 +96,7 @@ test(switch_can_be_reenabled) {
     TestSwitch sw;
     TestHandler handler;
     
-    sw.setListener(&handler, SW_EVENTS::ON_ACTIVE);
+    sw.setListener(&handler, ON_ACTIVE);
     sw.enable(false);
     
     sw.setValue(1);

@@ -57,12 +57,12 @@ private:
   void onZoneEvent(void* sender, long events) {
     unsigned short zone = events & 0xFF;  // 1 or 2
     
-    if (events & MB_EVENTS::ON_ACTIVE) {
+    if (events & ON_ACTIVE) {
       Serial.print("Entered zone ");
       Serial.println(zone);
     }
     
-    if (events & MB_EVENTS::ON_INACTIVE) {
+    if (events & ON_INACTIVE) {
       Serial.println("Returned to center");
     }
   }
@@ -71,7 +71,7 @@ public:
   App() {
     joystickZone.setListener(
       new Handler<App>(this, &App::onZoneEvent),
-      MB_EVENTS::ON_ACTIVE | MB_EVENTS::ON_INACTIVE
+      ON_ACTIVE | ON_INACTIVE
     );
   }
 };

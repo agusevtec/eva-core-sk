@@ -1,0 +1,1 @@
+tools\generate_config.bat %USERPROFILE%\Documents\Arduino

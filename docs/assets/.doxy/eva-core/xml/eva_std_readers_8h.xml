@@ -21,16 +21,10 @@
       <node id="5">
         <label>src/evaButton.h</label>
         <link refid="eva_button_8h_source"/>
-        <childnode refid="6" relation="include">
-        </childnode>
       </node>
       <node id="2">
         <label>src/evaJoystick.h</label>
         <link refid="eva_joystick_8h_source"/>
-      </node>
-      <node id="6">
-        <label>src/evaMultiButton.h</label>
-        <link refid="eva_multi_button_8h_source"/>
       </node>
       <node id="3">
         <label>src/evaSlider.h</label>

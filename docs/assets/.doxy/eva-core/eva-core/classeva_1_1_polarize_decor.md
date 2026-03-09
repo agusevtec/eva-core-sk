@@ -2,7 +2,7 @@
 
 # Class eva::PolarizeDecor
 
-**template &lt;class READER, int LEVEL&gt;**
+**template &lt;class READER, int THRESHOLD&gt;**
 
 
 

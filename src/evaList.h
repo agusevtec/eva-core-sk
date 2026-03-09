@@ -71,12 +71,13 @@ namespace eva
      * @param index Index (0-based)
      * @return Reference to item
      */
-    ItemClass &operator[](unsigned index)
+    ItemClass *operator[](unsigned short index)
     {
-      int i = 0;
+      unsigned short i = 0;
       for (auto *iter = this->head; iter != 0; iter = iter->next)
         if (index == i++)
-          return iter->item;
+          return &(iter->item);
+      return nullptr;
     }
 
     /**

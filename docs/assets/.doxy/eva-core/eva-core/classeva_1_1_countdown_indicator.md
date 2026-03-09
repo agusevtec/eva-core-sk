@@ -113,7 +113,9 @@ Inherits the following classes: [eva::BlinkingIndicator](classeva_1_1_blinking_i
 
 | Type | Name |
 | ---: | :--- |
-|  void | [**on**](#function-on) (unsigned short period, unsigned short dutycyclePercent, unsigned char count, [**IHandler**](classeva_1_1_i_handler.md) \* listener) <br>_Starts countdown blinking._  |
+|  void | [**on**](#function-on-13) (unsigned short period, unsigned short dutycyclePercent, unsigned char count, [**IHandler**](classeva_1_1_i_handler.md) \* listener=0) <br>_Starts countdown blinking._  |
+|  void | [**on**](#function-on-23) () <br>_Turns on the indicator continuously._  |
+|  void | [**on**](#function-on-33) (unsigned short period, unsigned char dutycyclePercent) <br>_Turns on the indicator with blinking pattern._  |
 
 
 ## Public Functions inherited from eva::BlinkingIndicator
@@ -274,7 +276,7 @@ See [eva::BlinkingIndicator](classeva_1_1_blinking_indicator.md)
 
 
 
-### function on 
+### function on [1/3]
 
 _Starts countdown blinking._ 
 ```C++
@@ -282,7 +284,7 @@ void eva::CountdownIndicator::on (
     unsigned short period,
     unsigned short dutycyclePercent,
     unsigned char count,
-    IHandler * listener
+    IHandler * listener=0
 ) 
 ```
 
@@ -297,6 +299,49 @@ void eva::CountdownIndicator::on (
 * `dutycyclePercent` On-time percentage 
 * `count` Number of blinks before stopping 
 * `listener` [**Handler**](classeva_1_1_handler.md) to notify when countdown completes 
+
+
+
+
+        
+
+<hr>
+
+
+
+### function on [2/3]
+
+_Turns on the indicator continuously._ 
+```C++
+void eva::CountdownIndicator::on () 
+```
+
+
+
+
+<hr>
+
+
+
+### function on [3/3]
+
+_Turns on the indicator with blinking pattern._ 
+```C++
+void eva::CountdownIndicator::on (
+    unsigned short period,
+    unsigned char dutycyclePercent
+) 
+```
+
+
+
+
+
+**Parameters:**
+
+
+* `period` Blinking period in milliseconds 
+* `dutycyclePercent` On-time percentage (0-100) 
 
 
 

@@ -17,15 +17,10 @@
 #include "evaStdReaders.h"
 #include "evaReaderDecors.h"
 
+#include "evaConstants.h"
+
 namespace eva
 {
-  struct SW_EVENTS
-  {
-    static const unsigned short ON_ACTIVE = 0x1000;
-    static const unsigned short ON_INACTIVE = 0x2000;
-    static const unsigned short ON_CHANGE = 0x3000;
-  };
-
   template <class READER>
   class Toggle : public READER, public Tickable
   {
@@ -44,38 +39,36 @@ namespace eva
     Toggle *setListener(IHandler *listener, unsigned short eventMask)
     {
       this->listener = listener;
-      this->encodedState = (this->encodedState & 0x0f) | (eventMask >> 8);
+      this->isEnabled = (this->isEnabled & 0x0f) | (eventMask >> 8);
       return this;
     }
 
     Toggle *enable(bool enabled)
     {
-      this->encodedState = (enabled) ? this->encodedState | ENABLED : this->encodedState & ~ENABLED;
+      this->isEnabled = enabled;
       return this;
     }
 
     signed short getValue()
     {
-      return this->encodedState & ISACTIVE;
+      return this->levelCode;
     }
 
   protected:
-    short tick() override
+    void tick() override
     {
-      if (!(this->encodedState & ENABLED))
-        return 0;
+      if (this->isEnabled)
+        return;
 
-      unsigned char wasActive = this->encodedState & ISACTIVE;
-      unsigned char isActive = READER::getValue();
+      unsigned char wasLevelCode = this->levelCode;
+      this->levelCode = READER::getValue();
 
-      if (isActive != wasActive)
-      {
-        this->encodedState = (this->encodedState & ~ISACTIVE) | isActive;
-        notify(isActive ? SW_EVENTS::ON_ACTIVE : SW_EVENTS::ON_INACTIVE);
-      }
-      return 0;
+      if ((wasLevelCode > 0) and (wasLevelCode != this->levelCode)) // any_pos -> 0
+        this->notify(ON_RELEASE | wasLevelCode);
+
+      if ((wasLevelCode != this->levelCode) and (this->levelCode > 0)) // 0 -> any_pos
+        this->notify(ON_PRESS | this->levelCode);
     }
-
     void notify(unsigned short eventTypeMask)
     {
       if (this->listener)
@@ -84,12 +77,9 @@ namespace eva
     }
 
   protected:
-    unsigned char encodedState = 0; // биты: 0-ISACTIVE, 1-3 свободны, 4-7 маска событий
+    bool isEnabled = true;
+    unsigned char levelCode = 0;
     IHandler *listener = nullptr;
-
-  private:
-    static const unsigned char ISACTIVE = 0x01;
-    static const unsigned char ENABLED = 0x04;
   };
 
   template <int PIN, int PIN_MODE, int ACTIVE_LEVEL>

@@ -19,7 +19,7 @@
 Inherits the following classes: READER,  [eva::Tickable](classeva_1_1_tickable.md)
 
 
-Inherited by the following classes: [eva::Button](classeva_1_1_button.md),  [eva::Button](classeva_1_1_button.md)
+Inherited by the following classes: [eva::Button](classeva_1_1_button.md),  [eva::Button](classeva_1_1_button.md),  [eva::Button](classeva_1_1_button.md),  [eva::Button](classeva_1_1_button.md)
 
 
 
@@ -79,7 +79,7 @@ Inherited by the following classes: [eva::Button](classeva_1_1_button.md),  [eva
 |   | [**Toggle**](#function-toggle-12) () <br> |
 |   | [**Toggle**](#function-toggle-22) ([**IHandler**](classeva_1_1_i_handler.md) \* listener, unsigned short eventMask) <br> |
 |  Toggle \* | [**enable**](#function-enable) (bool enabled) <br>_Enables or disables the toggle._  |
-|  signed short | [**getValue**](#function-getvalue) () <br>_Current state of the switch._  |
+|  signed short | [**getValue**](#function-getvalue) () <br>_Gets the button level code identifying which button was pressed._  |
 |  Toggle \* | [**setListener**](#function-setlistener) ([**IHandler**](classeva_1_1_i_handler.md) \* listener, unsigned short eventMask) <br>_Sets the Listener for switch events._  |
 
 
@@ -90,8 +90,8 @@ See [eva::Tickable](classeva_1_1_tickable.md)
 | Type | Name |
 | ---: | :--- |
 |   | [**Tickable**](classeva_1_1_tickable.md#function-tickable) () <br> |
-|  unsigned long | [**millis**](classeva_1_1_tickable.md#function-millis) () <br> |
 |  void | [**tac**](classeva_1_1_tickable.md#function-tac) () <br>_Triggers tick on this and all linked tickables._  |
+|   | [**~Tickable**](classeva_1_1_tickable.md#function-tickable) () <br> |
 
 
 
@@ -102,7 +102,7 @@ See [eva::Tickable](classeva_1_1_tickable.md)
 
 | Type | Name |
 | ---: | :--- |
-|  Tickable \* | [**chain**](classeva_1_1_tickable.md#function-chain) (Tickable \* mount=0) <br>_Gets or sets the head of the tickable chain._  |
+|  Tickable \* | [**chain**](classeva_1_1_tickable.md#function-chain) () <br>_Gets or sets the head of the tickable chain._  |
 
 
 
@@ -117,7 +117,8 @@ See [eva::Tickable](classeva_1_1_tickable.md)
 
 | Type | Name |
 | ---: | :--- |
-|  unsigned char | [**encodedState**](#variable-encodedstate)   = `0`<br> |
+|  bool | [**isEnabled**](#variable-isenabled)   = `true`<br> |
+|  unsigned char | [**levelCode**](#variable-levelcode)   = `0`<br> |
 |  [**IHandler**](classeva_1_1_i_handler.md) \* | [**listener**](#variable-listener)   = `nullptr`<br> |
 
 
@@ -156,7 +157,7 @@ See [eva::Tickable](classeva_1_1_tickable.md)
 | Type | Name |
 | ---: | :--- |
 |  void | [**notify**](#function-notify) (unsigned short eventTypeMask) <br> |
-| virtual short | [**tick**](#function-tick) () override<br> |
+| virtual void | [**tick**](#function-tick) () override<br> |
 
 
 
@@ -170,9 +171,6 @@ See [eva::Tickable](classeva_1_1_tickable.md)
 
 Отличается от [**Button**](classeva_1_1_button.md):
 * Не хранит pressTime (экономия 4 байта!)
-* Только события ON\_ACTIVE/ON\_INACTIVE
-* Меньше кода в tick()
-* Быстрее работает
 
 
 
@@ -257,7 +255,7 @@ Pointer to this
 
 ### function getValue 
 
-_Current state of the switch._ 
+_Gets the button level code identifying which button was pressed._ 
 ```C++
 inline signed short eva::Toggle::getValue () 
 ```
@@ -268,7 +266,7 @@ inline signed short eva::Toggle::getValue ()
 
 **Returns:**
 
-1 - active (closed), 0 - inactive (open) 
+Level code (0 for no button, &gt;0 for specific button) 
 
 
 
@@ -298,7 +296,7 @@ inline Toggle * eva::Toggle::setListener (
 
 
 * `listener` - callback method 
-* `eventMask` - SW\_EVENTS::ON\_ACTIVE, ON\_INACTIVE, ON\_CHANGE 
+* `eventMask` - ON\_ACTIVE, ON\_INACTIVE, ON\_CHANGE 
 
 
 
@@ -311,10 +309,23 @@ inline Toggle * eva::Toggle::setListener (
 
 
 
-### variable encodedState 
+### variable isEnabled 
 
 ```C++
-unsigned char eva::Toggle< READER >::encodedState;
+bool eva::Toggle< READER >::isEnabled;
+```
+
+
+
+
+<hr>
+
+
+
+### variable levelCode 
+
+```C++
+unsigned char eva::Toggle< READER >::levelCode;
 ```
 
 
@@ -357,7 +368,7 @@ inline void eva::Toggle::notify (
 ### function tick 
 
 ```C++
-inline virtual short eva::Toggle::tick () override
+inline virtual void eva::Toggle::tick () override
 ```
 
 

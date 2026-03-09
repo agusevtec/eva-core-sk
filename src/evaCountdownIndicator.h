@@ -14,6 +14,8 @@ namespace eva
     {
     public:
         using BlinkingIndicator::BlinkingIndicator;
+        using BlinkingIndicator::on;
+        
         
         /**
          * @brief Starts countdown blinking
@@ -22,10 +24,10 @@ namespace eva
          * @param count Number of blinks before stopping
          * @param listener Handler to notify when countdown completes
          */
-        void on(unsigned short period, unsigned short dutycyclePercent, unsigned char count, IHandler *listener);
+        void on(unsigned short period, unsigned short dutycyclePercent, unsigned char count, IHandler *listener = 0);
 
     private:
-        void invoke(void *msgSender, long args) override;
+        void invoke(void *msgSender, unsigned char eventType, signed short eventArg) override;
 
     private:
         unsigned char countdown;

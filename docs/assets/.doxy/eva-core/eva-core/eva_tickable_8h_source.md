@@ -17,23 +17,19 @@ namespace eva
   {
   public:
     Tickable();
+    ~Tickable();
 
-    static Tickable *chain(Tickable *mount = 0);
+    static Tickable *chain();
 
     void tac();
 
-    inline unsigned long millis();
-
   private:
-    virtual short tick() = 0;
+    virtual void tick() = 0;
 
   private:
     Tickable *next = 0;
-#ifdef UNIT_TESTING
-  public:
-    unsigned long millisMock;
-    void setMillis(unsigned long);
-#endif
+    static Tickable *last;
+    static Tickable *first;
   };
 };
 #endif

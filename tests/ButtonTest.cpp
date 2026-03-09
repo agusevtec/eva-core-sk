@@ -15,19 +15,21 @@ test(button_detects_press)
     TestButton btn;
     TestHandler handler;
 
-    btn.setListener(&handler, B_EVENTS::ON_PRESS);
+    btn.setListener(&handler, ON_PRESS);
+    btn.setValue(0);
+    btn.tick();
     btn.setValue(1);
     btn.tick();
 
     assertEqual(handler.callCount, 1);
-    assertEqual((long)handler.lastArgs, (long)B_EVENTS::ON_PRESS);
+    assertEqual((long)handler.lastArgs, (long)ON_PRESS);
 }
 test(button_detects_release)
 {
     TestButton btn;
     TestHandler handler;
 
-    btn.setListener(&handler, B_EVENTS::ON_RELEASE);
+    btn.setListener(&handler, ON_RELEASE);
 
     // Сначала нажимаем
     btn.setValue(1);
@@ -42,7 +44,7 @@ test(button_detects_release)
     btn.tick();
 
     assertEqual(handler.callCount, 1);
-    assertEqual((long)handler.lastArgs, (long)B_EVENTS::ON_RELEASE);
+    assertEqual((long)handler.lastEventType, (long)ON_RELEASE);
 }
 
 test(button_short_click)
@@ -50,7 +52,7 @@ test(button_short_click)
     TestButton btn;
     TestHandler handler;
 
-    btn.setListener(&handler, B_EVENTS::ON_SHORTCLICK);
+    btn.setListener(&handler, ON_SHORTCLICK);
 
     // Нажимаем
     btn.setValue(1);
@@ -64,7 +66,7 @@ test(button_short_click)
     btn.tick();
 
     assertEqual(handler.callCount, 1);
-    assertEqual((long)handler.lastArgs, (long)B_EVENTS::ON_SHORTCLICK);
+    assertEqual((long)handler.lastEventType, (long)ON_SHORTCLICK);
 }
 
 test(button_long_click)
@@ -72,7 +74,7 @@ test(button_long_click)
     TestButton btn;
     TestHandler handler;
 
-    btn.setListener(&handler, B_EVENTS::ON_LONGCLICK);
+    btn.setListener(&handler, ON_LONGCLICK);
 
     // Нажимаем
     btn.setValue(1);
@@ -85,7 +87,7 @@ test(button_long_click)
     btn.tick();
 
     assertEqual(handler.callCount, 1);
-    assertEqual((long)handler.lastArgs, (long)B_EVENTS::ON_LONGCLICK);
+    assertEqual((long)handler.lastEventType, (long)ON_LONGCLICK);
 }
 
 test(button_no_short_click_after_long)
@@ -93,7 +95,7 @@ test(button_no_short_click_after_long)
     TestButton btn;
     TestHandler handler;
 
-    btn.setListener(&handler, B_EVENTS::ON_SHORTCLICK | B_EVENTS::ON_LONGCLICK);
+    btn.setListener(&handler, ON_SHORTCLICK | ON_LONGCLICK);
 
     // Нажимаем
     btn.setValue(1);
@@ -103,7 +105,7 @@ test(button_no_short_click_after_long)
     // Ждем больше 750мс
     delay(800);
     btn.tick(); // Должен быть LONGCLICK
-    assertEqual((long)handler.lastArgs, (long)B_EVENTS::ON_LONGCLICK);
+    assertEqual((long)handler.lastEventType, (long)ON_LONGCLICK);
 
     handler.reset();
 
@@ -119,7 +121,7 @@ test(button_can_be_disabled)
     TestButton btn;
     TestHandler handler;
 
-    btn.setListener(&handler, B_EVENTS::ON_PRESS);
+    btn.setListener(&handler, ON_PRESS);
     btn.enable(false);
 
     btn.setValue(1);

@@ -15,8 +15,6 @@
       <node id="8">
         <label>src/evaButton.h</label>
         <link refid="eva_button_8h_source"/>
-        <childnode refid="9" relation="include">
-        </childnode>
       </node>
       <node id="3">
         <label>src/evaCountdownIndicator.h</label>
@@ -45,10 +43,6 @@
         <link refid="eva_indicator_8h_source"/>
         <childnode refid="2" relation="include">
         </childnode>
-      </node>
-      <node id="9">
-        <label>src/evaMultiButton.h</label>
-        <link refid="eva_multi_button_8h_source"/>
       </node>
       <node id="6">
         <label>src/evaRepeatTimer.h</label>

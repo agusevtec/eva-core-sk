@@ -10,72 +10,63 @@
 ```C++
 #ifndef EVABUTTON_H
 #define EVABUTTON_H
+
 #pragma once
 
 #include "evaToggle.h"
+#include "evaConstants.h"
 
 namespace eva
 {
-  struct B_EVENTS
-  {
-    static const unsigned short ON_PRESS = 0x1000;
-    static const unsigned short ON_RELEASE = 0x2000;
-    static const unsigned short ON_SHORTCLICK = 0x4000;
-    static const unsigned short ON_LONGCLICK = 0x8000;
-  };
-
-
-  template <class READER>
-  class Button : public Toggle<READER>
-  {
-  public:
-    using Toggle<READER>::Toggle;
-
-  private:
-    short tick() override
+    template <class READER>
+    class Button : public Toggle<READER>
     {
-      if (!(this->encodedState & ENABLED))
-        return 0;
+    public:
+        using Toggle<READER>::Toggle;
 
-      unsigned char wasPressed = this->encodedState & ISPRESSED;
-      unsigned char isPressed = READER::getValue();
+    private:
+        void tick() override
+        {
+            if (this->isEnabled)
+                return;
 
-      if (this->pressTime and (millis() - this->pressTime) > 750)
-      {
-        notify(B_EVENTS::ON_LONGCLICK);
-        this->pressTime = 0;
-      }
+            unsigned char wasLevelCode = this->levelCode;
+            this->levelCode = READER::getValue();
 
-      if (wasPressed && !isPressed)
-      {
-        this->encodedState = this->encodedState & ~ISPRESSED;
-        if (this->pressTime and (millis() - this->pressTime < 750))
-          notify(B_EVENTS::ON_SHORTCLICK);
-        notify(B_EVENTS::ON_RELEASE);
-        this->pressTime = 0;
-      }
+            if (this->pressTime and (millis() - this->pressTime) > 750)
+            {
+                this->notify(ON_LONGCLICK | this->levelCode);
+                this->pressTime = 0;
+            }
 
-      if (!wasPressed && isPressed)
-      {
-        this->encodedState = this->encodedState | ISPRESSED;
-        this->pressTime = millis();
-        notify(B_EVENTS::ON_PRESS);
-      }
-      return 0;
-    }
+            if ((wasLevelCode > 0) and (wasLevelCode != this->levelCode)) // any_pos -> 0
+            {
+                if (this->pressTime and (millis() - this->pressTime < 750))
+                    this->notify(ON_SHORTCLICK | wasLevelCode);
+                this->notify(ON_RELEASE | wasLevelCode);
+                this->pressTime = 0;
+            }
+            if ((wasLevelCode != this->levelCode) and (this->levelCode > 0)) // 0 -> any_pos
+            {
+                this->pressTime = millis();
+                this->notify(ON_PRESS | this->levelCode);
+            }
+        }
 
-  protected:
-    unsigned long pressTime;
+    private:
+        unsigned long pressTime;
+    };
 
-  private:
-    static const unsigned char ISPRESSED = 0x01;
-    static const unsigned char ENABLED = 0x04;
-  };
+    template <int PIN, int PIN_MODE, signed short... LEVELS>
+    using PinMultiButton = Button<QuantizeDecor<StabilizeDecor<AnalogPinReader<PIN, PIN_MODE>>, LEVELS...>>;
 
-  template <int PIN, int PIN_MODE, int ACTIVATES_ON>
-  using PinButton = Button<BinarizeDecor<StabilizeDecor<DigitalPinReader<PIN, PIN_MODE>>, ACTIVATES_ON>>;
+    template <int PIN, int PIN_MODE, int ACTIVATES_ON> 
+    using PinButton = Button<BinarizeDecor<StabilizeDecor<DigitalPinReader<PIN, PIN_MODE>>, ACTIVATES_ON>>;
+
+    template <int PIN>
+    using PinPullUpButton = Button<BinarizeDecor<StabilizeDecor<DigitalPinReader<PIN, INPUT_PULLUP>>, LOW>>;
+
 };
-
 #endif
 ```
 

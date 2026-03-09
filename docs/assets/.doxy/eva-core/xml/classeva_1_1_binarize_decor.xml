@@ -12,14 +12,14 @@
       </param>
       <param>
         <type>int</type>
-        <declname>LEVEL</declname>
-        <defname>LEVEL</defname>
+        <declname>ACTICATES_ON</declname>
+        <defname>ACTICATES_ON</defname>
       </param>
     </templateparamlist>
     <sectiondef kind="public-func">
-      <memberdef kind="function" id="classeva_1_1_binarize_decor_1ac5cdfc4823ad576bc240a47c07fe2bf1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classeva_1_1_binarize_decor_1ab0de14594d209f987e3bc296a0c56c16" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>signed short</type>
-        <definition>signed short eva::BinarizeDecor&lt; READER, LEVEL &gt;::getValue</definition>
+        <definition>signed short eva::BinarizeDecor&lt; READER, ACTICATES_ON &gt;::getValue</definition>
         <argsstring>()</argsstring>
         <name>getValue</name>
         <qualifiedname>eva::BinarizeDecor::getValue</qualifiedname>
@@ -29,7 +29,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaReaderDecors.h" line="44" column="22" bodyfile="src/evaReaderDecors.h" bodystart="44" bodyend="47"/>
+        <location file="src/evaReaderDecors.h" line="53" column="22" bodyfile="src/evaReaderDecors.h" bodystart="53" bodyend="56"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -42,7 +42,7 @@
         <label>READER</label>
       </node>
       <node id="1">
-        <label>eva::BinarizeDecor&lt; READER, LEVEL &gt;</label>
+        <label>eva::BinarizeDecor&lt; READER, ACTICATES_ON &gt;</label>
         <link refid="classeva_1_1_binarize_decor"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
@@ -65,15 +65,15 @@
         <label>READER</label>
       </node>
       <node id="1">
-        <label>eva::BinarizeDecor&lt; READER, LEVEL &gt;</label>
+        <label>eva::BinarizeDecor&lt; READER, ACTICATES_ON &gt;</label>
         <link refid="classeva_1_1_binarize_decor"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="src/evaReaderDecors.h" line="41" column="5" bodyfile="src/evaReaderDecors.h" bodystart="42" bodyend="48"/>
+    <location file="src/evaReaderDecors.h" line="50" column="5" bodyfile="src/evaReaderDecors.h" bodystart="51" bodyend="57"/>
     <listofallmembers>
-      <member refid="classeva_1_1_binarize_decor_1ac5cdfc4823ad576bc240a47c07fe2bf1" prot="public" virt="non-virtual"><scope>eva::BinarizeDecor</scope><name>getValue</name></member>
+      <member refid="classeva_1_1_binarize_decor_1ab0de14594d209f987e3bc296a0c56c16" prot="public" virt="non-virtual"><scope>eva::BinarizeDecor</scope><name>getValue</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

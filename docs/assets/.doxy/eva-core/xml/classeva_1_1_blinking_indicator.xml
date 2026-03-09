@@ -199,7 +199,7 @@
       <memberdef kind="function" id="classeva_1_1_blinking_indicator_1a92dd3758d4e2d5a19c382ca5e1533408" prot="private" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
         <definition>void eva::BlinkingIndicator::invoke</definition>
-        <argsstring>(void *msgSender, long args) override</argsstring>
+        <argsstring>(void *msgSender, union Message message) override</argsstring>
         <name>invoke</name>
         <qualifiedname>eva::BlinkingIndicator::invoke</qualifiedname>
         <reimplements refid="classeva_1_1_i_handler_1a81dab5d3b9bed6a215f357a75e11b4e6">invoke</reimplements>

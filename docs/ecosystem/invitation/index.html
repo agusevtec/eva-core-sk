@@ -563,17 +563,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#ecosystem-structure" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Ecosystem Structure
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#an-invitation-to-collaborate" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -826,17 +815,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#ecosystem-structure" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Ecosystem Structure
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#an-invitation-to-collaborate" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -926,23 +904,9 @@
 <li><strong>Handler</strong> — events instead of polling</li>
 <li><strong>Template composition</strong> — flexibility without performance loss</li>
 </ul>
-<h2 id="ecosystem-structure">Ecosystem Structure<a class="headerlink" href="#ecosystem-structure" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code><span class="nx">eva</span><span class="o">/</span><span class="w">                          </span><span class="err">#</span><span class="w"> </span><span class="nx">Namespace</span>
-<span class="err">├──</span><span class="w"> </span><span class="nx">core</span><span class="o">/</span><span class="w">                     </span><span class="err">#</span><span class="w"> </span><span class="nx">Core</span><span class="p">:</span><span class="w"> </span><span class="nx">Tickable</span><span class="p">,</span><span class="w"> </span><span class="nx">Handler</span><span class="p">,</span><span class="w"> </span><span class="nx">IReader</span>
-<span class="err">├──</span><span class="w"> </span><span class="nx">sk</span><span class="o">/</span><span class="w">                       </span><span class="err">#</span><span class="w"> </span><span class="nx">Survival</span><span class="w"> </span><span class="nx">Kit</span><span class="w"> </span><span class="p">(</span><span class="nx">current</span><span class="w"> </span><span class="nx">project</span><span class="p">)</span>
-<span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="nx">Button</span><span class="p">,</span><span class="w"> </span><span class="nx">Switch</span><span class="p">,</span><span class="w"> </span><span class="nx">MultiButton</span>
-<span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="nx">DelayTimer</span><span class="p">,</span><span class="w"> </span><span class="nx">IntervalTimer</span>
-<span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="nx">Indicator</span><span class="p">,</span><span class="w"> </span><span class="nx">Joystick</span><span class="p">,</span><span class="w"> </span><span class="nx">Slider</span>
-<span class="err">│</span><span class="w">   </span><span class="err">└──</span><span class="w"> </span><span class="nx">List</span>
-<span class="err">├──</span><span class="w"> </span><span class="nx">boxy</span><span class="o">/</span><span class="w">                     </span><span class="err">#</span><span class="w"> </span><span class="nx">GUI</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nx">windowing</span><span class="w"> </span><span class="kn">library</span>
-<span class="err">├──</span><span class="w"> </span><span class="nx">frequencymeter</span><span class="o">/</span><span class="w">           </span><span class="err">#</span><span class="w"> </span><span class="nx">Frequency</span><span class="w"> </span><span class="nx">measurement</span>
-<span class="err">├──</span><span class="w"> </span><span class="nx">serial</span><span class="o">/</span><span class="w">                   </span><span class="err">#</span><span class="w"> </span><span class="nx">Serial</span><span class="w"> </span><span class="nx">port</span><span class="w"> </span><span class="nx">handling</span>
-<span class="err">└──</span><span class="w"> </span><span class="o">...</span><span class="w">                       </span><span class="err">#</span><span class="w"> </span><span class="nx">Your</span><span class="w"> </span><span class="nx">project</span><span class="w"> </span><span class="nx">could</span><span class="w"> </span><span class="nx">be</span><span class="w"> </span><span class="nx">next</span>
-</code></pre></div>
-
 <p>Each module solves its own specific task, but they all speak the same language—the language of EVA.</p>
 <h2 id="an-invitation-to-collaborate">An Invitation to Collaborate<a class="headerlink" href="#an-invitation-to-collaborate" title="Permanent link">&para;</a></h2>
-<p>You are an Arduino library author. Your project solves a specific hardware problem: SoftwareSerial, SIM800L, GPS, sensors, displays. It has its own logic, its own complexities, its own hard-earned solutions.</p>
+<p>You are an Arduino library author. Your project solves a specific hardware problem: GMS, GPS, or any other sensors - its own hard-earned solutions, great!</p>
 <p>I propose we join forces.</p>
 <h3 id="why-this-might-interest-you">Why This Might Interest You<a class="headerlink" href="#why-this-might-interest-you" title="Permanent link">&para;</a></h3>
 <ol>
@@ -952,10 +916,9 @@
 <li>
 <p><strong>Clean examples</strong> — Instead of code with <code>millis()</code> and flags, you can show examples where your library is embedded in a solid architecture:</p>
 </li>
-<li>GPS parser as a <code>Tickable</code> component</li>
-<li>GSM modem with callbacks instead of AT commands in <code>loop()</code></li>
+<li>GPS parser could be a <code>Tickable</code> component</li>
 <li>
-<p>Software serial that doesn't block the rest of the logic</p>
+<p>GSM modem could be with callbacks instead of blocking on serial answers of AT commands</p>
 </li>
 <li>
 <p><strong>Less support burden</strong> — Many user problems stem not from your library, but from how they call it. EVA-core-sk takes care of time management and events, leaving you with just the logic.</p>

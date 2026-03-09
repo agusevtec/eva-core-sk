@@ -17,18 +17,18 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaRepeatTimer.h" line="35" column="24" bodyfile="src/evaRepeatTimer.h" bodystart="35" bodyend="-1"/>
+        <location file="src/evaRepeatTimer.h" line="41" column="24" bodyfile="src/evaRepeatTimer.h" bodystart="41" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
-      <memberdef kind="function" id="classeva_1_1_repeat_timer_1a56dbd95f61cc18584c15c075ddd48f90" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classeva_1_1_repeat_timer_1ad2e84533c5ae3faca906d755ea6b73cd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>eva::RepeatTimer::RepeatTimer</definition>
-        <argsstring>(unsigned period, IHandler *listener)</argsstring>
+        <argsstring>(unsigned short period, IHandler *listener)</argsstring>
         <name>RepeatTimer</name>
         <qualifiedname>eva::RepeatTimer::RepeatTimer</qualifiedname>
         <param>
-          <type>unsigned</type>
+          <type>unsigned short</type>
           <declname>period</declname>
         </param>
         <param>
@@ -62,14 +62,50 @@
         </inbodydescription>
         <location file="src/evaRepeatTimer.h" line="22" column="9"/>
       </memberdef>
-      <memberdef kind="function" id="classeva_1_1_repeat_timer_1a41f0ee76f1d0b016dffaca49c055d1c8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classeva_1_1_repeat_timer_1a9d8300f6be9bcbd119c80898b5abf80d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classeva_1_1_repeat_timer_1ad2e84533c5ae3faca906d755ea6b73cd" kindref="member">RepeatTimer</ref> *</type>
+        <definition>RepeatTimer * eva::RepeatTimer::setPeriod</definition>
+        <argsstring>(unsigned short period)</argsstring>
+        <name>setPeriod</name>
+        <qualifiedname>eva::RepeatTimer::setPeriod</qualifiedname>
+        <param>
+          <type>unsigned short</type>
+          <declname>period</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evaRepeatTimer.h" line="24" column="21"/>
+      </memberdef>
+      <memberdef kind="function" id="classeva_1_1_repeat_timer_1af78ac49afc2ae6ee4b23928283178a09" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classeva_1_1_repeat_timer_1ad2e84533c5ae3faca906d755ea6b73cd" kindref="member">RepeatTimer</ref> *</type>
+        <definition>RepeatTimer * eva::RepeatTimer::setListener</definition>
+        <argsstring>(IHandler *listener)</argsstring>
+        <name>setListener</name>
+        <qualifiedname>eva::RepeatTimer::setListener</qualifiedname>
+        <param>
+          <type><ref refid="classeva_1_1_i_handler" kindref="compound">IHandler</ref> *</type>
+          <declname>listener</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evaRepeatTimer.h" line="26" column="21"/>
+      </memberdef>
+      <memberdef kind="function" id="classeva_1_1_repeat_timer_1a3b212e76c646014c0b148d4ea91cb55f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void eva::RepeatTimer::start</definition>
-        <argsstring>(unsigned period, IHandler *listener)</argsstring>
+        <argsstring>(unsigned short period, IHandler *listener)</argsstring>
         <name>start</name>
         <qualifiedname>eva::RepeatTimer::start</qualifiedname>
         <param>
-          <type>unsigned</type>
+          <type>unsigned short</type>
           <declname>period</declname>
         </param>
         <param>
@@ -101,7 +137,39 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaRepeatTimer.h" line="29" column="14"/>
+        <location file="src/evaRepeatTimer.h" line="33" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classeva_1_1_repeat_timer_1a1f560606edcb5f2f5a9d6435f8ee9eaf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void eva::RepeatTimer::start</definition>
+        <argsstring>(unsigned short period)</argsstring>
+        <name>start</name>
+        <qualifiedname>eva::RepeatTimer::start</qualifiedname>
+        <param>
+          <type>unsigned short</type>
+          <declname>period</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evaRepeatTimer.h" line="34" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classeva_1_1_repeat_timer_1a8ed99322c858d9e544dd935ac7489198" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void eva::RepeatTimer::start</definition>
+        <argsstring>()</argsstring>
+        <name>start</name>
+        <qualifiedname>eva::RepeatTimer::start</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evaRepeatTimer.h" line="35" column="14"/>
       </memberdef>
       <memberdef kind="function" id="classeva_1_1_repeat_timer_1a971246536c3cca838038b493c4da414c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -117,22 +185,40 @@
         </inbodydescription>
         <location file="src/evaRepeatTimer.h" line="15" column="9"/>
       </memberdef>
-    </sectiondef>
-    <sectiondef kind="private-func">
-      <memberdef kind="function" id="classeva_1_1_repeat_timer_1a62ca81919b7873454b88e43467d7c448" prot="private" static="no" const="no" explicit="no" inline="no" virt="virtual">
-        <type>short</type>
-        <definition>short eva::RepeatTimer::tick</definition>
-        <argsstring>() override</argsstring>
-        <name>tick</name>
-        <qualifiedname>eva::RepeatTimer::tick</qualifiedname>
-        <reimplements refid="classeva_1_1_delay_timer_1ac0c9ae90c288cc506947239ee3d99d17">tick</reimplements>
+      <memberdef kind="function" id="classeva_1_1_repeat_timer_1a5889ee3ab5a8f31a35f8849c12be2323" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>eva::DelayTimer::DelayTimer</definition>
+        <argsstring>(IHandler *listener)</argsstring>
+        <name>DelayTimer</name>
+        <qualifiedname>eva::RepeatTimer::DelayTimer</qualifiedname>
+        <param>
+          <type><ref refid="classeva_1_1_i_handler" kindref="compound">IHandler</ref> *</type>
+          <declname>listener</declname>
+        </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaRepeatTimer.h" line="32" column="15"/>
+        <location file="src/evaRepeatTimer.h" line="15" column="9"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classeva_1_1_repeat_timer_1a84f35ebcd37c05ac743599b1ae7f2eb5" prot="private" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void eva::RepeatTimer::tick</definition>
+        <argsstring>() override</argsstring>
+        <name>tick</name>
+        <qualifiedname>eva::RepeatTimer::tick</qualifiedname>
+        <reimplements refid="classeva_1_1_delay_timer_1a7cf30bb1be1a9a5002fde64adc479096">tick</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evaRepeatTimer.h" line="38" column="14"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -183,20 +269,26 @@
         <link refid="classeva_1_1_tickable"/>
       </node>
     </collaborationgraph>
-    <location file="src/evaRepeatTimer.h" line="12" column="5" bodyfile="src/evaRepeatTimer.h" bodystart="13" bodyend="36"/>
+    <location file="src/evaRepeatTimer.h" line="12" column="5" bodyfile="src/evaRepeatTimer.h" bodystart="13" bodyend="42"/>
     <listofallmembers>
-      <member refid="classeva_1_1_tickable_1a3f1a1833bfd4a2d9aea504a84cb1438d" prot="public" virt="non-virtual"><scope>eva::RepeatTimer</scope><name>chain</name></member>
+      <member refid="classeva_1_1_tickable_1a287d1d56ac5ca1c143d266c8e3c9d174" prot="public" virt="non-virtual"><scope>eva::RepeatTimer</scope><name>chain</name></member>
       <member refid="classeva_1_1_repeat_timer_1a971246536c3cca838038b493c4da414c" prot="public" virt="non-virtual"><scope>eva::RepeatTimer</scope><name>DelayTimer</name></member>
+      <member refid="classeva_1_1_repeat_timer_1a5889ee3ab5a8f31a35f8849c12be2323" prot="public" virt="non-virtual"><scope>eva::RepeatTimer</scope><name>DelayTimer</name></member>
+      <member refid="classeva_1_1_delay_timer_1a4d615ec24c146a2b46feea535a8e7830" prot="public" virt="non-virtual"><scope>eva::RepeatTimer</scope><name>isRunning</name></member>
       <member refid="classeva_1_1_delay_timer_1a79cfcb6054cd07ae88faa66e96e1a29f" prot="protected" virt="non-virtual"><scope>eva::RepeatTimer</scope><name>listener</name></member>
-      <member refid="classeva_1_1_tickable_1a828ad5f4e70189311b93c6a504e088b0" prot="public" virt="non-virtual"><scope>eva::RepeatTimer</scope><name>millis</name></member>
       <member refid="classeva_1_1_delay_timer_1aaa15353150b005949a4cb0345ebf83ca" prot="protected" virt="non-virtual"><scope>eva::RepeatTimer</scope><name>nextFire</name></member>
       <member refid="classeva_1_1_repeat_timer_1a90436d624c2364417352f32a9d3fe0e4" prot="private" virt="non-virtual"><scope>eva::RepeatTimer</scope><name>period</name></member>
-      <member refid="classeva_1_1_repeat_timer_1a56dbd95f61cc18584c15c075ddd48f90" prot="public" virt="non-virtual"><scope>eva::RepeatTimer</scope><name>RepeatTimer</name></member>
-      <member refid="classeva_1_1_repeat_timer_1a41f0ee76f1d0b016dffaca49c055d1c8" prot="public" virt="non-virtual"><scope>eva::RepeatTimer</scope><name>start</name></member>
+      <member refid="classeva_1_1_repeat_timer_1ad2e84533c5ae3faca906d755ea6b73cd" prot="public" virt="non-virtual"><scope>eva::RepeatTimer</scope><name>RepeatTimer</name></member>
+      <member refid="classeva_1_1_repeat_timer_1af78ac49afc2ae6ee4b23928283178a09" prot="public" virt="non-virtual"><scope>eva::RepeatTimer</scope><name>setListener</name></member>
+      <member refid="classeva_1_1_repeat_timer_1a9d8300f6be9bcbd119c80898b5abf80d" prot="public" virt="non-virtual"><scope>eva::RepeatTimer</scope><name>setPeriod</name></member>
+      <member refid="classeva_1_1_repeat_timer_1a3b212e76c646014c0b148d4ea91cb55f" prot="public" virt="non-virtual"><scope>eva::RepeatTimer</scope><name>start</name></member>
+      <member refid="classeva_1_1_repeat_timer_1a1f560606edcb5f2f5a9d6435f8ee9eaf" prot="public" virt="non-virtual"><scope>eva::RepeatTimer</scope><name>start</name></member>
+      <member refid="classeva_1_1_repeat_timer_1a8ed99322c858d9e544dd935ac7489198" prot="public" virt="non-virtual"><scope>eva::RepeatTimer</scope><name>start</name></member>
       <member refid="classeva_1_1_delay_timer_1a0e61d51bcd42b77a47381496ddb8445c" prot="public" virt="non-virtual"><scope>eva::RepeatTimer</scope><name>stop</name></member>
       <member refid="classeva_1_1_tickable_1ad13287a77a330b14272d3e1ccdbb3de7" prot="public" virt="non-virtual"><scope>eva::RepeatTimer</scope><name>tac</name></member>
-      <member refid="classeva_1_1_repeat_timer_1a62ca81919b7873454b88e43467d7c448" prot="private" virt="virtual"><scope>eva::RepeatTimer</scope><name>tick</name></member>
+      <member refid="classeva_1_1_repeat_timer_1a84f35ebcd37c05ac743599b1ae7f2eb5" prot="private" virt="virtual"><scope>eva::RepeatTimer</scope><name>tick</name></member>
       <member refid="classeva_1_1_tickable_1a667f47cdee5f03eed323cebb27e8ab8e" prot="public" virt="non-virtual"><scope>eva::RepeatTimer</scope><name>Tickable</name></member>
+      <member refid="classeva_1_1_tickable_1acb71ddd4ec2bba0112001022c8c5ff6f" prot="public" virt="non-virtual"><scope>eva::RepeatTimer</scope><name>~Tickable</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

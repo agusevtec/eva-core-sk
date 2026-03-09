@@ -93,9 +93,14 @@ Inherits the following classes: [eva::DelayTimer](classeva_1_1_delay_timer.md)
 
 | Type | Name |
 | ---: | :--- |
-|   | [**DelayTimer**](#function-delaytimer) () <br> |
-|   | [**RepeatTimer**](#function-repeattimer) (unsigned period, [**IHandler**](classeva_1_1_i_handler.md) \* listener) <br>_Constructor that starts the timer._  |
-|  void | [**start**](#function-start) (unsigned period, [**IHandler**](classeva_1_1_i_handler.md) \* listener) <br>_Starts or restarts the repeating timer._  |
+|   | [**DelayTimer**](#function-delaytimer-12) () <br> |
+|   | [**DelayTimer**](#function-delaytimer-22) ([**IHandler**](classeva_1_1_i_handler.md) \* listener) <br> |
+|   | [**RepeatTimer**](#function-repeattimer) (unsigned short period, [**IHandler**](classeva_1_1_i_handler.md) \* listener) <br>_Constructor that starts the timer._  |
+|  [**RepeatTimer**](classeva_1_1_repeat_timer.md#function-repeattimer) \* | [**setListener**](#function-setlistener) ([**IHandler**](classeva_1_1_i_handler.md) \* listener) <br> |
+|  [**RepeatTimer**](classeva_1_1_repeat_timer.md#function-repeattimer) \* | [**setPeriod**](#function-setperiod) (unsigned short period) <br> |
+|  void | [**start**](#function-start-13) (unsigned short period, [**IHandler**](classeva_1_1_i_handler.md) \* listener) <br>_Starts or restarts the repeating timer._  |
+|  void | [**start**](#function-start-23) (unsigned short period) <br> |
+|  void | [**start**](#function-start-33) () <br> |
 
 
 ## Public Functions inherited from eva::DelayTimer
@@ -104,8 +109,12 @@ See [eva::DelayTimer](classeva_1_1_delay_timer.md)
 
 | Type | Name |
 | ---: | :--- |
-|   | [**DelayTimer**](classeva_1_1_delay_timer.md#function-delaytimer) () <br> |
-|  void | [**start**](classeva_1_1_delay_timer.md#function-start) (unsigned delay, [**IHandler**](classeva_1_1_i_handler.md) \* listener=0) <br>_Starts the timer._  |
+|   | [**DelayTimer**](classeva_1_1_delay_timer.md#function-delaytimer-12) () <br> |
+|   | [**DelayTimer**](classeva_1_1_delay_timer.md#function-delaytimer-22) ([**IHandler**](classeva_1_1_i_handler.md) \* listener) <br> |
+|  bool | [**isRunning**](classeva_1_1_delay_timer.md#function-isrunning) () <br> |
+|  DelayTimer \* | [**setListener**](classeva_1_1_delay_timer.md#function-setlistener) ([**IHandler**](classeva_1_1_i_handler.md) \* listener) <br> |
+|  void | [**start**](classeva_1_1_delay_timer.md#function-start-12) (unsigned short delay, [**IHandler**](classeva_1_1_i_handler.md) \* listener) <br>_Starts the timer._  |
+|  void | [**start**](classeva_1_1_delay_timer.md#function-start-22) (unsigned short delay) <br> |
 |  void | [**stop**](classeva_1_1_delay_timer.md#function-stop) () <br>_Stops the timer._  |
 
 
@@ -116,8 +125,8 @@ See [eva::Tickable](classeva_1_1_tickable.md)
 | Type | Name |
 | ---: | :--- |
 |   | [**Tickable**](classeva_1_1_tickable.md#function-tickable) () <br> |
-|  unsigned long | [**millis**](classeva_1_1_tickable.md#function-millis) () <br> |
 |  void | [**tac**](classeva_1_1_tickable.md#function-tac) () <br>_Triggers tick on this and all linked tickables._  |
+|   | [**~Tickable**](classeva_1_1_tickable.md#function-tickable) () <br> |
 
 
 
@@ -130,7 +139,7 @@ See [eva::Tickable](classeva_1_1_tickable.md)
 
 | Type | Name |
 | ---: | :--- |
-|  Tickable \* | [**chain**](classeva_1_1_tickable.md#function-chain) (Tickable \* mount=0) <br>_Gets or sets the head of the tickable chain._  |
+|  Tickable \* | [**chain**](classeva_1_1_tickable.md#function-chain) () <br>_Gets or sets the head of the tickable chain._  |
 
 
 
@@ -209,7 +218,7 @@ See [eva::DelayTimer](classeva_1_1_delay_timer.md)
 
 | Type | Name |
 | ---: | :--- |
-| virtual short | [**tick**](classeva_1_1_delay_timer.md#function-tick) () override<br> |
+| virtual void | [**tick**](classeva_1_1_delay_timer.md#function-tick) () override<br> |
 
 
 
@@ -225,10 +234,25 @@ See [eva::DelayTimer](classeva_1_1_delay_timer.md)
 
 
 
-### function DelayTimer 
+### function DelayTimer [1/2]
 
 ```C++
 eva::RepeatTimer::DelayTimer () 
+```
+
+
+
+
+<hr>
+
+
+
+### function DelayTimer [2/2]
+
+```C++
+eva::RepeatTimer::DelayTimer (
+    IHandler * listener
+) 
 ```
 
 
@@ -243,7 +267,7 @@ eva::RepeatTimer::DelayTimer ()
 _Constructor that starts the timer._ 
 ```C++
 eva::RepeatTimer::RepeatTimer (
-    unsigned period,
+    unsigned short period,
     IHandler * listener
 ) 
 ```
@@ -267,12 +291,42 @@ eva::RepeatTimer::RepeatTimer (
 
 
 
-### function start 
+### function setListener 
+
+```C++
+RepeatTimer * eva::RepeatTimer::setListener (
+    IHandler * listener
+) 
+```
+
+
+
+
+<hr>
+
+
+
+### function setPeriod 
+
+```C++
+RepeatTimer * eva::RepeatTimer::setPeriod (
+    unsigned short period
+) 
+```
+
+
+
+
+<hr>
+
+
+
+### function start [1/3]
 
 _Starts or restarts the repeating timer._ 
 ```C++
 void eva::RepeatTimer::start (
-    unsigned period,
+    unsigned short period,
     IHandler * listener
 ) 
 ```
@@ -291,6 +345,34 @@ void eva::RepeatTimer::start (
 
 
         
+
+<hr>
+
+
+
+### function start [2/3]
+
+```C++
+void eva::RepeatTimer::start (
+    unsigned short period
+) 
+```
+
+
+
+
+<hr>
+
+
+
+### function start [3/3]
+
+```C++
+void eva::RepeatTimer::start () 
+```
+
+
+
 
 <hr>
 

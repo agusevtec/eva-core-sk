@@ -1,7 +1,9 @@
-#include "src/evaTac.h"
-#include "src/evaTimer.h"
-#include "src/evaButton.h"
-#include "src/evaIndicator.h"
+#include <evaTac.h>
+#include <evaDelayTimer.h>
+#include <evaButton.h>
+#include <evaIndicator.h>
+#include <evaCountdownIndicator.h>
+
 using namespace eva;
 
 class IState {
@@ -22,7 +24,7 @@ struct Context {
 
   Indicator RedIndicator;
   Indicator YellowIndicator;
-  Indicator GreenIndicator;
+  CountdownIndicator GreenIndicator;
 
   IState *RedStateInstance, *RedYellowStateInstance, *GreenStateInstance, *BlinkingGreenStateInstance, *YellowStateInstance;
 
@@ -38,12 +40,12 @@ public:
 
   virtual void Start() override {
     mNext = 0;
-    mTimer.Stop();
+    mTimer.stop();
     if (mContext->mIsAuto)
-      mTimer.After(10000);
-    mContext->RedIndicator.On();
-    mContext->YellowIndicator.Off();
-    mContext->GreenIndicator.Off();
+      mTimer.start(10000);
+    mContext->RedIndicator.on();
+    mContext->YellowIndicator.off();
+    mContext->GreenIndicator.off();
   }
 
   virtual void ChangeSignal() override {
@@ -51,18 +53,18 @@ public:
   }
 
   void OnTimeOut(void *aSender, long aEventArgs) {
-    mTimer.Stop();
+    mTimer.stop();
     mNext = mContext->RedYellowStateInstance;
   }
 private:
   Context *mContext;
-  Timer mTimer = {new Delegate<RedState>(this, &OnTimeOut)};
+  DelayTimer mTimer = {new Handler<RedState>(this, &OnTimeOut)};
 
 };
 
 class RedYellowState : public IState {
   Context *mContext;
-  Timer mTimer = {new Delegate<RedYellowState>(this, &OnTimeOut)};
+  DelayTimer mTimer = {new Handler<RedYellowState>(this, &OnTimeOut)};
 
 public:
   RedYellowState(Context *c)
@@ -70,11 +72,10 @@ public:
 
   virtual void Start() override {
     mNext = 0;
-    mTimer.Stop();
-    mTimer.After(3000);
-    mContext->RedIndicator.On();
-    mContext->YellowIndicator.On();
-    mContext->GreenIndicator.Off();
+    mTimer.start(3000);
+    mContext->RedIndicator.on();
+    mContext->YellowIndicator.on();
+    mContext->GreenIndicator.off();
   }
 
   void OnTimeOut(void *aSender, long aEventArgs) {
@@ -82,14 +83,14 @@ public:
   }
 
   virtual void ChangeSignal() override {
-    mTimer.Stop();
+    mTimer.stop();
     mNext = mContext->RedStateInstance;
   }
 };
 
 class GreenState : public IState {
   Context *mContext;
-  Timer mTimer = {new Delegate<GreenState>(this, &OnTimeOut)};
+  DelayTimer mTimer = {new Handler<GreenState>(this, &OnTimeOut)};
 
 public:
   GreenState(Context *c)
@@ -97,12 +98,12 @@ public:
 
   virtual void Start() override {
     mNext = 0;
-    mTimer.Stop();
+    mTimer.stop();
     if (mContext->mIsAuto)
-      mTimer.After(10000);
-    mContext->RedIndicator.Off();
-    mContext->YellowIndicator.Off();
-    mContext->GreenIndicator.On();
+      mTimer.start(10000);
+    mContext->RedIndicator.off();
+    mContext->YellowIndicator.off();
+    mContext->GreenIndicator.on();
   }
 
   void OnTimeOut(void *aSender, long aEventArgs) {
@@ -110,14 +111,14 @@ public:
   }
 
   virtual void ChangeSignal() override {
-    mTimer.Stop();
+    mTimer.stop();
     mNext = mContext->BlinkingGreenStateInstance;
   }
 };
 
 class BlinkingGreenState : public IState {
   Context *mContext;
-  Timer mTimer = {new Delegate<BlinkingGreenState>(this, &OnTimeOut)};
+  DelayTimer mTimer = {new Handler<BlinkingGreenState>(this, &OnTimeOut)};
 
 public:
   BlinkingGreenState(Context *c)
@@ -125,10 +126,10 @@ public:
 
   virtual void Start() override {
     mNext = 0;
-    mContext->RedIndicator.Off();
-    mContext->YellowIndicator.Off();
-    mContext->GreenIndicator.Repeat(6, 500, 250);
-    mTimer.After(3000);
+    mContext->RedIndicator.off();
+    mContext->YellowIndicator.off();
+    mContext->GreenIndicator.on(500, 506, 6);
+    mTimer.start(3000);
   }
 
   void OnTimeOut(void *aSender, long aEventArgs) {
@@ -136,14 +137,14 @@ public:
   }
 
   virtual void ChangeSignal() override {
-    mTimer.Stop();
+    mTimer.stop();
     mNext = mContext->GreenStateInstance;
   }
 };
 
 class YellowState : public IState {
   Context *mContext;
-  Timer mTimer = {new Delegate<YellowState>(this, &OnTimeOut)};
+  DelayTimer mTimer = {new Handler<YellowState>(this, &OnTimeOut)};
 
 public:
   YellowState(Context *c)
@@ -152,10 +153,10 @@ public:
 
   virtual void Start() override {
     mNext = 0;
-    mContext->RedIndicator.Off();
-    mContext->YellowIndicator.On();
-    mContext->GreenIndicator.Off();
-    mTimer.After(3000);
+    mContext->RedIndicator.off();
+    mContext->YellowIndicator.on();
+    mContext->GreenIndicator.off();
+    mTimer.start(3000);
   }
 
   void OnTimeOut(void *aSender, long aEventArgs) {
@@ -163,7 +164,7 @@ public:
   }
 
   virtual void ChangeSignal() override {
-    mTimer.Stop();
+    mTimer.start(3000);
     mNext = mContext->GreenStateInstance;
   }
 };
@@ -184,13 +185,13 @@ public:
 
   void SetAutoMode() {
     mIsAuto = true;
-    RedIndicator.Off();
-    YellowIndicator.Off();
-    GreenIndicator.Off();
+    RedIndicator.off();
+    YellowIndicator.off();
+    GreenIndicator.off();
     for (int i = 0; i < 5; i++) {
-      YellowIndicator.On();
+      YellowIndicator.on();
       delay(50);
-      YellowIndicator.Off();
+      YellowIndicator.off();
       delay(50);
     }
     mState->Start();
@@ -201,7 +202,7 @@ public:
     mState->ChangeSignal();
   }
 
-  void Tick() {
+  void tick() override{
     if (mState->Next() and mState->Next() != mState) {
       mState = mState->Next();
       mState->Start();
@@ -211,13 +212,12 @@ public:
 
 class AppSemaphore {
   StateChart mStates;
-  Button& mButton = Button::Create<6, INPUT_PULLUP, LOW>()
-                      .SetListener(new Delegate<AppSemaphore>(this, &OnChangeSignal), Button::ON_SHORTCLICK | Button::ON_LONGCLICK);
+  PinButton<6, INPUT_PULLUP, LOW> mButton = {new Handler<AppSemaphore>(this, &OnChangeSignal), ON_SHORTCLICK | ON_LONGCLICK};
 
 public:
 
   void OnChangeSignal(void *aSender, long aEventArgs) {
-    if (aEventArgs & Button::ON_LONGCLICK)
+    if (aEventArgs & ON_LONGCLICK)
       mStates.SetAutoMode();
     else
       mStates.ChangeSignal();
@@ -237,5 +237,5 @@ void setup() {
 }
 
 void loop() {
-  Ticker::Tac();
+  tac();
 }

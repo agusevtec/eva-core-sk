@@ -14,6 +14,7 @@
 * `#include "evaHandler.h"`
 * `#include "evaStdReaders.h"`
 * `#include "evaReaderDecors.h"`
+* `#include "evaConstants.h"`
 
 
 
@@ -38,7 +39,6 @@
 
 | Type | Name |
 | ---: | :--- |
-| struct | [**SW\_EVENTS**](structeva_1_1_s_w___e_v_e_n_t_s.md) <br> |
 | class | [**Toggle**](classeva_1_1_toggle.md) &lt;class READER&gt;<br>[_**Toggle**_](classeva_1_1_toggle.md) _- легковесная версия_[_**Button**_](classeva_1_1_button.md) _без детекции кликов_ |
 
 

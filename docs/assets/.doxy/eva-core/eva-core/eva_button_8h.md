@@ -11,6 +11,7 @@
 
 
 * `#include "evaToggle.h"`
+* `#include "evaConstants.h"`
 
 
 
@@ -35,8 +36,7 @@
 
 | Type | Name |
 | ---: | :--- |
-| struct | [**B\_EVENTS**](structeva_1_1_b___e_v_e_n_t_s.md) <br> |
-| class | [**Button**](classeva_1_1_button.md) &lt;class READER&gt;<br>[_**Button**_](classeva_1_1_button.md) _with press, release, short click and long click detection._ |
+| class | [**Button**](classeva_1_1_button.md) &lt;class READER&gt;<br>_Multi-state button that identifies which button was pressed via level code._  |
 
 
 

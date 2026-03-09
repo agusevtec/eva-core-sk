@@ -899,10 +899,10 @@
 <span class="w">  </span><span class="n">PinButton</span><span class="o">&lt;</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT_PULLUP</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="o">&gt;</span><span class="w"> </span><span class="n">button</span><span class="p">;</span>
 
 <span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">onButtonEvent</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">events</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">events</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">B_EVENTS</span><span class="o">::</span><span class="n">ON_SHORTCLICK</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">events</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">ON_SHORTCLICK</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">      </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Button clicked!&quot;</span><span class="p">);</span>
 <span class="w">    </span><span class="p">}</span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">events</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">B_EVENTS</span><span class="o">::</span><span class="n">ON_LONGCLICK</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">events</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">ON_LONGCLICK</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">      </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Button long pressed!&quot;</span><span class="p">);</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">}</span>
@@ -912,7 +912,7 @@
 <span class="w">    </span><span class="c1">// Set up the button handler</span>
 <span class="w">    </span><span class="n">button</span><span class="p">.</span><span class="n">setListener</span><span class="p">(</span>
 <span class="w">      </span><span class="k">new</span><span class="w"> </span><span class="n">Handler</span><span class="o">&lt;</span><span class="n">App</span><span class="o">&gt;</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">App</span><span class="o">::</span><span class="n">onButtonEvent</span><span class="p">),</span>
-<span class="w">      </span><span class="n">B_EVENTS</span><span class="o">::</span><span class="n">ON_SHORTCLICK</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">B_EVENTS</span><span class="o">::</span><span class="n">ON_LONGCLICK</span>
+<span class="w">      </span><span class="n">ON_SHORTCLICK</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">ON_LONGCLICK</span>
 <span class="w">    </span><span class="p">);</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">};</span>
@@ -1004,11 +1004,11 @@
 <span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">threshold</span><span class="p">);</span>
 <span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;)&quot;</span><span class="p">);</span>
 
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">events</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">MB_EVENTS</span><span class="o">::</span><span class="n">ON_SHORTCLICK</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">events</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">ON_SHORTCLICK</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">      </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;short clicked&quot;</span><span class="p">);</span>
 <span class="w">    </span><span class="p">}</span>
 
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">events</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">MB_EVENTS</span><span class="o">::</span><span class="n">ON_LONGCLICK</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">events</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">ON_LONGCLICK</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">      </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;long pressed&quot;</span><span class="p">);</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">}</span>
@@ -1017,7 +1017,7 @@
 <span class="w">  </span><span class="n">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="n">buttonBank</span><span class="p">.</span><span class="n">setListener</span><span class="p">(</span>
 <span class="w">      </span><span class="k">new</span><span class="w"> </span><span class="n">Handler</span><span class="o">&lt;</span><span class="n">App</span><span class="o">&gt;</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">App</span><span class="o">::</span><span class="n">onButtonEvent</span><span class="p">),</span>
-<span class="w">      </span><span class="n">MB_EVENTS</span><span class="o">::</span><span class="n">ON_SHORTCLICK</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">MB_EVENTS</span><span class="o">::</span><span class="n">ON_LONGCLICK</span>
+<span class="w">      </span><span class="n">ON_SHORTCLICK</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">ON_LONGCLICK</span>
 <span class="w">    </span><span class="p">);</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">};</span>

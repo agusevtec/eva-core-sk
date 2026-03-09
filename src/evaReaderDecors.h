@@ -46,26 +46,26 @@ namespace eva
     /**
      * @brief Decorator that converts analog reading to binary based on level
      */
-    template <class READER, int LEVEL>
+    template <class READER, int ACTICATES_ON>
     class BinarizeDecor : public READER
     {
     public:
         signed short getValue()
         {
-            return READER::getValue() == LEVEL;
+            return READER::getValue() == ACTICATES_ON;
         }
     };
 
     /**
      * @brief Decorator that normalizes readings to -1, 0, 1 based on threshold
      */
-    template <class READER, int LEVEL>
+    template <class READER, int THRESHOLD>
     class PolarizeDecor : public READER
     {
     public:
         signed short getValue()
         {
-            return constrain(READER::getValue() / LEVEL, -1, 1);
+            return constrain(READER::getValue() / THRESHOLD, -1, 1);
         }
     };
 

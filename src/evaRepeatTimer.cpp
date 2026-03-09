@@ -47,5 +47,5 @@ RepeatTimer *RepeatTimer::setPeriod(unsigned short period)
 
 RepeatTimer *RepeatTimer::setListener(IHandler *listener)
 {
-    return DelayTimer::setListener(listener);
+    return (RepeatTimer *)DelayTimer::setListener(listener);
 }

@@ -757,10 +757,32 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#function-on" class="md-nav__link">
+  <a href="#function-on-13" class="md-nav__link">
     <span class="md-ellipsis">
       
-        function on
+        function on [1/3]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-on-23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        function on [2/3]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-on-33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        function on [3/3]
       
     </span>
   </a>
@@ -810,7 +832,15 @@
 <tbody>
 <tr>
 <td style="text-align: right;">void</td>
-<td style="text-align: left;"><a href="#function-on"><strong>on</strong></a> (unsigned short period, unsigned short dutycyclePercent, unsigned char count, <a href="../classeva_1_1_i_handler/"><strong>IHandler</strong></a> * listener) <br><em>Starts countdown blinking.</em></td>
+<td style="text-align: left;"><a href="#function-on-13"><strong>on</strong></a> (unsigned short period, unsigned short dutycyclePercent, unsigned char count, <a href="../classeva_1_1_i_handler/"><strong>IHandler</strong></a> * listener=0) <br><em>Starts countdown blinking.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">void</td>
+<td style="text-align: left;"><a href="#function-on-23"><strong>on</strong></a> () <br><em>Turns on the indicator continuously.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">void</td>
+<td style="text-align: left;"><a href="#function-on-33"><strong>on</strong></a> (unsigned short period, unsigned char dutycyclePercent) <br><em>Turns on the indicator with blinking pattern.</em></td>
 </tr>
 </tbody>
 </table>
@@ -927,13 +957,13 @@
 </tbody>
 </table>
 <h2 id="public-functions-documentation">Public Functions Documentation<a class="headerlink" href="#public-functions-documentation" title="Permanent link">&para;</a></h2>
-<h3 id="function-on">function on<a class="headerlink" href="#function-on" title="Permanent link">&para;</a></h3>
+<h3 id="function-on-13">function on [1/3]<a class="headerlink" href="#function-on-13" title="Permanent link">&para;</a></h3>
 <p><em>Starts countdown blinking.</em> </p>
 <div class="codehilite"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">CountdownIndicator</span><span class="o">::</span><span class="n">on</span><span class="w"> </span><span class="p">(</span>
 <span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">period</span><span class="p">,</span>
 <span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">dutycyclePercent</span><span class="p">,</span>
 <span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">count</span><span class="p">,</span>
-<span class="w">    </span><span class="n">IHandler</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">listener</span>
+<span class="w">    </span><span class="n">IHandler</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">listener</span><span class="o">=</span><span class="mi">0</span>
 <span class="p">)</span><span class="w"> </span>
 </code></pre></div>
 
@@ -943,6 +973,28 @@
 <li><code>dutycyclePercent</code> On-time percentage </li>
 <li><code>count</code> Number of blinks before stopping </li>
 <li><code>listener</code> <a href="../classeva_1_1_handler/"><strong>Handler</strong></a> to notify when countdown completes </li>
+</ul>
+<hr>
+
+<h3 id="function-on-23">function on [2/3]<a class="headerlink" href="#function-on-23" title="Permanent link">&para;</a></h3>
+<p><em>Turns on the indicator continuously.</em> </p>
+<div class="codehilite"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">CountdownIndicator</span><span class="o">::</span><span class="n">on</span><span class="w"> </span><span class="p">()</span><span class="w"> </span>
+</code></pre></div>
+
+<hr>
+
+<h3 id="function-on-33">function on [3/3]<a class="headerlink" href="#function-on-33" title="Permanent link">&para;</a></h3>
+<p><em>Turns on the indicator with blinking pattern.</em> </p>
+<div class="codehilite"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">CountdownIndicator</span><span class="o">::</span><span class="n">on</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">period</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">dutycyclePercent</span>
+<span class="p">)</span><span class="w"> </span>
+</code></pre></div>
+
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>period</code> Blinking period in milliseconds </li>
+<li><code>dutycyclePercent</code> On-time percentage (0-100) </li>
 </ul>
 <hr>
 

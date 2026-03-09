@@ -1,33 +1,8 @@
-.PHONY: build test shell clean
+# See https://github.com/bxparks/EpoxyDuino for documentation about this
+# Makefile to compile and run Arduino programs natively on Linux or MacOS.
 
-IMAGE_NAME = eva-core-test
-CONTAINER_NAME = eva-test-runner
+APP_NAME := tests
 
-build:
-	docker-compose build
+ARDUINO_LIBS := libraries/AUnit src
 
-test: build
-	docker-compose up --abort-on-container-exit
-
-shell:
-	docker run -it --rm \
-		-v $(PWD)/src:/test/src \
-		-v $(PWD)/test:/test/test \
-		-p 8080:8080 \
-		--device=/dev:/dev \
-		$(IMAGE_NAME) /bin/bash
-
-clean:
-	docker-compose down -v
-	docker rmi $(IMAGE_NAME) || true
-
-test-tickable:
-	docker-compose run --rm arduino-tests python3 -c "from run_tests import *; VirtualAvrTester().run_single_test('test_tickable')"
-
-test-button:
-	docker-compose run --rm arduino-tests python3 -c "from run_tests import *; VirtualAvrTester().run_single_test('test_button')"
-
-test-timers:
-	docker-compose run --rm arduino-tests python3 -c "from run_tests import *; VirtualAvrTester().run_single_test('test_timers')"
-
-rebuild: clean build test
+include build-tests/EpoxyDuino.mk

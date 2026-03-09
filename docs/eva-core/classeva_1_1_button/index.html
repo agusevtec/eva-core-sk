@@ -712,17 +712,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#protected-attributes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Protected Attributes
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#protected-attributes-inherited-from-evatoggle" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -755,34 +744,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#protected-attributes-documentation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Protected Attributes Documentation
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Protected Attributes Documentation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#variable-presstime" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        variable pressTime
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -806,12 +767,11 @@
 <h1 id="class-evabutton">Class eva::Button<a class="headerlink" href="#class-evabutton" title="Permanent link">&para;</a></h1>
 <p><strong>template &lt;class READER&gt;</strong></p>
 <p><a href="../annotated/"><strong>ClassList</strong></a> <strong>&gt;</strong> <a href="../namespaceeva/"><strong>eva</strong></a> <strong>&gt;</strong> <a href="./"><strong>Button</strong></a></p>
-<p><a href="./"><em><strong>Button</strong></em></a> <em>with press, release, short click and long click detection.</em><a href="#detailed-description">More...</a></p>
+<p><em>Multi-state button that identifies which button was pressed via level code.</em> <a href="#detailed-description">More...</a></p>
 <ul>
 <li><code>#include &lt;evaButton.h&gt;</code></li>
 </ul>
 <p>Inherits the following classes: <a href="../classeva_1_1_toggle/">eva::Toggle</a></p>
-<p>Inherited by the following classes: <a href="../classeva_1_1_multi_button/">eva::MultiButton</a>,  <a href="../classeva_1_1_multi_button/">eva::MultiButton</a></p>
 <h2 id="public-functions-inherited-from-evatoggle">Public Functions inherited from eva::Toggle<a class="headerlink" href="#public-functions-inherited-from-evatoggle" title="Permanent link">&para;</a></h2>
 <p>See <a href="../classeva_1_1_toggle/">eva::Toggle</a></p>
 <table>
@@ -836,7 +796,7 @@
 </tr>
 <tr>
 <td style="text-align: right;">signed short</td>
-<td style="text-align: left;"><a href="../classeva_1_1_toggle/#function-getvalue"><strong>getValue</strong></a> () <br><em>Current state of the switch.</em></td>
+<td style="text-align: left;"><a href="../classeva_1_1_toggle/#function-getvalue"><strong>getValue</strong></a> () <br><em>Gets the button level code identifying which button was pressed.</em></td>
 </tr>
 <tr>
 <td style="text-align: right;">Toggle *</td>
@@ -859,12 +819,12 @@
 <td style="text-align: left;"><a href="../classeva_1_1_tickable/#function-tickable"><strong>Tickable</strong></a> () <br></td>
 </tr>
 <tr>
-<td style="text-align: right;">unsigned long</td>
-<td style="text-align: left;"><a href="../classeva_1_1_tickable/#function-millis"><strong>millis</strong></a> () <br></td>
-</tr>
-<tr>
 <td style="text-align: right;">void</td>
 <td style="text-align: left;"><a href="../classeva_1_1_tickable/#function-tac"><strong>tac</strong></a> () <br><em>Triggers tick on this and all linked tickables.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"><a href="../classeva_1_1_tickable/#function-tickable"><strong>~Tickable</strong></a> () <br></td>
 </tr>
 </tbody>
 </table>
@@ -880,22 +840,7 @@
 <tbody>
 <tr>
 <td style="text-align: right;">Tickable *</td>
-<td style="text-align: left;"><a href="../classeva_1_1_tickable/#function-chain"><strong>chain</strong></a> (Tickable * mount=0) <br><em>Gets or sets the head of the tickable chain.</em></td>
-</tr>
-</tbody>
-</table>
-<h2 id="protected-attributes">Protected Attributes<a class="headerlink" href="#protected-attributes" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th style="text-align: right;">Type</th>
-<th style="text-align: left;">Name</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: right;">unsigned long</td>
-<td style="text-align: left;"><a href="#variable-presstime"><strong>pressTime</strong></a>  <br></td>
+<td style="text-align: left;"><a href="../classeva_1_1_tickable/#function-chain"><strong>chain</strong></a> () <br><em>Gets or sets the head of the tickable chain.</em></td>
 </tr>
 </tbody>
 </table>
@@ -910,8 +855,12 @@
 </thead>
 <tbody>
 <tr>
+<td style="text-align: right;">bool</td>
+<td style="text-align: left;"><a href="../classeva_1_1_toggle/#variable-isenabled"><strong>isEnabled</strong></a>   = <code>true</code><br></td>
+</tr>
+<tr>
 <td style="text-align: right;">unsigned char</td>
-<td style="text-align: left;"><a href="../classeva_1_1_toggle/#variable-encodedstate"><strong>encodedState</strong></a>   = <code>0</code><br></td>
+<td style="text-align: left;"><a href="../classeva_1_1_toggle/#variable-levelcode"><strong>levelCode</strong></a>   = <code>0</code><br></td>
 </tr>
 <tr>
 <td style="text-align: right;"><a href="../classeva_1_1_i_handler/"><strong>IHandler</strong></a> *</td>
@@ -934,23 +883,21 @@
 <td style="text-align: left;"><a href="../classeva_1_1_toggle/#function-notify"><strong>notify</strong></a> (unsigned short eventTypeMask) <br></td>
 </tr>
 <tr>
-<td style="text-align: right;">virtual short</td>
+<td style="text-align: right;">virtual void</td>
 <td style="text-align: left;"><a href="../classeva_1_1_toggle/#function-tick"><strong>tick</strong></a> () override<br></td>
 </tr>
 </tbody>
 </table>
 <h2 id="detailed-description">Detailed Description<a class="headerlink" href="#detailed-description" title="Permanent link">&para;</a></h2>
+<p>Generic button class that works with any multi-valued input source. The input reader can return different numeric codes representing different states. Typical applications:
+* Resistor ladder buttons on single ADC pin
+* Custom encoding schemes
+* Multiplexed inputs</p>
+<p>Events include the level code in argsMask, allowing identification of which specific button triggered the event. Long click threshold is fixed at 750ms.</p>
 <p><strong>Template parameters:</strong></p>
 <ul>
-<li><code>READER</code> Input reader type that provides <a href="../classeva_1_1_toggle/#function-getvalue"><strong>getValue()</strong></a> </li>
+<li><code>READER</code> Input reader type that returns numeric codes (0 = no button, &gt;0 = button index) </li>
 </ul>
-<h2 id="protected-attributes-documentation">Protected Attributes Documentation<a class="headerlink" href="#protected-attributes-documentation" title="Permanent link">&para;</a></h2>
-<h3 id="variable-presstime">variable pressTime<a class="headerlink" href="#variable-presstime" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><code><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">Button</span><span class="o">&lt;</span><span class="w"> </span><span class="n">READER</span><span class="w"> </span><span class="o">&gt;::</span><span class="n">pressTime</span><span class="p">;</span>
-</code></pre></div>
-
-<hr>
-
 <hr />
 <p>The documentation for this class was generated from the following file <code>src/evaButton.h</code></p>
 

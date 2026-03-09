@@ -4,7 +4,9 @@
     <compoundname>eva::Toggle</compoundname>
     <basecompoundref prot="public" virt="non-virtual">READER</basecompoundref>
     <basecompoundref refid="classeva_1_1_tickable" prot="public" virt="non-virtual">eva::Tickable</basecompoundref>
+    <derivedcompoundref refid="classeva_1_1_button" prot="public" virt="non-virtual">eva::Button&lt; QuantizeDecor&lt; StabilizeDecor&lt; AnalogPinReader&lt; PIN, PIN_MODE &gt; &gt;, LEVELS... &gt; &gt;</derivedcompoundref>
     <derivedcompoundref refid="classeva_1_1_button" prot="public" virt="non-virtual">eva::Button&lt; BinarizeDecor&lt; StabilizeDecor&lt; DigitalPinReader&lt; PIN, PIN_MODE &gt; &gt;, ACTIVATES_ON &gt; &gt;</derivedcompoundref>
+    <derivedcompoundref refid="classeva_1_1_button" prot="public" virt="non-virtual">eva::Button&lt; BinarizeDecor&lt; StabilizeDecor&lt; DigitalPinReader&lt; PIN, INPUT_PULLUP &gt; &gt;, LOW &gt; &gt;</derivedcompoundref>
     <derivedcompoundref refid="classeva_1_1_button" prot="public" virt="non-virtual">eva::Button&lt; READER &gt;</derivedcompoundref>
     <includes refid="eva_toggle_8h" local="no">evaToggle.h</includes>
     <templateparamlist>
@@ -13,12 +15,27 @@
       </param>
     </templateparamlist>
     <sectiondef kind="protected-attrib">
-      <memberdef kind="variable" id="classeva_1_1_toggle_1a2dbbb3067083224bee445d675a7a0d75" prot="protected" static="no" mutable="no">
-        <type>unsigned char</type>
-        <definition>unsigned char eva::Toggle&lt; READER &gt;::encodedState</definition>
+      <memberdef kind="variable" id="classeva_1_1_toggle_1a4aebf2bdcc924479bf51b86a4a05b424" prot="protected" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool eva::Toggle&lt; READER &gt;::isEnabled</definition>
         <argsstring></argsstring>
-        <name>encodedState</name>
-        <qualifiedname>eva::Toggle::encodedState</qualifiedname>
+        <name>isEnabled</name>
+        <qualifiedname>eva::Toggle::isEnabled</qualifiedname>
+        <initializer>= true</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evaToggle.h" line="97" column="10" bodyfile="src/evaToggle.h" bodystart="97" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeva_1_1_toggle_1adc5d68860f1043499c5b4259e9cf3ee2" prot="protected" static="no" mutable="no">
+        <type>unsigned char</type>
+        <definition>unsigned char eva::Toggle&lt; READER &gt;::levelCode</definition>
+        <argsstring></argsstring>
+        <name>levelCode</name>
+        <qualifiedname>eva::Toggle::levelCode</qualifiedname>
         <initializer>= 0</initializer>
         <briefdescription>
         </briefdescription>
@@ -26,7 +43,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaToggle.h" line="106" column="19" bodyfile="src/evaToggle.h" bodystart="106" bodyend="-1"/>
+        <location file="src/evaToggle.h" line="98" column="19" bodyfile="src/evaToggle.h" bodystart="98" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classeva_1_1_toggle_1a906b20261956f639f178108022191919" prot="protected" static="no" mutable="no">
         <type><ref refid="classeva_1_1_i_handler" kindref="compound">IHandler</ref> *</type>
@@ -41,39 +58,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaToggle.h" line="107" column="14" bodyfile="src/evaToggle.h" bodystart="107" bodyend="-1"/>
-      </memberdef>
-    </sectiondef>
-    <sectiondef kind="private-static-attrib">
-      <memberdef kind="variable" id="classeva_1_1_toggle_1aa49bd6f28380c354bb7f4934379bec81" prot="private" static="yes" mutable="no">
-        <type>const unsigned char</type>
-        <definition>const unsigned char eva::Toggle&lt; READER &gt;::ISACTIVE</definition>
-        <argsstring></argsstring>
-        <name>ISACTIVE</name>
-        <qualifiedname>eva::Toggle::ISACTIVE</qualifiedname>
-        <initializer>= 0x01</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="src/evaToggle.h" line="110" column="32" bodyfile="src/evaToggle.h" bodystart="110" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="classeva_1_1_toggle_1a7f925bc3529553e8a95751d999fb9a32" prot="private" static="yes" mutable="no">
-        <type>const unsigned char</type>
-        <definition>const unsigned char eva::Toggle&lt; READER &gt;::ENABLED</definition>
-        <argsstring></argsstring>
-        <name>ENABLED</name>
-        <qualifiedname>eva::Toggle::ENABLED</qualifiedname>
-        <initializer>= 0x04</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="src/evaToggle.h" line="111" column="32" bodyfile="src/evaToggle.h" bodystart="111" bodyend="-1"/>
+        <location file="src/evaToggle.h" line="99" column="14" bodyfile="src/evaToggle.h" bodystart="99" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -89,7 +74,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaToggle.h" line="38" column="5" bodyfile="src/evaToggle.h" bodystart="38" bodyend="41"/>
+        <location file="src/evaToggle.h" line="31" column="5" bodyfile="src/evaToggle.h" bodystart="31" bodyend="34"/>
       </memberdef>
       <memberdef kind="function" id="classeva_1_1_toggle_1a69d9c9485aeddfef30bba34a81de64d2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
@@ -111,7 +96,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaToggle.h" line="43" column="5" bodyfile="src/evaToggle.h" bodystart="43" bodyend="47"/>
+        <location file="src/evaToggle.h" line="36" column="5" bodyfile="src/evaToggle.h" bodystart="36" bodyend="40"/>
       </memberdef>
       <memberdef kind="function" id="classeva_1_1_toggle_1a4c0a992449877824c9a04d3d321c5764" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>Toggle *</type>
@@ -144,7 +129,7 @@
 <parametername>eventMask</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>- SW_EVENTS::ON_ACTIVE, ON_INACTIVE, ON_CHANGE </para>
+<para>- ON_ACTIVE, ON_INACTIVE, ON_CHANGE </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
@@ -152,7 +137,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaToggle.h" line="54" column="12" bodyfile="src/evaToggle.h" bodystart="54" bodyend="59"/>
+        <location file="src/evaToggle.h" line="47" column="12" bodyfile="src/evaToggle.h" bodystart="47" bodyend="52"/>
       </memberdef>
       <memberdef kind="function" id="classeva_1_1_toggle_1af10a291e9bfe02b121ac290fc0ba8c1f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>Toggle *</type>
@@ -183,7 +168,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaToggle.h" line="66" column="12" bodyfile="src/evaToggle.h" bodystart="66" bodyend="70"/>
+        <location file="src/evaToggle.h" line="59" column="12" bodyfile="src/evaToggle.h" bodystart="59" bodyend="63"/>
       </memberdef>
       <memberdef kind="function" id="classeva_1_1_toggle_1ab9ac42f4e89aaafedc10c77df1ff9b70" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>signed short</type>
@@ -192,33 +177,33 @@
         <name>getValue</name>
         <qualifiedname>eva::Toggle::getValue</qualifiedname>
         <briefdescription>
-<para>Current state of the switch. </para>
+<para>Gets the button level code identifying which button was pressed. </para>
         </briefdescription>
         <detaileddescription>
-<para><simplesect kind="return"><para>1 - active (closed), 0 - inactive (open) </para>
+<para><simplesect kind="return"><para>Level code (0 for no button, &gt;0 for specific button) </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaToggle.h" line="76" column="18" bodyfile="src/evaToggle.h" bodystart="76" bodyend="79"/>
+        <location file="src/evaToggle.h" line="69" column="18" bodyfile="src/evaToggle.h" bodystart="69" bodyend="72"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="protected-func">
-      <memberdef kind="function" id="classeva_1_1_toggle_1adb132d8fc1e96f77840d2c66a59a5160" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="virtual">
-        <type>short</type>
-        <definition>short eva::Toggle&lt; READER &gt;::tick</definition>
+      <memberdef kind="function" id="classeva_1_1_toggle_1abfe040c276137af46ddc464ee17c2a25" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void eva::Toggle&lt; READER &gt;::tick</definition>
         <argsstring>() override</argsstring>
         <name>tick</name>
         <qualifiedname>eva::Toggle::tick</qualifiedname>
-        <reimplements refid="classeva_1_1_tickable_1afc78886ffa282153328bffab36c347fc">tick</reimplements>
+        <reimplements refid="classeva_1_1_tickable_1ac7bb568a397ac2147fd6e292d2846ba6">tick</reimplements>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaToggle.h" line="82" column="11" bodyfile="src/evaToggle.h" bodystart="82" bodyend="96"/>
+        <location file="src/evaToggle.h" line="75" column="10" bodyfile="src/evaToggle.h" bodystart="75" bodyend="88"/>
       </memberdef>
       <memberdef kind="function" id="classeva_1_1_toggle_1ad4bc028f355b5553fe7990d2e4ac0ec1" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -236,7 +221,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaToggle.h" line="98" column="10" bodyfile="src/evaToggle.h" bodystart="98" bodyend="103"/>
+        <location file="src/evaToggle.h" line="89" column="10" bodyfile="src/evaToggle.h" bodystart="89" bodyend="94"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -245,9 +230,6 @@
     <detaileddescription>
 <para>Отличается от <ref refid="classeva_1_1_button" kindref="compound">Button</ref>:<itemizedlist>
 <listitem><para>Не хранит pressTime (экономия 4 байта!)</para>
-</listitem><listitem><para>Только события ON_ACTIVE/ON_INACTIVE</para>
-</listitem><listitem><para>Меньше кода в tick()</para>
-</listitem><listitem><para>Быстрее работает</para>
 </listitem></itemizedlist>
 </para>
 <para>Идеально для:<itemizedlist>
@@ -262,28 +244,28 @@
       <node id="2">
         <label>READER</label>
       </node>
-      <node id="4">
-        <label>eva::Button&lt; BinarizeDecor&lt; StabilizeDecor&lt; DigitalPinReader&lt; PIN, PIN_MODE &gt; &gt;, ACTIVATES_ON &gt; &gt;</label>
+      <node id="6">
+        <label>eva::Button&lt; BinarizeDecor&lt; StabilizeDecor&lt; DigitalPinReader&lt; PIN, INPUT_PULLUP &gt; &gt;, LOW &gt; &gt;</label>
         <link refid="classeva_1_1_button"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
       <node id="5">
-        <label>eva::Button&lt; READER &gt;</label>
+        <label>eva::Button&lt; BinarizeDecor&lt; StabilizeDecor&lt; DigitalPinReader&lt; PIN, PIN_MODE &gt; &gt;, ACTIVATES_ON &gt; &gt;</label>
         <link refid="classeva_1_1_button"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="6">
-        <label>eva::MultiButton&lt; QuantizeDecor&lt; StabilizeDecor&lt; AnalogPinReader&lt; PIN, PIN_MODE &gt; &gt;, LEVELS... &gt; &gt;</label>
-        <link refid="classeva_1_1_multi_button"/>
-        <childnode refid="5" relation="public-inheritance">
+      <node id="4">
+        <label>eva::Button&lt; QuantizeDecor&lt; StabilizeDecor&lt; AnalogPinReader&lt; PIN, PIN_MODE &gt; &gt;, LEVELS... &gt; &gt;</label>
+        <link refid="classeva_1_1_button"/>
+        <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
       <node id="7">
-        <label>eva::MultiButton&lt; READER &gt;</label>
-        <link refid="classeva_1_1_multi_button"/>
-        <childnode refid="5" relation="public-inheritance">
+        <label>eva::Button&lt; READER &gt;</label>
+        <link refid="classeva_1_1_button"/>
+        <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
       <node id="3">
@@ -323,23 +305,22 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="src/evaToggle.h" line="35" column="3" bodyfile="src/evaToggle.h" bodystart="36" bodyend="112"/>
+    <location file="src/evaToggle.h" line="28" column="3" bodyfile="src/evaToggle.h" bodystart="29" bodyend="100"/>
     <listofallmembers>
-      <member refid="classeva_1_1_tickable_1a3f1a1833bfd4a2d9aea504a84cb1438d" prot="public" virt="non-virtual"><scope>eva::Toggle</scope><name>chain</name></member>
+      <member refid="classeva_1_1_tickable_1a287d1d56ac5ca1c143d266c8e3c9d174" prot="public" virt="non-virtual"><scope>eva::Toggle</scope><name>chain</name></member>
       <member refid="classeva_1_1_toggle_1af10a291e9bfe02b121ac290fc0ba8c1f" prot="public" virt="non-virtual"><scope>eva::Toggle</scope><name>enable</name></member>
-      <member refid="classeva_1_1_toggle_1a7f925bc3529553e8a95751d999fb9a32" prot="private" virt="non-virtual"><scope>eva::Toggle</scope><name>ENABLED</name></member>
-      <member refid="classeva_1_1_toggle_1a2dbbb3067083224bee445d675a7a0d75" prot="protected" virt="non-virtual"><scope>eva::Toggle</scope><name>encodedState</name></member>
       <member refid="classeva_1_1_toggle_1ab9ac42f4e89aaafedc10c77df1ff9b70" prot="public" virt="non-virtual"><scope>eva::Toggle</scope><name>getValue</name></member>
-      <member refid="classeva_1_1_toggle_1aa49bd6f28380c354bb7f4934379bec81" prot="private" virt="non-virtual"><scope>eva::Toggle</scope><name>ISACTIVE</name></member>
+      <member refid="classeva_1_1_toggle_1a4aebf2bdcc924479bf51b86a4a05b424" prot="protected" virt="non-virtual"><scope>eva::Toggle</scope><name>isEnabled</name></member>
+      <member refid="classeva_1_1_toggle_1adc5d68860f1043499c5b4259e9cf3ee2" prot="protected" virt="non-virtual"><scope>eva::Toggle</scope><name>levelCode</name></member>
       <member refid="classeva_1_1_toggle_1a906b20261956f639f178108022191919" prot="protected" virt="non-virtual"><scope>eva::Toggle</scope><name>listener</name></member>
-      <member refid="classeva_1_1_tickable_1a828ad5f4e70189311b93c6a504e088b0" prot="public" virt="non-virtual"><scope>eva::Toggle</scope><name>millis</name></member>
       <member refid="classeva_1_1_toggle_1ad4bc028f355b5553fe7990d2e4ac0ec1" prot="protected" virt="non-virtual"><scope>eva::Toggle</scope><name>notify</name></member>
       <member refid="classeva_1_1_toggle_1a4c0a992449877824c9a04d3d321c5764" prot="public" virt="non-virtual"><scope>eva::Toggle</scope><name>setListener</name></member>
       <member refid="classeva_1_1_tickable_1ad13287a77a330b14272d3e1ccdbb3de7" prot="public" virt="non-virtual"><scope>eva::Toggle</scope><name>tac</name></member>
-      <member refid="classeva_1_1_toggle_1adb132d8fc1e96f77840d2c66a59a5160" prot="protected" virt="virtual"><scope>eva::Toggle</scope><name>tick</name></member>
+      <member refid="classeva_1_1_toggle_1abfe040c276137af46ddc464ee17c2a25" prot="protected" virt="virtual"><scope>eva::Toggle</scope><name>tick</name></member>
       <member refid="classeva_1_1_tickable_1a667f47cdee5f03eed323cebb27e8ab8e" prot="public" virt="non-virtual"><scope>eva::Toggle</scope><name>Tickable</name></member>
       <member refid="classeva_1_1_toggle_1a1ac570228af87b504205ee29ab360f3c" prot="public" virt="non-virtual"><scope>eva::Toggle</scope><name>Toggle</name></member>
       <member refid="classeva_1_1_toggle_1a69d9c9485aeddfef30bba34a81de64d2" prot="public" virt="non-virtual"><scope>eva::Toggle</scope><name>Toggle</name></member>
+      <member refid="classeva_1_1_tickable_1acb71ddd4ec2bba0112001022c8c5ff6f" prot="public" virt="non-virtual"><scope>eva::Toggle</scope><name>~Tickable</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

@@ -7,23 +7,16 @@
 #include "evaStdReaders.h"
 #include "evaReaderDecors.h"
 
+#include "evaConstants.h"
+
 namespace eva
 {
-  struct SW_EVENTS
-  {
-    static const unsigned short ON_ACTIVE = 0x1000;
-    static const unsigned short ON_INACTIVE = 0x2000;
-    static const unsigned short ON_CHANGE = 0x3000;
-  };
-
   /**
    * @brief Toggle - легковесная версия Button без детекции кликов
    *
    * Отличается от Button:
    * - Не хранит pressTime (экономия 4 байта!)
-   * - Только события ON_ACTIVE/ON_INACTIVE
-   * - Меньше кода в tick()
-   * - Быстрее работает
+
    *
    * Идеально для:
    * - Тумблеров
@@ -49,12 +42,12 @@ namespace eva
     /**
      * @brief Sets the Listener for switch events
      * @param listener - callback method
-     * @param eventMask - SW_EVENTS::ON_ACTIVE, ON_INACTIVE, ON_CHANGE
+     * @param eventMask - ON_ACTIVE, ON_INACTIVE, ON_CHANGE
      */
     Toggle *setListener(IHandler *listener, unsigned short eventMask)
     {
       this->listener = listener;
-      this->encodedState = (this->encodedState & 0x0f) | (eventMask >> 8);
+      this->curiosity = eventMask;
       return this;
     }
 
@@ -65,49 +58,50 @@ namespace eva
      */
     Toggle *enable(bool enabled)
     {
-      this->encodedState = (enabled) ? this->encodedState | ENABLED : this->encodedState & ~ENABLED;
+      if (this->levelCode < 0 && enabled)
+        this->levelCode = 0;
+      if (this->levelCode >= 0 && !enabled)
+        this->levelCode = -1;
       return this;
     }
 
     /**
-     * @brief Current state of the switch
-     * @return 1 - active (closed), 0 - inactive (open)
+     * @brief Gets the button level code identifying which button was pressed
+     * @return Level code (0 for no button, >0 for specific button)
      */
     signed short getValue()
     {
-      return this->encodedState & ISACTIVE;
+      if (this->levelCode > 0)
+        return this->levelCode;
+      return 0;
     }
 
   protected:
     void tick() override
     {
-      if (!(this->encodedState & ENABLED))
-        return 0;
+      if (this->levelCode < 0)
+        return;
 
-      unsigned char wasActive = this->encodedState & ISACTIVE;
-      unsigned char isActive = READER::getValue();
+      unsigned char wasLevelCode = this->levelCode;
+      this->levelCode = READER::getValue();
+      if ((wasLevelCode > 0) and (wasLevelCode != this->levelCode)) // any_pos -> 0
+        this->notify(ON_RELEASE, wasLevelCode);
 
-      if (isActive != wasActive)
-      {
-        this->encodedState = (this->encodedState & ~ISACTIVE) | isActive;
-        notify(isActive ? SW_EVENTS::ON_ACTIVE : SW_EVENTS::ON_INACTIVE);
-      }
+      if ((wasLevelCode != this->levelCode) and (this->levelCode > 0)) // 0 -> any_pos
+        this->notify(ON_PRESS, this->levelCode);
     }
 
-    void notify(unsigned short eventTypeMask)
+    void notify(unsigned short eventType, unsigned short eventCode)
     {
       if (this->listener)
-        if (this->encodedState & (eventTypeMask >> 8))
-          this->listener->invoke(this, (unsigned long)eventTypeMask);
+        if (this->curiosity & eventType)
+          this->listener->invoke(this, eventType, eventCode);
     }
 
   protected:
-    unsigned char encodedState = 0; // биты: 0-ISACTIVE, 1-3 свободны, 4-7 маска событий
+    unsigned char curiosity = 0;
+    signed char levelCode = 0;
     IHandler *listener = nullptr;
-
-  private:
-    static const unsigned char ISACTIVE = 0x01;
-    static const unsigned char ENABLED = 0x04;
   };
 
   /**

@@ -10,14 +10,14 @@
       </param>
       <param>
         <type>int</type>
-        <declname>LEVEL</declname>
-        <defname>LEVEL</defname>
+        <declname>THRESHOLD</declname>
+        <defname>THRESHOLD</defname>
       </param>
     </templateparamlist>
     <sectiondef kind="public-func">
-      <memberdef kind="function" id="classeva_1_1_polarize_decor_1a9ab30ae418244dcc2d15dc8e03525ce7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classeva_1_1_polarize_decor_1aa9a81423b2d79fe769bc5ddac785d7cc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>signed short</type>
-        <definition>signed short eva::PolarizeDecor&lt; READER, LEVEL &gt;::getValue</definition>
+        <definition>signed short eva::PolarizeDecor&lt; READER, THRESHOLD &gt;::getValue</definition>
         <argsstring>()</argsstring>
         <name>getValue</name>
         <qualifiedname>eva::PolarizeDecor::getValue</qualifiedname>
@@ -27,7 +27,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaReaderDecors.h" line="57" column="22" bodyfile="src/evaReaderDecors.h" bodystart="57" bodyend="60"/>
+        <location file="src/evaReaderDecors.h" line="66" column="22" bodyfile="src/evaReaderDecors.h" bodystart="66" bodyend="69"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -40,7 +40,7 @@
         <label>READER</label>
       </node>
       <node id="1">
-        <label>eva::PolarizeDecor&lt; READER, LEVEL &gt;</label>
+        <label>eva::PolarizeDecor&lt; READER, THRESHOLD &gt;</label>
         <link refid="classeva_1_1_polarize_decor"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
@@ -51,15 +51,15 @@
         <label>READER</label>
       </node>
       <node id="1">
-        <label>eva::PolarizeDecor&lt; READER, LEVEL &gt;</label>
+        <label>eva::PolarizeDecor&lt; READER, THRESHOLD &gt;</label>
         <link refid="classeva_1_1_polarize_decor"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="src/evaReaderDecors.h" line="54" column="5" bodyfile="src/evaReaderDecors.h" bodystart="55" bodyend="61"/>
+    <location file="src/evaReaderDecors.h" line="63" column="5" bodyfile="src/evaReaderDecors.h" bodystart="64" bodyend="70"/>
     <listofallmembers>
-      <member refid="classeva_1_1_polarize_decor_1a9ab30ae418244dcc2d15dc8e03525ce7" prot="public" virt="non-virtual"><scope>eva::PolarizeDecor</scope><name>getValue</name></member>
+      <member refid="classeva_1_1_polarize_decor_1aa9a81423b2d79fe769bc5ddac785d7cc" prot="public" virt="non-virtual"><scope>eva::PolarizeDecor</scope><name>getValue</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

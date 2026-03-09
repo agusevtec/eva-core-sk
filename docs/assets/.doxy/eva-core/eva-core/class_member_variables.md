@@ -19,15 +19,10 @@
 * **dutycycleTimer** ([**eva::BlinkingIndicator**](classeva_1_1_blinking_indicator.md))
 
 
-## e
-
-* **ENABLED** ([**eva::Button**](classeva_1_1_button.md), [**eva::MultiButton**](classeva_1_1_multi_button.md), [**eva::Toggle**](classeva_1_1_toggle.md))
-* **encodedState** ([**eva::Toggle**](classeva_1_1_toggle.md))
-
-
 ## f
 
 * **function** ([**eva::HandlerF**](classeva_1_1_handler_f.md))
+* **first** ([**eva::Tickable**](classeva_1_1_tickable.md))
 
 
 ## h
@@ -38,9 +33,8 @@
 
 ## i
 
-* **ISPRESSED** ([**eva::Button**](classeva_1_1_button.md))
 * **item** ([**eva::ListIterator**](structeva_1_1_list_iterator.md))
-* **ISACTIVE** ([**eva::Toggle**](classeva_1_1_toggle.md))
+* **isEnabled** ([**eva::Toggle**](classeva_1_1_toggle.md))
 
 
 ## k
@@ -53,8 +47,9 @@
 
 * **listener** ([**eva::CountdownIndicator**](classeva_1_1_countdown_indicator.md), [**eva::DelayTimer**](classeva_1_1_delay_timer.md), [**eva::Toggle**](classeva_1_1_toggle.md))
 * **length** ([**eva::List**](classeva_1_1_list.md))
-* **levelCode** ([**eva::MultiButton**](classeva_1_1_multi_button.md))
 * **levels** ([**eva::QuantizeDecor**](classeva_1_1_quantize_decor.md))
+* **last** ([**eva::Tickable**](classeva_1_1_tickable.md))
+* **levelCode** ([**eva::Toggle**](classeva_1_1_toggle.md))
 
 
 ## m
@@ -67,17 +62,6 @@
 
 * **nextFire** ([**eva::DelayTimer**](classeva_1_1_delay_timer.md))
 * **next** ([**eva::ListIterator**](structeva_1_1_list_iterator.md), [**eva::Tickable**](classeva_1_1_tickable.md))
-
-
-## o
-
-* **ON\_LONGCLICK** ([**eva::B\_EVENTS**](structeva_1_1_b___e_v_e_n_t_s.md), [**eva::MB\_EVENTS**](structeva_1_1_m_b___e_v_e_n_t_s.md))
-* **ON\_PRESS** ([**eva::B\_EVENTS**](structeva_1_1_b___e_v_e_n_t_s.md), [**eva::MB\_EVENTS**](structeva_1_1_m_b___e_v_e_n_t_s.md))
-* **ON\_RELEASE** ([**eva::B\_EVENTS**](structeva_1_1_b___e_v_e_n_t_s.md), [**eva::MB\_EVENTS**](structeva_1_1_m_b___e_v_e_n_t_s.md))
-* **ON\_SHORTCLICK** ([**eva::B\_EVENTS**](structeva_1_1_b___e_v_e_n_t_s.md), [**eva::MB\_EVENTS**](structeva_1_1_m_b___e_v_e_n_t_s.md))
-* **ON\_ACTIVE** ([**eva::SW\_EVENTS**](structeva_1_1_s_w___e_v_e_n_t_s.md))
-* **ON\_CHANGE** ([**eva::SW\_EVENTS**](structeva_1_1_s_w___e_v_e_n_t_s.md))
-* **ON\_INACTIVE** ([**eva::SW\_EVENTS**](structeva_1_1_s_w___e_v_e_n_t_s.md))
 
 
 ## p

@@ -30,10 +30,9 @@
 | Type | Name |
 | ---: | :--- |
 | class | [**AnalogPinReader**](classeva_1_1_analog_pin_reader.md) &lt;PIN, PIN\_MODE&gt;<br>_Reads analog pin value._  |
-| struct | [**B\_EVENTS**](structeva_1_1_b___e_v_e_n_t_s.md) <br> |
-| class | [**BinarizeDecor**](classeva_1_1_binarize_decor.md) &lt;class READER, LEVEL&gt;<br>_Decorator that converts analog reading to binary based on level._  |
+| class | [**BinarizeDecor**](classeva_1_1_binarize_decor.md) &lt;class READER, ACTICATES\_ON&gt;<br>_Decorator that converts analog reading to binary based on level._  |
 | class | [**BlinkingIndicator**](classeva_1_1_blinking_indicator.md) <br>[_**Indicator**_](classeva_1_1_indicator.md) _that blinks with specified period and duty cycle._ |
-| class | [**Button**](classeva_1_1_button.md) &lt;class READER&gt;<br>[_**Button**_](classeva_1_1_button.md) _with press, release, short click and long click detection._ |
+| class | [**Button**](classeva_1_1_button.md) &lt;class READER&gt;<br>_Multi-state button that identifies which button was pressed via level code._  |
 | class | [**CountdownIndicator**](classeva_1_1_countdown_indicator.md) <br>[_**Indicator**_](classeva_1_1_indicator.md) _that blinks a specified number of times then notifies listener._ |
 | class | [**DelayTimer**](classeva_1_1_delay_timer.md) <br>_One-shot timer that fires after a delay._  |
 | class | [**DigitalPinReader**](classeva_1_1_digital_pin_reader.md) &lt;PIN, PIN\_MODE&gt;<br>_Reads digital pin value._  |
@@ -46,12 +45,9 @@
 | class | [**Joystick**](classeva_1_1_joystick.md) &lt;class READER, MIN, MIDDLE, MAX&gt;<br>[_**Joystick**_](classeva_1_1_joystick.md) _axis reader with trim adjustment._ |
 | class | [**List**](classeva_1_1_list.md) &lt;class ItemClass&gt;<br>_Simple singly-linked list container._  |
 | struct | [**ListIterator**](structeva_1_1_list_iterator.md) &lt;class ItemClass&gt;<br>_Iterator node for_ [_**List**_](classeva_1_1_list.md) _._ |
-| struct | [**MB\_EVENTS**](structeva_1_1_m_b___e_v_e_n_t_s.md) <br> |
-| class | [**MultiButton**](classeva_1_1_multi_button.md) &lt;class READER&gt;<br>_Multi-state button that identifies which button was pressed via level code._  |
-| class | [**PolarizeDecor**](classeva_1_1_polarize_decor.md) &lt;class READER, LEVEL&gt;<br>_Decorator that normalizes readings to -1, 0, 1 based on threshold._  |
+| class | [**PolarizeDecor**](classeva_1_1_polarize_decor.md) &lt;class READER, THRESHOLD&gt;<br>_Decorator that normalizes readings to -1, 0, 1 based on threshold._  |
 | class | [**QuantizeDecor**](classeva_1_1_quantize_decor.md) &lt;class READER, LEVELS&gt;<br>_Decorator that quantizes analog readings to discrete levels._  |
 | class | [**RepeatTimer**](classeva_1_1_repeat_timer.md) <br>_Timer that fires repeatedly at fixed intervals._  |
-| struct | [**SW\_EVENTS**](structeva_1_1_s_w___e_v_e_n_t_s.md) <br> |
 | class | [**Slider**](classeva_1_1_slider.md) &lt;class READER, MIN, MAX&gt;<br>_Maps analog readings to 0-255 range._  |
 | class | [**StabilizeDecor**](classeva_1_1_stabilize_decor.md) &lt;class READER&gt;<br>_Decorator that stabilizes readings by requiring value to be stable for a period._  |
 | class | [**Tickable**](classeva_1_1_tickable.md) <br>_Base class for objects that need periodic updates._  |
@@ -64,7 +60,8 @@
 | ---: | :--- |
 | typedef [**Button**](classeva_1_1_button.md)&lt; [**BinarizeDecor**](classeva_1_1_binarize_decor.md)&lt; [**StabilizeDecor**](classeva_1_1_stabilize_decor.md)&lt; [**DigitalPinReader**](classeva_1_1_digital_pin_reader.md)&lt; PIN, PIN\_MODE &gt; &gt;, ACTIVATES\_ON &gt; &gt; | [**PinButton**](#typedef-pinbutton)  <br>[_**Button**_](classeva_1_1_button.md) _connected directly to a digital pin Includes stabilization and binarization decorators. Debounces input and generates events based on button state changes. Long click threshold is fixed at 750ms._ |
 | typedef [**Joystick**](classeva_1_1_joystick.md)&lt; [**AnalogPinReader**](classeva_1_1_analog_pin_reader.md)&lt; PIN, PIN\_MODE &gt;, MIN, MIDDLE, MAX &gt; | [**PinJoystick**](#typedef-pinjoystick)  <br>_Pin-based joystick with custom center position._  |
-| typedef [**MultiButton**](classeva_1_1_multi_button.md)&lt; [**QuantizeDecor**](classeva_1_1_quantize_decor.md)&lt; [**StabilizeDecor**](classeva_1_1_stabilize_decor.md)&lt; [**AnalogPinReader**](classeva_1_1_analog_pin_reader.md)&lt; PIN, PIN\_MODE &gt; &gt;, LEVELS... &gt; &gt; | [**PinMultiButton**](#typedef-pinmultibutton)  <br>_Multiple buttons on single ADC pin using resistor ladder._  |
+| typedef [**Button**](classeva_1_1_button.md)&lt; [**QuantizeDecor**](classeva_1_1_quantize_decor.md)&lt; [**StabilizeDecor**](classeva_1_1_stabilize_decor.md)&lt; [**AnalogPinReader**](classeva_1_1_analog_pin_reader.md)&lt; PIN, PIN\_MODE &gt; &gt;, LEVELS... &gt; &gt; | [**PinMultiButton**](#typedef-pinmultibutton)  <br>_Multiple buttons on single ADC pin using resistor ladder._  |
+| typedef [**Button**](classeva_1_1_button.md)&lt; [**BinarizeDecor**](classeva_1_1_binarize_decor.md)&lt; [**StabilizeDecor**](classeva_1_1_stabilize_decor.md)&lt; [**DigitalPinReader**](classeva_1_1_digital_pin_reader.md)&lt; PIN, INPUT\_PULLUP &gt; &gt;, LOW &gt; &gt; | [**PinPullUpButton**](#typedef-pinpullupbutton)  <br> |
 | typedef [**Slider**](classeva_1_1_slider.md)&lt; [**AnalogPinReader**](classeva_1_1_analog_pin_reader.md)&lt; PIN, PIN\_MODE &gt;, MIN, MAX &gt; | [**PinSlider**](#typedef-pinslider)  <br>_Pin-based slider mapping analog readings to 0-255 range._  |
 | typedef [**Toggle**](classeva_1_1_toggle.md)&lt; [**BinarizeDecor**](classeva_1_1_binarize_decor.md)&lt; [**StabilizeDecor**](classeva_1_1_stabilize_decor.md)&lt; [**DigitalPinReader**](classeva_1_1_digital_pin_reader.md)&lt; PIN, PIN\_MODE &gt; &gt;, ACTIVE\_LEVEL &gt; &gt; | [**PinSwitch**](#typedef-pinswitch)  <br>_Pin-based switch with specified active level._  |
 | typedef [**Joystick**](classeva_1_1_joystick.md)&lt; [**AnalogPinReader**](classeva_1_1_analog_pin_reader.md)&lt; PIN, PIN\_MODE &gt;, MIN,(MAX - MIN)/2, MAX &gt; | [**PinSymmetricJoystick**](#typedef-pinsymmetricjoystick)  <br>_Pin-based joystick with symmetric range (MIN to MAX, center at midpoint)._  |
@@ -77,6 +74,18 @@
 
 
 
+## Public Static Attributes
+
+| Type | Name |
+| ---: | :--- |
+|  const unsigned long | [**ON\_ACTIVE**](#variable-on_active)   = `ON\_PRESS`<br> |
+|  const unsigned long | [**ON\_CHANGE**](#variable-on_change)   = `0x0100`<br> |
+|  const unsigned long | [**ON\_INACTIVE**](#variable-on_inactive)   = `ON\_RELEASE`<br> |
+|  const unsigned long | [**ON\_LONGCLICK**](#variable-on_longclick)   = `0x1000`<br> |
+|  const unsigned long | [**ON\_PRESS**](#variable-on_press)   = `0x0200`<br> |
+|  const unsigned long | [**ON\_RELEASE**](#variable-on_release)   = `0x0400`<br> |
+|  const unsigned long | [**ON\_SHORTCLICK**](#variable-on_shortclick)   = `0x0800`<br> |
+|  const unsigned long | [**ON\_UNCLASSIFIED**](#variable-on_unclassified)   = `0x0000`<br> |
 
 
 
@@ -98,6 +107,11 @@
 |  void | [**tac**](#function-tac) () <br>_Triggers all tickable objects to update._  |
 
 
+## Public Static Functions
+
+| Type | Name |
+| ---: | :--- |
+|  bool | [**in\_beetween**](#function-in_beetween) (signed short x, signed short a, signed short b) <br> |
 
 
 
@@ -196,7 +210,7 @@ using eva::PinJoystick = Joystick<AnalogPinReader<PIN, PIN_MODE>, MIN, MIDDLE, M
 
 _Multiple buttons on single ADC pin using resistor ladder._ 
 ```C++
-using eva::PinMultiButton = MultiButton<QuantizeDecor<StabilizeDecor<AnalogPinReader<PIN, PIN_MODE>>, LEVELS...>>;
+using eva::PinMultiButton = Button<QuantizeDecor<StabilizeDecor<AnalogPinReader<PIN, PIN_MODE>>, LEVELS...>>;
 ```
 
 
@@ -217,6 +231,19 @@ Each button produces different ADC value which is mapped to levelCode. Debounces
 
 
         
+
+<hr>
+
+
+
+### typedef PinPullUpButton 
+
+```C++
+using eva::PinPullUpButton = Button<BinarizeDecor<StabilizeDecor<DigitalPinReader<PIN, INPUT_PULLUP>>, LOW>>;
+```
+
+
+
 
 <hr>
 
@@ -378,6 +405,112 @@ using eva::ThresholdSwitch = Toggle<BinarizeDecor<AnalogPinReader<PIN, INPUT>, T
         
 
 <hr>
+## Public Static Attributes Documentation
+
+
+
+
+### variable ON\_ACTIVE 
+
+```C++
+const unsigned long eva::ON_ACTIVE;
+```
+
+
+
+
+<hr>
+
+
+
+### variable ON\_CHANGE 
+
+```C++
+const unsigned long eva::ON_CHANGE;
+```
+
+
+
+
+<hr>
+
+
+
+### variable ON\_INACTIVE 
+
+```C++
+const unsigned long eva::ON_INACTIVE;
+```
+
+
+
+
+<hr>
+
+
+
+### variable ON\_LONGCLICK 
+
+```C++
+const unsigned long eva::ON_LONGCLICK;
+```
+
+
+
+
+<hr>
+
+
+
+### variable ON\_PRESS 
+
+```C++
+const unsigned long eva::ON_PRESS;
+```
+
+
+
+
+<hr>
+
+
+
+### variable ON\_RELEASE 
+
+```C++
+const unsigned long eva::ON_RELEASE;
+```
+
+
+
+
+<hr>
+
+
+
+### variable ON\_SHORTCLICK 
+
+```C++
+const unsigned long eva::ON_SHORTCLICK;
+```
+
+
+
+
+<hr>
+
+
+
+### variable ON\_UNCLASSIFIED 
+
+```C++
+const unsigned long eva::ON_UNCLASSIFIED;
+```
+
+
+
+
+<hr>
 ## Public Functions Documentation
 
 
@@ -388,6 +521,25 @@ using eva::ThresholdSwitch = Toggle<BinarizeDecor<AnalogPinReader<PIN, INPUT>, T
 _Triggers all tickable objects to update._ 
 ```C++
 void eva::tac () 
+```
+
+
+
+
+<hr>
+## Public Static Functions Documentation
+
+
+
+
+### function in\_beetween 
+
+```C++
+static inline bool eva::in_beetween (
+    signed short x,
+    signed short a,
+    signed short b
+) 
 ```
 
 
