@@ -11,7 +11,7 @@ Look at how buttons are built:
 
 ```cpp
 template <int PIN, int PINMODE, int ACTIVATESON>
-using PinButton = Button<BinarizeDecor<StabilizeDecor<DigitalPinReader<PIN, PINMODE>>, ACTIVATESON>>;
+using PinButton = Button<BinarizeDecor<StabilizeDecor<DigitalPinReader<PIN, PINMODE>>, ACTIVATES_ON>>;
 ```
 
 This entire chain resolves at compile time. 
@@ -23,13 +23,13 @@ Multiple Discrete Buttons via One Reader
 Sometimes you have several discrete buttons but want to handle them through Button for unified event handling. Create a custom reader that checks each pin and returns a unique code:
 
 ```cpp
-#include <evaButton.h>
+#include <evaSwitch.h>
 #include <evaTac.h>
 #include <evaHandler.h>
 
 using namespace eva;
 
-class ButtonBankReader {
+class MyBankReader {
 public:
   ButtonBankReader() {
     pinMode(2, INPUT_PULLUP);
@@ -47,11 +47,10 @@ public:
   }
 };
 
-using ButtonBank = Button<StabilizeDecor<ButtonBankReader>>;
 
 class App {
 private:
-  ButtonBank navButtons;
+  Switch<StabilizeDecor<MyBankReader>> navButtons;
   
   void onButtonPress(void* sender, CallbackInfo cbInfo) {
     char button = cbInfo.eventArg;  // 'u', 'd', 'l', or 'r'
@@ -162,5 +161,6 @@ The library provides class hierarchies that let you pick the exact level of func
 |-------|----------|----------|
 | `DelayTimer` | Minimal | Fires once |
 | `RepeatTimer` | Same + period storage | Fires repeatedly |
+| `CountdownTimer` | Same + period storage | Fires repeatedly several times |
 
 Choose the right abstraction for each job, and pay only for what you actually need.

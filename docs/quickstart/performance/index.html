@@ -713,20 +713,20 @@
 <p>The eva-core-sk library is designed around this reality. 
 Look at how buttons are built:</p>
 <div class="codehilite"><pre><span></span><code><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">int</span><span class="w"> </span><span class="n">PIN</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">PINMODE</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">ACTIVATESON</span><span class="o">&gt;</span>
-<span class="k">using</span><span class="w"> </span><span class="n">PinButton</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Button</span><span class="o">&lt;</span><span class="n">BinarizeDecor</span><span class="o">&lt;</span><span class="n">StabilizeDecor</span><span class="o">&lt;</span><span class="n">DigitalPinReader</span><span class="o">&lt;</span><span class="n">PIN</span><span class="p">,</span><span class="w"> </span><span class="n">PINMODE</span><span class="o">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">ACTIVATESON</span><span class="o">&gt;&gt;</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">PinButton</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Button</span><span class="o">&lt;</span><span class="n">BinarizeDecor</span><span class="o">&lt;</span><span class="n">StabilizeDecor</span><span class="o">&lt;</span><span class="n">DigitalPinReader</span><span class="o">&lt;</span><span class="n">PIN</span><span class="p">,</span><span class="w"> </span><span class="n">PINMODE</span><span class="o">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">ACTIVATES_ON</span><span class="o">&gt;&gt;</span><span class="p">;</span>
 </code></pre></div>
 
 <p>This entire chain resolves at compile time. </p>
 <h1 id="custom-button-bank">Custom Button Bank<a class="headerlink" href="#custom-button-bank" title="Permanent link">&para;</a></h1>
 <p>Multiple Discrete Buttons via One Reader</p>
 <p>Sometimes you have several discrete buttons but want to handle them through Button for unified event handling. Create a custom reader that checks each pin and returns a unique code:</p>
-<div class="codehilite"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;evaButton.h&gt;</span>
+<div class="codehilite"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;evaSwitch.h&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;evaTac.h&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;evaHandler.h&gt;</span>
 
 <span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">eva</span><span class="p">;</span>
 
-<span class="k">class</span><span class="w"> </span><span class="nc">ButtonBankReader</span><span class="w"> </span><span class="p">{</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">MyBankReader</span><span class="w"> </span><span class="p">{</span>
 <span class="k">public</span><span class="o">:</span>
 <span class="w">  </span><span class="n">ButtonBankReader</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="n">pinMode</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT_PULLUP</span><span class="p">);</span>
@@ -744,11 +744,10 @@ Look at how buttons are built:</p>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">};</span>
 
-<span class="k">using</span><span class="w"> </span><span class="n">ButtonBank</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Button</span><span class="o">&lt;</span><span class="n">StabilizeDecor</span><span class="o">&lt;</span><span class="n">ButtonBankReader</span><span class="o">&gt;&gt;</span><span class="p">;</span>
 
 <span class="k">class</span><span class="w"> </span><span class="nc">App</span><span class="w"> </span><span class="p">{</span>
 <span class="k">private</span><span class="o">:</span>
-<span class="w">  </span><span class="n">ButtonBank</span><span class="w"> </span><span class="n">navButtons</span><span class="p">;</span>
+<span class="w">  </span><span class="n">Switch</span><span class="o">&lt;</span><span class="n">StabilizeDecor</span><span class="o">&lt;</span><span class="n">MyBankReader</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">navButtons</span><span class="p">;</span>
 
 <span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">onButtonPress</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">CallbackInfo</span><span class="w"> </span><span class="n">cbInfo</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">button</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cbInfo</span><span class="p">.</span><span class="n">eventArg</span><span class="p">;</span><span class="w">  </span><span class="c1">// &#39;u&#39;, &#39;d&#39;, &#39;l&#39;, or &#39;r&#39;</span>
@@ -907,6 +906,11 @@ Look at how buttons are built:</p>
 <td><code>RepeatTimer</code></td>
 <td>Same + period storage</td>
 <td>Fires repeatedly</td>
+</tr>
+<tr>
+<td><code>CountdownTimer</code></td>
+<td>Same + period storage</td>
+<td>Fires repeatedly several times</td>
 </tr>
 </tbody>
 </table>

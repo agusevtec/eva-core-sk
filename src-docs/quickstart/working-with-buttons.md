@@ -155,7 +155,7 @@ The `PinMultiButton` alias shows an even more sophisticated composition:
 
 ```cpp
 template <int PIN, int PINMODE, signed short... LEVELS>
-using PinMultiButton = MultiButton<QuantizeDecor<StabilizeDecor<AnalogPinReader<PIN, PINMODE>>, LEVELS...>>;
+using PinMultiButton = Button<QuantizeDecor<StabilizeDecor<AnalogPinReader<PIN, PINMODE>>, LEVELS...>>;
 ```
 
 The layers:

@@ -6,3 +6,6 @@ APP_NAME := tests
 ARDUINO_LIBS := libraries/AUnit src
 
 include build-tests/EpoxyDuino.mk
+
+doc:
+	python -m mkdocs build
