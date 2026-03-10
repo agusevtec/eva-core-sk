@@ -9,6 +9,9 @@ Your `loop()` function should be as simple as this:
 ```cpp
 #include <evaTac.h>
 
+void setup() {
+}
+
 void loop() {
   eva::tac(); // updates all components
 }
@@ -25,21 +28,23 @@ Here's a clean, minimal example where an `App` contains a component with a `Repe
 ```cpp
 #include <evaRepeatTimer.h>
 #include <evaHandler.h>
+#include <evaTac.h>
 
 using namespace eva;
 
 class App {
 private:
   RepeatTimer timer;
-  
-  void onHeartBeat(void*, long) {
+
+  void onHeartBeat(void* sender, CallbackInfo cbInfo) {
     Serial.println("Heartbeat!");
   }
-  
-public:
-  App() : timer(1000, new Handler<App>(this, &App::onHeartBeat)) {}
-};
 
+public:
+  App()
+    : timer(1000, new Handler<App>(this, &App::onHeartBeat)) {
+  }
+};
 
 void setup() {
   Serial.begin(9600);
@@ -47,7 +52,7 @@ void setup() {
 }
 
 void loop() {
-  eva::tac();
+  tac();
 }
 ```
 
@@ -77,7 +82,7 @@ private:
   bool state;
   
   // tick() is called on every loop() iteration
-  short tick() override {
+  void tick() override {
     if (millis() - lastChange > 500) {
       lastChange = millis();
       state = !state;

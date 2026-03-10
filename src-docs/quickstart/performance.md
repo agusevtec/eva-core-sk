@@ -97,7 +97,7 @@ The library offers different ways to handle events, each with different trade-of
 class App{
   PeriodTimer pt = {1000, new Handler<App>(this, &App::onTimer)};
   
-  void onTimer(void*, long) {
+  void onTimer(void* sender, CallbackInfo cbInfo) {
     // Handle event directly
   }
 };
@@ -112,7 +112,7 @@ class App{
 class App : public IHandler {
   PeriodTimer pt = {1000, this};
 
-  void invoke(void*, long) override {
+  void invoke(void* sender, CallbackInfo cbInfo) override {
     // Handle event directly
   }
 };
