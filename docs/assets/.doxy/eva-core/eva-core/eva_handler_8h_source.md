@@ -31,7 +31,7 @@ namespace eva
     class Handler : public IHandler
     {
     public:
-        Handler(T *msgReceiver, void (T::*method)(void *, unsigned char, signed short))
+        Handler(T *msgReceiver, void (T::*method)(void *, CallbackInfo))
             : msgReceiver(msgReceiver), method(method)
         {
         }
@@ -42,7 +42,7 @@ namespace eva
         }
 
     private:
-        void (T::*method)(void *, unsigned char, signed short);
+        void (T::*method)(void *, CallbackInfo);
         T *msgReceiver;
     };
 

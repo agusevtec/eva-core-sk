@@ -10,10 +10,10 @@
       </param>
     </templateparamlist>
     <sectiondef kind="private-attrib">
-      <memberdef kind="variable" id="classeva_1_1_handler_1a04499ad841ae8bf5f2d35ef9b22eacb0" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="classeva_1_1_handler_1a18df3987e03d447657726269445eb239" prot="private" static="no" mutable="no">
         <type>void(T::*</type>
-        <definition>void(T::* eva::Handler&lt; T &gt;::method) (void *, unsigned char, signed short)</definition>
-        <argsstring>)(void *, unsigned char, signed short)</argsstring>
+        <definition>void(T::* eva::Handler&lt; T &gt;::method) (void *, CallbackInfo)</definition>
+        <argsstring>)(void *, CallbackInfo)</argsstring>
         <name>method</name>
         <qualifiedname>eva::Handler::method</qualifiedname>
         <briefdescription>
@@ -40,10 +40,10 @@
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
-      <memberdef kind="function" id="classeva_1_1_handler_1a6d0250819b250d09963c1afeebad020b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classeva_1_1_handler_1a071af9b84a2df7dadd16125ba10d17b4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
         <definition>eva::Handler&lt; T &gt;::Handler</definition>
-        <argsstring>(T *msgReceiver, void(T::*method)(void *, unsigned char, signed short))</argsstring>
+        <argsstring>(T *msgReceiver, void(T::*method)(void *, CallbackInfo))</argsstring>
         <name>Handler</name>
         <qualifiedname>eva::Handler::Handler</qualifiedname>
         <param>
@@ -51,7 +51,7 @@
           <declname>msgReceiver</declname>
         </param>
         <param>
-          <type>void(T::*)(void *, unsigned char, signed short)</type>
+          <type>void(T::*)(void *, <ref refid="structeva_1_1_callback_info" kindref="compound">CallbackInfo</ref>)</type>
           <declname>method</declname>
         </param>
         <briefdescription>
@@ -127,9 +127,9 @@
     </collaborationgraph>
     <location file="src/evaHandler.h" line="28" column="5" bodyfile="src/evaHandler.h" bodystart="29" bodyend="44"/>
     <listofallmembers>
-      <member refid="classeva_1_1_handler_1a6d0250819b250d09963c1afeebad020b" prot="public" virt="non-virtual"><scope>eva::Handler</scope><name>Handler</name></member>
+      <member refid="classeva_1_1_handler_1a071af9b84a2df7dadd16125ba10d17b4" prot="public" virt="non-virtual"><scope>eva::Handler</scope><name>Handler</name></member>
       <member refid="classeva_1_1_handler_1aff64bbaf430e27aae26eb8b6d4a9d332" prot="public" virt="virtual"><scope>eva::Handler</scope><name>invoke</name></member>
-      <member refid="classeva_1_1_handler_1a04499ad841ae8bf5f2d35ef9b22eacb0" prot="private" virt="non-virtual"><scope>eva::Handler</scope><name>method</name></member>
+      <member refid="classeva_1_1_handler_1a18df3987e03d447657726269445eb239" prot="private" virt="non-virtual"><scope>eva::Handler</scope><name>method</name></member>
       <member refid="classeva_1_1_handler_1a56ae4c93826addbcb15564ac71760c9a" prot="private" virt="non-virtual"><scope>eva::Handler</scope><name>msgReceiver</name></member>
     </listofallmembers>
   </compounddef>

@@ -75,7 +75,7 @@ Inherits the following classes: [eva::IHandler](classeva_1_1_i_handler.md)
 
 | Type | Name |
 | ---: | :--- |
-|   | [**Handler**](#function-handler) (T \* msgReceiver, void(T::\*)(void \*, unsigned char, signed short) method) <br> |
+|   | [**Handler**](#function-handler) (T \* msgReceiver, void(T::\*)(void \*, [**CallbackInfo**](structeva_1_1_callback_info.md)) method) <br> |
 | virtual void | [**invoke**](#function-invoke) (void \* msgSender, [**CallbackInfo**](structeva_1_1_callback_info.md) cbInfo) override<br> |
 
 
@@ -164,7 +164,7 @@ See [eva::IHandler](classeva_1_1_i_handler.md)
 ```C++
 inline eva::Handler::Handler (
     T * msgReceiver,
-    void(T::*)(void *, unsigned char, signed short) method
+    void(T::*)(void *, CallbackInfo ) method
 ) 
 ```
 
