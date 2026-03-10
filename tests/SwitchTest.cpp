@@ -4,13 +4,13 @@
 #include <AUnit.h>
 #include "MockReader.h"
 #include "TestHandler.h"
-#include <evaToggle.h>
+#include <evaSwitch.h>
 
 using namespace aunit;
 using namespace eva;
 
-// Тестируем Switch (Toggle) - простой переключатель
-using TestSwitch = Toggle<MockReader>;
+// Тестируем Switch (Switch) - простой переключатель
+using TestSwitch = Switch<MockReader>;
 
 test(switch_starts_inactive) {
     TestSwitch sw;

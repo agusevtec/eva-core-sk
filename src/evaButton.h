@@ -3,7 +3,7 @@
 
 #pragma once
 
-#include "evaToggle.h"
+#include "evaSwitch.h"
 #include "evaConstants.h"
 
 namespace eva
@@ -25,10 +25,10 @@ namespace eva
      * @tparam READER Input reader type that returns numeric codes (0 = no button, >0 = button index)
      */
     template <class READER>
-    class Button : public Toggle<READER>
+    class Button : public Switch<READER>
     {
     public:
-        using Toggle<READER>::Toggle;
+        using Switch<READER>::Switch;
 
     private:
         void tick() override
@@ -60,7 +60,7 @@ namespace eva
         }
 
     private:
-        unsigned long pressTime;
+        unsigned long pressTime = 0;
     };
 
     /**

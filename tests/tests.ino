@@ -7,7 +7,7 @@ void setup()
 {
   Serial.begin(115200);
   while (!Serial);
-  //aunit::TestRunner::include("switch_detects_deactivation");
+  //aunit::TestRunner::include("multibutton_long_click_with_code");
   aunit::TestRunner::setVerbosity(aunit::Verbosity::kAssertionFailed | aunit::Verbosity::kTestRunSummary);
 }
 

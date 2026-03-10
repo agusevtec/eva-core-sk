@@ -236,12 +236,15 @@ all: build-tests/$(APP_NAME).out
 # the vim editor. The error message of AUnit (as of v1.7) is compatible with
 # the quickfix errorformat of vim, so vim will automatically detect assertion
 # errors and jump directly to the line where the assertion failed.
-run:
+run: build-tests/$(APP_NAME).out
 	build-tests/$(APP_NAME).out
 
 # Use 'make clean' to remove intermediate '*.o' files, the target '*.out' file,
 # and any generated files defined by $(GENERATED).
 clean: $(MORE_CLEAN)
 	rm -f $(OBJS) build-tests/$(APP_NAME).out $(GENERATED)
+
+%.h:
+	@ echo "" > /dev/null
 
 -include $(OBJS:%.o=%.d)

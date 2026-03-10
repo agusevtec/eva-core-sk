@@ -12,7 +12,7 @@
 namespace eva
 {
   /**
-   * @brief Toggle - легковесная версия Button без детекции кликов
+   * @brief Switch - легковесная версия Button без детекции кликов
    *
    * Отличается от Button:
    * - Не хранит pressTime (экономия 4 байта!)
@@ -25,15 +25,15 @@ namespace eva
    * - Датчиков движения
    */
   template <class READER>
-  class Toggle : public READER, public Tickable
+  class Switch : public READER, public Tickable
   {
   public:
-    Toggle()
+    Switch()
     {
       enable(true);
     }
 
-    Toggle(IHandler *listener, unsigned short eventMask)
+    Switch(IHandler *listener, unsigned short eventMask)
     {
       enable(true);
       setListener(listener, eventMask);
@@ -44,7 +44,7 @@ namespace eva
      * @param listener - callback method
      * @param eventMask - ON_ACTIVE, ON_INACTIVE, ON_CHANGE
      */
-    Toggle *setListener(IHandler *listener, unsigned short eventMask)
+    Switch *setListener(IHandler *listener, unsigned short eventMask)
     {
       this->listener = listener;
       this->curiosity = eventMask;
@@ -56,7 +56,7 @@ namespace eva
      * @param enabled True to enable, false to disable
      * @return Pointer to this
      */
-    Toggle *enable(bool enabled)
+    Switch *enable(bool enabled)
     {
       if (this->levelCode < 0 && enabled)
         this->levelCode = 0;
@@ -111,7 +111,7 @@ namespace eva
    * @tparam ACTIVE_LEVEL Level that means active (LOW or HIGH)
    */
   template <int PIN, int PIN_MODE, int ACTIVE_LEVEL>
-  using PinSwitch = Toggle<BinarizeDecor<StabilizeDecor<DigitalPinReader<PIN, PIN_MODE>>, ACTIVE_LEVEL>>;
+  using PinSwitch = Switch<BinarizeDecor<StabilizeDecor<DigitalPinReader<PIN, PIN_MODE>>, ACTIVE_LEVEL>>;
 
   /**
    * @brief Pull-up switch (button connected to GND)
@@ -133,7 +133,7 @@ namespace eva
    * @tparam THRESHOLD Value that separates active/inactive states
    */
   template <int PIN, int THRESHOLD>
-  using ThresholdSwitch = Toggle<BinarizeDecor<AnalogPinReader<PIN, INPUT>, THRESHOLD>>;
+  using ThresholdSwitch = Switch<BinarizeDecor<AnalogPinReader<PIN, INPUT>, THRESHOLD>>;
 
 };
 

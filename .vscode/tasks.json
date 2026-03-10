@@ -2,6 +2,19 @@
     "version": "2.0.0",
     "tasks": [
         {
+            "label": "build",
+            "type": "shell",
+            "command": "make",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "detail": "Запуск make в корне проекта"
+        },
+        {
             "label": "Запустить тесты Arduino",
             "type": "shell",
             "command": "docker compose -f docker-compose.tests.yaml up",
@@ -9,7 +22,10 @@
             "problemMatcher": [
                 {
                     "owner": "cpp",
-                    "fileLocation": ["relative", "${workspaceFolder}/tests"],
+                    "fileLocation": [
+                        "relative",
+                        "${workspaceFolder}/tests"
+                    ],
                     "pattern": [
                         {
                             "regexp": "^test-runner-1  \\| (.+):(\\d+):(\\d+): (.+): (.*)$",
@@ -23,7 +39,10 @@
                 },
                 {
                     "owner": "cpp",
-                    "fileLocation": ["relative", "${workspaceFolder}/tests"],
+                    "fileLocation": [
+                        "relative",
+                        "${workspaceFolder}/tests"
+                    ],
                     "pattern": [
                         {
                             "regexp": "^test-runner-1  \\| (.+):(\\d+): (.+): (.*)$",

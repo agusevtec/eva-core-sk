@@ -52,7 +52,7 @@ public:
     mNext = mContext->RedYellowStateInstance;
   }
 
-  void OnTimeOut(void *aSender, long aEventArgs) {
+  void OnTimeOut(void *aSender, unsigned char aEventType, signed short aEventArgs) {
     mTimer.stop();
     mNext = mContext->RedYellowStateInstance;
   }
@@ -78,7 +78,7 @@ public:
     mContext->GreenIndicator.off();
   }
 
-  void OnTimeOut(void *aSender, long aEventArgs) {
+  void OnTimeOut(void *aSender, unsigned char aEventType, signed short aEventArgs) {
     mNext = mContext->GreenStateInstance;
   }
 
@@ -106,7 +106,7 @@ public:
     mContext->GreenIndicator.on();
   }
 
-  void OnTimeOut(void *aSender, long aEventArgs) {
+  void OnTimeOut(void *aSender, unsigned char aEventType, signed short aEventArgs) {
     mNext = mContext->BlinkingGreenStateInstance;
   }
 
@@ -132,7 +132,7 @@ public:
     mTimer.start(3000);
   }
 
-  void OnTimeOut(void *aSender, long aEventArgs) {
+  void OnTimeOut(void *aSender, unsigned char aEventType, signed short aEventArgs) {
     mNext = mContext->YellowStateInstance;
   }
 
@@ -159,7 +159,7 @@ public:
     mTimer.start(3000);
   }
 
-  void OnTimeOut(void *aSender, long aEventArgs) {
+  void OnTimeOut(void *aSender, unsigned char aEventType, signed short aEventArgs) {
     mNext = mContext->RedStateInstance;
   }
 
@@ -216,7 +216,7 @@ class AppSemaphore {
 
 public:
 
-  void OnChangeSignal(void *aSender, long aEventArgs) {
+  void OnChangeSignal(void *aSender, unsigned char aEventType, signed short aEventArgs) {
     if (aEventArgs & ON_LONGCLICK)
       mStates.SetAutoMode();
     else
