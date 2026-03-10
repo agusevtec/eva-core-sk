@@ -59,8 +59,8 @@ UNAME := $(shell uname)
 # EpoxyDuino directory.
 EPOXY_DUINO_DIR := libraries/EpoxyDuino
 
-# Look for libraries under libraries
-EPOXY_DUINO_LIB_DIR := .
+# Declared but not used (potentially: Look for libraries under libraries.)
+EPOXY_DUINO_LIB_DIR := libraries/EpoxyDuino/libraries
 
 # List of Arduino IDE library folders, both built-in to the Arduino IDE
 # and those downloaded later, e.g. in the portable/ directory or .arduino15/
@@ -78,8 +78,7 @@ EPOXY_CORE_PATH ?= $(EPOXY_DUINO_DIR)/cores/epoxy
 # Find the directory paths of the libraries listed in ARDUINO_LIBS by looking
 # at the following:
 # 1) under the directory given by EPOXY_DUINO_LIB_DIR,
-EPOXY_MODULES := $(ARDUINO_LIBS)
-#$(foreach lib,$(ARDUINO_LIBS),${EPOXY_DUINO_LIB_DIR}/${lib})
+EPOXY_MODULES := $(ARDUINO_LIBS) $(APP_NAME)
 
 # Compiler settings that depend on the OS (Linux, MacOS, FreeBSD). I'm not 100%
 # sure that these flags are correct, but they seem to work. Previously, I was
@@ -183,22 +182,10 @@ MODULE_EXPANSION_C = $(wildcard $(module)/*.c) \
 MODULE_SRCS_CPP += $(foreach module,$(EPOXY_MODULES),$(MODULE_EXPANSION_CPP))
 MODULE_SRCS_C += $(foreach module,$(EPOXY_MODULES),$(MODULE_EXPANSION_C))
 
-# 3) Collect the source files in the application directory, also 3 levels down.
-APP_SRCS_CPP += $(wildcard $(APP_NAME)/*.cpp) \
-	$(wildcard $(APP_NAME)/*/*.cpp) \
-	$(wildcard $(APP_NAME)/*/*/*.cpp) \
-	$(wildcard $(APP_NAME)/*/*/*/*.cpp)
-APP_SRCS_C += $(wildcard $(APP_NAME)/*.c) \
-	$(wildcard $(APP_NAME)/*/*.c) \
-	$(wildcard $(APP_NAME)/*/*/*.c) \
-	$(wildcard $(APP_NAME)/*/*/*/*.c)
-
 # Generate the list of object files from the *.cpp, *.c, and *.ino files.
 OBJS += $(EPOXY_SRCS:%.cpp=build-tests/.cache/%.o)
 OBJS += $(MODULE_SRCS_CPP:%.cpp=build-tests/.cache/%.o)
 OBJS += $(MODULE_SRCS_C:%.c=build-tests/.cache/%.o)
-OBJS += $(APP_SRCS_CPP:%.cpp=build-tests/.cache/%.o)
-OBJS += $(APP_SRCS_C:%.c=build-tests/.cache/%.o)
 OBJS += build-tests/.cache/$(APP_NAME)/$(APP_NAME).o
 
 # Finally the rule to generate the *.out binary file for the application.
