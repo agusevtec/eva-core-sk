@@ -14,14 +14,14 @@
         <link rel="prev" href="../loop-cycle/">
       
       
-        <link rel="next" href="../flexibility/">
+        <link rel="next" href="../performance/">
       
       
         
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.4">
     
     
       
@@ -467,14 +467,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../flexibility/" class="md-nav__link">
+      <a href="../performance/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Flexibility
+    Performance
   
 
     
@@ -495,14 +495,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../performance/" class="md-nav__link">
+      <a href="../flexibility/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Performance
+    Flexibility
   
 
     
@@ -898,11 +898,11 @@
 <span class="w">  </span><span class="c1">// Button on pin 2, using INPUT_PULLUP, active LOW (button to GND)</span>
 <span class="w">  </span><span class="n">PinButton</span><span class="o">&lt;</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT_PULLUP</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="o">&gt;</span><span class="w"> </span><span class="n">button</span><span class="p">;</span>
 
-<span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">onButtonEvent</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">events</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">events</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">ON_SHORTCLICK</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">onButtonEvent</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">CallbackInfo</span><span class="w"> </span><span class="n">cbInfo</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">cbInfo</span><span class="p">.</span><span class="n">eventType</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">ON_SHORTCLICK</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">      </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Button clicked!&quot;</span><span class="p">);</span>
 <span class="w">    </span><span class="p">}</span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">events</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">ON_LONGCLICK</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">cbInfo</span><span class="p">.</span><span class="n">eventType</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">ON_LONGCLICK</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">      </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Button long pressed!&quot;</span><span class="p">);</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">}</span>
@@ -963,7 +963,7 @@
 </table>
 <hr />
 <h2 id="pinmultibutton-multiple-buttons-on-one-pin">PinMultiButton: Multiple Buttons on One Pin<a class="headerlink" href="#pinmultibutton-multiple-buttons-on-one-pin" title="Permanent link">&para;</a></h2>
-<p>The MultiButton class allows you to connect several buttons to a single analog pin using a resistor ladder. Each button produces a different analog value, which the library quantizes into discrete levels.</p>
+<p>The Button class allows you to connect several buttons to a single analog pin using a resistor ladder. Each button produces a different analog value, which the library quantizes into discrete levels.</p>
 <h2 id="hardware-setup">Hardware Setup<a class="headerlink" href="#hardware-setup" title="Permanent link">&para;</a></h2>
 <p>Connect buttons as a resistor ladder:</p>
 <div class="codehilite"><pre><span></span><code>    ADC Pin  -----+--R1--+--R2--+-- ... --+--Rn--+
@@ -975,7 +975,7 @@
 
 <p>Each button, when pressed, creates a voltage divider with a unique value.</p>
 <h2 id="software-configuration-with-pinmultibutton">Software Configuration with <code>PinMultiButton</code><a class="headerlink" href="#software-configuration-with-pinmultibutton" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;evaMultiButton.h&gt;</span>
+<div class="codehilite"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;evaButton.h&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;evaTac.h&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;evaHandler.h&gt;</span>
 
@@ -991,9 +991,9 @@
 <span class="w">                 </span><span class="mi">700</span><span class="o">&gt;</span><span class="w">  </span><span class="c1">// Button 4 threshold</span>
 <span class="w">    </span><span class="n">buttonBank</span><span class="p">;</span>
 
-<span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">onButtonEvent</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">events</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="c1">// The button level is encoded in the event mask</span>
-<span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">levelCode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">events</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="mh">0xFF</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">onButtonEvent</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">CallbackInfo</span><span class="w"> </span><span class="n">cbInfo</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// The button level is encoded in callback info</span>
+<span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">levelCode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cbInfo</span><span class="p">.</span><span class="n">eventArg</span><span class="p">;</span>
 
 <span class="w">    </span><span class="c1">// Get the actual threshold value that defines this level</span>
 <span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">threshold</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">buttonBank</span><span class="p">.</span><span class="n">getLevel</span><span class="p">(</span><span class="n">levelCode</span><span class="p">);</span>
@@ -1004,11 +1004,11 @@
 <span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">threshold</span><span class="p">);</span>
 <span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;)&quot;</span><span class="p">);</span>
 
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">events</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">ON_SHORTCLICK</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">cbInfo</span><span class="p">.</span><span class="n">eventType</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">ON_SHORTCLICK</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">      </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;short clicked&quot;</span><span class="p">);</span>
 <span class="w">    </span><span class="p">}</span>
 
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">events</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">ON_LONGCLICK</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">cbInfo</span><span class="p">.</span><span class="n">eventType</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">ON_LONGCLICK</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">      </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;long pressed&quot;</span><span class="p">);</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">}</span>

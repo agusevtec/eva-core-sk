@@ -5,7 +5,9 @@
     <innerclass refid="classeva_1_1_blinking_indicator" prot="public">eva::BlinkingIndicator</innerclass>
     <innerclass refid="classeva_1_1_button" prot="public">eva::Button</innerclass>
     <innerclass refid="classeva_1_1_countdown_indicator" prot="public">eva::CountdownIndicator</innerclass>
+    <innerclass refid="classeva_1_1_contdown_timer" prot="public">eva::ContdownTimer</innerclass>
     <innerclass refid="classeva_1_1_delay_timer" prot="public">eva::DelayTimer</innerclass>
+    <innerclass refid="structeva_1_1_callback_info" prot="public">eva::CallbackInfo</innerclass>
     <innerclass refid="classeva_1_1_i_handler" prot="public">eva::IHandler</innerclass>
     <innerclass refid="classeva_1_1_handler" prot="public">eva::Handler</innerclass>
     <innerclass refid="classeva_1_1_handler_f" prot="public">eva::HandlerF</innerclass>
@@ -23,68 +25,9 @@
     <innerclass refid="classeva_1_1_slider" prot="public">eva::Slider</innerclass>
     <innerclass refid="classeva_1_1_digital_pin_reader" prot="public">eva::DigitalPinReader</innerclass>
     <innerclass refid="classeva_1_1_analog_pin_reader" prot="public">eva::AnalogPinReader</innerclass>
+    <innerclass refid="classeva_1_1_switch" prot="public">eva::Switch</innerclass>
     <innerclass refid="classeva_1_1_tickable" prot="public">eva::Tickable</innerclass>
-    <innerclass refid="classeva_1_1_toggle" prot="public">eva::Toggle</innerclass>
     <sectiondef kind="typedef">
-      <memberdef kind="typedef" id="eva_button_8h_1a8d29da7d3489fb33384bd8f8ccb21435" prot="public" static="no">
-        <templateparamlist>
-          <param>
-            <type>int</type>
-            <declname>PIN</declname>
-            <defname>PIN</defname>
-          </param>
-          <param>
-            <type>int</type>
-            <declname>PIN_MODE</declname>
-            <defname>PIN_MODE</defname>
-          </param>
-          <param>
-            <type>signed short...</type>
-            <declname>LEVELS</declname>
-            <defname>LEVELS</defname>
-          </param>
-        </templateparamlist>
-        <type><ref refid="classeva_1_1_button" kindref="compound">Button</ref>&lt; <ref refid="classeva_1_1_quantize_decor" kindref="compound">QuantizeDecor</ref>&lt; <ref refid="classeva_1_1_stabilize_decor" kindref="compound">StabilizeDecor</ref>&lt; <ref refid="classeva_1_1_analog_pin_reader" kindref="compound">AnalogPinReader</ref>&lt; PIN, PIN_MODE &gt; &gt;, LEVELS... &gt; &gt;</type>
-        <definition>using eva::PinMultiButton = Button&lt;QuantizeDecor&lt;StabilizeDecor&lt;AnalogPinReader&lt;PIN, PIN_MODE&gt;&gt;, LEVELS...&gt;&gt;</definition>
-        <argsstring></argsstring>
-        <name>PinMultiButton</name>
-        <qualifiedname>eva::PinMultiButton</qualifiedname>
-        <briefdescription>
-<para>Multiple buttons on single ADC pin using resistor ladder. </para>
-        </briefdescription>
-        <detaileddescription>
-<para>Hardware connection: ADC IN --<mdash/>+<ndash/>R1<ndash/>+<ndash/>R2<ndash/>+<ndash/> ... -Rn-+ (pullup) | | | | \ \ \ \ | | | | GND --<mdash/>+---<mdash/>+---<mdash/>+<ndash/> ... -<mdash/>+</para>
-<para>Each button produces different ADC value which is mapped to levelCode. Debounces input and generates events based on button state changes. <parameterlist kind="templateparam"><parameteritem>
-<parameternamelist>
-<parametername>PIN</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>Arduino analog pin number </para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>PIN_MODE</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>Pin mode (usually INPUT) </para>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>LEVELS</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>Threshold values for different buttons </para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-</para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="src/evaButton.h" line="83" column="5" bodyfile="src/evaButton.h" bodystart="83" bodyend="-1"/>
-      </memberdef>
       <memberdef kind="typedef" id="eva_button_8h_1a804d7cf3975aa0e32ae48917d18f5d12" prot="public" static="no">
         <templateparamlist>
           <param>
@@ -109,15 +52,22 @@
         <name>PinButton</name>
         <qualifiedname>eva::PinButton</qualifiedname>
         <briefdescription>
-<para><ref refid="classeva_1_1_button" kindref="compound">Button</ref> connected directly to a digital pin Includes stabilization and binarization decorators. Debounces input and generates events based on button state changes. Long click threshold is fixed at 750ms. </para>
+<para>Digital pin button with debouncing and level normalization. </para>
         </briefdescription>
         <detaileddescription>
+<para>Combines:<itemizedlist>
+<listitem><para><ref refid="classeva_1_1_digital_pin_reader" kindref="compound">DigitalPinReader</ref> for raw pin reading</para>
+</listitem><listitem><para><ref refid="classeva_1_1_stabilize_decor" kindref="compound">StabilizeDecor</ref> for debouncing (120ms stability)</para>
+</listitem><listitem><para><ref refid="classeva_1_1_binarize_decor" kindref="compound">BinarizeDecor</ref> for mapping to active/inactive based on specified level</para>
+</listitem></itemizedlist>
+</para>
+<para>Generates standard button events: PRESS, RELEASE, SHORTCLICK, LONGCLICK. Long click threshold is fixed at 750ms.</para>
 <para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
 <parametername>PIN</parametername>
 </parameternamelist>
 <parameterdescription>
-<para></para>
+<para>Arduino pin number </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -125,7 +75,7 @@
 <parametername>PIN_MODE</parametername>
 </parameternamelist>
 <parameterdescription>
-<para></para>
+<para>Pin mode (INPUT, INPUT_PULLUP, etc.) </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -133,19 +83,17 @@
 <parametername>ACTIVATES_ON</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>- the level of a signal corresponding to the pressed state (LOW OR HIGH) </para>
+<para>Level that means &quot;pressed&quot; (LOW or HIGH) </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para><ref refid="classeva_1_1_button" kindref="compound">Button</ref>&amp; </para>
-</simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaButton.h" line="97" column="5" bodyfile="src/evaButton.h" bodystart="97" bodyend="-1"/>
+        <location file="src/evaButton.h" line="93" column="5" bodyfile="src/evaButton.h" bodystart="93" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="eva_button_8h_1a4a2dcd4777f27ef84558cd17b5ec5500" prot="public" static="no">
+      <memberdef kind="typedef" id="eva_button_8h_1a31a2a8f673b1ab12004eeff60fcddb27" prot="public" static="no">
         <templateparamlist>
           <param>
             <type>int</type>
@@ -154,17 +102,102 @@
           </param>
         </templateparamlist>
         <type><ref refid="classeva_1_1_button" kindref="compound">Button</ref>&lt; <ref refid="classeva_1_1_binarize_decor" kindref="compound">BinarizeDecor</ref>&lt; <ref refid="classeva_1_1_stabilize_decor" kindref="compound">StabilizeDecor</ref>&lt; <ref refid="classeva_1_1_digital_pin_reader" kindref="compound">DigitalPinReader</ref>&lt; PIN, INPUT_PULLUP &gt; &gt;, LOW &gt; &gt;</type>
-        <definition>using eva::PinPullUpButton = Button&lt;BinarizeDecor&lt;StabilizeDecor&lt;DigitalPinReader&lt;PIN, INPUT_PULLUP&gt;&gt;, LOW&gt;&gt;</definition>
+        <definition>using eva::PullUpButton = Button&lt;BinarizeDecor&lt;StabilizeDecor&lt;DigitalPinReader&lt;PIN, INPUT_PULLUP&gt;&gt;, LOW&gt;&gt;</definition>
         <argsstring></argsstring>
-        <name>PinPullUpButton</name>
-        <qualifiedname>eva::PinPullUpButton</qualifiedname>
+        <name>PullUpButton</name>
+        <qualifiedname>eva::PullUpButton</qualifiedname>
         <briefdescription>
+<para>Pull-up button (active LOW, connect to GND). </para>
         </briefdescription>
         <detaileddescription>
+<para>Convenience alias for the most common Arduino button wiring:<itemizedlist>
+<listitem><para>Pin set to INPUT_PULLUP</para>
+</listitem><listitem><para><ref refid="classeva_1_1_button" kindref="compound">Button</ref> connects pin to GND when pressed</para>
+</listitem></itemizedlist>
+</para>
+<para>Generates all button events with proper debouncing.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>PIN</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Arduino pin number </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaButton.h" line="100" column="5" bodyfile="src/evaButton.h" bodystart="100" bodyend="-1"/>
+        <location file="src/evaButton.h" line="107" column="5" bodyfile="src/evaButton.h" bodystart="107" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="eva_button_8h_1a8d29da7d3489fb33384bd8f8ccb21435" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type>int</type>
+            <declname>PIN</declname>
+            <defname>PIN</defname>
+          </param>
+          <param>
+            <type>int</type>
+            <declname>PIN_MODE</declname>
+            <defname>PIN_MODE</defname>
+          </param>
+          <param>
+            <type>signed short...</type>
+            <declname>LEVELS</declname>
+            <defname>LEVELS</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classeva_1_1_button" kindref="compound">Button</ref>&lt; <ref refid="classeva_1_1_quantize_decor" kindref="compound">QuantizeDecor</ref>&lt; <ref refid="classeva_1_1_stabilize_decor" kindref="compound">StabilizeDecor</ref>&lt; <ref refid="classeva_1_1_analog_pin_reader" kindref="compound">AnalogPinReader</ref>&lt; PIN, PIN_MODE &gt; &gt;, LEVELS... &gt; &gt;</type>
+        <definition>using eva::PinMultiButton = Button&lt;QuantizeDecor&lt;StabilizeDecor&lt;AnalogPinReader&lt;PIN, PIN_MODE&gt;&gt;, LEVELS...&gt;&gt;</definition>
+        <argsstring></argsstring>
+        <name>PinMultiButton</name>
+        <qualifiedname>eva::PinMultiButton</qualifiedname>
+        <briefdescription>
+<para>Multiple buttons on a single ADC pin using resistor ladder. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Hardware connection: <programlisting><codeline><highlight class="normal"><sp/>ADC<sp/>Pin<sp/><sp/>-----+--R1--+--R2--+--<sp/>...<sp/>-Rn-+</highlight></codeline>
+<codeline><highlight class="normal">(analog<sp/>in)<sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\<sp/><sp/><sp/><sp/><sp/><sp/>\<sp/><sp/><sp/><sp/><sp/><sp/>\<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>GND<sp/><sp/><sp/><sp/>-----+------+------+--<sp/>...<sp/>----+</highlight></codeline>
+</programlisting></para>
+<para>Each button produces a different ADC value when pressed. The <ref refid="classeva_1_1_quantize_decor" kindref="compound">QuantizeDecor</ref> maps these values to discrete button codes (1, 2, 3...). <ref refid="classeva_1_1_stabilize_decor" kindref="compound">StabilizeDecor</ref> provides debouncing.</para>
+<para>Generates standard button events for each button, with the button number encoded in the event mask.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>PIN</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Arduino analog pin number </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>PIN_MODE</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pin mode (usually INPUT) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>LEVELS</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Threshold values for each button (expected ADC readings)</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para>PinMultiSwitch For use cases without click detection </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evaButton.h" line="135" column="5" bodyfile="src/evaButton.h" bodystart="135" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="eva_joystick_8h_1aff092189042321d52ea4475f0ed0d0dc" prot="public" static="no">
         <templateparamlist>
@@ -392,7 +425,7 @@
         </inbodydescription>
         <location file="src/evaSlider.h" line="33" column="3" bodyfile="src/evaSlider.h" bodystart="33" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="eva_toggle_8h_1ad9b496dfd4c759bf719a272d50ec36ca" prot="public" static="no">
+      <memberdef kind="typedef" id="eva_switch_8h_1ae4c42a863be9b979211d1b81865c9a01" prot="public" static="no">
         <templateparamlist>
           <param>
             <type>int</type>
@@ -410,15 +443,21 @@
             <defname>ACTIVE_LEVEL</defname>
           </param>
         </templateparamlist>
-        <type><ref refid="classeva_1_1_toggle" kindref="compound">Toggle</ref>&lt; <ref refid="classeva_1_1_binarize_decor" kindref="compound">BinarizeDecor</ref>&lt; <ref refid="classeva_1_1_stabilize_decor" kindref="compound">StabilizeDecor</ref>&lt; <ref refid="classeva_1_1_digital_pin_reader" kindref="compound">DigitalPinReader</ref>&lt; PIN, PIN_MODE &gt; &gt;, ACTIVE_LEVEL &gt; &gt;</type>
-        <definition>using eva::PinSwitch = Toggle&lt;BinarizeDecor&lt;StabilizeDecor&lt;DigitalPinReader&lt;PIN, PIN_MODE&gt;&gt;, ACTIVE_LEVEL&gt;&gt;</definition>
+        <type><ref refid="classeva_1_1_switch" kindref="compound">Switch</ref>&lt; <ref refid="classeva_1_1_binarize_decor" kindref="compound">BinarizeDecor</ref>&lt; <ref refid="classeva_1_1_stabilize_decor" kindref="compound">StabilizeDecor</ref>&lt; <ref refid="classeva_1_1_digital_pin_reader" kindref="compound">DigitalPinReader</ref>&lt; PIN, PIN_MODE &gt; &gt;, ACTIVE_LEVEL &gt; &gt;</type>
+        <definition>using eva::PinSwitch = Switch&lt;BinarizeDecor&lt;StabilizeDecor&lt;DigitalPinReader&lt;PIN, PIN_MODE&gt;&gt;, ACTIVE_LEVEL&gt;&gt;</definition>
         <argsstring></argsstring>
         <name>PinSwitch</name>
         <qualifiedname>eva::PinSwitch</qualifiedname>
         <briefdescription>
-<para>Pin-based switch with specified active level. </para>
+<para>Digital pin switch with debouncing and level normalization. </para>
         </briefdescription>
         <detaileddescription>
+<para>Combines:<itemizedlist>
+<listitem><para><ref refid="classeva_1_1_digital_pin_reader" kindref="compound">DigitalPinReader</ref> for raw pin reading</para>
+</listitem><listitem><para><ref refid="classeva_1_1_stabilize_decor" kindref="compound">StabilizeDecor</ref> for debouncing (120ms stability)</para>
+</listitem><listitem><para><ref refid="classeva_1_1_binarize_decor" kindref="compound">BinarizeDecor</ref> for mapping to active/inactive based on specified level</para>
+</listitem></itemizedlist>
+</para>
 <para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
 <parametername>PIN</parametername>
@@ -432,7 +471,7 @@
 <parametername>PIN_MODE</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Pin mode (INPUT_PULLUP, INPUT, etc.) </para>
+<para>Pin mode (INPUT, INPUT_PULLUP, etc.) </para>
 </parameterdescription>
 </parameteritem>
 <parameteritem>
@@ -448,9 +487,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaToggle.h" line="109" column="3" bodyfile="src/evaToggle.h" bodystart="109" bodyend="-1"/>
+        <location file="src/evaSwitch.h" line="147" column="5" bodyfile="src/evaSwitch.h" bodystart="147" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="eva_toggle_8h_1a69f7de1ebb1e7c1b70aa7d7dc11cdec5" prot="public" static="no">
+      <memberdef kind="typedef" id="eva_switch_8h_1a69f7de1ebb1e7c1b70aa7d7dc11cdec5" prot="public" static="no">
         <templateparamlist>
           <param>
             <type>int</type>
@@ -464,15 +503,20 @@
         <name>PullupSwitch</name>
         <qualifiedname>eva::PullupSwitch</qualifiedname>
         <briefdescription>
-<para>Pull-up switch (button connected to GND). </para>
+<para>Pull-up switch (active LOW, connect to GND). </para>
         </briefdescription>
         <detaileddescription>
+<para>Convenience alias for the most common Arduino switch wiring:<itemizedlist>
+<listitem><para>Pin set to INPUT_PULLUP</para>
+</listitem><listitem><para><ref refid="classeva_1_1_switch" kindref="compound">Switch</ref> connects pin to GND when pressed</para>
+</listitem></itemizedlist>
+</para>
 <para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
 <parametername>PIN</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Arduino pin number with INPUT_PULLUP </para>
+<para>Arduino pin number </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
@@ -480,41 +524,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaToggle.h" line="116" column="3" bodyfile="src/evaToggle.h" bodystart="116" bodyend="-1"/>
+        <location file="src/evaSwitch.h" line="159" column="5" bodyfile="src/evaSwitch.h" bodystart="159" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="eva_toggle_8h_1a5fcfbdf70fdf7c9d1cecdaf432e6b106" prot="public" static="no">
-        <templateparamlist>
-          <param>
-            <type>int</type>
-            <declname>PIN</declname>
-            <defname>PIN</defname>
-          </param>
-        </templateparamlist>
-        <type>PinSwitch&lt; PIN, INPUT, HIGH &gt;</type>
-        <definition>using eva::PulldownSwitch = PinSwitch&lt;PIN, INPUT, HIGH&gt;</definition>
-        <argsstring></argsstring>
-        <name>PulldownSwitch</name>
-        <qualifiedname>eva::PulldownSwitch</qualifiedname>
-        <briefdescription>
-<para>Pull-down switch (button connected to VCC). </para>
-        </briefdescription>
-        <detaileddescription>
-<para><parameterlist kind="templateparam"><parameteritem>
-<parameternamelist>
-<parametername>PIN</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>Arduino pin number with INPUT </para>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-</para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="src/evaToggle.h" line="123" column="3" bodyfile="src/evaToggle.h" bodystart="123" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="typedef" id="eva_toggle_8h_1aa06985a76f644811309af69021bc440b" prot="public" static="no">
+      <memberdef kind="typedef" id="eva_switch_8h_1afeb4db37763710b769578c7a201440c0" prot="public" static="no">
         <templateparamlist>
           <param>
             <type>int</type>
@@ -523,19 +535,31 @@
           </param>
           <param>
             <type>int</type>
-            <declname>THRESHOLD</declname>
-            <defname>THRESHOLD</defname>
+            <declname>PIN_MODE</declname>
+            <defname>PIN_MODE</defname>
+          </param>
+          <param>
+            <type>signed short...</type>
+            <declname>LEVELS</declname>
+            <defname>LEVELS</defname>
           </param>
         </templateparamlist>
-        <type><ref refid="classeva_1_1_toggle" kindref="compound">Toggle</ref>&lt; <ref refid="classeva_1_1_binarize_decor" kindref="compound">BinarizeDecor</ref>&lt; <ref refid="classeva_1_1_analog_pin_reader" kindref="compound">AnalogPinReader</ref>&lt; PIN, INPUT &gt;, THRESHOLD &gt; &gt;</type>
-        <definition>using eva::ThresholdSwitch = Toggle&lt;BinarizeDecor&lt;AnalogPinReader&lt;PIN, INPUT&gt;, THRESHOLD&gt;&gt;</definition>
+        <type><ref refid="classeva_1_1_switch" kindref="compound">Switch</ref>&lt; <ref refid="classeva_1_1_quantize_decor" kindref="compound">QuantizeDecor</ref>&lt; <ref refid="classeva_1_1_stabilize_decor" kindref="compound">StabilizeDecor</ref>&lt; <ref refid="classeva_1_1_analog_pin_reader" kindref="compound">AnalogPinReader</ref>&lt; PIN, PIN_MODE &gt; &gt;, LEVELS... &gt; &gt;</type>
+        <definition>using eva::PinMultiSwitch = Switch&lt;QuantizeDecor&lt;StabilizeDecor&lt;AnalogPinReader&lt;PIN, PIN_MODE&gt;&gt;, LEVELS...&gt;&gt;</definition>
         <argsstring></argsstring>
-        <name>ThresholdSwitch</name>
-        <qualifiedname>eva::ThresholdSwitch</qualifiedname>
+        <name>PinMultiSwitch</name>
+        <qualifiedname>eva::PinMultiSwitch</qualifiedname>
         <briefdescription>
-<para>Threshold-based switch using analog input. </para>
+<para>Multiple switches on a single ADC pin using resistor ladder. </para>
         </briefdescription>
         <detaileddescription>
+<para>Hardware connection: <programlisting><codeline><highlight class="normal"><sp/>ADC<sp/>Pin<sp/><sp/>-----+--R1--+--R2--+--<sp/>...<sp/>-Rn-+</highlight></codeline>
+<codeline><highlight class="normal">(analog<sp/>in)<sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\<sp/><sp/><sp/><sp/><sp/><sp/>\<sp/><sp/><sp/><sp/><sp/><sp/>\<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>GND<sp/><sp/><sp/><sp/>-----+------+------+--<sp/>...<sp/>----+</highlight></codeline>
+</programlisting></para>
+<para>Each switch produces a different ADC value when activated. The <ref refid="classeva_1_1_quantize_decor" kindref="compound">QuantizeDecor</ref> maps these values to discrete level codes (1, 2, 3...). <ref refid="classeva_1_1_stabilize_decor" kindref="compound">StabilizeDecor</ref> provides debouncing.</para>
 <para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
 <parametername>PIN</parametername>
@@ -546,10 +570,18 @@
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername>THRESHOLD</parametername>
+<parametername>PIN_MODE</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Value that separates active/inactive states </para>
+<para>Pin mode (usually INPUT) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>LEVELS</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Threshold values for each switch (expected ADC readings) </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
@@ -557,103 +589,88 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaToggle.h" line="131" column="3" bodyfile="src/evaToggle.h" bodystart="131" bodyend="-1"/>
+        <location file="src/evaSwitch.h" line="182" column="5" bodyfile="src/evaSwitch.h" bodystart="182" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="var">
-      <memberdef kind="variable" id="eva_constants_8h_1abe9445e0b1624d194377ff216f376994" prot="public" static="yes" mutable="no">
-        <type>const unsigned long</type>
-        <definition>const unsigned long eva::ON_UNCLASSIFIED</definition>
-        <argsstring></argsstring>
-        <name>ON_UNCLASSIFIED</name>
-        <qualifiedname>eva::ON_UNCLASSIFIED</qualifiedname>
-        <initializer>= 0x0000</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="src/evaConstants.h" line="6" column="32" bodyfile="src/evaConstants.h" bodystart="6" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="eva_constants_8h_1a169a7fe3b6d51162b53cc5483e1cf65e" prot="public" static="yes" mutable="no">
-        <type>const unsigned long</type>
-        <definition>const unsigned long eva::ON_CHANGE</definition>
-        <argsstring></argsstring>
-        <name>ON_CHANGE</name>
-        <qualifiedname>eva::ON_CHANGE</qualifiedname>
-        <initializer>= 0x0100</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="src/evaConstants.h" line="7" column="32" bodyfile="src/evaConstants.h" bodystart="7" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="eva_constants_8h_1aabc1d772d27227a0078875b44bf8b11e" prot="public" static="yes" mutable="no">
-        <type>const unsigned long</type>
-        <definition>const unsigned long eva::ON_PRESS</definition>
-        <argsstring></argsstring>
-        <name>ON_PRESS</name>
-        <qualifiedname>eva::ON_PRESS</qualifiedname>
-        <initializer>= 0x0200</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="src/evaConstants.h" line="8" column="32" bodyfile="src/evaConstants.h" bodystart="8" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="eva_constants_8h_1a71ec7e82e03e51d8c73a8a219a543731" prot="public" static="yes" mutable="no">
-        <type>const unsigned long</type>
-        <definition>const unsigned long eva::ON_RELEASE</definition>
-        <argsstring></argsstring>
-        <name>ON_RELEASE</name>
-        <qualifiedname>eva::ON_RELEASE</qualifiedname>
-        <initializer>= 0x0400</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="src/evaConstants.h" line="9" column="32" bodyfile="src/evaConstants.h" bodystart="9" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="eva_constants_8h_1a9e141eeb676fee8581ab715301fbc2f3" prot="public" static="yes" mutable="no">
-        <type>const unsigned long</type>
-        <definition>const unsigned long eva::ON_SHORTCLICK</definition>
+      <memberdef kind="variable" id="eva_button_8h_1a9f0afdfaa61b59c313463ec31444bc58" prot="public" static="yes" mutable="no">
+        <type>const unsigned char</type>
+        <definition>const unsigned char eva::ON_SHORTCLICK</definition>
         <argsstring></argsstring>
         <name>ON_SHORTCLICK</name>
         <qualifiedname>eva::ON_SHORTCLICK</qualifiedname>
-        <initializer>= 0x0800</initializer>
+        <initializer>= 0x08</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaConstants.h" line="10" column="32" bodyfile="src/evaConstants.h" bodystart="10" bodyend="-1"/>
+        <location file="src/evaButton.h" line="10" column="32" bodyfile="src/evaButton.h" bodystart="10" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="eva_constants_8h_1a52749a8997003f3a7b0a553612bee9fc" prot="public" static="yes" mutable="no">
-        <type>const unsigned long</type>
-        <definition>const unsigned long eva::ON_LONGCLICK</definition>
+      <memberdef kind="variable" id="eva_button_8h_1ae072ea6457bf4f70dfe4420571701571" prot="public" static="yes" mutable="no">
+        <type>const unsigned char</type>
+        <definition>const unsigned char eva::ON_LONGCLICK</definition>
         <argsstring></argsstring>
         <name>ON_LONGCLICK</name>
         <qualifiedname>eva::ON_LONGCLICK</qualifiedname>
-        <initializer>= 0x1000</initializer>
+        <initializer>= 0x10</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaConstants.h" line="11" column="32" bodyfile="src/evaConstants.h" bodystart="11" bodyend="-1"/>
+        <location file="src/evaButton.h" line="11" column="32" bodyfile="src/evaButton.h" bodystart="11" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="eva_constants_8h_1a0a66ce34a66dcf834dcbbfad2e4fef0b" prot="public" static="yes" mutable="no">
-        <type>const unsigned long</type>
-        <definition>const unsigned long eva::ON_ACTIVE</definition>
+      <memberdef kind="variable" id="eva_switch_8h_1abed7d02cf942cd9a8b0c0fd5fcfa5927" prot="public" static="yes" mutable="no">
+        <type>const unsigned char</type>
+        <definition>const unsigned char eva::ON_CHANGED</definition>
+        <argsstring></argsstring>
+        <name>ON_CHANGED</name>
+        <qualifiedname>eva::ON_CHANGED</qualifiedname>
+        <initializer>= 0x1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evaSwitch.h" line="12" column="32" bodyfile="src/evaSwitch.h" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="eva_switch_8h_1a0dc3da3ced5a1c2b4e4d2acc8b381254" prot="public" static="yes" mutable="no">
+        <type>const unsigned char</type>
+        <definition>const unsigned char eva::ON_PRESS</definition>
+        <argsstring></argsstring>
+        <name>ON_PRESS</name>
+        <qualifiedname>eva::ON_PRESS</qualifiedname>
+        <initializer>= 0x02</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evaSwitch.h" line="13" column="32" bodyfile="src/evaSwitch.h" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="eva_switch_8h_1a6c443d221db88ada2b9c14a5bc5c7265" prot="public" static="yes" mutable="no">
+        <type>const unsigned char</type>
+        <definition>const unsigned char eva::ON_RELEASE</definition>
+        <argsstring></argsstring>
+        <name>ON_RELEASE</name>
+        <qualifiedname>eva::ON_RELEASE</qualifiedname>
+        <initializer>= 0x04</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evaSwitch.h" line="14" column="32" bodyfile="src/evaSwitch.h" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="eva_switch_8h_1a59f4de0c6956b7623ed38b4a0bd89205" prot="public" static="yes" mutable="no">
+        <type>const unsigned char</type>
+        <definition>const unsigned char eva::ON_ACTIVE</definition>
         <argsstring></argsstring>
         <name>ON_ACTIVE</name>
         <qualifiedname>eva::ON_ACTIVE</qualifiedname>
@@ -664,11 +681,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaConstants.h" line="13" column="32" bodyfile="src/evaConstants.h" bodystart="13" bodyend="-1"/>
+        <location file="src/evaSwitch.h" line="16" column="32" bodyfile="src/evaSwitch.h" bodystart="16" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="eva_constants_8h_1ab3cc791326c3a948b719f64f251d95f4" prot="public" static="yes" mutable="no">
-        <type>const unsigned long</type>
-        <definition>const unsigned long eva::ON_INACTIVE</definition>
+      <memberdef kind="variable" id="eva_switch_8h_1aa69323981f434858df14bedc5c7a42d1" prot="public" static="yes" mutable="no">
+        <type>const unsigned char</type>
+        <definition>const unsigned char eva::ON_INACTIVE</definition>
         <argsstring></argsstring>
         <name>ON_INACTIVE</name>
         <qualifiedname>eva::ON_INACTIVE</qualifiedname>
@@ -679,7 +696,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaConstants.h" line="14" column="32" bodyfile="src/evaConstants.h" bodystart="14" bodyend="-1"/>
+        <location file="src/evaSwitch.h" line="17" column="32" bodyfile="src/evaSwitch.h" bodystart="17" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="func">

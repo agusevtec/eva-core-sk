@@ -126,7 +126,7 @@ See [eva::Tickable](classeva_1_1_tickable.md)
 | ---: | :--- |
 |   | [**Tickable**](classeva_1_1_tickable.md#function-tickable) () <br> |
 |  void | [**tac**](classeva_1_1_tickable.md#function-tac) () <br>_Triggers tick on this and all linked tickables._  |
-|   | [**~Tickable**](classeva_1_1_tickable.md#function-tickable) () <br> |
+| virtual  | [**~Tickable**](classeva_1_1_tickable.md#function-tickable) () <br> |
 
 
 

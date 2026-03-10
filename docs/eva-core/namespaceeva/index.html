@@ -17,7 +17,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.4">
     
     
       
@@ -348,14 +348,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../quickstart/flexibility/" class="md-nav__link">
+      <a href="../../quickstart/performance/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Flexibility
+    Performance
   
 
     
@@ -376,14 +376,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../quickstart/performance/" class="md-nav__link">
+      <a href="../../quickstart/flexibility/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Performance
+    Flexibility
   
 
     
@@ -779,10 +779,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#typedef-pinpullupbutton" class="md-nav__link">
+  <a href="#typedef-pinmultiswitch" class="md-nav__link">
     <span class="md-ellipsis">
       
-        typedef PinPullUpButton
+        typedef PinMultiSwitch
       
     </span>
   </a>
@@ -823,10 +823,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#typedef-pulldownswitch" class="md-nav__link">
+  <a href="#typedef-pullupbutton" class="md-nav__link">
     <span class="md-ellipsis">
       
-        typedef PulldownSwitch
+        typedef PullUpButton
       
     </span>
   </a>
@@ -838,17 +838,6 @@
     <span class="md-ellipsis">
       
         typedef PullupSwitch
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#typedef-thresholdswitch" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        typedef ThresholdSwitch
       
     </span>
   </a>
@@ -884,10 +873,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#variable-on_change" class="md-nav__link">
+  <a href="#variable-on_changed" class="md-nav__link">
     <span class="md-ellipsis">
       
-        variable ON_CHANGE
+        variable ON_CHANGED
       
     </span>
   </a>
@@ -943,17 +932,6 @@
     <span class="md-ellipsis">
       
         variable ON_SHORTCLICK
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#variable-on_unclassified" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        variable ON_UNCLASSIFIED
       
     </span>
   </a>
@@ -1066,7 +1044,15 @@
 </tr>
 <tr>
 <td style="text-align: right;">class</td>
-<td style="text-align: left;"><a href="../classeva_1_1_button/"><strong>Button</strong></a> &lt;class READER&gt;<br><em>Multi-state button that identifies which button was pressed via level code.</em></td>
+<td style="text-align: left;"><a href="../classeva_1_1_button/"><strong>Button</strong></a> &lt;class READER&gt;<br><a href="../classeva_1_1_button/"><em><strong>Button</strong></em></a> <em>with press/release and click detection.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">struct</td>
+<td style="text-align: left;"><a href="../structeva_1_1_callback_info/"><strong>CallbackInfo</strong></a> <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">class</td>
+<td style="text-align: left;"><a href="../classeva_1_1_contdown_timer/"><strong>ContdownTimer</strong></a> <br><em>Timer that fires repeatedly at fixed intervals.</em></td>
 </tr>
 <tr>
 <td style="text-align: right;">class</td>
@@ -1138,11 +1124,11 @@
 </tr>
 <tr>
 <td style="text-align: right;">class</td>
-<td style="text-align: left;"><a href="../classeva_1_1_tickable/"><strong>Tickable</strong></a> <br><em>Base class for objects that need periodic updates.</em></td>
+<td style="text-align: left;"><a href="../classeva_1_1_switch/"><strong>Switch</strong></a> &lt;class READER&gt;<br><em>Universal switch/button class for multi-valued input sources.</em></td>
 </tr>
 <tr>
 <td style="text-align: right;">class</td>
-<td style="text-align: left;"><a href="../classeva_1_1_toggle/"><strong>Toggle</strong></a> &lt;class READER&gt;<br><a href="../classeva_1_1_toggle/"><em><strong>Toggle</strong></em></a> <em>- легковесная версия</em><a href="../classeva_1_1_button/"><em><strong>Button</strong></em></a> <em>без детекции кликов</em></td>
+<td style="text-align: left;"><a href="../classeva_1_1_tickable/"><strong>Tickable</strong></a> <br><em>Base class for objects that need periodic updates.</em></td>
 </tr>
 </tbody>
 </table>
@@ -1157,7 +1143,7 @@
 <tbody>
 <tr>
 <td style="text-align: right;">typedef <a href="../classeva_1_1_button/"><strong>Button</strong></a>&lt; <a href="../classeva_1_1_binarize_decor/"><strong>BinarizeDecor</strong></a>&lt; <a href="../classeva_1_1_stabilize_decor/"><strong>StabilizeDecor</strong></a>&lt; <a href="../classeva_1_1_digital_pin_reader/"><strong>DigitalPinReader</strong></a>&lt; PIN, PIN_MODE &gt; &gt;, ACTIVATES_ON &gt; &gt;</td>
-<td style="text-align: left;"><a href="#typedef-pinbutton"><strong>PinButton</strong></a>  <br><a href="../classeva_1_1_button/"><em><strong>Button</strong></em></a> <em>connected directly to a digital pin Includes stabilization and binarization decorators. Debounces input and generates events based on button state changes. Long click threshold is fixed at 750ms.</em></td>
+<td style="text-align: left;"><a href="#typedef-pinbutton"><strong>PinButton</strong></a>  <br><em>Digital pin button with debouncing and level normalization.</em></td>
 </tr>
 <tr>
 <td style="text-align: right;">typedef <a href="../classeva_1_1_joystick/"><strong>Joystick</strong></a>&lt; <a href="../classeva_1_1_analog_pin_reader/"><strong>AnalogPinReader</strong></a>&lt; PIN, PIN_MODE &gt;, MIN, MIDDLE, MAX &gt;</td>
@@ -1165,35 +1151,31 @@
 </tr>
 <tr>
 <td style="text-align: right;">typedef <a href="../classeva_1_1_button/"><strong>Button</strong></a>&lt; <a href="../classeva_1_1_quantize_decor/"><strong>QuantizeDecor</strong></a>&lt; <a href="../classeva_1_1_stabilize_decor/"><strong>StabilizeDecor</strong></a>&lt; <a href="../classeva_1_1_analog_pin_reader/"><strong>AnalogPinReader</strong></a>&lt; PIN, PIN_MODE &gt; &gt;, LEVELS... &gt; &gt;</td>
-<td style="text-align: left;"><a href="#typedef-pinmultibutton"><strong>PinMultiButton</strong></a>  <br><em>Multiple buttons on single ADC pin using resistor ladder.</em></td>
+<td style="text-align: left;"><a href="#typedef-pinmultibutton"><strong>PinMultiButton</strong></a>  <br><em>Multiple buttons on a single ADC pin using resistor ladder.</em></td>
 </tr>
 <tr>
-<td style="text-align: right;">typedef <a href="../classeva_1_1_button/"><strong>Button</strong></a>&lt; <a href="../classeva_1_1_binarize_decor/"><strong>BinarizeDecor</strong></a>&lt; <a href="../classeva_1_1_stabilize_decor/"><strong>StabilizeDecor</strong></a>&lt; <a href="../classeva_1_1_digital_pin_reader/"><strong>DigitalPinReader</strong></a>&lt; PIN, INPUT_PULLUP &gt; &gt;, LOW &gt; &gt;</td>
-<td style="text-align: left;"><a href="#typedef-pinpullupbutton"><strong>PinPullUpButton</strong></a>  <br></td>
+<td style="text-align: right;">typedef <a href="../classeva_1_1_switch/"><strong>Switch</strong></a>&lt; <a href="../classeva_1_1_quantize_decor/"><strong>QuantizeDecor</strong></a>&lt; <a href="../classeva_1_1_stabilize_decor/"><strong>StabilizeDecor</strong></a>&lt; <a href="../classeva_1_1_analog_pin_reader/"><strong>AnalogPinReader</strong></a>&lt; PIN, PIN_MODE &gt; &gt;, LEVELS... &gt; &gt;</td>
+<td style="text-align: left;"><a href="#typedef-pinmultiswitch"><strong>PinMultiSwitch</strong></a>  <br><em>Multiple switches on a single ADC pin using resistor ladder.</em></td>
 </tr>
 <tr>
 <td style="text-align: right;">typedef <a href="../classeva_1_1_slider/"><strong>Slider</strong></a>&lt; <a href="../classeva_1_1_analog_pin_reader/"><strong>AnalogPinReader</strong></a>&lt; PIN, PIN_MODE &gt;, MIN, MAX &gt;</td>
 <td style="text-align: left;"><a href="#typedef-pinslider"><strong>PinSlider</strong></a>  <br><em>Pin-based slider mapping analog readings to 0-255 range.</em></td>
 </tr>
 <tr>
-<td style="text-align: right;">typedef <a href="../classeva_1_1_toggle/"><strong>Toggle</strong></a>&lt; <a href="../classeva_1_1_binarize_decor/"><strong>BinarizeDecor</strong></a>&lt; <a href="../classeva_1_1_stabilize_decor/"><strong>StabilizeDecor</strong></a>&lt; <a href="../classeva_1_1_digital_pin_reader/"><strong>DigitalPinReader</strong></a>&lt; PIN, PIN_MODE &gt; &gt;, ACTIVE_LEVEL &gt; &gt;</td>
-<td style="text-align: left;"><a href="#typedef-pinswitch"><strong>PinSwitch</strong></a>  <br><em>Pin-based switch with specified active level.</em></td>
+<td style="text-align: right;">typedef <a href="../classeva_1_1_switch/"><strong>Switch</strong></a>&lt; <a href="../classeva_1_1_binarize_decor/"><strong>BinarizeDecor</strong></a>&lt; <a href="../classeva_1_1_stabilize_decor/"><strong>StabilizeDecor</strong></a>&lt; <a href="../classeva_1_1_digital_pin_reader/"><strong>DigitalPinReader</strong></a>&lt; PIN, PIN_MODE &gt; &gt;, ACTIVE_LEVEL &gt; &gt;</td>
+<td style="text-align: left;"><a href="#typedef-pinswitch"><strong>PinSwitch</strong></a>  <br><em>Digital pin switch with debouncing and level normalization.</em></td>
 </tr>
 <tr>
 <td style="text-align: right;">typedef <a href="../classeva_1_1_joystick/"><strong>Joystick</strong></a>&lt; <a href="../classeva_1_1_analog_pin_reader/"><strong>AnalogPinReader</strong></a>&lt; PIN, PIN_MODE &gt;, MIN,(MAX - MIN)/2, MAX &gt;</td>
 <td style="text-align: left;"><a href="#typedef-pinsymmetricjoystick"><strong>PinSymmetricJoystick</strong></a>  <br><em>Pin-based joystick with symmetric range (MIN to MAX, center at midpoint).</em></td>
 </tr>
 <tr>
-<td style="text-align: right;">typedef PinSwitch&lt; PIN, INPUT, HIGH &gt;</td>
-<td style="text-align: left;"><a href="#typedef-pulldownswitch"><strong>PulldownSwitch</strong></a>  <br><em>Pull-down switch (button connected to VCC).</em></td>
+<td style="text-align: right;">typedef <a href="../classeva_1_1_button/"><strong>Button</strong></a>&lt; <a href="../classeva_1_1_binarize_decor/"><strong>BinarizeDecor</strong></a>&lt; <a href="../classeva_1_1_stabilize_decor/"><strong>StabilizeDecor</strong></a>&lt; <a href="../classeva_1_1_digital_pin_reader/"><strong>DigitalPinReader</strong></a>&lt; PIN, INPUT_PULLUP &gt; &gt;, LOW &gt; &gt;</td>
+<td style="text-align: left;"><a href="#typedef-pullupbutton"><strong>PullUpButton</strong></a>  <br><em>Pull-up button (active LOW, connect to GND).</em></td>
 </tr>
 <tr>
 <td style="text-align: right;">typedef PinSwitch&lt; PIN, INPUT_PULLUP, LOW &gt;</td>
-<td style="text-align: left;"><a href="#typedef-pullupswitch"><strong>PullupSwitch</strong></a>  <br><em>Pull-up switch (button connected to GND).</em></td>
-</tr>
-<tr>
-<td style="text-align: right;">typedef <a href="../classeva_1_1_toggle/"><strong>Toggle</strong></a>&lt; <a href="../classeva_1_1_binarize_decor/"><strong>BinarizeDecor</strong></a>&lt; <a href="../classeva_1_1_analog_pin_reader/"><strong>AnalogPinReader</strong></a>&lt; PIN, INPUT &gt;, THRESHOLD &gt; &gt;</td>
-<td style="text-align: left;"><a href="#typedef-thresholdswitch"><strong>ThresholdSwitch</strong></a>  <br><em>Threshold-based switch using analog input.</em></td>
+<td style="text-align: left;"><a href="#typedef-pullupswitch"><strong>PullupSwitch</strong></a>  <br><em>Pull-up switch (active LOW, connect to GND).</em></td>
 </tr>
 </tbody>
 </table>
@@ -1207,36 +1189,32 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: right;">const unsigned long</td>
+<td style="text-align: right;">const unsigned char</td>
 <td style="text-align: left;"><a href="#variable-on_active"><strong>ON_ACTIVE</strong></a>   = <code>ON\_PRESS</code><br></td>
 </tr>
 <tr>
-<td style="text-align: right;">const unsigned long</td>
-<td style="text-align: left;"><a href="#variable-on_change"><strong>ON_CHANGE</strong></a>   = <code>0x0100</code><br></td>
+<td style="text-align: right;">const unsigned char</td>
+<td style="text-align: left;"><a href="#variable-on_changed"><strong>ON_CHANGED</strong></a>   = <code>0x1</code><br></td>
 </tr>
 <tr>
-<td style="text-align: right;">const unsigned long</td>
+<td style="text-align: right;">const unsigned char</td>
 <td style="text-align: left;"><a href="#variable-on_inactive"><strong>ON_INACTIVE</strong></a>   = <code>ON\_RELEASE</code><br></td>
 </tr>
 <tr>
-<td style="text-align: right;">const unsigned long</td>
-<td style="text-align: left;"><a href="#variable-on_longclick"><strong>ON_LONGCLICK</strong></a>   = <code>0x1000</code><br></td>
+<td style="text-align: right;">const unsigned char</td>
+<td style="text-align: left;"><a href="#variable-on_longclick"><strong>ON_LONGCLICK</strong></a>   = <code>0x10</code><br></td>
 </tr>
 <tr>
-<td style="text-align: right;">const unsigned long</td>
-<td style="text-align: left;"><a href="#variable-on_press"><strong>ON_PRESS</strong></a>   = <code>0x0200</code><br></td>
+<td style="text-align: right;">const unsigned char</td>
+<td style="text-align: left;"><a href="#variable-on_press"><strong>ON_PRESS</strong></a>   = <code>0x02</code><br></td>
 </tr>
 <tr>
-<td style="text-align: right;">const unsigned long</td>
-<td style="text-align: left;"><a href="#variable-on_release"><strong>ON_RELEASE</strong></a>   = <code>0x0400</code><br></td>
+<td style="text-align: right;">const unsigned char</td>
+<td style="text-align: left;"><a href="#variable-on_release"><strong>ON_RELEASE</strong></a>   = <code>0x04</code><br></td>
 </tr>
 <tr>
-<td style="text-align: right;">const unsigned long</td>
-<td style="text-align: left;"><a href="#variable-on_shortclick"><strong>ON_SHORTCLICK</strong></a>   = <code>0x0800</code><br></td>
-</tr>
-<tr>
-<td style="text-align: right;">const unsigned long</td>
-<td style="text-align: left;"><a href="#variable-on_unclassified"><strong>ON_UNCLASSIFIED</strong></a>   = <code>0x0000</code><br></td>
+<td style="text-align: right;">const unsigned char</td>
+<td style="text-align: left;"><a href="#variable-on_shortclick"><strong>ON_SHORTCLICK</strong></a>   = <code>0x08</code><br></td>
 </tr>
 </tbody>
 </table>
@@ -1272,18 +1250,21 @@
 </table>
 <h2 id="public-types-documentation">Public Types Documentation<a class="headerlink" href="#public-types-documentation" title="Permanent link">&para;</a></h2>
 <h3 id="typedef-pinbutton">typedef PinButton<a class="headerlink" href="#typedef-pinbutton" title="Permanent link">&para;</a></h3>
-<p><a href="../classeva_1_1_button/"><em><strong>Button</strong></em></a> <em>connected directly to a digital pin Includes stabilization and binarization decorators. Debounces input and generates events based on button state changes. Long click threshold is fixed at 750ms.</em></p>
+<p><em>Digital pin button with debouncing and level normalization.</em> </p>
 <div class="codehilite"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">PinButton</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Button</span><span class="o">&lt;</span><span class="n">BinarizeDecor</span><span class="o">&lt;</span><span class="n">StabilizeDecor</span><span class="o">&lt;</span><span class="n">DigitalPinReader</span><span class="o">&lt;</span><span class="n">PIN</span><span class="p">,</span><span class="w"> </span><span class="n">PIN_MODE</span><span class="o">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">ACTIVATES_ON</span><span class="o">&gt;&gt;</span><span class="p">;</span>
 </code></pre></div>
 
+<p>Combines:
+* <a href="../classeva_1_1_digital_pin_reader/"><strong>DigitalPinReader</strong></a> for raw pin reading
+* <a href="../classeva_1_1_stabilize_decor/"><strong>StabilizeDecor</strong></a> for debouncing (120ms stability)
+* <a href="../classeva_1_1_binarize_decor/"><strong>BinarizeDecor</strong></a> for mapping to active/inactive based on specified level</p>
+<p>Generates standard button events: PRESS, RELEASE, SHORTCLICK, LONGCLICK. Long click threshold is fixed at 750ms.</p>
 <p><strong>Template parameters:</strong></p>
 <ul>
-<li><code>PIN</code> </li>
-<li><code>PIN_MODE</code> </li>
-<li><code>ACTIVATES_ON</code> - the level of a signal corresponding to the pressed state (LOW OR HIGH) </li>
+<li><code>PIN</code> Arduino pin number </li>
+<li><code>PIN_MODE</code> Pin mode (INPUT, INPUT_PULLUP, etc.) </li>
+<li><code>ACTIVATES_ON</code> Level that means "pressed" (LOW or HIGH) </li>
 </ul>
-<p><strong>Returns:</strong></p>
-<p><a href="../classeva_1_1_button/"><strong>Button</strong></a>&amp; </p>
 <hr>
 
 <h3 id="typedef-pinjoystick">typedef PinJoystick<a class="headerlink" href="#typedef-pinjoystick" title="Permanent link">&para;</a></h3>
@@ -1302,24 +1283,49 @@
 <hr>
 
 <h3 id="typedef-pinmultibutton">typedef PinMultiButton<a class="headerlink" href="#typedef-pinmultibutton" title="Permanent link">&para;</a></h3>
-<p><em>Multiple buttons on single ADC pin using resistor ladder.</em> </p>
+<p><em>Multiple buttons on a single ADC pin using resistor ladder.</em> </p>
 <div class="codehilite"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">PinMultiButton</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Button</span><span class="o">&lt;</span><span class="n">QuantizeDecor</span><span class="o">&lt;</span><span class="n">StabilizeDecor</span><span class="o">&lt;</span><span class="n">AnalogPinReader</span><span class="o">&lt;</span><span class="n">PIN</span><span class="p">,</span><span class="w"> </span><span class="n">PIN_MODE</span><span class="o">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">LEVELS</span><span class="p">...</span><span class="o">&gt;&gt;</span><span class="p">;</span>
 </code></pre></div>
 
-<p>Hardware connection: ADC IN --+R1+R2+ ... -Rn-+ (pullup) | | | | \ \ \ \ | | | | GND --+---+---+ ... -+</p>
-<p>Each button produces different ADC value which is mapped to levelCode. Debounces input and generates events based on button state changes. </p>
+<p>Hardware connection: </p>
+<div class="codehilite"><pre><span></span><code><span class="w"> </span><span class="n">ADC</span><span class="w"> </span><span class="n">Pin</span><span class="w">  </span><span class="o">-----+--</span><span class="n">R1</span><span class="o">--+--</span><span class="n">R2</span><span class="o">--+--</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="o">-</span><span class="n">Rn</span><span class="o">-+</span>
+<span class="p">(</span><span class="n">analog</span><span class="w"> </span><span class="n">in</span><span class="p">)</span><span class="w">    </span><span class="o">|</span><span class="w">      </span><span class="o">|</span><span class="w">      </span><span class="o">|</span><span class="w">           </span><span class="o">|</span>
+<span class="w">                </span><span class="err">\</span><span class="w">      </span><span class="err">\</span><span class="w">      </span><span class="err">\</span><span class="w">           </span>\
+<span class="w">               </span><span class="o">|</span><span class="w">      </span><span class="o">|</span><span class="w">      </span><span class="o">|</span><span class="w">           </span><span class="o">|</span>
+<span class="w">   </span><span class="n">GND</span><span class="w">    </span><span class="o">-----+------+------+--</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="o">----+</span>
+</code></pre></div>
+
+<p>Each button produces a different ADC value when pressed. The <a href="../classeva_1_1_quantize_decor/"><strong>QuantizeDecor</strong></a> maps these values to discrete button codes (1, 2, 3...). <a href="../classeva_1_1_stabilize_decor/"><strong>StabilizeDecor</strong></a> provides debouncing.</p>
+<p>Generates standard button events for each button, with the button number encoded in the event mask.</p>
 <p><strong>Template parameters:</strong></p>
 <ul>
 <li><code>PIN</code> Arduino analog pin number </li>
 <li><code>PIN_MODE</code> Pin mode (usually INPUT) </li>
-<li><code>LEVELS</code> Threshold values for different buttons </li>
+<li><code>LEVELS</code> Threshold values for each button (expected ADC readings)</li>
 </ul>
+<p><strong>See also:</strong> PinMultiSwitch For use cases without click detection </p>
 <hr>
 
-<h3 id="typedef-pinpullupbutton">typedef PinPullUpButton<a class="headerlink" href="#typedef-pinpullupbutton" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">PinPullUpButton</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Button</span><span class="o">&lt;</span><span class="n">BinarizeDecor</span><span class="o">&lt;</span><span class="n">StabilizeDecor</span><span class="o">&lt;</span><span class="n">DigitalPinReader</span><span class="o">&lt;</span><span class="n">PIN</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT_PULLUP</span><span class="o">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="o">&gt;&gt;</span><span class="p">;</span>
+<h3 id="typedef-pinmultiswitch">typedef PinMultiSwitch<a class="headerlink" href="#typedef-pinmultiswitch" title="Permanent link">&para;</a></h3>
+<p><em>Multiple switches on a single ADC pin using resistor ladder.</em> </p>
+<div class="codehilite"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">PinMultiSwitch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Switch</span><span class="o">&lt;</span><span class="n">QuantizeDecor</span><span class="o">&lt;</span><span class="n">StabilizeDecor</span><span class="o">&lt;</span><span class="n">AnalogPinReader</span><span class="o">&lt;</span><span class="n">PIN</span><span class="p">,</span><span class="w"> </span><span class="n">PIN_MODE</span><span class="o">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">LEVELS</span><span class="p">...</span><span class="o">&gt;&gt;</span><span class="p">;</span>
 </code></pre></div>
 
+<p>Hardware connection: </p>
+<div class="codehilite"><pre><span></span><code><span class="w"> </span><span class="n">ADC</span><span class="w"> </span><span class="n">Pin</span><span class="w">  </span><span class="o">-----+--</span><span class="n">R1</span><span class="o">--+--</span><span class="n">R2</span><span class="o">--+--</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="o">-</span><span class="n">Rn</span><span class="o">-+</span>
+<span class="p">(</span><span class="n">analog</span><span class="w"> </span><span class="n">in</span><span class="p">)</span><span class="w">    </span><span class="o">|</span><span class="w">      </span><span class="o">|</span><span class="w">      </span><span class="o">|</span><span class="w">           </span><span class="o">|</span>
+<span class="w">                </span><span class="err">\</span><span class="w">      </span><span class="err">\</span><span class="w">      </span><span class="err">\</span><span class="w">           </span>\
+<span class="w">               </span><span class="o">|</span><span class="w">      </span><span class="o">|</span><span class="w">      </span><span class="o">|</span><span class="w">           </span><span class="o">|</span>
+<span class="w">   </span><span class="n">GND</span><span class="w">    </span><span class="o">-----+------+------+--</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="o">----+</span>
+</code></pre></div>
+
+<p>Each switch produces a different ADC value when activated. The <a href="../classeva_1_1_quantize_decor/"><strong>QuantizeDecor</strong></a> maps these values to discrete level codes (1, 2, 3...). <a href="../classeva_1_1_stabilize_decor/"><strong>StabilizeDecor</strong></a> provides debouncing.</p>
+<p><strong>Template parameters:</strong></p>
+<ul>
+<li><code>PIN</code> Arduino analog pin number </li>
+<li><code>PIN_MODE</code> Pin mode (usually INPUT) </li>
+<li><code>LEVELS</code> Threshold values for each switch (expected ADC readings) </li>
+</ul>
 <hr>
 
 <h3 id="typedef-pinslider">typedef PinSlider<a class="headerlink" href="#typedef-pinslider" title="Permanent link">&para;</a></h3>
@@ -1337,14 +1343,18 @@
 <hr>
 
 <h3 id="typedef-pinswitch">typedef PinSwitch<a class="headerlink" href="#typedef-pinswitch" title="Permanent link">&para;</a></h3>
-<p><em>Pin-based switch with specified active level.</em> </p>
-<div class="codehilite"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">PinSwitch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Toggle</span><span class="o">&lt;</span><span class="n">BinarizeDecor</span><span class="o">&lt;</span><span class="n">StabilizeDecor</span><span class="o">&lt;</span><span class="n">DigitalPinReader</span><span class="o">&lt;</span><span class="n">PIN</span><span class="p">,</span><span class="w"> </span><span class="n">PIN_MODE</span><span class="o">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">ACTIVE_LEVEL</span><span class="o">&gt;&gt;</span><span class="p">;</span>
+<p><em>Digital pin switch with debouncing and level normalization.</em> </p>
+<div class="codehilite"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">PinSwitch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Switch</span><span class="o">&lt;</span><span class="n">BinarizeDecor</span><span class="o">&lt;</span><span class="n">StabilizeDecor</span><span class="o">&lt;</span><span class="n">DigitalPinReader</span><span class="o">&lt;</span><span class="n">PIN</span><span class="p">,</span><span class="w"> </span><span class="n">PIN_MODE</span><span class="o">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">ACTIVE_LEVEL</span><span class="o">&gt;&gt;</span><span class="p">;</span>
 </code></pre></div>
 
+<p>Combines:
+* <a href="../classeva_1_1_digital_pin_reader/"><strong>DigitalPinReader</strong></a> for raw pin reading
+* <a href="../classeva_1_1_stabilize_decor/"><strong>StabilizeDecor</strong></a> for debouncing (120ms stability)
+* <a href="../classeva_1_1_binarize_decor/"><strong>BinarizeDecor</strong></a> for mapping to active/inactive based on specified level</p>
 <p><strong>Template parameters:</strong></p>
 <ul>
 <li><code>PIN</code> Arduino pin number </li>
-<li><code>PIN_MODE</code> Pin mode (INPUT_PULLUP, INPUT, etc.) </li>
+<li><code>PIN_MODE</code> Pin mode (INPUT, INPUT_PULLUP, etc.) </li>
 <li><code>ACTIVE_LEVEL</code> Level that means active (LOW or HIGH) </li>
 </ul>
 <hr>
@@ -1363,84 +1373,73 @@
 </ul>
 <hr>
 
-<h3 id="typedef-pulldownswitch">typedef PulldownSwitch<a class="headerlink" href="#typedef-pulldownswitch" title="Permanent link">&para;</a></h3>
-<p><em>Pull-down switch (button connected to VCC).</em> </p>
-<div class="codehilite"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">PulldownSwitch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PinSwitch</span><span class="o">&lt;</span><span class="n">PIN</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT</span><span class="p">,</span><span class="w"> </span><span class="n">HIGH</span><span class="o">&gt;</span><span class="p">;</span>
+<h3 id="typedef-pullupbutton">typedef PullUpButton<a class="headerlink" href="#typedef-pullupbutton" title="Permanent link">&para;</a></h3>
+<p><em>Pull-up button (active LOW, connect to GND).</em> </p>
+<div class="codehilite"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">PullUpButton</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Button</span><span class="o">&lt;</span><span class="n">BinarizeDecor</span><span class="o">&lt;</span><span class="n">StabilizeDecor</span><span class="o">&lt;</span><span class="n">DigitalPinReader</span><span class="o">&lt;</span><span class="n">PIN</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT_PULLUP</span><span class="o">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="o">&gt;&gt;</span><span class="p">;</span>
 </code></pre></div>
 
+<p>Convenience alias for the most common Arduino button wiring:
+* Pin set to INPUT_PULLUP
+* <a href="../classeva_1_1_button/"><strong>Button</strong></a> connects pin to GND when pressed</p>
+<p>Generates all button events with proper debouncing.</p>
 <p><strong>Template parameters:</strong></p>
 <ul>
-<li><code>PIN</code> Arduino pin number with INPUT </li>
+<li><code>PIN</code> Arduino pin number </li>
 </ul>
 <hr>
 
 <h3 id="typedef-pullupswitch">typedef PullupSwitch<a class="headerlink" href="#typedef-pullupswitch" title="Permanent link">&para;</a></h3>
-<p><em>Pull-up switch (button connected to GND).</em> </p>
+<p><em>Pull-up switch (active LOW, connect to GND).</em> </p>
 <div class="codehilite"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">PullupSwitch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PinSwitch</span><span class="o">&lt;</span><span class="n">PIN</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT_PULLUP</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="o">&gt;</span><span class="p">;</span>
 </code></pre></div>
 
+<p>Convenience alias for the most common Arduino switch wiring:
+* Pin set to INPUT_PULLUP
+* <a href="../classeva_1_1_switch/"><strong>Switch</strong></a> connects pin to GND when pressed</p>
 <p><strong>Template parameters:</strong></p>
 <ul>
-<li><code>PIN</code> Arduino pin number with INPUT_PULLUP </li>
-</ul>
-<hr>
-
-<h3 id="typedef-thresholdswitch">typedef ThresholdSwitch<a class="headerlink" href="#typedef-thresholdswitch" title="Permanent link">&para;</a></h3>
-<p><em>Threshold-based switch using analog input.</em> </p>
-<div class="codehilite"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">ThresholdSwitch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Toggle</span><span class="o">&lt;</span><span class="n">BinarizeDecor</span><span class="o">&lt;</span><span class="n">AnalogPinReader</span><span class="o">&lt;</span><span class="n">PIN</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">THRESHOLD</span><span class="o">&gt;&gt;</span><span class="p">;</span>
-</code></pre></div>
-
-<p><strong>Template parameters:</strong></p>
-<ul>
-<li><code>PIN</code> Arduino analog pin number </li>
-<li><code>THRESHOLD</code> Value that separates active/inactive states </li>
+<li><code>PIN</code> Arduino pin number </li>
 </ul>
 <hr>
 <h2 id="public-static-attributes-documentation">Public Static Attributes Documentation<a class="headerlink" href="#public-static-attributes-documentation" title="Permanent link">&para;</a></h2>
 <h3 id="variable-on_active">variable ON_ACTIVE<a class="headerlink" href="#variable-on_active" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">ON_ACTIVE</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">ON_ACTIVE</span><span class="p">;</span>
 </code></pre></div>
 
 <hr>
 
-<h3 id="variable-on_change">variable ON_CHANGE<a class="headerlink" href="#variable-on_change" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">ON_CHANGE</span><span class="p">;</span>
+<h3 id="variable-on_changed">variable ON_CHANGED<a class="headerlink" href="#variable-on_changed" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">ON_CHANGED</span><span class="p">;</span>
 </code></pre></div>
 
 <hr>
 
 <h3 id="variable-on_inactive">variable ON_INACTIVE<a class="headerlink" href="#variable-on_inactive" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">ON_INACTIVE</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">ON_INACTIVE</span><span class="p">;</span>
 </code></pre></div>
 
 <hr>
 
 <h3 id="variable-on_longclick">variable ON_LONGCLICK<a class="headerlink" href="#variable-on_longclick" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">ON_LONGCLICK</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">ON_LONGCLICK</span><span class="p">;</span>
 </code></pre></div>
 
 <hr>
 
 <h3 id="variable-on_press">variable ON_PRESS<a class="headerlink" href="#variable-on_press" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">ON_PRESS</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">ON_PRESS</span><span class="p">;</span>
 </code></pre></div>
 
 <hr>
 
 <h3 id="variable-on_release">variable ON_RELEASE<a class="headerlink" href="#variable-on_release" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">ON_RELEASE</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">ON_RELEASE</span><span class="p">;</span>
 </code></pre></div>
 
 <hr>
 
 <h3 id="variable-on_shortclick">variable ON_SHORTCLICK<a class="headerlink" href="#variable-on_shortclick" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">ON_SHORTCLICK</span><span class="p">;</span>
-</code></pre></div>
-
-<hr>
-
-<h3 id="variable-on_unclassified">variable ON_UNCLASSIFIED<a class="headerlink" href="#variable-on_unclassified" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">ON_UNCLASSIFIED</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">ON_SHORTCLICK</span><span class="p">;</span>
 </code></pre></div>
 
 <hr>

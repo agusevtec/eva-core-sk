@@ -10,8 +10,7 @@
 
 
 
-* `#include "evaToggle.h"`
-* `#include "evaConstants.h"`
+* `#include "evaSwitch.h"`
 
 
 
@@ -36,7 +35,7 @@
 
 | Type | Name |
 | ---: | :--- |
-| class | [**Button**](classeva_1_1_button.md) &lt;class READER&gt;<br>_Multi-state button that identifies which button was pressed via level code._  |
+| class | [**Button**](classeva_1_1_button.md) &lt;class READER&gt;<br>[_**Button**_](classeva_1_1_button.md) _with press/release and click detection._ |
 
 
 

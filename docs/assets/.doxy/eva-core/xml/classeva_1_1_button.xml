@@ -2,7 +2,7 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
   <compounddef id="classeva_1_1_button" kind="class" language="C++" prot="public">
     <compoundname>eva::Button</compoundname>
-    <basecompoundref refid="classeva_1_1_toggle" prot="public" virt="non-virtual">eva::Toggle&lt; READER &gt;</basecompoundref>
+    <basecompoundref refid="classeva_1_1_switch" prot="public" virt="non-virtual">eva::Switch&lt; READER &gt;</basecompoundref>
     <includes refid="eva_button_8h" local="no">evaButton.h</includes>
     <templateparamlist>
       <param>
@@ -16,13 +16,14 @@
         <argsstring></argsstring>
         <name>pressTime</name>
         <qualifiedname>eva::Button::pressTime</qualifiedname>
+        <initializer>= 0</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaButton.h" line="63" column="23" bodyfile="src/evaButton.h" bodystart="63" bodyend="-1"/>
+        <location file="src/evaButton.h" line="74" column="23" bodyfile="src/evaButton.h" bodystart="74" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="private-func">
@@ -39,29 +40,38 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaButton.h" line="34" column="14" bodyfile="src/evaButton.h" bodystart="34" bodyend="60"/>
+        <location file="src/evaButton.h" line="43" column="14" bodyfile="src/evaButton.h" bodystart="43" bodyend="71"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
-<para>Multi-state button that identifies which button was pressed via level code. </para>
+<para><ref refid="classeva_1_1_button" kindref="compound">Button</ref> with press/release and click detection. </para>
     </briefdescription>
     <detaileddescription>
-<para>Generic button class that works with any multi-valued input source. The input reader can return different numeric codes representing different states. Typical applications:<orderedlist>
-<listitem><para>Resistor ladder buttons on single ADC pin</para>
-</listitem><listitem><para>Custom encoding schemes</para>
-</listitem><listitem><para>Multiplexed inputs</para>
-</listitem></orderedlist>
+<para>Extends <ref refid="classeva_1_1_switch" kindref="compound">Switch</ref> with timing-based events: short click and long click. For basic active/inactive behavior, use <ref refid="classeva_1_1_switch" kindref="compound">Switch</ref> directly.</para>
+<para>The class works with any reader that returns numeric codes:<itemizedlist>
+<listitem><para>0 means &quot;no button pressed&quot;</para>
+</listitem><listitem><para>Positive values identify specific buttons</para>
+</listitem></itemizedlist>
 </para>
-<para>Events include the level code in argsMask, allowing identification of which specific button triggered the event. Long click threshold is fixed at 750ms.</para>
+<para>Events include both the event type and the button code in argsMask, allowing identification of which specific button triggered the event.</para>
+<para>Long click threshold is fixed at 750ms.</para>
 <para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
 <parametername>READER</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Input reader type that returns numeric codes (0 = no button, &gt;0 = button index) </para>
+<para>Input reader type that returns numeric codes (0 = no button, &gt;0 = button identifier)</para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
+<simplesect kind="see"><para><ref refid="classeva_1_1_switch" kindref="compound">Switch</ref> Base class for active/inactive state management </para>
+</simplesect>
+<simplesect kind="see"><para>PinButton Digital pin button with debouncing (typical use) </para>
+</simplesect>
+<simplesect kind="see"><para>PullUpButton Pull-up button convenience alias </para>
+</simplesect>
+<simplesect kind="see"><para>PinMultiButton Multiple buttons on one ADC pin </para>
+</simplesect>
 </para>
     </detaileddescription>
     <inheritancegraph>
@@ -74,17 +84,17 @@
         <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="4">
-        <label>eva::Tickable</label>
-        <link refid="classeva_1_1_tickable"/>
-      </node>
       <node id="2">
-        <label>eva::Toggle&lt; READER &gt;</label>
-        <link refid="classeva_1_1_toggle"/>
+        <label>eva::Switch&lt; READER &gt;</label>
+        <link refid="classeva_1_1_switch"/>
         <childnode refid="3" relation="public-inheritance">
         </childnode>
         <childnode refid="4" relation="public-inheritance">
         </childnode>
+      </node>
+      <node id="4">
+        <label>eva::Tickable</label>
+        <link refid="classeva_1_1_tickable"/>
       </node>
     </inheritancegraph>
     <collaborationgraph>
@@ -101,13 +111,9 @@
         <label>eva::IHandler</label>
         <link refid="classeva_1_1_i_handler"/>
       </node>
-      <node id="4">
-        <label>eva::Tickable</label>
-        <link refid="classeva_1_1_tickable"/>
-      </node>
       <node id="2">
-        <label>eva::Toggle&lt; READER &gt;</label>
-        <link refid="classeva_1_1_toggle"/>
+        <label>eva::Switch&lt; READER &gt;</label>
+        <link refid="classeva_1_1_switch"/>
         <childnode refid="3" relation="public-inheritance">
         </childnode>
         <childnode refid="4" relation="public-inheritance">
@@ -116,24 +122,28 @@
           <edgelabel>listener</edgelabel>
         </childnode>
       </node>
+      <node id="4">
+        <label>eva::Tickable</label>
+        <link refid="classeva_1_1_tickable"/>
+      </node>
     </collaborationgraph>
-    <location file="src/evaButton.h" line="28" column="5" bodyfile="src/evaButton.h" bodystart="29" bodyend="64"/>
+    <location file="src/evaButton.h" line="37" column="5" bodyfile="src/evaButton.h" bodystart="38" bodyend="75"/>
     <listofallmembers>
       <member refid="classeva_1_1_tickable_1a287d1d56ac5ca1c143d266c8e3c9d174" prot="public" virt="non-virtual"><scope>eva::Button</scope><name>chain</name></member>
-      <member refid="classeva_1_1_toggle_1af10a291e9bfe02b121ac290fc0ba8c1f" prot="public" virt="non-virtual"><scope>eva::Button</scope><name>enable</name></member>
-      <member refid="classeva_1_1_toggle_1ab9ac42f4e89aaafedc10c77df1ff9b70" prot="public" virt="non-virtual"><scope>eva::Button</scope><name>getValue</name></member>
-      <member refid="classeva_1_1_toggle_1a4aebf2bdcc924479bf51b86a4a05b424" prot="protected" virt="non-virtual"><scope>eva::Button</scope><name>isEnabled</name></member>
-      <member refid="classeva_1_1_toggle_1adc5d68860f1043499c5b4259e9cf3ee2" prot="protected" virt="non-virtual"><scope>eva::Button</scope><name>levelCode</name></member>
-      <member refid="classeva_1_1_toggle_1a906b20261956f639f178108022191919" prot="protected" virt="non-virtual"><scope>eva::Button</scope><name>listener</name></member>
-      <member refid="classeva_1_1_toggle_1ad4bc028f355b5553fe7990d2e4ac0ec1" prot="protected" virt="non-virtual"><scope>eva::Button</scope><name>notify</name></member>
+      <member refid="classeva_1_1_switch_1a7c219494c63d04c510b2520d762d0a7b" prot="protected" virt="non-virtual"><scope>eva::Button</scope><name>curiosity</name></member>
+      <member refid="classeva_1_1_switch_1a453e44d5f0f0678f0d8ac63c3049ebaa" prot="public" virt="non-virtual"><scope>eva::Button</scope><name>enable</name></member>
+      <member refid="classeva_1_1_switch_1af39a84a03462bc07f361bc1b11d6a4ad" prot="public" virt="non-virtual"><scope>eva::Button</scope><name>getValue</name></member>
+      <member refid="classeva_1_1_switch_1a3ab8ea29fbe7597e51ec36d8551ced3b" prot="protected" virt="non-virtual"><scope>eva::Button</scope><name>levelCode</name></member>
+      <member refid="classeva_1_1_switch_1a37672eb95c86d0b8311bd778655e87ba" prot="protected" virt="non-virtual"><scope>eva::Button</scope><name>listener</name></member>
+      <member refid="classeva_1_1_switch_1aa1fb0a62fa105cb2a2de78bbaa950292" prot="protected" virt="non-virtual"><scope>eva::Button</scope><name>notify</name></member>
       <member refid="classeva_1_1_button_1a3d2aa61b3ce3991af47071a4ee5cc94f" prot="private" virt="non-virtual"><scope>eva::Button</scope><name>pressTime</name></member>
-      <member refid="classeva_1_1_toggle_1a4c0a992449877824c9a04d3d321c5764" prot="public" virt="non-virtual"><scope>eva::Button</scope><name>setListener</name></member>
+      <member refid="classeva_1_1_switch_1a1e58d00667fc3558f7747e46bf2ded46" prot="public" virt="non-virtual"><scope>eva::Button</scope><name>setListener</name></member>
+      <member refid="classeva_1_1_switch_1a7fee637f0ad36be86dac83b9c6b6083b" prot="public" virt="non-virtual"><scope>eva::Button</scope><name>Switch</name></member>
+      <member refid="classeva_1_1_switch_1aad39fa0b2f7181ab6855ee4b0edc944e" prot="public" virt="non-virtual"><scope>eva::Button</scope><name>Switch</name></member>
       <member refid="classeva_1_1_tickable_1ad13287a77a330b14272d3e1ccdbb3de7" prot="public" virt="non-virtual"><scope>eva::Button</scope><name>tac</name></member>
       <member refid="classeva_1_1_button_1a5b6706381ba6ff94e445a41889bf2c48" prot="private" virt="virtual"><scope>eva::Button</scope><name>tick</name></member>
       <member refid="classeva_1_1_tickable_1a667f47cdee5f03eed323cebb27e8ab8e" prot="public" virt="non-virtual"><scope>eva::Button</scope><name>Tickable</name></member>
-      <member refid="classeva_1_1_toggle_1a1ac570228af87b504205ee29ab360f3c" prot="public" virt="non-virtual"><scope>eva::Button</scope><name>Toggle</name></member>
-      <member refid="classeva_1_1_toggle_1a69d9c9485aeddfef30bba34a81de64d2" prot="public" virt="non-virtual"><scope>eva::Button</scope><name>Toggle</name></member>
-      <member refid="classeva_1_1_tickable_1acb71ddd4ec2bba0112001022c8c5ff6f" prot="public" virt="non-virtual"><scope>eva::Button</scope><name>~Tickable</name></member>
+      <member refid="classeva_1_1_tickable_1a6b6ff95372ce0b94618029e05ed2b50a" prot="public" virt="virtual"><scope>eva::Button</scope><name>~Tickable</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

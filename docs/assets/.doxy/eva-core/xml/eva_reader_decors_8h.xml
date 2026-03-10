@@ -4,7 +4,7 @@
     <compoundname>evaReaderDecors.h</compoundname>
     <includes local="no">Arduino.h</includes>
     <includes refid="eva_common_8h" local="yes">evaCommon.h</includes>
-    <includedby refid="eva_toggle_8h" local="yes">src/evaToggle.h</includedby>
+    <includedby refid="eva_switch_8h" local="yes">src/evaSwitch.h</includedby>
     <incdepgraph>
       <node id="2">
         <label>Arduino.h</label>
@@ -34,8 +34,8 @@
         </childnode>
       </node>
       <node id="2">
-        <label>src/evaToggle.h</label>
-        <link refid="eva_toggle_8h_source"/>
+        <label>src/evaSwitch.h</label>
+        <link refid="eva_switch_8h_source"/>
         <childnode refid="3" relation="include">
         </childnode>
       </node>

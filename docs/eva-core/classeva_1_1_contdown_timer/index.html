@@ -17,11 +17,11 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.4">
     
     
       
-        <title>File evaToggle.h - EVA Core | EVA Survival Kit</title>
+        <title>Class eva::ContdownTimer - EVA Core | EVA Survival Kit</title>
       
     
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#file-evatoggleh" class="md-skip">
+        <a href="#class-evacontdowntimer" class="md-skip">
           Skip to content
         </a>
       
@@ -98,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              File evaToggle.h
+              Class eva::ContdownTimer
             
           </span>
         </div>
@@ -348,14 +348,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../quickstart/flexibility/" class="md-nav__link">
+      <a href="../../quickstart/performance/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Flexibility
+    Performance
   
 
     
@@ -376,14 +376,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../quickstart/performance/" class="md-nav__link">
+      <a href="../../quickstart/flexibility/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Performance
+    Flexibility
   
 
     
@@ -679,10 +679,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#namespaces" class="md-nav__link">
+  <a href="#public-functions" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Namespaces
+        Public Functions
       
     </span>
   </a>
@@ -690,13 +690,129 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#classes" class="md-nav__link">
+  <a href="#public-functions-inherited-from-evadelaytimer" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Classes
+        Public Functions inherited from eva::DelayTimer
       
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#public-functions-inherited-from-evatickable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Public Functions inherited from eva::Tickable
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#public-static-functions-inherited-from-evatickable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Public Static Functions inherited from eva::Tickable
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#protected-attributes-inherited-from-evadelaytimer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Protected Attributes inherited from eva::DelayTimer
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#protected-functions-inherited-from-evadelaytimer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Protected Functions inherited from eva::DelayTimer
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#public-functions-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Public Functions Documentation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Public Functions Documentation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function-delaytimer-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        function DelayTimer [1/2]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-delaytimer-22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        function DelayTimer [2/2]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-setlistener" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        function setListener
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-start-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        function start [1/2]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-start-22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        function start [2/2]
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -720,17 +836,14 @@
   
 
 
-<h1 id="file-evatoggleh">File evaToggle.h<a class="headerlink" href="#file-evatoggleh" title="Permanent link">&para;</a></h1>
-<p><a href="../files/"><strong>FileList</strong></a> <strong>&gt;</strong> <a href="../dir_68267d1309a1af8e8297ef4c3efbcdba/"><strong>src</strong></a> <strong>&gt;</strong> <a href="./"><strong>evaToggle.h</strong></a></p>
-<p><a href="../eva_toggle_8h_source/">Go to the source code of this file</a></p>
+<h1 id="class-evacontdowntimer">Class eva::ContdownTimer<a class="headerlink" href="#class-evacontdowntimer" title="Permanent link">&para;</a></h1>
+<p><a href="../annotated/"><strong>ClassList</strong></a> <strong>&gt;</strong> <a href="../namespaceeva/"><strong>eva</strong></a> <strong>&gt;</strong> <a href="./"><strong>ContdownTimer</strong></a></p>
+<p><em>Timer that fires repeatedly at fixed intervals.</em> </p>
 <ul>
-<li><code>#include "evaTickable.h"</code></li>
-<li><code>#include "evaHandler.h"</code></li>
-<li><code>#include "evaStdReaders.h"</code></li>
-<li><code>#include "evaReaderDecors.h"</code></li>
-<li><code>#include "evaConstants.h"</code></li>
+<li><code>#include &lt;evaCountdownTimer.h&gt;</code></li>
 </ul>
-<h2 id="namespaces">Namespaces<a class="headerlink" href="#namespaces" title="Permanent link">&para;</a></h2>
+<p>Inherits the following classes: <a href="../classeva_1_1_delay_timer/">eva::DelayTimer</a></p>
+<h2 id="public-functions">Public Functions<a class="headerlink" href="#public-functions" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
@@ -740,12 +853,29 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: right;">namespace</td>
-<td style="text-align: left;"><a href="../namespaceeva/"><strong>eva</strong></a> <br></td>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"><a href="#function-delaytimer-12"><strong>DelayTimer</strong></a> () <br></td>
+</tr>
+<tr>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"><a href="#function-delaytimer-22"><strong>DelayTimer</strong></a> (<a href="../classeva_1_1_i_handler/"><strong>IHandler</strong></a> * listener) <br></td>
+</tr>
+<tr>
+<td style="text-align: right;"><a href="./"><strong>ContdownTimer</strong></a> *</td>
+<td style="text-align: left;"><a href="#function-setlistener"><strong>setListener</strong></a> (<a href="../classeva_1_1_i_handler/"><strong>IHandler</strong></a> * listener) <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">void</td>
+<td style="text-align: left;"><a href="#function-start-12"><strong>start</strong></a> (unsigned short period, unsigned short count, <a href="../classeva_1_1_i_handler/"><strong>IHandler</strong></a> * listener=nullptr) <br><em>Starts or restarts the repeating timer.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">void</td>
+<td style="text-align: left;"><a href="#function-start-22"><strong>start</strong></a> (unsigned short period, unsigned short count) <br></td>
 </tr>
 </tbody>
 </table>
-<h2 id="classes">Classes<a class="headerlink" href="#classes" title="Permanent link">&para;</a></h2>
+<h2 id="public-functions-inherited-from-evadelaytimer">Public Functions inherited from eva::DelayTimer<a class="headerlink" href="#public-functions-inherited-from-evadelaytimer" title="Permanent link">&para;</a></h2>
+<p>See <a href="../classeva_1_1_delay_timer/">eva::DelayTimer</a></p>
 <table>
 <thead>
 <tr>
@@ -755,13 +885,161 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: right;">class</td>
-<td style="text-align: left;"><a href="../classeva_1_1_toggle/"><strong>Toggle</strong></a> &lt;class READER&gt;<br><a href="../classeva_1_1_toggle/"><em><strong>Toggle</strong></em></a> <em>- легковесная версия</em><a href="../classeva_1_1_button/"><em><strong>Button</strong></em></a> <em>без детекции кликов</em></td>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"><a href="../classeva_1_1_delay_timer/#function-delaytimer-12"><strong>DelayTimer</strong></a> () <br></td>
+</tr>
+<tr>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"><a href="../classeva_1_1_delay_timer/#function-delaytimer-22"><strong>DelayTimer</strong></a> (<a href="../classeva_1_1_i_handler/"><strong>IHandler</strong></a> * listener) <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">bool</td>
+<td style="text-align: left;"><a href="../classeva_1_1_delay_timer/#function-isrunning"><strong>isRunning</strong></a> () <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">DelayTimer *</td>
+<td style="text-align: left;"><a href="../classeva_1_1_delay_timer/#function-setlistener"><strong>setListener</strong></a> (<a href="../classeva_1_1_i_handler/"><strong>IHandler</strong></a> * listener) <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">void</td>
+<td style="text-align: left;"><a href="../classeva_1_1_delay_timer/#function-start-12"><strong>start</strong></a> (unsigned short delay, <a href="../classeva_1_1_i_handler/"><strong>IHandler</strong></a> * listener) <br><em>Starts the timer.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">void</td>
+<td style="text-align: left;"><a href="../classeva_1_1_delay_timer/#function-start-22"><strong>start</strong></a> (unsigned short delay) <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">void</td>
+<td style="text-align: left;"><a href="../classeva_1_1_delay_timer/#function-stop"><strong>stop</strong></a> () <br><em>Stops the timer.</em></td>
 </tr>
 </tbody>
 </table>
+<h2 id="public-functions-inherited-from-evatickable">Public Functions inherited from eva::Tickable<a class="headerlink" href="#public-functions-inherited-from-evatickable" title="Permanent link">&para;</a></h2>
+<p>See <a href="../classeva_1_1_tickable/">eva::Tickable</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Type</th>
+<th style="text-align: left;">Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"><a href="../classeva_1_1_tickable/#function-tickable"><strong>Tickable</strong></a> () <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">void</td>
+<td style="text-align: left;"><a href="../classeva_1_1_tickable/#function-tac"><strong>tac</strong></a> () <br><em>Triggers tick on this and all linked tickables.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">virtual</td>
+<td style="text-align: left;"><a href="../classeva_1_1_tickable/#function-tickable"><strong>~Tickable</strong></a> () <br></td>
+</tr>
+</tbody>
+</table>
+<h2 id="public-static-functions-inherited-from-evatickable">Public Static Functions inherited from eva::Tickable<a class="headerlink" href="#public-static-functions-inherited-from-evatickable" title="Permanent link">&para;</a></h2>
+<p>See <a href="../classeva_1_1_tickable/">eva::Tickable</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Type</th>
+<th style="text-align: left;">Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">Tickable *</td>
+<td style="text-align: left;"><a href="../classeva_1_1_tickable/#function-chain"><strong>chain</strong></a> () <br><em>Gets or sets the head of the tickable chain.</em></td>
+</tr>
+</tbody>
+</table>
+<h2 id="protected-attributes-inherited-from-evadelaytimer">Protected Attributes inherited from eva::DelayTimer<a class="headerlink" href="#protected-attributes-inherited-from-evadelaytimer" title="Permanent link">&para;</a></h2>
+<p>See <a href="../classeva_1_1_delay_timer/">eva::DelayTimer</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Type</th>
+<th style="text-align: left;">Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;"><a href="../classeva_1_1_i_handler/"><strong>IHandler</strong></a> *</td>
+<td style="text-align: left;"><a href="../classeva_1_1_delay_timer/#variable-listener"><strong>listener</strong></a>  <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">unsigned long</td>
+<td style="text-align: left;"><a href="../classeva_1_1_delay_timer/#variable-nextfire"><strong>nextFire</strong></a>  <br></td>
+</tr>
+</tbody>
+</table>
+<h2 id="protected-functions-inherited-from-evadelaytimer">Protected Functions inherited from eva::DelayTimer<a class="headerlink" href="#protected-functions-inherited-from-evadelaytimer" title="Permanent link">&para;</a></h2>
+<p>See <a href="../classeva_1_1_delay_timer/">eva::DelayTimer</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Type</th>
+<th style="text-align: left;">Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">virtual void</td>
+<td style="text-align: left;"><a href="../classeva_1_1_delay_timer/#function-tick"><strong>tick</strong></a> () override<br></td>
+</tr>
+</tbody>
+</table>
+<h2 id="public-functions-documentation">Public Functions Documentation<a class="headerlink" href="#public-functions-documentation" title="Permanent link">&para;</a></h2>
+<h3 id="function-delaytimer-12">function DelayTimer [1/2]<a class="headerlink" href="#function-delaytimer-12" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="n">eva</span><span class="o">::</span><span class="n">ContdownTimer</span><span class="o">::</span><span class="n">DelayTimer</span><span class="w"> </span><span class="p">()</span><span class="w"> </span>
+</code></pre></div>
+
+<hr>
+
+<h3 id="function-delaytimer-22">function DelayTimer [2/2]<a class="headerlink" href="#function-delaytimer-22" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="n">eva</span><span class="o">::</span><span class="n">ContdownTimer</span><span class="o">::</span><span class="n">DelayTimer</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="n">IHandler</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">listener</span>
+<span class="p">)</span><span class="w"> </span>
+</code></pre></div>
+
+<hr>
+
+<h3 id="function-setlistener">function setListener<a class="headerlink" href="#function-setlistener" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="n">ContdownTimer</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">ContdownTimer</span><span class="o">::</span><span class="n">setListener</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="n">IHandler</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">listener</span>
+<span class="p">)</span><span class="w"> </span>
+</code></pre></div>
+
+<hr>
+
+<h3 id="function-start-12">function start [1/2]<a class="headerlink" href="#function-start-12" title="Permanent link">&para;</a></h3>
+<p><em>Starts or restarts the repeating timer.</em> </p>
+<div class="codehilite"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">ContdownTimer</span><span class="o">::</span><span class="n">start</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">period</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">count</span><span class="p">,</span>
+<span class="w">    </span><span class="n">IHandler</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">listener</span><span class="o">=</span><span class="k">nullptr</span>
+<span class="p">)</span><span class="w"> </span>
+</code></pre></div>
+
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>period</code> Interval in milliseconds </li>
+<li><code>listener</code> <a href="../classeva_1_1_handler/"><strong>Handler</strong></a> to invoke on each tick </li>
+</ul>
+<hr>
+
+<h3 id="function-start-22">function start [2/2]<a class="headerlink" href="#function-start-22" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">ContdownTimer</span><span class="o">::</span><span class="n">start</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">period</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">count</span>
+<span class="p">)</span><span class="w"> </span>
+</code></pre></div>
+
+<hr>
+
 <hr />
-<p>The documentation for this class was generated from the following file <code>src/evaToggle.h</code></p>
+<p>The documentation for this class was generated from the following file <code>src/evaCountdownTimer.h</code></p>
 
 
 

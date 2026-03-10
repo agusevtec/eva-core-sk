@@ -27,7 +27,7 @@ namespace eva
         void on(unsigned short period, unsigned short dutycyclePercent, unsigned char count, IHandler *listener = 0);
 
     private:
-        void invoke(void *msgSender, union Message message) override;
+        void invoke(void *msgSender, CallbackInfo cbInfo) override;
 
     private:
         unsigned char countdown;

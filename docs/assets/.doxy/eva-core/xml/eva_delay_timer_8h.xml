@@ -4,6 +4,7 @@
     <compoundname>evaDelayTimer.h</compoundname>
     <includes refid="eva_tickable_8h" local="yes">evaTickable.h</includes>
     <includes refid="eva_handler_8h" local="yes">evaHandler.h</includes>
+    <includedby refid="eva_countdown_timer_8h" local="yes">src/evaCountdownTimer.h</includedby>
     <includedby refid="eva_indicator_8h" local="yes">src/evaIndicator.h</includedby>
     <includedby refid="eva_repeat_timer_8h" local="yes">src/evaRepeatTimer.h</includedby>
     <incdepgraph>
@@ -25,31 +26,37 @@
       </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="3">
+      <node id="4">
         <label>src/evaBlinkingIndicator.h</label>
         <link refid="eva_blinking_indicator_8h_source"/>
-        <childnode refid="4" relation="include">
+        <childnode refid="5" relation="include">
         </childnode>
       </node>
-      <node id="4">
+      <node id="5">
         <label>src/evaCountdownIndicator.h</label>
         <link refid="eva_countdown_indicator_8h_source"/>
+      </node>
+      <node id="2">
+        <label>src/evaCountdownTimer.h</label>
+        <link refid="eva_countdown_timer_8h_source"/>
       </node>
       <node id="1">
         <label>src/evaDelayTimer.h</label>
         <link refid="eva_delay_timer_8h"/>
         <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="5" relation="include">
-        </childnode>
-      </node>
-      <node id="2">
-        <label>src/evaIndicator.h</label>
-        <link refid="eva_indicator_8h_source"/>
         <childnode refid="3" relation="include">
         </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
       </node>
-      <node id="5">
+      <node id="3">
+        <label>src/evaIndicator.h</label>
+        <link refid="eva_indicator_8h_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
         <label>src/evaRepeatTimer.h</label>
         <link refid="eva_repeat_timer_8h_source"/>
       </node>

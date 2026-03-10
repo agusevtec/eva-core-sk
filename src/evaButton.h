@@ -9,21 +9,29 @@ namespace eva
 {
     static const unsigned char ON_SHORTCLICK = 0x08;
     static const unsigned char ON_LONGCLICK = 0x10;
+
     /**
-     * @brief Multi-state button that identifies which button was pressed via level code
+     * @brief Button with press/release and click detection.
      *
-     * Generic button class that works with any multi-valued input source.
-     * The input reader can return different numeric codes representing different
-     * states. Typical applications:
-     * -# Resistor ladder buttons on single ADC pin
-     * -# Custom encoding schemes
-     * -# Multiplexed inputs
+     * Extends Switch with timing-based events: short click and long click.
+     * For basic active/inactive behavior, use Switch directly.
      *
-     * Events include the level code in argsMask, allowing identification of
-     * which specific button triggered the event.
+     * The class works with any reader that returns numeric codes:
+     * - 0 means "no button pressed"
+     * - Positive values identify specific buttons
+     *
+     * Events include both the event type and the button code in argsMask,
+     * allowing identification of which specific button triggered the event.
+     *
      * Long click threshold is fixed at 750ms.
      *
-     * @tparam READER Input reader type that returns numeric codes (0 = no button, >0 = button index)
+     * @tparam READER Input reader type that returns numeric codes
+     *                (0 = no button, >0 = button identifier)
+     *
+     * @see Switch Base class for active/inactive state management
+     * @see PinButton Digital pin button with debouncing (typical use)
+     * @see PullUpButton Pull-up button convenience alias
+     * @see PinMultiButton Multiple buttons on one ADC pin
      */
     template <class READER>
     class Button : public Switch<READER>
@@ -48,8 +56,8 @@ namespace eva
 
             if ((wasLevelCode > 0) and (wasLevelCode != this->levelCode)) // any_pos -> 0
             {
-                if (this->pressTime and (millis() - this->pressTime < 750))
-                    this->notify(ON_SHORTCLICK , wasLevelCode);
+                if (this->pressTime and (millis() - this->pressTime) < 750)
+                    this->notify(ON_SHORTCLICK, wasLevelCode);
                 this->notify(ON_RELEASE, wasLevelCode);
                 this->notify(ON_CHANGED, this->levelCode);
                 this->pressTime = 0;
@@ -57,7 +65,7 @@ namespace eva
             if ((wasLevelCode != this->levelCode) and (this->levelCode > 0)) // 0 -> any_pos
             {
                 this->pressTime = millis();
-                this->notify(ON_PRESS , this->levelCode);
+                this->notify(ON_PRESS, this->levelCode);
                 this->notify(ON_CHANGED, this->levelCode);
             }
         }
@@ -67,40 +75,63 @@ namespace eva
     };
 
     /**
-     * @brief Multiple buttons on single ADC pin using resistor ladder
+     * @brief Digital pin button with debouncing and level normalization.
+     *
+     * Combines:
+     * - DigitalPinReader for raw pin reading
+     * - StabilizeDecor for debouncing (120ms stability)
+     * - BinarizeDecor for mapping to active/inactive based on specified level
+     *
+     * Generates standard button events: PRESS, RELEASE, SHORTCLICK, LONGCLICK.
+     * Long click threshold is fixed at 750ms.
+     *
+     * @tparam PIN Arduino pin number
+     * @tparam PIN_MODE Pin mode (INPUT, INPUT_PULLUP, etc.)
+     * @tparam ACTIVATES_ON Level that means "pressed" (LOW or HIGH)
+     */
+    template <int PIN, int PIN_MODE, int ACTIVATES_ON>
+    using PinButton = Button<BinarizeDecor<StabilizeDecor<DigitalPinReader<PIN, PIN_MODE>>, ACTIVATES_ON>>;
+
+    /**
+     * @brief Pull-up button (active LOW, connect to GND).
+     *
+     * Convenience alias for the most common Arduino button wiring:
+     * - Pin set to INPUT_PULLUP
+     * - Button connects pin to GND when pressed
+     *
+     * Generates all button events with proper debouncing.
+     *
+     * @tparam PIN Arduino pin number
+     */
+    template <int PIN>
+    using PullUpButton = Button<BinarizeDecor<StabilizeDecor<DigitalPinReader<PIN, INPUT_PULLUP>>, LOW>>;
+
+    /**
+     * @brief Multiple buttons on a single ADC pin using resistor ladder.
      *
      * Hardware connection:
-     *    ADC IN   -----+--R1--+--R2--+-- ... -Rn-+
-     *   (pullup)       |      |      |           |
+     * ```
+     *    ADC Pin  -----+--R1--+--R2--+-- ... -Rn-+
+     *   (analog in)    |      |      |           |
      *                   \      \      \           \
      *                  |      |      |           |
      *      GND    -----+------+------+-- ... ----+
+     * ```
      *
-     * Each button produces different ADC value which is mapped to levelCode.
-     * Debounces input and generates events based on button state changes.
+     * Each button produces a different ADC value when pressed. The
+     * QuantizeDecor maps these values to discrete button codes (1, 2, 3...).
+     * StabilizeDecor provides debouncing.
+     *
+     * Generates standard button events for each button, with the button
+     * number encoded in the event mask.
+     *
      * @tparam PIN Arduino analog pin number
      * @tparam PIN_MODE Pin mode (usually INPUT)
-     * @tparam LEVELS Threshold values for different buttons
+     * @tparam LEVELS Threshold values for each button (expected ADC readings)
+     *
+     * @see PinMultiSwitch For use cases without click detection
      */
     template <int PIN, int PIN_MODE, signed short... LEVELS>
     using PinMultiButton = Button<QuantizeDecor<StabilizeDecor<AnalogPinReader<PIN, PIN_MODE>>, LEVELS...>>;
-
-    /**
-     * @brief Button connected directly to a digital pin
-     * Includes stabilization and binarization decorators.
-     * Debounces input and generates events based on button state changes.
-     * Long click threshold is fixed at 750ms.
-     *
-     * @tparam PIN
-     * @tparam PIN_MODE
-     * @tparam ACTIVATES_ON - the level of a signal corresponding to the pressed state (LOW OR HIGH)
-     * @return Button&
-     */
-    template <int PIN, int PIN_MODE, int ACTIVATES_ON> 
-    using PinButton = Button<BinarizeDecor<StabilizeDecor<DigitalPinReader<PIN, PIN_MODE>>, ACTIVATES_ON>>;
-
-    template <int PIN>
-    using PinPullUpButton = Button<BinarizeDecor<StabilizeDecor<DigitalPinReader<PIN, INPUT_PULLUP>>, LOW>>;
-
 };
 #endif

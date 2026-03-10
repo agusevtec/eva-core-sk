@@ -17,7 +17,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.4">
     
     
       
@@ -348,14 +348,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../quickstart/flexibility/" class="md-nav__link">
+      <a href="../../quickstart/performance/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Flexibility
+    Performance
   
 
     
@@ -376,14 +376,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../quickstart/performance/" class="md-nav__link">
+      <a href="../../quickstart/flexibility/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Performance
+    Flexibility
   
 
     
@@ -698,21 +698,23 @@
 
 <span class="cp">#pragma once</span>
 
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;evaToggle.h&quot;</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;evaConstants.h&quot;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;evaSwitch.h&quot;</span>
 
 <span class="k">namespace</span><span class="w"> </span><span class="nn">eva</span>
 <span class="p">{</span>
+<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">ON_SHORTCLICK</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x08</span><span class="p">;</span>
+<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">ON_LONGCLICK</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x10</span><span class="p">;</span>
+
 <span class="w">    </span><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">READER</span><span class="o">&gt;</span>
-<span class="w">    </span><span class="k">class</span><span class="w"> </span><span class="nc">Button</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">Toggle</span><span class="o">&lt;</span><span class="n">READER</span><span class="o">&gt;</span>
+<span class="w">    </span><span class="k">class</span><span class="w"> </span><span class="nc">Button</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">Switch</span><span class="o">&lt;</span><span class="n">READER</span><span class="o">&gt;</span>
 <span class="w">    </span><span class="p">{</span>
 <span class="w">    </span><span class="k">public</span><span class="o">:</span>
-<span class="w">        </span><span class="k">using</span><span class="w"> </span><span class="n">Toggle</span><span class="o">&lt;</span><span class="n">READER</span><span class="o">&gt;::</span><span class="n">Toggle</span><span class="p">;</span>
+<span class="w">        </span><span class="k">using</span><span class="w"> </span><span class="n">Switch</span><span class="o">&lt;</span><span class="n">READER</span><span class="o">&gt;::</span><span class="n">Switch</span><span class="p">;</span>
 
 <span class="w">    </span><span class="k">private</span><span class="o">:</span>
 <span class="w">        </span><span class="kt">void</span><span class="w"> </span><span class="n">tick</span><span class="p">()</span><span class="w"> </span><span class="k">override</span>
 <span class="w">        </span><span class="p">{</span>
-<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="o">-&gt;</span><span class="n">isEnabled</span><span class="p">)</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="o">-&gt;</span><span class="n">levelCode</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
 <span class="w">                </span><span class="k">return</span><span class="p">;</span>
 
 <span class="w">            </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">wasLevelCode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">levelCode</span><span class="p">;</span>
@@ -720,37 +722,38 @@
 
 <span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="o">-&gt;</span><span class="n">pressTime</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="p">(</span><span class="n">millis</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">pressTime</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">750</span><span class="p">)</span>
 <span class="w">            </span><span class="p">{</span>
-<span class="w">                </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">notify</span><span class="p">(</span><span class="n">ON_LONGCLICK</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">levelCode</span><span class="p">);</span>
+<span class="w">                </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">notify</span><span class="p">(</span><span class="n">ON_LONGCLICK</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">levelCode</span><span class="p">);</span>
 <span class="w">                </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">pressTime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 <span class="w">            </span><span class="p">}</span>
 
 <span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">((</span><span class="n">wasLevelCode</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="p">(</span><span class="n">wasLevelCode</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">levelCode</span><span class="p">))</span><span class="w"> </span><span class="c1">// any_pos -&gt; 0</span>
 <span class="w">            </span><span class="p">{</span>
-<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="o">-&gt;</span><span class="n">pressTime</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="p">(</span><span class="n">millis</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">pressTime</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">750</span><span class="p">))</span>
-<span class="w">                    </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">notify</span><span class="p">(</span><span class="n">ON_SHORTCLICK</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">wasLevelCode</span><span class="p">);</span>
-<span class="w">                </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">notify</span><span class="p">(</span><span class="n">ON_RELEASE</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">wasLevelCode</span><span class="p">);</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="o">-&gt;</span><span class="n">pressTime</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="p">(</span><span class="n">millis</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">pressTime</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">750</span><span class="p">)</span>
+<span class="w">                    </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">notify</span><span class="p">(</span><span class="n">ON_SHORTCLICK</span><span class="p">,</span><span class="w"> </span><span class="n">wasLevelCode</span><span class="p">);</span>
+<span class="w">                </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">notify</span><span class="p">(</span><span class="n">ON_RELEASE</span><span class="p">,</span><span class="w"> </span><span class="n">wasLevelCode</span><span class="p">);</span>
+<span class="w">                </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">notify</span><span class="p">(</span><span class="n">ON_CHANGED</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">levelCode</span><span class="p">);</span>
 <span class="w">                </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">pressTime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 <span class="w">            </span><span class="p">}</span>
 <span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">((</span><span class="n">wasLevelCode</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">levelCode</span><span class="p">)</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="o">-&gt;</span><span class="n">levelCode</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">))</span><span class="w"> </span><span class="c1">// 0 -&gt; any_pos</span>
 <span class="w">            </span><span class="p">{</span>
 <span class="w">                </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">pressTime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">millis</span><span class="p">();</span>
-<span class="w">                </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">notify</span><span class="p">(</span><span class="n">ON_PRESS</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">levelCode</span><span class="p">);</span>
+<span class="w">                </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">notify</span><span class="p">(</span><span class="n">ON_PRESS</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">levelCode</span><span class="p">);</span>
+<span class="w">                </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">notify</span><span class="p">(</span><span class="n">ON_CHANGED</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">levelCode</span><span class="p">);</span>
 <span class="w">            </span><span class="p">}</span>
 <span class="w">        </span><span class="p">}</span>
 
 <span class="w">    </span><span class="k">private</span><span class="o">:</span>
-<span class="w">        </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">pressTime</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">pressTime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 <span class="w">    </span><span class="p">};</span>
 
-<span class="w">    </span><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">int</span><span class="w"> </span><span class="n">PIN</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">PIN_MODE</span><span class="p">,</span><span class="w"> </span><span class="kt">signed</span><span class="w"> </span><span class="kt">short</span><span class="p">...</span><span class="w"> </span><span class="n">LEVELS</span><span class="o">&gt;</span>
-<span class="w">    </span><span class="k">using</span><span class="w"> </span><span class="n">PinMultiButton</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Button</span><span class="o">&lt;</span><span class="n">QuantizeDecor</span><span class="o">&lt;</span><span class="n">StabilizeDecor</span><span class="o">&lt;</span><span class="n">AnalogPinReader</span><span class="o">&lt;</span><span class="n">PIN</span><span class="p">,</span><span class="w"> </span><span class="n">PIN_MODE</span><span class="o">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">LEVELS</span><span class="p">...</span><span class="o">&gt;&gt;</span><span class="p">;</span>
-
-<span class="w">    </span><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">int</span><span class="w"> </span><span class="n">PIN</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">PIN_MODE</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">ACTIVATES_ON</span><span class="o">&gt;</span><span class="w"> </span>
+<span class="w">    </span><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">int</span><span class="w"> </span><span class="n">PIN</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">PIN_MODE</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">ACTIVATES_ON</span><span class="o">&gt;</span>
 <span class="w">    </span><span class="k">using</span><span class="w"> </span><span class="n">PinButton</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Button</span><span class="o">&lt;</span><span class="n">BinarizeDecor</span><span class="o">&lt;</span><span class="n">StabilizeDecor</span><span class="o">&lt;</span><span class="n">DigitalPinReader</span><span class="o">&lt;</span><span class="n">PIN</span><span class="p">,</span><span class="w"> </span><span class="n">PIN_MODE</span><span class="o">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">ACTIVATES_ON</span><span class="o">&gt;&gt;</span><span class="p">;</span>
 
 <span class="w">    </span><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">int</span><span class="w"> </span><span class="n">PIN</span><span class="o">&gt;</span>
-<span class="w">    </span><span class="k">using</span><span class="w"> </span><span class="n">PinPullUpButton</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Button</span><span class="o">&lt;</span><span class="n">BinarizeDecor</span><span class="o">&lt;</span><span class="n">StabilizeDecor</span><span class="o">&lt;</span><span class="n">DigitalPinReader</span><span class="o">&lt;</span><span class="n">PIN</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT_PULLUP</span><span class="o">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="o">&gt;&gt;</span><span class="p">;</span>
+<span class="w">    </span><span class="k">using</span><span class="w"> </span><span class="n">PullUpButton</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Button</span><span class="o">&lt;</span><span class="n">BinarizeDecor</span><span class="o">&lt;</span><span class="n">StabilizeDecor</span><span class="o">&lt;</span><span class="n">DigitalPinReader</span><span class="o">&lt;</span><span class="n">PIN</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT_PULLUP</span><span class="o">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="o">&gt;&gt;</span><span class="p">;</span>
 
+<span class="w">    </span><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">int</span><span class="w"> </span><span class="n">PIN</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">PIN_MODE</span><span class="p">,</span><span class="w"> </span><span class="kt">signed</span><span class="w"> </span><span class="kt">short</span><span class="p">...</span><span class="w"> </span><span class="n">LEVELS</span><span class="o">&gt;</span>
+<span class="w">    </span><span class="k">using</span><span class="w"> </span><span class="n">PinMultiButton</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Button</span><span class="o">&lt;</span><span class="n">QuantizeDecor</span><span class="o">&lt;</span><span class="n">StabilizeDecor</span><span class="o">&lt;</span><span class="n">AnalogPinReader</span><span class="o">&lt;</span><span class="n">PIN</span><span class="p">,</span><span class="w"> </span><span class="n">PIN_MODE</span><span class="o">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">LEVELS</span><span class="p">...</span><span class="o">&gt;&gt;</span><span class="p">;</span>
 <span class="p">};</span>
 <span class="cp">#endif</span>
 </code></pre></div>

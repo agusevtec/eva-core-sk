@@ -147,7 +147,7 @@ See [eva::IHandler](classeva_1_1_i_handler.md)
 
 | Type | Name |
 | ---: | :--- |
-| virtual void | [**invoke**](classeva_1_1_i_handler.md#function-invoke) (void \* msgSender, long argsMask) = 0<br> |
+| virtual void | [**invoke**](classeva_1_1_i_handler.md#function-invoke) (void \* msgSender, [**CallbackInfo**](structeva_1_1_callback_info.md) cbInfo) = 0<br> |
 
 
 

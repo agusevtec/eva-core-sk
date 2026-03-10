@@ -11,17 +11,17 @@
       
       
       
-        <link rel="prev" href="../working-with-buttons/">
+        <link rel="prev" href="../performance/">
       
       
-        <link rel="next" href="../performance/">
+        <link rel="next" href="../../ecosystem/motivation/">
       
       
         
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.4">
     
     
       
@@ -351,6 +351,34 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../performance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Performance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -450,34 +478,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../performance/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Performance
-  
-
-    
-  </span>
-  
-  
-
-      </a>
     </li>
   
 
@@ -818,10 +818,10 @@
 
 
 <h1 id="flexibility-beyond-standard-inputs">Flexibility: Beyond Standard Inputs<a class="headerlink" href="#flexibility-beyond-standard-inputs" title="Permanent link">&para;</a></h1>
-<p>The true power of the EVA concept and the SK part of the eva-core-sk library lies in its flexibility. Because Button and MultiButton are built on templates and decorators, they can work with any source of numerical data—not just physical pins. This section shows how you can adapt the library to unconventional input sources.</p>
+<p>The true power of the EVA concept and the SK part of the eva-core-sk library lies in its flexibility. Because Switch and Button are built on templates and decorators, they can work with any source of numerical data—not just physical pins. This section shows how you can adapt the library to unconventional input sources.</p>
 <h2 id="example-1-differential-joystick-with-custom-zone-detection">Example 1: Differential Joystick with Custom Zone Detection<a class="headerlink" href="#example-1-differential-joystick-with-custom-zone-detection" title="Permanent link">&para;</a></h2>
 <p>Some precision joysticks use differential readings to cancel noise and improve accuracy. Here's how to combine a differential reader with custom zone mapping to create a 3-position virtual switch:</p>
-<div class="codehilite"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;evaMultiButton.h&gt;</span>
+<div class="codehilite"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;evaSwitch.h&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;evaTac.h&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;evaHandler.h&gt;</span>
 
@@ -855,8 +855,8 @@
 <span class="w">  </span><span class="p">}</span>
 <span class="p">};</span>
 
-<span class="c1">// Step 3: Assemble into a MultiButton</span>
-<span class="k">using</span><span class="w"> </span><span class="n">DifferentialSwitch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MultiButton</span><span class="o">&lt;</span>
+<span class="c1">// Step 3: Assemble into a Button</span>
+<span class="k">using</span><span class="w"> </span><span class="n">DifferentialSwitch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Switch</span><span class="o">&lt;</span>
 <span class="w">  </span><span class="n">StabilizeDecor</span><span class="o">&lt;</span>
 <span class="w">    </span><span class="n">ZoneMapper</span><span class="o">&lt;</span>
 <span class="w">      </span><span class="n">DifferentialReader</span><span class="o">&lt;</span><span class="n">A0</span><span class="p">,</span><span class="w"> </span><span class="n">A1</span><span class="o">&gt;</span>
@@ -868,15 +868,15 @@
 <span class="k">private</span><span class="o">:</span>
 <span class="w">  </span><span class="n">DifferentialSwitch</span><span class="w"> </span><span class="n">joystickZone</span><span class="p">;</span>
 
-<span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">onZoneEvent</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">events</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">zone</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">events</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="mh">0xFF</span><span class="p">;</span><span class="w">  </span><span class="c1">// 1 or 2</span>
+<span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">onZoneEvent</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">CallbackInfo</span><span class="w"> </span><span class="n">cbInfo</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">zone</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cbInfo</span><span class="p">.</span><span class="n">eventArg</span><span class="p">;</span><span class="w">  </span><span class="c1">// 1 or 2</span>
 
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">events</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">ON_ACTIVE</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">cbInfo</span><span class="p">.</span><span class="n">eventType</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">ON_ACTIVE</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">      </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Entered zone &quot;</span><span class="p">);</span>
 <span class="w">      </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">zone</span><span class="p">);</span>
 <span class="w">    </span><span class="p">}</span>
 
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">events</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">ON_INACTIVE</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">cbInfo</span><span class="p">.</span><span class="n">eventType</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">ON_INACTIVE</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">      </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;Returned to center&quot;</span><span class="p">);</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">}</span>
@@ -900,7 +900,7 @@
 <p><code>ZoneMapper</code> translates the continuous difference into three discrete states: left (1), center (0), right (2)</p>
 </li>
 <li>
-<p><code>MultiButton</code> provides press/release semantics for zone entry/exit</p>
+<p><code>Button</code> provides press/release semantics for zone entry/exit</p>
 </li>
 </ul>
 <h2 id="example-2-virtual-button-from-external-events">Example 2: Virtual Button from External Events<a class="headerlink" href="#example-2-virtual-button-from-external-events" title="Permanent link">&para;</a></h2>

@@ -2,10 +2,10 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
   <compounddef id="classeva_1_1_tickable" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>eva::Tickable</compoundname>
-    <derivedcompoundref refid="classeva_1_1_toggle" prot="public" virt="non-virtual">eva::Toggle&lt; BinarizeDecor&lt; StabilizeDecor&lt; DigitalPinReader&lt; PIN, PIN_MODE &gt; &gt;, ACTIVE_LEVEL &gt; &gt;</derivedcompoundref>
-    <derivedcompoundref refid="classeva_1_1_toggle" prot="public" virt="non-virtual">eva::Toggle&lt; BinarizeDecor&lt; AnalogPinReader&lt; PIN, INPUT &gt;, THRESHOLD &gt; &gt;</derivedcompoundref>
+    <derivedcompoundref refid="classeva_1_1_switch" prot="public" virt="non-virtual">eva::Switch&lt; BinarizeDecor&lt; StabilizeDecor&lt; DigitalPinReader&lt; PIN, PIN_MODE &gt; &gt;, ACTIVE_LEVEL &gt; &gt;</derivedcompoundref>
+    <derivedcompoundref refid="classeva_1_1_switch" prot="public" virt="non-virtual">eva::Switch&lt; QuantizeDecor&lt; StabilizeDecor&lt; AnalogPinReader&lt; PIN, PIN_MODE &gt; &gt;, LEVELS... &gt; &gt;</derivedcompoundref>
     <derivedcompoundref refid="classeva_1_1_delay_timer" prot="public" virt="non-virtual">eva::DelayTimer</derivedcompoundref>
-    <derivedcompoundref refid="classeva_1_1_toggle" prot="public" virt="non-virtual">eva::Toggle&lt; READER &gt;</derivedcompoundref>
+    <derivedcompoundref refid="classeva_1_1_switch" prot="public" virt="non-virtual">eva::Switch&lt; READER &gt;</derivedcompoundref>
     <includes refid="eva_tickable_8h" local="no">evaTickable.h</includes>
     <sectiondef kind="private-attrib">
       <memberdef kind="variable" id="classeva_1_1_tickable_1a31b3f41cac1a6044d3a9439bdad50513" prot="private" static="no" mutable="no">
@@ -69,9 +69,9 @@
         </inbodydescription>
         <location file="src/evaTickable.h" line="12" column="5"/>
       </memberdef>
-      <memberdef kind="function" id="classeva_1_1_tickable_1acb71ddd4ec2bba0112001022c8c5ff6f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classeva_1_1_tickable_1a6b6ff95372ce0b94618029e05ed2b50a" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type></type>
-        <definition>eva::Tickable::~Tickable</definition>
+        <definition>virtual eva::Tickable::~Tickable</definition>
         <argsstring>()</argsstring>
         <name>~Tickable</name>
         <qualifiedname>eva::Tickable::~Tickable</qualifiedname>
@@ -81,7 +81,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaTickable.h" line="13" column="5"/>
+        <location file="src/evaTickable.h" line="13" column="13"/>
       </memberdef>
       <memberdef kind="function" id="classeva_1_1_tickable_1ad13287a77a330b14272d3e1ccdbb3de7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -130,11 +130,12 @@
         <reimplementedby refid="classeva_1_1_button_1a5b6706381ba6ff94e445a41889bf2c48">tick</reimplementedby>
         <reimplementedby refid="classeva_1_1_button_1a5b6706381ba6ff94e445a41889bf2c48">tick</reimplementedby>
         <reimplementedby refid="classeva_1_1_button_1a5b6706381ba6ff94e445a41889bf2c48">tick</reimplementedby>
+        <reimplementedby refid="classeva_1_1_contdown_timer_1aa679d082cac5a89cdc90da62311a026e">tick</reimplementedby>
         <reimplementedby refid="classeva_1_1_delay_timer_1a7cf30bb1be1a9a5002fde64adc479096">tick</reimplementedby>
         <reimplementedby refid="classeva_1_1_repeat_timer_1a84f35ebcd37c05ac743599b1ae7f2eb5">tick</reimplementedby>
-        <reimplementedby refid="classeva_1_1_toggle_1abfe040c276137af46ddc464ee17c2a25">tick</reimplementedby>
-        <reimplementedby refid="classeva_1_1_toggle_1abfe040c276137af46ddc464ee17c2a25">tick</reimplementedby>
-        <reimplementedby refid="classeva_1_1_toggle_1abfe040c276137af46ddc464ee17c2a25">tick</reimplementedby>
+        <reimplementedby refid="classeva_1_1_switch_1ad68f945aa49eefdc685d1b7a84358655">tick</reimplementedby>
+        <reimplementedby refid="classeva_1_1_switch_1ad68f945aa49eefdc685d1b7a84358655">tick</reimplementedby>
+        <reimplementedby refid="classeva_1_1_switch_1ad68f945aa49eefdc685d1b7a84358655">tick</reimplementedby>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -150,63 +151,69 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="9">
+      <node id="10">
         <label>eva::Button&lt; BinarizeDecor&lt; StabilizeDecor&lt; DigitalPinReader&lt; PIN, INPUT_PULLUP &gt; &gt;, LOW &gt; &gt;</label>
         <link refid="classeva_1_1_button"/>
-        <childnode refid="6" relation="public-inheritance">
+        <childnode refid="8" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="8">
+      <node id="9">
         <label>eva::Button&lt; BinarizeDecor&lt; StabilizeDecor&lt; DigitalPinReader&lt; PIN, PIN_MODE &gt; &gt;, ACTIVATES_ON &gt; &gt;</label>
         <link refid="classeva_1_1_button"/>
-        <childnode refid="6" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="7">
-        <label>eva::Button&lt; QuantizeDecor&lt; StabilizeDecor&lt; AnalogPinReader&lt; PIN, PIN_MODE &gt; &gt;, LEVELS... &gt; &gt;</label>
-        <link refid="classeva_1_1_button"/>
-        <childnode refid="6" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="10">
-        <label>eva::Button&lt; READER &gt;</label>
-        <link refid="classeva_1_1_button"/>
-        <childnode refid="6" relation="public-inheritance">
+        <childnode refid="8" relation="public-inheritance">
         </childnode>
       </node>
       <node id="4">
+        <label>eva::Button&lt; QuantizeDecor&lt; StabilizeDecor&lt; AnalogPinReader&lt; PIN, PIN_MODE &gt; &gt;, LEVELS... &gt; &gt;</label>
+        <link refid="classeva_1_1_button"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>eva::Button&lt; READER &gt;</label>
+        <link refid="classeva_1_1_button"/>
+        <childnode refid="8" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>eva::ContdownTimer</label>
+        <link refid="classeva_1_1_contdown_timer"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
         <label>eva::DelayTimer</label>
         <link refid="classeva_1_1_delay_timer"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="5">
+      <node id="7">
         <label>eva::RepeatTimer</label>
         <link refid="classeva_1_1_repeat_timer"/>
-        <childnode refid="4" relation="public-inheritance">
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>eva::Switch&lt; READER &gt;</label>
+        <link refid="classeva_1_1_switch"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>eva::Switch&lt; BinarizeDecor&lt; StabilizeDecor&lt; DigitalPinReader&lt; PIN, PIN_MODE &gt; &gt;, ACTIVE_LEVEL &gt; &gt;</label>
+        <link refid="classeva_1_1_switch"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>eva::Switch&lt; QuantizeDecor&lt; StabilizeDecor&lt; AnalogPinReader&lt; PIN, PIN_MODE &gt; &gt;, LEVELS... &gt; &gt;</label>
+        <link refid="classeva_1_1_switch"/>
+        <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
       <node id="1">
         <label>eva::Tickable</label>
         <link refid="classeva_1_1_tickable"/>
-      </node>
-      <node id="6">
-        <label>eva::Toggle&lt; READER &gt;</label>
-        <link refid="classeva_1_1_toggle"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="3">
-        <label>eva::Toggle&lt; BinarizeDecor&lt; AnalogPinReader&lt; PIN, INPUT &gt;, THRESHOLD &gt; &gt;</label>
-        <link refid="classeva_1_1_toggle"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="2">
-        <label>eva::Toggle&lt; BinarizeDecor&lt; StabilizeDecor&lt; DigitalPinReader&lt; PIN, PIN_MODE &gt; &gt;, ACTIVE_LEVEL &gt; &gt;</label>
-        <link refid="classeva_1_1_toggle"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
       </node>
     </inheritancegraph>
     <location file="src/evaTickable.h" line="9" column="3" bodyfile="src/evaTickable.h" bodystart="10" bodyend="33"/>
@@ -218,7 +225,7 @@
       <member refid="classeva_1_1_tickable_1ad13287a77a330b14272d3e1ccdbb3de7" prot="public" virt="non-virtual"><scope>eva::Tickable</scope><name>tac</name></member>
       <member refid="classeva_1_1_tickable_1ac7bb568a397ac2147fd6e292d2846ba6" prot="private" virt="pure-virtual"><scope>eva::Tickable</scope><name>tick</name></member>
       <member refid="classeva_1_1_tickable_1a667f47cdee5f03eed323cebb27e8ab8e" prot="public" virt="non-virtual"><scope>eva::Tickable</scope><name>Tickable</name></member>
-      <member refid="classeva_1_1_tickable_1acb71ddd4ec2bba0112001022c8c5ff6f" prot="public" virt="non-virtual"><scope>eva::Tickable</scope><name>~Tickable</name></member>
+      <member refid="classeva_1_1_tickable_1a6b6ff95372ce0b94618029e05ed2b50a" prot="public" virt="virtual"><scope>eva::Tickable</scope><name>~Tickable</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

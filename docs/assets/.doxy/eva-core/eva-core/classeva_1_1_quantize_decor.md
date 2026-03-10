@@ -19,6 +19,7 @@ _Decorator that quantizes analog readings to discrete levels._
 Inherits the following classes: READER
 
 
+Inherited by the following classes: [eva::Switch](classeva_1_1_switch.md)
 
 
 

@@ -24,8 +24,8 @@
 | file | [**evaBlinkingIndicator.h**](eva_blinking_indicator_8h.md) <br> |
 | file | [**evaButton.h**](eva_button_8h.md) <br> |
 | file | [**evaCommon.h**](eva_common_8h.md) <br> |
-| file | [**evaConstants.h**](eva_constants_8h.md) <br> |
 | file | [**evaCountdownIndicator.h**](eva_countdown_indicator_8h.md) <br> |
+| file | [**evaCountdownTimer.h**](eva_countdown_timer_8h.md) <br> |
 | file | [**evaDelayTimer.h**](eva_delay_timer_8h.md) <br> |
 | file | [**evaHandler.h**](eva_handler_8h.md) <br> |
 | file | [**evaIReader.h**](eva_i_reader_8h.md) <br> |
@@ -36,9 +36,9 @@
 | file | [**evaRepeatTimer.h**](eva_repeat_timer_8h.md) <br> |
 | file | [**evaSlider.h**](eva_slider_8h.md) <br> |
 | file | [**evaStdReaders.h**](eva_std_readers_8h.md) <br> |
+| file | [**evaSwitch.h**](eva_switch_8h.md) <br> |
 | file | [**evaTac.h**](eva_tac_8h.md) <br> |
 | file | [**evaTickable.h**](eva_tickable_8h.md) <br> |
-| file | [**evaToggle.h**](eva_toggle_8h.md) <br> |
 
 
 

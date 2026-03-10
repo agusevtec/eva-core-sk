@@ -288,7 +288,7 @@
       <member refid="classeva_1_1_tickable_1ad13287a77a330b14272d3e1ccdbb3de7" prot="public" virt="non-virtual"><scope>eva::RepeatTimer</scope><name>tac</name></member>
       <member refid="classeva_1_1_repeat_timer_1a84f35ebcd37c05ac743599b1ae7f2eb5" prot="private" virt="virtual"><scope>eva::RepeatTimer</scope><name>tick</name></member>
       <member refid="classeva_1_1_tickable_1a667f47cdee5f03eed323cebb27e8ab8e" prot="public" virt="non-virtual"><scope>eva::RepeatTimer</scope><name>Tickable</name></member>
-      <member refid="classeva_1_1_tickable_1acb71ddd4ec2bba0112001022c8c5ff6f" prot="public" virt="non-virtual"><scope>eva::RepeatTimer</scope><name>~Tickable</name></member>
+      <member refid="classeva_1_1_tickable_1a6b6ff95372ce0b94618029e05ed2b50a" prot="public" virt="virtual"><scope>eva::RepeatTimer</scope><name>~Tickable</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

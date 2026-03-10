@@ -5,7 +5,7 @@
     <includes local="no">Arduino.h</includes>
     <includedby refid="eva_joystick_8h" local="yes">src/evaJoystick.h</includedby>
     <includedby refid="eva_slider_8h" local="yes">src/evaSlider.h</includedby>
-    <includedby refid="eva_toggle_8h" local="yes">src/evaToggle.h</includedby>
+    <includedby refid="eva_switch_8h" local="yes">src/evaSwitch.h</includedby>
     <incdepgraph>
       <node id="2">
         <label>Arduino.h</label>
@@ -41,8 +41,8 @@
         </childnode>
       </node>
       <node id="4">
-        <label>src/evaToggle.h</label>
-        <link refid="eva_toggle_8h_source"/>
+        <label>src/evaSwitch.h</label>
+        <link refid="eva_switch_8h_source"/>
         <childnode refid="5" relation="include">
         </childnode>
       </node>

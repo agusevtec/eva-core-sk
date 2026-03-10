@@ -9,8 +9,8 @@ nav:
   - QuickStart:
     - The loop-cycle: quickstart/loop-cycle.md
     - Working with buttons: quickstart/working-with-buttons.md
-    - Flexibility: quickstart/flexibility.md
     - Performance: quickstart/performance.md
+    - Flexibility: quickstart/flexibility.md
   - Ecosystem:
     - Motivation: ecosystem/motivation.md
     - Invitation: ecosystem/invitation.md

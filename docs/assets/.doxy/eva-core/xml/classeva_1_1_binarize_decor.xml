@@ -3,8 +3,7 @@
   <compounddef id="classeva_1_1_binarize_decor" kind="class" language="C++" prot="public">
     <compoundname>eva::BinarizeDecor</compoundname>
     <basecompoundref prot="public" virt="non-virtual">READER</basecompoundref>
-    <derivedcompoundref refid="classeva_1_1_toggle" prot="public" virt="non-virtual">eva::Toggle&lt; BinarizeDecor&lt; StabilizeDecor&lt; DigitalPinReader&lt; PIN, PIN_MODE &gt; &gt;, ACTIVE_LEVEL &gt; &gt;</derivedcompoundref>
-    <derivedcompoundref refid="classeva_1_1_toggle" prot="public" virt="non-virtual">eva::Toggle&lt; BinarizeDecor&lt; AnalogPinReader&lt; PIN, INPUT &gt;, THRESHOLD &gt; &gt;</derivedcompoundref>
+    <derivedcompoundref refid="classeva_1_1_switch" prot="public" virt="non-virtual">eva::Switch&lt; BinarizeDecor&lt; StabilizeDecor&lt; DigitalPinReader&lt; PIN, PIN_MODE &gt; &gt;, ACTIVE_LEVEL &gt; &gt;</derivedcompoundref>
     <includes refid="eva_reader_decors_8h" local="no">evaReaderDecors.h</includes>
     <templateparamlist>
       <param>
@@ -47,15 +46,9 @@
         <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="4">
-        <label>eva::Toggle&lt; BinarizeDecor&lt; AnalogPinReader&lt; PIN, INPUT &gt;, THRESHOLD &gt; &gt;</label>
-        <link refid="classeva_1_1_toggle"/>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-      </node>
       <node id="3">
-        <label>eva::Toggle&lt; BinarizeDecor&lt; StabilizeDecor&lt; DigitalPinReader&lt; PIN, PIN_MODE &gt; &gt;, ACTIVE_LEVEL &gt; &gt;</label>
-        <link refid="classeva_1_1_toggle"/>
+        <label>eva::Switch&lt; BinarizeDecor&lt; StabilizeDecor&lt; DigitalPinReader&lt; PIN, PIN_MODE &gt; &gt;, ACTIVE_LEVEL &gt; &gt;</label>
+        <link refid="classeva_1_1_switch"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>

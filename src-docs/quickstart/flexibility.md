@@ -1,13 +1,13 @@
 # Flexibility: Beyond Standard Inputs
 
-The true power of the EVA concept and the SK part of the eva-core-sk library lies in its flexibility. Because Button and MultiButton are built on templates and decorators, they can work with any source of numerical data—not just physical pins. This section shows how you can adapt the library to unconventional input sources.
+The true power of the EVA concept and the SK part of the eva-core-sk library lies in its flexibility. Because Switch and Button are built on templates and decorators, they can work with any source of numerical data—not just physical pins. This section shows how you can adapt the library to unconventional input sources.
 
 ## Example 1: Differential Joystick with Custom Zone Detection
 
 Some precision joysticks use differential readings to cancel noise and improve accuracy. Here's how to combine a differential reader with custom zone mapping to create a 3-position virtual switch:
 
 ```cpp
-#include <evaMultiButton.h>
+#include <evaSwitch.h>
 #include <evaTac.h>
 #include <evaHandler.h>
 
@@ -41,8 +41,8 @@ public:
   }
 };
 
-// Step 3: Assemble into a MultiButton
-using DifferentialSwitch = MultiButton<
+// Step 3: Assemble into a Button
+using DifferentialSwitch = Switch<
   StabilizeDecor<
     ZoneMapper<
       DifferentialReader<A0, A1>
@@ -54,15 +54,15 @@ class App {
 private:
   DifferentialSwitch joystickZone;
   
-  void onZoneEvent(void* sender, long events) {
-    unsigned short zone = events & 0xFF;  // 1 or 2
+  void onZoneEvent(void* sender, CallbackInfo cbInfo) {
+    unsigned short zone = cbInfo.eventArg;  // 1 or 2
     
-    if (events & ON_ACTIVE) {
+    if (cbInfo.eventType & ON_ACTIVE) {
       Serial.print("Entered zone ");
       Serial.println(zone);
     }
     
-    if (events & ON_INACTIVE) {
+    if (cbInfo.eventType & ON_INACTIVE) {
       Serial.println("Returned to center");
     }
   }
@@ -83,7 +83,7 @@ public:
 
 - `ZoneMapper` translates the continuous difference into three discrete states: left (1), center (0), right (2)
 
-- `MultiButton` provides press/release semantics for zone entry/exit
+- `Button` provides press/release semantics for zone entry/exit
 
 ## Example 2: Virtual Button from External Events
 

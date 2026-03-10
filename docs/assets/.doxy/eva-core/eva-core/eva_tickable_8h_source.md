@@ -17,7 +17,7 @@ namespace eva
   {
   public:
     Tickable();
-    ~Tickable();
+    virtual ~Tickable();
 
     static Tickable *chain();
 

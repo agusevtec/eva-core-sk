@@ -7,23 +7,23 @@
     <derivedcompoundref refid="classeva_1_1_handler_f" prot="public" virt="non-virtual">eva::HandlerF</derivedcompoundref>
     <includes refid="eva_handler_8h" local="no">evaHandler.h</includes>
     <sectiondef kind="public-func">
-      <memberdef kind="function" id="classeva_1_1_i_handler_1a81dab5d3b9bed6a215f357a75e11b4e6" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+      <memberdef kind="function" id="classeva_1_1_i_handler_1a2c2e49933b5f061904700baad54b5167" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>void</type>
         <definition>virtual void eva::IHandler::invoke</definition>
-        <argsstring>(void *msgSender, long argsMask)=0</argsstring>
+        <argsstring>(void *msgSender, CallbackInfo cbInfo)=0</argsstring>
         <name>invoke</name>
         <qualifiedname>eva::IHandler::invoke</qualifiedname>
-        <reimplementedby refid="classeva_1_1_blinking_indicator_1a92dd3758d4e2d5a19c382ca5e1533408">invoke</reimplementedby>
-        <reimplementedby refid="classeva_1_1_countdown_indicator_1ab73371b500e4d0b8688c70f3daddc6d1">invoke</reimplementedby>
-        <reimplementedby refid="classeva_1_1_handler_1ae2118456916e862e1f4e376bcc368db4">invoke</reimplementedby>
-        <reimplementedby refid="classeva_1_1_handler_f_1a9029b5e5bf78f933dc9299de8a9b0d3b">invoke</reimplementedby>
+        <reimplementedby refid="classeva_1_1_blinking_indicator_1a722d78718da8196e12cb84b2a593dab9">invoke</reimplementedby>
+        <reimplementedby refid="classeva_1_1_countdown_indicator_1aa4ef30c7c817fbdb6f2b317e2e957bab">invoke</reimplementedby>
+        <reimplementedby refid="classeva_1_1_handler_1aff64bbaf430e27aae26eb8b6d4a9d332">invoke</reimplementedby>
+        <reimplementedby refid="classeva_1_1_handler_f_1a177cc07aec81924a9bf58a673ddf9ef6">invoke</reimplementedby>
         <param>
           <type>void *</type>
           <declname>msgSender</declname>
         </param>
         <param>
-          <type>long</type>
-          <declname>argsMask</declname>
+          <type><ref refid="structeva_1_1_callback_info" kindref="compound">CallbackInfo</ref></type>
+          <declname>cbInfo</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -31,7 +31,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaHandler.h" line="13" column="22"/>
+        <location file="src/evaHandler.h" line="20" column="22"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -69,9 +69,9 @@
         <link refid="classeva_1_1_i_handler"/>
       </node>
     </inheritancegraph>
-    <location file="src/evaHandler.h" line="10" column="5" bodyfile="src/evaHandler.h" bodystart="11" bodyend="14"/>
+    <location file="src/evaHandler.h" line="17" column="5" bodyfile="src/evaHandler.h" bodystart="18" bodyend="21"/>
     <listofallmembers>
-      <member refid="classeva_1_1_i_handler_1a81dab5d3b9bed6a215f357a75e11b4e6" prot="public" virt="pure-virtual"><scope>eva::IHandler</scope><name>invoke</name></member>
+      <member refid="classeva_1_1_i_handler_1a2c2e49933b5f061904700baad54b5167" prot="public" virt="pure-virtual"><scope>eva::IHandler</scope><name>invoke</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

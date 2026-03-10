@@ -17,11 +17,11 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.4">
     
     
       
-        <title>Class eva::Toggle - EVA Core | EVA Survival Kit</title>
+        <title>Class eva::Switch - EVA Core | EVA Survival Kit</title>
       
     
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#class-evatoggle" class="md-skip">
+        <a href="#class-evaswitch" class="md-skip">
           Skip to content
         </a>
       
@@ -98,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Class eva::Toggle
+              Class eva::Switch
             
           </span>
         </div>
@@ -348,14 +348,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../quickstart/flexibility/" class="md-nav__link">
+      <a href="../../quickstart/performance/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Flexibility
+    Performance
   
 
     
@@ -376,14 +376,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../quickstart/performance/" class="md-nav__link">
+      <a href="../../quickstart/flexibility/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Performance
+    Flexibility
   
 
     
@@ -757,10 +757,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#function-toggle-12" class="md-nav__link">
+  <a href="#function-switch-12" class="md-nav__link">
     <span class="md-ellipsis">
       
-        function Toggle [1/2]
+        function Switch [1/2]
       
     </span>
   </a>
@@ -768,10 +768,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#function-toggle-22" class="md-nav__link">
+  <a href="#function-switch-22" class="md-nav__link">
     <span class="md-ellipsis">
       
-        function Toggle [2/2]
+        function Switch [2/2]
       
     </span>
   </a>
@@ -829,10 +829,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#variable-isenabled" class="md-nav__link">
+  <a href="#variable-curiosity" class="md-nav__link">
     <span class="md-ellipsis">
       
-        variable isEnabled
+        variable curiosity
       
     </span>
   </a>
@@ -925,15 +925,15 @@
   
 
 
-<h1 id="class-evatoggle">Class eva::Toggle<a class="headerlink" href="#class-evatoggle" title="Permanent link">&para;</a></h1>
+<h1 id="class-evaswitch">Class eva::Switch<a class="headerlink" href="#class-evaswitch" title="Permanent link">&para;</a></h1>
 <p><strong>template &lt;class READER&gt;</strong></p>
-<p><a href="../annotated/"><strong>ClassList</strong></a> <strong>&gt;</strong> <a href="../namespaceeva/"><strong>eva</strong></a> <strong>&gt;</strong> <a href="./"><strong>Toggle</strong></a></p>
-<p><a href="./"><em><strong>Toggle</strong></em></a> <em>- легковесная версия</em><a href="../classeva_1_1_button/"><em><strong>Button</strong></em></a> <em>без детекции кликов</em><a href="#detailed-description">More...</a></p>
+<p><a href="../annotated/"><strong>ClassList</strong></a> <strong>&gt;</strong> <a href="../namespaceeva/"><strong>eva</strong></a> <strong>&gt;</strong> <a href="./"><strong>Switch</strong></a></p>
+<p><em>Universal switch/button class for multi-valued input sources.</em> <a href="#detailed-description">More...</a></p>
 <ul>
-<li><code>#include &lt;evaToggle.h&gt;</code></li>
+<li><code>#include &lt;evaSwitch.h&gt;</code></li>
 </ul>
 <p>Inherits the following classes: READER,  <a href="../classeva_1_1_tickable/">eva::Tickable</a></p>
-<p>Inherited by the following classes: <a href="../classeva_1_1_button/">eva::Button</a>,  <a href="../classeva_1_1_button/">eva::Button</a>,  <a href="../classeva_1_1_button/">eva::Button</a>,  <a href="../classeva_1_1_button/">eva::Button</a></p>
+<p>Inherited by the following classes: <a href="../classeva_1_1_button/">eva::Button</a>,  <a href="../classeva_1_1_button/">eva::Button</a>,  <a href="../classeva_1_1_button/">eva::Button</a></p>
 <h2 id="public-functions">Public Functions<a class="headerlink" href="#public-functions" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -945,23 +945,23 @@
 <tbody>
 <tr>
 <td style="text-align: right;"></td>
-<td style="text-align: left;"><a href="#function-toggle-12"><strong>Toggle</strong></a> () <br></td>
+<td style="text-align: left;"><a href="#function-switch-12"><strong>Switch</strong></a> () <br></td>
 </tr>
 <tr>
 <td style="text-align: right;"></td>
-<td style="text-align: left;"><a href="#function-toggle-22"><strong>Toggle</strong></a> (<a href="../classeva_1_1_i_handler/"><strong>IHandler</strong></a> * listener, unsigned short eventMask) <br></td>
+<td style="text-align: left;"><a href="#function-switch-22"><strong>Switch</strong></a> (<a href="../classeva_1_1_i_handler/"><strong>IHandler</strong></a> * listener, unsigned short eventMask) <br></td>
 </tr>
 <tr>
-<td style="text-align: right;">Toggle *</td>
-<td style="text-align: left;"><a href="#function-enable"><strong>enable</strong></a> (bool enabled) <br><em>Enables or disables the toggle.</em></td>
+<td style="text-align: right;">Switch *</td>
+<td style="text-align: left;"><a href="#function-enable"><strong>enable</strong></a> (bool enabled) <br><em>Enables or disables the switch.</em></td>
 </tr>
 <tr>
 <td style="text-align: right;">signed short</td>
-<td style="text-align: left;"><a href="#function-getvalue"><strong>getValue</strong></a> () <br><em>Gets the button level code identifying which button was pressed.</em></td>
+<td style="text-align: left;"><a href="#function-getvalue"><strong>getValue</strong></a> () <br><em>Gets the current level code.</em></td>
 </tr>
 <tr>
-<td style="text-align: right;">Toggle *</td>
-<td style="text-align: left;"><a href="#function-setlistener"><strong>setListener</strong></a> (<a href="../classeva_1_1_i_handler/"><strong>IHandler</strong></a> * listener, unsigned short eventMask) <br><em>Sets the Listener for switch events.</em></td>
+<td style="text-align: right;">Switch *</td>
+<td style="text-align: left;"><a href="#function-setlistener"><strong>setListener</strong></a> (<a href="../classeva_1_1_i_handler/"><strong>IHandler</strong></a> * listener, unsigned short eventMask) <br><em>Sets the event listener for this switch.</em></td>
 </tr>
 </tbody>
 </table>
@@ -984,7 +984,7 @@
 <td style="text-align: left;"><a href="../classeva_1_1_tickable/#function-tac"><strong>tac</strong></a> () <br><em>Triggers tick on this and all linked tickables.</em></td>
 </tr>
 <tr>
-<td style="text-align: right;"></td>
+<td style="text-align: right;">virtual</td>
 <td style="text-align: left;"><a href="../classeva_1_1_tickable/#function-tickable"><strong>~Tickable</strong></a> () <br></td>
 </tr>
 </tbody>
@@ -1015,11 +1015,11 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: right;">bool</td>
-<td style="text-align: left;"><a href="#variable-isenabled"><strong>isEnabled</strong></a>   = <code>true</code><br></td>
+<td style="text-align: right;">unsigned char</td>
+<td style="text-align: left;"><a href="#variable-curiosity"><strong>curiosity</strong></a>   = <code>0</code><br></td>
 </tr>
 <tr>
-<td style="text-align: right;">unsigned char</td>
+<td style="text-align: right;">signed char</td>
 <td style="text-align: left;"><a href="#variable-levelcode"><strong>levelCode</strong></a>   = <code>0</code><br></td>
 </tr>
 <tr>
@@ -1039,7 +1039,7 @@
 <tbody>
 <tr>
 <td style="text-align: right;">void</td>
-<td style="text-align: left;"><a href="#function-notify"><strong>notify</strong></a> (unsigned short eventTypeMask) <br></td>
+<td style="text-align: left;"><a href="#function-notify"><strong>notify</strong></a> (unsigned short eventType, signed short eventCode) <br></td>
 </tr>
 <tr>
 <td style="text-align: right;">virtual void</td>
@@ -1048,22 +1048,32 @@
 </tbody>
 </table>
 <h2 id="detailed-description">Detailed Description<a class="headerlink" href="#detailed-description" title="Permanent link">&para;</a></h2>
-<p>Отличается от <a href="../classeva_1_1_button/"><strong>Button</strong></a>:
-* Не хранит pressTime (экономия 4 байта!)</p>
-<p>Идеально для:
-* Тумблеров
-* Концевых выключателей
-* Герконов
-* Датчиков движения </p>
+<p>This class handles both switch and button behavior within the same component. The difference is purely semantic:
+* React to ON_ACTIVE/ON_INACTIVE for switch-like behavior
+* React to ON_PRESS/ON_RELEASE for button-like behavior</p>
+<p>Typical applications:
+* Simple on/off switches (binary reader)
+* Push buttons with press/release detection
+* Resistor ladder buttons on a single ADC pin
+* Custom encoding schemes (rotary encoders, keypads)
+* Multiplexed inputs</p>
+<p>Events include both the event type and the level code in argsMask, allowing identification of which specific input triggered the event.</p>
+<p><strong>Template parameters:</strong></p>
+<ul>
+<li><code>READER</code> Input reader type that returns numeric codes (0 = inactive, &gt;0 = active state identifier) </li>
+</ul>
+<p><strong>See also:</strong> PinSwitch Digital pin switches with debouncing (typical use) </p>
+<p><strong>See also:</strong> PullUpSwitch Pull-up switches convenience alias </p>
+<p><strong>See also:</strong> PinMultiSwitch Multiple switches on one ADC pin </p>
 <h2 id="public-functions-documentation">Public Functions Documentation<a class="headerlink" href="#public-functions-documentation" title="Permanent link">&para;</a></h2>
-<h3 id="function-toggle-12">function Toggle [1/2]<a class="headerlink" href="#function-toggle-12" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">Toggle</span><span class="o">::</span><span class="n">Toggle</span><span class="w"> </span><span class="p">()</span><span class="w"> </span>
+<h3 id="function-switch-12">function Switch [1/2]<a class="headerlink" href="#function-switch-12" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">Switch</span><span class="o">::</span><span class="n">Switch</span><span class="w"> </span><span class="p">()</span><span class="w"> </span>
 </code></pre></div>
 
 <hr>
 
-<h3 id="function-toggle-22">function Toggle [2/2]<a class="headerlink" href="#function-toggle-22" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">Toggle</span><span class="o">::</span><span class="n">Toggle</span><span class="w"> </span><span class="p">(</span>
+<h3 id="function-switch-22">function Switch [2/2]<a class="headerlink" href="#function-switch-22" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">Switch</span><span class="o">::</span><span class="n">Switch</span><span class="w"> </span><span class="p">(</span>
 <span class="w">    </span><span class="n">IHandler</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">listener</span><span class="p">,</span>
 <span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">eventMask</span>
 <span class="p">)</span><span class="w"> </span>
@@ -1072,32 +1082,33 @@
 <hr>
 
 <h3 id="function-enable">function enable<a class="headerlink" href="#function-enable" title="Permanent link">&para;</a></h3>
-<p><em>Enables or disables the toggle.</em> </p>
-<div class="codehilite"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="n">Toggle</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">Toggle</span><span class="o">::</span><span class="n">enable</span><span class="w"> </span><span class="p">(</span>
+<p><em>Enables or disables the switch.</em> </p>
+<div class="codehilite"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="n">Switch</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">Switch</span><span class="o">::</span><span class="n">enable</span><span class="w"> </span><span class="p">(</span>
 <span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">enabled</span>
 <span class="p">)</span><span class="w"> </span>
 </code></pre></div>
 
+<p>When disabled, the switch stops generating events.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
 <li><code>enabled</code> True to enable, false to disable </li>
 </ul>
 <p><strong>Returns:</strong></p>
-<p>Pointer to this </p>
+<p>Pointer to this for method chaining </p>
 <hr>
 
 <h3 id="function-getvalue">function getValue<a class="headerlink" href="#function-getvalue" title="Permanent link">&para;</a></h3>
-<p><em>Gets the button level code identifying which button was pressed.</em> </p>
-<div class="codehilite"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="kt">signed</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">Toggle</span><span class="o">::</span><span class="n">getValue</span><span class="w"> </span><span class="p">()</span><span class="w"> </span>
+<p><em>Gets the current level code.</em> </p>
+<div class="codehilite"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="kt">signed</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">Switch</span><span class="o">::</span><span class="n">getValue</span><span class="w"> </span><span class="p">()</span><span class="w"> </span>
 </code></pre></div>
 
 <p><strong>Returns:</strong></p>
-<p>Level code (0 for no button, &gt;0 for specific button) </p>
+<p>Level code (0 for inactive, positive value for active state) </p>
 <hr>
 
 <h3 id="function-setlistener">function setListener<a class="headerlink" href="#function-setlistener" title="Permanent link">&para;</a></h3>
-<p><em>Sets the Listener for switch events.</em> </p>
-<div class="codehilite"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="n">Toggle</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">Toggle</span><span class="o">::</span><span class="n">setListener</span><span class="w"> </span><span class="p">(</span>
+<p><em>Sets the event listener for this switch.</em> </p>
+<div class="codehilite"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="n">Switch</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">Switch</span><span class="o">::</span><span class="n">setListener</span><span class="w"> </span><span class="p">(</span>
 <span class="w">    </span><span class="n">IHandler</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">listener</span><span class="p">,</span>
 <span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">eventMask</span>
 <span class="p">)</span><span class="w"> </span>
@@ -1105,46 +1116,49 @@
 
 <p><strong>Parameters:</strong></p>
 <ul>
-<li><code>listener</code> - callback method </li>
-<li><code>eventMask</code> - ON_ACTIVE, ON_INACTIVE, ON_CHANGE </li>
+<li><code>listener</code> Callback object implementing <a href="../classeva_1_1_i_handler/"><strong>IHandler</strong></a> </li>
+<li><code>eventMask</code> Bitmask of events to listen for (ON_PRESS, ON_RELEASE, ON_CHANGED) </li>
 </ul>
+<p><strong>Returns:</strong></p>
+<p>Pointer to this for method chaining </p>
 <hr>
 <h2 id="protected-attributes-documentation">Protected Attributes Documentation<a class="headerlink" href="#protected-attributes-documentation" title="Permanent link">&para;</a></h2>
-<h3 id="variable-isenabled">variable isEnabled<a class="headerlink" href="#variable-isenabled" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><code><span class="kt">bool</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">Toggle</span><span class="o">&lt;</span><span class="w"> </span><span class="n">READER</span><span class="w"> </span><span class="o">&gt;::</span><span class="n">isEnabled</span><span class="p">;</span>
+<h3 id="variable-curiosity">variable curiosity<a class="headerlink" href="#variable-curiosity" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">Switch</span><span class="o">&lt;</span><span class="w"> </span><span class="n">READER</span><span class="w"> </span><span class="o">&gt;::</span><span class="n">curiosity</span><span class="p">;</span>
 </code></pre></div>
 
 <hr>
 
 <h3 id="variable-levelcode">variable levelCode<a class="headerlink" href="#variable-levelcode" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><code><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">Toggle</span><span class="o">&lt;</span><span class="w"> </span><span class="n">READER</span><span class="w"> </span><span class="o">&gt;::</span><span class="n">levelCode</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><code><span class="kt">signed</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">Switch</span><span class="o">&lt;</span><span class="w"> </span><span class="n">READER</span><span class="w"> </span><span class="o">&gt;::</span><span class="n">levelCode</span><span class="p">;</span>
 </code></pre></div>
 
 <hr>
 
 <h3 id="variable-listener">variable listener<a class="headerlink" href="#variable-listener" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><code><span class="n">IHandler</span><span class="o">*</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">Toggle</span><span class="o">&lt;</span><span class="w"> </span><span class="n">READER</span><span class="w"> </span><span class="o">&gt;::</span><span class="n">listener</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><code><span class="n">IHandler</span><span class="o">*</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">Switch</span><span class="o">&lt;</span><span class="w"> </span><span class="n">READER</span><span class="w"> </span><span class="o">&gt;::</span><span class="n">listener</span><span class="p">;</span>
 </code></pre></div>
 
 <hr>
 <h2 id="protected-functions-documentation">Protected Functions Documentation<a class="headerlink" href="#protected-functions-documentation" title="Permanent link">&para;</a></h2>
 <h3 id="function-notify">function notify<a class="headerlink" href="#function-notify" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">Toggle</span><span class="o">::</span><span class="n">notify</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">eventTypeMask</span>
+<div class="codehilite"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">Switch</span><span class="o">::</span><span class="n">notify</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">eventType</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">signed</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">eventCode</span>
 <span class="p">)</span><span class="w"> </span>
 </code></pre></div>
 
 <hr>
 
 <h3 id="function-tick">function tick<a class="headerlink" href="#function-tick" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="k">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">Toggle</span><span class="o">::</span><span class="n">tick</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">override</span>
+<div class="codehilite"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="k">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">Switch</span><span class="o">::</span><span class="n">tick</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">override</span>
 </code></pre></div>
 
 <p>Implements <a href="../classeva_1_1_tickable/#function-tick"><em>eva::Tickable::tick</em></a></p>
 <hr>
 
 <hr />
-<p>The documentation for this class was generated from the following file <code>src/evaToggle.h</code></p>
+<p>The documentation for this class was generated from the following file <code>src/evaSwitch.h</code></p>
 
 
 

@@ -73,8 +73,8 @@ Inherits the following classes: [eva::IHandler](classeva_1_1_i_handler.md)
 
 | Type | Name |
 | ---: | :--- |
-|   | [**HandlerF**](#function-handlerf) (void(\*)(void \*, long) function) <br> |
-| virtual void | [**invoke**](#function-invoke) (void \* msgSender, long argsMask) override<br> |
+|   | [**HandlerF**](#function-handlerf) (void(\*)(void \*, [**CallbackInfo**](structeva_1_1_callback_info.md)) function) <br> |
+| virtual void | [**invoke**](#function-invoke) (void \* msgSender, [**CallbackInfo**](structeva_1_1_callback_info.md) cbInfo) override<br> |
 
 
 ## Public Functions inherited from eva::IHandler
@@ -83,7 +83,7 @@ See [eva::IHandler](classeva_1_1_i_handler.md)
 
 | Type | Name |
 | ---: | :--- |
-| virtual void | [**invoke**](classeva_1_1_i_handler.md#function-invoke) (void \* msgSender, long argsMask) = 0<br> |
+| virtual void | [**invoke**](classeva_1_1_i_handler.md#function-invoke) (void \* msgSender, [**CallbackInfo**](structeva_1_1_callback_info.md) cbInfo) = 0<br> |
 
 
 
@@ -147,7 +147,7 @@ See [eva::IHandler](classeva_1_1_i_handler.md)
 
 ```C++
 inline eva::HandlerF::HandlerF (
-    void(*)(void *, long) function
+    void(*)(void *, CallbackInfo ) function
 ) 
 ```
 
@@ -163,7 +163,7 @@ inline eva::HandlerF::HandlerF (
 ```C++
 inline virtual void eva::HandlerF::invoke (
     void * msgSender,
-    long argsMask
+    CallbackInfo cbInfo
 ) override
 ```
 

@@ -53,7 +53,7 @@ Inherited by the following classes: [eva::BlinkingIndicator](classeva_1_1_blinki
 
 | Type | Name |
 | ---: | :--- |
-| virtual void | [**invoke**](#function-invoke) (void \* msgSender, long argsMask) = 0<br> |
+| virtual void | [**invoke**](#function-invoke) (void \* msgSender, [**CallbackInfo**](structeva_1_1_callback_info.md) cbInfo) = 0<br> |
 
 
 
@@ -92,7 +92,7 @@ Inherited by the following classes: [eva::BlinkingIndicator](classeva_1_1_blinki
 ```C++
 virtual void eva::IHandler::invoke (
     void * msgSender,
-    long argsMask
+    CallbackInfo cbInfo
 ) = 0
 ```
 

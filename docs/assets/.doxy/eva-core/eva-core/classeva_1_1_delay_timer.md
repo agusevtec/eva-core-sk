@@ -17,7 +17,7 @@ _One-shot timer that fires after a delay._
 Inherits the following classes: [eva::Tickable](classeva_1_1_tickable.md)
 
 
-Inherited by the following classes: [eva::RepeatTimer](classeva_1_1_repeat_timer.md)
+Inherited by the following classes: [eva::ContdownTimer](classeva_1_1_contdown_timer.md),  [eva::RepeatTimer](classeva_1_1_repeat_timer.md)
 
 
 
@@ -91,7 +91,7 @@ See [eva::Tickable](classeva_1_1_tickable.md)
 | ---: | :--- |
 |   | [**Tickable**](classeva_1_1_tickable.md#function-tickable) () <br> |
 |  void | [**tac**](classeva_1_1_tickable.md#function-tac) () <br>_Triggers tick on this and all linked tickables._  |
-|   | [**~Tickable**](classeva_1_1_tickable.md#function-tickable) () <br> |
+| virtual  | [**~Tickable**](classeva_1_1_tickable.md#function-tickable) () <br> |
 
 
 

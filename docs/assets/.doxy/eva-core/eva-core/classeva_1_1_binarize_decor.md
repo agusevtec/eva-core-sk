@@ -19,7 +19,7 @@ _Decorator that converts analog reading to binary based on level._
 Inherits the following classes: READER
 
 
-Inherited by the following classes: [eva::Toggle](classeva_1_1_toggle.md),  [eva::Toggle](classeva_1_1_toggle.md)
+Inherited by the following classes: [eva::Switch](classeva_1_1_switch.md)
 
 
 

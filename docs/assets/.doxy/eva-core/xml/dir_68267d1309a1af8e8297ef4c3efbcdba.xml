@@ -5,8 +5,8 @@
     <innerfile refid="eva_blinking_indicator_8h">evaBlinkingIndicator.h</innerfile>
     <innerfile refid="eva_button_8h">evaButton.h</innerfile>
     <innerfile refid="eva_common_8h">evaCommon.h</innerfile>
-    <innerfile refid="eva_constants_8h">evaConstants.h</innerfile>
     <innerfile refid="eva_countdown_indicator_8h">evaCountdownIndicator.h</innerfile>
+    <innerfile refid="eva_countdown_timer_8h">evaCountdownTimer.h</innerfile>
     <innerfile refid="eva_delay_timer_8h">evaDelayTimer.h</innerfile>
     <innerfile refid="eva_handler_8h">evaHandler.h</innerfile>
     <innerfile refid="eva_indicator_8h">evaIndicator.h</innerfile>
@@ -17,9 +17,9 @@
     <innerfile refid="eva_repeat_timer_8h">evaRepeatTimer.h</innerfile>
     <innerfile refid="eva_slider_8h">evaSlider.h</innerfile>
     <innerfile refid="eva_std_readers_8h">evaStdReaders.h</innerfile>
+    <innerfile refid="eva_switch_8h">evaSwitch.h</innerfile>
     <innerfile refid="eva_tac_8h">evaTac.h</innerfile>
     <innerfile refid="eva_tickable_8h">evaTickable.h</innerfile>
-    <innerfile refid="eva_toggle_8h">evaToggle.h</innerfile>
     <briefdescription>
     </briefdescription>
     <detaileddescription>

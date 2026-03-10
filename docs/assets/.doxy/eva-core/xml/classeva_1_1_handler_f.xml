@@ -5,10 +5,10 @@
     <basecompoundref refid="classeva_1_1_i_handler" prot="public" virt="non-virtual">eva::IHandler</basecompoundref>
     <includes refid="eva_handler_8h" local="no">evaHandler.h</includes>
     <sectiondef kind="private-attrib">
-      <memberdef kind="variable" id="classeva_1_1_handler_f_1af9867008eee8d78c6f089522667b23ab" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="classeva_1_1_handler_f_1a6d716cfaadc8ea89ea4bb8e94ffb3d67" prot="private" static="no" mutable="no">
         <type>void(*</type>
-        <definition>void(* eva::HandlerF::function) (void *, long)</definition>
-        <argsstring>)(void *, long)</argsstring>
+        <definition>void(* eva::HandlerF::function) (void *, CallbackInfo)</definition>
+        <argsstring>)(void *, CallbackInfo)</argsstring>
         <name>function</name>
         <qualifiedname>eva::HandlerF::function</qualifiedname>
         <briefdescription>
@@ -17,18 +17,18 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaHandler.h" line="56" column="9" bodyfile="src/evaHandler.h" bodystart="56" bodyend="-1"/>
+        <location file="src/evaHandler.h" line="63" column="9" bodyfile="src/evaHandler.h" bodystart="63" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
-      <memberdef kind="function" id="classeva_1_1_handler_f_1a4d1b2c1556498118e6b5aca57162c74a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classeva_1_1_handler_f_1a15c88fbc7353f617d49e7b3f315e9fab" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
         <definition>eva::HandlerF::HandlerF</definition>
-        <argsstring>(void(*function)(void *, long))</argsstring>
+        <argsstring>(void(*function)(void *, CallbackInfo))</argsstring>
         <name>HandlerF</name>
         <qualifiedname>eva::HandlerF::HandlerF</qualifiedname>
         <param>
-          <type>void(*)(void *, long)</type>
+          <type>void(*)(void *, <ref refid="structeva_1_1_callback_info" kindref="compound">CallbackInfo</ref>)</type>
           <declname>function</declname>
         </param>
         <briefdescription>
@@ -37,22 +37,22 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaHandler.h" line="45" column="9" bodyfile="src/evaHandler.h" bodystart="45" bodyend="48"/>
+        <location file="src/evaHandler.h" line="52" column="9" bodyfile="src/evaHandler.h" bodystart="52" bodyend="55"/>
       </memberdef>
-      <memberdef kind="function" id="classeva_1_1_handler_f_1a9029b5e5bf78f933dc9299de8a9b0d3b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+      <memberdef kind="function" id="classeva_1_1_handler_f_1a177cc07aec81924a9bf58a673ddf9ef6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
         <type>void</type>
         <definition>void eva::HandlerF::invoke</definition>
-        <argsstring>(void *msgSender, long argsMask) override</argsstring>
+        <argsstring>(void *msgSender, CallbackInfo cbInfo) override</argsstring>
         <name>invoke</name>
         <qualifiedname>eva::HandlerF::invoke</qualifiedname>
-        <reimplements refid="classeva_1_1_i_handler_1a81dab5d3b9bed6a215f357a75e11b4e6">invoke</reimplements>
+        <reimplements refid="classeva_1_1_i_handler_1a2c2e49933b5f061904700baad54b5167">invoke</reimplements>
         <param>
           <type>void *</type>
           <declname>msgSender</declname>
         </param>
         <param>
-          <type>long</type>
-          <declname>argsMask</declname>
+          <type><ref refid="structeva_1_1_callback_info" kindref="compound">CallbackInfo</ref></type>
+          <declname>cbInfo</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -60,7 +60,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaHandler.h" line="50" column="14" bodyfile="src/evaHandler.h" bodystart="50" bodyend="53"/>
+        <location file="src/evaHandler.h" line="57" column="14" bodyfile="src/evaHandler.h" bodystart="57" bodyend="60"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -92,11 +92,11 @@
         <link refid="classeva_1_1_i_handler"/>
       </node>
     </collaborationgraph>
-    <location file="src/evaHandler.h" line="42" column="5" bodyfile="src/evaHandler.h" bodystart="43" bodyend="57"/>
+    <location file="src/evaHandler.h" line="49" column="5" bodyfile="src/evaHandler.h" bodystart="50" bodyend="64"/>
     <listofallmembers>
-      <member refid="classeva_1_1_handler_f_1af9867008eee8d78c6f089522667b23ab" prot="private" virt="non-virtual"><scope>eva::HandlerF</scope><name>function</name></member>
-      <member refid="classeva_1_1_handler_f_1a4d1b2c1556498118e6b5aca57162c74a" prot="public" virt="non-virtual"><scope>eva::HandlerF</scope><name>HandlerF</name></member>
-      <member refid="classeva_1_1_handler_f_1a9029b5e5bf78f933dc9299de8a9b0d3b" prot="public" virt="virtual"><scope>eva::HandlerF</scope><name>invoke</name></member>
+      <member refid="classeva_1_1_handler_f_1a6d716cfaadc8ea89ea4bb8e94ffb3d67" prot="private" virt="non-virtual"><scope>eva::HandlerF</scope><name>function</name></member>
+      <member refid="classeva_1_1_handler_f_1a15c88fbc7353f617d49e7b3f315e9fab" prot="public" virt="non-virtual"><scope>eva::HandlerF</scope><name>HandlerF</name></member>
+      <member refid="classeva_1_1_handler_f_1a177cc07aec81924a9bf58a673ddf9ef6" prot="public" virt="virtual"><scope>eva::HandlerF</scope><name>invoke</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

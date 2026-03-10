@@ -1,0 +1,345 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="classeva_1_1_switch" kind="class" language="C++" prot="public">
+    <compoundname>eva::Switch</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">READER</basecompoundref>
+    <basecompoundref refid="classeva_1_1_tickable" prot="public" virt="non-virtual">eva::Tickable</basecompoundref>
+    <derivedcompoundref refid="classeva_1_1_button" prot="public" virt="non-virtual">eva::Button&lt; BinarizeDecor&lt; StabilizeDecor&lt; DigitalPinReader&lt; PIN, PIN_MODE &gt; &gt;, ACTIVATES_ON &gt; &gt;</derivedcompoundref>
+    <derivedcompoundref refid="classeva_1_1_button" prot="public" virt="non-virtual">eva::Button&lt; BinarizeDecor&lt; StabilizeDecor&lt; DigitalPinReader&lt; PIN, INPUT_PULLUP &gt; &gt;, LOW &gt; &gt;</derivedcompoundref>
+    <derivedcompoundref refid="classeva_1_1_button" prot="public" virt="non-virtual">eva::Button&lt; READER &gt;</derivedcompoundref>
+    <includes refid="eva_switch_8h" local="no">evaSwitch.h</includes>
+    <templateparamlist>
+      <param>
+        <type>class READER</type>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classeva_1_1_switch_1a7c219494c63d04c510b2520d762d0a7b" prot="protected" static="no" mutable="no">
+        <type>unsigned char</type>
+        <definition>unsigned char eva::Switch&lt; READER &gt;::curiosity</definition>
+        <argsstring></argsstring>
+        <name>curiosity</name>
+        <qualifiedname>eva::Switch::curiosity</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evaSwitch.h" line="129" column="23" bodyfile="src/evaSwitch.h" bodystart="129" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeva_1_1_switch_1a3ab8ea29fbe7597e51ec36d8551ced3b" prot="protected" static="no" mutable="no">
+        <type>signed char</type>
+        <definition>signed char eva::Switch&lt; READER &gt;::levelCode</definition>
+        <argsstring></argsstring>
+        <name>levelCode</name>
+        <qualifiedname>eva::Switch::levelCode</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evaSwitch.h" line="130" column="21" bodyfile="src/evaSwitch.h" bodystart="130" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeva_1_1_switch_1a37672eb95c86d0b8311bd778655e87ba" prot="protected" static="no" mutable="no">
+        <type><ref refid="classeva_1_1_i_handler" kindref="compound">IHandler</ref> *</type>
+        <definition>IHandler* eva::Switch&lt; READER &gt;::listener</definition>
+        <argsstring></argsstring>
+        <name>listener</name>
+        <qualifiedname>eva::Switch::listener</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evaSwitch.h" line="131" column="18" bodyfile="src/evaSwitch.h" bodystart="131" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classeva_1_1_switch_1a7fee637f0ad36be86dac83b9c6b6083b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>eva::Switch&lt; READER &gt;::Switch</definition>
+        <argsstring>()</argsstring>
+        <name>Switch</name>
+        <qualifiedname>eva::Switch::Switch</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evaSwitch.h" line="46" column="9" bodyfile="src/evaSwitch.h" bodystart="46" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="function" id="classeva_1_1_switch_1aad39fa0b2f7181ab6855ee4b0edc944e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>eva::Switch&lt; READER &gt;::Switch</definition>
+        <argsstring>(IHandler *listener, unsigned short eventMask)</argsstring>
+        <name>Switch</name>
+        <qualifiedname>eva::Switch::Switch</qualifiedname>
+        <param>
+          <type><ref refid="classeva_1_1_i_handler" kindref="compound">IHandler</ref> *</type>
+          <declname>listener</declname>
+        </param>
+        <param>
+          <type>unsigned short</type>
+          <declname>eventMask</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evaSwitch.h" line="51" column="9" bodyfile="src/evaSwitch.h" bodystart="51" bodyend="55"/>
+      </memberdef>
+      <memberdef kind="function" id="classeva_1_1_switch_1a1e58d00667fc3558f7747e46bf2ded46" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Switch *</type>
+        <definition>Switch * eva::Switch&lt; READER &gt;::setListener</definition>
+        <argsstring>(IHandler *listener, unsigned short eventMask)</argsstring>
+        <name>setListener</name>
+        <qualifiedname>eva::Switch::setListener</qualifiedname>
+        <param>
+          <type><ref refid="classeva_1_1_i_handler" kindref="compound">IHandler</ref> *</type>
+          <declname>listener</declname>
+        </param>
+        <param>
+          <type>unsigned short</type>
+          <declname>eventMask</declname>
+        </param>
+        <briefdescription>
+<para>Sets the event listener for this switch. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>listener</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Callback object implementing <ref refid="classeva_1_1_i_handler" kindref="compound">IHandler</ref> </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>eventMask</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Bitmask of events to listen for (ON_PRESS, ON_RELEASE, ON_CHANGED) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Pointer to this for method chaining </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evaSwitch.h" line="64" column="16" bodyfile="src/evaSwitch.h" bodystart="64" bodyend="69"/>
+      </memberdef>
+      <memberdef kind="function" id="classeva_1_1_switch_1a453e44d5f0f0678f0d8ac63c3049ebaa" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Switch *</type>
+        <definition>Switch * eva::Switch&lt; READER &gt;::enable</definition>
+        <argsstring>(bool enabled)</argsstring>
+        <name>enable</name>
+        <qualifiedname>eva::Switch::enable</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>enabled</declname>
+        </param>
+        <briefdescription>
+<para>Enables or disables the switch. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>When disabled, the switch stops generating events.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>enabled</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>True to enable, false to disable </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Pointer to this for method chaining </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evaSwitch.h" line="79" column="16" bodyfile="src/evaSwitch.h" bodystart="79" bodyend="86"/>
+      </memberdef>
+      <memberdef kind="function" id="classeva_1_1_switch_1af39a84a03462bc07f361bc1b11d6a4ad" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>signed short</type>
+        <definition>signed short eva::Switch&lt; READER &gt;::getValue</definition>
+        <argsstring>()</argsstring>
+        <name>getValue</name>
+        <qualifiedname>eva::Switch::getValue</qualifiedname>
+        <briefdescription>
+<para>Gets the current level code. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Level code (0 for inactive, positive value for active state) </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evaSwitch.h" line="93" column="22" bodyfile="src/evaSwitch.h" bodystart="93" bodyend="98"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classeva_1_1_switch_1ad68f945aa49eefdc685d1b7a84358655" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void eva::Switch&lt; READER &gt;::tick</definition>
+        <argsstring>() override</argsstring>
+        <name>tick</name>
+        <qualifiedname>eva::Switch::tick</qualifiedname>
+        <reimplements refid="classeva_1_1_tickable_1ac7bb568a397ac2147fd6e292d2846ba6">tick</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evaSwitch.h" line="101" column="14" bodyfile="src/evaSwitch.h" bodystart="101" bodyend="119"/>
+      </memberdef>
+      <memberdef kind="function" id="classeva_1_1_switch_1aa1fb0a62fa105cb2a2de78bbaa950292" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void eva::Switch&lt; READER &gt;::notify</definition>
+        <argsstring>(unsigned short eventType, signed short eventCode)</argsstring>
+        <name>notify</name>
+        <qualifiedname>eva::Switch::notify</qualifiedname>
+        <param>
+          <type>unsigned short</type>
+          <declname>eventType</declname>
+        </param>
+        <param>
+          <type>signed short</type>
+          <declname>eventCode</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evaSwitch.h" line="121" column="14" bodyfile="src/evaSwitch.h" bodystart="121" bodyend="126"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Universal switch/button class for multi-valued input sources. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This class handles both switch and button behavior within the same component. The difference is purely semantic:<orderedlist>
+<listitem><para>React to ON_ACTIVE/ON_INACTIVE for switch-like behavior</para>
+</listitem><listitem><para>React to ON_PRESS/ON_RELEASE for button-like behavior</para>
+</listitem></orderedlist>
+</para>
+<para>Typical applications:<orderedlist>
+<listitem><para>Simple on/off switches (binary reader)</para>
+</listitem><listitem><para>Push buttons with press/release detection</para>
+</listitem><listitem><para>Resistor ladder buttons on a single ADC pin</para>
+</listitem><listitem><para>Custom encoding schemes (rotary encoders, keypads)</para>
+</listitem><listitem><para>Multiplexed inputs</para>
+</listitem></orderedlist>
+</para>
+<para>Events include both the event type and the level code in argsMask, allowing identification of which specific input triggered the event.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>READER</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Input reader type that returns numeric codes (0 = inactive, &gt;0 = active state identifier) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para>PinSwitch Digital pin switches with debouncing (typical use) </para>
+</simplesect>
+<simplesect kind="see"><para>PullUpSwitch Pull-up switches convenience alias </para>
+</simplesect>
+<simplesect kind="see"><para>PinMultiSwitch Multiple switches on one ADC pin </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>READER</label>
+      </node>
+      <node id="5">
+        <label>eva::Button&lt; BinarizeDecor&lt; StabilizeDecor&lt; DigitalPinReader&lt; PIN, INPUT_PULLUP &gt; &gt;, LOW &gt; &gt;</label>
+        <link refid="classeva_1_1_button"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>eva::Button&lt; BinarizeDecor&lt; StabilizeDecor&lt; DigitalPinReader&lt; PIN, PIN_MODE &gt; &gt;, ACTIVATES_ON &gt; &gt;</label>
+        <link refid="classeva_1_1_button"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>eva::Button&lt; READER &gt;</label>
+        <link refid="classeva_1_1_button"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>eva::Switch&lt; READER &gt;</label>
+        <link refid="classeva_1_1_switch"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>eva::Tickable</label>
+        <link refid="classeva_1_1_tickable"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>READER</label>
+      </node>
+      <node id="4">
+        <label>eva::IHandler</label>
+        <link refid="classeva_1_1_i_handler"/>
+      </node>
+      <node id="1">
+        <label>eva::Switch&lt; READER &gt;</label>
+        <link refid="classeva_1_1_switch"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>listener</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>eva::Tickable</label>
+        <link refid="classeva_1_1_tickable"/>
+      </node>
+    </collaborationgraph>
+    <location file="src/evaSwitch.h" line="43" column="5" bodyfile="src/evaSwitch.h" bodystart="44" bodyend="132"/>
+    <listofallmembers>
+      <member refid="classeva_1_1_tickable_1a287d1d56ac5ca1c143d266c8e3c9d174" prot="public" virt="non-virtual"><scope>eva::Switch</scope><name>chain</name></member>
+      <member refid="classeva_1_1_switch_1a7c219494c63d04c510b2520d762d0a7b" prot="protected" virt="non-virtual"><scope>eva::Switch</scope><name>curiosity</name></member>
+      <member refid="classeva_1_1_switch_1a453e44d5f0f0678f0d8ac63c3049ebaa" prot="public" virt="non-virtual"><scope>eva::Switch</scope><name>enable</name></member>
+      <member refid="classeva_1_1_switch_1af39a84a03462bc07f361bc1b11d6a4ad" prot="public" virt="non-virtual"><scope>eva::Switch</scope><name>getValue</name></member>
+      <member refid="classeva_1_1_switch_1a3ab8ea29fbe7597e51ec36d8551ced3b" prot="protected" virt="non-virtual"><scope>eva::Switch</scope><name>levelCode</name></member>
+      <member refid="classeva_1_1_switch_1a37672eb95c86d0b8311bd778655e87ba" prot="protected" virt="non-virtual"><scope>eva::Switch</scope><name>listener</name></member>
+      <member refid="classeva_1_1_switch_1aa1fb0a62fa105cb2a2de78bbaa950292" prot="protected" virt="non-virtual"><scope>eva::Switch</scope><name>notify</name></member>
+      <member refid="classeva_1_1_switch_1a1e58d00667fc3558f7747e46bf2ded46" prot="public" virt="non-virtual"><scope>eva::Switch</scope><name>setListener</name></member>
+      <member refid="classeva_1_1_switch_1a7fee637f0ad36be86dac83b9c6b6083b" prot="public" virt="non-virtual"><scope>eva::Switch</scope><name>Switch</name></member>
+      <member refid="classeva_1_1_switch_1aad39fa0b2f7181ab6855ee4b0edc944e" prot="public" virt="non-virtual"><scope>eva::Switch</scope><name>Switch</name></member>
+      <member refid="classeva_1_1_tickable_1ad13287a77a330b14272d3e1ccdbb3de7" prot="public" virt="non-virtual"><scope>eva::Switch</scope><name>tac</name></member>
+      <member refid="classeva_1_1_switch_1ad68f945aa49eefdc685d1b7a84358655" prot="protected" virt="virtual"><scope>eva::Switch</scope><name>tick</name></member>
+      <member refid="classeva_1_1_tickable_1a667f47cdee5f03eed323cebb27e8ab8e" prot="public" virt="non-virtual"><scope>eva::Switch</scope><name>Tickable</name></member>
+      <member refid="classeva_1_1_tickable_1a6b6ff95372ce0b94618029e05ed2b50a" prot="public" virt="virtual"><scope>eva::Switch</scope><name>~Tickable</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

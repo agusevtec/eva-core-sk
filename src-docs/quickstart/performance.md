@@ -16,6 +16,78 @@ using PinButton = Button<BinarizeDecor<StabilizeDecor<DigitalPinReader<PIN, PINM
 
 This entire chain resolves at compile time. 
 
+#Custom Button Bank
+
+Multiple Discrete Buttons via One Reader
+
+Sometimes you have several discrete buttons but want to handle them through Button for unified event handling. Create a custom reader that checks each pin and returns a unique code:
+
+```cpp
+#include <evaButton.h>
+#include <evaTac.h>
+#include <evaHandler.h>
+
+using namespace eva;
+
+class ButtonBankReader {
+public:
+  ButtonBankReader() {
+    pinMode(2, INPUT_PULLUP);
+    pinMode(3, INPUT_PULLUP);
+    pinMode(4, INPUT_PULLUP);
+    pinMode(5, INPUT_PULLUP);
+  }
+  
+  signed short getValue() {
+    if (digitalRead(2) == LOW) return 'u';  // Up button
+    if (digitalRead(3) == LOW) return 'd';  // Down button
+    if (digitalRead(4) == LOW) return 'l';  // Left button
+    if (digitalRead(5) == LOW) return 'r';  // Right button
+    return 0;  // No button
+  }
+};
+
+using ButtonBank = Button<StabilizeDecor<ButtonBankReader>>;
+
+class App {
+private:
+  ButtonBank navButtons;
+  
+  void onButtonPress(void* sender, CallbackInfo cbInfo) {
+    char button = cbInfo.eventArg;  // 'u', 'd', 'l', or 'r'
+    
+    Serial.print("Pressed: ");
+    switch(button) {
+      case 'u': Serial.println("UP"); break;
+      case 'd': Serial.println("DOWN"); break;
+      case 'l': Serial.println("LEFT"); break;
+      case 'r': Serial.println("RIGHT"); break;
+    }
+  }
+  
+public:
+  App() : navButtons() {
+    navButtons.setListener(
+      new Handler<App>(this, &App::onButtonPress),
+      ON_PRESS  // Only care about presses
+    );
+  }
+};
+
+
+void setup() {
+  Serial.begin(9600);
+  static App app;
+}
+
+void loop() {
+  eva::tac();
+}
+```
+Key insight: Pin configuration lives in the reader's constructor—hardware setup stays with the component that owns it. The reader translates physical pins into meaningful codes ('u', 'd', 'l', 'r'). Button handles all the timing—you just react to clean ON_PRESS events with the button identity already decoded.
+
+This approach is highly memory-efficient compared to using multiple Switch objects. On memory-constrained devices like Arduino, this can make the difference between fitting your program or running out of space.
+
 ## Multiple Paths to the Same Goal
 
 The library offers different ways to handle events, each with different trade-offs:
@@ -77,11 +149,11 @@ The library provides class hierarchies that let you pick the exact level of func
 
 ### Buttons: From Lightweight to Feature-Rich
 
-| Class | RAM | Features |
+| Class | Overhead | Features |
 |-------|-----|----------|
-| `Toggle` | 1 byte | Just active/inactive states |
-| `Button` | +4 bytes | Adds pressTime for click detection |
-| `MultiButton` | Same as Button | Multiple codes, same overhead |
+| `Switch` | Minimal | Just active/inactive states |
+| `Button` | Small | Adds pressTime for click detection |
+| `KeyButton` | Same as Button | Auto-repeated keys |
 
 
 ### Timers: One-Shot or Repeating

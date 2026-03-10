@@ -159,20 +159,20 @@
       </memberdef>
     </sectiondef>
     <sectiondef kind="private-func">
-      <memberdef kind="function" id="classeva_1_1_countdown_indicator_1ab73371b500e4d0b8688c70f3daddc6d1" prot="private" static="no" const="no" explicit="no" inline="no" virt="virtual">
+      <memberdef kind="function" id="classeva_1_1_countdown_indicator_1aa4ef30c7c817fbdb6f2b317e2e957bab" prot="private" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
         <definition>void eva::CountdownIndicator::invoke</definition>
-        <argsstring>(void *msgSender, union Message message) override</argsstring>
+        <argsstring>(void *msgSender, CallbackInfo cbInfo) override</argsstring>
         <name>invoke</name>
         <qualifiedname>eva::CountdownIndicator::invoke</qualifiedname>
-        <reimplements refid="classeva_1_1_blinking_indicator_1a92dd3758d4e2d5a19c382ca5e1533408">invoke</reimplements>
+        <reimplements refid="classeva_1_1_blinking_indicator_1a722d78718da8196e12cb84b2a593dab9">invoke</reimplements>
         <param>
           <type>void *</type>
           <declname>msgSender</declname>
         </param>
         <param>
-          <type>long</type>
-          <declname>args</declname>
+          <type><ref refid="structeva_1_1_callback_info" kindref="compound">CallbackInfo</ref></type>
+          <declname>cbInfo</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -260,7 +260,7 @@
       <member refid="classeva_1_1_blinking_indicator_1a9d2c6ec0d96f3a61b76fd5925792fcec" prot="protected" virt="non-virtual"><scope>eva::CountdownIndicator</scope><name>dutycycleTimer</name></member>
       <member refid="classeva_1_1_blinking_indicator_1ae4aacd65df101c369f0505b256554501" prot="protected" virt="non-virtual"><scope>eva::CountdownIndicator</scope><name>heartbeatTimer</name></member>
       <member refid="classeva_1_1_blinking_indicator_1ac381219f25099518c68e9c2d97ac4de2" prot="public" virt="non-virtual"><scope>eva::CountdownIndicator</scope><name>Indicator</name></member>
-      <member refid="classeva_1_1_countdown_indicator_1ab73371b500e4d0b8688c70f3daddc6d1" prot="private" virt="virtual"><scope>eva::CountdownIndicator</scope><name>invoke</name></member>
+      <member refid="classeva_1_1_countdown_indicator_1aa4ef30c7c817fbdb6f2b317e2e957bab" prot="private" virt="virtual"><scope>eva::CountdownIndicator</scope><name>invoke</name></member>
       <member refid="classeva_1_1_countdown_indicator_1a2fcaad8cf80b8e888f689e98fddc4778" prot="private" virt="non-virtual"><scope>eva::CountdownIndicator</scope><name>listener</name></member>
       <member refid="classeva_1_1_blinking_indicator_1ab3f73cc4ea348e04ed9a1221ce65d928" prot="public" virt="non-virtual"><scope>eva::CountdownIndicator</scope><name>off</name></member>
       <member refid="classeva_1_1_countdown_indicator_1a009b3fb2dc47e9789ce9275a2ab50406" prot="public" virt="non-virtual"><scope>eva::CountdownIndicator</scope><name>on</name></member>

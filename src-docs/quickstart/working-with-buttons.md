@@ -18,11 +18,11 @@ private:
   // Button on pin 2, using INPUT_PULLUP, active LOW (button to GND)
   PinButton<2, INPUT_PULLUP, LOW> button;
   
-  void onButtonEvent(void* sender, long events) {
-    if (events & ON_SHORTCLICK) {
+  void onButtonEvent(void* sender, CallbackInfo cbInfo) {
+    if (cbInfo.eventType & ON_SHORTCLICK) {
       Serial.println("Button clicked!");
     }
-    if (events & ON_LONGCLICK) {
+    if (cbInfo.eventType & ON_LONGCLICK) {
       Serial.println("Button long pressed!");
     }
   }
@@ -70,7 +70,7 @@ This builds the button from several layers:
 ---
 
 ## PinMultiButton: Multiple Buttons on One Pin
-The MultiButton class allows you to connect several buttons to a single analog pin using a resistor ladder. Each button produces a different analog value, which the library quantizes into discrete levels.
+The Button class allows you to connect several buttons to a single analog pin using a resistor ladder. Each button produces a different analog value, which the library quantizes into discrete levels.
 
 ## Hardware Setup
 
@@ -90,7 +90,7 @@ Each button, when pressed, creates a voltage divider with a unique value.
 
 
 ```cpp
-#include <evaMultiButton.h>
+#include <evaButton.h>
 #include <evaTac.h>
 #include <evaHandler.h>
 
@@ -106,9 +106,9 @@ private:
                  700>  // Button 4 threshold
     buttonBank;
   
-  void onButtonEvent(void* sender, long events) {
-    // The button level is encoded in the event mask
-    unsigned char levelCode = events & 0xFF;
+  void onButtonEvent(void* sender, CallbackInfo cbInfo) {
+    // The button level is encoded in callback info
+    unsigned char levelCode = cbInfo.eventArg;
   
     // Get the actual threshold value that defines this level
     unsigned short threshold = buttonBank.getLevel(levelCode);
@@ -119,11 +119,11 @@ private:
     Serial.print(threshold);
     Serial.println(")");
 
-    if (events & ON_SHORTCLICK) {
+    if (cbInfo.eventType & ON_SHORTCLICK) {
       Serial.println("short clicked");
     }
     
-    if (events & ON_LONGCLICK) {
+    if (cbInfo.eventType & ON_LONGCLICK) {
       Serial.println("long pressed");
     }
   }

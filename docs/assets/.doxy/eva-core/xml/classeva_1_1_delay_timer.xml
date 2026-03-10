@@ -3,6 +3,7 @@
   <compounddef id="classeva_1_1_delay_timer" kind="class" language="C++" prot="public">
     <compoundname>eva::DelayTimer</compoundname>
     <basecompoundref refid="classeva_1_1_tickable" prot="public" virt="non-virtual">eva::Tickable</basecompoundref>
+    <derivedcompoundref refid="classeva_1_1_contdown_timer" prot="public" virt="non-virtual">eva::ContdownTimer</derivedcompoundref>
     <derivedcompoundref refid="classeva_1_1_repeat_timer" prot="public" virt="non-virtual">eva::RepeatTimer</derivedcompoundref>
     <includes refid="eva_delay_timer_8h" local="no">evaDelayTimer.h</includes>
     <sectiondef kind="protected-attrib">
@@ -199,13 +200,19 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
+      <node id="3">
+        <label>eva::ContdownTimer</label>
+        <link refid="classeva_1_1_contdown_timer"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
       <node id="1">
         <label>eva::DelayTimer</label>
         <link refid="classeva_1_1_delay_timer"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="3">
+      <node id="4">
         <label>eva::RepeatTimer</label>
         <link refid="classeva_1_1_repeat_timer"/>
         <childnode refid="1" relation="public-inheritance">
@@ -250,7 +257,7 @@
       <member refid="classeva_1_1_tickable_1ad13287a77a330b14272d3e1ccdbb3de7" prot="public" virt="non-virtual"><scope>eva::DelayTimer</scope><name>tac</name></member>
       <member refid="classeva_1_1_delay_timer_1a7cf30bb1be1a9a5002fde64adc479096" prot="protected" virt="virtual"><scope>eva::DelayTimer</scope><name>tick</name></member>
       <member refid="classeva_1_1_tickable_1a667f47cdee5f03eed323cebb27e8ab8e" prot="public" virt="non-virtual"><scope>eva::DelayTimer</scope><name>Tickable</name></member>
-      <member refid="classeva_1_1_tickable_1acb71ddd4ec2bba0112001022c8c5ff6f" prot="public" virt="non-virtual"><scope>eva::DelayTimer</scope><name>~Tickable</name></member>
+      <member refid="classeva_1_1_tickable_1a6b6ff95372ce0b94618029e05ed2b50a" prot="public" virt="virtual"><scope>eva::DelayTimer</scope><name>~Tickable</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

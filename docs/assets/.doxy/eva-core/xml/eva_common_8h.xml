@@ -28,8 +28,8 @@
         </childnode>
       </node>
       <node id="4">
-        <label>src/evaToggle.h</label>
-        <link refid="eva_toggle_8h_source"/>
+        <label>src/evaSwitch.h</label>
+        <link refid="eva_switch_8h_source"/>
         <childnode refid="5" relation="include">
         </childnode>
       </node>

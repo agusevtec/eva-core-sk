@@ -16,7 +16,7 @@ _Base class for objects that need periodic updates._
 
 
 
-Inherited by the following classes: [eva::Toggle](classeva_1_1_toggle.md),  [eva::Toggle](classeva_1_1_toggle.md),  [eva::DelayTimer](classeva_1_1_delay_timer.md),  [eva::Toggle](classeva_1_1_toggle.md)
+Inherited by the following classes: [eva::Switch](classeva_1_1_switch.md),  [eva::Switch](classeva_1_1_switch.md),  [eva::DelayTimer](classeva_1_1_delay_timer.md),  [eva::Switch](classeva_1_1_switch.md)
 
 
 
@@ -55,7 +55,7 @@ Inherited by the following classes: [eva::Toggle](classeva_1_1_toggle.md),  [eva
 | ---: | :--- |
 |   | [**Tickable**](#function-tickable) () <br> |
 |  void | [**tac**](#function-tac) () <br>_Triggers tick on this and all linked tickables._  |
-|   | [**~Tickable**](#function-tickable) () <br> |
+| virtual  | [**~Tickable**](#function-tickable) () <br> |
 
 
 ## Public Static Functions
@@ -124,7 +124,7 @@ void eva::Tickable::tac ()
 ### function ~Tickable 
 
 ```C++
-eva::Tickable::~Tickable () 
+virtual eva::Tickable::~Tickable () 
 ```
 
 

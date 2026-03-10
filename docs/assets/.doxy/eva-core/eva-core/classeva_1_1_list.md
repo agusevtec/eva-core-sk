@@ -57,7 +57,7 @@ _Simple singly-linked list container._ [More...](#detailed-description)
 |  void | [**append**](#function-append) (ItemClass item) <br>_Appends an item to the list._  |
 |  unsigned | [**count**](#function-count) () <br>_Gets number of items in list._  |
 |  [**ListIterator**](structeva_1_1_list_iterator.md)&lt; ItemClass &gt; \* | [**first**](#function-first) () <br>_Gets first iterator._  |
-|  ItemClass & | [**operator[]**](#function-operator) (unsigned index) <br>_Array-style access by index._  |
+|  ItemClass \* | [**operator[]**](#function-operator) (unsigned short index) <br>_Array-style access by index._  |
 |   | [**~List**](#function-list) () <br>_Destructor - frees all nodes._  |
 
 
@@ -187,8 +187,8 @@ Pointer to first iterator
 
 _Array-style access by index._ 
 ```C++
-inline ItemClass & eva::List::operator[] (
-    unsigned index
+inline ItemClass * eva::List::operator[] (
+    unsigned short index
 ) 
 ```
 

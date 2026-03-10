@@ -20,6 +20,10 @@
 
 ## c
 
+* [**CallbackInfo**](structeva_1_1_callback_info.md)
+([**eva**](namespaceeva.md))
+* [**ContdownTimer**](classeva_1_1_contdown_timer.md)
+([**eva**](namespaceeva.md))
 * [**CountdownIndicator**](classeva_1_1_countdown_indicator.md)
 ([**eva**](namespaceeva.md))
 
@@ -90,13 +94,13 @@
 ([**eva**](namespaceeva.md))
 * [**StabilizeDecor**](classeva_1_1_stabilize_decor.md)
 ([**eva**](namespaceeva.md))
+* [**Switch**](classeva_1_1_switch.md)
+([**eva**](namespaceeva.md))
 
 
 ## t
 
 * [**Tickable**](classeva_1_1_tickable.md)
-([**eva**](namespaceeva.md))
-* [**Toggle**](classeva_1_1_toggle.md)
 ([**eva**](namespaceeva.md))
 
 

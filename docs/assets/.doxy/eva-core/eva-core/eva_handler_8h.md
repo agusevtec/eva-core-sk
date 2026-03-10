@@ -34,6 +34,7 @@
 
 | Type | Name |
 | ---: | :--- |
+| struct | [**CallbackInfo**](structeva_1_1_callback_info.md) <br> |
 | class | [**Handler**](classeva_1_1_handler.md) &lt;class T&gt;<br>[_**Handler**_](classeva_1_1_handler.md) _that calls a member method._ |
 | class | [**HandlerF**](classeva_1_1_handler_f.md) <br>[_**Handler**_](classeva_1_1_handler.md) _that calls a free function._ |
 | class | [**IHandler**](classeva_1_1_i_handler.md) <br>_Interface for message handlers._  |
