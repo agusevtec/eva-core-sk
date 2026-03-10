@@ -6,14 +6,14 @@
 class TestHandler : public eva::IHandler {
 public:
     void* lastSender = nullptr;
-    char lastEventType = 0;
+    unsigned short lastEventType = 0;
     signed short lastArgs = 0;
     int callCount = 0;
     
-    void invoke(void* sender, unsigned char eventType, signed short eventArg) override {
+    void invoke(void* sender, eva::CallbackInfo cbInfo) override {
         lastSender = sender;
-        lastEventType = eventType;
-        lastArgs = eventArg;
+        lastEventType = cbInfo.eventType;
+        lastArgs = cbInfo.eventArg;
         callCount++;
     }
     

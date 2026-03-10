@@ -5,6 +5,11 @@
 namespace eva
 {
 
+    struct CallbackInfo
+    {
+        unsigned short eventType;
+        signed short eventArg;
+    };
 
     /**
      * @brief Interface for message handlers
@@ -12,7 +17,7 @@ namespace eva
     class IHandler
     {
     public:
-        virtual void invoke(void *msgSender, unsigned char eventType, signed short eventArg) = 0;
+        virtual void invoke(void *msgSender, CallbackInfo cbInfo) = 0;
     };
 
     /**
@@ -28,9 +33,9 @@ namespace eva
         {
         }
 
-        void invoke(void *msgSender, unsigned char eventType, signed short eventArg) override
+        void invoke(void *msgSender, CallbackInfo cbInfo) override
         {
-            (this->msgReceiver->*method)(msgSender, eventType, eventArg);
+            (this->msgReceiver->*method)(msgSender, cbInfo);
         }
 
     private:
@@ -44,18 +49,18 @@ namespace eva
     class HandlerF : public IHandler
     {
     public:
-        HandlerF(void (*function)(void *, unsigned char, signed short))
+        HandlerF(void (*function)(void *, CallbackInfo))
             : function(function)
         {
         }
 
-        void invoke(void *msgSender, unsigned char eventType, signed short eventArg) override
+        void invoke(void *msgSender, CallbackInfo cbInfo) override
         {
-            (*function)(msgSender, eventType, eventArg);
+            (*function)(msgSender, cbInfo);
         }
 
     private:
-        void (*function)(void *, unsigned char, signed short);
+        void (*function)(void *, CallbackInfo);
     };
 }
 #endif

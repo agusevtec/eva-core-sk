@@ -56,5 +56,5 @@ void DelayTimer::tick()
     stop();
 
     if (this->listener)
-        this->listener->invoke((void *)this, 0, 0);
+        this->listener->invoke((void *)this, {0, 0});
 }

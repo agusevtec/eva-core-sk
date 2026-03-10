@@ -7,10 +7,15 @@
 #include "evaStdReaders.h"
 #include "evaReaderDecors.h"
 
-#include "evaConstants.h"
-
 namespace eva
 {
+    static const unsigned char ON_CHANGED = 0x1;
+    static const unsigned char ON_PRESS = 0x02;
+    static const unsigned char ON_RELEASE = 0x04;
+
+    static const unsigned char ON_ACTIVE = ON_PRESS;
+    static const unsigned char ON_INACTIVE = ON_RELEASE;
+
   /**
    * @brief Switch - легковесная версия Button без детекции кликов
    *
@@ -85,17 +90,22 @@ namespace eva
       unsigned char wasLevelCode = this->levelCode;
       this->levelCode = READER::getValue();
       if ((wasLevelCode > 0) and (wasLevelCode != this->levelCode)) // any_pos -> 0
+      {
         this->notify(ON_RELEASE, wasLevelCode);
-
+        this->notify(ON_CHANGED, wasLevelCode);
+      }
       if ((wasLevelCode != this->levelCode) and (this->levelCode > 0)) // 0 -> any_pos
+      {
         this->notify(ON_PRESS, this->levelCode);
+        this->notify(ON_CHANGED, this->levelCode);
+      }
     }
 
-    void notify(unsigned short eventType, unsigned short eventCode)
+    void notify(unsigned short eventType, signed short eventCode)
     {
       if (this->listener)
         if (this->curiosity & eventType)
-          this->listener->invoke(this, eventType, eventCode);
+          this->listener->invoke(this, {eventType, eventCode});
     }
 
   protected:

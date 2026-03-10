@@ -22,7 +22,7 @@ test(button_detects_press)
     btn.tick();
 
     assertEqual(handler.callCount, 1);
-    assertEqual((long)handler.lastArgs, (long)ON_PRESS);
+    assertEqual((int)handler.lastEventType, (int)ON_PRESS);
 }
 test(button_detects_release)
 {
@@ -44,7 +44,7 @@ test(button_detects_release)
     btn.tick();
 
     assertEqual(handler.callCount, 1);
-    assertEqual((long)handler.lastEventType, (long)ON_RELEASE);
+    assertEqual((int)handler.lastEventType, (int)ON_RELEASE);
 }
 
 test(button_short_click)
@@ -66,7 +66,7 @@ test(button_short_click)
     btn.tick();
 
     assertEqual(handler.callCount, 1);
-    assertEqual((long)handler.lastEventType, (long)ON_SHORTCLICK);
+    assertEqual((int)handler.lastEventType, (int)ON_SHORTCLICK);
 }
 
 test(button_long_click)
@@ -87,7 +87,7 @@ test(button_long_click)
     btn.tick();
 
     assertEqual(handler.callCount, 1);
-    assertEqual((long)handler.lastEventType, (long)ON_LONGCLICK);
+    assertEqual((int)handler.lastEventType, (int)ON_LONGCLICK);
 }
 
 test(button_no_short_click_after_long)
@@ -105,7 +105,7 @@ test(button_no_short_click_after_long)
     // Ждем больше 750мс
     delay(800);
     btn.tick(); // Должен быть LONGCLICK
-    assertEqual((long)handler.lastEventType, (long)ON_LONGCLICK);
+    assertEqual((int)handler.lastEventType, (int)ON_LONGCLICK);
 
     handler.reset();
 

@@ -4,10 +4,11 @@
 #pragma once
 
 #include "evaSwitch.h"
-#include "evaConstants.h"
 
 namespace eva
 {
+    static const unsigned char ON_SHORTCLICK = 0x08;
+    static const unsigned char ON_LONGCLICK = 0x10;
     /**
      * @brief Multi-state button that identifies which button was pressed via level code
      *
@@ -50,12 +51,14 @@ namespace eva
                 if (this->pressTime and (millis() - this->pressTime < 750))
                     this->notify(ON_SHORTCLICK , wasLevelCode);
                 this->notify(ON_RELEASE, wasLevelCode);
+                this->notify(ON_CHANGED, this->levelCode);
                 this->pressTime = 0;
             }
             if ((wasLevelCode != this->levelCode) and (this->levelCode > 0)) // 0 -> any_pos
             {
                 this->pressTime = millis();
                 this->notify(ON_PRESS , this->levelCode);
+                this->notify(ON_CHANGED, this->levelCode);
             }
         }
 

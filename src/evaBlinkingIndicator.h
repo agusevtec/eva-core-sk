@@ -37,7 +37,7 @@ namespace eva
     void startCycle();
 
   private:
-    void invoke(void *msgSender, unsigned char eventType, signed short eventArg) override;
+    void invoke(void *msgSender, CallbackInfo cbInfo) override;
 
   protected:
     DelayTimer heartbeatTimer;

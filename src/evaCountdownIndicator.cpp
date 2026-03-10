@@ -11,7 +11,7 @@ void CountdownIndicator::on(unsigned short period, unsigned short dutycyclePerce
         startCycle();
 }
 
-void CountdownIndicator::invoke(void *msgSender, unsigned char eventType, signed short eventArg)
+void CountdownIndicator::invoke(void *msgSender, CallbackInfo cbInfo)
 {
     if (msgSender == &this->heartbeatTimer)
     {
@@ -19,7 +19,7 @@ void CountdownIndicator::invoke(void *msgSender, unsigned char eventType, signed
         if (this->countdown > 0)
             startCycle();
         else if (this->listener)
-            this->listener->invoke(this, 0, 0);
+            this->listener->invoke(this, cbInfo);
     }
     if (msgSender == &this->dutycycleTimer)
         BlinkingIndicator::off();
