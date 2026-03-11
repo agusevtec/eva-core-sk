@@ -72,14 +72,14 @@
 
 ## p
 
-* **period** ([**eva::BlinkingIndicator**](classeva_1_1_blinking_indicator.md), [**eva::ContdownTimer**](classeva_1_1_contdown_timer.md), [**eva::RepeatTimer**](classeva_1_1_repeat_timer.md))
+* **period** ([**eva::BlinkingIndicator**](classeva_1_1_blinking_indicator.md), [**eva::CountdownTimer**](classeva_1_1_countdown_timer.md), [**eva::RepeatTimer**](classeva_1_1_repeat_timer.md))
 * **pressTime** ([**eva::Button**](classeva_1_1_button.md))
 * **pin** ([**eva::Indicator**](classeva_1_1_indicator.md))
 
 
 ## r
 
-* **remainingCount** ([**eva::ContdownTimer**](classeva_1_1_contdown_timer.md))
+* **remainingCount** ([**eva::CountdownTimer**](classeva_1_1_countdown_timer.md))
 
 
 ## t

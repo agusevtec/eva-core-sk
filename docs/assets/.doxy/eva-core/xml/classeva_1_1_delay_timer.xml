@@ -3,7 +3,7 @@
   <compounddef id="classeva_1_1_delay_timer" kind="class" language="C++" prot="public">
     <compoundname>eva::DelayTimer</compoundname>
     <basecompoundref refid="classeva_1_1_tickable" prot="public" virt="non-virtual">eva::Tickable</basecompoundref>
-    <derivedcompoundref refid="classeva_1_1_contdown_timer" prot="public" virt="non-virtual">eva::ContdownTimer</derivedcompoundref>
+    <derivedcompoundref refid="classeva_1_1_countdown_timer" prot="public" virt="non-virtual">eva::CountdownTimer</derivedcompoundref>
     <derivedcompoundref refid="classeva_1_1_repeat_timer" prot="public" virt="non-virtual">eva::RepeatTimer</derivedcompoundref>
     <includes refid="eva_delay_timer_8h" local="no">evaDelayTimer.h</includes>
     <sectiondef kind="protected-attrib">
@@ -201,8 +201,8 @@
     </detaileddescription>
     <inheritancegraph>
       <node id="3">
-        <label>eva::ContdownTimer</label>
-        <link refid="classeva_1_1_contdown_timer"/>
+        <label>eva::CountdownTimer</label>
+        <link refid="classeva_1_1_countdown_timer"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>

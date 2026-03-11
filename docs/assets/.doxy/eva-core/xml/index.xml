@@ -27,16 +27,6 @@
     <member refid="structeva_1_1_callback_info_1a2b570d1bc0fc28ee72918adc6d6a1aa5" kind="variable"><name>eventType</name></member>
     <member refid="structeva_1_1_callback_info_1abdca3b0465abf78e06a40aeb0cb10da6" kind="variable"><name>eventArg</name></member>
   </compound>
-  <compound refid="classeva_1_1_contdown_timer" kind="class"><name>eva::ContdownTimer</name>
-    <member refid="classeva_1_1_contdown_timer_1ad0f7b0491d51142f90b586499d3d90e3" kind="variable"><name>period</name></member>
-    <member refid="classeva_1_1_contdown_timer_1abdeecf5a99bcd300489f737698bc4a92" kind="variable"><name>remainingCount</name></member>
-    <member refid="classeva_1_1_contdown_timer_1ab4648bbd187d8493e9b0a9a37b30cf3a" kind="function"><name>setListener</name></member>
-    <member refid="classeva_1_1_contdown_timer_1a0063c4d35eb5695218de00d91a87421b" kind="function"><name>start</name></member>
-    <member refid="classeva_1_1_contdown_timer_1a57e5ad09a44e70bb873c81cc0117ed5b" kind="function"><name>start</name></member>
-    <member refid="classeva_1_1_contdown_timer_1a971246536c3cca838038b493c4da414c" kind="function"><name>DelayTimer</name></member>
-    <member refid="classeva_1_1_contdown_timer_1a5889ee3ab5a8f31a35f8849c12be2323" kind="function"><name>DelayTimer</name></member>
-    <member refid="classeva_1_1_contdown_timer_1aa679d082cac5a89cdc90da62311a026e" kind="function"><name>tick</name></member>
-  </compound>
   <compound refid="classeva_1_1_countdown_indicator" kind="class"><name>eva::CountdownIndicator</name>
     <member refid="classeva_1_1_countdown_indicator_1a514ba44ea102faa908eca8e27164e67b" kind="variable"><name>countdown</name></member>
     <member refid="classeva_1_1_countdown_indicator_1a2fcaad8cf80b8e888f689e98fddc4778" kind="variable"><name>listener</name></member>
@@ -44,6 +34,16 @@
     <member refid="classeva_1_1_countdown_indicator_1a987af6bb4ca1c2c112274cde4d9a9088" kind="function"><name>on</name></member>
     <member refid="classeva_1_1_countdown_indicator_1a41787cfbc1be93c04e26c9e2fa8a307e" kind="function"><name>on</name></member>
     <member refid="classeva_1_1_countdown_indicator_1aa4ef30c7c817fbdb6f2b317e2e957bab" kind="function"><name>invoke</name></member>
+  </compound>
+  <compound refid="classeva_1_1_countdown_timer" kind="class"><name>eva::CountdownTimer</name>
+    <member refid="classeva_1_1_countdown_timer_1a76bda8be94102d2a37de6bbdcca6539e" kind="variable"><name>period</name></member>
+    <member refid="classeva_1_1_countdown_timer_1a694798acee934af3e5c7d1f9116f337a" kind="variable"><name>remainingCount</name></member>
+    <member refid="classeva_1_1_countdown_timer_1a7ec153656555d5873e7250e20bf4303e" kind="function"><name>setListener</name></member>
+    <member refid="classeva_1_1_countdown_timer_1a6051232730152834b5c6565995403812" kind="function"><name>start</name></member>
+    <member refid="classeva_1_1_countdown_timer_1a95ca5eecf2bdb01ddf5b945a3bd0c7c3" kind="function"><name>start</name></member>
+    <member refid="classeva_1_1_countdown_timer_1a971246536c3cca838038b493c4da414c" kind="function"><name>DelayTimer</name></member>
+    <member refid="classeva_1_1_countdown_timer_1a5889ee3ab5a8f31a35f8849c12be2323" kind="function"><name>DelayTimer</name></member>
+    <member refid="classeva_1_1_countdown_timer_1af134fa838e3417c5b93e27635922d2dd" kind="function"><name>tick</name></member>
   </compound>
   <compound refid="classeva_1_1_delay_timer" kind="class"><name>eva::DelayTimer</name>
     <member refid="classeva_1_1_delay_timer_1aaa15353150b005949a4cb0345ebf83ca" kind="variable"><name>nextFire</name></member>

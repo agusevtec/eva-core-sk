@@ -10,8 +10,8 @@ Here are the classes, structs, unions and interfaces with brief descriptions:
     * **class** [**BlinkingIndicator**](classeva_1_1_blinking_indicator.md) [_**Indicator**_](classeva_1_1_indicator.md) _that blinks with specified period and duty cycle._    
     * **class** [**Button**](classeva_1_1_button.md) [_**Button**_](classeva_1_1_button.md) _with press/release and click detection._    
     * **struct** [**CallbackInfo**](structeva_1_1_callback_info.md)     
-    * **class** [**ContdownTimer**](classeva_1_1_contdown_timer.md) _Timer that fires repeatedly at fixed intervals._     
     * **class** [**CountdownIndicator**](classeva_1_1_countdown_indicator.md) [_**Indicator**_](classeva_1_1_indicator.md) _that blinks a specified number of times then notifies listener._    
+    * **class** [**CountdownTimer**](classeva_1_1_countdown_timer.md) _Timer that fires repeatedly at fixed intervals._     
     * **class** [**DelayTimer**](classeva_1_1_delay_timer.md) _One-shot timer that fires after a delay._     
     * **class** [**DigitalPinReader**](classeva_1_1_digital_pin_reader.md) _Reads digital pin value._     
     * **class** [**Handler**](classeva_1_1_handler.md) [_**Handler**_](classeva_1_1_handler.md) _that calls a member method._    

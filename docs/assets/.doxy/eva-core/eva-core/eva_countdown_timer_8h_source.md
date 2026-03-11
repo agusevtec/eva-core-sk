@@ -16,12 +16,12 @@
 
 namespace eva
 {
-    class ContdownTimer : public DelayTimer
+    class CountdownTimer : public DelayTimer
     {
     public:
         using DelayTimer::DelayTimer;
 
-        ContdownTimer *setListener(IHandler *listener);
+        CountdownTimer *setListener(IHandler *listener);
 
         void start(unsigned short period, unsigned short count, IHandler *listener = nullptr);
         void start(unsigned short period, unsigned short count);

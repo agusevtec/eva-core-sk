@@ -712,7 +712,7 @@
 <p>The overhead in OOP comes almost exclusively from one feature: virtual methods. </p>
 <p>The eva-core-sk library is designed around this reality. 
 Look at how buttons are built:</p>
-<div class="codehilite"><pre><span></span><code><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">int</span><span class="w"> </span><span class="n">PIN</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">PINMODE</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">ACTIVATESON</span><span class="o">&gt;</span>
+<div class="codehilite"><pre><span></span><code><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">int</span><span class="w"> </span><span class="n">PIN</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">PINMODE</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">ACTIVATES_ON</span><span class="o">&gt;</span>
 <span class="k">using</span><span class="w"> </span><span class="n">PinButton</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Button</span><span class="o">&lt;</span><span class="n">BinarizeDecor</span><span class="o">&lt;</span><span class="n">StabilizeDecor</span><span class="o">&lt;</span><span class="n">DigitalPinReader</span><span class="o">&lt;</span><span class="n">PIN</span><span class="p">,</span><span class="w"> </span><span class="n">PINMODE</span><span class="o">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">ACTIVATES_ON</span><span class="o">&gt;&gt;</span><span class="p">;</span>
 </code></pre></div>
 
@@ -781,7 +781,8 @@ Look at how buttons are built:</p>
 <span class="p">}</span>
 </code></pre></div>
 
-<p>Key insight: Pin configuration lives in the reader's constructor—hardware setup stays with the component that owns it. The reader translates physical pins into meaningful codes ('u', 'd', 'l', 'r'). Button handles all the timing—you just react to clean ON_PRESS events with the button identity already decoded.</p>
+<p><strong>What's happening</strong></p>
+<p>Pin configuration lives in the reader's constructor—hardware setup stays with the component that owns it. The reader translates physical pins into meaningful codes ('u', 'd', 'l', 'r'). Button handles all the timing—you just react to clean ON_PRESS events with the button identity already decoded.</p>
 <p>This approach is highly memory-efficient compared to using multiple Switch objects. On memory-constrained devices like Arduino, this can make the difference between fitting your program or running out of space.</p>
 <h2 id="multiple-paths-to-the-same-goal">Multiple Paths to the Same Goal<a class="headerlink" href="#multiple-paths-to-the-same-goal" title="Permanent link">&para;</a></h2>
 <p>The library offers different ways to handle events, each with different trade-offs:</p>
@@ -833,84 +834,72 @@ Look at how buttons are built:</p>
 </ul>
 <h2 id="choose-the-right-tool-hierarchies-built-for-efficiency">Choose the Right Tool: Hierarchies Built for Efficiency<a class="headerlink" href="#choose-the-right-tool-hierarchies-built-for-efficiency" title="Permanent link">&para;</a></h2>
 <p>The library provides class hierarchies that let you pick the exact level of functionality you need—no more, no less.</p>
+<h3 id="buttons-from-lightweight-to-feature-rich">Buttons: From Lightweight to Feature-Rich<a class="headerlink" href="#buttons-from-lightweight-to-feature-rich" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Class</th>
+<th>When to Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Switch</code></td>
+<td>For simple active/inactive state tracking</td>
+</tr>
+<tr>
+<td><code>Button</code></td>
+<td>When you need click detection (short/long press)</td>
+</tr>
+<tr>
+<td><code>KeyButton</code></td>
+<td>For auto-repeating keys (like keyboard keys)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="timers-from-lightweight-to-feature-rich">Timers: From Lightweight to Feature-Rich<a class="headerlink" href="#timers-from-lightweight-to-feature-rich" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Class</th>
+<th>When to Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>DelayTimer</code></td>
+<td>For one-shot delays and timeouts</td>
+</tr>
+<tr>
+<td><code>RepeatTimer</code></td>
+<td>For periodic tasks and heartbeats</td>
+</tr>
+<tr>
+<td><code>CountdownTimer</code></td>
+<td>For retry logic and countdown sequences</td>
+</tr>
+</tbody>
+</table>
 <h3 id="indicators-from-simple-to-smart">Indicators: From Simple to Smart<a class="headerlink" href="#indicators-from-simple-to-smart" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
 <th>Class</th>
-<th>Overhead</th>
 <th>When to Use</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>Indicator</code></td>
-<td>Minimal</td>
-<td>Just turn an LED on/off</td>
+<td>For basic on/off LED control</td>
 </tr>
 <tr>
 <td><code>BlinkingIndicator</code></td>
-<td>Small + 2 timers</td>
-<td>Need blinking with period/duty cycle</td>
+<td>When you need blinking with period/duty cycle</td>
 </tr>
 <tr>
 <td><code>CountdownIndicator</code></td>
-<td>Same as above + counter</td>
-<td>Need N blinks then notification</td>
-</tr>
-</tbody>
-</table>
-<h3 id="buttons-from-lightweight-to-feature-rich">Buttons: From Lightweight to Feature-Rich<a class="headerlink" href="#buttons-from-lightweight-to-feature-rich" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>Class</th>
-<th>Overhead</th>
-<th>Features</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>Switch</code></td>
-<td>Minimal</td>
-<td>Just active/inactive states</td>
-</tr>
-<tr>
-<td><code>Button</code></td>
-<td>Small</td>
-<td>Adds pressTime for click detection</td>
-</tr>
-<tr>
-<td><code>KeyButton</code></td>
-<td>Same as Button</td>
-<td>Auto-repeated keys</td>
-</tr>
-</tbody>
-</table>
-<h3 id="timers-one-shot-or-repeating">Timers: One-Shot or Repeating<a class="headerlink" href="#timers-one-shot-or-repeating" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>Class</th>
-<th>Overhead</th>
-<th>Behavior</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>DelayTimer</code></td>
-<td>Minimal</td>
-<td>Fires once</td>
-</tr>
-<tr>
-<td><code>RepeatTimer</code></td>
-<td>Same + period storage</td>
-<td>Fires repeatedly</td>
-</tr>
-<tr>
-<td><code>CountdownTimer</code></td>
-<td>Same + period storage</td>
-<td>Fires repeatedly several times</td>
+<td>For N blinks followed by notification</td>
 </tr>
 </tbody>
 </table>

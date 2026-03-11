@@ -884,7 +884,7 @@
 
 
 <h1 id="working-with-buttons">Working with Buttons<a class="headerlink" href="#working-with-buttons" title="Permanent link">&para;</a></h1>
-<p>The SK part of the eva-core-sk library provides a flexible and powerful button handling system that supports various hardware configurations and event types. Buttons are implemented as template classes, allowing you to precisely configure their behavior while maintaining optimal performance.</p>
+<p>The SK part of the eva-core-sk library provides a flexible and powerful button handling system that supports various hardware configurations and event types. Buttons are implemented as template classes, allowing you to precisely configure their behavior while maintaining optimal performance - and provides aliases for the most common use cases.</p>
 <h2 id="basic-button-pinbutton">Basic Button: <code>PinButton</code><a class="headerlink" href="#basic-button-pinbutton" title="Permanent link">&para;</a></h2>
 <p>For most applications with a button connected directly to a digital pin, use the <code>PinButton</code> alias:</p>
 <div class="codehilite"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;evaButton.h&gt;</span>
@@ -1062,7 +1062,7 @@
 <td>Maps analog values to button indices (1..n)</td>
 </tr>
 <tr>
-<td><code>MultiButton&lt;...&gt;</code></td>
+<td><code>Button&lt;...&gt;</code></td>
 <td>Adds button state machine and event generation</td>
 </tr>
 </tbody>

@@ -26,7 +26,7 @@ This inheritance list is sorted roughly, but not completely, alphabetically:
         * **class** [**eva::Button**](classeva_1_1_button.md) [_**Button**_](classeva_1_1_button.md) _with press/release and click detection._
         * **class** [**eva::Button**](classeva_1_1_button.md) [_**Button**_](classeva_1_1_button.md) _with press/release and click detection._
     * **class** [**eva::DelayTimer**](classeva_1_1_delay_timer.md) _One-shot timer that fires after a delay._     
-        * **class** [**eva::ContdownTimer**](classeva_1_1_contdown_timer.md) _Timer that fires repeatedly at fixed intervals._ 
+        * **class** [**eva::CountdownTimer**](classeva_1_1_countdown_timer.md) _Timer that fires repeatedly at fixed intervals._ 
         * **class** [**eva::RepeatTimer**](classeva_1_1_repeat_timer.md) _Timer that fires repeatedly at fixed intervals._ 
     * **class** [**eva::Switch**](classeva_1_1_switch.md) _Universal switch/button class for multi-valued input sources._     
         * **class** [**eva::Button**](classeva_1_1_button.md) [_**Button**_](classeva_1_1_button.md) _with press/release and click detection._

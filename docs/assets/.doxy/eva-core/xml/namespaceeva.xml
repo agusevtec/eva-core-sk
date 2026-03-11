@@ -5,7 +5,7 @@
     <innerclass refid="classeva_1_1_blinking_indicator" prot="public">eva::BlinkingIndicator</innerclass>
     <innerclass refid="classeva_1_1_button" prot="public">eva::Button</innerclass>
     <innerclass refid="classeva_1_1_countdown_indicator" prot="public">eva::CountdownIndicator</innerclass>
-    <innerclass refid="classeva_1_1_contdown_timer" prot="public">eva::ContdownTimer</innerclass>
+    <innerclass refid="classeva_1_1_countdown_timer" prot="public">eva::CountdownTimer</innerclass>
     <innerclass refid="classeva_1_1_delay_timer" prot="public">eva::DelayTimer</innerclass>
     <innerclass refid="structeva_1_1_callback_info" prot="public">eva::CallbackInfo</innerclass>
     <innerclass refid="classeva_1_1_i_handler" prot="public">eva::IHandler</innerclass>

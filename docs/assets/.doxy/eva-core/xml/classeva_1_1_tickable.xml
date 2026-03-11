@@ -130,7 +130,7 @@
         <reimplementedby refid="classeva_1_1_button_1a5b6706381ba6ff94e445a41889bf2c48">tick</reimplementedby>
         <reimplementedby refid="classeva_1_1_button_1a5b6706381ba6ff94e445a41889bf2c48">tick</reimplementedby>
         <reimplementedby refid="classeva_1_1_button_1a5b6706381ba6ff94e445a41889bf2c48">tick</reimplementedby>
-        <reimplementedby refid="classeva_1_1_contdown_timer_1aa679d082cac5a89cdc90da62311a026e">tick</reimplementedby>
+        <reimplementedby refid="classeva_1_1_countdown_timer_1af134fa838e3417c5b93e27635922d2dd">tick</reimplementedby>
         <reimplementedby refid="classeva_1_1_delay_timer_1a7cf30bb1be1a9a5002fde64adc479096">tick</reimplementedby>
         <reimplementedby refid="classeva_1_1_repeat_timer_1a84f35ebcd37c05ac743599b1ae7f2eb5">tick</reimplementedby>
         <reimplementedby refid="classeva_1_1_switch_1ad68f945aa49eefdc685d1b7a84358655">tick</reimplementedby>
@@ -176,8 +176,8 @@
         </childnode>
       </node>
       <node id="6">
-        <label>eva::ContdownTimer</label>
-        <link refid="classeva_1_1_contdown_timer"/>
+        <label>eva::CountdownTimer</label>
+        <link refid="classeva_1_1_countdown_timer"/>
         <childnode refid="5" relation="public-inheritance">
         </childnode>
       </node>
