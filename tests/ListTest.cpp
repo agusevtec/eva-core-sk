@@ -1,5 +1,3 @@
-#line 2 "ListTest.cpp"
-
 #include <AUnit.h>
 #include <evaList.h>
 

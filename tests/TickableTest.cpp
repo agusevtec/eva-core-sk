@@ -1,4 +1,3 @@
-// TickableTest.cpp
 #include <AUnit.h>
 #include <evaTickable.h>
 

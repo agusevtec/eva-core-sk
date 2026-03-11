@@ -1,8 +1,6 @@
-#define private public
-
 #include <AUnit.h>
 #include "MockReader.h"
-#include "TestHandler.h"
+#include "MockHandler.h"
 #include <evaButton.h>
 
 using namespace aunit;
@@ -13,13 +11,13 @@ using TestMultiButton = Button<MockReader>;
 test(multibutton_detects_press_with_code)
 {
     TestMultiButton btn;
-    TestHandler handler;
+    MockHandler handler;
 
     btn.setListener(&handler, ON_PRESS);
 
     // Нажимаем кнопку с кодом 3
     btn.setValue(3);
-    btn.tick();
+    btn.tac();
 
     assertEqual(handler.callCount, 1);
     assertEqual((int)handler.lastEventType, (int)ON_PRESS);
@@ -30,18 +28,18 @@ test(multibutton_detects_press_with_code)
 test(multibutton_detects_release_with_code)
 {
     TestMultiButton btn;
-    TestHandler handler;
+    MockHandler handler;
 
     btn.setListener(&handler, ON_RELEASE);
 
     // Сначала нажимаем кнопку 2
     btn.setValue(2);
-    btn.tick();
+    btn.tac();
     handler.reset();
 
     // Отпускаем
     btn.setValue(0);
-    btn.tick();
+    btn.tac();
 
     assertEqual(handler.callCount, 1);
     assertEqual((int)handler.lastEventType, (int)ON_RELEASE);
@@ -51,18 +49,18 @@ test(multibutton_detects_release_with_code)
 test(multibutton_short_click_with_code)
 {
     TestMultiButton btn;
-    TestHandler handler;
+    MockHandler handler;
 
     btn.setListener(&handler, ON_SHORTCLICK);
 
     // Нажимаем кнопку 4
     btn.setValue(4);
-    btn.tick();
+    btn.tac();
     delay(500); // меньше 750мс
 
     // Отпускаем
     btn.setValue(0);
-    btn.tick();
+    btn.tac();
 
     assertEqual(handler.callCount, 1);
     assertEqual((int)handler.lastEventType, (int)ON_SHORTCLICK);
@@ -72,16 +70,16 @@ test(multibutton_short_click_with_code)
 test(multibutton_long_click_with_code)
 {
     TestMultiButton btn;
-    TestHandler handler;
+    MockHandler handler;
 
     btn.setListener(&handler, ON_LONGCLICK);
 
     // Нажимаем кнопку 1
     btn.setValue(1);
-    btn.tick();
+    btn.tac();
     delay(800); // больше 750мс
 
-    btn.tick();
+    btn.tac();
 
     assertEqual(handler.callCount, 1);
     assertEqual((int)handler.lastEventType, (int)ON_LONGCLICK);
@@ -91,13 +89,13 @@ test(multibutton_long_click_with_code)
 test(multibutton_switch_directly)
 {
     TestMultiButton btn;
-    TestHandler handler;
+    MockHandler handler;
 
     btn.setListener(&handler, ON_PRESS | ON_RELEASE);
 
     // Нажимаем кнопку 1
     btn.setValue(1);
-    btn.tick();
+    btn.tac();
 
     assertEqual(handler.callCount, 1);
     assertEqual((int)handler.lastEventType, (int)ON_PRESS);
@@ -107,7 +105,7 @@ test(multibutton_switch_directly)
 
     // Прямое переключение на кнопку 2
     btn.setValue(2);
-    btn.tick();
+    btn.tac();
 
     // Должны получить RELEASE для 1 и PRESS для 2
     // Порядок может быть разным, проверяем что было 2 события
@@ -117,12 +115,12 @@ test(multibutton_switch_directly)
 test(multibutton_zero_is_no_button)
 {
     TestMultiButton btn;
-    TestHandler handler;
+    MockHandler handler;
 
     btn.setListener(&handler, ON_PRESS);
 
     btn.setValue(0);
-    btn.tick();
+    btn.tac();
 
     assertEqual(handler.callCount, 0);
     assertEqual(btn.getValue(), 0);
@@ -131,7 +129,7 @@ test(multibutton_zero_is_no_button)
 test(multibutton_multiple_buttons)
 {
     TestMultiButton btn;
-    TestHandler handler;
+    MockHandler handler;
 
     btn.setListener(&handler, ON_PRESS);
 
@@ -139,7 +137,7 @@ test(multibutton_multiple_buttons)
     for (int code = 1; code <= 5; code++)
     {
         btn.setValue(code);
-        btn.tick();
+        btn.tac();
 
         assertEqual((int)handler.lastEventType, (int)ON_PRESS);
         assertEqual((int)handler.lastArgs, (int)code);
@@ -147,20 +145,20 @@ test(multibutton_multiple_buttons)
 
         handler.reset();
         btn.setValue(0);
-        btn.tick(); // отпускаем
+        btn.tac(); // отпускаем
     }
 }
 
 test(multibutton_can_be_disabled)
 {
     TestMultiButton btn;
-    TestHandler handler;
+    MockHandler handler;
 
     btn.setListener(&handler, ON_PRESS);
     btn.enable(false);
 
     btn.setValue(3);
-    btn.tick();
+    btn.tac();
 
     assertEqual(handler.callCount, 0);
     assertEqual(btn.getValue(), 0);

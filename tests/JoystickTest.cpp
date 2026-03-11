@@ -1,5 +1,3 @@
-#line 2 "JoystickTest.cpp"
-
 #include <AUnit.h>
 #include "MockReader.h"
 #include <evaJoystick.h>

@@ -1,8 +1,6 @@
-#define private public
-
 #include <AUnit.h>
 #include "MockReader.h"
-#include "TestHandler.h"
+#include "MockHandler.h"
 #include <evaButton.h>
 
 using namespace aunit;
@@ -13,13 +11,13 @@ using TestButton = Button<MockReader>;
 test(button_detects_press)
 {
     TestButton btn;
-    TestHandler handler;
+    MockHandler handler;
 
     btn.setListener(&handler, ON_PRESS);
     btn.setValue(0);
-    btn.tick();
+    btn.tac();
     btn.setValue(1);
-    btn.tick();
+    btn.tac();
 
     assertEqual(handler.callCount, 1);
     assertEqual((int)handler.lastEventType, (int)ON_PRESS);
@@ -27,13 +25,13 @@ test(button_detects_press)
 test(button_detects_release)
 {
     TestButton btn;
-    TestHandler handler;
+    MockHandler handler;
 
     btn.setListener(&handler, ON_RELEASE);
 
     // Сначала нажимаем
     btn.setValue(1);
-    btn.tick();
+    btn.tac();
     handler.reset();
 
     // Ждем немного
@@ -41,7 +39,7 @@ test(button_detects_release)
 
     // Отпускаем
     btn.setValue(0);
-    btn.tick();
+    btn.tac();
 
     assertEqual(handler.callCount, 1);
     assertEqual((int)handler.lastEventType, (int)ON_RELEASE);
@@ -50,20 +48,20 @@ test(button_detects_release)
 test(button_short_click)
 {
     TestButton btn;
-    TestHandler handler;
+    MockHandler handler;
 
     btn.setListener(&handler, ON_SHORTCLICK);
 
     // Нажимаем
     btn.setValue(1);
-    btn.tick();
+    btn.tac();
 
     // Ждем немного (меньше 750мс)
     delay(500);
 
     // Отпускаем
     btn.setValue(0);
-    btn.tick();
+    btn.tac();
 
     assertEqual(handler.callCount, 1);
     assertEqual((int)handler.lastEventType, (int)ON_SHORTCLICK);
@@ -72,19 +70,19 @@ test(button_short_click)
 test(button_long_click)
 {
     TestButton btn;
-    TestHandler handler;
+    MockHandler handler;
 
     btn.setListener(&handler, ON_LONGCLICK);
 
     // Нажимаем
     btn.setValue(1);
-    btn.tick();
+    btn.tac();
 
     // Ждем больше 750мс
     delay(800);
 
     // Держим - должен сработать LONGCLICK
-    btn.tick();
+    btn.tac();
 
     assertEqual(handler.callCount, 1);
     assertEqual((int)handler.lastEventType, (int)ON_LONGCLICK);
@@ -93,25 +91,25 @@ test(button_long_click)
 test(button_no_short_click_after_long)
 {
     TestButton btn;
-    TestHandler handler;
+    MockHandler handler;
 
     btn.setListener(&handler, ON_SHORTCLICK | ON_LONGCLICK);
 
     // Нажимаем
     btn.setValue(1);
-    btn.tick();
+    btn.tac();
     handler.reset();
 
     // Ждем больше 750мс
     delay(800);
-    btn.tick(); // Должен быть LONGCLICK
+    btn.tac(); // Должен быть LONGCLICK
     assertEqual((int)handler.lastEventType, (int)ON_LONGCLICK);
 
     handler.reset();
 
     // Отпускаем - не должно быть SHORTCLICK
     btn.setValue(0);
-    btn.tick();
+    btn.tac();
     assertEqual(handler.callCount, 0);
 }
 
@@ -119,12 +117,12 @@ test(button_no_short_click_after_long)
 test(button_can_be_disabled)
 {
     TestButton btn;
-    TestHandler handler;
+    MockHandler handler;
 
     btn.setListener(&handler, ON_PRESS);
     btn.enable(false);
 
     btn.setValue(1);
-    btn.tick();
+    btn.tac();
     assertEqual(handler.callCount, 0);
 }

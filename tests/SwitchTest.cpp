@@ -1,9 +1,6 @@
-#line 2 "SwitchTest.cpp"
-#define protected public
-
 #include <AUnit.h>
 #include "MockReader.h"
-#include "TestHandler.h"
+#include "MockHandler.h"
 #include <evaSwitch.h>
 
 using namespace aunit;
@@ -19,11 +16,11 @@ test(switch_starts_inactive) {
 
 test(switch_detects_activation) {
     TestSwitch sw;
-    TestHandler handler;
+    MockHandler handler;
     
     sw.setListener(&handler, ON_ACTIVE);
     sw.setValue(1);
-    sw.tick();
+    sw.tac();
     
     assertEqual(sw.getValue(), 1);
     assertEqual(handler.callCount, 1);
@@ -32,18 +29,18 @@ test(switch_detects_activation) {
 
 test(switch_detects_deactivation) {
     TestSwitch sw;
-    TestHandler handler;
+    MockHandler handler;
     
     sw.setListener(&handler, ON_INACTIVE);
     
     // Сначала активируем
     sw.setValue(1);
-    sw.tick();
+    sw.tac();
     handler.reset();
     
     // Потом деактивируем
     sw.setValue(0);
-    sw.tick();
+    sw.tac();
     
     assertEqual(sw.getValue(), 0);
     assertEqual(handler.callCount, 1);
@@ -52,59 +49,59 @@ test(switch_detects_deactivation) {
 
 test(switch_sends_change_event) {
     TestSwitch sw;
-    TestHandler handler;
+    MockHandler handler;
     
     sw.setListener(&handler, ON_ACTIVE|ON_INACTIVE);
     
     sw.setValue(1);
-    sw.tick();
+    sw.tac();
     assertEqual(handler.callCount, 1);
     
     sw.setValue(0);
-    sw.tick();
+    sw.tac();
     assertEqual(handler.callCount, 2);
 }
 
 test(switch_no_event_when_no_change) {
     TestSwitch sw;
-    TestHandler handler;
+    MockHandler handler;
     
     sw.setListener(&handler, ON_ACTIVE);
     sw.setValue(1);
-    sw.tick();
+    sw.tac();
     assertEqual(handler.callCount, 1);
     
     handler.reset();
-    sw.tick(); // То же значение - нет события
+    sw.tac(); // То же значение - нет события
     assertEqual(handler.callCount, 0);
 }
 
 test(switch_can_be_disabled) {
     TestSwitch sw;
-    TestHandler handler;
+    MockHandler handler;
     
     sw.setListener(&handler, ON_ACTIVE);
     sw.enable(false);
     
     sw.setValue(1);
-    sw.tick();
+    sw.tac();
     assertEqual(handler.callCount, 0);
     assertEqual(sw.getValue(), 0); // Не меняется когда disabled
 }
 
 test(switch_can_be_reenabled) {
     TestSwitch sw;
-    TestHandler handler;
+    MockHandler handler;
     
     sw.setListener(&handler, ON_ACTIVE);
     sw.enable(false);
     
     sw.setValue(1);
-    sw.tick();
+    sw.tac();
     assertEqual(handler.callCount, 0);
     
     sw.enable(true);
-    sw.tick();
+    sw.tac();
     assertEqual(handler.callCount, 1);
     assertEqual(sw.getValue(), 1);
 }

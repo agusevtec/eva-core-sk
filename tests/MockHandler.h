@@ -3,7 +3,7 @@
 #include <evaHandler.h>
 
 // Тестовый обработчик событий
-class TestHandler : public eva::IHandler {
+class MockHandler : public eva::IHandler {
 public:
     void* lastSender = nullptr;
     unsigned short lastEventType = 0;
