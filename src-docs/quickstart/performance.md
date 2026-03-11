@@ -10,7 +10,7 @@ The eva-core-sk library is designed around this reality.
 Look at how buttons are built:
 
 ```cpp
-template <int PIN, int PINMODE, int ACTIVATESON>
+template <int PIN, int PINMODE, int ACTIVATES_ON>
 using PinButton = Button<BinarizeDecor<StabilizeDecor<DigitalPinReader<PIN, PINMODE>>, ACTIVATES_ON>>;
 ```
 
@@ -83,7 +83,9 @@ void loop() {
   eva::tac();
 }
 ```
-Key insight: Pin configuration lives in the reader's constructor—hardware setup stays with the component that owns it. The reader translates physical pins into meaningful codes ('u', 'd', 'l', 'r'). Button handles all the timing—you just react to clean ON_PRESS events with the button identity already decoded.
+**What's happening**
+
+ Pin configuration lives in the reader's constructor—hardware setup stays with the component that owns it. The reader translates physical pins into meaningful codes ('u', 'd', 'l', 'r'). Button handles all the timing—you just react to clean ON_PRESS events with the button identity already decoded.
 
 This approach is highly memory-efficient compared to using multiple Switch objects. On memory-constrained devices like Arduino, this can make the difference between fitting your program or running out of space.
 
@@ -137,30 +139,30 @@ class App : public Tickable {
 
 The library provides class hierarchies that let you pick the exact level of functionality you need—no more, no less.
 
-### Indicators: From Simple to Smart
-
-| Class | Overhead | When to Use |
-|-------|----------|-------------|
-| `Indicator` | Minimal | Just turn an LED on/off |
-| `BlinkingIndicator` | Small + 2 timers | Need blinking with period/duty cycle |
-| `CountdownIndicator` | Same as above + counter | Need N blinks then notification |
-
 
 ### Buttons: From Lightweight to Feature-Rich
 
-| Class | Overhead | Features |
-|-------|-----|----------|
-| `Switch` | Minimal | Just active/inactive states |
-| `Button` | Small | Adds pressTime for click detection |
-| `KeyButton` | Same as Button | Auto-repeated keys |
+| Class | When to Use |
+|-------|----------|
+| `Switch` | For simple active/inactive state tracking |
+| `Button` | When you need click detection (short/long press) |
+| `KeyButton` | For auto-repeating keys (like keyboard keys) |
 
 
-### Timers: One-Shot or Repeating
+### Timers: From Lightweight to Feature-Rich
 
-| Class | Overhead | Behavior |
-|-------|----------|----------|
-| `DelayTimer` | Minimal | Fires once |
-| `RepeatTimer` | Same + period storage | Fires repeatedly |
-| `CountdownTimer` | Same + period storage | Fires repeatedly several times |
+| Class | When to Use |
+|-------|----------|
+| `DelayTimer` | For one-shot delays and timeouts |
+| `RepeatTimer` | For periodic tasks and heartbeats |
+| `CountdownTimer` | For retry logic and countdown sequences |
+
+### Indicators: From Simple to Smart
+
+| Class | When to Use |
+|-------|-------------|
+| `Indicator` | For basic on/off LED control |
+| `BlinkingIndicator` | When you need blinking with period/duty cycle |
+| `CountdownIndicator` | For N blinks followed by notification |
 
 Choose the right abstraction for each job, and pay only for what you actually need.

@@ -77,7 +77,7 @@ public:
 };
 ```
 
-**What's happening:**
+**What's happening**
 
 - `DifferentialReader` reads the difference between two analog pins, canceling common-mode noise
 

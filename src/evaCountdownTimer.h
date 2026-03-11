@@ -9,12 +9,12 @@ namespace eva
     /**
      * @brief Timer that fires repeatedly at fixed intervals
      */
-    class ContdownTimer : public DelayTimer
+    class CountdownTimer : public DelayTimer
     {
     public:
         using DelayTimer::DelayTimer;
 
-        ContdownTimer *setListener(IHandler *listener);
+        CountdownTimer *setListener(IHandler *listener);
 
         /**
          * @brief Starts or restarts the repeating timer

@@ -3,7 +3,7 @@
 
 using namespace eva;
 
-void ContdownTimer::start(unsigned short period, unsigned short count, IHandler *listener)
+void CountdownTimer::start(unsigned short period, unsigned short count, IHandler *listener)
 {
     this->period = period;
     this->remainingCount = count;
@@ -14,12 +14,12 @@ void ContdownTimer::start(unsigned short period, unsigned short count, IHandler 
         DelayTimer::stop();
 }
 
-void eva::ContdownTimer::start(unsigned short period, unsigned short count)
+void eva::CountdownTimer::start(unsigned short period, unsigned short count)
 {
     start(period, count, this->listener);
 }
 
-void ContdownTimer::tick()
+void CountdownTimer::tick()
 {
     if (!isRunning())
         return;
@@ -38,7 +38,7 @@ void ContdownTimer::tick()
     }
 }
 
-ContdownTimer *ContdownTimer::setListener(IHandler *listener)
+CountdownTimer *CountdownTimer::setListener(IHandler *listener)
 {
-    return (ContdownTimer *)DelayTimer::setListener(listener);
+    return (CountdownTimer *)DelayTimer::setListener(listener);
 }

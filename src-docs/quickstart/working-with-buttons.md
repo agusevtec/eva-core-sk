@@ -1,6 +1,6 @@
 # Working with Buttons
 
-The SK part of the eva-core-sk library provides a flexible and powerful button handling system that supports various hardware configurations and event types. Buttons are implemented as template classes, allowing you to precisely configure their behavior while maintaining optimal performance.
+The SK part of the eva-core-sk library provides a flexible and powerful button handling system that supports various hardware configurations and event types. Buttons are implemented as template classes, allowing you to precisely configure their behavior while maintaining optimal performance - and provides aliases for the most common use cases.
 
 ## Basic Button: `PinButton`
 
@@ -165,5 +165,5 @@ The layers:
 | `AnalogPinReader<PIN, PINMODE>` | Reads raw analog values |
 | `StabilizeDecor<...>` | Stabilizes readings (120ms debounce) |
 | `QuantizeDecor<..., LEVELS...>` | Maps analog values to button indices (1..n) |
-| `MultiButton<...>` | Adds button state machine and event generation |
+| `Button<...>` | Adds button state machine and event generation |
 
