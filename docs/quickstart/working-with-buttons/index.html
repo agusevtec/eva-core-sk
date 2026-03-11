@@ -1033,7 +1033,7 @@
 <span class="p">}</span>
 </code></pre></div>
 
-<p>The lower byte of the event mask contains the button level (1 for first button, 2 for second, etc.), while the upper byte contains the event type.</p>
+<p>Event information: The handler receives a CallbackInfo structure containing both the event type (the event mask) and the button identifier (1 for first button, 2 for second, etc.)</p>
 <h2 id="how-pinmultibutton-is-built">How <code>PinMultiButton</code> is Built<a class="headerlink" href="#how-pinmultibutton-is-built" title="Permanent link">&para;</a></h2>
 <p>The <code>PinMultiButton</code> alias shows an even more sophisticated composition:</p>
 <div class="codehilite"><pre><span></span><code><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">int</span><span class="w"> </span><span class="n">PIN</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">PINMODE</span><span class="p">,</span><span class="w"> </span><span class="kt">signed</span><span class="w"> </span><span class="kt">short</span><span class="p">...</span><span class="w"> </span><span class="n">LEVELS</span><span class="o">&gt;</span>

@@ -1,6 +1,6 @@
 # Flexibility: Beyond Standard Inputs
 
-The true power of the EVA concept and the SK part of the eva-core-sk library lies in its flexibility. Because Switch and Button are built on templates and decorators, they can work with any source of numerical data—not just physical pins. This section shows how you can adapt the library to unconventional input sources.
+The true power of the EVA concept and the SK part of the eva-core-sk library lies in its flexibility. Because `Switch` and `Button` are built on templates and decorators, they can work with any source of numerical data—not just physical pins. This section shows how you can adapt the library to unconventional input sources.
 
 ## Example 1: Differential Joystick with Custom Zone Detection
 

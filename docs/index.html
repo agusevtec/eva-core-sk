@@ -824,8 +824,8 @@
 <p><strong>eva-core-sk</strong> is a concrete implementation of this concept—a library that puts these principles into practice.</p>
 <hr />
 <h3 id="the-four-pillars">The Four Pillars<a class="headerlink" href="#the-four-pillars" title="Permanent link">&para;</a></h3>
-<p><strong>First</strong>, many components—either explicitly or implicitly—claim their own slice of the famous Arduino <code>loop()</code>, and user code is encouraged to do the same. Timings become a natural part of the contract between objects—whether between user objects and library objects, or among user objects themselves.</p>
-<p><strong>Second</strong>, the library provides everything needed to structure user code in an object-oriented way, which gives predictable initialization. Everything can be built as static objects and starts running in <code>setup()</code>. When you refactor—moving members, splitting classes—the initialization order follows automatically. You never have to hunt for a forgotten <code>init()</code> call.</p>
+<p><strong>First</strong>, many components—either explicitly or implicitly—claim their own slice and only their slice of the famous Arduino loop(), and user code is encouraged to do the same. Timings become a natural part of the contract between objects—whether between user objects and library objects, or among user objects themselves.</p>
+<p><strong>Second</strong>, the library provides everything needed to structure user code in an object-oriented way, which gives predictable initialization. When you refactor—moving members, splitting classes—the initialization order follows automatically. You never have to hunt for a forgotten <code>init()</code> call.</p>
 <p><strong>Third</strong>, delegates via <code>Handler</code> bind events to methods naturally. Components do not poll. They notify when something happens.</p>
 <p><strong>Fourth</strong>, the layered architecture continues into user code, creating many connection points and making testing simple.</p>
 <hr />

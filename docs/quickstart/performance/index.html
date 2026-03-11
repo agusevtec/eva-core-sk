@@ -719,7 +719,7 @@ Look at how buttons are built:</p>
 <p>This entire chain resolves at compile time. </p>
 <h1 id="custom-button-bank">Custom Button Bank<a class="headerlink" href="#custom-button-bank" title="Permanent link">&para;</a></h1>
 <p>Multiple Discrete Buttons via One Reader</p>
-<p>Sometimes you have several discrete buttons but want to handle them through Button for unified event handling. Create a custom reader that checks each pin and returns a unique code:</p>
+<p>Sometimes you have several discrete buttons but want to handle them through <code>Switch</code> or <code>Button</code> for unified event handling. Create a custom reader that checks each pin and returns a unique code:</p>
 <div class="codehilite"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;evaSwitch.h&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;evaTac.h&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;evaHandler.h&gt;</span>

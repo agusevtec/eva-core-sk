@@ -13,9 +13,9 @@ EVA is a concept of comfortable user code. A set of principles that make Arduino
 
 ### The Four Pillars
 
-**First**, many components—either explicitly or implicitly—claim their own slice of the famous Arduino `loop()`, and user code is encouraged to do the same. Timings become a natural part of the contract between objects—whether between user objects and library objects, or among user objects themselves.
+**First**, many components—either explicitly or implicitly—claim their own slice and only their slice of the famous Arduino loop(), and user code is encouraged to do the same. Timings become a natural part of the contract between objects—whether between user objects and library objects, or among user objects themselves.
 
-**Second**, the library provides everything needed to structure user code in an object-oriented way, which gives predictable initialization. Everything can be built as static objects and starts running in `setup()`. When you refactor—moving members, splitting classes—the initialization order follows automatically. You never have to hunt for a forgotten `init()` call.
+**Second**, the library provides everything needed to structure user code in an object-oriented way, which gives predictable initialization. When you refactor—moving members, splitting classes—the initialization order follows automatically. You never have to hunt for a forgotten `init()` call.
 
 **Third**, delegates via `Handler` bind events to methods naturally. Components do not poll. They notify when something happens.
 

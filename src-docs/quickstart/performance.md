@@ -20,7 +20,7 @@ This entire chain resolves at compile time.
 
 Multiple Discrete Buttons via One Reader
 
-Sometimes you have several discrete buttons but want to handle them through Button for unified event handling. Create a custom reader that checks each pin and returns a unique code:
+Sometimes you have several discrete buttons but want to handle them through `Switch` or `Button` for unified event handling. Create a custom reader that checks each pin and returns a unique code:
 
 ```cpp
 #include <evaSwitch.h>

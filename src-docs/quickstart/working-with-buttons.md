@@ -147,7 +147,7 @@ void loop() {
   eva::tac();
 }
 ```
-The lower byte of the event mask contains the button level (1 for first button, 2 for second, etc.), while the upper byte contains the event type.
+Event information: The handler receives a CallbackInfo structure containing both the event type (the event mask) and the button identifier (1 for first button, 2 for second, etc.)
 
 ## How `PinMultiButton` is Built
 
