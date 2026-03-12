@@ -52,7 +52,7 @@ ListIterator	KEYWORD1
 #######################################
 # Event Constants
 #######################################
-ON_CHANGED	LITERAL1
+ON_CHANGE	LITERAL1
 ON_PRESS	LITERAL1
 ON_RELEASE	LITERAL1
 ON_ACTIVE	LITERAL1

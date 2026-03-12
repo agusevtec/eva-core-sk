@@ -67,7 +67,7 @@ test(button_long_click)
     TestButton btn;
     MockHandler handler;
 
-    btn.setListener(&handler, ON_LONGCLICK);
+    btn.setListener(&handler, ON_LONGPRESS);
 
     btn.setValue(1);
     btn.tac();
@@ -78,7 +78,7 @@ test(button_long_click)
     btn.tac();
 
     assertEqual(handler.callCount, 1);
-    assertEqual((int)handler.lastEventType, (int)ON_LONGCLICK);
+    assertEqual((int)handler.lastEventType, (int)ON_LONGPRESS);
 }
 
 test(button_no_short_click_after_long)
@@ -86,7 +86,7 @@ test(button_no_short_click_after_long)
     TestButton btn;
     MockHandler handler;
 
-    btn.setListener(&handler, ON_SHORTCLICK | ON_LONGCLICK);
+    btn.setListener(&handler, ON_SHORTCLICK | ON_LONGPRESS);
 
     btn.setValue(1);
     btn.tac();
@@ -95,7 +95,7 @@ test(button_no_short_click_after_long)
     // more than 750ms
     delay(800);
     btn.tac(); 
-    assertEqual((int)handler.lastEventType, (int)ON_LONGCLICK);
+    assertEqual((int)handler.lastEventType, (int)ON_LONGPRESS);
 
     handler.reset();
 
@@ -142,7 +142,7 @@ test(button_long_click_with_code)
     TestButton btn;
     MockHandler handler;
 
-    btn.setListener(&handler, ON_LONGCLICK);
+    btn.setListener(&handler, ON_LONGPRESS);
 
     btn.setValue(1);
     btn.tac();
@@ -151,6 +151,6 @@ test(button_long_click_with_code)
     btn.tac();
 
     assertEqual(handler.callCount, 1);
-    assertEqual((int)handler.lastEventType, (int)ON_LONGCLICK);
+    assertEqual((int)handler.lastEventType, (int)ON_LONGPRESS);
     assertEqual((int)handler.lastArgs, 1);
 }

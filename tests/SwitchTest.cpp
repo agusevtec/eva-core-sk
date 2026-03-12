@@ -66,7 +66,7 @@ test(switch_sends_change_event)
     TestSwitch sw;
     MockHandler handler;
 
-    sw.setListener(&handler, ON_CHANGED);
+    sw.setListener(&handler, ON_CHANGE);
 
     sw.setValue(1);
     sw.tac();
@@ -186,13 +186,13 @@ test(switch_switch_directly_onswitched)
     TestSwitch btn;
     MockHandler handler;
 
-    btn.setListener(&handler, ON_CHANGED);
+    btn.setListener(&handler, ON_CHANGE);
 
     btn.setValue(1);
     btn.tac();
 
     assertEqual(handler.callCount, 1);
-    assertEqual((int)handler.lastEventType, (int)ON_CHANGED);
+    assertEqual((int)handler.lastEventType, (int)ON_CHANGE);
     assertEqual((int)handler.lastArgs, 1);
 
     handler.reset();
@@ -200,7 +200,7 @@ test(switch_switch_directly_onswitched)
     btn.setValue(2);
     btn.tac();
 
-    assertEqual((int)handler.lastEventType, (int)ON_CHANGED);
+    assertEqual((int)handler.lastEventType, (int)ON_CHANGE);
     assertEqual(handler.callCount, 2);
 }
 

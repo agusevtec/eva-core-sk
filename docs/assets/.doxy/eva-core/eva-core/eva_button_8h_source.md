@@ -46,14 +46,14 @@ namespace eva
                 if (this->pressTime and (millis() - this->pressTime) < 750)
                     this->notify(ON_SHORTCLICK, wasLevelCode);
                 this->notify(ON_RELEASE, wasLevelCode);
-                this->notify(ON_CHANGED, this->levelCode);
+                this->notify(ON_CHANGE, this->levelCode);
                 this->pressTime = 0;
             }
             if ((wasLevelCode != this->levelCode) and (this->levelCode > 0)) // 0 -> any_pos
             {
                 this->pressTime = millis();
                 this->notify(ON_PRESS, this->levelCode);
-                this->notify(ON_CHANGED, this->levelCode);
+                this->notify(ON_CHANGE, this->levelCode);
             }
         }
 

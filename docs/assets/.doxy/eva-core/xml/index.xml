@@ -171,7 +171,7 @@
     <member refid="eva_switch_8h_1afeb4db37763710b769578c7a201440c0" kind="typedef"><name>PinMultiSwitch</name></member>
     <member refid="eva_button_8h_1a9f0afdfaa61b59c313463ec31444bc58" kind="variable"><name>ON_SHORTCLICK</name></member>
     <member refid="eva_button_8h_1ae072ea6457bf4f70dfe4420571701571" kind="variable"><name>ON_LONGCLICK</name></member>
-    <member refid="eva_switch_8h_1abed7d02cf942cd9a8b0c0fd5fcfa5927" kind="variable"><name>ON_CHANGED</name></member>
+    <member refid="eva_switch_8h_1abed7d02cf942cd9a8b0c0fd5fcfa5927" kind="variable"><name>ON_CHANGE</name></member>
     <member refid="eva_switch_8h_1a0dc3da3ced5a1c2b4e4d2acc8b381254" kind="variable"><name>ON_PRESS</name></member>
     <member refid="eva_switch_8h_1a6c443d221db88ada2b9c14a5bc5c7265" kind="variable"><name>ON_RELEASE</name></member>
     <member refid="eva_switch_8h_1a59f4de0c6956b7623ed38b4a0bd89205" kind="variable"><name>ON_ACTIVE</name></member>

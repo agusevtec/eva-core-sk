@@ -16,7 +16,7 @@ using PinButton = Button<BinarizeDecor<StabilizeDecor<DigitalPinReader<PIN, PINM
 
 This entire chain resolves at compile time. 
 
-#Efficiency Through Composition
+## Efficiency Through Composition
 
 Multiple Discrete Buttons via One Reader
 

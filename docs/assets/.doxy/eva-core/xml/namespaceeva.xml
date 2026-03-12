@@ -625,10 +625,10 @@
       </memberdef>
       <memberdef kind="variable" id="eva_switch_8h_1abed7d02cf942cd9a8b0c0fd5fcfa5927" prot="public" static="yes" mutable="no">
         <type>const unsigned char</type>
-        <definition>const unsigned char eva::ON_CHANGED</definition>
+        <definition>const unsigned char eva::ON_CHANGE</definition>
         <argsstring></argsstring>
-        <name>ON_CHANGED</name>
-        <qualifiedname>eva::ON_CHANGED</qualifiedname>
+        <name>ON_CHANGE</name>
+        <qualifiedname>eva::ON_CHANGE</qualifiedname>
         <initializer>= 0x1</initializer>
         <briefdescription>
         </briefdescription>

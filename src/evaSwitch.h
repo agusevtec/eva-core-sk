@@ -9,7 +9,7 @@
 
 namespace eva
 {
-    static const unsigned char ON_CHANGED = 0x1;
+    static const unsigned char ON_CHANGE = 0x1;
     static const unsigned char ON_PRESS = 0x02;
     static const unsigned char ON_RELEASE = 0x04;
 
@@ -58,7 +58,7 @@ namespace eva
          * @brief Sets the event listener for this switch.
          * 
          * @param listener Callback object implementing IHandler
-         * @param eventMask Bitmask of events to listen for (ON_PRESS, ON_RELEASE, ON_CHANGED)
+         * @param eventMask Bitmask of events to listen for (ON_PRESS, ON_RELEASE, ON_CHANGE)
          * @return Pointer to this for method chaining
          */
         Switch *setListener(IHandler *listener, unsigned short eventMask)
@@ -109,12 +109,12 @@ namespace eva
             if ((wasLevelCode > 0) and (wasLevelCode != this->levelCode)) // active -> inactive or different state
             {
                 this->notify(ON_RELEASE, wasLevelCode);
-                this->notify(ON_CHANGED, wasLevelCode);
+                this->notify(ON_CHANGE, wasLevelCode);
             }
             if ((wasLevelCode != this->levelCode) and (this->levelCode > 0)) // inactive or different -> active
             {
                 this->notify(ON_PRESS, this->levelCode);
-                this->notify(ON_CHANGED, this->levelCode);
+                this->notify(ON_CHANGE, this->levelCode);
             }
         }
 

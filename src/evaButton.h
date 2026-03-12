@@ -9,6 +9,7 @@ namespace eva
 {
     static const unsigned char ON_SHORTCLICK = 0x08;
     static const unsigned char ON_LONGCLICK = 0x10;
+    static const unsigned char ON_LONGPRESS = 0x20;
 
     /**
      * @brief Button with press/release and click detection.
@@ -47,26 +48,27 @@ namespace eva
 
             unsigned char wasLevelCode = this->levelCode;
             this->levelCode = READER::getValue();
+            unsigned long now = millis();
 
-            if (this->pressTime and (millis() - this->pressTime) > 750)
+            if (this->pressTime and (now - this->pressTime) > 750)
             {
-                this->notify(ON_LONGCLICK, this->levelCode);
+                this->notify(ON_LONGPRESS, this->levelCode);
                 this->pressTime = 0;
             }
 
-            if ((wasLevelCode > 0) and (wasLevelCode != this->levelCode)) // any_pos -> 0
+            if ((wasLevelCode > 0) and (wasLevelCode != this->levelCode))
             {
-                if (this->pressTime and (millis() - this->pressTime) < 750)
-                    this->notify(ON_SHORTCLICK, wasLevelCode);
+                if (this->pressTime)
+                    this->notify(((now - this->pressTime) < 750)?ON_SHORTCLICK:ON_LONGCLICK, wasLevelCode);
                 this->notify(ON_RELEASE, wasLevelCode);
-                this->notify(ON_CHANGED, this->levelCode);
+                this->notify(ON_CHANGE, this->levelCode);
                 this->pressTime = 0;
             }
-            if ((wasLevelCode != this->levelCode) and (this->levelCode > 0)) // 0 -> any_pos
+            if ((wasLevelCode != this->levelCode) and (this->levelCode > 0))
             {
-                this->pressTime = millis();
+                this->pressTime = now;
                 this->notify(ON_PRESS, this->levelCode);
-                this->notify(ON_CHANGED, this->levelCode);
+                this->notify(ON_CHANGE, this->levelCode);
             }
         }
 

@@ -80,7 +80,7 @@
 | Type | Name |
 | ---: | :--- |
 |  const unsigned char | [**ON\_ACTIVE**](#variable-on_active)   = `ON\_PRESS`<br> |
-|  const unsigned char | [**ON\_CHANGED**](#variable-on_changed)   = `0x1`<br> |
+|  const unsigned char | [**ON\_CHANGED**](#variable-ON_CHANGE)   = `0x1`<br> |
 |  const unsigned char | [**ON\_INACTIVE**](#variable-on_inactive)   = `ON\_RELEASE`<br> |
 |  const unsigned char | [**ON\_LONGCLICK**](#variable-on_longclick)   = `0x10`<br> |
 |  const unsigned char | [**ON\_PRESS**](#variable-on_press)   = `0x02`<br> |
@@ -474,7 +474,7 @@ const unsigned char eva::ON_ACTIVE;
 ### variable ON\_CHANGED 
 
 ```C++
-const unsigned char eva::ON_CHANGED;
+const unsigned char eva::ON_CHANGE;
 ```
 
 

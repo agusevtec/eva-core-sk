@@ -128,7 +128,7 @@
 <parametername>eventMask</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Bitmask of events to listen for (ON_PRESS, ON_RELEASE, ON_CHANGED) </para>
+<para>Bitmask of events to listen for (ON_PRESS, ON_RELEASE, ON_CHANGE) </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
