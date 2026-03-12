@@ -44,10 +44,10 @@ namespace eva
     };
 
     /**
-     * @brief Decorator that converts analog reading to binary based on level
+     * @brief Decorator that converts reading to binary based on level
      */
     template <class READER, int ACTICATES_ON>
-    class BinarizeDecor : public READER
+    class BinarizeEqDecor : public READER
     {
     public:
         signed short getValue()
@@ -57,15 +57,32 @@ namespace eva
     };
 
     /**
-     * @brief Decorator that normalizes readings to -1, 0, 1 based on threshold
+     * @brief Decorator that converts analog reading to binary based on 'less then' threshold condition 
      */
     template <class READER, int THRESHOLD>
-    class PolarizeDecor : public READER
+    class BinarizeLtDecor : public READER
     {
     public:
         signed short getValue()
         {
-            return constrain(READER::getValue() / THRESHOLD, -1, 1);
+            if (READER::getValue() <= THRESHOLD)
+                return 1;
+            return 0;
+        }
+    };
+
+    /**
+     * @brief Decorator that converts analog reading to binary based on 'greater then' threshold condition 
+     */
+    template <class READER, int THRESHOLD>
+    class BinarizeGtDecor : public READER
+    {
+    public:
+        signed short getValue()
+        {
+            if (READER::getValue() >= THRESHOLD)
+                return 1;
+            return 0;
         }
     };
 

@@ -10,7 +10,7 @@
 
 ## b
 
-* [**BinarizeDecor**](classeva_1_1_binarize_decor.md)
+* [**BinarizeEqDecor**](classeva_1_1_binarize_decor.md)
 ([**eva**](namespaceeva.md))
 * [**BlinkingIndicator**](classeva_1_1_blinking_indicator.md)
 ([**eva**](namespaceeva.md))

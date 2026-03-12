@@ -1036,7 +1036,7 @@
 </tr>
 <tr>
 <td style="text-align: right;">class</td>
-<td style="text-align: left;"><a href="../classeva_1_1_binarize_decor/"><strong>BinarizeDecor</strong></a> &lt;class READER, ACTICATES_ON&gt;<br><em>Decorator that converts analog reading to binary based on level.</em></td>
+<td style="text-align: left;"><a href="../classeva_1_1_binarize_decor/"><strong>BinarizeEqDecor</strong></a> &lt;class READER, ACTICATES_ON&gt;<br><em>Decorator that converts analog reading to binary based on level.</em></td>
 </tr>
 <tr>
 <td style="text-align: right;">class</td>
@@ -1142,7 +1142,7 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: right;">typedef <a href="../classeva_1_1_button/"><strong>Button</strong></a>&lt; <a href="../classeva_1_1_binarize_decor/"><strong>BinarizeDecor</strong></a>&lt; <a href="../classeva_1_1_stabilize_decor/"><strong>StabilizeDecor</strong></a>&lt; <a href="../classeva_1_1_digital_pin_reader/"><strong>DigitalPinReader</strong></a>&lt; PIN, PIN_MODE &gt; &gt;, ACTIVATES_ON &gt; &gt;</td>
+<td style="text-align: right;">typedef <a href="../classeva_1_1_button/"><strong>Button</strong></a>&lt; <a href="../classeva_1_1_binarize_decor/"><strong>BinarizeEqDecor</strong></a>&lt; <a href="../classeva_1_1_stabilize_decor/"><strong>StabilizeDecor</strong></a>&lt; <a href="../classeva_1_1_digital_pin_reader/"><strong>DigitalPinReader</strong></a>&lt; PIN, PIN_MODE &gt; &gt;, ACTIVATES_ON &gt; &gt;</td>
 <td style="text-align: left;"><a href="#typedef-pinbutton"><strong>PinButton</strong></a>  <br><em>Digital pin button with debouncing and level normalization.</em></td>
 </tr>
 <tr>
@@ -1162,7 +1162,7 @@
 <td style="text-align: left;"><a href="#typedef-pinslider"><strong>PinSlider</strong></a>  <br><em>Pin-based slider mapping analog readings to 0-255 range.</em></td>
 </tr>
 <tr>
-<td style="text-align: right;">typedef <a href="../classeva_1_1_switch/"><strong>Switch</strong></a>&lt; <a href="../classeva_1_1_binarize_decor/"><strong>BinarizeDecor</strong></a>&lt; <a href="../classeva_1_1_stabilize_decor/"><strong>StabilizeDecor</strong></a>&lt; <a href="../classeva_1_1_digital_pin_reader/"><strong>DigitalPinReader</strong></a>&lt; PIN, PIN_MODE &gt; &gt;, ACTIVE_LEVEL &gt; &gt;</td>
+<td style="text-align: right;">typedef <a href="../classeva_1_1_switch/"><strong>Switch</strong></a>&lt; <a href="../classeva_1_1_binarize_decor/"><strong>BinarizeEqDecor</strong></a>&lt; <a href="../classeva_1_1_stabilize_decor/"><strong>StabilizeDecor</strong></a>&lt; <a href="../classeva_1_1_digital_pin_reader/"><strong>DigitalPinReader</strong></a>&lt; PIN, PIN_MODE &gt; &gt;, ACTIVE_LEVEL &gt; &gt;</td>
 <td style="text-align: left;"><a href="#typedef-pinswitch"><strong>PinSwitch</strong></a>  <br><em>Digital pin switch with debouncing and level normalization.</em></td>
 </tr>
 <tr>
@@ -1170,7 +1170,7 @@
 <td style="text-align: left;"><a href="#typedef-pinsymmetricjoystick"><strong>PinSymmetricJoystick</strong></a>  <br><em>Pin-based joystick with symmetric range (MIN to MAX, center at midpoint).</em></td>
 </tr>
 <tr>
-<td style="text-align: right;">typedef <a href="../classeva_1_1_button/"><strong>Button</strong></a>&lt; <a href="../classeva_1_1_binarize_decor/"><strong>BinarizeDecor</strong></a>&lt; <a href="../classeva_1_1_stabilize_decor/"><strong>StabilizeDecor</strong></a>&lt; <a href="../classeva_1_1_digital_pin_reader/"><strong>DigitalPinReader</strong></a>&lt; PIN, INPUT_PULLUP &gt; &gt;, LOW &gt; &gt;</td>
+<td style="text-align: right;">typedef <a href="../classeva_1_1_button/"><strong>Button</strong></a>&lt; <a href="../classeva_1_1_binarize_decor/"><strong>BinarizeEqDecor</strong></a>&lt; <a href="../classeva_1_1_stabilize_decor/"><strong>StabilizeDecor</strong></a>&lt; <a href="../classeva_1_1_digital_pin_reader/"><strong>DigitalPinReader</strong></a>&lt; PIN, INPUT_PULLUP &gt; &gt;, LOW &gt; &gt;</td>
 <td style="text-align: left;"><a href="#typedef-pullupbutton"><strong>PullUpButton</strong></a>  <br><em>Pull-up button (active LOW, connect to GND).</em></td>
 </tr>
 <tr>
@@ -1251,13 +1251,13 @@
 <h2 id="public-types-documentation">Public Types Documentation<a class="headerlink" href="#public-types-documentation" title="Permanent link">&para;</a></h2>
 <h3 id="typedef-pinbutton">typedef PinButton<a class="headerlink" href="#typedef-pinbutton" title="Permanent link">&para;</a></h3>
 <p><em>Digital pin button with debouncing and level normalization.</em> </p>
-<div class="codehilite"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">PinButton</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Button</span><span class="o">&lt;</span><span class="n">BinarizeDecor</span><span class="o">&lt;</span><span class="n">StabilizeDecor</span><span class="o">&lt;</span><span class="n">DigitalPinReader</span><span class="o">&lt;</span><span class="n">PIN</span><span class="p">,</span><span class="w"> </span><span class="n">PIN_MODE</span><span class="o">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">ACTIVATES_ON</span><span class="o">&gt;&gt;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">PinButton</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Button</span><span class="o">&lt;</span><span class="n">BinarizeEqDecor</span><span class="o">&lt;</span><span class="n">StabilizeDecor</span><span class="o">&lt;</span><span class="n">DigitalPinReader</span><span class="o">&lt;</span><span class="n">PIN</span><span class="p">,</span><span class="w"> </span><span class="n">PIN_MODE</span><span class="o">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">ACTIVATES_ON</span><span class="o">&gt;&gt;</span><span class="p">;</span>
 </code></pre></div>
 
 <p>Combines:
 * <a href="../classeva_1_1_digital_pin_reader/"><strong>DigitalPinReader</strong></a> for raw pin reading
 * <a href="../classeva_1_1_stabilize_decor/"><strong>StabilizeDecor</strong></a> for debouncing (120ms stability)
-* <a href="../classeva_1_1_binarize_decor/"><strong>BinarizeDecor</strong></a> for mapping to active/inactive based on specified level</p>
+* <a href="../classeva_1_1_binarize_decor/"><strong>BinarizeEqDecor</strong></a> for mapping to active/inactive based on specified level</p>
 <p>Generates standard button events: PRESS, RELEASE, SHORTCLICK, LONGCLICK. Long click threshold is fixed at 750ms.</p>
 <p><strong>Template parameters:</strong></p>
 <ul>
@@ -1344,13 +1344,13 @@
 
 <h3 id="typedef-pinswitch">typedef PinSwitch<a class="headerlink" href="#typedef-pinswitch" title="Permanent link">&para;</a></h3>
 <p><em>Digital pin switch with debouncing and level normalization.</em> </p>
-<div class="codehilite"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">PinSwitch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Switch</span><span class="o">&lt;</span><span class="n">BinarizeDecor</span><span class="o">&lt;</span><span class="n">StabilizeDecor</span><span class="o">&lt;</span><span class="n">DigitalPinReader</span><span class="o">&lt;</span><span class="n">PIN</span><span class="p">,</span><span class="w"> </span><span class="n">PIN_MODE</span><span class="o">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">ACTIVE_LEVEL</span><span class="o">&gt;&gt;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">PinSwitch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Switch</span><span class="o">&lt;</span><span class="n">BinarizeEqDecor</span><span class="o">&lt;</span><span class="n">StabilizeDecor</span><span class="o">&lt;</span><span class="n">DigitalPinReader</span><span class="o">&lt;</span><span class="n">PIN</span><span class="p">,</span><span class="w"> </span><span class="n">PIN_MODE</span><span class="o">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">ACTIVE_LEVEL</span><span class="o">&gt;&gt;</span><span class="p">;</span>
 </code></pre></div>
 
 <p>Combines:
 * <a href="../classeva_1_1_digital_pin_reader/"><strong>DigitalPinReader</strong></a> for raw pin reading
 * <a href="../classeva_1_1_stabilize_decor/"><strong>StabilizeDecor</strong></a> for debouncing (120ms stability)
-* <a href="../classeva_1_1_binarize_decor/"><strong>BinarizeDecor</strong></a> for mapping to active/inactive based on specified level</p>
+* <a href="../classeva_1_1_binarize_decor/"><strong>BinarizeEqDecor</strong></a> for mapping to active/inactive based on specified level</p>
 <p><strong>Template parameters:</strong></p>
 <ul>
 <li><code>PIN</code> Arduino pin number </li>
@@ -1375,7 +1375,7 @@
 
 <h3 id="typedef-pullupbutton">typedef PullUpButton<a class="headerlink" href="#typedef-pullupbutton" title="Permanent link">&para;</a></h3>
 <p><em>Pull-up button (active LOW, connect to GND).</em> </p>
-<div class="codehilite"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">PullUpButton</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Button</span><span class="o">&lt;</span><span class="n">BinarizeDecor</span><span class="o">&lt;</span><span class="n">StabilizeDecor</span><span class="o">&lt;</span><span class="n">DigitalPinReader</span><span class="o">&lt;</span><span class="n">PIN</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT_PULLUP</span><span class="o">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="o">&gt;&gt;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">PullUpButton</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Button</span><span class="o">&lt;</span><span class="n">BinarizeEqDecor</span><span class="o">&lt;</span><span class="n">StabilizeDecor</span><span class="o">&lt;</span><span class="n">DigitalPinReader</span><span class="o">&lt;</span><span class="n">PIN</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT_PULLUP</span><span class="o">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="o">&gt;&gt;</span><span class="p">;</span>
 </code></pre></div>
 
 <p>Convenience alias for the most common Arduino button wiring:

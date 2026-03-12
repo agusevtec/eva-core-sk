@@ -931,7 +931,7 @@
 <h2 id="how-pinbutton-is-built">How <code>PinButton</code> is Built<a class="headerlink" href="#how-pinbutton-is-built" title="Permanent link">&para;</a></h2>
 <p>The <code>PinButton</code> alias demonstrates the library's composable architecture:</p>
 <div class="codehilite"><pre><span></span><code><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">int</span><span class="w"> </span><span class="n">PIN</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">PIN_MODE</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">ACTIVATES_ON</span><span class="o">&gt;</span>
-<span class="k">using</span><span class="w"> </span><span class="n">PinButton</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Button</span><span class="o">&lt;</span><span class="n">BinarizeDecor</span><span class="o">&lt;</span><span class="n">StabilizeDecor</span><span class="o">&lt;</span><span class="n">DigitalPinReader</span><span class="o">&lt;</span><span class="n">PIN</span><span class="p">,</span><span class="w"> </span><span class="n">PINMODE</span><span class="o">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">ACTIVATES_ON</span><span class="o">&gt;&gt;</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">PinButton</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Button</span><span class="o">&lt;</span><span class="n">BinarizeEqDecor</span><span class="o">&lt;</span><span class="n">StabilizeDecor</span><span class="o">&lt;</span><span class="n">DigitalPinReader</span><span class="o">&lt;</span><span class="n">PIN</span><span class="p">,</span><span class="w"> </span><span class="n">PINMODE</span><span class="o">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">ACTIVATES_ON</span><span class="o">&gt;&gt;</span><span class="p">;</span>
 </code></pre></div>
 
 <p>This builds the button from several layers:</p>
@@ -952,7 +952,7 @@
 <td>Stabilizes readings (120ms debounce)</td>
 </tr>
 <tr>
-<td><code>BinarizeDecor&lt;..., ACTIVATES_ON&gt;</code></td>
+<td><code>BinarizeEqDecor&lt;..., ACTIVATES_ON&gt;</code></td>
 <td>Converts the reading to 0/1 based on active level</td>
 </tr>
 <tr>

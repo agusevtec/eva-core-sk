@@ -82,7 +82,7 @@ namespace eva
      * Combines:
      * - DigitalPinReader for raw pin reading
      * - StabilizeDecor for debouncing (120ms stability)
-     * - BinarizeDecor for mapping to active/inactive based on specified level
+     * - BinarizeEqDecor for mapping to active/inactive based on specified level
      *
      * Generates standard button events: PRESS, RELEASE, SHORTCLICK, LONGCLICK.
      * Long click threshold is fixed at 750ms.
@@ -92,7 +92,7 @@ namespace eva
      * @tparam ACTIVATES_ON Level that means "pressed" (LOW or HIGH)
      */
     template <int PIN, int PIN_MODE, int ACTIVATES_ON>
-    using PinButton = Button<BinarizeDecor<StabilizeDecor<DigitalPinReader<PIN, PIN_MODE>>, ACTIVATES_ON>>;
+    using PinButton = Button<BinarizeEqDecor<StabilizeDecor<DigitalPinReader<PIN, PIN_MODE>>, ACTIVATES_ON>>;
 
     /**
      * @brief Pull-up button (active LOW, connect to GND).
@@ -106,7 +106,7 @@ namespace eva
      * @tparam PIN Arduino pin number
      */
     template <int PIN>
-    using PullUpButton = Button<BinarizeDecor<StabilizeDecor<DigitalPinReader<PIN, INPUT_PULLUP>>, LOW>>;
+    using PullUpButton = Button<BinarizeEqDecor<StabilizeDecor<DigitalPinReader<PIN, INPUT_PULLUP>>, LOW>>;
 
     /**
      * @brief Multiple buttons on a single ADC pin using resistor ladder.

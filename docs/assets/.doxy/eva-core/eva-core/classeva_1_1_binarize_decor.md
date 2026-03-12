@@ -1,12 +1,12 @@
 
 
-# Class eva::BinarizeDecor
+# Class eva::BinarizeEqDecor
 
 **template &lt;class READER, int ACTICATES\_ON&gt;**
 
 
 
-[**ClassList**](annotated.md) **>** [**eva**](namespaceeva.md) **>** [**BinarizeDecor**](classeva_1_1_binarize_decor.md)
+[**ClassList**](annotated.md) **>** [**eva**](namespaceeva.md) **>** [**BinarizeEqDecor**](classeva_1_1_binarize_decor.md)
 
 
 
@@ -93,7 +93,7 @@ Inherited by the following classes: [eva::Switch](classeva_1_1_switch.md)
 ### function getValue 
 
 ```C++
-inline signed short eva::BinarizeDecor::getValue () 
+inline signed short eva::BinarizeEqDecor::getValue () 
 ```
 
 

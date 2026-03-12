@@ -54,7 +54,7 @@ The `PinButton` alias demonstrates the library's composable architecture:
 
 ```cpp
 template <int PIN, int PIN_MODE, int ACTIVATES_ON>
-using PinButton = Button<BinarizeDecor<StabilizeDecor<DigitalPinReader<PIN, PINMODE>>, ACTIVATES_ON>>;
+using PinButton = Button<BinarizeEqDecor<StabilizeDecor<DigitalPinReader<PIN, PINMODE>>, ACTIVATES_ON>>;
 ```
 
 This builds the button from several layers:
@@ -63,7 +63,7 @@ This builds the button from several layers:
 |-------|---------|
 | `DigitalPinReader<PIN, PIN_MODE>` | Reads the raw digital pin value |
 | `StabilizeDecor<...>` | Stabilizes readings (120ms debounce) |
-| `BinarizeDecor<..., ACTIVATES_ON>` | Converts the reading to 0/1 based on active level |
+| `BinarizeEqDecor<..., ACTIVATES_ON>` | Converts the reading to 0/1 based on active level |
 | `Button<...>` | Adds press/release/click detection logic |
 
 

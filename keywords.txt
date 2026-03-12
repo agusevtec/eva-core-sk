@@ -35,7 +35,7 @@ CountdownIndicator	KEYWORD1
 DigitalPinReader	KEYWORD1
 AnalogPinReader	KEYWORD1
 StabilizeDecor	KEYWORD1
-BinarizeDecor	KEYWORD1
+BinarizeEqDecor	KEYWORD1
 PolarizeDecor	KEYWORD1
 QuantizeDecor	KEYWORD1
 Joystick	KEYWORD1

@@ -41,7 +41,7 @@
 
 ## g
 
-* **getValue** ([**eva::AnalogPinReader**](classeva_1_1_analog_pin_reader.md), [**eva::BinarizeDecor**](classeva_1_1_binarize_decor.md), [**eva::DigitalPinReader**](classeva_1_1_digital_pin_reader.md), [**eva::IReader**](classeva_1_1_i_reader.md), [**eva::IReaderAdapter**](classeva_1_1_i_reader_adapter.md), [**eva::Joystick**](classeva_1_1_joystick.md), [**eva::PolarizeDecor**](classeva_1_1_polarize_decor.md), [**eva::QuantizeDecor**](classeva_1_1_quantize_decor.md), [**eva::Slider**](classeva_1_1_slider.md), [**eva::StabilizeDecor**](classeva_1_1_stabilize_decor.md), [**eva::Switch**](classeva_1_1_switch.md))
+* **getValue** ([**eva::AnalogPinReader**](classeva_1_1_analog_pin_reader.md), [**eva::BinarizeEqDecor**](classeva_1_1_binarize_decor.md), [**eva::DigitalPinReader**](classeva_1_1_digital_pin_reader.md), [**eva::IReader**](classeva_1_1_i_reader.md), [**eva::IReaderAdapter**](classeva_1_1_i_reader_adapter.md), [**eva::Joystick**](classeva_1_1_joystick.md), [**eva::PolarizeDecor**](classeva_1_1_polarize_decor.md), [**eva::QuantizeDecor**](classeva_1_1_quantize_decor.md), [**eva::Slider**](classeva_1_1_slider.md), [**eva::StabilizeDecor**](classeva_1_1_stabilize_decor.md), [**eva::Switch**](classeva_1_1_switch.md))
 * **getTrim** ([**eva::Joystick**](classeva_1_1_joystick.md))
 * **getLevel** ([**eva::QuantizeDecor**](classeva_1_1_quantize_decor.md))
 

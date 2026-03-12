@@ -6,7 +6,7 @@ Here are the classes, structs, unions and interfaces with brief descriptions:
 
 * **namespace** [**eva**](namespaceeva.md)     
     * **class** [**AnalogPinReader**](classeva_1_1_analog_pin_reader.md) _Reads analog pin value._     
-    * **class** [**BinarizeDecor**](classeva_1_1_binarize_decor.md) _Decorator that converts analog reading to binary based on level._     
+    * **class** [**BinarizeEqDecor**](classeva_1_1_binarize_decor.md) _Decorator that converts analog reading to binary based on level._     
     * **class** [**BlinkingIndicator**](classeva_1_1_blinking_indicator.md) [_**Indicator**_](classeva_1_1_indicator.md) _that blinks with specified period and duty cycle._    
     * **class** [**Button**](classeva_1_1_button.md) [_**Button**_](classeva_1_1_button.md) _with press/release and click detection._    
     * **struct** [**CallbackInfo**](structeva_1_1_callback_info.md)     

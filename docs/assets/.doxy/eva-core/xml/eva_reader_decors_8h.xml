@@ -41,7 +41,7 @@
       </node>
     </invincdepgraph>
     <innerclass refid="classeva_1_1_stabilize_decor" prot="public">eva::StabilizeDecor</innerclass>
-    <innerclass refid="classeva_1_1_binarize_decor" prot="public">eva::BinarizeDecor</innerclass>
+    <innerclass refid="classeva_1_1_binarize_decor" prot="public">eva::BinarizeEqDecor</innerclass>
     <innerclass refid="classeva_1_1_polarize_decor" prot="public">eva::PolarizeDecor</innerclass>
     <innerclass refid="classeva_1_1_quantize_decor" prot="public">eva::QuantizeDecor</innerclass>
     <innernamespace refid="namespaceeva">eva</innernamespace>
@@ -93,7 +93,7 @@
 <codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
 <codeline lineno="45"><highlight class="normal"></highlight></codeline>
 <codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>READER,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ACTICATES_ON&gt;</highlight></codeline>
-<codeline lineno="50" refid="classeva_1_1_binarize_decor" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classeva_1_1_binarize_decor" kindref="compound">BinarizeDecor</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>READER</highlight></codeline>
+<codeline lineno="50" refid="classeva_1_1_binarize_decor" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classeva_1_1_binarize_decor" kindref="compound">BinarizeEqDecor</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>READER</highlight></codeline>
 <codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
 <codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">signed</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/>getValue()</highlight></codeline>

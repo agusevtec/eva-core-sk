@@ -99,7 +99,7 @@ namespace eva
     };
 
     template <int PIN, int PIN_MODE, int ACTIVE_LEVEL>
-    using PinSwitch = Switch<BinarizeDecor<StabilizeDecor<DigitalPinReader<PIN, PIN_MODE>>, ACTIVE_LEVEL>>;
+    using PinSwitch = Switch<BinarizeEqDecor<StabilizeDecor<DigitalPinReader<PIN, PIN_MODE>>, ACTIVE_LEVEL>>;
 
     template <int PIN>
     using PullupSwitch = PinSwitch<PIN, INPUT_PULLUP, LOW>;

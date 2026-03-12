@@ -4,7 +4,7 @@
     <member refid="classeva_1_1_analog_pin_reader_1adf062711df7cd9415fb2994510a3aaef" kind="function"><name>AnalogPinReader</name></member>
     <member refid="classeva_1_1_analog_pin_reader_1a8088e6f4af47bbedd85777792d288a65" kind="function"><name>getValue</name></member>
   </compound>
-  <compound refid="classeva_1_1_binarize_decor" kind="class"><name>eva::BinarizeDecor</name>
+  <compound refid="classeva_1_1_binarize_decor" kind="class"><name>eva::BinarizeEqDecor</name>
     <member refid="classeva_1_1_binarize_decor_1ab0de14594d209f987e3bc296a0c56c16" kind="function"><name>getValue</name></member>
   </compound>
   <compound refid="classeva_1_1_blinking_indicator" kind="class"><name>eva::BlinkingIndicator</name>

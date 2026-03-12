@@ -51,7 +51,7 @@ namespace eva
     };
 
     template <class READER, int ACTICATES_ON>
-    class BinarizeDecor : public READER
+    class BinarizeEqDecor : public READER
     {
     public:
         signed short getValue()

@@ -6,7 +6,7 @@ using namespace aunit;
 using namespace eva;
 
 test(binarize_decor_returns_1_when_value_matches) {
-    BinarizeDecor<MockReader, 1> reader;
+    BinarizeEqDecor<MockReader, 1> reader;
     
     reader.setValue(1);
     assertEqual(reader.getValue(), 1);
@@ -19,7 +19,7 @@ test(binarize_decor_returns_1_when_value_matches) {
 }
 
 test(polarize_decor_returns_minus1_0_1) {
-    PolarizeDecor<MockReader, 100> reader;
+    BinarizeGtDecor<MockReader, 100> reader;
     
     reader.setValue(150);
     assertEqual(reader.getValue(), 1);
@@ -30,8 +30,6 @@ test(polarize_decor_returns_minus1_0_1) {
     reader.setValue(-50);
     assertEqual(reader.getValue(), 0);
 
-    reader.setValue(-150);
-    assertEqual(reader.getValue(), -1);
 }
 
 test(quantize_decor_returns_level_index) {

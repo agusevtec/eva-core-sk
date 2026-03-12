@@ -18,7 +18,7 @@
     <innerclass refid="structeva_1_1_list_iterator" prot="public">eva::ListIterator</innerclass>
     <innerclass refid="classeva_1_1_list" prot="public">eva::List</innerclass>
     <innerclass refid="classeva_1_1_stabilize_decor" prot="public">eva::StabilizeDecor</innerclass>
-    <innerclass refid="classeva_1_1_binarize_decor" prot="public">eva::BinarizeDecor</innerclass>
+    <innerclass refid="classeva_1_1_binarize_decor" prot="public">eva::BinarizeEqDecor</innerclass>
     <innerclass refid="classeva_1_1_polarize_decor" prot="public">eva::PolarizeDecor</innerclass>
     <innerclass refid="classeva_1_1_quantize_decor" prot="public">eva::QuantizeDecor</innerclass>
     <innerclass refid="classeva_1_1_repeat_timer" prot="public">eva::RepeatTimer</innerclass>
@@ -46,8 +46,8 @@
             <defname>ACTIVATES_ON</defname>
           </param>
         </templateparamlist>
-        <type><ref refid="classeva_1_1_button" kindref="compound">Button</ref>&lt; <ref refid="classeva_1_1_binarize_decor" kindref="compound">BinarizeDecor</ref>&lt; <ref refid="classeva_1_1_stabilize_decor" kindref="compound">StabilizeDecor</ref>&lt; <ref refid="classeva_1_1_digital_pin_reader" kindref="compound">DigitalPinReader</ref>&lt; PIN, PIN_MODE &gt; &gt;, ACTIVATES_ON &gt; &gt;</type>
-        <definition>using eva::PinButton = Button&lt;BinarizeDecor&lt;StabilizeDecor&lt;DigitalPinReader&lt;PIN, PIN_MODE&gt;&gt;, ACTIVATES_ON&gt;&gt;</definition>
+        <type><ref refid="classeva_1_1_button" kindref="compound">Button</ref>&lt; <ref refid="classeva_1_1_binarize_decor" kindref="compound">BinarizeEqDecor</ref>&lt; <ref refid="classeva_1_1_stabilize_decor" kindref="compound">StabilizeDecor</ref>&lt; <ref refid="classeva_1_1_digital_pin_reader" kindref="compound">DigitalPinReader</ref>&lt; PIN, PIN_MODE &gt; &gt;, ACTIVATES_ON &gt; &gt;</type>
+        <definition>using eva::PinButton = Button&lt;BinarizeEqDecor&lt;StabilizeDecor&lt;DigitalPinReader&lt;PIN, PIN_MODE&gt;&gt;, ACTIVATES_ON&gt;&gt;</definition>
         <argsstring></argsstring>
         <name>PinButton</name>
         <qualifiedname>eva::PinButton</qualifiedname>
@@ -58,7 +58,7 @@
 <para>Combines:<itemizedlist>
 <listitem><para><ref refid="classeva_1_1_digital_pin_reader" kindref="compound">DigitalPinReader</ref> for raw pin reading</para>
 </listitem><listitem><para><ref refid="classeva_1_1_stabilize_decor" kindref="compound">StabilizeDecor</ref> for debouncing (120ms stability)</para>
-</listitem><listitem><para><ref refid="classeva_1_1_binarize_decor" kindref="compound">BinarizeDecor</ref> for mapping to active/inactive based on specified level</para>
+</listitem><listitem><para><ref refid="classeva_1_1_binarize_decor" kindref="compound">BinarizeEqDecor</ref> for mapping to active/inactive based on specified level</para>
 </listitem></itemizedlist>
 </para>
 <para>Generates standard button events: PRESS, RELEASE, SHORTCLICK, LONGCLICK. Long click threshold is fixed at 750ms.</para>
@@ -101,8 +101,8 @@
             <defname>PIN</defname>
           </param>
         </templateparamlist>
-        <type><ref refid="classeva_1_1_button" kindref="compound">Button</ref>&lt; <ref refid="classeva_1_1_binarize_decor" kindref="compound">BinarizeDecor</ref>&lt; <ref refid="classeva_1_1_stabilize_decor" kindref="compound">StabilizeDecor</ref>&lt; <ref refid="classeva_1_1_digital_pin_reader" kindref="compound">DigitalPinReader</ref>&lt; PIN, INPUT_PULLUP &gt; &gt;, LOW &gt; &gt;</type>
-        <definition>using eva::PullUpButton = Button&lt;BinarizeDecor&lt;StabilizeDecor&lt;DigitalPinReader&lt;PIN, INPUT_PULLUP&gt;&gt;, LOW&gt;&gt;</definition>
+        <type><ref refid="classeva_1_1_button" kindref="compound">Button</ref>&lt; <ref refid="classeva_1_1_binarize_decor" kindref="compound">BinarizeEqDecor</ref>&lt; <ref refid="classeva_1_1_stabilize_decor" kindref="compound">StabilizeDecor</ref>&lt; <ref refid="classeva_1_1_digital_pin_reader" kindref="compound">DigitalPinReader</ref>&lt; PIN, INPUT_PULLUP &gt; &gt;, LOW &gt; &gt;</type>
+        <definition>using eva::PullUpButton = Button&lt;BinarizeEqDecor&lt;StabilizeDecor&lt;DigitalPinReader&lt;PIN, INPUT_PULLUP&gt;&gt;, LOW&gt;&gt;</definition>
         <argsstring></argsstring>
         <name>PullUpButton</name>
         <qualifiedname>eva::PullUpButton</qualifiedname>
@@ -443,8 +443,8 @@
             <defname>ACTIVE_LEVEL</defname>
           </param>
         </templateparamlist>
-        <type><ref refid="classeva_1_1_switch" kindref="compound">Switch</ref>&lt; <ref refid="classeva_1_1_binarize_decor" kindref="compound">BinarizeDecor</ref>&lt; <ref refid="classeva_1_1_stabilize_decor" kindref="compound">StabilizeDecor</ref>&lt; <ref refid="classeva_1_1_digital_pin_reader" kindref="compound">DigitalPinReader</ref>&lt; PIN, PIN_MODE &gt; &gt;, ACTIVE_LEVEL &gt; &gt;</type>
-        <definition>using eva::PinSwitch = Switch&lt;BinarizeDecor&lt;StabilizeDecor&lt;DigitalPinReader&lt;PIN, PIN_MODE&gt;&gt;, ACTIVE_LEVEL&gt;&gt;</definition>
+        <type><ref refid="classeva_1_1_switch" kindref="compound">Switch</ref>&lt; <ref refid="classeva_1_1_binarize_decor" kindref="compound">BinarizeEqDecor</ref>&lt; <ref refid="classeva_1_1_stabilize_decor" kindref="compound">StabilizeDecor</ref>&lt; <ref refid="classeva_1_1_digital_pin_reader" kindref="compound">DigitalPinReader</ref>&lt; PIN, PIN_MODE &gt; &gt;, ACTIVE_LEVEL &gt; &gt;</type>
+        <definition>using eva::PinSwitch = Switch&lt;BinarizeEqDecor&lt;StabilizeDecor&lt;DigitalPinReader&lt;PIN, PIN_MODE&gt;&gt;, ACTIVE_LEVEL&gt;&gt;</definition>
         <argsstring></argsstring>
         <name>PinSwitch</name>
         <qualifiedname>eva::PinSwitch</qualifiedname>
@@ -455,7 +455,7 @@
 <para>Combines:<itemizedlist>
 <listitem><para><ref refid="classeva_1_1_digital_pin_reader" kindref="compound">DigitalPinReader</ref> for raw pin reading</para>
 </listitem><listitem><para><ref refid="classeva_1_1_stabilize_decor" kindref="compound">StabilizeDecor</ref> for debouncing (120ms stability)</para>
-</listitem><listitem><para><ref refid="classeva_1_1_binarize_decor" kindref="compound">BinarizeDecor</ref> for mapping to active/inactive based on specified level</para>
+</listitem><listitem><para><ref refid="classeva_1_1_binarize_decor" kindref="compound">BinarizeEqDecor</ref> for mapping to active/inactive based on specified level</para>
 </listitem></itemizedlist>
 </para>
 <para><parameterlist kind="templateparam"><parameteritem>

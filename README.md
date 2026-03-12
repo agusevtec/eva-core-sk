@@ -66,7 +66,7 @@ Flexibility without performance loss. Everything resolves at compile time.
 
 ### Reader Decorators
 - `StabilizeDecor` debouncing with 120ms stabilization
-- `BinarizeDecor` convert to 0/1 based on level
+- `BinarizeEqDecor` convert to 0/1 based on level
 - `PolarizeDecor` normalize to -1, 0, 1
 - `QuantizeDecor` map analog values to discrete levels
 
@@ -83,10 +83,10 @@ Flexibility without performance loss. Everything resolves at compile time.
 
 Full documentation is available at **[https://agusevtec.github.io/eva-core-sk](https://agusevtec.github.io/eva-core-sk)**
 
-- [Quick Start: loop() and Tickable](https://agusevtec.github.io/eva-core-sk/quickstart/loop-tickable)
+- [Quick Start: loop() and Tickable](https://agusevtec.github.io/eva-core-sk/quickstart/loop-cyclt)
 - [Working with Buttons](https://agusevtec.github.io/eva-core-sk/quickstart/working-with-buttons)
-- [Flexibility: Beyond Standard Inputs](https://agusevtec.github.io/eva-core-sk/advanced/flexibility)
-- [Optimization: Performance Without Compromise](https://agusevtec.github.io/eva-core-sk/advanced/optimization)
+- [Flexibility: Beyond Standard Inputs](https://agusevtec.github.io/eva-core-sk/quickstart/flexibility)
+- [Optimization: Performance Without Compromise](https://agusevtec.github.io/eva-core-sk/quickstart/performance)
 
 ## Ecosystem
 

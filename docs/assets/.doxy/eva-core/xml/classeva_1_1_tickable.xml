@@ -2,7 +2,7 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
   <compounddef id="classeva_1_1_tickable" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>eva::Tickable</compoundname>
-    <derivedcompoundref refid="classeva_1_1_switch" prot="public" virt="non-virtual">eva::Switch&lt; BinarizeDecor&lt; StabilizeDecor&lt; DigitalPinReader&lt; PIN, PIN_MODE &gt; &gt;, ACTIVE_LEVEL &gt; &gt;</derivedcompoundref>
+    <derivedcompoundref refid="classeva_1_1_switch" prot="public" virt="non-virtual">eva::Switch&lt; BinarizeEqDecor&lt; StabilizeDecor&lt; DigitalPinReader&lt; PIN, PIN_MODE &gt; &gt;, ACTIVE_LEVEL &gt; &gt;</derivedcompoundref>
     <derivedcompoundref refid="classeva_1_1_switch" prot="public" virt="non-virtual">eva::Switch&lt; QuantizeDecor&lt; StabilizeDecor&lt; AnalogPinReader&lt; PIN, PIN_MODE &gt; &gt;, LEVELS... &gt; &gt;</derivedcompoundref>
     <derivedcompoundref refid="classeva_1_1_delay_timer" prot="public" virt="non-virtual">eva::DelayTimer</derivedcompoundref>
     <derivedcompoundref refid="classeva_1_1_switch" prot="public" virt="non-virtual">eva::Switch&lt; READER &gt;</derivedcompoundref>
@@ -152,13 +152,13 @@
     </detaileddescription>
     <inheritancegraph>
       <node id="10">
-        <label>eva::Button&lt; BinarizeDecor&lt; StabilizeDecor&lt; DigitalPinReader&lt; PIN, INPUT_PULLUP &gt; &gt;, LOW &gt; &gt;</label>
+        <label>eva::Button&lt; BinarizeEqDecor&lt; StabilizeDecor&lt; DigitalPinReader&lt; PIN, INPUT_PULLUP &gt; &gt;, LOW &gt; &gt;</label>
         <link refid="classeva_1_1_button"/>
         <childnode refid="8" relation="public-inheritance">
         </childnode>
       </node>
       <node id="9">
-        <label>eva::Button&lt; BinarizeDecor&lt; StabilizeDecor&lt; DigitalPinReader&lt; PIN, PIN_MODE &gt; &gt;, ACTIVATES_ON &gt; &gt;</label>
+        <label>eva::Button&lt; BinarizeEqDecor&lt; StabilizeDecor&lt; DigitalPinReader&lt; PIN, PIN_MODE &gt; &gt;, ACTIVATES_ON &gt; &gt;</label>
         <link refid="classeva_1_1_button"/>
         <childnode refid="8" relation="public-inheritance">
         </childnode>
@@ -200,7 +200,7 @@
         </childnode>
       </node>
       <node id="2">
-        <label>eva::Switch&lt; BinarizeDecor&lt; StabilizeDecor&lt; DigitalPinReader&lt; PIN, PIN_MODE &gt; &gt;, ACTIVE_LEVEL &gt; &gt;</label>
+        <label>eva::Switch&lt; BinarizeEqDecor&lt; StabilizeDecor&lt; DigitalPinReader&lt; PIN, PIN_MODE &gt; &gt;, ACTIVE_LEVEL &gt; &gt;</label>
         <link refid="classeva_1_1_switch"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
