@@ -2,7 +2,7 @@ site_name: EVA Core | EVA Survival Kit
 site_description: Architectural core with essential components for event-driven Arduino applications
 repo_url: https://github.com/agusevtec/eva-core-sk
 theme: material
-docs_dir: 'src-docs'
+docs_dir: 'docs-md'
 site_dir: 'docs'
 nav:
   - Why EVA: index.md
