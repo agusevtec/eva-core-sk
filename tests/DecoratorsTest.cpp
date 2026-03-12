@@ -50,7 +50,7 @@ test(quantize_decor_returns_level_index) {
     assertEqual(reader.getValue(), 3);
 }
 
-test(quantize_decor_handles_boundaries) {
+test(quantize_decor_reverse) {
     QuantizeDecor<MockReader, 1000, 750, 500, 250> reader;
     
     reader.setValue(1020);

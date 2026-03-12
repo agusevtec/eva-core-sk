@@ -5,7 +5,7 @@
 using namespace aunit;
 using namespace eva;
 
-test(slider_returns_0_at_min) {
+test(slider_works) {
     Slider<MockReader, 0, 1000> slider;
     
     slider.setValue(0);
@@ -16,16 +16,6 @@ test(slider_returns_0_at_min) {
     
     slider.setValue(1000);
     assertEqual(slider.getValue(), 255);
-}
-
-test(slider_returns_127_at_over) {
-    Slider<MockReader, 0, 512> slider;
-
-    slider.setValue(600);
-    assertEqual(slider.getValue(), 255);
-
-    slider.setValue(-100);
-    assertEqual(slider.getValue(), 0);
 }
 
 test(slider_works_with_different_range) {

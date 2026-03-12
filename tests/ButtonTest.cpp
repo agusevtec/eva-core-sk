@@ -29,15 +29,12 @@ test(button_detects_release)
 
     btn.setListener(&handler, ON_RELEASE);
 
-    // Сначала нажимаем
     btn.setValue(1);
     btn.tac();
     handler.reset();
 
-    // Ждем немного
     delay(100);
 
-    // Отпускаем
     btn.setValue(0);
     btn.tac();
 
@@ -52,14 +49,12 @@ test(button_short_click)
 
     btn.setListener(&handler, ON_SHORTCLICK);
 
-    // Нажимаем
     btn.setValue(1);
     btn.tac();
 
-    // Ждем немного (меньше 750мс)
+    // Less than 750 ms
     delay(500);
 
-    // Отпускаем
     btn.setValue(0);
     btn.tac();
 
@@ -74,14 +69,12 @@ test(button_long_click)
 
     btn.setListener(&handler, ON_LONGCLICK);
 
-    // Нажимаем
     btn.setValue(1);
     btn.tac();
 
-    // Ждем больше 750мс
+    // more than 750ms
     delay(800);
 
-    // Держим - должен сработать LONGCLICK
     btn.tac();
 
     assertEqual(handler.callCount, 1);
@@ -95,19 +88,17 @@ test(button_no_short_click_after_long)
 
     btn.setListener(&handler, ON_SHORTCLICK | ON_LONGCLICK);
 
-    // Нажимаем
     btn.setValue(1);
     btn.tac();
     handler.reset();
 
-    // Ждем больше 750мс
+    // more than 750ms
     delay(800);
-    btn.tac(); // Должен быть LONGCLICK
+    btn.tac(); 
     assertEqual((int)handler.lastEventType, (int)ON_LONGCLICK);
 
     handler.reset();
 
-    // Отпускаем - не должно быть SHORTCLICK
     btn.setValue(0);
     btn.tac();
     assertEqual(handler.callCount, 0);
@@ -125,4 +116,41 @@ test(button_can_be_disabled)
     btn.setValue(1);
     btn.tac();
     assertEqual(handler.callCount, 0);
+}
+
+test(button_short_click_with_code)
+{
+    TestButton btn;
+    MockHandler handler;
+
+    btn.setListener(&handler, ON_SHORTCLICK);
+
+    btn.setValue(4);
+    btn.tac();
+    delay(500); // less than 750ms
+
+    btn.setValue(0);
+    btn.tac();
+
+    assertEqual(handler.callCount, 1);
+    assertEqual((int)handler.lastEventType, (int)ON_SHORTCLICK);
+    assertEqual((int)handler.lastArgs, 4);
+}
+
+test(button_long_click_with_code)
+{
+    TestButton btn;
+    MockHandler handler;
+
+    btn.setListener(&handler, ON_LONGCLICK);
+
+    btn.setValue(1);
+    btn.tac();
+    delay(800); // more than 750 ms
+
+    btn.tac();
+
+    assertEqual(handler.callCount, 1);
+    assertEqual((int)handler.lastEventType, (int)ON_LONGCLICK);
+    assertEqual((int)handler.lastArgs, 1);
 }

@@ -14,20 +14,11 @@ EVA is not just a library it's a concept. Instead of fighting with `loop()` and 
 using namespace eva;
 
 class App {
-private:
-  PinButton<2, INPUT_PULLUP, LOW> button;
-  
-  void onButtonClick(void*, long) {
+  void onButtonClick(void*, CallbackInfo cbInfo) {
     Serial.println("Button clicked!");
   }
-  
-public:
-  App() {
-    button.setListener(
-      new Handler<App>(this, &App::onButtonClick),
-      ON_SHORTCLICK
-    );
-  }
+
+  PinButton<2, INPUT_PULLUP, LOW> button = {new Handler<App>(this, &App::onButtonClick), ON_SHORTCLICK};
 };
 
 

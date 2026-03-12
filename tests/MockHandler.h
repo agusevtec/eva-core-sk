@@ -2,7 +2,6 @@
 
 #include <evaHandler.h>
 
-// Тестовый обработчик событий
 class MockHandler : public eva::IHandler {
 public:
     void* lastSender = nullptr;
