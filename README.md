@@ -83,7 +83,7 @@ Flexibility without performance loss. Everything resolves at compile time.
 
 Full documentation is available at **[https://agusevtec.github.io/eva-core-sk](https://agusevtec.github.io/eva-core-sk)**
 
-- [Quick Start: loop() and Tickable](https://agusevtec.github.io/eva-core-sk/quickstart/loop-cyclt)
+- [Quick Start: loop() and Tickable](https://agusevtec.github.io/eva-core-sk/quickstart/loop-cycle)
 - [Working with Buttons](https://agusevtec.github.io/eva-core-sk/quickstart/working-with-buttons)
 - [Flexibility: Beyond Standard Inputs](https://agusevtec.github.io/eva-core-sk/quickstart/flexibility)
 - [Optimization: Performance Without Compromise](https://agusevtec.github.io/eva-core-sk/quickstart/performance)
@@ -101,7 +101,7 @@ EVA is growing. Future modules include:
 
 ### Using Arduino Library Manager
 1. Open Arduino IDE
-2. Go to **Sketch� Include Library� Manage Libraries**
+2. Go to **Sketch -> Include Library -> Manage Libraries**
 3. Search for **"eva-core-sk"**
 4. Click **Install**
 
