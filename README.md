@@ -10,23 +10,22 @@ EVA is not just a library it's a concept. Instead of fighting with `loop()` and 
 #include <evaTac.h>
 #include <evaButton.h>
 #include <evaCountdownTimer.h>
-#include <evaHandler.h>
 
 using namespace eva;
 
 class App {
-  void onButtonClick(void*, CallbackInfo cbInfo) {
-    Serial.println("Button clicked! Starting countdown...");
+  PullUpButton<3> button = { new Handler<App>(this, &App::onButtonClick), ON_SHORTCLICK };
+  CountdownTimer countdownTimer = { new Handler<App>(this, &App::onTimerTick) };
+
+  void onButtonClick(void* sender, CallbackInfo cbInfo) {
+    Serial.println("Button clicked!");
     if (!countdownTimer.isRunning())
       countdownTimer.start(1000, 5);
   }
 
-  void onTimerTick(void*, CallbackInfo cbInfo) {
-    Serial.println("Countdown");
+  void onTimerTick(void* sender, CallbackInfo cbInfo) {
+    Serial.println("Countdown!");
   }
-
-  PinButton<2, INPUT_PULLUP, LOW> button = { new Handler<App>(this, &App::onButtonClick), ON_SHORTCLICK };
-  CountdownTimer countdownTimer = { new Handler<App>(this, &App::onTimerTick) };
 };
 
 void setup() {
