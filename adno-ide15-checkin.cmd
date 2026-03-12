@@ -1,2 +1,2 @@
 mklink /J libraries\src src
-tools\set_config.bat %CD%
+tools\set_config.cmd %CD%
