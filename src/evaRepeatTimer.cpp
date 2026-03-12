@@ -32,11 +32,12 @@ void RepeatTimer::tick()
 {
     if (!isRunning())
         return;
+    unsigned long nf = this->nextFire;
 
     DelayTimer::tick();
 
     if (!isRunning())
-        this->nextFire += this->period;
+        this->nextFire = nf + this->period;
 }
 
 RepeatTimer *RepeatTimer::setPeriod(unsigned short period)

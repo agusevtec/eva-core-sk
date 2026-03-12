@@ -23,18 +23,17 @@ void CountdownTimer::tick()
 {
     if (!isRunning())
         return;
+    unsigned long nf = this->nextFire;
 
     DelayTimer::tick();
 
     if (!isRunning())
     {
         remainingCount--;
-        if (this->remainingCount > 1)
-            this->nextFire += this->period;
-        {
+        if (this->remainingCount > 0)
+            this->nextFire = nf + this->period;
+        else
             stop();
-            return;
-        }
     }
 }
 

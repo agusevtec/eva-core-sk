@@ -21,7 +21,7 @@ namespace eva
          * @param period Interval in milliseconds
          * @param listener Handler to invoke on each tick
          */
-        void start(unsigned short period, unsigned short count, IHandler *listener = nullptr);
+        void start(unsigned short period, unsigned short count, IHandler *listener);
         void start(unsigned short period, unsigned short count);
 
     private:

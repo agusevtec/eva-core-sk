@@ -90,7 +90,15 @@ test(repeatTimer_triggers_periodically) {
     handler.reset();
     RepeatTimer timer(140, &handler);
 
+    delay(50);
+    timer.tac();                    
+    assertEqual(handler.callCount, 0);
+
     delay(150);
+    timer.tac();                    
+    assertEqual(handler.callCount, 1);
+
+    delay(50);
     timer.tac();                    
     assertEqual(handler.callCount, 1);
 
