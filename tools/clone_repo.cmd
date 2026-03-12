@@ -10,10 +10,17 @@ if "%~1"=="" (
 set "url=%~1"
 set "repo_name=%~n1"
 
-REM Create libraries directory if it doesn't exist
-mkdir libraries 2>nul
-if errorlevel 1 (
-    echo Note: Failed to create 'libraries' directory
+if not exist libraries (
+    mkdir libraries
+    if errorlevel 1 (
+        echo Error: Failed to create 'libraries' directory
+        exit /b 1
+    )
+)
+
+if exist "libraries\!repo_name!" (
+    echo Note: Directory 'libraries\!repo_name!' already exists. Skipping clone.
+    exit /b 0
 )
 
 echo Cloning !repo_name!...
