@@ -323,7 +323,7 @@ inline Switch * eva::Switch::setListener (
 
 
 * `listener` Callback object implementing [**IHandler**](classeva_1_1_i_handler.md) 
-* `eventMask` Bitmask of events to listen for (ON\_PRESS, ON\_RELEASE, ON\_CHANGED) 
+* `eventMask` Bitmask of events to listen for (ON\_PRESS, ON\_RELEASE, ON\_CHANGE) 
 
 
 

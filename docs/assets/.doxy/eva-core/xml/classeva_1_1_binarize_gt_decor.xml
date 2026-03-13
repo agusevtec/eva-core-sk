@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="classeva_1_1_binarize_gt_decor" kind="class" language="C++" prot="public">
+    <compoundname>eva::BinarizeGtDecor</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">READER</basecompoundref>
+    <includes refid="eva_reader_decors_8h" local="no">evaReaderDecors.h</includes>
+    <templateparamlist>
+      <param>
+        <type>class READER</type>
+      </param>
+      <param>
+        <type>int</type>
+        <declname>THRESHOLD</declname>
+        <defname>THRESHOLD</defname>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classeva_1_1_binarize_gt_decor_1a36717830b677617022574cfd6651cd98" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>signed short</type>
+        <definition>signed short eva::BinarizeGtDecor&lt; READER, THRESHOLD &gt;::getValue</definition>
+        <argsstring>()</argsstring>
+        <name>getValue</name>
+        <qualifiedname>eva::BinarizeGtDecor::getValue</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evaReaderDecors.h" line="81" column="22" bodyfile="src/evaReaderDecors.h" bodystart="81" bodyend="86"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Decorator that converts analog reading to binary based on &apos;greater then&apos; threshold condition. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>READER</label>
+      </node>
+      <node id="1">
+        <label>eva::BinarizeGtDecor&lt; READER, THRESHOLD &gt;</label>
+        <link refid="classeva_1_1_binarize_gt_decor"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>READER</label>
+      </node>
+      <node id="1">
+        <label>eva::BinarizeGtDecor&lt; READER, THRESHOLD &gt;</label>
+        <link refid="classeva_1_1_binarize_gt_decor"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/evaReaderDecors.h" line="78" column="5" bodyfile="src/evaReaderDecors.h" bodystart="79" bodyend="87"/>
+    <listofallmembers>
+      <member refid="classeva_1_1_binarize_gt_decor_1a36717830b677617022574cfd6651cd98" prot="public" virt="non-virtual"><scope>eva::BinarizeGtDecor</scope><name>getValue</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

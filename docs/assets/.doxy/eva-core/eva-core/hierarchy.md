@@ -39,17 +39,18 @@ This inheritance list is sorted roughly, but not completely, alphabetically:
 * **struct** [**eva::CallbackInfo**](structeva_1_1_callback_info.md) 
 * **struct** [**eva::ListIterator**](structeva_1_1_list_iterator.md) _Iterator node for_ [_**List**_](classeva_1_1_list.md) _._
 * **class** **READER**    
-    * **class** [**eva::BinarizeEqDecor**](classeva_1_1_binarize_decor.md) _Decorator that converts analog reading to binary based on level._     
+    * **class** [**eva::BinarizeEqDecor**](classeva_1_1_binarize_eq_decor.md) _Decorator that converts reading to binary based on level._     
         * **class** [**eva::Switch**](classeva_1_1_switch.md) _Universal switch/button class for multi-valued input sources._     
             * **class** [**eva::Button**](classeva_1_1_button.md) [_**Button**_](classeva_1_1_button.md) _with press/release and click detection._
             * **class** [**eva::Button**](classeva_1_1_button.md) [_**Button**_](classeva_1_1_button.md) _with press/release and click detection._
             * **class** [**eva::Button**](classeva_1_1_button.md) [_**Button**_](classeva_1_1_button.md) _with press/release and click detection._
+    * **class** [**eva::BinarizeGtDecor**](classeva_1_1_binarize_gt_decor.md) _Decorator that converts analog reading to binary based on 'greater then' threshold condition._ 
+    * **class** [**eva::BinarizeLtDecor**](classeva_1_1_binarize_lt_decor.md) _Decorator that converts analog reading to binary based on 'less then' threshold condition._ 
     * **class** [**eva::Switch**](classeva_1_1_switch.md) _Universal switch/button class for multi-valued input sources._     
         * **class** [**eva::Button**](classeva_1_1_button.md) [_**Button**_](classeva_1_1_button.md) _with press/release and click detection._
         * **class** [**eva::Button**](classeva_1_1_button.md) [_**Button**_](classeva_1_1_button.md) _with press/release and click detection._
         * **class** [**eva::Button**](classeva_1_1_button.md) [_**Button**_](classeva_1_1_button.md) _with press/release and click detection._
     * **class** [**eva::Joystick**](classeva_1_1_joystick.md) [_**Joystick**_](classeva_1_1_joystick.md) _axis reader with trim adjustment._
-    * **class** [**eva::PolarizeDecor**](classeva_1_1_polarize_decor.md) _Decorator that normalizes readings to -1, 0, 1 based on threshold._ 
     * **class** [**eva::QuantizeDecor**](classeva_1_1_quantize_decor.md) _Decorator that quantizes analog readings to discrete levels._     
         * **class** [**eva::Switch**](classeva_1_1_switch.md) _Universal switch/button class for multi-valued input sources._     
             * **class** [**eva::Button**](classeva_1_1_button.md) [_**Button**_](classeva_1_1_button.md) _with press/release and click detection._

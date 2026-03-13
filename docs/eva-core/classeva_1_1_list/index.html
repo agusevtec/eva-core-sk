@@ -713,10 +713,43 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#function-list-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        function List [1/2]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-list-22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        function List [2/2]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#function-append" class="md-nav__link">
     <span class="md-ellipsis">
       
         function append
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-clear" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        function clear
       
     </span>
   </a>
@@ -746,10 +779,65 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#function-indexof" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        function indexOf
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-isempty" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        function isEmpty
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#function-operator" class="md-nav__link">
     <span class="md-ellipsis">
       
+        function operator=
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-operator_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
         function operator[]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-remove" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        function remove
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-removeat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        function removeAt
       
     </span>
   </a>
@@ -809,20 +897,52 @@
 </thead>
 <tbody>
 <tr>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"><a href="#function-list-12"><strong>List</strong></a> () = default<br><em>Default constructor.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"><a href="#function-list-22"><strong>List</strong></a> (const List &amp; other) <br><em>Copy constructor - performs deep copy.</em></td>
+</tr>
+<tr>
 <td style="text-align: right;">void</td>
 <td style="text-align: left;"><a href="#function-append"><strong>append</strong></a> (ItemClass item) <br><em>Appends an item to the list.</em></td>
 </tr>
 <tr>
+<td style="text-align: right;">void</td>
+<td style="text-align: left;"><a href="#function-clear"><strong>clear</strong></a> () <br><em>Removes all items from the list.</em></td>
+</tr>
+<tr>
 <td style="text-align: right;">unsigned</td>
-<td style="text-align: left;"><a href="#function-count"><strong>count</strong></a> () <br><em>Gets number of items in list.</em></td>
+<td style="text-align: left;"><a href="#function-count"><strong>count</strong></a> () const<br><em>Gets number of items in list.</em></td>
 </tr>
 <tr>
 <td style="text-align: right;"><a href="../structeva_1_1_list_iterator/"><strong>ListIterator</strong></a>&lt; ItemClass &gt; *</td>
 <td style="text-align: left;"><a href="#function-first"><strong>first</strong></a> () <br><em>Gets first iterator.</em></td>
 </tr>
 <tr>
+<td style="text-align: right;">int</td>
+<td style="text-align: left;"><a href="#function-indexof"><strong>indexOf</strong></a> (const ItemClass &amp; item) const<br><em>Finds index of first occurrence of an item.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">bool</td>
+<td style="text-align: left;"><a href="#function-isempty"><strong>isEmpty</strong></a> () const<br><em>Checks if list is empty.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;"><a href="./#function-list-12"><strong>List</strong></a> &amp;</td>
+<td style="text-align: left;"><a href="#function-operator"><strong>operator=</strong></a> (const <a href="./#function-list-12"><strong>List</strong></a> &amp; other) <br><em>Assignment operator - performs deep copy.</em></td>
+</tr>
+<tr>
 <td style="text-align: right;">ItemClass *</td>
-<td style="text-align: left;"><a href="#function-operator"><strong>operator[]</strong></a> (unsigned short index) <br><em>Array-style access by index.</em></td>
+<td style="text-align: left;"><a href="#function-operator_1"><strong>operator[]</strong></a> (unsigned short index) <br><em>Array-style access by index.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">bool</td>
+<td style="text-align: left;"><a href="#function-remove"><strong>remove</strong></a> (const ItemClass &amp; item) <br><em>Removes first occurrence of an item.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">bool</td>
+<td style="text-align: left;"><a href="#function-removeat"><strong>removeAt</strong></a> (unsigned short index) <br><em>Removes item at specified index.</em></td>
 </tr>
 <tr>
 <td style="text-align: right;"></td>
@@ -836,6 +956,26 @@
 <li><code>ItemClass</code> Type of items to store </li>
 </ul>
 <h2 id="public-functions-documentation">Public Functions Documentation<a class="headerlink" href="#public-functions-documentation" title="Permanent link">&para;</a></h2>
+<h3 id="function-list-12">function List [1/2]<a class="headerlink" href="#function-list-12" title="Permanent link">&para;</a></h3>
+<p><em>Default constructor.</em> </p>
+<div class="codehilite"><pre><span></span><code><span class="n">eva</span><span class="o">::</span><span class="n">List</span><span class="o">::</span><span class="n">List</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">default</span>
+</code></pre></div>
+
+<hr>
+
+<h3 id="function-list-22">function List [2/2]<a class="headerlink" href="#function-list-22" title="Permanent link">&para;</a></h3>
+<p><em>Copy constructor - performs deep copy.</em> </p>
+<div class="codehilite"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">List</span><span class="o">::</span><span class="n">List</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">List</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">other</span>
+<span class="p">)</span><span class="w"> </span>
+</code></pre></div>
+
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>other</code> <a href="./"><strong>List</strong></a> to copy from </li>
+</ul>
+<hr>
+
 <h3 id="function-append">function append<a class="headerlink" href="#function-append" title="Permanent link">&para;</a></h3>
 <p><em>Appends an item to the list.</em> </p>
 <div class="codehilite"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">List</span><span class="o">::</span><span class="n">append</span><span class="w"> </span><span class="p">(</span>
@@ -849,9 +989,16 @@
 </ul>
 <hr>
 
+<h3 id="function-clear">function clear<a class="headerlink" href="#function-clear" title="Permanent link">&para;</a></h3>
+<p><em>Removes all items from the list.</em> </p>
+<div class="codehilite"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">List</span><span class="o">::</span><span class="n">clear</span><span class="w"> </span><span class="p">()</span><span class="w"> </span>
+</code></pre></div>
+
+<hr>
+
 <h3 id="function-count">function count<a class="headerlink" href="#function-count" title="Permanent link">&para;</a></h3>
 <p><em>Gets number of items in list.</em> </p>
-<div class="codehilite"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">List</span><span class="o">::</span><span class="n">count</span><span class="w"> </span><span class="p">()</span><span class="w"> </span>
+<div class="codehilite"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">List</span><span class="o">::</span><span class="n">count</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span>
 </code></pre></div>
 
 <p><strong>Returns:</strong></p>
@@ -867,7 +1014,46 @@
 <p>Pointer to first iterator </p>
 <hr>
 
-<h3 id="function-operator">function operator[]<a class="headerlink" href="#function-operator" title="Permanent link">&para;</a></h3>
+<h3 id="function-indexof">function indexOf<a class="headerlink" href="#function-indexof" title="Permanent link">&para;</a></h3>
+<p><em>Finds index of first occurrence of an item.</em> </p>
+<div class="codehilite"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">List</span><span class="o">::</span><span class="n">indexOf</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">ItemClass</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">item</span>
+<span class="p">)</span><span class="w"> </span><span class="k">const</span>
+</code></pre></div>
+
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>item</code> Item to find </li>
+</ul>
+<p><strong>Returns:</strong></p>
+<p>Index of item, or -1 if not found </p>
+<hr>
+
+<h3 id="function-isempty">function isEmpty<a class="headerlink" href="#function-isempty" title="Permanent link">&para;</a></h3>
+<p><em>Checks if list is empty.</em> </p>
+<div class="codehilite"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">List</span><span class="o">::</span><span class="n">isEmpty</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span>
+</code></pre></div>
+
+<p><strong>Returns:</strong></p>
+<p>true if list has no items </p>
+<hr>
+
+<h3 id="function-operator">function operator=<a class="headerlink" href="#function-operator" title="Permanent link">&para;</a></h3>
+<p><em>Assignment operator - performs deep copy.</em> </p>
+<div class="codehilite"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="n">List</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">List</span><span class="o">::</span><span class="k">operator</span><span class="o">=</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">List</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">other</span>
+<span class="p">)</span><span class="w"> </span>
+</code></pre></div>
+
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>other</code> <a href="./"><strong>List</strong></a> to copy from </li>
+</ul>
+<p><strong>Returns:</strong></p>
+<p>Reference to this list </p>
+<hr>
+
+<h3 id="function-operator_1">function operator[]<a class="headerlink" href="#function-operator_1" title="Permanent link">&para;</a></h3>
 <p><em>Array-style access by index.</em> </p>
 <div class="codehilite"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="n">ItemClass</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">List</span><span class="o">::</span><span class="k">operator</span><span class="p">[]</span><span class="w"> </span><span class="p">(</span>
 <span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">index</span>
@@ -879,7 +1065,37 @@
 <li><code>index</code> Index (0-based) </li>
 </ul>
 <p><strong>Returns:</strong></p>
-<p>Reference to item </p>
+<p>Pointer to item or nullptr if index out of bounds </p>
+<hr>
+
+<h3 id="function-remove">function remove<a class="headerlink" href="#function-remove" title="Permanent link">&para;</a></h3>
+<p><em>Removes first occurrence of an item.</em> </p>
+<div class="codehilite"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">List</span><span class="o">::</span><span class="n">remove</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">ItemClass</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">item</span>
+<span class="p">)</span><span class="w"> </span>
+</code></pre></div>
+
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>item</code> Item to remove </li>
+</ul>
+<p><strong>Returns:</strong></p>
+<p>true if item was found and removed </p>
+<hr>
+
+<h3 id="function-removeat">function removeAt<a class="headerlink" href="#function-removeat" title="Permanent link">&para;</a></h3>
+<p><em>Removes item at specified index.</em> </p>
+<div class="codehilite"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">List</span><span class="o">::</span><span class="n">removeAt</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">index</span>
+<span class="p">)</span><span class="w"> </span>
+</code></pre></div>
+
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>index</code> Index of item to remove (0-based) </li>
+</ul>
+<p><strong>Returns:</strong></p>
+<p>true if index is valid and item was removed </p>
 <hr>
 
 <h3 id="function-list">function ~List<a class="headerlink" href="#function-list" title="Permanent link">&para;</a></h3>

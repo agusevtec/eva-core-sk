@@ -1,16 +1,16 @@
 
 
-# Class eva::PolarizeDecor
+# Class eva::BinarizeEqDecor
 
-**template &lt;class READER, int THRESHOLD&gt;**
-
-
-
-[**ClassList**](annotated.md) **>** [**eva**](namespaceeva.md) **>** [**PolarizeDecor**](classeva_1_1_polarize_decor.md)
+**template &lt;class READER, int ACTICATES\_ON&gt;**
 
 
 
-_Decorator that normalizes readings to -1, 0, 1 based on threshold._ 
+[**ClassList**](annotated.md) **>** [**eva**](namespaceeva.md) **>** [**BinarizeEqDecor**](classeva_1_1_binarize_eq_decor.md)
+
+
+
+_Decorator that converts reading to binary based on level._ 
 
 * `#include <evaReaderDecors.h>`
 
@@ -19,6 +19,7 @@ _Decorator that normalizes readings to -1, 0, 1 based on threshold._
 Inherits the following classes: READER
 
 
+Inherited by the following classes: [eva::Switch](classeva_1_1_switch.md)
 
 
 
@@ -92,7 +93,7 @@ Inherits the following classes: READER
 ### function getValue 
 
 ```C++
-inline signed short eva::PolarizeDecor::getValue () 
+inline signed short eva::BinarizeEqDecor::getValue () 
 ```
 
 

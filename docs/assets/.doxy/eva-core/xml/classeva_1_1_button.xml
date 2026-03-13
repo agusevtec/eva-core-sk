@@ -23,7 +23,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaButton.h" line="74" column="23" bodyfile="src/evaButton.h" bodystart="74" bodyend="-1"/>
+        <location file="src/evaButton.h" line="77" column="23" bodyfile="src/evaButton.h" bodystart="77" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="private-func">
@@ -40,7 +40,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaButton.h" line="43" column="14" bodyfile="src/evaButton.h" bodystart="43" bodyend="71"/>
+        <location file="src/evaButton.h" line="45" column="14" bodyfile="src/evaButton.h" bodystart="45" bodyend="74"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -53,7 +53,7 @@
 </listitem><listitem><para>Positive values identify specific buttons</para>
 </listitem></itemizedlist>
 </para>
-<para>Events include both the event type and the button code in argsMask, allowing identification of which specific button triggered the event.</para>
+<para>Events include both the event type and the button code in argsMask, allowing identification of which specific button triggered the event: in addition to <ref refid="classeva_1_1_switch" kindref="compound">Switch</ref> - ON_SHORTCLICK, ON_LONGCLICK, ON_LONGPRESS.</para>
 <para>Long click threshold is fixed at 750ms.</para>
 <para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
@@ -127,7 +127,7 @@
         <link refid="classeva_1_1_tickable"/>
       </node>
     </collaborationgraph>
-    <location file="src/evaButton.h" line="37" column="5" bodyfile="src/evaButton.h" bodystart="38" bodyend="75"/>
+    <location file="src/evaButton.h" line="39" column="5" bodyfile="src/evaButton.h" bodystart="40" bodyend="78"/>
     <listofallmembers>
       <member refid="classeva_1_1_tickable_1a287d1d56ac5ca1c143d266c8e3c9d174" prot="public" virt="non-virtual"><scope>eva::Button</scope><name>chain</name></member>
       <member refid="classeva_1_1_switch_1a7c219494c63d04c510b2520d762d0a7b" prot="protected" virt="non-virtual"><scope>eva::Button</scope><name>curiosity</name></member>

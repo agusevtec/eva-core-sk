@@ -22,7 +22,8 @@ namespace eva
      * - Positive values identify specific buttons
      *
      * Events include both the event type and the button code in argsMask,
-     * allowing identification of which specific button triggered the event.
+     * allowing identification of which specific button triggered the event:
+     * in addition to Switch - ON_SHORTCLICK, ON_LONGCLICK, ON_LONGPRESS.
      *
      * Long click threshold is fixed at 750ms.
      *
@@ -84,7 +85,6 @@ namespace eva
      * - StabilizeDecor for debouncing (120ms stability)
      * - BinarizeEqDecor for mapping to active/inactive based on specified level
      *
-     * Generates standard button events: PRESS, RELEASE, SHORTCLICK, LONGCLICK.
      * Long click threshold is fixed at 750ms.
      *
      * @tparam PIN Arduino pin number

@@ -2,6 +2,7 @@
 #include <Arduino.h>
 
 using namespace eva;
+#include "evaCommon.h"
 
 RepeatTimer::RepeatTimer(unsigned short period, IHandler *listener)
 {
@@ -32,12 +33,14 @@ void RepeatTimer::tick()
 {
     if (!isRunning())
         return;
-    unsigned long nf = this->nextFire;
 
-    DelayTimer::tick();
+    if (IS_BEFORE(millis(), this->nextFire))
+        return;
 
-    if (!isRunning())
-        this->nextFire = nf + this->period;
+    this->nextFire += this->period;
+
+    if (this->listener)
+        this->listener->invoke((void *)this, {0, 0});
 }
 
 RepeatTimer *RepeatTimer::setPeriod(unsigned short period)

@@ -4,8 +4,14 @@
     <member refid="classeva_1_1_analog_pin_reader_1adf062711df7cd9415fb2994510a3aaef" kind="function"><name>AnalogPinReader</name></member>
     <member refid="classeva_1_1_analog_pin_reader_1a8088e6f4af47bbedd85777792d288a65" kind="function"><name>getValue</name></member>
   </compound>
-  <compound refid="classeva_1_1_binarize_decor" kind="class"><name>eva::BinarizeEqDecor</name>
-    <member refid="classeva_1_1_binarize_decor_1ab0de14594d209f987e3bc296a0c56c16" kind="function"><name>getValue</name></member>
+  <compound refid="classeva_1_1_binarize_eq_decor" kind="class"><name>eva::BinarizeEqDecor</name>
+    <member refid="classeva_1_1_binarize_eq_decor_1aba63c5b94ca4d10da1bf192b67c52e06" kind="function"><name>getValue</name></member>
+  </compound>
+  <compound refid="classeva_1_1_binarize_gt_decor" kind="class"><name>eva::BinarizeGtDecor</name>
+    <member refid="classeva_1_1_binarize_gt_decor_1a36717830b677617022574cfd6651cd98" kind="function"><name>getValue</name></member>
+  </compound>
+  <compound refid="classeva_1_1_binarize_lt_decor" kind="class"><name>eva::BinarizeLtDecor</name>
+    <member refid="classeva_1_1_binarize_lt_decor_1a8de1cee9a8534b398469faed69991b50" kind="function"><name>getValue</name></member>
   </compound>
   <compound refid="classeva_1_1_blinking_indicator" kind="class"><name>eva::BlinkingIndicator</name>
     <member refid="classeva_1_1_blinking_indicator_1ae4aacd65df101c369f0505b256554501" kind="variable"><name>heartbeatTimer</name></member>
@@ -37,10 +43,10 @@
   </compound>
   <compound refid="classeva_1_1_countdown_timer" kind="class"><name>eva::CountdownTimer</name>
     <member refid="classeva_1_1_countdown_timer_1a76bda8be94102d2a37de6bbdcca6539e" kind="variable"><name>period</name></member>
-    <member refid="classeva_1_1_countdown_timer_1a694798acee934af3e5c7d1f9116f337a" kind="variable"><name>remainingCount</name></member>
+    <member refid="classeva_1_1_countdown_timer_1a4ad9fe360a886b01459824b9de268538" kind="variable"><name>remainingCount</name></member>
     <member refid="classeva_1_1_countdown_timer_1a7ec153656555d5873e7250e20bf4303e" kind="function"><name>setListener</name></member>
-    <member refid="classeva_1_1_countdown_timer_1a6051232730152834b5c6565995403812" kind="function"><name>start</name></member>
-    <member refid="classeva_1_1_countdown_timer_1a95ca5eecf2bdb01ddf5b945a3bd0c7c3" kind="function"><name>start</name></member>
+    <member refid="classeva_1_1_countdown_timer_1a895fb90883c085c20f946bb2a21f78df" kind="function"><name>start</name></member>
+    <member refid="classeva_1_1_countdown_timer_1a4d623df89d82a86a1dc059721ceca2e7" kind="function"><name>start</name></member>
     <member refid="classeva_1_1_countdown_timer_1a971246536c3cca838038b493c4da414c" kind="function"><name>DelayTimer</name></member>
     <member refid="classeva_1_1_countdown_timer_1a5889ee3ab5a8f31a35f8849c12be2323" kind="function"><name>DelayTimer</name></member>
     <member refid="classeva_1_1_countdown_timer_1af134fa838e3417c5b93e27635922d2dd" kind="function"><name>tick</name></member>
@@ -98,19 +104,24 @@
     <member refid="classeva_1_1_list_1af62b22e278861f9d633714308917a0db" kind="variable"><name>head</name></member>
     <member refid="classeva_1_1_list_1aca0d3cbc84e5f5cdf4397d1440eb1559" kind="variable"><name>tail</name></member>
     <member refid="classeva_1_1_list_1a764b5d92ff4eb5078a4096b79a906eba" kind="variable"><name>length</name></member>
+    <member refid="classeva_1_1_list_1a675da9fb355ee9bc63b82f1ff212c3c9" kind="function"><name>List</name></member>
+    <member refid="classeva_1_1_list_1ab03b1364e9d7b5ede2a358e26064a80c" kind="function"><name>List</name></member>
+    <member refid="classeva_1_1_list_1aae36963344a2857ec653480c2b12e25e" kind="function"><name>operator=</name></member>
     <member refid="classeva_1_1_list_1aeac16ea2dd410c8d2655252fca0604ba" kind="function"><name>~List</name></member>
     <member refid="classeva_1_1_list_1af8613606cbc1f80f0eb652d385e8ca6e" kind="function"><name>append</name></member>
+    <member refid="classeva_1_1_list_1a2a44fb70b62552e49bbe6b3b247a3e64" kind="function"><name>indexOf</name></member>
+    <member refid="classeva_1_1_list_1a517c771673a41bd5dbbdf8321f49624f" kind="function"><name>remove</name></member>
+    <member refid="classeva_1_1_list_1a556bd1f1e8aa63d2ee02b328e5de8ef5" kind="function"><name>removeAt</name></member>
+    <member refid="classeva_1_1_list_1a4f193eb023aa9d4923395d8fbf8ca9c7" kind="function"><name>clear</name></member>
     <member refid="classeva_1_1_list_1a8739655e45ea8b1913c34601ac7c669f" kind="function"><name>first</name></member>
     <member refid="classeva_1_1_list_1a5761dff2c54fc44070e16bdd1194227a" kind="function"><name>operator[]</name></member>
-    <member refid="classeva_1_1_list_1ad87a7727925cc0ebd3787200fd262f89" kind="function"><name>count</name></member>
+    <member refid="classeva_1_1_list_1a864ed719a2d4af4a7b118efe548b24f5" kind="function"><name>count</name></member>
+    <member refid="classeva_1_1_list_1ad3d9fe8df99912dd67f89c3816a03523" kind="function"><name>isEmpty</name></member>
   </compound>
   <compound refid="structeva_1_1_list_iterator" kind="struct"><name>eva::ListIterator</name>
     <member refid="structeva_1_1_list_iterator_1a673ff85eaf58de491d4710d7fb6c5226" kind="variable"><name>item</name></member>
     <member refid="structeva_1_1_list_iterator_1a1d2a502a56ce139f3a250cdd1213bba6" kind="variable"><name>next</name></member>
     <member refid="structeva_1_1_list_iterator_1acc56acea81145467c6a08e57325898f7" kind="function"><name>ListIterator</name></member>
-  </compound>
-  <compound refid="classeva_1_1_polarize_decor" kind="class"><name>eva::PolarizeDecor</name>
-    <member refid="classeva_1_1_polarize_decor_1aa9a81423b2d79fe769bc5ddac785d7cc" kind="function"><name>getValue</name></member>
   </compound>
   <compound refid="classeva_1_1_quantize_decor" kind="class"><name>eva::QuantizeDecor</name>
     <member refid="classeva_1_1_quantize_decor_1a197c3c2878c6ca5fa79e815cb7fbec55" kind="variable"><name>levels</name></member>
@@ -160,18 +171,19 @@
     <member refid="classeva_1_1_tickable_1ac7bb568a397ac2147fd6e292d2846ba6" kind="function"><name>tick</name></member>
   </compound>
   <compound refid="namespaceeva" kind="namespace"><name>eva</name>
-    <member refid="eva_button_8h_1a804d7cf3975aa0e32ae48917d18f5d12" kind="typedef"><name>PinButton</name></member>
-    <member refid="eva_button_8h_1a31a2a8f673b1ab12004eeff60fcddb27" kind="typedef"><name>PullUpButton</name></member>
+    <member refid="eva_button_8h_1af7966ca0e9d6b65bef9de0830ca6df5b" kind="typedef"><name>PinButton</name></member>
+    <member refid="eva_button_8h_1affe8465bf145bd51e50d91687a4698e6" kind="typedef"><name>PullUpButton</name></member>
     <member refid="eva_button_8h_1a8d29da7d3489fb33384bd8f8ccb21435" kind="typedef"><name>PinMultiButton</name></member>
     <member refid="eva_joystick_8h_1aff092189042321d52ea4475f0ed0d0dc" kind="typedef"><name>PinSymmetricJoystick</name></member>
     <member refid="eva_joystick_8h_1a0fd39256f892cf4cd8c58d66131769c5" kind="typedef"><name>PinJoystick</name></member>
     <member refid="eva_slider_8h_1a62d965ecb30757f74e3dcc7ebcb15b2b" kind="typedef"><name>PinSlider</name></member>
-    <member refid="eva_switch_8h_1ae4c42a863be9b979211d1b81865c9a01" kind="typedef"><name>PinSwitch</name></member>
+    <member refid="eva_switch_8h_1ad787e973cdbd068f9f1cc23ff151ce74" kind="typedef"><name>PinSwitch</name></member>
     <member refid="eva_switch_8h_1a69f7de1ebb1e7c1b70aa7d7dc11cdec5" kind="typedef"><name>PullupSwitch</name></member>
     <member refid="eva_switch_8h_1afeb4db37763710b769578c7a201440c0" kind="typedef"><name>PinMultiSwitch</name></member>
     <member refid="eva_button_8h_1a9f0afdfaa61b59c313463ec31444bc58" kind="variable"><name>ON_SHORTCLICK</name></member>
     <member refid="eva_button_8h_1ae072ea6457bf4f70dfe4420571701571" kind="variable"><name>ON_LONGCLICK</name></member>
-    <member refid="eva_switch_8h_1abed7d02cf942cd9a8b0c0fd5fcfa5927" kind="variable"><name>ON_CHANGE</name></member>
+    <member refid="eva_button_8h_1a8084941916bac4c197a6e7b08d033134" kind="variable"><name>ON_LONGPRESS</name></member>
+    <member refid="eva_switch_8h_1a68626a8136afbee89173c7beb3f20104" kind="variable"><name>ON_CHANGE</name></member>
     <member refid="eva_switch_8h_1a0dc3da3ced5a1c2b4e4d2acc8b381254" kind="variable"><name>ON_PRESS</name></member>
     <member refid="eva_switch_8h_1a6c443d221db88ada2b9c14a5bc5c7265" kind="variable"><name>ON_RELEASE</name></member>
     <member refid="eva_switch_8h_1a59f4de0c6956b7623ed38b4a0bd89205" kind="variable"><name>ON_ACTIVE</name></member>

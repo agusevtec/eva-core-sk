@@ -10,7 +10,11 @@
 
 ## b
 
-* [**BinarizeEqDecor**](classeva_1_1_binarize_decor.md)
+* [**BinarizeEqDecor**](classeva_1_1_binarize_eq_decor.md)
+([**eva**](namespaceeva.md))
+* [**BinarizeGtDecor**](classeva_1_1_binarize_gt_decor.md)
+([**eva**](namespaceeva.md))
+* [**BinarizeLtDecor**](classeva_1_1_binarize_lt_decor.md)
 ([**eva**](namespaceeva.md))
 * [**BlinkingIndicator**](classeva_1_1_blinking_indicator.md)
 ([**eva**](namespaceeva.md))
@@ -67,12 +71,6 @@
 * [**List**](classeva_1_1_list.md)
 ([**eva**](namespaceeva.md))
 * [**ListIterator**](structeva_1_1_list_iterator.md)
-([**eva**](namespaceeva.md))
-
-
-## p
-
-* [**PolarizeDecor**](classeva_1_1_polarize_decor.md)
 ([**eva**](namespaceeva.md))
 
 

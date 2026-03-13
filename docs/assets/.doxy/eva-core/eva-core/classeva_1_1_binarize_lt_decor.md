@@ -1,16 +1,16 @@
 
 
-# Class eva::BinarizeEqDecor
+# Class eva::BinarizeLtDecor
 
-**template &lt;class READER, int ACTICATES\_ON&gt;**
-
-
-
-[**ClassList**](annotated.md) **>** [**eva**](namespaceeva.md) **>** [**BinarizeEqDecor**](classeva_1_1_binarize_decor.md)
+**template &lt;class READER, int THRESHOLD&gt;**
 
 
 
-_Decorator that converts analog reading to binary based on level._ 
+[**ClassList**](annotated.md) **>** [**eva**](namespaceeva.md) **>** [**BinarizeLtDecor**](classeva_1_1_binarize_lt_decor.md)
+
+
+
+_Decorator that converts analog reading to binary based on 'less then' threshold condition._ 
 
 * `#include <evaReaderDecors.h>`
 
@@ -19,7 +19,6 @@ _Decorator that converts analog reading to binary based on level._
 Inherits the following classes: READER
 
 
-Inherited by the following classes: [eva::Switch](classeva_1_1_switch.md)
 
 
 
@@ -93,7 +92,7 @@ Inherited by the following classes: [eva::Switch](classeva_1_1_switch.md)
 ### function getValue 
 
 ```C++
-inline signed short eva::BinarizeEqDecor::getValue () 
+inline signed short eva::BinarizeLtDecor::getValue () 
 ```
 
 

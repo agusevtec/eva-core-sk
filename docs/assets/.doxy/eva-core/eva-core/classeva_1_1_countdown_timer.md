@@ -96,8 +96,8 @@ Inherits the following classes: [eva::DelayTimer](classeva_1_1_delay_timer.md)
 |   | [**DelayTimer**](#function-delaytimer-12) () <br> |
 |   | [**DelayTimer**](#function-delaytimer-22) ([**IHandler**](classeva_1_1_i_handler.md) \* listener) <br> |
 |  [**CountdownTimer**](classeva_1_1_countdown_timer.md) \* | [**setListener**](#function-setlistener) ([**IHandler**](classeva_1_1_i_handler.md) \* listener) <br> |
-|  void | [**start**](#function-start-12) (unsigned short period, unsigned short count, [**IHandler**](classeva_1_1_i_handler.md) \* listener=nullptr) <br>_Starts or restarts the repeating timer._  |
-|  void | [**start**](#function-start-22) (unsigned short period, unsigned short count) <br> |
+|  void | [**start**](#function-start-12) (unsigned short period, unsigned char count, [**IHandler**](classeva_1_1_i_handler.md) \* listener) <br>_Starts or restarts the repeating timer._  |
+|  void | [**start**](#function-start-22) (unsigned short period, unsigned char count) <br> |
 
 
 ## Public Functions inherited from eva::DelayTimer
@@ -280,8 +280,8 @@ _Starts or restarts the repeating timer._
 ```C++
 void eva::CountdownTimer::start (
     unsigned short period,
-    unsigned short count,
-    IHandler * listener=nullptr
+    unsigned char count,
+    IHandler * listener
 ) 
 ```
 
@@ -309,7 +309,7 @@ void eva::CountdownTimer::start (
 ```C++
 void eva::CountdownTimer::start (
     unsigned short period,
-    unsigned short count
+    unsigned char count
 ) 
 ```
 

@@ -61,12 +61,26 @@ namespace eva
     };
 
     template <class READER, int THRESHOLD>
-    class PolarizeDecor : public READER
+    class BinarizeLtDecor : public READER
     {
     public:
         signed short getValue()
         {
-            return constrain(READER::getValue() / THRESHOLD, -1, 1);
+            if (READER::getValue() <= THRESHOLD)
+                return 1;
+            return 0;
+        }
+    };
+
+    template <class READER, int THRESHOLD>
+    class BinarizeGtDecor : public READER
+    {
+    public:
+        signed short getValue()
+        {
+            if (READER::getValue() >= THRESHOLD)
+                return 1;
+            return 0;
         }
     };
 

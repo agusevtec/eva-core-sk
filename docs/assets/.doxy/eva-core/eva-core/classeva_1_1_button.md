@@ -232,7 +232,7 @@ The class works with any reader that returns numeric codes:
 
 
 
-Events include both the event type and the button code in argsMask, allowing identification of which specific button triggered the event.
+Events include both the event type and the button code in argsMask, allowing identification of which specific button triggered the event: in addition to [**Switch**](classeva_1_1_switch.md) - ON\_SHORTCLICK, ON\_LONGCLICK, ON\_LONGPRESS.
 
 
 Long click threshold is fixed at 750ms.

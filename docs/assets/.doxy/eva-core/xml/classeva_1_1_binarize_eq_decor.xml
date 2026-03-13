@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
-  <compounddef id="classeva_1_1_binarize_decor" kind="class" language="C++" prot="public">
+  <compounddef id="classeva_1_1_binarize_eq_decor" kind="class" language="C++" prot="public">
     <compoundname>eva::BinarizeEqDecor</compoundname>
     <basecompoundref prot="public" virt="non-virtual">READER</basecompoundref>
     <derivedcompoundref refid="classeva_1_1_switch" prot="public" virt="non-virtual">eva::Switch&lt; BinarizeEqDecor&lt; StabilizeDecor&lt; DigitalPinReader&lt; PIN, PIN_MODE &gt; &gt;, ACTIVE_LEVEL &gt; &gt;</derivedcompoundref>
@@ -16,7 +16,7 @@
       </param>
     </templateparamlist>
     <sectiondef kind="public-func">
-      <memberdef kind="function" id="classeva_1_1_binarize_decor_1ab0de14594d209f987e3bc296a0c56c16" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classeva_1_1_binarize_eq_decor_1aba63c5b94ca4d10da1bf192b67c52e06" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>signed short</type>
         <definition>signed short eva::BinarizeEqDecor&lt; READER, ACTICATES_ON &gt;::getValue</definition>
         <argsstring>()</argsstring>
@@ -32,7 +32,7 @@
       </memberdef>
     </sectiondef>
     <briefdescription>
-<para>Decorator that converts analog reading to binary based on level. </para>
+<para>Decorator that converts reading to binary based on level. </para>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
@@ -42,7 +42,7 @@
       </node>
       <node id="1">
         <label>eva::BinarizeEqDecor&lt; READER, ACTICATES_ON &gt;</label>
-        <link refid="classeva_1_1_binarize_decor"/>
+        <link refid="classeva_1_1_binarize_eq_decor"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
@@ -59,14 +59,14 @@
       </node>
       <node id="1">
         <label>eva::BinarizeEqDecor&lt; READER, ACTICATES_ON &gt;</label>
-        <link refid="classeva_1_1_binarize_decor"/>
+        <link refid="classeva_1_1_binarize_eq_decor"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>
     <location file="src/evaReaderDecors.h" line="50" column="5" bodyfile="src/evaReaderDecors.h" bodystart="51" bodyend="57"/>
     <listofallmembers>
-      <member refid="classeva_1_1_binarize_decor_1ab0de14594d209f987e3bc296a0c56c16" prot="public" virt="non-virtual"><scope>eva::BinarizeEqDecor</scope><name>getValue</name></member>
+      <member refid="classeva_1_1_binarize_eq_decor_1aba63c5b94ca4d10da1bf192b67c52e06" prot="public" virt="non-virtual"><scope>eva::BinarizeEqDecor</scope><name>getValue</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

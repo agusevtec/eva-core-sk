@@ -1,9 +1,10 @@
 #include "evaCountdownTimer.h"
 #include <Arduino.h>
+#include "evaCommon.h"
 
 using namespace eva;
 
-void CountdownTimer::start(unsigned short period, unsigned short count, IHandler *listener)
+void CountdownTimer::start(unsigned short period, unsigned char count, IHandler *listener)
 {
     this->period = period;
     this->remainingCount = count;
@@ -14,7 +15,7 @@ void CountdownTimer::start(unsigned short period, unsigned short count, IHandler
         DelayTimer::stop();
 }
 
-void eva::CountdownTimer::start(unsigned short period, unsigned short count)
+void eva::CountdownTimer::start(unsigned short period, unsigned char count)
 {
     start(period, count, this->listener);
 }
@@ -23,18 +24,17 @@ void CountdownTimer::tick()
 {
     if (!isRunning())
         return;
-    unsigned long nf = this->nextFire;
 
-    DelayTimer::tick();
+    if (IS_BEFORE(millis(), this->nextFire))
+        return;
 
-    if (!isRunning())
-    {
-        remainingCount--;
-        if (this->remainingCount > 0)
-            this->nextFire = nf + this->period;
-        else
-            stop();
-    }
+    if (this->remainingCount-- > 0)
+        this->nextFire += this->period;
+    else
+        stop();
+
+    if (this->listener)
+        this->listener->invoke((void *)this, {0, remainingCount});
 }
 
 CountdownTimer *CountdownTimer::setListener(IHandler *listener)
