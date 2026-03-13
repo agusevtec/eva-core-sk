@@ -1,16 +1,14 @@
-#ifndef EVABUTTON_H
-#define EVABUTTON_H
+#ifndef EVAKEYBUTTON_H
+#define EVAKEYBUTTON_H
 
 #pragma once
 
-#include "evaSwitch.h"
+#include "evaButton.h"
 #include "evaCommon.h"
 
 namespace eva
 {
-    static const unsigned char ON_SHORTCLICK = 0x08;
-    static const unsigned char ON_LONGCLICK = 0x10;
-    static const unsigned char ON_LONGPRESS = 0x20;
+    static const unsigned char ON_REPEAT = 0x40;
 
     /**
      * @brief Button with press/release and click detection.
@@ -37,10 +35,10 @@ namespace eva
      * @see PinMultiButton Multiple buttons on one ADC pin
      */
     template <class READER>
-    class Button : public Switch<READER>
+    class KeyButton : public Button<READER>
     {
     public:
-        using Switch<READER>::Switch;
+        using Button<READER>::Button;
 
     private:
         void tick() override
@@ -49,33 +47,43 @@ namespace eva
                 return;
 
             unsigned char wasLevelCode = this->levelCode;
-            this->levelCode = (signed short) max(0, (int)READER::getValue());
+            this->levelCode = max(0, READER::getValue());
             unsigned long now = millis();
 
             if (this->pressTime && (now - this->pressTime) > LONGPRESS_DELAY)
             {
                 this->notify(ON_LONGPRESS, this->levelCode);
                 this->pressTime = 0;
+
+                this->notify(ON_REPEAT, this->levelCode);
+                this->lastRepeatTime = max(1, now);
+            }
+
+            if (this->lastRepeatTime && (now - this->lastRepeatTime) > REPEAT_DELAY)
+            {
+                this->notify(ON_REPEAT, this->levelCode);
+                this->lastRepeatTime = max(1, now);
             }
 
             if ((wasLevelCode > 0) && (wasLevelCode != this->levelCode))
             {
                 if (this->pressTime)
-                    this->notify(((now - this->pressTime) <= LONGPRESS_DELAY)?ON_SHORTCLICK:ON_LONGCLICK, wasLevelCode);
+                    this->notify(((now - this->pressTime) < LONGPRESS_DELAY) ? ON_SHORTCLICK : ON_LONGCLICK, wasLevelCode);
                 this->notify(ON_RELEASE, wasLevelCode);
                 this->notify(ON_CHANGE, this->levelCode);
                 this->pressTime = 0;
+                this->lastRepeatTime = 0;
             }
             if ((wasLevelCode != this->levelCode) && (this->levelCode > 0))
             {
-                this->pressTime = now;
+                this->pressTime = max(1, now);
                 this->notify(ON_PRESS, this->levelCode);
                 this->notify(ON_CHANGE, this->levelCode);
             }
         }
 
-    protected:
-        unsigned long pressTime = 0;
+    private:
+        unsigned long lastRepeatTime = 0;
     };
 
     /**
@@ -93,7 +101,7 @@ namespace eva
      * @tparam ACTIVATES_ON Level that means "pressed" (LOW or HIGH)
      */
     template <int PIN, int PIN_MODE, int ACTIVATES_ON>
-    using PinButton = Button<BinarizeEqDecor<StabilizeDecor<DigitalPinReader<PIN, PIN_MODE>>, ACTIVATES_ON>>;
+    using KeyPinButton = Button<BinarizeEqDecor<StabilizeDecor<DigitalPinReader<PIN, PIN_MODE>>, ACTIVATES_ON>>;
 
     /**
      * @brief Pull-up button (active LOW, connect to GND).
@@ -107,7 +115,7 @@ namespace eva
      * @tparam PIN Arduino pin number
      */
     template <int PIN>
-    using PullUpButton = Button<BinarizeEqDecor<StabilizeDecor<DigitalPinReader<PIN, INPUT_PULLUP>>, LOW>>;
+    using KeyPullUpButton = KeyButton<BinarizeEqDecor<StabilizeDecor<DigitalPinReader<PIN, INPUT_PULLUP>>, LOW>>;
 
     /**
      * @brief Multiple buttons on a single ADC pin using resistor ladder.
@@ -135,6 +143,6 @@ namespace eva
      * @see PinMultiSwitch For use cases without click detection
      */
     template <int PIN, int PIN_MODE, signed short... LEVELS>
-    using PinMultiButton = Button<QuantizeDecor<StabilizeDecor<AnalogPinReader<PIN, PIN_MODE>>, LEVELS...>>;
+    using KeyPinMultiButton = KeyButton<QuantizeDecor<StabilizeDecor<AnalogPinReader<PIN, PIN_MODE>>, LEVELS...>>;
 };
 #endif

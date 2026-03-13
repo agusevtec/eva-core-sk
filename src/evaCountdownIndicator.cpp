@@ -1,7 +1,7 @@
 #include "evaCountdownIndicator.h"
 using namespace eva;
 
-void CountdownIndicator::on(unsigned short period, unsigned short dutycyclePercent, unsigned char count, IHandler *listener)
+void CountdownIndicator::on(unsigned short period, unsigned char dutycyclePercent, unsigned char count, IHandler *listener)
 {
     this->period = period;
     this->dutycyclePercent = dutycyclePercent;

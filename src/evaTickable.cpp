@@ -1,4 +1,3 @@
-// evaTickable.cpp (обновленный)
 #include "evaTickable.h"
 
 using namespace eva;

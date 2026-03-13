@@ -8,7 +8,7 @@
 
 namespace eva
 {
-    inline static bool in_beetween(signed short x, signed short a, signed short b)
+    inline static bool in_between(signed short x, signed short a, signed short b)
     {
         if ((a <= b) && (a <= x) && (x <= b))
             return true;
@@ -32,7 +32,7 @@ namespace eva
             signed short value = READER::getValue();
             if (value != this->keepedValue)
             {
-                this->keepValueTill = now + 120;
+                this->keepValueTill = now + DEBOUNCE_DELAY;
                 this->keepedValue = value;
             }
             return this->keepedValue;
@@ -46,13 +46,13 @@ namespace eva
     /**
      * @brief Decorator that converts reading to binary based on level
      */
-    template <class READER, int ACTICATES_ON>
+    template <class READER, int ACTIVATES_ON>
     class BinarizeEqDecor : public READER
     {
     public:
         signed short getValue()
         {
-            return READER::getValue() == ACTICATES_ON;
+            return READER::getValue() == ACTIVATES_ON;
         }
     };
 
@@ -92,6 +92,7 @@ namespace eva
     template <class READER, signed short... LEVELS>
     class QuantizeDecor : public READER
     {
+        static_assert(sizeof...(LEVELS) >= 2, "QuantizeDecor requires at least 2 levels");
     public:
         /**
          * @brief Gets quantized level index
@@ -102,9 +103,9 @@ namespace eva
             signed short value = READER::getValue() * 2;
             unsigned char i;
             for (i = 1; i < sizeof...(LEVELS) - 1; i++)
-                if (in_beetween(value, this->levels[i - 1] + this->levels[i], this->levels[i] + this->levels[i + 1]))
+                if (in_between(value, this->levels[i - 1] + this->levels[i], this->levels[i] + this->levels[i + 1]))
                     return i;
-            if (in_beetween(value, this->levels[i - 1] + this->levels[i], 3 * this->levels[i] - this->levels[i - 1]))
+            if (in_between(value, this->levels[i - 1] + this->levels[i], 3 * this->levels[i] - this->levels[i - 1]))
                 return i;
             return 0;
         }

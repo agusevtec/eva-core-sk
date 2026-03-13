@@ -18,23 +18,23 @@ namespace eva
 
     /**
      * @brief Universal switch/button class for multi-valued input sources.
-     * 
+     *
      * This class handles both switch and button behavior within the same component.
-     * The difference is purely semantic: 
+     * The difference is purely semantic:
      * -# React to ON_ACTIVE/ON_INACTIVE for switch-like behavior
      * -# React to ON_PRESS/ON_RELEASE for button-like behavior
-     * 
+     *
      * Typical applications:
      * -# Simple on/off switches (binary reader)
      * -# Push buttons with press/release detection
      * -# Resistor ladder buttons on a single ADC pin
      * -# Custom encoding schemes (rotary encoders, keypads)
      * -# Multiplexed inputs
-     * 
+     *
      * Events include both the event type and the level code in argsMask,
      * allowing identification of which specific input triggered the event.
      *
-     * @tparam READER Input reader type that returns numeric codes 
+     * @tparam READER Input reader type that returns numeric codes
      *                (0 = inactive, >0 = active state identifier)
      * @see PinSwitch Digital pin switches with debouncing (typical use)
      * @see PullUpSwitch Pull-up switches convenience alias
@@ -56,7 +56,7 @@ namespace eva
 
         /**
          * @brief Sets the event listener for this switch.
-         * 
+         *
          * @param listener Callback object implementing IHandler
          * @param eventMask Bitmask of events to listen for (ON_PRESS, ON_RELEASE, ON_CHANGE)
          * @return Pointer to this for method chaining
@@ -70,9 +70,9 @@ namespace eva
 
         /**
          * @brief Enables or disables the switch.
-         * 
+         *
          * When disabled, the switch stops generating events.
-         * 
+         *
          * @param enabled True to enable, false to disable
          * @return Pointer to this for method chaining
          */
@@ -87,7 +87,7 @@ namespace eva
 
         /**
          * @brief Gets the current level code.
-         * 
+         *
          * @return Level code (0 for inactive, positive value for active state)
          */
         signed short getValue()
@@ -98,24 +98,23 @@ namespace eva
         }
 
     protected:
-        void tick() override
+        unsigned char readState()
         {
-            if (this->levelCode < 0)
-                return;
-
             unsigned char wasLevelCode = this->levelCode;
-            this->levelCode = READER::getValue();
-            
-            if ((wasLevelCode > 0) and (wasLevelCode != this->levelCode)) // active -> inactive or different state
-            {
-                this->notify(ON_RELEASE, wasLevelCode);
-                this->notify(ON_CHANGE, wasLevelCode);
-            }
-            if ((wasLevelCode != this->levelCode) and (this->levelCode > 0)) // inactive or different -> active
-            {
-                this->notify(ON_PRESS, this->levelCode);
-                this->notify(ON_CHANGE, this->levelCode);
-            }
+            this->levelCode = (unsigned short)max(0, (int)READER::getValue());
+            return wasLevelCode;
+        }
+        
+        /// active -> inactive or different state
+        bool checkDeactivating(unsigned char wasLevelCode)
+        {
+            return (wasLevelCode > 0) && (wasLevelCode != this->levelCode);
+        }
+
+        /// inactive or different -> active
+        bool checkActivating(unsigned char wasLevelCode)
+        {
+            return (wasLevelCode != this->levelCode) && (this->levelCode > 0);
         }
 
         void notify(unsigned short eventType, signed short eventCode)
@@ -123,6 +122,33 @@ namespace eva
             if (this->listener)
                 if (this->curiosity & eventType)
                     this->listener->invoke(this, {eventType, eventCode});
+        }
+
+        void handleDeactivating(unsigned char wasLevelCode)
+        {
+            this->notify(ON_RELEASE, wasLevelCode);
+            this->notify(ON_CHANGE, wasLevelCode);
+        }
+
+        void handleActivating(unsigned char wasLevelCode)
+        {
+            this->notify(ON_PRESS, this->levelCode);
+            this->notify(ON_CHANGE, this->levelCode);
+        }
+
+    private:
+        void tick() override
+        {
+            if (this->levelCode < 0)
+                return;
+
+            unsigned char wasLevelCode = readState();
+
+            if (checkDeactivating(wasLevelCode))
+                handleDeactivating(wasLevelCode);
+
+            if (checkActivating(wasLevelCode))
+                handleActivating(wasLevelCode);
         }
 
     protected:
@@ -133,12 +159,12 @@ namespace eva
 
     /**
      * @brief Digital pin switch with debouncing and level normalization.
-     * 
+     *
      * Combines:
      * - DigitalPinReader for raw pin reading
      * - StabilizeDecor for debouncing (120ms stability)
      * - BinarizeEqDecor for mapping to active/inactive based on specified level
-     * 
+     *
      * @tparam PIN Arduino pin number
      * @tparam PIN_MODE Pin mode (INPUT, INPUT_PULLUP, etc.)
      * @tparam ACTIVE_LEVEL Level that means active (LOW or HIGH)
@@ -148,11 +174,11 @@ namespace eva
 
     /**
      * @brief Pull-up switch (active LOW, connect to GND).
-     * 
+     *
      * Convenience alias for the most common Arduino switch wiring:
      * - Pin set to INPUT_PULLUP
      * - Switch connects pin to GND when pressed
-     * 
+     *
      * @tparam PIN Arduino pin number
      */
     template <int PIN>
@@ -160,7 +186,7 @@ namespace eva
 
     /**
      * @brief Multiple switches on a single ADC pin using resistor ladder.
-     * 
+     *
      * Hardware connection:
      * ```
      *    ADC Pin  -----+--R1--+--R2--+-- ... -Rn-+
@@ -169,11 +195,11 @@ namespace eva
      *                  |      |      |           |
      *      GND    -----+------+------+-- ... ----+
      * ```
-     * 
+     *
      * Each switch produces a different ADC value when activated. The
      * QuantizeDecor maps these values to discrete level codes (1, 2, 3...).
      * StabilizeDecor provides debouncing.
-     * 
+     *
      * @tparam PIN Arduino analog pin number
      * @tparam PIN_MODE Pin mode (usually INPUT)
      * @tparam LEVELS Threshold values for each switch (expected ADC readings)
