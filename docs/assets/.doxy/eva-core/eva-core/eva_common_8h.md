@@ -78,12 +78,28 @@
 
 | Type | Name |
 | ---: | :--- |
+| define  | [**DEBOUNCE\_DELAY**](eva_common_8h.md#define-debounce_delay)  `120`<br> |
 | define  | [**IS\_BEFORE**](eva_common_8h.md#define-is_before) (t1, t2) `(((t2) - (t1)) &lt;= 0x7FFFFFFFUL)`<br> |
+| define  | [**LONGPRESS\_DELAY**](eva_common_8h.md#define-longpress_delay)  `750`<br> |
+| define  | [**REPEAT\_DELAY**](eva_common_8h.md#define-repeat_delay)  `400`<br> |
 | define  | [**SIGN**](eva_common_8h.md#define-sign) (x) `(((x) &gt; 0) - ((x) &lt; 0))`<br> |
 
 ## Macro Definition Documentation
 
 
+
+
+
+### define DEBOUNCE\_DELAY 
+
+```C++
+#define DEBOUNCE_DELAY `120`
+```
+
+
+
+
+<hr>
 
 
 
@@ -94,6 +110,32 @@
     t1,
     t2
 ) `(((t2) - (t1)) <= 0x7FFFFFFFUL)`
+```
+
+
+
+
+<hr>
+
+
+
+### define LONGPRESS\_DELAY 
+
+```C++
+#define LONGPRESS_DELAY `750`
+```
+
+
+
+
+<hr>
+
+
+
+### define REPEAT\_DELAY 
+
+```C++
+#define REPEAT_DELAY `400`
 ```
 
 

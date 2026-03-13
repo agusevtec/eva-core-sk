@@ -113,7 +113,7 @@ Inherits the following classes: [eva::BlinkingIndicator](classeva_1_1_blinking_i
 
 | Type | Name |
 | ---: | :--- |
-|  void | [**on**](#function-on-13) (unsigned short period, unsigned short dutycyclePercent, unsigned char count, [**IHandler**](classeva_1_1_i_handler.md) \* listener=0) <br>_Starts countdown blinking._  |
+|  void | [**on**](#function-on-13) (unsigned short period, unsigned char dutycyclePercent, unsigned char count, [**IHandler**](classeva_1_1_i_handler.md) \* listener=0) <br>_Starts countdown blinking._  |
 |  void | [**on**](#function-on-23) () <br>_Turns on the indicator continuously._  |
 |  void | [**on**](#function-on-33) (unsigned short period, unsigned char dutycyclePercent) <br>_Turns on the indicator with blinking pattern._  |
 
@@ -282,7 +282,7 @@ _Starts countdown blinking._
 ```C++
 void eva::CountdownIndicator::on (
     unsigned short period,
-    unsigned short dutycyclePercent,
+    unsigned char dutycyclePercent,
     unsigned char count,
     IHandler * listener=0
 ) 

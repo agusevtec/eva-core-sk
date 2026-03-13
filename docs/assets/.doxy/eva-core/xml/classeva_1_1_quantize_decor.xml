@@ -29,7 +29,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaReaderDecors.h" line="125" column="28" bodyfile="src/evaReaderDecors.h" bodystart="125" bodyend="125"/>
+        <location file="src/evaReaderDecors.h" line="126" column="28" bodyfile="src/evaReaderDecors.h" bodystart="126" bodyend="126"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -49,7 +49,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaReaderDecors.h" line="100" column="22" bodyfile="src/evaReaderDecors.h" bodystart="100" bodyend="110"/>
+        <location file="src/evaReaderDecors.h" line="101" column="22" bodyfile="src/evaReaderDecors.h" bodystart="101" bodyend="111"/>
       </memberdef>
       <memberdef kind="function" id="classeva_1_1_quantize_decor_1a4531ca88488c8b52918ae83f74f5f670" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>signed short</type>
@@ -80,7 +80,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaReaderDecors.h" line="117" column="22" bodyfile="src/evaReaderDecors.h" bodystart="117" bodyend="122"/>
+        <location file="src/evaReaderDecors.h" line="118" column="22" bodyfile="src/evaReaderDecors.h" bodystart="118" bodyend="123"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -96,6 +96,12 @@
         <label>eva::Button&lt; QuantizeDecor&lt; StabilizeDecor&lt; AnalogPinReader&lt; PIN, PIN_MODE &gt; &gt;, LEVELS... &gt; &gt;</label>
         <link refid="classeva_1_1_button"/>
         <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>eva::KeyButton&lt; QuantizeDecor&lt; StabilizeDecor&lt; AnalogPinReader&lt; PIN, PIN_MODE &gt; &gt;, LEVELS... &gt; &gt;</label>
+        <link refid="classeva_1_1_key_button"/>
+        <childnode refid="4" relation="public-inheritance">
         </childnode>
       </node>
       <node id="1">
@@ -122,7 +128,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="src/evaReaderDecors.h" line="93" column="5" bodyfile="src/evaReaderDecors.h" bodystart="94" bodyend="126"/>
+    <location file="src/evaReaderDecors.h" line="93" column="5" bodyfile="src/evaReaderDecors.h" bodystart="94" bodyend="127"/>
     <listofallmembers>
       <member refid="classeva_1_1_quantize_decor_1a4531ca88488c8b52918ae83f74f5f670" prot="public" virt="non-virtual"><scope>eva::QuantizeDecor</scope><name>getLevel</name></member>
       <member refid="classeva_1_1_quantize_decor_1af9835250527826076402e3591535890c" prot="public" virt="non-virtual"><scope>eva::QuantizeDecor</scope><name>getValue</name></member>

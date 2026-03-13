@@ -17,7 +17,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.4">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -879,6 +879,50 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#function-checkactivating" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        function checkActivating
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-checkdeactivating" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        function checkDeactivating
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-handleactivating" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        function handleActivating
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-handledeactivating" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        function handleDeactivating
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#function-notify" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -890,10 +934,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#function-tick" class="md-nav__link">
+  <a href="#function-updatestate" class="md-nav__link">
     <span class="md-ellipsis">
       
-        function tick
+        function updateState
       
     </span>
   </a>
@@ -977,11 +1021,23 @@
 <tbody>
 <tr>
 <td style="text-align: right;"></td>
-<td style="text-align: left;"><a href="../classeva_1_1_tickable/#function-tickable"><strong>Tickable</strong></a> () <br></td>
+<td style="text-align: left;"><a href="../classeva_1_1_tickable/#function-tickable-13"><strong>Tickable</strong></a> () <br></td>
 </tr>
 <tr>
-<td style="text-align: right;">void</td>
-<td style="text-align: left;"><a href="../classeva_1_1_tickable/#function-tac"><strong>tac</strong></a> () <br><em>Triggers tick on this and all linked tickables.</em></td>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"><a href="../classeva_1_1_tickable/#function-tickable-23"><strong>Tickable</strong></a> (const Tickable &amp;) = delete<br></td>
+</tr>
+<tr>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"><a href="../classeva_1_1_tickable/#function-tickable-33"><strong>Tickable</strong></a> (Tickable &amp;&amp;) = delete<br></td>
+</tr>
+<tr>
+<td style="text-align: right;">Tickable &amp;</td>
+<td style="text-align: left;"><a href="../classeva_1_1_tickable/#function-operator"><strong>operator=</strong></a> (const Tickable &amp;) = delete<br></td>
+</tr>
+<tr>
+<td style="text-align: right;">Tickable &amp;</td>
+<td style="text-align: left;"><a href="../classeva_1_1_tickable/#function-operator_1"><strong>operator=</strong></a> (Tickable &amp;&amp;) = delete<br></td>
 </tr>
 <tr>
 <td style="text-align: right;">virtual</td>
@@ -1000,8 +1056,8 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: right;">Tickable *</td>
-<td style="text-align: left;"><a href="../classeva_1_1_tickable/#function-chain"><strong>chain</strong></a> () <br><em>Gets or sets the head of the tickable chain.</em></td>
+<td style="text-align: right;">void</td>
+<td style="text-align: left;"><a href="../classeva_1_1_tickable/#function-tac"><strong>tac</strong></a> () <br><em>Triggers tick on this and all linked tickables.</em></td>
 </tr>
 </tbody>
 </table>
@@ -1038,12 +1094,28 @@
 </thead>
 <tbody>
 <tr>
+<td style="text-align: right;">bool</td>
+<td style="text-align: left;"><a href="#function-checkactivating"><strong>checkActivating</strong></a> (unsigned char wasLevelCode) <br><em>inactive or different -&gt; active</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">bool</td>
+<td style="text-align: left;"><a href="#function-checkdeactivating"><strong>checkDeactivating</strong></a> (unsigned char wasLevelCode) <br><em>active -&gt; inactive or different state</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">void</td>
+<td style="text-align: left;"><a href="#function-handleactivating"><strong>handleActivating</strong></a> () <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">void</td>
+<td style="text-align: left;"><a href="#function-handledeactivating"><strong>handleDeactivating</strong></a> (unsigned char wasLevelCode) <br></td>
+</tr>
+<tr>
 <td style="text-align: right;">void</td>
 <td style="text-align: left;"><a href="#function-notify"><strong>notify</strong></a> (unsigned short eventType, signed short eventCode) <br></td>
 </tr>
 <tr>
-<td style="text-align: right;">virtual void</td>
-<td style="text-align: left;"><a href="#function-tick"><strong>tick</strong></a> () override<br></td>
+<td style="text-align: right;">void</td>
+<td style="text-align: left;"><a href="#function-updatestate"><strong>updateState</strong></a> () <br></td>
 </tr>
 </tbody>
 </table>
@@ -1141,6 +1213,38 @@
 
 <hr>
 <h2 id="protected-functions-documentation">Protected Functions Documentation<a class="headerlink" href="#protected-functions-documentation" title="Permanent link">&para;</a></h2>
+<h3 id="function-checkactivating">function checkActivating<a class="headerlink" href="#function-checkactivating" title="Permanent link">&para;</a></h3>
+<p><em>inactive or different -&gt; active</em> </p>
+<div class="codehilite"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">Switch</span><span class="o">::</span><span class="n">checkActivating</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">wasLevelCode</span>
+<span class="p">)</span><span class="w"> </span>
+</code></pre></div>
+
+<hr>
+
+<h3 id="function-checkdeactivating">function checkDeactivating<a class="headerlink" href="#function-checkdeactivating" title="Permanent link">&para;</a></h3>
+<p><em>active -&gt; inactive or different state</em> </p>
+<div class="codehilite"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">Switch</span><span class="o">::</span><span class="n">checkDeactivating</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">wasLevelCode</span>
+<span class="p">)</span><span class="w"> </span>
+</code></pre></div>
+
+<hr>
+
+<h3 id="function-handleactivating">function handleActivating<a class="headerlink" href="#function-handleactivating" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">Switch</span><span class="o">::</span><span class="n">handleActivating</span><span class="w"> </span><span class="p">()</span><span class="w"> </span>
+</code></pre></div>
+
+<hr>
+
+<h3 id="function-handledeactivating">function handleDeactivating<a class="headerlink" href="#function-handledeactivating" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">Switch</span><span class="o">::</span><span class="n">handleDeactivating</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">wasLevelCode</span>
+<span class="p">)</span><span class="w"> </span>
+</code></pre></div>
+
+<hr>
+
 <h3 id="function-notify">function notify<a class="headerlink" href="#function-notify" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">Switch</span><span class="o">::</span><span class="n">notify</span><span class="w"> </span><span class="p">(</span>
 <span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">eventType</span><span class="p">,</span>
@@ -1150,11 +1254,10 @@
 
 <hr>
 
-<h3 id="function-tick">function tick<a class="headerlink" href="#function-tick" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="k">virtual</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">Switch</span><span class="o">::</span><span class="n">tick</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">override</span>
+<h3 id="function-updatestate">function updateState<a class="headerlink" href="#function-updatestate" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">Switch</span><span class="o">::</span><span class="n">updateState</span><span class="w"> </span><span class="p">()</span><span class="w"> </span>
 </code></pre></div>
 
-<p>Implements <a href="../classeva_1_1_tickable/#function-tick"><em>eva::Tickable::tick</em></a></p>
 <hr>
 
 <hr />

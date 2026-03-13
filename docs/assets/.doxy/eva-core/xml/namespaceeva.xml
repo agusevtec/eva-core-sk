@@ -15,6 +15,7 @@
     <innerclass refid="classeva_1_1_i_reader" prot="public">eva::IReader</innerclass>
     <innerclass refid="classeva_1_1_i_reader_adapter" prot="public">eva::IReaderAdapter</innerclass>
     <innerclass refid="classeva_1_1_joystick" prot="public">eva::Joystick</innerclass>
+    <innerclass refid="classeva_1_1_key_button" prot="public">eva::KeyButton</innerclass>
     <innerclass refid="structeva_1_1_list_iterator" prot="public">eva::ListIterator</innerclass>
     <innerclass refid="classeva_1_1_list" prot="public">eva::List</innerclass>
     <innerclass refid="classeva_1_1_stabilize_decor" prot="public">eva::StabilizeDecor</innerclass>
@@ -92,7 +93,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaButton.h" line="95" column="5" bodyfile="src/evaButton.h" bodystart="95" bodyend="-1"/>
+        <location file="src/evaButton.h" line="111" column="5" bodyfile="src/evaButton.h" bodystart="111" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="eva_button_8h_1affe8465bf145bd51e50d91687a4698e6" prot="public" static="no">
         <templateparamlist>
@@ -130,7 +131,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaButton.h" line="109" column="5" bodyfile="src/evaButton.h" bodystart="109" bodyend="-1"/>
+        <location file="src/evaButton.h" line="125" column="5" bodyfile="src/evaButton.h" bodystart="125" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="eva_button_8h_1a8d29da7d3489fb33384bd8f8ccb21435" prot="public" static="no">
         <templateparamlist>
@@ -198,7 +199,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaButton.h" line="137" column="5" bodyfile="src/evaButton.h" bodystart="137" bodyend="-1"/>
+        <location file="src/evaButton.h" line="153" column="5" bodyfile="src/evaButton.h" bodystart="153" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="eva_joystick_8h_1aff092189042321d52ea4475f0ed0d0dc" prot="public" static="no">
         <templateparamlist>
@@ -355,6 +356,177 @@
         </inbodydescription>
         <location file="src/evaJoystick.h" line="70" column="3" bodyfile="src/evaJoystick.h" bodystart="70" bodyend="-1"/>
       </memberdef>
+      <memberdef kind="typedef" id="eva_key_button_8h_1ad94c32e054f68c57c010a09e261a309c" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type>int</type>
+            <declname>PIN</declname>
+            <defname>PIN</defname>
+          </param>
+          <param>
+            <type>int</type>
+            <declname>PIN_MODE</declname>
+            <defname>PIN_MODE</defname>
+          </param>
+          <param>
+            <type>int</type>
+            <declname>ACTIVATES_ON</declname>
+            <defname>ACTIVATES_ON</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classeva_1_1_button" kindref="compound">Button</ref>&lt; <ref refid="classeva_1_1_binarize_eq_decor" kindref="compound">BinarizeEqDecor</ref>&lt; <ref refid="classeva_1_1_stabilize_decor" kindref="compound">StabilizeDecor</ref>&lt; <ref refid="classeva_1_1_digital_pin_reader" kindref="compound">DigitalPinReader</ref>&lt; PIN, PIN_MODE &gt; &gt;, ACTIVATES_ON &gt; &gt;</type>
+        <definition>using eva::KeyPinButton = Button&lt;BinarizeEqDecor&lt;StabilizeDecor&lt;DigitalPinReader&lt;PIN, PIN_MODE&gt;&gt;, ACTIVATES_ON&gt;&gt;</definition>
+        <argsstring></argsstring>
+        <name>KeyPinButton</name>
+        <qualifiedname>eva::KeyPinButton</qualifiedname>
+        <briefdescription>
+<para>Digital pin key-button with debouncing and level normalization. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Combines:<itemizedlist>
+<listitem><para><ref refid="classeva_1_1_digital_pin_reader" kindref="compound">DigitalPinReader</ref> for raw pin reading</para>
+</listitem><listitem><para><ref refid="classeva_1_1_stabilize_decor" kindref="compound">StabilizeDecor</ref> for debouncing (120ms stability)</para>
+</listitem><listitem><para><ref refid="classeva_1_1_binarize_eq_decor" kindref="compound">BinarizeEqDecor</ref> for mapping to active/inactive based on specified level</para>
+</listitem></itemizedlist>
+</para>
+<para>Long click threshold is fixed at 750ms.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>PIN</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Arduino pin number </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>PIN_MODE</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pin mode (INPUT, INPUT_PULLUP, etc.) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ACTIVATES_ON</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Level that means &quot;pressed&quot; (LOW or HIGH) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evaKeyButton.h" line="107" column="5" bodyfile="src/evaKeyButton.h" bodystart="107" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="eva_key_button_8h_1a6dfeec51fdb2c8daa563cc9ae1b7cad8" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type>int</type>
+            <declname>PIN</declname>
+            <defname>PIN</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classeva_1_1_key_button" kindref="compound">KeyButton</ref>&lt; <ref refid="classeva_1_1_binarize_eq_decor" kindref="compound">BinarizeEqDecor</ref>&lt; <ref refid="classeva_1_1_stabilize_decor" kindref="compound">StabilizeDecor</ref>&lt; <ref refid="classeva_1_1_digital_pin_reader" kindref="compound">DigitalPinReader</ref>&lt; PIN, INPUT_PULLUP &gt; &gt;, LOW &gt; &gt;</type>
+        <definition>using eva::KeyPullUpButton = KeyButton&lt;BinarizeEqDecor&lt;StabilizeDecor&lt;DigitalPinReader&lt;PIN, INPUT_PULLUP&gt;&gt;, LOW&gt;&gt;</definition>
+        <argsstring></argsstring>
+        <name>KeyPullUpButton</name>
+        <qualifiedname>eva::KeyPullUpButton</qualifiedname>
+        <briefdescription>
+<para>Pull-up key-button (active LOW, connect to GND). </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Convenience alias for the most common Arduino button wiring:<itemizedlist>
+<listitem><para>Pin set to INPUT_PULLUP</para>
+</listitem><listitem><para><ref refid="classeva_1_1_button" kindref="compound">Button</ref> connects pin to GND when pressed</para>
+</listitem></itemizedlist>
+</para>
+<para>Generates all button events with proper debouncing.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>PIN</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Arduino pin number </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evaKeyButton.h" line="121" column="5" bodyfile="src/evaKeyButton.h" bodystart="121" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="eva_key_button_8h_1aeb56862230f212715d23df9f53fee611" prot="public" static="no">
+        <templateparamlist>
+          <param>
+            <type>int</type>
+            <declname>PIN</declname>
+            <defname>PIN</defname>
+          </param>
+          <param>
+            <type>int</type>
+            <declname>PIN_MODE</declname>
+            <defname>PIN_MODE</defname>
+          </param>
+          <param>
+            <type>signed short...</type>
+            <declname>LEVELS</declname>
+            <defname>LEVELS</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classeva_1_1_key_button" kindref="compound">KeyButton</ref>&lt; <ref refid="classeva_1_1_quantize_decor" kindref="compound">QuantizeDecor</ref>&lt; <ref refid="classeva_1_1_stabilize_decor" kindref="compound">StabilizeDecor</ref>&lt; <ref refid="classeva_1_1_analog_pin_reader" kindref="compound">AnalogPinReader</ref>&lt; PIN, PIN_MODE &gt; &gt;, LEVELS... &gt; &gt;</type>
+        <definition>using eva::KeyPinMultiButton = KeyButton&lt;QuantizeDecor&lt;StabilizeDecor&lt;AnalogPinReader&lt;PIN, PIN_MODE&gt;&gt;, LEVELS...&gt;&gt;</definition>
+        <argsstring></argsstring>
+        <name>KeyPinMultiButton</name>
+        <qualifiedname>eva::KeyPinMultiButton</qualifiedname>
+        <briefdescription>
+<para>Multiple key-buttons on a single ADC pin using resistor ladder. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Hardware connection: <programlisting><codeline><highlight class="normal"><sp/>ADC<sp/>Pin<sp/><sp/>-----+--R1--+--R2--+--<sp/>...<sp/>-Rn-+</highlight></codeline>
+<codeline><highlight class="normal">(analog<sp/>in)<sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\<sp/><sp/><sp/><sp/><sp/><sp/>\<sp/><sp/><sp/><sp/><sp/><sp/>\<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>GND<sp/><sp/><sp/><sp/>-----+------+------+--<sp/>...<sp/>----+</highlight></codeline>
+</programlisting></para>
+<para>Each button produces a different ADC value when pressed. The <ref refid="classeva_1_1_quantize_decor" kindref="compound">QuantizeDecor</ref> maps these values to discrete button codes (1, 2, 3...). <ref refid="classeva_1_1_stabilize_decor" kindref="compound">StabilizeDecor</ref> provides debouncing.</para>
+<para>Generates standard button events for each button, with the button number encoded in the event mask.</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>PIN</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Arduino analog pin number </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>PIN_MODE</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pin mode (usually INPUT) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>LEVELS</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Threshold values for each button (expected ADC readings)</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para>PinMultiSwitch For use cases without click detection </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evaKeyButton.h" line="149" column="5" bodyfile="src/evaKeyButton.h" bodystart="149" bodyend="-1"/>
+      </memberdef>
       <memberdef kind="typedef" id="eva_slider_8h_1a62d965ecb30757f74e3dcc7ebcb15b2b" prot="public" static="no">
         <templateparamlist>
           <param>
@@ -488,7 +660,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaSwitch.h" line="147" column="5" bodyfile="src/evaSwitch.h" bodystart="147" bodyend="-1"/>
+        <location file="src/evaSwitch.h" line="174" column="5" bodyfile="src/evaSwitch.h" bodystart="174" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="eva_switch_8h_1a69f7de1ebb1e7c1b70aa7d7dc11cdec5" prot="public" static="no">
         <templateparamlist>
@@ -525,7 +697,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaSwitch.h" line="159" column="5" bodyfile="src/evaSwitch.h" bodystart="159" bodyend="-1"/>
+        <location file="src/evaSwitch.h" line="186" column="5" bodyfile="src/evaSwitch.h" bodystart="186" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="eva_switch_8h_1afeb4db37763710b769578c7a201440c0" prot="public" static="no">
         <templateparamlist>
@@ -590,7 +762,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaSwitch.h" line="182" column="5" bodyfile="src/evaSwitch.h" bodystart="182" bodyend="-1"/>
+        <location file="src/evaSwitch.h" line="209" column="5" bodyfile="src/evaSwitch.h" bodystart="209" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="var">
@@ -607,7 +779,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaButton.h" line="10" column="32" bodyfile="src/evaButton.h" bodystart="10" bodyend="-1"/>
+        <location file="src/evaButton.h" line="11" column="32" bodyfile="src/evaButton.h" bodystart="11" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="eva_button_8h_1ae072ea6457bf4f70dfe4420571701571" prot="public" static="yes" mutable="no">
         <type>const unsigned char</type>
@@ -622,7 +794,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaButton.h" line="11" column="32" bodyfile="src/evaButton.h" bodystart="11" bodyend="-1"/>
+        <location file="src/evaButton.h" line="12" column="32" bodyfile="src/evaButton.h" bodystart="12" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="eva_button_8h_1a8084941916bac4c197a6e7b08d033134" prot="public" static="yes" mutable="no">
         <type>const unsigned char</type>
@@ -637,7 +809,22 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaButton.h" line="12" column="32" bodyfile="src/evaButton.h" bodystart="12" bodyend="-1"/>
+        <location file="src/evaButton.h" line="13" column="32" bodyfile="src/evaButton.h" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="eva_key_button_8h_1af559901eaff180228ddd5e69d98cb89e" prot="public" static="yes" mutable="no">
+        <type>const unsigned char</type>
+        <definition>const unsigned char eva::ON_REPEATKEY</definition>
+        <argsstring></argsstring>
+        <name>ON_REPEATKEY</name>
+        <qualifiedname>eva::ON_REPEATKEY</qualifiedname>
+        <initializer>= 0x40</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evaKeyButton.h" line="11" column="32" bodyfile="src/evaKeyButton.h" bodystart="11" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="eva_switch_8h_1a68626a8136afbee89173c7beb3f20104" prot="public" static="yes" mutable="no">
         <type>const unsigned char</type>
@@ -716,12 +903,12 @@
       </memberdef>
     </sectiondef>
     <sectiondef kind="func">
-      <memberdef kind="function" id="eva_reader_decors_8h_1a85d5a9673e337a532468176f9ce6e6e5" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="eva_reader_decors_8h_1a6255eaf96812f4c24b664549811675b8" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
-        <definition>static bool eva::in_beetween</definition>
+        <definition>static bool eva::in_between</definition>
         <argsstring>(signed short x, signed short a, signed short b)</argsstring>
-        <name>in_beetween</name>
-        <qualifiedname>eva::in_beetween</qualifiedname>
+        <name>in_between</name>
+        <qualifiedname>eva::in_between</qualifiedname>
         <param>
           <type>signed short</type>
           <declname>x</declname>

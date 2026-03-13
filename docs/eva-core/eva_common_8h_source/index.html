@@ -17,7 +17,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.4">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -697,6 +697,17 @@
 <span class="cp">#define EVACOMMON_H</span>
 
 <span class="cp">#pragma once</span>
+<span class="cp">#ifndef DEBOUNCE_DELAY</span>
+<span class="w">    </span><span class="cp">#define DEBOUNCE_DELAY 120</span>
+<span class="cp">#endif</span>
+
+<span class="cp">#ifndef LONGPRESS_DELAY</span>
+<span class="w">    </span><span class="cp">#define LONGPRESS_DELAY 750</span>
+<span class="cp">#endif</span>
+
+<span class="cp">#ifndef REPEAT_DELAY</span>
+<span class="w">    </span><span class="cp">#define REPEAT_DELAY 400</span>
+<span class="cp">#endif</span>
 
 <span class="cp">#define SIGN(x) (((x) &gt; 0) - ((x) &lt; 0))</span>
 <span class="cp">#define IS_BEFORE(t1, t2) (((t2) - (t1)) &lt;= 0x7FFFFFFFUL)</span>

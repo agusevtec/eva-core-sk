@@ -12,6 +12,7 @@
     <innerfile refid="eva_indicator_8h">evaIndicator.h</innerfile>
     <innerfile refid="eva_i_reader_8h">evaIReader.h</innerfile>
     <innerfile refid="eva_joystick_8h">evaJoystick.h</innerfile>
+    <innerfile refid="eva_key_button_8h">evaKeyButton.h</innerfile>
     <innerfile refid="eva_list_8h">evaList.h</innerfile>
     <innerfile refid="eva_reader_decors_8h">evaReaderDecors.h</innerfile>
     <innerfile refid="eva_repeat_timer_8h">evaRepeatTimer.h</innerfile>

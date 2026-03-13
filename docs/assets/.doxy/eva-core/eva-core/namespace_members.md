@@ -5,7 +5,14 @@
 
 ## i
 
-* **in\_beetween** ([**eva**](namespaceeva.md))
+* **in\_between** ([**eva**](namespaceeva.md))
+
+
+## k
+
+* **KeyPinButton** ([**eva**](namespaceeva.md))
+* **KeyPinMultiButton** ([**eva**](namespaceeva.md))
+* **KeyPullUpButton** ([**eva**](namespaceeva.md))
 
 
 ## o
@@ -17,6 +24,7 @@
 * **ON\_LONGPRESS** ([**eva**](namespaceeva.md))
 * **ON\_PRESS** ([**eva**](namespaceeva.md))
 * **ON\_RELEASE** ([**eva**](namespaceeva.md))
+* **ON\_REPEATKEY** ([**eva**](namespaceeva.md))
 * **ON\_SHORTCLICK** ([**eva**](namespaceeva.md))
 
 

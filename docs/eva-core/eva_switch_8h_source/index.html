@@ -17,7 +17,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.4">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -750,24 +750,21 @@
 <span class="w">        </span><span class="p">}</span>
 
 <span class="w">    </span><span class="k">protected</span><span class="o">:</span>
-<span class="w">        </span><span class="kt">void</span><span class="w"> </span><span class="n">tick</span><span class="p">()</span><span class="w"> </span><span class="k">override</span>
+<span class="w">        </span><span class="kt">void</span><span class="w"> </span><span class="n">updateState</span><span class="p">()</span>
 <span class="w">        </span><span class="p">{</span>
-<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="o">-&gt;</span><span class="n">levelCode</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
-<span class="w">                </span><span class="k">return</span><span class="p">;</span>
-
-<span class="w">            </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">wasLevelCode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">levelCode</span><span class="p">;</span>
 <span class="w">            </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">levelCode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">READER</span><span class="o">::</span><span class="n">getValue</span><span class="p">();</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="o">-&gt;</span><span class="n">levelCode</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">                </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">levelCode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
 
-<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">((</span><span class="n">wasLevelCode</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="p">(</span><span class="n">wasLevelCode</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">levelCode</span><span class="p">))</span><span class="w"> </span><span class="c1">// active -&gt; inactive or different state</span>
-<span class="w">            </span><span class="p">{</span>
-<span class="w">                </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">notify</span><span class="p">(</span><span class="n">ON_RELEASE</span><span class="p">,</span><span class="w"> </span><span class="n">wasLevelCode</span><span class="p">);</span>
-<span class="w">                </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">notify</span><span class="p">(</span><span class="n">ON_CHANGE</span><span class="p">,</span><span class="w"> </span><span class="n">wasLevelCode</span><span class="p">);</span>
-<span class="w">            </span><span class="p">}</span>
-<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">((</span><span class="n">wasLevelCode</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">levelCode</span><span class="p">)</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="o">-&gt;</span><span class="n">levelCode</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">))</span><span class="w"> </span><span class="c1">// inactive or different -&gt; active</span>
-<span class="w">            </span><span class="p">{</span>
-<span class="w">                </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">notify</span><span class="p">(</span><span class="n">ON_PRESS</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">levelCode</span><span class="p">);</span>
-<span class="w">                </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">notify</span><span class="p">(</span><span class="n">ON_CHANGE</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">levelCode</span><span class="p">);</span>
-<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="kt">bool</span><span class="w"> </span><span class="n">checkDeactivating</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">wasLevelCode</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="n">wasLevelCode</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">(</span><span class="n">wasLevelCode</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">levelCode</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="kt">bool</span><span class="w"> </span><span class="n">checkActivating</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">wasLevelCode</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="n">wasLevelCode</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">levelCode</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="o">-&gt;</span><span class="n">levelCode</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
 <span class="w">        </span><span class="p">}</span>
 
 <span class="w">        </span><span class="kt">void</span><span class="w"> </span><span class="n">notify</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">eventType</span><span class="p">,</span><span class="w"> </span><span class="kt">signed</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">eventCode</span><span class="p">)</span>
@@ -775,6 +772,34 @@
 <span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="o">-&gt;</span><span class="n">listener</span><span class="p">)</span>
 <span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="o">-&gt;</span><span class="n">curiosity</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">eventType</span><span class="p">)</span>
 <span class="w">                    </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">listener</span><span class="o">-&gt;</span><span class="n">invoke</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="n">eventType</span><span class="p">,</span><span class="w"> </span><span class="n">eventCode</span><span class="p">});</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="kt">void</span><span class="w"> </span><span class="n">handleDeactivating</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">wasLevelCode</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">notify</span><span class="p">(</span><span class="n">ON_RELEASE</span><span class="p">,</span><span class="w"> </span><span class="n">wasLevelCode</span><span class="p">);</span>
+<span class="w">            </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">notify</span><span class="p">(</span><span class="n">ON_CHANGE</span><span class="p">,</span><span class="w"> </span><span class="n">wasLevelCode</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="kt">void</span><span class="w"> </span><span class="n">handleActivating</span><span class="p">()</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">notify</span><span class="p">(</span><span class="n">ON_PRESS</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">levelCode</span><span class="p">);</span>
+<span class="w">            </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">notify</span><span class="p">(</span><span class="n">ON_CHANGE</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">levelCode</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">private</span><span class="o">:</span>
+<span class="w">        </span><span class="kt">void</span><span class="w"> </span><span class="n">tick</span><span class="p">()</span><span class="w"> </span><span class="k">override</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="o">-&gt;</span><span class="n">levelCode</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">                </span><span class="k">return</span><span class="p">;</span>
+
+<span class="w">            </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">wasLevelCode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">levelCode</span><span class="p">;</span>
+<span class="w">            </span><span class="n">updateState</span><span class="p">();</span>
+
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">checkDeactivating</span><span class="p">(</span><span class="n">wasLevelCode</span><span class="p">))</span>
+<span class="w">                </span><span class="n">handleDeactivating</span><span class="p">(</span><span class="n">wasLevelCode</span><span class="p">);</span>
+
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">checkActivating</span><span class="p">(</span><span class="n">wasLevelCode</span><span class="p">))</span>
+<span class="w">                </span><span class="n">handleActivating</span><span class="p">();</span>
 <span class="w">        </span><span class="p">}</span>
 
 <span class="w">    </span><span class="k">protected</span><span class="o">:</span>

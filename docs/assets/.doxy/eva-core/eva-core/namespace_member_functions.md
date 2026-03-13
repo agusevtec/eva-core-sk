@@ -5,7 +5,7 @@
 
 ## i
 
-* **in\_beetween** ([**eva**](namespaceeva.md))
+* **in\_between** ([**eva**](namespaceeva.md))
 
 
 ## t

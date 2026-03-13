@@ -35,10 +35,10 @@
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
-      <memberdef kind="function" id="classeva_1_1_countdown_indicator_1a009b3fb2dc47e9789ce9275a2ab50406" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classeva_1_1_countdown_indicator_1ae503e0fe65396ed2cf50c4f27ce42a25" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void eva::CountdownIndicator::on</definition>
-        <argsstring>(unsigned short period, unsigned short dutycyclePercent, unsigned char count, IHandler *listener=0)</argsstring>
+        <argsstring>(unsigned short period, unsigned char dutycyclePercent, unsigned char count, IHandler *listener=0)</argsstring>
         <name>on</name>
         <qualifiedname>eva::CountdownIndicator::on</qualifiedname>
         <param>
@@ -46,7 +46,7 @@
           <declname>period</declname>
         </param>
         <param>
-          <type>unsigned short</type>
+          <type>unsigned char</type>
           <declname>dutycyclePercent</declname>
         </param>
         <param>
@@ -263,7 +263,7 @@
       <member refid="classeva_1_1_countdown_indicator_1aa4ef30c7c817fbdb6f2b317e2e957bab" prot="private" virt="virtual"><scope>eva::CountdownIndicator</scope><name>invoke</name></member>
       <member refid="classeva_1_1_countdown_indicator_1a2fcaad8cf80b8e888f689e98fddc4778" prot="private" virt="non-virtual"><scope>eva::CountdownIndicator</scope><name>listener</name></member>
       <member refid="classeva_1_1_blinking_indicator_1ab3f73cc4ea348e04ed9a1221ce65d928" prot="public" virt="non-virtual"><scope>eva::CountdownIndicator</scope><name>off</name></member>
-      <member refid="classeva_1_1_countdown_indicator_1a009b3fb2dc47e9789ce9275a2ab50406" prot="public" virt="non-virtual"><scope>eva::CountdownIndicator</scope><name>on</name></member>
+      <member refid="classeva_1_1_countdown_indicator_1ae503e0fe65396ed2cf50c4f27ce42a25" prot="public" virt="non-virtual"><scope>eva::CountdownIndicator</scope><name>on</name></member>
       <member refid="classeva_1_1_countdown_indicator_1a987af6bb4ca1c2c112274cde4d9a9088" prot="public" virt="non-virtual"><scope>eva::CountdownIndicator</scope><name>on</name></member>
       <member refid="classeva_1_1_countdown_indicator_1a41787cfbc1be93c04e26c9e2fa8a307e" prot="public" virt="non-virtual"><scope>eva::CountdownIndicator</scope><name>on</name></member>
       <member refid="classeva_1_1_blinking_indicator_1a88e67083cd04c9f1f1b6c7b55c7e00bf" prot="protected" virt="non-virtual"><scope>eva::CountdownIndicator</scope><name>period</name></member>

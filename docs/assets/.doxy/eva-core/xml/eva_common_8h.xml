@@ -2,39 +2,84 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
   <compounddef id="eva_common_8h" kind="file" language="C++">
     <compoundname>evaCommon.h</compoundname>
+    <includedby refid="eva_button_8h" local="yes">src/evaButton.h</includedby>
     <includedby refid="eva_joystick_8h" local="yes">src/evaJoystick.h</includedby>
+    <includedby refid="eva_key_button_8h" local="yes">src/evaKeyButton.h</includedby>
     <includedby refid="eva_reader_decors_8h" local="yes">src/evaReaderDecors.h</includedby>
     <invincdepgraph>
-      <node id="5">
+      <node id="2">
         <label>src/evaButton.h</label>
         <link refid="eva_button_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
       </node>
       <node id="1">
         <label>src/evaCommon.h</label>
         <link refid="eva_common_8h"/>
         <childnode refid="2" relation="include">
         </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
         <childnode refid="3" relation="include">
         </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
       </node>
-      <node id="2">
+      <node id="4">
         <label>src/evaJoystick.h</label>
         <link refid="eva_joystick_8h_source"/>
       </node>
       <node id="3">
+        <label>src/evaKeyButton.h</label>
+        <link refid="eva_key_button_8h_source"/>
+      </node>
+      <node id="5">
         <label>src/evaReaderDecors.h</label>
         <link refid="eva_reader_decors_8h_source"/>
-        <childnode refid="4" relation="include">
+        <childnode refid="6" relation="include">
         </childnode>
       </node>
-      <node id="4">
+      <node id="6">
         <label>src/evaSwitch.h</label>
         <link refid="eva_switch_8h_source"/>
-        <childnode refid="5" relation="include">
+        <childnode refid="2" relation="include">
         </childnode>
       </node>
     </invincdepgraph>
     <sectiondef kind="define">
+      <memberdef kind="define" id="eva_common_8h_1adb75862f582a7d68347ceae4f4c003c9" prot="public" static="no">
+        <name>DEBOUNCE_DELAY</name>
+        <initializer>120</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evaCommon.h" line="6" column="13" bodyfile="src/evaCommon.h" bodystart="6" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="eva_common_8h_1a915288962b62e172dbaaca5494f0f3a0" prot="public" static="no">
+        <name>LONGPRESS_DELAY</name>
+        <initializer>750</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evaCommon.h" line="10" column="13" bodyfile="src/evaCommon.h" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="eva_common_8h_1a3d95898a5b29642479de8a2bbb832f6c" prot="public" static="no">
+        <name>REPEAT_DELAY</name>
+        <initializer>400</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evaCommon.h" line="14" column="13" bodyfile="src/evaCommon.h" bodystart="14" bodyend="-1"/>
+      </memberdef>
       <memberdef kind="define" id="eva_common_8h_1a8c5ff70b6b28cd0157c50a22406f92c4" prot="public" static="no">
         <name>SIGN</name>
         <param><defname>x</defname></param>
@@ -45,7 +90,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaCommon.h" line="6" column="9" bodyfile="src/evaCommon.h" bodystart="6" bodyend="-1"/>
+        <location file="src/evaCommon.h" line="17" column="9" bodyfile="src/evaCommon.h" bodystart="17" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="eva_common_8h_1a2d3ed49820ead661b0e93608528b8def" prot="public" static="no">
         <name>IS_BEFORE</name>
@@ -58,7 +103,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaCommon.h" line="7" column="9" bodyfile="src/evaCommon.h" bodystart="7" bodyend="-1"/>
+        <location file="src/evaCommon.h" line="18" column="9" bodyfile="src/evaCommon.h" bodystart="18" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -70,11 +115,22 @@
 <codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EVACOMMON_H</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="3"><highlight class="normal"></highlight></codeline>
 <codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="5"><highlight class="normal"></highlight></codeline>
-<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SIGN(x)<sp/>(((x)<sp/>&gt;<sp/>0)<sp/>-<sp/>((x)<sp/>&lt;<sp/>0))</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IS_BEFORE(t1,<sp/>t2)<sp/>(((t2)<sp/>-<sp/>(t1))<sp/>&lt;=<sp/>0x7FFFFFFFUL)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>DEBOUNCE_DELAY</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>DEBOUNCE_DELAY<sp/>120</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="8"><highlight class="normal"></highlight></codeline>
-<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>LONGPRESS_DELAY</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>LONGPRESS_DELAY<sp/>750</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>REPEAT_DELAY</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>REPEAT_DELAY<sp/>400</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SIGN(x)<sp/>(((x)<sp/>&gt;<sp/>0)<sp/>-<sp/>((x)<sp/>&lt;<sp/>0))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IS_BEFORE(t1,<sp/>t2)<sp/>(((t2)<sp/>-<sp/>(t1))<sp/>&lt;=<sp/>0x7FFFFFFFUL)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
     </programlisting>
     <location file="src/evaCommon.h"/>
   </compounddef>

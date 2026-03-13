@@ -2,7 +2,7 @@
 
 # Class eva::BinarizeEqDecor
 
-**template &lt;class READER, int ACTICATES\_ON&gt;**
+**template &lt;class READER, int ACTIVATES\_ON&gt;**
 
 
 

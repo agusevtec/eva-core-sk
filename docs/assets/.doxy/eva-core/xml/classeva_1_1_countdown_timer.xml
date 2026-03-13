@@ -220,12 +220,13 @@
     </collaborationgraph>
     <location file="src/evaCountdownTimer.h" line="12" column="5" bodyfile="src/evaCountdownTimer.h" bodystart="13" bodyend="33"/>
     <listofallmembers>
-      <member refid="classeva_1_1_tickable_1a287d1d56ac5ca1c143d266c8e3c9d174" prot="public" virt="non-virtual"><scope>eva::CountdownTimer</scope><name>chain</name></member>
       <member refid="classeva_1_1_countdown_timer_1a971246536c3cca838038b493c4da414c" prot="public" virt="non-virtual"><scope>eva::CountdownTimer</scope><name>DelayTimer</name></member>
       <member refid="classeva_1_1_countdown_timer_1a5889ee3ab5a8f31a35f8849c12be2323" prot="public" virt="non-virtual"><scope>eva::CountdownTimer</scope><name>DelayTimer</name></member>
       <member refid="classeva_1_1_delay_timer_1a4d615ec24c146a2b46feea535a8e7830" prot="public" virt="non-virtual"><scope>eva::CountdownTimer</scope><name>isRunning</name></member>
       <member refid="classeva_1_1_delay_timer_1a79cfcb6054cd07ae88faa66e96e1a29f" prot="protected" virt="non-virtual"><scope>eva::CountdownTimer</scope><name>listener</name></member>
       <member refid="classeva_1_1_delay_timer_1aaa15353150b005949a4cb0345ebf83ca" prot="protected" virt="non-virtual"><scope>eva::CountdownTimer</scope><name>nextFire</name></member>
+      <member refid="classeva_1_1_tickable_1a865abbef0ee038e0db5eff81747949e7" prot="public" virt="non-virtual"><scope>eva::CountdownTimer</scope><name>operator=</name></member>
+      <member refid="classeva_1_1_tickable_1a698d78c5c54122f25b42080e001561d2" prot="public" virt="non-virtual"><scope>eva::CountdownTimer</scope><name>operator=</name></member>
       <member refid="classeva_1_1_countdown_timer_1a76bda8be94102d2a37de6bbdcca6539e" prot="private" virt="non-virtual"><scope>eva::CountdownTimer</scope><name>period</name></member>
       <member refid="classeva_1_1_countdown_timer_1a4ad9fe360a886b01459824b9de268538" prot="private" virt="non-virtual"><scope>eva::CountdownTimer</scope><name>remainingCount</name></member>
       <member refid="classeva_1_1_countdown_timer_1a7ec153656555d5873e7250e20bf4303e" prot="public" virt="non-virtual"><scope>eva::CountdownTimer</scope><name>setListener</name></member>
@@ -234,9 +235,11 @@
       <member refid="classeva_1_1_delay_timer_1a09341604aaf16757f0b663545ded5b62" prot="public" virt="non-virtual" ambiguityscope="eva::DelayTimer::"><scope>eva::CountdownTimer</scope><name>start</name></member>
       <member refid="classeva_1_1_delay_timer_1afed3e0879fabc3878788791895a95c0f" prot="public" virt="non-virtual" ambiguityscope="eva::DelayTimer::"><scope>eva::CountdownTimer</scope><name>start</name></member>
       <member refid="classeva_1_1_delay_timer_1a0e61d51bcd42b77a47381496ddb8445c" prot="public" virt="non-virtual"><scope>eva::CountdownTimer</scope><name>stop</name></member>
-      <member refid="classeva_1_1_tickable_1ad13287a77a330b14272d3e1ccdbb3de7" prot="public" virt="non-virtual"><scope>eva::CountdownTimer</scope><name>tac</name></member>
+      <member refid="classeva_1_1_tickable_1aa59c892bc8901a7840e5af7e431a15a3" prot="public" virt="non-virtual"><scope>eva::CountdownTimer</scope><name>tac</name></member>
       <member refid="classeva_1_1_countdown_timer_1af134fa838e3417c5b93e27635922d2dd" prot="private" virt="virtual"><scope>eva::CountdownTimer</scope><name>tick</name></member>
       <member refid="classeva_1_1_tickable_1a667f47cdee5f03eed323cebb27e8ab8e" prot="public" virt="non-virtual"><scope>eva::CountdownTimer</scope><name>Tickable</name></member>
+      <member refid="classeva_1_1_tickable_1aa8efa54edd7140587548e7973de356df" prot="public" virt="non-virtual"><scope>eva::CountdownTimer</scope><name>Tickable</name></member>
+      <member refid="classeva_1_1_tickable_1a80af7d23456d2e0bec8a2c6b8f9f8f10" prot="public" virt="non-virtual"><scope>eva::CountdownTimer</scope><name>Tickable</name></member>
       <member refid="classeva_1_1_tickable_1a6b6ff95372ce0b94618029e05ed2b50a" prot="public" virt="virtual"><scope>eva::CountdownTimer</scope><name>~Tickable</name></member>
     </listofallmembers>
   </compounddef>

@@ -17,11 +17,13 @@ namespace eva
   {
   public:
     Tickable();
+    Tickable(const Tickable&) = delete;
+    Tickable& operator=(const Tickable&) = delete;
+    Tickable(Tickable&&) = delete;
+    Tickable& operator=(Tickable&&) = delete;
     virtual ~Tickable();
 
-    static Tickable *chain();
-
-    void tac();
+    static void tac();
 
   private:
     virtual void tick() = 0;

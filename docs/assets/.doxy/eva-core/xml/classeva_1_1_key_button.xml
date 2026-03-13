@@ -1,0 +1,250 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="classeva_1_1_key_button" kind="class" language="C++" prot="public">
+    <compoundname>eva::KeyButton</compoundname>
+    <basecompoundref refid="classeva_1_1_button" prot="public" virt="non-virtual">eva::Button&lt; READER &gt;</basecompoundref>
+    <includes refid="eva_key_button_8h" local="no">evaKeyButton.h</includes>
+    <templateparamlist>
+      <param>
+        <type>class READER</type>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classeva_1_1_key_button_1a08469f8c728038d26a58ebddf83ee1c6" prot="private" static="no" mutable="no">
+        <type>unsigned long</type>
+        <definition>unsigned long eva::KeyButton&lt; READER &gt;::lastRepeatTime</definition>
+        <argsstring></argsstring>
+        <name>lastRepeatTime</name>
+        <qualifiedname>eva::KeyButton::lastRepeatTime</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evaKeyButton.h" line="89" column="23" bodyfile="src/evaKeyButton.h" bodystart="89" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classeva_1_1_key_button_1abd790d092f04f9e9613e31230c322995" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void eva::KeyButton&lt; READER &gt;::handleLongPress</definition>
+        <argsstring>(unsigned long now)</argsstring>
+        <name>handleLongPress</name>
+        <qualifiedname>eva::KeyButton::handleLongPress</qualifiedname>
+        <param>
+          <type>unsigned long</type>
+          <declname>now</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evaKeyButton.h" line="41" column="10" bodyfile="src/evaKeyButton.h" bodystart="41" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="classeva_1_1_key_button_1a5d68a1ad66b9c27c19cc46efac84e648" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void eva::KeyButton&lt; READER &gt;::handleDeactivating</definition>
+        <argsstring>(unsigned char wasLevelCode, unsigned long now)</argsstring>
+        <name>handleDeactivating</name>
+        <qualifiedname>eva::KeyButton::handleDeactivating</qualifiedname>
+        <param>
+          <type>unsigned char</type>
+          <declname>wasLevelCode</declname>
+        </param>
+        <param>
+          <type>unsigned long</type>
+          <declname>now</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evaKeyButton.h" line="48" column="14" bodyfile="src/evaKeyButton.h" bodystart="48" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="classeva_1_1_key_button_1aa23136a373f6b30c3aa549ccd57981cf" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool eva::KeyButton&lt; READER &gt;::checkRepeatTime</definition>
+        <argsstring>(unsigned long now)</argsstring>
+        <name>checkRepeatTime</name>
+        <qualifiedname>eva::KeyButton::checkRepeatTime</qualifiedname>
+        <param>
+          <type>unsigned long</type>
+          <declname>now</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evaKeyButton.h" line="54" column="14" bodyfile="src/evaKeyButton.h" bodystart="54" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="function" id="classeva_1_1_key_button_1a96bb8880fbacd1cd934028f1e211a4fe" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void eva::KeyButton&lt; READER &gt;::handleRepeatTime</definition>
+        <argsstring>(unsigned long now)</argsstring>
+        <name>handleRepeatTime</name>
+        <qualifiedname>eva::KeyButton::handleRepeatTime</qualifiedname>
+        <param>
+          <type>unsigned long</type>
+          <declname>now</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evaKeyButton.h" line="59" column="14" bodyfile="src/evaKeyButton.h" bodystart="59" bodyend="63"/>
+      </memberdef>
+      <memberdef kind="function" id="classeva_1_1_key_button_1ac73b9e5b58f1fd21aa5cb2100d98b613" prot="private" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void eva::KeyButton&lt; READER &gt;::tick</definition>
+        <argsstring>() override</argsstring>
+        <name>tick</name>
+        <qualifiedname>eva::KeyButton::tick</qualifiedname>
+        <reimplements refid="classeva_1_1_button_1a5b6706381ba6ff94e445a41889bf2c48">tick</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evaKeyButton.h" line="66" column="14" bodyfile="src/evaKeyButton.h" bodystart="66" bodyend="86"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para><ref refid="classeva_1_1_button" kindref="compound">Button</ref> with auto-repeat (typematic) functionality. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This class extends <ref refid="classeva_1_1_button" kindref="compound">Button</ref> by adding periodic ON_REPEAT events while the button is held down. The naming reflects the primary use case (keyboard-like repeat).</para>
+<para><itemizedlist>
+<listitem><para>ON_CHANGE - Any state change</para>
+</listitem><listitem><para>ON_PRESS - <ref refid="classeva_1_1_button" kindref="compound">Button</ref> becomes active (switch to active state)</para>
+</listitem><listitem><para>ON_RELEASE - <ref refid="classeva_1_1_button" kindref="compound">Button</ref> becomes inactive (switch to inactive state)</para>
+</listitem><listitem><para>ON_SHORTCLICK - Press and release within LONGPRESS_DELAY</para>
+</listitem><listitem><para>ON_LONGCLICK - Press and hold longer than LONGPRESS_DELAY then release</para>
+</listitem><listitem><para>ON_LONGPRESS - Press and hold longer than LONGPRESS_DELAY (no release)</para>
+</listitem><listitem><para>ON_REPEATKEY - Periodic events while holding (after LONGPRESS_DELAY)</para>
+</listitem></itemizedlist>
+</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>READER</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Input reader type that returns numeric codes (0 = no button, &gt;0 = button identifier)</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="classeva_1_1_button" kindref="compound">Button</ref> Base class for click detection </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="4">
+        <label>READER</label>
+      </node>
+      <node id="2">
+        <label>eva::Button&lt; READER &gt;</label>
+        <link refid="classeva_1_1_button"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>eva::KeyButton&lt; READER &gt;</label>
+        <link refid="classeva_1_1_key_button"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>eva::Switch&lt; READER &gt;</label>
+        <link refid="classeva_1_1_switch"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>eva::Tickable</label>
+        <link refid="classeva_1_1_tickable"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="4">
+        <label>READER</label>
+      </node>
+      <node id="2">
+        <label>eva::Button&lt; READER &gt;</label>
+        <link refid="classeva_1_1_button"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>eva::IHandler</label>
+        <link refid="classeva_1_1_i_handler"/>
+      </node>
+      <node id="1">
+        <label>eva::KeyButton&lt; READER &gt;</label>
+        <link refid="classeva_1_1_key_button"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>eva::Switch&lt; READER &gt;</label>
+        <link refid="classeva_1_1_switch"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>listener</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>eva::Tickable</label>
+        <link refid="classeva_1_1_tickable"/>
+      </node>
+    </collaborationgraph>
+    <location file="src/evaKeyButton.h" line="34" column="5" bodyfile="src/evaKeyButton.h" bodystart="35" bodyend="90"/>
+    <listofallmembers>
+      <member refid="classeva_1_1_switch_1a60b259c79db04ab3d39eb12300950663" prot="protected" virt="non-virtual"><scope>eva::KeyButton</scope><name>checkActivating</name></member>
+      <member refid="classeva_1_1_switch_1abd7e6c9d94b8b015dce282ef1b8ed4db" prot="protected" virt="non-virtual"><scope>eva::KeyButton</scope><name>checkDeactivating</name></member>
+      <member refid="classeva_1_1_button_1a0d5940eb3994633ca7487d540db1a949" prot="protected" virt="non-virtual"><scope>eva::KeyButton</scope><name>checkLongPress</name></member>
+      <member refid="classeva_1_1_key_button_1aa23136a373f6b30c3aa549ccd57981cf" prot="private" virt="non-virtual"><scope>eva::KeyButton</scope><name>checkRepeatTime</name></member>
+      <member refid="classeva_1_1_switch_1a7c219494c63d04c510b2520d762d0a7b" prot="protected" virt="non-virtual"><scope>eva::KeyButton</scope><name>curiosity</name></member>
+      <member refid="classeva_1_1_switch_1a453e44d5f0f0678f0d8ac63c3049ebaa" prot="public" virt="non-virtual"><scope>eva::KeyButton</scope><name>enable</name></member>
+      <member refid="classeva_1_1_switch_1af39a84a03462bc07f361bc1b11d6a4ad" prot="public" virt="non-virtual"><scope>eva::KeyButton</scope><name>getValue</name></member>
+      <member refid="classeva_1_1_button_1af55a289d104d1232d1ce778d06a5c1d0" prot="protected" virt="non-virtual"><scope>eva::KeyButton</scope><name>handleActivating</name></member>
+      <member refid="classeva_1_1_switch_1a8042847e08e291edb8551a0ccb32410a" prot="protected" virt="non-virtual" ambiguityscope="eva::Switch::"><scope>eva::KeyButton</scope><name>handleActivating</name></member>
+      <member refid="classeva_1_1_key_button_1a5d68a1ad66b9c27c19cc46efac84e648" prot="private" virt="non-virtual"><scope>eva::KeyButton</scope><name>handleDeactivating</name></member>
+      <member refid="classeva_1_1_switch_1a39fc8078d9881aba45ace8a1b856ee48" prot="protected" virt="non-virtual" ambiguityscope="eva::Switch::"><scope>eva::KeyButton</scope><name>handleDeactivating</name></member>
+      <member refid="classeva_1_1_key_button_1abd790d092f04f9e9613e31230c322995" prot="private" virt="non-virtual"><scope>eva::KeyButton</scope><name>handleLongPress</name></member>
+      <member refid="classeva_1_1_button_1af5127a62e48fda066544300d8980efc9" prot="protected" virt="non-virtual" ambiguityscope="eva::Button::"><scope>eva::KeyButton</scope><name>handleLongPress</name></member>
+      <member refid="classeva_1_1_key_button_1a96bb8880fbacd1cd934028f1e211a4fe" prot="private" virt="non-virtual"><scope>eva::KeyButton</scope><name>handleRepeatTime</name></member>
+      <member refid="classeva_1_1_key_button_1a08469f8c728038d26a58ebddf83ee1c6" prot="private" virt="non-virtual"><scope>eva::KeyButton</scope><name>lastRepeatTime</name></member>
+      <member refid="classeva_1_1_switch_1a3ab8ea29fbe7597e51ec36d8551ced3b" prot="protected" virt="non-virtual"><scope>eva::KeyButton</scope><name>levelCode</name></member>
+      <member refid="classeva_1_1_switch_1a37672eb95c86d0b8311bd778655e87ba" prot="protected" virt="non-virtual"><scope>eva::KeyButton</scope><name>listener</name></member>
+      <member refid="classeva_1_1_switch_1aa1fb0a62fa105cb2a2de78bbaa950292" prot="protected" virt="non-virtual"><scope>eva::KeyButton</scope><name>notify</name></member>
+      <member refid="classeva_1_1_tickable_1a865abbef0ee038e0db5eff81747949e7" prot="public" virt="non-virtual"><scope>eva::KeyButton</scope><name>operator=</name></member>
+      <member refid="classeva_1_1_tickable_1a698d78c5c54122f25b42080e001561d2" prot="public" virt="non-virtual"><scope>eva::KeyButton</scope><name>operator=</name></member>
+      <member refid="classeva_1_1_button_1a3d2aa61b3ce3991af47071a4ee5cc94f" prot="protected" virt="non-virtual"><scope>eva::KeyButton</scope><name>pressTime</name></member>
+      <member refid="classeva_1_1_switch_1a1e58d00667fc3558f7747e46bf2ded46" prot="public" virt="non-virtual"><scope>eva::KeyButton</scope><name>setListener</name></member>
+      <member refid="classeva_1_1_switch_1a7fee637f0ad36be86dac83b9c6b6083b" prot="public" virt="non-virtual"><scope>eva::KeyButton</scope><name>Switch</name></member>
+      <member refid="classeva_1_1_switch_1aad39fa0b2f7181ab6855ee4b0edc944e" prot="public" virt="non-virtual"><scope>eva::KeyButton</scope><name>Switch</name></member>
+      <member refid="classeva_1_1_tickable_1aa59c892bc8901a7840e5af7e431a15a3" prot="public" virt="non-virtual"><scope>eva::KeyButton</scope><name>tac</name></member>
+      <member refid="classeva_1_1_key_button_1ac73b9e5b58f1fd21aa5cb2100d98b613" prot="private" virt="virtual"><scope>eva::KeyButton</scope><name>tick</name></member>
+      <member refid="classeva_1_1_tickable_1a667f47cdee5f03eed323cebb27e8ab8e" prot="public" virt="non-virtual"><scope>eva::KeyButton</scope><name>Tickable</name></member>
+      <member refid="classeva_1_1_tickable_1aa8efa54edd7140587548e7973de356df" prot="public" virt="non-virtual"><scope>eva::KeyButton</scope><name>Tickable</name></member>
+      <member refid="classeva_1_1_tickable_1a80af7d23456d2e0bec8a2c6b8f9f8f10" prot="public" virt="non-virtual"><scope>eva::KeyButton</scope><name>Tickable</name></member>
+      <member refid="classeva_1_1_switch_1afd52bbbe14228dba1733f8d3b4620f26" prot="protected" virt="non-virtual"><scope>eva::KeyButton</scope><name>updateState</name></member>
+      <member refid="classeva_1_1_tickable_1a6b6ff95372ce0b94618029e05ed2b50a" prot="public" virt="virtual"><scope>eva::KeyButton</scope><name>~Tickable</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

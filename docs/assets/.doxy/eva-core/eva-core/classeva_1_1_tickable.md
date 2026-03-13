@@ -53,8 +53,11 @@ Inherited by the following classes: [eva::Switch](classeva_1_1_switch.md),  [eva
 
 | Type | Name |
 | ---: | :--- |
-|   | [**Tickable**](#function-tickable) () <br> |
-|  void | [**tac**](#function-tac) () <br>_Triggers tick on this and all linked tickables._  |
+|   | [**Tickable**](#function-tickable-13) () <br> |
+|   | [**Tickable**](#function-tickable-23) (const Tickable &) = delete<br> |
+|   | [**Tickable**](#function-tickable-33) (Tickable &&) = delete<br> |
+|  Tickable & | [**operator=**](#function-operator) (const Tickable &) = delete<br> |
+|  Tickable & | [**operator=**](#function-operator_1) (Tickable &&) = delete<br> |
 | virtual  | [**~Tickable**](#function-tickable) () <br> |
 
 
@@ -62,7 +65,7 @@ Inherited by the following classes: [eva::Switch](classeva_1_1_switch.md),  [eva
 
 | Type | Name |
 | ---: | :--- |
-|  Tickable \* | [**chain**](#function-chain) () <br>_Gets or sets the head of the tickable chain._  |
+|  void | [**tac**](#function-tac) () <br>_Triggers tick on this and all linked tickables._  |
 
 
 
@@ -94,7 +97,7 @@ Inherited by the following classes: [eva::Switch](classeva_1_1_switch.md),  [eva
 
 
 
-### function Tickable 
+### function Tickable [1/3]
 
 ```C++
 eva::Tickable::Tickable () 
@@ -107,11 +110,57 @@ eva::Tickable::Tickable ()
 
 
 
-### function tac 
+### function Tickable [2/3]
 
-_Triggers tick on this and all linked tickables._ 
 ```C++
-void eva::Tickable::tac () 
+eva::Tickable::Tickable (
+    const Tickable &
+) = delete
+```
+
+
+
+
+<hr>
+
+
+
+### function Tickable [3/3]
+
+```C++
+eva::Tickable::Tickable (
+    Tickable &&
+) = delete
+```
+
+
+
+
+<hr>
+
+
+
+### function operator= 
+
+```C++
+Tickable & eva::Tickable::operator= (
+    const Tickable &
+) = delete
+```
+
+
+
+
+<hr>
+
+
+
+### function operator= 
+
+```C++
+Tickable & eva::Tickable::operator= (
+    Tickable &&
+) = delete
 ```
 
 
@@ -136,26 +185,15 @@ virtual eva::Tickable::~Tickable ()
 
 
 
-### function chain 
+### function tac 
 
-_Gets or sets the head of the tickable chain._ 
+_Triggers tick on this and all linked tickables._ 
 ```C++
-static Tickable * eva::Tickable::chain () 
+static void eva::Tickable::tac () 
 ```
 
 
 
-
-
-**Returns:**
-
-Head of chain 
-
-
-
-
-
-        
 
 <hr>
 

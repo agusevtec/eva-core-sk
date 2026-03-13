@@ -89,8 +89,11 @@ See [eva::Tickable](classeva_1_1_tickable.md)
 
 | Type | Name |
 | ---: | :--- |
-|   | [**Tickable**](classeva_1_1_tickable.md#function-tickable) () <br> |
-|  void | [**tac**](classeva_1_1_tickable.md#function-tac) () <br>_Triggers tick on this and all linked tickables._  |
+|   | [**Tickable**](classeva_1_1_tickable.md#function-tickable-13) () <br> |
+|   | [**Tickable**](classeva_1_1_tickable.md#function-tickable-23) (const Tickable &) = delete<br> |
+|   | [**Tickable**](classeva_1_1_tickable.md#function-tickable-33) (Tickable &&) = delete<br> |
+|  Tickable & | [**operator=**](classeva_1_1_tickable.md#function-operator) (const Tickable &) = delete<br> |
+|  Tickable & | [**operator=**](classeva_1_1_tickable.md#function-operator_1) (Tickable &&) = delete<br> |
 | virtual  | [**~Tickable**](classeva_1_1_tickable.md#function-tickable) () <br> |
 
 
@@ -102,7 +105,7 @@ See [eva::Tickable](classeva_1_1_tickable.md)
 
 | Type | Name |
 | ---: | :--- |
-|  Tickable \* | [**chain**](classeva_1_1_tickable.md#function-chain) () <br>_Gets or sets the head of the tickable chain._  |
+|  void | [**tac**](classeva_1_1_tickable.md#function-tac) () <br>_Triggers tick on this and all linked tickables._  |
 
 
 
@@ -156,8 +159,12 @@ See [eva::Tickable](classeva_1_1_tickable.md)
 
 | Type | Name |
 | ---: | :--- |
+|  bool | [**checkActivating**](#function-checkactivating) (unsigned char wasLevelCode) <br>_inactive or different -&gt; active_  |
+|  bool | [**checkDeactivating**](#function-checkdeactivating) (unsigned char wasLevelCode) <br>_active -&gt; inactive or different state_  |
+|  void | [**handleActivating**](#function-handleactivating) () <br> |
+|  void | [**handleDeactivating**](#function-handledeactivating) (unsigned char wasLevelCode) <br> |
 |  void | [**notify**](#function-notify) (unsigned short eventType, signed short eventCode) <br> |
-| virtual void | [**tick**](#function-tick) () override<br> |
+|  void | [**updateState**](#function-updatestate) () <br> |
 
 
 
@@ -384,6 +391,66 @@ IHandler* eva::Switch< READER >::listener;
 
 
 
+### function checkActivating 
+
+_inactive or different -&gt; active_ 
+```C++
+inline bool eva::Switch::checkActivating (
+    unsigned char wasLevelCode
+) 
+```
+
+
+
+
+<hr>
+
+
+
+### function checkDeactivating 
+
+_active -&gt; inactive or different state_ 
+```C++
+inline bool eva::Switch::checkDeactivating (
+    unsigned char wasLevelCode
+) 
+```
+
+
+
+
+<hr>
+
+
+
+### function handleActivating 
+
+```C++
+inline void eva::Switch::handleActivating () 
+```
+
+
+
+
+<hr>
+
+
+
+### function handleDeactivating 
+
+```C++
+inline void eva::Switch::handleDeactivating (
+    unsigned char wasLevelCode
+) 
+```
+
+
+
+
+<hr>
+
+
+
 ### function notify 
 
 ```C++
@@ -400,15 +467,13 @@ inline void eva::Switch::notify (
 
 
 
-### function tick 
+### function updateState 
 
 ```C++
-inline virtual void eva::Switch::tick () override
+inline void eva::Switch::updateState () 
 ```
 
 
-
-Implements [*eva::Tickable::tick*](classeva_1_1_tickable.md#function-tick)
 
 
 <hr>

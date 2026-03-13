@@ -65,24 +65,21 @@ namespace eva
         }
 
     protected:
-        void tick() override
+        void updateState()
         {
-            if (this->levelCode < 0)
-                return;
-
-            unsigned char wasLevelCode = this->levelCode;
             this->levelCode = READER::getValue();
-            
-            if ((wasLevelCode > 0) and (wasLevelCode != this->levelCode)) // active -> inactive or different state
-            {
-                this->notify(ON_RELEASE, wasLevelCode);
-                this->notify(ON_CHANGE, wasLevelCode);
-            }
-            if ((wasLevelCode != this->levelCode) and (this->levelCode > 0)) // inactive or different -> active
-            {
-                this->notify(ON_PRESS, this->levelCode);
-                this->notify(ON_CHANGE, this->levelCode);
-            }
+            if (this->levelCode < 0)
+                this->levelCode = 0;
+        }
+
+        bool checkDeactivating(unsigned char wasLevelCode)
+        {
+            return (wasLevelCode > 0) && (wasLevelCode != this->levelCode);
+        }
+
+        bool checkActivating(unsigned char wasLevelCode)
+        {
+            return (wasLevelCode != this->levelCode) && (this->levelCode > 0);
         }
 
         void notify(unsigned short eventType, signed short eventCode)
@@ -90,6 +87,34 @@ namespace eva
             if (this->listener)
                 if (this->curiosity & eventType)
                     this->listener->invoke(this, {eventType, eventCode});
+        }
+
+        void handleDeactivating(unsigned char wasLevelCode)
+        {
+            this->notify(ON_RELEASE, wasLevelCode);
+            this->notify(ON_CHANGE, wasLevelCode);
+        }
+
+        void handleActivating()
+        {
+            this->notify(ON_PRESS, this->levelCode);
+            this->notify(ON_CHANGE, this->levelCode);
+        }
+
+    private:
+        void tick() override
+        {
+            if (this->levelCode < 0)
+                return;
+
+            unsigned char wasLevelCode = this->levelCode;
+            updateState();
+
+            if (checkDeactivating(wasLevelCode))
+                handleDeactivating(wasLevelCode);
+
+            if (checkActivating(wasLevelCode))
+                handleActivating();
         }
 
     protected:

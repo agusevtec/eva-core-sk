@@ -17,7 +17,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.4">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -866,6 +866,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#u" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        u
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -905,11 +916,14 @@
 </ul>
 <h2 id="c">c<a class="headerlink" href="#c" title="Permanent link">&para;</a></h2>
 <ul>
+<li><strong>checkLongPress</strong> (<a href="../classeva_1_1_button/"><strong>eva::Button</strong></a>)</li>
 <li><strong>countdown</strong> (<a href="../classeva_1_1_countdown_indicator/"><strong>eva::CountdownIndicator</strong></a>)</li>
+<li><strong>checkRepeatTime</strong> (<a href="../classeva_1_1_key_button/"><strong>eva::KeyButton</strong></a>)</li>
 <li><strong>clear</strong> (<a href="../classeva_1_1_list/"><strong>eva::List</strong></a>)</li>
 <li><strong>count</strong> (<a href="../classeva_1_1_list/"><strong>eva::List</strong></a>)</li>
+<li><strong>checkActivating</strong> (<a href="../classeva_1_1_switch/"><strong>eva::Switch</strong></a>)</li>
+<li><strong>checkDeactivating</strong> (<a href="../classeva_1_1_switch/"><strong>eva::Switch</strong></a>)</li>
 <li><strong>curiosity</strong> (<a href="../classeva_1_1_switch/"><strong>eva::Switch</strong></a>)</li>
-<li><strong>chain</strong> (<a href="../classeva_1_1_tickable/"><strong>eva::Tickable</strong></a>)</li>
 </ul>
 <h2 id="d">d<a class="headerlink" href="#d" title="Permanent link">&para;</a></h2>
 <ul>
@@ -938,8 +952,12 @@
 <h2 id="h">h<a class="headerlink" href="#h" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>heartbeatTimer</strong> (<a href="../classeva_1_1_blinking_indicator/"><strong>eva::BlinkingIndicator</strong></a>)</li>
+<li><strong>handleActivating</strong> (<a href="../classeva_1_1_button/"><strong>eva::Button</strong></a>, <a href="../classeva_1_1_switch/"><strong>eva::Switch</strong></a>)</li>
+<li><strong>handleDeactivating</strong> (<a href="../classeva_1_1_button/"><strong>eva::Button</strong></a>, <a href="../classeva_1_1_key_button/"><strong>eva::KeyButton</strong></a>, <a href="../classeva_1_1_switch/"><strong>eva::Switch</strong></a>)</li>
+<li><strong>handleLongPress</strong> (<a href="../classeva_1_1_button/"><strong>eva::Button</strong></a>, <a href="../classeva_1_1_key_button/"><strong>eva::KeyButton</strong></a>)</li>
 <li><strong>Handler</strong> (<a href="../classeva_1_1_handler/"><strong>eva::Handler</strong></a>)</li>
 <li><strong>HandlerF</strong> (<a href="../classeva_1_1_handler_f/"><strong>eva::HandlerF</strong></a>)</li>
+<li><strong>handleRepeatTime</strong> (<a href="../classeva_1_1_key_button/"><strong>eva::KeyButton</strong></a>)</li>
 <li><strong>head</strong> (<a href="../classeva_1_1_list/"><strong>eva::List</strong></a>)</li>
 </ul>
 <h2 id="i">i<a class="headerlink" href="#i" title="Permanent link">&para;</a></h2>
@@ -959,6 +977,7 @@
 <h2 id="l">l<a class="headerlink" href="#l" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>listener</strong> (<a href="../classeva_1_1_countdown_indicator/"><strong>eva::CountdownIndicator</strong></a>, <a href="../classeva_1_1_delay_timer/"><strong>eva::DelayTimer</strong></a>, <a href="../classeva_1_1_switch/"><strong>eva::Switch</strong></a>)</li>
+<li><strong>lastRepeatTime</strong> (<a href="../classeva_1_1_key_button/"><strong>eva::KeyButton</strong></a>)</li>
 <li><strong>List</strong> (<a href="../classeva_1_1_list/"><strong>eva::List</strong></a>)</li>
 <li><strong>length</strong> (<a href="../classeva_1_1_list/"><strong>eva::List</strong></a>)</li>
 <li><strong>ListIterator</strong> (<a href="../structeva_1_1_list_iterator/"><strong>eva::ListIterator</strong></a>)</li>
@@ -981,7 +1000,7 @@
 <ul>
 <li><strong>off</strong> (<a href="../classeva_1_1_blinking_indicator/"><strong>eva::BlinkingIndicator</strong></a>, <a href="../classeva_1_1_indicator/"><strong>eva::Indicator</strong></a>)</li>
 <li><strong>on</strong> (<a href="../classeva_1_1_blinking_indicator/"><strong>eva::BlinkingIndicator</strong></a>, <a href="../classeva_1_1_countdown_indicator/"><strong>eva::CountdownIndicator</strong></a>, <a href="../classeva_1_1_indicator/"><strong>eva::Indicator</strong></a>)</li>
-<li><strong>operator=</strong> (<a href="../classeva_1_1_list/"><strong>eva::List</strong></a>)</li>
+<li><strong>operator=</strong> (<a href="../classeva_1_1_list/"><strong>eva::List</strong></a>, <a href="../classeva_1_1_tickable/"><strong>eva::Tickable</strong></a>)</li>
 <li><strong>operator[]</strong> (<a href="../classeva_1_1_list/"><strong>eva::List</strong></a>)</li>
 </ul>
 <h2 id="p">p<a class="headerlink" href="#p" title="Permanent link">&para;</a></h2>
@@ -1009,11 +1028,15 @@
 </ul>
 <h2 id="t">t<a class="headerlink" href="#t" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>tick</strong> (<a href="../classeva_1_1_button/"><strong>eva::Button</strong></a>, <a href="../classeva_1_1_countdown_timer/"><strong>eva::CountdownTimer</strong></a>, <a href="../classeva_1_1_delay_timer/"><strong>eva::DelayTimer</strong></a>, <a href="../classeva_1_1_repeat_timer/"><strong>eva::RepeatTimer</strong></a>, <a href="../classeva_1_1_switch/"><strong>eva::Switch</strong></a>, <a href="../classeva_1_1_tickable/"><strong>eva::Tickable</strong></a>)</li>
+<li><strong>tick</strong> (<a href="../classeva_1_1_button/"><strong>eva::Button</strong></a>, <a href="../classeva_1_1_countdown_timer/"><strong>eva::CountdownTimer</strong></a>, <a href="../classeva_1_1_delay_timer/"><strong>eva::DelayTimer</strong></a>, <a href="../classeva_1_1_key_button/"><strong>eva::KeyButton</strong></a>, <a href="../classeva_1_1_repeat_timer/"><strong>eva::RepeatTimer</strong></a>, <a href="../classeva_1_1_switch/"><strong>eva::Switch</strong></a>, <a href="../classeva_1_1_tickable/"><strong>eva::Tickable</strong></a>)</li>
 <li><strong>trim</strong> (<a href="../classeva_1_1_joystick/"><strong>eva::Joystick</strong></a>)</li>
 <li><strong>tail</strong> (<a href="../classeva_1_1_list/"><strong>eva::List</strong></a>)</li>
 <li><strong>Tickable</strong> (<a href="../classeva_1_1_tickable/"><strong>eva::Tickable</strong></a>)</li>
 <li><strong>tac</strong> (<a href="../classeva_1_1_tickable/"><strong>eva::Tickable</strong></a>)</li>
+</ul>
+<h2 id="u">u<a class="headerlink" href="#u" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>updateState</strong> (<a href="../classeva_1_1_switch/"><strong>eva::Switch</strong></a>)</li>
 </ul>
 <h2 id="_1">~<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ul>

@@ -17,7 +17,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.4">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -713,29 +713,62 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#function-tickable-13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        function Tickable [1/3]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-tickable-23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        function Tickable [2/3]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-tickable-33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        function Tickable [3/3]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-operator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        function operator=
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-operator_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        function operator=
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#function-tickable" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        function Tickable
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#function-tac" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        function tac
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#function-tickable_1" class="md-nav__link">
     <span class="md-ellipsis">
       
         function ~Tickable
@@ -763,10 +796,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#function-chain" class="md-nav__link">
+  <a href="#function-tac" class="md-nav__link">
     <span class="md-ellipsis">
       
-        function chain
+        function tac
       
     </span>
   </a>
@@ -816,11 +849,23 @@
 <tbody>
 <tr>
 <td style="text-align: right;"></td>
-<td style="text-align: left;"><a href="#function-tickable"><strong>Tickable</strong></a> () <br></td>
+<td style="text-align: left;"><a href="#function-tickable-13"><strong>Tickable</strong></a> () <br></td>
 </tr>
 <tr>
-<td style="text-align: right;">void</td>
-<td style="text-align: left;"><a href="#function-tac"><strong>tac</strong></a> () <br><em>Triggers tick on this and all linked tickables.</em></td>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"><a href="#function-tickable-23"><strong>Tickable</strong></a> (const Tickable &amp;) = delete<br></td>
+</tr>
+<tr>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"><a href="#function-tickable-33"><strong>Tickable</strong></a> (Tickable &amp;&amp;) = delete<br></td>
+</tr>
+<tr>
+<td style="text-align: right;">Tickable &amp;</td>
+<td style="text-align: left;"><a href="#function-operator"><strong>operator=</strong></a> (const Tickable &amp;) = delete<br></td>
+</tr>
+<tr>
+<td style="text-align: right;">Tickable &amp;</td>
+<td style="text-align: left;"><a href="#function-operator_1"><strong>operator=</strong></a> (Tickable &amp;&amp;) = delete<br></td>
 </tr>
 <tr>
 <td style="text-align: right;">virtual</td>
@@ -838,38 +883,61 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: right;">Tickable *</td>
-<td style="text-align: left;"><a href="#function-chain"><strong>chain</strong></a> () <br><em>Gets or sets the head of the tickable chain.</em></td>
+<td style="text-align: right;">void</td>
+<td style="text-align: left;"><a href="#function-tac"><strong>tac</strong></a> () <br><em>Triggers tick on this and all linked tickables.</em></td>
 </tr>
 </tbody>
 </table>
 <h2 id="public-functions-documentation">Public Functions Documentation<a class="headerlink" href="#public-functions-documentation" title="Permanent link">&para;</a></h2>
-<h3 id="function-tickable">function Tickable<a class="headerlink" href="#function-tickable" title="Permanent link">&para;</a></h3>
+<h3 id="function-tickable-13">function Tickable [1/3]<a class="headerlink" href="#function-tickable-13" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><code><span class="n">eva</span><span class="o">::</span><span class="n">Tickable</span><span class="o">::</span><span class="n">Tickable</span><span class="w"> </span><span class="p">()</span><span class="w"> </span>
 </code></pre></div>
 
 <hr>
 
-<h3 id="function-tac">function tac<a class="headerlink" href="#function-tac" title="Permanent link">&para;</a></h3>
-<p><em>Triggers tick on this and all linked tickables.</em> </p>
-<div class="codehilite"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">Tickable</span><span class="o">::</span><span class="n">tac</span><span class="w"> </span><span class="p">()</span><span class="w"> </span>
+<h3 id="function-tickable-23">function Tickable [2/3]<a class="headerlink" href="#function-tickable-23" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="n">eva</span><span class="o">::</span><span class="n">Tickable</span><span class="o">::</span><span class="n">Tickable</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">Tickable</span><span class="w"> </span><span class="o">&amp;</span>
+<span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">delete</span>
 </code></pre></div>
 
 <hr>
 
-<h3 id="function-tickable_1">function ~Tickable<a class="headerlink" href="#function-tickable_1" title="Permanent link">&para;</a></h3>
+<h3 id="function-tickable-33">function Tickable [3/3]<a class="headerlink" href="#function-tickable-33" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="n">eva</span><span class="o">::</span><span class="n">Tickable</span><span class="o">::</span><span class="n">Tickable</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="n">Tickable</span><span class="w"> </span><span class="o">&amp;&amp;</span>
+<span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">delete</span>
+</code></pre></div>
+
+<hr>
+
+<h3 id="function-operator">function operator=<a class="headerlink" href="#function-operator" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="n">Tickable</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">Tickable</span><span class="o">::</span><span class="k">operator</span><span class="o">=</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">Tickable</span><span class="w"> </span><span class="o">&amp;</span>
+<span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">delete</span>
+</code></pre></div>
+
+<hr>
+
+<h3 id="function-operator_1">function operator=<a class="headerlink" href="#function-operator_1" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="n">Tickable</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">Tickable</span><span class="o">::</span><span class="k">operator</span><span class="o">=</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="n">Tickable</span><span class="w"> </span><span class="o">&amp;&amp;</span>
+<span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">delete</span>
+</code></pre></div>
+
+<hr>
+
+<h3 id="function-tickable">function ~Tickable<a class="headerlink" href="#function-tickable" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><code><span class="k">virtual</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">Tickable</span><span class="o">::~</span><span class="n">Tickable</span><span class="w"> </span><span class="p">()</span><span class="w"> </span>
 </code></pre></div>
 
 <hr>
 <h2 id="public-static-functions-documentation">Public Static Functions Documentation<a class="headerlink" href="#public-static-functions-documentation" title="Permanent link">&para;</a></h2>
-<h3 id="function-chain">function chain<a class="headerlink" href="#function-chain" title="Permanent link">&para;</a></h3>
-<p><em>Gets or sets the head of the tickable chain.</em> </p>
-<div class="codehilite"><pre><span></span><code><span class="k">static</span><span class="w"> </span><span class="n">Tickable</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">Tickable</span><span class="o">::</span><span class="n">chain</span><span class="w"> </span><span class="p">()</span><span class="w"> </span>
+<h3 id="function-tac">function tac<a class="headerlink" href="#function-tac" title="Permanent link">&para;</a></h3>
+<p><em>Triggers tick on this and all linked tickables.</em> </p>
+<div class="codehilite"><pre><span></span><code><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">Tickable</span><span class="o">::</span><span class="n">tac</span><span class="w"> </span><span class="p">()</span><span class="w"> </span>
 </code></pre></div>
 
-<p><strong>Returns:</strong></p>
-<p>Head of chain </p>
 <hr>
 
 <hr />

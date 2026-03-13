@@ -17,7 +17,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.4">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -746,6 +746,39 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#typedef-keypinbutton" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        typedef KeyPinButton
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#typedef-keypinmultibutton" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        typedef KeyPinMultiButton
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#typedef-keypullupbutton" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        typedef KeyPullUpButton
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#typedef-pinbutton" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -939,6 +972,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#variable-on_repeatkey" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        variable ON_REPEATKEY
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#variable-on_shortclick" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -995,10 +1039,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#function-in_beetween" class="md-nav__link">
+  <a href="#function-in_between" class="md-nav__link">
     <span class="md-ellipsis">
       
-        function in_beetween
+        function in_between
       
     </span>
   </a>
@@ -1047,7 +1091,7 @@
 </tr>
 <tr>
 <td style="text-align: right;">class</td>
-<td style="text-align: left;"><a href="../classeva_1_1_binarize_eq_decor/"><strong>BinarizeEqDecor</strong></a> &lt;class READER, ACTICATES_ON&gt;<br><em>Decorator that converts reading to binary based on level.</em></td>
+<td style="text-align: left;"><a href="../classeva_1_1_binarize_eq_decor/"><strong>BinarizeEqDecor</strong></a> &lt;class READER, ACTIVATES_ON&gt;<br><em>Decorator that converts reading to binary based on level.</em></td>
 </tr>
 <tr>
 <td style="text-align: right;">class</td>
@@ -1115,6 +1159,10 @@
 </tr>
 <tr>
 <td style="text-align: right;">class</td>
+<td style="text-align: left;"><a href="../classeva_1_1_key_button/"><strong>KeyButton</strong></a> &lt;class READER&gt;<br><a href="../classeva_1_1_button/"><em><strong>Button</strong></em></a> <em>with auto-repeat (typematic) functionality.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">class</td>
 <td style="text-align: left;"><a href="../classeva_1_1_list/"><strong>List</strong></a> &lt;class ItemClass&gt;<br><em>Simple singly-linked list container.</em></td>
 </tr>
 <tr>
@@ -1156,6 +1204,18 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td style="text-align: right;">typedef <a href="../classeva_1_1_button/"><strong>Button</strong></a>&lt; <a href="../classeva_1_1_binarize_eq_decor/"><strong>BinarizeEqDecor</strong></a>&lt; <a href="../classeva_1_1_stabilize_decor/"><strong>StabilizeDecor</strong></a>&lt; <a href="../classeva_1_1_digital_pin_reader/"><strong>DigitalPinReader</strong></a>&lt; PIN, PIN_MODE &gt; &gt;, ACTIVATES_ON &gt; &gt;</td>
+<td style="text-align: left;"><a href="#typedef-keypinbutton"><strong>KeyPinButton</strong></a>  <br><em>Digital pin key-button with debouncing and level normalization.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">typedef <a href="../classeva_1_1_key_button/"><strong>KeyButton</strong></a>&lt; <a href="../classeva_1_1_quantize_decor/"><strong>QuantizeDecor</strong></a>&lt; <a href="../classeva_1_1_stabilize_decor/"><strong>StabilizeDecor</strong></a>&lt; <a href="../classeva_1_1_analog_pin_reader/"><strong>AnalogPinReader</strong></a>&lt; PIN, PIN_MODE &gt; &gt;, LEVELS... &gt; &gt;</td>
+<td style="text-align: left;"><a href="#typedef-keypinmultibutton"><strong>KeyPinMultiButton</strong></a>  <br><em>Multiple key-buttons on a single ADC pin using resistor ladder.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">typedef <a href="../classeva_1_1_key_button/"><strong>KeyButton</strong></a>&lt; <a href="../classeva_1_1_binarize_eq_decor/"><strong>BinarizeEqDecor</strong></a>&lt; <a href="../classeva_1_1_stabilize_decor/"><strong>StabilizeDecor</strong></a>&lt; <a href="../classeva_1_1_digital_pin_reader/"><strong>DigitalPinReader</strong></a>&lt; PIN, INPUT_PULLUP &gt; &gt;, LOW &gt; &gt;</td>
+<td style="text-align: left;"><a href="#typedef-keypullupbutton"><strong>KeyPullUpButton</strong></a>  <br><em>Pull-up key-button (active LOW, connect to GND).</em></td>
+</tr>
 <tr>
 <td style="text-align: right;">typedef <a href="../classeva_1_1_button/"><strong>Button</strong></a>&lt; <a href="../classeva_1_1_binarize_eq_decor/"><strong>BinarizeEqDecor</strong></a>&lt; <a href="../classeva_1_1_stabilize_decor/"><strong>StabilizeDecor</strong></a>&lt; <a href="../classeva_1_1_digital_pin_reader/"><strong>DigitalPinReader</strong></a>&lt; PIN, PIN_MODE &gt; &gt;, ACTIVATES_ON &gt; &gt;</td>
 <td style="text-align: left;"><a href="#typedef-pinbutton"><strong>PinButton</strong></a>  <br><em>Digital pin button with debouncing and level normalization.</em></td>
@@ -1233,6 +1293,10 @@
 </tr>
 <tr>
 <td style="text-align: right;">const unsigned char</td>
+<td style="text-align: left;"><a href="#variable-on_repeatkey"><strong>ON_REPEATKEY</strong></a>   = <code>0x40</code><br></td>
+</tr>
+<tr>
+<td style="text-align: right;">const unsigned char</td>
 <td style="text-align: left;"><a href="#variable-on_shortclick"><strong>ON_SHORTCLICK</strong></a>   = <code>0x08</code><br></td>
 </tr>
 </tbody>
@@ -1263,11 +1327,68 @@
 <tbody>
 <tr>
 <td style="text-align: right;">bool</td>
-<td style="text-align: left;"><a href="#function-in_beetween"><strong>in_beetween</strong></a> (signed short x, signed short a, signed short b) <br></td>
+<td style="text-align: left;"><a href="#function-in_between"><strong>in_between</strong></a> (signed short x, signed short a, signed short b) <br></td>
 </tr>
 </tbody>
 </table>
 <h2 id="public-types-documentation">Public Types Documentation<a class="headerlink" href="#public-types-documentation" title="Permanent link">&para;</a></h2>
+<h3 id="typedef-keypinbutton">typedef KeyPinButton<a class="headerlink" href="#typedef-keypinbutton" title="Permanent link">&para;</a></h3>
+<p><em>Digital pin key-button with debouncing and level normalization.</em> </p>
+<div class="codehilite"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">KeyPinButton</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Button</span><span class="o">&lt;</span><span class="n">BinarizeEqDecor</span><span class="o">&lt;</span><span class="n">StabilizeDecor</span><span class="o">&lt;</span><span class="n">DigitalPinReader</span><span class="o">&lt;</span><span class="n">PIN</span><span class="p">,</span><span class="w"> </span><span class="n">PIN_MODE</span><span class="o">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">ACTIVATES_ON</span><span class="o">&gt;&gt;</span><span class="p">;</span>
+</code></pre></div>
+
+<p>Combines:
+* <a href="../classeva_1_1_digital_pin_reader/"><strong>DigitalPinReader</strong></a> for raw pin reading
+* <a href="../classeva_1_1_stabilize_decor/"><strong>StabilizeDecor</strong></a> for debouncing (120ms stability)
+* <a href="../classeva_1_1_binarize_eq_decor/"><strong>BinarizeEqDecor</strong></a> for mapping to active/inactive based on specified level</p>
+<p>Long click threshold is fixed at 750ms.</p>
+<p><strong>Template parameters:</strong></p>
+<ul>
+<li><code>PIN</code> Arduino pin number </li>
+<li><code>PIN_MODE</code> Pin mode (INPUT, INPUT_PULLUP, etc.) </li>
+<li><code>ACTIVATES_ON</code> Level that means "pressed" (LOW or HIGH) </li>
+</ul>
+<hr>
+
+<h3 id="typedef-keypinmultibutton">typedef KeyPinMultiButton<a class="headerlink" href="#typedef-keypinmultibutton" title="Permanent link">&para;</a></h3>
+<p><em>Multiple key-buttons on a single ADC pin using resistor ladder.</em> </p>
+<div class="codehilite"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">KeyPinMultiButton</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">KeyButton</span><span class="o">&lt;</span><span class="n">QuantizeDecor</span><span class="o">&lt;</span><span class="n">StabilizeDecor</span><span class="o">&lt;</span><span class="n">AnalogPinReader</span><span class="o">&lt;</span><span class="n">PIN</span><span class="p">,</span><span class="w"> </span><span class="n">PIN_MODE</span><span class="o">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">LEVELS</span><span class="p">...</span><span class="o">&gt;&gt;</span><span class="p">;</span>
+</code></pre></div>
+
+<p>Hardware connection: </p>
+<div class="codehilite"><pre><span></span><code><span class="w"> </span><span class="n">ADC</span><span class="w"> </span><span class="n">Pin</span><span class="w">  </span><span class="o">-----+--</span><span class="n">R1</span><span class="o">--+--</span><span class="n">R2</span><span class="o">--+--</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="o">-</span><span class="n">Rn</span><span class="o">-+</span>
+<span class="p">(</span><span class="n">analog</span><span class="w"> </span><span class="n">in</span><span class="p">)</span><span class="w">    </span><span class="o">|</span><span class="w">      </span><span class="o">|</span><span class="w">      </span><span class="o">|</span><span class="w">           </span><span class="o">|</span>
+<span class="w">                </span><span class="err">\</span><span class="w">      </span><span class="err">\</span><span class="w">      </span><span class="err">\</span><span class="w">           </span>\
+<span class="w">               </span><span class="o">|</span><span class="w">      </span><span class="o">|</span><span class="w">      </span><span class="o">|</span><span class="w">           </span><span class="o">|</span>
+<span class="w">   </span><span class="n">GND</span><span class="w">    </span><span class="o">-----+------+------+--</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="o">----+</span>
+</code></pre></div>
+
+<p>Each button produces a different ADC value when pressed. The <a href="../classeva_1_1_quantize_decor/"><strong>QuantizeDecor</strong></a> maps these values to discrete button codes (1, 2, 3...). <a href="../classeva_1_1_stabilize_decor/"><strong>StabilizeDecor</strong></a> provides debouncing.</p>
+<p>Generates standard button events for each button, with the button number encoded in the event mask.</p>
+<p><strong>Template parameters:</strong></p>
+<ul>
+<li><code>PIN</code> Arduino analog pin number </li>
+<li><code>PIN_MODE</code> Pin mode (usually INPUT) </li>
+<li><code>LEVELS</code> Threshold values for each button (expected ADC readings)</li>
+</ul>
+<p><strong>See also:</strong> PinMultiSwitch For use cases without click detection </p>
+<hr>
+
+<h3 id="typedef-keypullupbutton">typedef KeyPullUpButton<a class="headerlink" href="#typedef-keypullupbutton" title="Permanent link">&para;</a></h3>
+<p><em>Pull-up key-button (active LOW, connect to GND).</em> </p>
+<div class="codehilite"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">KeyPullUpButton</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">KeyButton</span><span class="o">&lt;</span><span class="n">BinarizeEqDecor</span><span class="o">&lt;</span><span class="n">StabilizeDecor</span><span class="o">&lt;</span><span class="n">DigitalPinReader</span><span class="o">&lt;</span><span class="n">PIN</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT_PULLUP</span><span class="o">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="o">&gt;&gt;</span><span class="p">;</span>
+</code></pre></div>
+
+<p>Convenience alias for the most common Arduino button wiring:
+* Pin set to INPUT_PULLUP
+* <a href="../classeva_1_1_button/"><strong>Button</strong></a> connects pin to GND when pressed</p>
+<p>Generates all button events with proper debouncing.</p>
+<p><strong>Template parameters:</strong></p>
+<ul>
+<li><code>PIN</code> Arduino pin number </li>
+</ul>
+<hr>
+
 <h3 id="typedef-pinbutton">typedef PinButton<a class="headerlink" href="#typedef-pinbutton" title="Permanent link">&para;</a></h3>
 <p><em>Digital pin button with debouncing and level normalization.</em> </p>
 <div class="codehilite"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">PinButton</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Button</span><span class="o">&lt;</span><span class="n">BinarizeEqDecor</span><span class="o">&lt;</span><span class="n">StabilizeDecor</span><span class="o">&lt;</span><span class="n">DigitalPinReader</span><span class="o">&lt;</span><span class="n">PIN</span><span class="p">,</span><span class="w"> </span><span class="n">PIN_MODE</span><span class="o">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">ACTIVATES_ON</span><span class="o">&gt;&gt;</span><span class="p">;</span>
@@ -1463,6 +1584,12 @@
 
 <hr>
 
+<h3 id="variable-on_repeatkey">variable ON_REPEATKEY<a class="headerlink" href="#variable-on_repeatkey" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">ON_REPEATKEY</span><span class="p">;</span>
+</code></pre></div>
+
+<hr>
+
 <h3 id="variable-on_shortclick">variable ON_SHORTCLICK<a class="headerlink" href="#variable-on_shortclick" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">ON_SHORTCLICK</span><span class="p">;</span>
 </code></pre></div>
@@ -1476,8 +1603,8 @@
 
 <hr>
 <h2 id="public-static-functions-documentation">Public Static Functions Documentation<a class="headerlink" href="#public-static-functions-documentation" title="Permanent link">&para;</a></h2>
-<h3 id="function-in_beetween">function in_beetween<a class="headerlink" href="#function-in_beetween" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><code><span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">in_beetween</span><span class="w"> </span><span class="p">(</span>
+<h3 id="function-in_between">function in_between<a class="headerlink" href="#function-in_between" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">in_between</span><span class="w"> </span><span class="p">(</span>
 <span class="w">    </span><span class="kt">signed</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">x</span><span class="p">,</span>
 <span class="w">    </span><span class="kt">signed</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">a</span><span class="p">,</span>
 <span class="w">    </span><span class="kt">signed</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">b</span>

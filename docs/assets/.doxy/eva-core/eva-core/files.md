@@ -15,6 +15,7 @@ Here is a list of all files with brief descriptions:
     * **file** [**evaIReader.h**](eva_i_reader_8h.md)     
     * **file** [**evaIndicator.h**](eva_indicator_8h.md)     
     * **file** [**evaJoystick.h**](eva_joystick_8h.md)     
+    * **file** [**evaKeyButton.h**](eva_key_button_8h.md)     
     * **file** [**evaList.h**](eva_list_8h.md)     
     * **file** [**evaReaderDecors.h**](eva_reader_decors_8h.md)     
     * **file** [**evaRepeatTimer.h**](eva_repeat_timer_8h.md)     

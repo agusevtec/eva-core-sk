@@ -11,14 +11,14 @@
       </param>
       <param>
         <type>int</type>
-        <declname>ACTICATES_ON</declname>
-        <defname>ACTICATES_ON</defname>
+        <declname>ACTIVATES_ON</declname>
+        <defname>ACTIVATES_ON</defname>
       </param>
     </templateparamlist>
     <sectiondef kind="public-func">
-      <memberdef kind="function" id="classeva_1_1_binarize_eq_decor_1aba63c5b94ca4d10da1bf192b67c52e06" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classeva_1_1_binarize_eq_decor_1ac3bc54dd2c3fa42fa26bcff9de938570" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>signed short</type>
-        <definition>signed short eva::BinarizeEqDecor&lt; READER, ACTICATES_ON &gt;::getValue</definition>
+        <definition>signed short eva::BinarizeEqDecor&lt; READER, ACTIVATES_ON &gt;::getValue</definition>
         <argsstring>()</argsstring>
         <name>getValue</name>
         <qualifiedname>eva::BinarizeEqDecor::getValue</qualifiedname>
@@ -41,7 +41,7 @@
         <label>READER</label>
       </node>
       <node id="1">
-        <label>eva::BinarizeEqDecor&lt; READER, ACTICATES_ON &gt;</label>
+        <label>eva::BinarizeEqDecor&lt; READER, ACTIVATES_ON &gt;</label>
         <link refid="classeva_1_1_binarize_eq_decor"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
@@ -58,7 +58,7 @@
         <label>READER</label>
       </node>
       <node id="1">
-        <label>eva::BinarizeEqDecor&lt; READER, ACTICATES_ON &gt;</label>
+        <label>eva::BinarizeEqDecor&lt; READER, ACTIVATES_ON &gt;</label>
         <link refid="classeva_1_1_binarize_eq_decor"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
@@ -66,7 +66,7 @@
     </collaborationgraph>
     <location file="src/evaReaderDecors.h" line="50" column="5" bodyfile="src/evaReaderDecors.h" bodystart="51" bodyend="57"/>
     <listofallmembers>
-      <member refid="classeva_1_1_binarize_eq_decor_1aba63c5b94ca4d10da1bf192b67c52e06" prot="public" virt="non-virtual"><scope>eva::BinarizeEqDecor</scope><name>getValue</name></member>
+      <member refid="classeva_1_1_binarize_eq_decor_1ac3bc54dd2c3fa42fa26bcff9de938570" prot="public" virt="non-virtual"><scope>eva::BinarizeEqDecor</scope><name>getValue</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

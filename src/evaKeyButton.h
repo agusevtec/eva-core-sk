@@ -8,31 +8,27 @@
 
 namespace eva
 {
-    static const unsigned char ON_REPEAT = 0x40;
+    static const unsigned char ON_REPEATKEY = 0x40;
 
     /**
-     * @brief Button with press/release and click detection.
+     * @brief Button with auto-repeat (typematic) functionality.
      *
-     * Extends Switch with timing-based events: short click and long click.
-     * For basic active/inactive behavior, use Switch directly.
+     * This class extends Button by adding periodic ON_REPEAT events
+     * while the button is held down. The naming reflects the primary
+     * use case (keyboard-like repeat).
      *
-     * The class works with any reader that returns numeric codes:
-     * - 0 means "no button pressed"
-     * - Positive values identify specific buttons
-     *
-     * Events include both the event type and the button code in argsMask,
-     * allowing identification of which specific button triggered the event:
-     * in addition to Switch - ON_SHORTCLICK, ON_LONGCLICK, ON_LONGPRESS.
-     *
-     * Long click threshold is fixed at 750ms.
+     * - ON_CHANGE     - Any state change
+     * - ON_PRESS      - Button becomes active (switch to active state)
+     * - ON_RELEASE    - Button becomes inactive (switch to inactive state)
+     * - ON_SHORTCLICK - Press and release within LONGPRESS_DELAY
+     * - ON_LONGCLICK  - Press and hold longer than LONGPRESS_DELAY then release
+     * - ON_LONGPRESS  - Press and hold longer than LONGPRESS_DELAY (no release)
+     * - ON_REPEATKEY  - Periodic events while holding (after LONGPRESS_DELAY)
      *
      * @tparam READER Input reader type that returns numeric codes
      *                (0 = no button, >0 = button identifier)
      *
-     * @see Switch Base class for active/inactive state management
-     * @see PinButton Digital pin button with debouncing (typical use)
-     * @see PullUpButton Pull-up button convenience alias
-     * @see PinMultiButton Multiple buttons on one ADC pin
+     * @see Button Base class for click detection
      */
     template <class READER>
     class KeyButton : public Button<READER>
@@ -41,24 +37,28 @@ namespace eva
         using Button<READER>::Button;
 
     private:
-        void handleLongPress(unsigned long now)
+        
+    void handleLongPress(unsigned long now)
         {
             Button<Reader>::handleLongpress();
-            this->notify(ON_REPEAT, this->levelCode);
+            this->notify(ON_REPEATKEY, this->levelCode);
             this->lastRepeatTime = max(1, now);
         }
+        
         void handleDeactivating(unsigned char wasLevelCode, unsigned long now)
         {
             Button<READER>::handleDeactivating(wasLevelCode);
             this->lastRepeatTime = 0;
         }
+        
         bool checkRepeatTime(unsigned long now)
         {
             return this->lastRepeatTime && (now - this->lastRepeatTime) > REPEAT_DELAY;
         }
+
         void handleRepeatTime(unsigned long now)
         {
-            this->notify(ON_REPEAT, this->levelCode);
+            this->notify(ON_REPEATKEY, this->levelCode);
             this->lastRepeatTime = max(1, now);
         }
 
@@ -90,7 +90,7 @@ namespace eva
     };
 
     /**
-     * @brief Digital pin button with debouncing and level normalization.
+     * @brief Digital pin key-button with debouncing and level normalization.
      *
      * Combines:
      * - DigitalPinReader for raw pin reading
@@ -107,7 +107,7 @@ namespace eva
     using KeyPinButton = Button<BinarizeEqDecor<StabilizeDecor<DigitalPinReader<PIN, PIN_MODE>>, ACTIVATES_ON>>;
 
     /**
-     * @brief Pull-up button (active LOW, connect to GND).
+     * @brief Pull-up key-button (active LOW, connect to GND).
      *
      * Convenience alias for the most common Arduino button wiring:
      * - Pin set to INPUT_PULLUP
@@ -121,7 +121,7 @@ namespace eva
     using KeyPullUpButton = KeyButton<BinarizeEqDecor<StabilizeDecor<DigitalPinReader<PIN, INPUT_PULLUP>>, LOW>>;
 
     /**
-     * @brief Multiple buttons on a single ADC pin using resistor ladder.
+     * @brief Multiple key-buttons on a single ADC pin using resistor ladder.
      *
      * Hardware connection:
      * ```

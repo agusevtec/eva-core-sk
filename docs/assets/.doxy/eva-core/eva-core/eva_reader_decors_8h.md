@@ -36,7 +36,7 @@
 
 | Type | Name |
 | ---: | :--- |
-| class | [**BinarizeEqDecor**](classeva_1_1_binarize_eq_decor.md) &lt;class READER, ACTICATES\_ON&gt;<br>_Decorator that converts reading to binary based on level._  |
+| class | [**BinarizeEqDecor**](classeva_1_1_binarize_eq_decor.md) &lt;class READER, ACTIVATES\_ON&gt;<br>_Decorator that converts reading to binary based on level._  |
 | class | [**BinarizeGtDecor**](classeva_1_1_binarize_gt_decor.md) &lt;class READER, THRESHOLD&gt;<br>_Decorator that converts analog reading to binary based on 'greater then' threshold condition._  |
 | class | [**BinarizeLtDecor**](classeva_1_1_binarize_lt_decor.md) &lt;class READER, THRESHOLD&gt;<br>_Decorator that converts analog reading to binary based on 'less then' threshold condition._  |
 | class | [**QuantizeDecor**](classeva_1_1_quantize_decor.md) &lt;class READER, LEVELS&gt;<br>_Decorator that quantizes analog readings to discrete levels._  |

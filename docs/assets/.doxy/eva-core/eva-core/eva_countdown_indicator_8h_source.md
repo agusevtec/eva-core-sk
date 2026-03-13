@@ -24,7 +24,7 @@ namespace eva
         using BlinkingIndicator::on;
         
         
-        void on(unsigned short period, unsigned short dutycyclePercent, unsigned char count, IHandler *listener = 0);
+        void on(unsigned short period, unsigned char dutycyclePercent, unsigned char count, IHandler *listener = 0);
 
     private:
         void invoke(void *msgSender, CallbackInfo cbInfo) override;

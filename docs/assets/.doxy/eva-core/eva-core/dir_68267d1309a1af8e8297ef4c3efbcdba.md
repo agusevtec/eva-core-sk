@@ -31,6 +31,7 @@
 | file | [**evaIReader.h**](eva_i_reader_8h.md) <br> |
 | file | [**evaIndicator.h**](eva_indicator_8h.md) <br> |
 | file | [**evaJoystick.h**](eva_joystick_8h.md) <br> |
+| file | [**evaKeyButton.h**](eva_key_button_8h.md) <br> |
 | file | [**evaList.h**](eva_list_8h.md) <br> |
 | file | [**evaReaderDecors.h**](eva_reader_decors_8h.md) <br> |
 | file | [**evaRepeatTimer.h**](eva_repeat_timer_8h.md) <br> |

@@ -12,6 +12,7 @@
 * **ON\_LONGPRESS** ([**eva**](namespaceeva.md))
 * **ON\_PRESS** ([**eva**](namespaceeva.md))
 * **ON\_RELEASE** ([**eva**](namespaceeva.md))
+* **ON\_REPEATKEY** ([**eva**](namespaceeva.md))
 * **ON\_SHORTCLICK** ([**eva**](namespaceeva.md))
 
 
