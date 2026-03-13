@@ -43,14 +43,13 @@ Tickable::~Tickable()
   this->next = nullptr;
 }
 
-Tickable *Tickable::chain()
-{
-  return first;
-}
-
 void Tickable::tac()
 {
-  tick();
-  if (next)
-    next->tac();
+    Tickable* current = first;
+    while (current)
+    {
+        Tickable* next = current->next;
+        current->tick();
+        current = next;
+    }
 }

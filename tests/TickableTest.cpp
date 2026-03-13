@@ -33,14 +33,6 @@ protected:
 
 int TrackedTickable::destructionCount = 0;
 
-test(tickable_constructor_adds_to_chain) {
-    TestTickable t1;
-    TestTickable t2;
-    TestTickable t3;
-    
-    assertNotEqual(Tickable::chain(), nullptr);
-}
-
 test(tickable_tac_calls_tick_on_all_in_chain) {
     TestTickable t1;
     TestTickable t2;
@@ -140,17 +132,3 @@ test(tickable_empty_chain_after_all_deleted) {
     assertEqual(t3.tickCount, 1);
 }
 
-test(tickable_chain_persistence) {
-    TestTickable* t1 = new TestTickable();
-    TestTickable* t2 = new TestTickable();
-    
-    Tickable* head = Tickable::chain();
-    assertNotEqual(head, nullptr);
-    
-    delete t1;
-    delete t2;
-    
-    TestTickable t3;
-    t3.tac();
-    assertEqual(t3.tickCount, 1);
-}

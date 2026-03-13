@@ -10,18 +10,16 @@ namespace eva
   {
   public:
     Tickable();
+    Tickable(const Tickable&) = delete;
+    Tickable& operator=(const Tickable&) = delete;
+    Tickable(Tickable&&) = delete;
+    Tickable& operator=(Tickable&&) = delete;
     virtual ~Tickable();
-
-    /**
-     * @brief Gets or sets the head of the tickable chain
-     * @return Head of chain
-     */
-    static Tickable *chain();
 
     /**
      * @brief Triggers tick on this and all linked tickables
      */
-    void tac();
+    static void tac();
 
   private:
     virtual void tick() = 0;

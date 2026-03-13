@@ -41,45 +41,48 @@ namespace eva
         using Button<READER>::Button;
 
     private:
+        void handleLongPress(unsigned long now)
+        {
+            Button<Reader>::handleLongpress();
+            this->notify(ON_REPEAT, this->levelCode);
+            this->lastRepeatTime = max(1, now);
+        }
+        void handleDeactivating(unsigned char wasLevelCode, unsigned long now)
+        {
+            Button<READER>::handleDeactivating(wasLevelCode);
+            this->lastRepeatTime = 0;
+        }
+        bool checkRepeatTime(unsigned long now)
+        {
+            return this->lastRepeatTime && (now - this->lastRepeatTime) > REPEAT_DELAY;
+        }
+        void handleRepeatTime(unsigned long now)
+        {
+            this->notify(ON_REPEAT, this->levelCode);
+            this->lastRepeatTime = max(1, now);
+        }
+
+    private:
         void tick() override
         {
             if (this->levelCode < 0)
                 return;
 
-            unsigned char wasLevelCode = this->levelCode;
-            this->levelCode = max(0, READER::getValue());
             unsigned long now = millis();
+            unsigned char wasLevelCode = this->levelCode;
+            this->updateState();
 
-            if (this->pressTime && (now - this->pressTime) > LONGPRESS_DELAY)
-            {
-                this->notify(ON_LONGPRESS, this->levelCode);
-                this->pressTime = 0;
+            if (checkLongPress(now))
+                handleLongPress();
 
-                this->notify(ON_REPEAT, this->levelCode);
-                this->lastRepeatTime = max(1, now);
-            }
+            if (checkRepeatTime(now))
+                handleRepeatTime(now);
 
-            if (this->lastRepeatTime && (now - this->lastRepeatTime) > REPEAT_DELAY)
-            {
-                this->notify(ON_REPEAT, this->levelCode);
-                this->lastRepeatTime = max(1, now);
-            }
+            if (this->checkDeactivating(wasLevelCode))
+                handleDeactivating(wasLevelCode, now);
 
-            if ((wasLevelCode > 0) && (wasLevelCode != this->levelCode))
-            {
-                if (this->pressTime)
-                    this->notify(((now - this->pressTime) < LONGPRESS_DELAY) ? ON_SHORTCLICK : ON_LONGCLICK, wasLevelCode);
-                this->notify(ON_RELEASE, wasLevelCode);
-                this->notify(ON_CHANGE, this->levelCode);
-                this->pressTime = 0;
-                this->lastRepeatTime = 0;
-            }
-            if ((wasLevelCode != this->levelCode) && (this->levelCode > 0))
-            {
-                this->pressTime = max(1, now);
-                this->notify(ON_PRESS, this->levelCode);
-                this->notify(ON_CHANGE, this->levelCode);
-            }
+            if (this->checkActivating(wasLevelCode))
+                this->handleActivating(now);
         }
 
     private:

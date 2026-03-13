@@ -98,13 +98,13 @@ namespace eva
         }
 
     protected:
-        unsigned char readState()
+        void updateState()
         {
-            unsigned char wasLevelCode = this->levelCode;
-            this->levelCode = (unsigned short)max(0, (int)READER::getValue());
-            return wasLevelCode;
+            this->levelCode = READER::getValue();
+            if (this->levelCode < 0)
+                this->levelCode = 0;
         }
-        
+
         /// active -> inactive or different state
         bool checkDeactivating(unsigned char wasLevelCode)
         {
@@ -130,7 +130,7 @@ namespace eva
             this->notify(ON_CHANGE, wasLevelCode);
         }
 
-        void handleActivating(unsigned char wasLevelCode)
+        void handleActivating()
         {
             this->notify(ON_PRESS, this->levelCode);
             this->notify(ON_CHANGE, this->levelCode);
@@ -142,13 +142,14 @@ namespace eva
             if (this->levelCode < 0)
                 return;
 
-            unsigned char wasLevelCode = readState();
+            unsigned char wasLevelCode = this->levelCode;
+            updateState();
 
             if (checkDeactivating(wasLevelCode))
                 handleDeactivating(wasLevelCode);
 
             if (checkActivating(wasLevelCode))
-                handleActivating(wasLevelCode);
+                handleActivating();
         }
 
     protected:

@@ -42,36 +42,51 @@ namespace eva
     public:
         using Switch<READER>::Switch;
 
+    protected:
+        bool checkLongPress(unsigned long now)
+        {
+           return this->pressTime && (now - this->pressTime) > LONGPRESS_DELAY; 
+        }
+
+        void handleLongPress()
+        {
+            this->notify(ON_LONGPRESS, this->levelCode);
+            this->pressTime = 0;
+        }
+
+        void handleDeactivating(unsigned char wasLevelCode, unsigned long now)
+        {
+            Switch<READER>::handleDeactivating(wasLevelCode);
+            if (this->pressTime)
+                this->notify(((now - this->pressTime) <= LONGPRESS_DELAY) ? ON_SHORTCLICK : ON_LONGCLICK, wasLevelCode);
+            this->pressTime = 0;
+        }
+
+        void handleActivating(unsigned long now)
+        {
+            Switch<READER>::handleActivating();
+            this->pressTime = now;
+        }
+
+
     private:
         void tick() override
         {
             if (this->levelCode < 0)
                 return;
 
-            unsigned char wasLevelCode = this->levelCode;
-            this->levelCode = (signed short) max(0, (int)READER::getValue());
             unsigned long now = millis();
+            unsigned char wasLevelCode = this->levelCode;
+            this->updateState();
 
-            if (this->pressTime && (now - this->pressTime) > LONGPRESS_DELAY)
-            {
-                this->notify(ON_LONGPRESS, this->levelCode);
-                this->pressTime = 0;
-            }
+            if (checkLongPress(now))
+                handleLongPress();
 
-            if ((wasLevelCode > 0) && (wasLevelCode != this->levelCode))
-            {
-                if (this->pressTime)
-                    this->notify(((now - this->pressTime) <= LONGPRESS_DELAY)?ON_SHORTCLICK:ON_LONGCLICK, wasLevelCode);
-                this->notify(ON_RELEASE, wasLevelCode);
-                this->notify(ON_CHANGE, this->levelCode);
-                this->pressTime = 0;
-            }
-            if ((wasLevelCode != this->levelCode) && (this->levelCode > 0))
-            {
-                this->pressTime = now;
-                this->notify(ON_PRESS, this->levelCode);
-                this->notify(ON_CHANGE, this->levelCode);
-            }
+            if (this->checkDeactivating(wasLevelCode))
+                handleDeactivating(wasLevelCode, now);
+
+            if (this->checkActivating(wasLevelCode))
+                handleActivating(now);
         }
 
     protected:

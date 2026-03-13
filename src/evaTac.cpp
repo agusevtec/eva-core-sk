@@ -3,7 +3,5 @@
 
 void eva::tac()
 {
-  Tickable *first = Tickable::chain();
-  if (first)
-    first->tac();
+  Tickable::tac();
 }
