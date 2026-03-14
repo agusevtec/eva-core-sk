@@ -897,7 +897,7 @@
 
 <h1 id="eva-ecosystem-an-invitation-to-collaborate">EVA Ecosystem: An Invitation to Collaborate<a class="headerlink" href="#eva-ecosystem-an-invitation-to-collaborate" title="Permanent link">&para;</a></h1>
 <h2 id="what-is-eva">What is EVA?<a class="headerlink" href="#what-is-eva" title="Permanent link">&para;</a></h2>
-<p>EVA is not just a library—it's an architectural ecosystem for Arduino. Its goal is to make code modular, predictable, and reusable, regardless of project complexity.</p>
+<p>EVA is not just a library—it's an architectural ecosystem for Arduino. Its goal is to make user code modular, predictable, and reusable, regardless of project complexity.</p>
 <p>Projects in the EVA ecosystem live in the <code>eva</code> namespace and are built around three key ideas:</p>
 <ul>
 <li><strong>Tickable</strong> — everything that needs time becomes part of a single cycle</li>
@@ -906,38 +906,32 @@
 </ul>
 <p>Each module solves its own specific task, but they all speak the same language—the language of EVA.</p>
 <h2 id="an-invitation-to-collaborate">An Invitation to Collaborate<a class="headerlink" href="#an-invitation-to-collaborate" title="Permanent link">&para;</a></h2>
-<p>You are an Arduino library author. Your project solves a specific hardware problem: GMS, GPS, or any other sensors - its own hard-earned solutions, great!</p>
-<p>I propose we join forces.</p>
+<p>You are an Arduino library author. Your project solves a specific problem. I propose we join forces.</p>
 <h3 id="why-this-might-interest-you">Why This Might Interest You<a class="headerlink" href="#why-this-might-interest-you" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
 <p><strong>Your library becomes part of an ecosystem</strong> — EVA users will use it "out of the box," knowing it follows the same architectural principles.</p>
 </li>
 <li>
-<p><strong>Clean examples</strong> — Instead of code with <code>millis()</code> and flags, you can show examples where your library is embedded in a solid architecture:</p>
-</li>
-<li>GPS parser could be a <code>Tickable</code> component</li>
-<li>
-<p>GSM modem could be with callbacks instead of blocking on serial answers of AT commands</p>
+<p><strong>Clean examples</strong> — you can show examples where your library is embedded in a solid architecture.</p>
 </li>
 <li>
-<p><strong>Less support burden</strong> — Many user problems stem not from your library, but from how they call it. EVA-core-sk takes care of time management and events, leaving you with just the logic.</p>
+<p><strong>The library itself benefits</strong> — eva-core-sk's functionality may prove useful for your own implementation.</p>
 </li>
 <li>
-<p><strong>Increased visibility</strong> — Every project in the ecosystem references others. Your library will be seen alongside names already familiar to the community.</p>
+<p><strong>Test-friendly design</strong> — EVA's layered architecture keeps hardware interaction at the boundaries, making your library logic easier to test in isolation.</p>
 </li>
 </ol>
 <h3 id="what-i-ask-from-you">What I Ask From You<a class="headerlink" href="#what-i-ask-from-you" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Willingness to look at your library from a new perspective</li>
 <li>Readiness to add example(s) using EVA-core-sk</li>
-<li>(Optional) Minor interface adaptations if they make users' lives easier</li>
+<li>Publish an EVA-compatible version of your library, with minor interface adaptations if they make users' lives easier</li>
 </ul>
 <h3 id="what-i-provide">What I Provide<a class="headerlink" href="#what-i-provide" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Help with integration, writing examples, documentation</li>
+<li>Help with integration and writing examples</li>
 <li>A link to your project from the EVA documentation</li>
-<li>Word about your library as part of the ecosystem</li>
 </ul>
 <h2 id="how-to-start">How to Start<a class="headerlink" href="#how-to-start" title="Permanent link">&para;</a></h2>
 <p>If this idea resonates with you—write me. I'll send a small template showing how your library might look in the EVA architecture. From there, it's up to you: use it, decline it, or just take a look.</p>

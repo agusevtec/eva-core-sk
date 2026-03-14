@@ -144,7 +144,7 @@ The library provides class hierarchies that let you pick the exact level of func
 | Class | When to Use |
 |-------|-------------|
 | `Switch` | For simple active/inactive state tracking |
-| `Button` | When you need click detection (short/long press) |
+| `Button` | When you need click detection (short/long press, click) |
 | `KeyButton` | For auto-repeating keys (like keyboard keys) |
 
 ### Timers: From Lightweight to Feature-Rich

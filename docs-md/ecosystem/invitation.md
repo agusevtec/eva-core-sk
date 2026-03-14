@@ -2,7 +2,7 @@
 
 ## What is EVA?
 
-EVA is not just a library—it's an architectural ecosystem for Arduino. Its goal is to make code modular, predictable, and reusable, regardless of project complexity.
+EVA is not just a library—it's an architectural ecosystem for Arduino. Its goal is to make user code modular, predictable, and reusable, regardless of project complexity.
 
 Projects in the EVA ecosystem live in the `eva` namespace and are built around three key ideas:
 
@@ -14,33 +14,28 @@ Each module solves its own specific task, but they all speak the same language�
 
 ## An Invitation to Collaborate
 
-You are an Arduino library author. Your project solves a specific hardware problem: GMS, GPS, or any other sensors - its own hard-earned solutions, great!
-
-I propose we join forces.
+You are an Arduino library author. Your project solves a specific problem. I propose we join forces.
 
 ### Why This Might Interest You
 
 1. **Your library becomes part of an ecosystem** — EVA users will use it "out of the box," knowing it follows the same architectural principles.
 
-2. **Clean examples** — Instead of code with `millis()` and flags, you can show examples where your library is embedded in a solid architecture:
-   - GPS parser could be a `Tickable` component
-   - GSM modem could be with callbacks instead of blocking on serial answers of AT commands
+2. **Clean examples** — you can show examples where your library is embedded in a solid architecture.
 
-3. **Less support burden** — Many user problems stem not from your library, but from how they call it. EVA-core-sk takes care of time management and events, leaving you with just the logic.
+3. **The library itself benefits** — eva-core-sk's functionality may prove useful for your own implementation.
 
-4. **Increased visibility** — Every project in the ecosystem references others. Your library will be seen alongside names already familiar to the community.
+4. **Test-friendly design** — EVA's layered architecture keeps hardware interaction at the boundaries, making your library logic easier to test in isolation.
 
 ### What I Ask From You
 
 - Willingness to look at your library from a new perspective
 - Readiness to add example(s) using EVA-core-sk
-- (Optional) Minor interface adaptations if they make users' lives easier
+- Publish an EVA-compatible version of your library, with minor interface adaptations if they make users' lives easier
 
 ### What I Provide
 
-- Help with integration, writing examples, documentation
+- Help with integration and writing examples
 - A link to your project from the EVA documentation
-- Word about your library as part of the ecosystem
 
 ## How to Start
 

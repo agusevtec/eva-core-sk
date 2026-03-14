@@ -57,7 +57,7 @@ Flexibility without performance loss. Everything resolves at compile time.
 - `IReader` / `IReaderAdapter` input abstraction
 
 ### Survival Kit (SK)
-- **Buttons**: `Button`, `MultiButton`, `PinButton`, `PinMultiButton`
+- **Buttons**: `Switch`, `Button`, `KeyButton` and its variations
 - **Switches**: `Toggle`, `PinSwitch`, `PullupSwitch`, `PulldownSwitch`
 - **Timers**: `DelayTimer`, `RepeatTimer`
 - **Indicators**: `Indicator`, `BlinkingIndicator`, `CountdownIndicator`
@@ -91,9 +91,9 @@ Full documentation is available at **[https://agusevtec.github.io/eva-core-sk](h
 ## Ecosystem
 
 EVA is growing. Future modules include:
-- `boxy` GUI / windowing library
-- `frequencymeter` frequency measurement
-- `serial` serial port handling
+- `Boxy` GUI / windowing library
+- `Drequency meter` frequency measurement
+- `Motor drivers` serial port handling
 
 **Want to make your library part of the ecosystem?** [Read the invitation](https://agusevtec.github.io/eva-core-sk/ecosystem/invitation)
 
