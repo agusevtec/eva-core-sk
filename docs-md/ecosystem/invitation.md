@@ -24,7 +24,7 @@ You are an Arduino library author. Your project solves a specific problem. I pro
 
 3. **The library itself benefits** — eva-core-sk's functionality may prove useful for your own implementation.
 
-4. **Test-friendly design** — EVA's layered architecture keeps hardware interaction at the boundaries, making your library logic easier to test in isolation.
+4. **Test-friendly design** — By using EVA's timing layer, your library's time-dependent logic becomes testable.
 
 ### What I Ask From You
 

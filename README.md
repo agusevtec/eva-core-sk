@@ -66,8 +66,7 @@ Flexibility without performance loss. Everything resolves at compile time.
 
 ### Reader Decorators
 - `StabilizeDecor` debouncing with 120ms stabilization
-- `BinarizeEqDecor` convert to 0/1 based on level
-- `PolarizeDecor` normalize to -1, 0, 1
+- `BinarizeEqDecor`, `BinarizeGtDecor`, `BinarizeLtDecor` convert to 0/1 based on level
 - `QuantizeDecor` map analog values to discrete levels
 
 ## Why EVA?
@@ -79,7 +78,7 @@ Flexibility without performance loss. Everything resolves at compile time.
 - **Zero-cost abstractions** templates resolve at compile time
 - **Minimal overhead** virtual methods only at component boundaries
 
-## 📚 Documentation
+## Documentation
 
 Full documentation is available at **[https://agusevtec.github.io/eva-core-sk](https://agusevtec.github.io/eva-core-sk)**
 

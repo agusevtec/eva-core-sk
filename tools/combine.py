@@ -1,9 +1,5 @@
 #coding: utf-8
 #!/usr/bin/env python3
-"""
-Скрипт для объединения всех .h и .cpp файлов проекта в один файл
-Каждый файл обрамляется тегами <filename> и </filename>
-"""
 
 import os
 import sys
@@ -11,51 +7,39 @@ import argparse
 from pathlib import Path
 
 def combine_files(source_dir, output_file, extensions=None):
-    """
-    Объединяет все файлы с указанными расширениями из source_dir в один файл
-    
-    Args:
-        source_dir: исходная директория с файлами
-        output_file: имя выходного файла
-        extensions: список расширений (по умолчанию ['.h', '.cpp'])
-    """
     if extensions is None:
         extensions = ['.h', '.cpp']
     
     source_path = Path(source_dir)
     if not source_path.exists():
-        print(f"Ошибка: директория {source_dir} не существует")
+        print(f"Error: directory {source_dir} does not exist")
         return False
     
-    # Собираем все файлы с нужными расширениями
     files_to_combine = []
     for ext in extensions:
         files_to_combine.extend(source_path.glob(f'**/*{ext}'))
     
-    # Сортируем для консистентности
     files_to_combine.sort()
     
     if not files_to_combine:
-        print(f"Не найдено файлов с расширениями {extensions}")
+        print(f"No files found with extensions {extensions}")
         return False
     
-    print(f"Найдено {len(files_to_combine)} файлов для объединения:")
-    for f in files_to_combine[:5]:  # покажем первые 5
+    print(f"Found {len(files_to_combine)} files to combine:")
+    for f in files_to_combine[:5]:
         print(f"  {f}")
     if len(files_to_combine) > 5:
-        print(f"  ... и ещё {len(files_to_combine) - 5}")
+        print(f"  ... and {len(files_to_combine) - 5} more")
     
-    # Объединяем
     with open(output_file, 'w', encoding='utf-8') as out:
         out.write(f"// Combined project file\n")
         out.write(f"// Generated from {source_dir}\n")
         out.write(f"// Total files: {len(files_to_combine)}\n\n")
         
         for file_path in files_to_combine:
-            # Относительный путь для тега
             rel_path = file_path.relative_to(source_path)
             
-            print(f"Добавляю {rel_path}...")
+            print(f"Adding {rel_path}...")
             
             out.write(f"<{rel_path}>\n")
             
@@ -66,21 +50,21 @@ def combine_files(source_dir, output_file, extensions=None):
                     if not content.endswith('\n'):
                         out.write('\n')
             except Exception as e:
-                print(f"  Ошибка при чтении {file_path}: {e}")
+                print(f"  Error reading {file_path}: {e}")
                 out.write(f"// ERROR reading file: {e}\n")
             
             out.write(f"</{rel_path}>\n\n")
     
-    print(f"Готово! Объединённый файл: {output_file}")
+    print(f"Done! Combined file: {output_file}")
     return True
 
 def main():
-    parser = argparse.ArgumentParser(description='Объединение .h и .cpp файлов в один')
-    parser.add_argument('source_dir', help='Исходная директория с файлами')
+    parser = argparse.ArgumentParser(description='Combine .h and .cpp files into one')
+    parser.add_argument('source_dir', help='Source directory with files')
     parser.add_argument('-o', '--output', default='combined.txt', 
-                        help='Выходной файл (по умолчанию combined.txt)')
+                        help='Output file (default: combined.txt)')
     parser.add_argument('--ext', nargs='+', default=['.h', '.cpp'],
-                        help='Расширения файлов для объединения')
+                        help='File extensions to combine')
     
     args = parser.parse_args()
     
