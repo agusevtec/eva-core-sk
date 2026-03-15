@@ -40,14 +40,14 @@ namespace eva
         
     void handleLongPress(unsigned long now)
         {
-            Button<Reader>::handleLongpress();
+            Button<READER>::handleLongPress();
             this->notify(ON_REPEATKEY, this->levelCode);
             this->lastRepeatTime = max(1, now);
         }
         
         void handleDeactivating(unsigned char wasLevelCode, unsigned long now)
         {
-            Button<READER>::handleDeactivating(wasLevelCode);
+            Button<READER>::handleDeactivating(wasLevelCode, now);
             this->lastRepeatTime = 0;
         }
         
@@ -73,7 +73,7 @@ namespace eva
             this->updateState();
 
             if (checkLongPress(now))
-                handleLongPress();
+                handleLongPress(now);
 
             if (checkRepeatTime(now))
                 handleRepeatTime(now);

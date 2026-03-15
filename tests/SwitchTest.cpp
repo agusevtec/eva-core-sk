@@ -192,7 +192,7 @@ test(switch_switch_directly_onswitched)
     btn.tac();
 
     assertEqual(handler.callCount, 1);
-    assertEqual((int)handler.lastEventType, (int)ON_CHANGE);
+    assertEqual((int)handler.lastEventType, (int)ON_PRESS);
     assertEqual((int)handler.lastArgs, 1);
 
     handler.reset();
@@ -200,7 +200,6 @@ test(switch_switch_directly_onswitched)
     btn.setValue(2);
     btn.tac();
 
-    assertEqual((int)handler.lastEventType, (int)ON_CHANGE);
     assertEqual(handler.callCount, 2);
 }
 

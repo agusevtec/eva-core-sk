@@ -9,10 +9,12 @@
 
 namespace eva
 {
-    static const unsigned char ON_CHANGE = 0x1;
-    static const unsigned char ON_PRESS = 0x02;
-    static const unsigned char ON_RELEASE = 0x04;
+    static const unsigned char ON_PRESS = 0x01;
+    static const unsigned char ON_RELEASE = 0x02;
 
+    static const unsigned char ON_CHANGE = ON_PRESS | ON_RELEASE;
+
+    /// aliases
     static const unsigned char ON_ACTIVE = ON_PRESS;
     static const unsigned char ON_INACTIVE = ON_RELEASE;
 
@@ -127,13 +129,13 @@ namespace eva
         void handleDeactivating(unsigned char wasLevelCode)
         {
             this->notify(ON_RELEASE, wasLevelCode);
-            this->notify(ON_CHANGE, wasLevelCode);
+            //this->notify(ON_CHANGE, wasLevelCode);
         }
 
         void handleActivating()
         {
             this->notify(ON_PRESS, this->levelCode);
-            this->notify(ON_CHANGE, this->levelCode);
+            //this->notify(ON_CHANGE, this->levelCode);
         }
 
     private:
