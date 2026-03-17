@@ -15,12 +15,15 @@ RepeatTimer	KEYWORD1
 #######################################
 Switch	KEYWORD1
 Button	KEYWORD1
+KeyButton	KEYWORD1
 PinSwitch	KEYWORD1
 PinButton	KEYWORD1
+PinKeyButton	KEYWORD1
 PullupSwitch	KEYWORD1
 PullUpButton	KEYWORD1
 PinMultiSwitch	KEYWORD1
 PinMultiButton	KEYWORD1
+PinMultiKeyButton	KEYWORD1
 
 #######################################
 # Indicator Classes

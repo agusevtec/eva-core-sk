@@ -19,21 +19,21 @@ void BlinkingIndicator::startCycle()
 {
   Indicator::on();
   this->heartbeatTimer.start(this->period, this);
-  this->dutycycleTimer.start(this->period * this->dutycyclePercent / 100, this);
+  this->dutycycleTimer.start(((long)this->period * (long)this->dutycyclePercent) / 100, this);
 }
 
 void BlinkingIndicator::on(unsigned short period, unsigned char dutycyclePercent)
 {
   this->period = period;
-  this->dutycyclePercent = dutycyclePercent;
+  this->dutycyclePercent = constrain(dutycyclePercent, 0, 100);
   startCycle();
 }
 
 void BlinkingIndicator::invoke(void *msgSender, CallbackInfo)
 {
-  if (msgSender == &this->heartbeatTimer)
+  if (msgSender == &(this->heartbeatTimer))
     startCycle();
 
-  if (msgSender == &this->dutycycleTimer)
-    off();
+  if (msgSender == &(this->dutycycleTimer))
+    Indicator::off();
 }

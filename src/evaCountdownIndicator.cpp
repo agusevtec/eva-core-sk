@@ -1,6 +1,14 @@
 #include "evaCountdownIndicator.h"
 using namespace eva;
 
+CountdownIndicator *eva::CountdownIndicator::setListener(IHandler *listener)
+{
+    this->listener = listener;
+    Serial.print("set-listener: ");
+    Serial.println((long)this->listener);
+    return this;
+}
+
 void CountdownIndicator::on(unsigned short period, unsigned char dutycyclePercent, unsigned char count, IHandler *listener)
 {
     this->period = period;
@@ -8,19 +16,25 @@ void CountdownIndicator::on(unsigned short period, unsigned char dutycyclePercen
     this->countdown = count;
     this->listener = listener;
     if (this->countdown > 0)
-        startCycle();
+        this->startCycle();
 }
 
-void CountdownIndicator::invoke(void *msgSender, CallbackInfo cbInfo)
+void CountdownIndicator::on(unsigned short period, unsigned char dutycyclePercent, unsigned char count)
 {
-    if (msgSender == &this->heartbeatTimer)
+    on(period, dutycyclePercent, count, this->listener);
+}
+
+void CountdownIndicator::invoke(void *msgSender, CallbackInfo)
+{
+    if (msgSender == &(this->heartbeatTimer))
     {
-        this->countdown--;
-        if (this->countdown > 0)
-            startCycle();
-        else if (this->listener)
-            this->listener->invoke(this, cbInfo);
+        if (--this->countdown > 0)
+            this->startCycle();
+
+        if (this->countdown == 0)
+            if (this->listener)
+                this->listener->invoke(this, {0, 0});
     }
-    if (msgSender == &this->dutycycleTimer)
-        BlinkingIndicator::off();
+    if (msgSender == &(this->dutycycleTimer))
+        Indicator::off();
 }
