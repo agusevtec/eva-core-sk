@@ -113,9 +113,11 @@ Inherits the following classes: [eva::BlinkingIndicator](classeva_1_1_blinking_i
 
 | Type | Name |
 | ---: | :--- |
-|  void | [**on**](#function-on-13) (unsigned short period, unsigned char dutycyclePercent, unsigned char count, [**IHandler**](classeva_1_1_i_handler.md) \* listener=0) <br>_Starts countdown blinking._  |
-|  void | [**on**](#function-on-23) () <br>_Turns on the indicator continuously._  |
-|  void | [**on**](#function-on-33) (unsigned short period, unsigned char dutycyclePercent) <br>_Turns on the indicator with blinking pattern._  |
+|  void | [**on**](#function-on-14) (unsigned short period, unsigned char dutycyclePercent, unsigned char count) <br>_Starts countdown blinking._  |
+|  void | [**on**](#function-on-24) (unsigned short period, unsigned char dutycyclePercent, unsigned char count, [**IHandler**](classeva_1_1_i_handler.md) \* listener) <br>_Starts countdown blinking._  |
+|  void | [**on**](#function-on-34) () <br>_Turns on the indicator continuously._  |
+|  void | [**on**](#function-on-44) (unsigned short period, unsigned char dutycyclePercent) <br>_Turns on the indicator with blinking pattern._  |
+|  [**CountdownIndicator**](classeva_1_1_countdown_indicator.md) \* | [**setListener**](#function-setlistener) ([**IHandler**](classeva_1_1_i_handler.md) \* listener) <br>_Assigns or changes the event listener._  |
 
 
 ## Public Functions inherited from eva::BlinkingIndicator
@@ -276,7 +278,38 @@ See [eva::BlinkingIndicator](classeva_1_1_blinking_indicator.md)
 
 
 
-### function on [1/3]
+### function on [1/4]
+
+_Starts countdown blinking._ 
+```C++
+void eva::CountdownIndicator::on (
+    unsigned short period,
+    unsigned char dutycyclePercent,
+    unsigned char count
+) 
+```
+
+
+
+
+
+**Parameters:**
+
+
+* `period` Blinking period in milliseconds 
+* `dutycyclePercent` On-time percentage 
+* `count` Number of blinks before stopping 
+
+
+
+
+        
+
+<hr>
+
+
+
+### function on [2/4]
 
 _Starts countdown blinking._ 
 ```C++
@@ -284,7 +317,7 @@ void eva::CountdownIndicator::on (
     unsigned short period,
     unsigned char dutycyclePercent,
     unsigned char count,
-    IHandler * listener=0
+    IHandler * listener
 ) 
 ```
 
@@ -309,7 +342,7 @@ void eva::CountdownIndicator::on (
 
 
 
-### function on [2/3]
+### function on [3/4]
 
 _Turns on the indicator continuously._ 
 ```C++
@@ -323,7 +356,7 @@ void eva::CountdownIndicator::on ()
 
 
 
-### function on [3/3]
+### function on [4/4]
 
 _Turns on the indicator with blinking pattern._ 
 ```C++
@@ -342,6 +375,40 @@ void eva::CountdownIndicator::on (
 
 * `period` Blinking period in milliseconds 
 * `dutycyclePercent` On-time percentage (0-100) 
+
+
+
+
+        
+
+<hr>
+
+
+
+### function setListener 
+
+_Assigns or changes the event listener._ 
+```C++
+CountdownIndicator * eva::CountdownIndicator::setListener (
+    IHandler * listener
+) 
+```
+
+
+
+
+
+**Parameters:**
+
+
+* `listener` Pointer to [**IHandler**](classeva_1_1_i_handler.md) implementation that will receive timer events 
+
+
+
+**Returns:**
+
+Pointer to this [**DelayTimer**](classeva_1_1_delay_timer.md) instance for method chaining 
+
 
 
 

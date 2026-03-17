@@ -419,7 +419,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaScrollButton.h" line="112" column="5" bodyfile="src/evaScrollButton.h" bodystart="112" bodyend="-1"/>
+        <location file="src/evaScrollButton.h" line="111" column="5" bodyfile="src/evaScrollButton.h" bodystart="111" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="eva_scroll_button_8h_1a6821bd5745a1617907c051fc96bc3d7a" prot="public" static="no">
         <templateparamlist>
@@ -457,7 +457,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaScrollButton.h" line="126" column="5" bodyfile="src/evaScrollButton.h" bodystart="126" bodyend="-1"/>
+        <location file="src/evaScrollButton.h" line="125" column="5" bodyfile="src/evaScrollButton.h" bodystart="125" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="eva_scroll_button_8h_1a4294e4c88cecd348619f5ab8ae43d037" prot="public" static="no">
         <templateparamlist>
@@ -525,7 +525,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaScrollButton.h" line="154" column="5" bodyfile="src/evaScrollButton.h" bodystart="154" bodyend="-1"/>
+        <location file="src/evaScrollButton.h" line="153" column="5" bodyfile="src/evaScrollButton.h" bodystart="153" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="eva_slider_8h_1a62d965ecb30757f74e3dcc7ebcb15b2b" prot="public" static="no">
         <templateparamlist>

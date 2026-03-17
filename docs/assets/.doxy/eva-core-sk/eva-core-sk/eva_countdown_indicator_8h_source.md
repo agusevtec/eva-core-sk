@@ -22,9 +22,12 @@ namespace eva
     public:
         using BlinkingIndicator::BlinkingIndicator;
         using BlinkingIndicator::on;
-        
-        
-        void on(unsigned short period, unsigned char dutycyclePercent, unsigned char count, IHandler *listener = 0);
+
+        CountdownIndicator *setListener(IHandler *listener);
+
+        void on(unsigned short period, unsigned char dutycyclePercent, unsigned char count);
+
+        void on(unsigned short period, unsigned char dutycyclePercent, unsigned char count, IHandler *listener);
 
     private:
         void invoke(void *msgSender, CallbackInfo cbInfo) override;

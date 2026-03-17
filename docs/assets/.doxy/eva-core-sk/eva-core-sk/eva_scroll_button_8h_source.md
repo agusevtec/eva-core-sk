@@ -29,23 +29,22 @@ namespace eva
         using Button<READER>::Button;
 
     private:
-        
-    void handleLongPress(unsigned long now)
+        void handleLongPress(unsigned long now)
         {
             Button<READER>::handleLongPress();
             this->notify(ON_REPEATKEY, this->levelCode);
             this->lastRepeatTime = max(1, now);
         }
-        
+
         void handleDeactivating(unsigned char wasLevelCode, unsigned long now)
         {
             Button<READER>::handleDeactivating(wasLevelCode, now);
             this->lastRepeatTime = 0;
         }
-        
+
         bool checkRepeatTime(unsigned long now)
         {
-            return this->lastRepeatTime && (now - this->lastRepeatTime) > REPEAT_DELAY;
+            return (this->lastRepeatTime) && ((now - this->lastRepeatTime) > REPEAT_DELAY);
         }
 
         void handleRepeatTime(unsigned long now)

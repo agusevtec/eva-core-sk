@@ -16,9 +16,9 @@ nav:
     - Invitation: ecosystem/invitation.md
 
   - API Reference:
-      - Classes: eva-core/annotated.md
-      - Hierarchy: eva-core/hierarchy.md
-      - Files: eva-core/files.md
+      - Classes: eva-core-sk/annotated.md
+      - Hierarchy: eva-core-sk/hierarchy.md
+      - Files: eva-core-sk/files.md
 
 markdown_extensions:
   - admonition
@@ -30,7 +30,7 @@ plugins:
   - search
   - mkdoxy:
       projects:
-        eva-core:
+        eva-core-sk:
           src-dirs: ./src
           full-doc: True
           doxy-cfg:

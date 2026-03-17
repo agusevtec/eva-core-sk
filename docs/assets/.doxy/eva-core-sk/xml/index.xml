@@ -40,7 +40,9 @@
   <compound refid="classeva_1_1_countdown_indicator" kind="class"><name>eva::CountdownIndicator</name>
     <member refid="classeva_1_1_countdown_indicator_1a514ba44ea102faa908eca8e27164e67b" kind="variable"><name>countdown</name></member>
     <member refid="classeva_1_1_countdown_indicator_1a2fcaad8cf80b8e888f689e98fddc4778" kind="variable"><name>listener</name></member>
-    <member refid="classeva_1_1_countdown_indicator_1ae503e0fe65396ed2cf50c4f27ce42a25" kind="function"><name>on</name></member>
+    <member refid="classeva_1_1_countdown_indicator_1aa5c013b3265fa8cf0ac7e285e3ca2776" kind="function"><name>setListener</name></member>
+    <member refid="classeva_1_1_countdown_indicator_1afe8269b84d5818056930e7a5580932ed" kind="function"><name>on</name></member>
+    <member refid="classeva_1_1_countdown_indicator_1a58adb3482a6b5836485a85f04245db4a" kind="function"><name>on</name></member>
     <member refid="classeva_1_1_countdown_indicator_1a987af6bb4ca1c2c112274cde4d9a9088" kind="function"><name>on</name></member>
     <member refid="classeva_1_1_countdown_indicator_1a41787cfbc1be93c04e26c9e2fa8a307e" kind="function"><name>on</name></member>
     <member refid="classeva_1_1_countdown_indicator_1aa4ef30c7c817fbdb6f2b317e2e957bab" kind="function"><name>invoke</name></member>

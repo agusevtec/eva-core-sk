@@ -21,7 +21,7 @@
     
     
       
-        <title>Class eva::CountdownIndicator - EVA Core | EVA Survival Kit</title>
+        <title>File evaCountdownIndicator.h - EVA Core | EVA Survival Kit</title>
       
     
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#class-evacountdownindicator" class="md-skip">
+        <a href="#file-evacountdownindicatorh" class="md-skip">
           Skip to content
         </a>
       
@@ -98,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Class eva::CountdownIndicator
+              File evaCountdownIndicator.h
             
           </span>
         </div>
@@ -672,130 +672,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#public-functions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Public Functions
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#public-functions-inherited-from-evablinkingindicator" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Public Functions inherited from eva::BlinkingIndicator
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#public-functions-inherited-from-evaindicator" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Public Functions inherited from eva::Indicator
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#public-functions-inherited-from-evaihandler" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Public Functions inherited from eva::IHandler
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#protected-attributes-inherited-from-evablinkingindicator" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Protected Attributes inherited from eva::BlinkingIndicator
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#protected-functions-inherited-from-evablinkingindicator" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Protected Functions inherited from eva::BlinkingIndicator
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#public-functions-documentation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Public Functions Documentation
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Public Functions Documentation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#function-on-13" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        function on [1/3]
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#function-on-23" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        function on [2/3]
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#function-on-33" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        function on [3/3]
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -814,192 +690,41 @@
   
 
 
-<h1 id="class-evacountdownindicator">Class eva::CountdownIndicator<a class="headerlink" href="#class-evacountdownindicator" title="Permanent link">&para;</a></h1>
-<p><a href="../annotated/"><strong>ClassList</strong></a> <strong>&gt;</strong> <a href="../namespaceeva/"><strong>eva</strong></a> <strong>&gt;</strong> <a href="./"><strong>CountdownIndicator</strong></a></p>
-<p><a href="../classeva_1_1_indicator/"><em><strong>Indicator</strong></em></a> <em>that blinks a specified number of times then notifies listener.</em></p>
-<ul>
-<li><code>#include &lt;evaCountdownIndicator.h&gt;</code></li>
-</ul>
-<p>Inherits the following classes: <a href="../classeva_1_1_blinking_indicator/">eva::BlinkingIndicator</a></p>
-<h2 id="public-functions">Public Functions<a class="headerlink" href="#public-functions" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th style="text-align: right;">Type</th>
-<th style="text-align: left;">Name</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: right;">void</td>
-<td style="text-align: left;"><a href="#function-on-13"><strong>on</strong></a> (unsigned short period, unsigned char dutycyclePercent, unsigned char count, <a href="../classeva_1_1_i_handler/"><strong>IHandler</strong></a> * listener=0) <br><em>Starts countdown blinking.</em></td>
-</tr>
-<tr>
-<td style="text-align: right;">void</td>
-<td style="text-align: left;"><a href="#function-on-23"><strong>on</strong></a> () <br><em>Turns on the indicator continuously.</em></td>
-</tr>
-<tr>
-<td style="text-align: right;">void</td>
-<td style="text-align: left;"><a href="#function-on-33"><strong>on</strong></a> (unsigned short period, unsigned char dutycyclePercent) <br><em>Turns on the indicator with blinking pattern.</em></td>
-</tr>
-</tbody>
-</table>
-<h2 id="public-functions-inherited-from-evablinkingindicator">Public Functions inherited from eva::BlinkingIndicator<a class="headerlink" href="#public-functions-inherited-from-evablinkingindicator" title="Permanent link">&para;</a></h2>
-<p>See <a href="../classeva_1_1_blinking_indicator/">eva::BlinkingIndicator</a></p>
-<table>
-<thead>
-<tr>
-<th style="text-align: right;">Type</th>
-<th style="text-align: left;">Name</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: right;"></td>
-<td style="text-align: left;"><a href="../classeva_1_1_blinking_indicator/#function-indicator"><strong>Indicator</strong></a> (unsigned pin, int activationLevel=HIGH) <br><em>Constructor.</em></td>
-</tr>
-<tr>
-<td style="text-align: right;">void</td>
-<td style="text-align: left;"><a href="../classeva_1_1_blinking_indicator/#function-off"><strong>off</strong></a> () <br><em>Turns off the indicator.</em></td>
-</tr>
-<tr>
-<td style="text-align: right;">void</td>
-<td style="text-align: left;"><a href="../classeva_1_1_blinking_indicator/#function-on-12"><strong>on</strong></a> () <br><em>Turns on the indicator continuously.</em></td>
-</tr>
-<tr>
-<td style="text-align: right;">void</td>
-<td style="text-align: left;"><a href="../classeva_1_1_blinking_indicator/#function-on-22"><strong>on</strong></a> (unsigned short period, unsigned char dutycyclePercent) <br><em>Turns on the indicator with blinking pattern.</em></td>
-</tr>
-</tbody>
-</table>
-<h2 id="public-functions-inherited-from-evaindicator">Public Functions inherited from eva::Indicator<a class="headerlink" href="#public-functions-inherited-from-evaindicator" title="Permanent link">&para;</a></h2>
-<p>See <a href="../classeva_1_1_indicator/">eva::Indicator</a></p>
-<table>
-<thead>
-<tr>
-<th style="text-align: right;">Type</th>
-<th style="text-align: left;">Name</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: right;"></td>
-<td style="text-align: left;"><a href="../classeva_1_1_indicator/#function-indicator"><strong>Indicator</strong></a> (unsigned pin, int activationLevel=HIGH) <br><em>Constructor.</em></td>
-</tr>
-<tr>
-<td style="text-align: right;">void</td>
-<td style="text-align: left;"><a href="../classeva_1_1_indicator/#function-off"><strong>off</strong></a> () <br><em>Turns the indicator off.</em></td>
-</tr>
-<tr>
-<td style="text-align: right;">void</td>
-<td style="text-align: left;"><a href="../classeva_1_1_indicator/#function-on"><strong>on</strong></a> () <br><em>Turns the indicator on.</em></td>
-</tr>
-</tbody>
-</table>
-<h2 id="public-functions-inherited-from-evaihandler">Public Functions inherited from eva::IHandler<a class="headerlink" href="#public-functions-inherited-from-evaihandler" title="Permanent link">&para;</a></h2>
-<p>See <a href="../classeva_1_1_i_handler/">eva::IHandler</a></p>
-<table>
-<thead>
-<tr>
-<th style="text-align: right;">Type</th>
-<th style="text-align: left;">Name</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: right;">virtual void</td>
-<td style="text-align: left;"><a href="../classeva_1_1_i_handler/#function-invoke"><strong>invoke</strong></a> (void * msgSender, <a href="../structeva_1_1_callback_info/"><strong>CallbackInfo</strong></a> cbInfo) = 0<br></td>
-</tr>
-</tbody>
-</table>
-<h2 id="protected-attributes-inherited-from-evablinkingindicator">Protected Attributes inherited from eva::BlinkingIndicator<a class="headerlink" href="#protected-attributes-inherited-from-evablinkingindicator" title="Permanent link">&para;</a></h2>
-<p>See <a href="../classeva_1_1_blinking_indicator/">eva::BlinkingIndicator</a></p>
-<table>
-<thead>
-<tr>
-<th style="text-align: right;">Type</th>
-<th style="text-align: left;">Name</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: right;">unsigned char</td>
-<td style="text-align: left;"><a href="../classeva_1_1_blinking_indicator/#variable-dutycyclepercent"><strong>dutycyclePercent</strong></a>  <br></td>
-</tr>
-<tr>
-<td style="text-align: right;"><a href="../classeva_1_1_delay_timer/"><strong>DelayTimer</strong></a></td>
-<td style="text-align: left;"><a href="../classeva_1_1_blinking_indicator/#variable-dutycycletimer"><strong>dutycycleTimer</strong></a>  <br></td>
-</tr>
-<tr>
-<td style="text-align: right;"><a href="../classeva_1_1_delay_timer/"><strong>DelayTimer</strong></a></td>
-<td style="text-align: left;"><a href="../classeva_1_1_blinking_indicator/#variable-heartbeattimer"><strong>heartbeatTimer</strong></a>  <br></td>
-</tr>
-<tr>
-<td style="text-align: right;">unsigned short</td>
-<td style="text-align: left;"><a href="../classeva_1_1_blinking_indicator/#variable-period"><strong>period</strong></a>  <br></td>
-</tr>
-</tbody>
-</table>
-<h2 id="protected-functions-inherited-from-evablinkingindicator">Protected Functions inherited from eva::BlinkingIndicator<a class="headerlink" href="#protected-functions-inherited-from-evablinkingindicator" title="Permanent link">&para;</a></h2>
-<p>See <a href="../classeva_1_1_blinking_indicator/">eva::BlinkingIndicator</a></p>
-<table>
-<thead>
-<tr>
-<th style="text-align: right;">Type</th>
-<th style="text-align: left;">Name</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: right;">void</td>
-<td style="text-align: left;"><a href="../classeva_1_1_blinking_indicator/#function-startcycle"><strong>startCycle</strong></a> () <br></td>
-</tr>
-</tbody>
-</table>
-<h2 id="public-functions-documentation">Public Functions Documentation<a class="headerlink" href="#public-functions-documentation" title="Permanent link">&para;</a></h2>
-<h3 id="function-on-13">function on [1/3]<a class="headerlink" href="#function-on-13" title="Permanent link">&para;</a></h3>
-<p><em>Starts countdown blinking.</em> </p>
-<div class="codehilite"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">CountdownIndicator</span><span class="o">::</span><span class="n">on</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">period</span><span class="p">,</span>
-<span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">dutycyclePercent</span><span class="p">,</span>
-<span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">count</span><span class="p">,</span>
-<span class="w">    </span><span class="n">IHandler</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">listener</span><span class="o">=</span><span class="mi">0</span>
-<span class="p">)</span><span class="w"> </span>
+<h1 id="file-evacountdownindicatorh">File evaCountdownIndicator.h<a class="headerlink" href="#file-evacountdownindicatorh" title="Permanent link">&para;</a></h1>
+<p><a href="../files/"><strong>File List</strong></a> <strong>&gt;</strong> <a href="../dir_68267d1309a1af8e8297ef4c3efbcdba/"><strong>src</strong></a> <strong>&gt;</strong> <a href="../eva_countdown_indicator_8h/"><strong>evaCountdownIndicator.h</strong></a></p>
+<p><a href="../eva_countdown_indicator_8h/">Go to the documentation of this file</a></p>
+<div class="codehilite"><pre><span></span><code><span class="cp">#ifndef COUNTDOWNINDICATOR_H</span>
+<span class="cp">#define COUNTDOWNINDICATOR_H</span>
+
+<span class="cp">#pragma once</span>
+
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;evaBlinkingIndicator.h&quot;</span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">eva</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">class</span><span class="w"> </span><span class="nc">CountdownIndicator</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">BlinkingIndicator</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="o">:</span>
+<span class="w">        </span><span class="k">using</span><span class="w"> </span><span class="n">BlinkingIndicator</span><span class="o">::</span><span class="n">BlinkingIndicator</span><span class="p">;</span>
+<span class="w">        </span><span class="k">using</span><span class="w"> </span><span class="n">BlinkingIndicator</span><span class="o">::</span><span class="n">on</span><span class="p">;</span>
+
+<span class="w">        </span><span class="n">CountdownIndicator</span><span class="w"> </span><span class="o">*</span><span class="nf">setListener</span><span class="p">(</span><span class="n">IHandler</span><span class="w"> </span><span class="o">*</span><span class="n">listener</span><span class="p">);</span>
+
+<span class="w">        </span><span class="kt">void</span><span class="w"> </span><span class="nf">on</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">period</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">dutycyclePercent</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">count</span><span class="p">);</span>
+
+<span class="w">        </span><span class="kt">void</span><span class="w"> </span><span class="nf">on</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">period</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">dutycyclePercent</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">count</span><span class="p">,</span><span class="w"> </span><span class="n">IHandler</span><span class="w"> </span><span class="o">*</span><span class="n">listener</span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">private</span><span class="o">:</span>
+<span class="w">        </span><span class="kt">void</span><span class="w"> </span><span class="n">invoke</span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">msgSender</span><span class="p">,</span><span class="w"> </span><span class="n">CallbackInfo</span><span class="w"> </span><span class="n">cbInfo</span><span class="p">)</span><span class="w"> </span><span class="k">override</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">private</span><span class="o">:</span>
+<span class="w">        </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">countdown</span><span class="p">;</span>
+<span class="w">        </span><span class="n">IHandler</span><span class="w"> </span><span class="o">*</span><span class="n">listener</span><span class="p">;</span>
+<span class="w">    </span><span class="p">};</span>
+<span class="p">}</span>
+
+<span class="cp">#endif</span>
 </code></pre></div>
-
-<p><strong>Parameters:</strong></p>
-<ul>
-<li><code>period</code> Blinking period in milliseconds </li>
-<li><code>dutycyclePercent</code> On-time percentage </li>
-<li><code>count</code> Number of blinks before stopping </li>
-<li><code>listener</code> <a href="../classeva_1_1_handler/"><strong>Handler</strong></a> to notify when countdown completes </li>
-</ul>
-<hr>
-
-<h3 id="function-on-23">function on [2/3]<a class="headerlink" href="#function-on-23" title="Permanent link">&para;</a></h3>
-<p><em>Turns on the indicator continuously.</em> </p>
-<div class="codehilite"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">CountdownIndicator</span><span class="o">::</span><span class="n">on</span><span class="w"> </span><span class="p">()</span><span class="w"> </span>
-</code></pre></div>
-
-<hr>
-
-<h3 id="function-on-33">function on [3/3]<a class="headerlink" href="#function-on-33" title="Permanent link">&para;</a></h3>
-<p><em>Turns on the indicator with blinking pattern.</em> </p>
-<div class="codehilite"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">CountdownIndicator</span><span class="o">::</span><span class="n">on</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">period</span><span class="p">,</span>
-<span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">dutycyclePercent</span>
-<span class="p">)</span><span class="w"> </span>
-</code></pre></div>
-
-<p><strong>Parameters:</strong></p>
-<ul>
-<li><code>period</code> Blinking period in milliseconds </li>
-<li><code>dutycyclePercent</code> On-time percentage (0-100) </li>
-</ul>
-<hr>
-
-<hr />
-<p>The documentation for this class was generated from the following file <code>src/evaCountdownIndicator.h</code></p>
 
 
 
