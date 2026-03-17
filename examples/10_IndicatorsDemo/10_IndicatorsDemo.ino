@@ -15,11 +15,11 @@
 class App : public IHandler {
 private:
   // Three different indicators
-  Indicator basicLed{9};              // Simple on/off
+  Indicator basicLed{13};              // Simple on/off
   BlinkingIndicator blinkingLed{10};   // Continuous blinking
   CountdownIndicator countdownLed{11}; // Blinks N times then stops
   
-  PullUpButton<2> modeButton;          // Cycle through modes
+  PullUpButton<3> modeButton;          // Cycle through modes
   unsigned char mode = 0;
 
 public:
@@ -62,10 +62,10 @@ public:
   }
 };
 
-App app;
 
 void setup() {
   Serial.begin(9600);
+  static App app;
 }
 
 void loop() {

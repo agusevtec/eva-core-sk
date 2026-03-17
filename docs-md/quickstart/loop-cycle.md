@@ -85,7 +85,7 @@ private:
     auto now = millis();
     if (now - lastFire >= interval) {
       lastFire = now;
-      if (listener) listener->invoke(this, 0);
+      if (listener) listener->invoke(this, {0, 0});
     }
   }
   

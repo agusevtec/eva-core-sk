@@ -58,8 +58,8 @@ Flexibility without performance loss. Everything resolves at compile time.
 
 ### Survival Kit (SK)
 - **Buttons**: `Switch`, `Button`, `ScrollButton` and its variations
-- **Switches**: `Toggle`, `PinSwitch`, `PullupSwitch`, `PulldownSwitch`
-- **Timers**: `DelayTimer`, `RepeatTimer`
+- **Switches**: `PinSwitch`, `PullupSwitch`, `PulldownSwitch`
+- **Timers**: `DelayTimer`, `RepeatTimer`, `CountdownTimer`
 - **Indicators**: `Indicator`, `BlinkingIndicator`, `CountdownIndicator`
 - **Analog Inputs**: `Joystick`, `Slider`
 - **Utilities**: `List`
@@ -92,7 +92,7 @@ Full documentation is available at **[https://agusevtec.github.io/eva-core-sk](h
 EVA is growing. Future modules include:
 - `Boxy` GUI / windowing library
 - `Drequency meter` frequency measurement
-- `Motor drivers` serial port handling
+- `Motor drivers` motor drivers
 
 **Want to make your library part of the ecosystem?** [Read the invitation](https://agusevtec.github.io/eva-core-sk/ecosystem/invitation)
 

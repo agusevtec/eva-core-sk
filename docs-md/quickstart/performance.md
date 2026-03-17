@@ -97,7 +97,7 @@ The library offers different ways to handle events, each with different trade-of
 ### Handler Templates (Convenient)
 ```cpp
 class App{
-  PeriodTimer pt = {1000, new Handler<App>(this, &App::onTimer)};
+  RepeatTimer pt = {1000, new Handler<App>(this, &App::onTimer)};
   
   void onTimer(void* sender, CallbackInfo cbInfo) {
     // Handle event directly
@@ -111,7 +111,7 @@ class App{
 ### Direct IHandler Implementation (Minimal)
 ```cpp
 class App : public IHandler {
-  PeriodTimer pt = {1000, this};
+  RepeatTimer pt = {1000, this};
 
   void invoke(void* sender, CallbackInfo cbInfo) override {
     // Handle event directly
@@ -124,7 +124,7 @@ class App : public IHandler {
 ### Tickable Subclass (Tightest control)
 ```cpp
 class App : public Tickable {
-  short tick() override {
+  void tick() override {
     // Called on every loop() iteration
     // Do your own timing
     return 0;
