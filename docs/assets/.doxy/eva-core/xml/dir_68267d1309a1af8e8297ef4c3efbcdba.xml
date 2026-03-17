@@ -4,7 +4,6 @@
     <compoundname>src</compoundname>
     <innerfile refid="eva_blinking_indicator_8h">evaBlinkingIndicator.h</innerfile>
     <innerfile refid="eva_button_8h">evaButton.h</innerfile>
-    <innerfile refid="eva_common_8h">evaCommon.h</innerfile>
     <innerfile refid="eva_countdown_indicator_8h">evaCountdownIndicator.h</innerfile>
     <innerfile refid="eva_countdown_timer_8h">evaCountdownTimer.h</innerfile>
     <innerfile refid="eva_delay_timer_8h">evaDelayTimer.h</innerfile>
@@ -12,10 +11,10 @@
     <innerfile refid="eva_indicator_8h">evaIndicator.h</innerfile>
     <innerfile refid="eva_i_reader_8h">evaIReader.h</innerfile>
     <innerfile refid="eva_joystick_8h">evaJoystick.h</innerfile>
-    <innerfile refid="eva_key_button_8h">evaKeyButton.h</innerfile>
     <innerfile refid="eva_list_8h">evaList.h</innerfile>
     <innerfile refid="eva_reader_decors_8h">evaReaderDecors.h</innerfile>
     <innerfile refid="eva_repeat_timer_8h">evaRepeatTimer.h</innerfile>
+    <innerfile refid="eva_scroll_button_8h">evaScrollButton.h</innerfile>
     <innerfile refid="eva_slider_8h">evaSlider.h</innerfile>
     <innerfile refid="eva_std_readers_8h">evaStdReaders.h</innerfile>
     <innerfile refid="eva_switch_8h">evaSwitch.h</innerfile>

@@ -57,7 +57,7 @@ Flexibility without performance loss. Everything resolves at compile time.
 - `IReader` / `IReaderAdapter` input abstraction
 
 ### Survival Kit (SK)
-- **Buttons**: `Switch`, `Button`, `KeyButton` and its variations
+- **Buttons**: `Switch`, `Button`, `ScrollButton` and its variations
 - **Switches**: `Toggle`, `PinSwitch`, `PullupSwitch`, `PulldownSwitch`
 - **Timers**: `DelayTimer`, `RepeatTimer`
 - **Indicators**: `Indicator`, `BlinkingIndicator`, `CountdownIndicator`

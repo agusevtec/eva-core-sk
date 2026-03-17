@@ -1,15 +1,15 @@
 
 
-# File evaKeyButton.h
+# File evaScrollButton.h
 
-[**File List**](files.md) **>** [**src**](dir_68267d1309a1af8e8297ef4c3efbcdba.md) **>** [**evaKeyButton.h**](eva_key_button_8h.md)
+[**File List**](files.md) **>** [**src**](dir_68267d1309a1af8e8297ef4c3efbcdba.md) **>** [**evaScrollButton.h**](eva_scroll_button_8h.md)
 
-[Go to the documentation of this file](eva_key_button_8h.md)
+[Go to the documentation of this file](eva_scroll_button_8h.md)
 
 
 ```C++
-#ifndef EVAKEYBUTTON_H
-#define EVAKEYBUTTON_H
+#ifndef EVASCROLLBUTTON_H
+#define EVASCROLLBUTTON_H
 
 #pragma once
 
@@ -18,10 +18,12 @@
 
 namespace eva
 {
+    static const unsigned short REPEAT_DELAY = 400;
+
     static const unsigned char ON_REPEATKEY = 0x40;
 
     template <class READER>
-    class KeyButton : public Button<READER>
+    class ScrollButton : public Button<READER>
     {
     public:
         using Button<READER>::Button;
@@ -30,14 +32,14 @@ namespace eva
         
     void handleLongPress(unsigned long now)
         {
-            Button<Reader>::handleLongpress();
+            Button<READER>::handleLongPress();
             this->notify(ON_REPEATKEY, this->levelCode);
             this->lastRepeatTime = max(1, now);
         }
         
         void handleDeactivating(unsigned char wasLevelCode, unsigned long now)
         {
-            Button<READER>::handleDeactivating(wasLevelCode);
+            Button<READER>::handleDeactivating(wasLevelCode, now);
             this->lastRepeatTime = 0;
         }
         
@@ -62,8 +64,11 @@ namespace eva
             unsigned char wasLevelCode = this->levelCode;
             this->updateState();
 
+            if (this->(wasLevelCode))
+                this->handleChanging();
+
             if (checkLongPress(now))
-                handleLongPress();
+                handleLongPress(now);
 
             if (checkRepeatTime(now))
                 handleRepeatTime(now);
@@ -83,10 +88,10 @@ namespace eva
     using KeyPinButton = Button<BinarizeEqDecor<StabilizeDecor<DigitalPinReader<PIN, PIN_MODE>>, ACTIVATES_ON>>;
 
     template <int PIN>
-    using KeyPullUpButton = KeyButton<BinarizeEqDecor<StabilizeDecor<DigitalPinReader<PIN, INPUT_PULLUP>>, LOW>>;
+    using KeyPullUpButton = ScrollButton<BinarizeEqDecor<StabilizeDecor<DigitalPinReader<PIN, INPUT_PULLUP>>, LOW>>;
 
     template <int PIN, int PIN_MODE, signed short... LEVELS>
-    using KeyPinMultiButton = KeyButton<QuantizeDecor<StabilizeDecor<AnalogPinReader<PIN, PIN_MODE>>, LEVELS...>>;
+    using KeyPinMultiButton = ScrollButton<QuantizeDecor<StabilizeDecor<AnalogPinReader<PIN, PIN_MODE>>, LEVELS...>>;
 };
 #endif
 ```

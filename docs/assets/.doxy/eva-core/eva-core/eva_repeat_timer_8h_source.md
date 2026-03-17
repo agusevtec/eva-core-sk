@@ -20,13 +20,14 @@ namespace eva
     {
     public:
         using DelayTimer::DelayTimer;
-       
+
         RepeatTimer(unsigned short period, IHandler *listener);
 
-        RepeatTimer* setPeriod(unsigned short period);
-        
-        RepeatTimer* setListener(IHandler *listener);
-        
+
+        RepeatTimer *setPeriod(unsigned short period);
+
+        RepeatTimer *setListener(IHandler *listener);
+
         void start(unsigned short period, IHandler *listener);
         void start(unsigned short period);
         void start();

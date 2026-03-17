@@ -6,19 +6,6 @@
  * - Active HIGH buttons
  * - Multi-buttons on single ADC pin (resistor ladder)
  * - Buttons with custom debounce timing
- *
- * Hardware connections:
- * - Button 1: Digital pin 2 to GND (using internal pull-up)
- * - Button 2: Digital pin 3 to GND (using internal pull-up)
- * - Button 3: Digital pin 4 to 5V (active HIGH, external pull-down)
- * - Resistor ladder: Multiple buttons on A0 with different resistors
- *
- * Button events:
- * - ON_PRESS: Button just pressed
- * - ON_RELEASE: Button just released
- * - ON_SHORTCLICK: Press and release within 750ms
- * - ON_LONGCLICK: Press and hold >750ms then release
- * - ON_LONGPRESS: Press and hold >750ms (no release)
  */
 
 #include <evaTac.h>

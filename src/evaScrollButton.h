@@ -1,5 +1,5 @@
-#ifndef EVAKEYBUTTON_H
-#define EVAKEYBUTTON_H
+#ifndef EVASCROLLBUTTON_H
+#define EVASCROLLBUTTON_H
 
 #pragma once
 
@@ -8,6 +8,8 @@
 
 namespace eva
 {
+    static const unsigned short REPEAT_DELAY = 400;
+
     static const unsigned char ON_REPEATKEY = 0x40;
 
     /**
@@ -31,7 +33,7 @@ namespace eva
      * @see Button Base class for click detection
      */
     template <class READER>
-    class KeyButton : public Button<READER>
+    class ScrollButton : public Button<READER>
     {
     public:
         using Button<READER>::Button;
@@ -71,6 +73,9 @@ namespace eva
             unsigned long now = millis();
             unsigned char wasLevelCode = this->levelCode;
             this->updateState();
+
+            if (this->(wasLevelCode))
+                this->handleChanging();
 
             if (checkLongPress(now))
                 handleLongPress(now);
@@ -118,7 +123,7 @@ namespace eva
      * @tparam PIN Arduino pin number
      */
     template <int PIN>
-    using KeyPullUpButton = KeyButton<BinarizeEqDecor<StabilizeDecor<DigitalPinReader<PIN, INPUT_PULLUP>>, LOW>>;
+    using KeyPullUpButton = ScrollButton<BinarizeEqDecor<StabilizeDecor<DigitalPinReader<PIN, INPUT_PULLUP>>, LOW>>;
 
     /**
      * @brief Multiple key-buttons on a single ADC pin using resistor ladder.
@@ -146,6 +151,6 @@ namespace eva
      * @see PinMultiSwitch For use cases without click detection
      */
     template <int PIN, int PIN_MODE, signed short... LEVELS>
-    using KeyPinMultiButton = KeyButton<QuantizeDecor<StabilizeDecor<AnalogPinReader<PIN, PIN_MODE>>, LEVELS...>>;
+    using KeyPinMultiButton = ScrollButton<QuantizeDecor<StabilizeDecor<AnalogPinReader<PIN, PIN_MODE>>, LEVELS...>>;
 };
 #endif

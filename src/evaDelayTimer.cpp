@@ -1,6 +1,6 @@
 #include "evaDelayTimer.h"
 #include <Arduino.h>
-#include "evaCommon.h"
+
 using namespace eva;
 
 DelayTimer::DelayTimer()

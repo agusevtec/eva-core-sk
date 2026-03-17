@@ -57,12 +57,12 @@ private:
   void onZoneEvent(void* sender, CallbackInfo cbInfo) {
     unsigned short zone = cbInfo.eventArg;  // 1 or 2
     
-    if (cbInfo.eventType & ON_ACTIVE) {
+    if (cbInfo.eventType & ON_PRESS) {
       Serial.print("Entered zone ");
       Serial.println(zone);
     }
     
-    if (cbInfo.eventType & ON_INACTIVE) {
+    if (cbInfo.eventType & ON_RELEASE) {
       Serial.println("Returned to center");
     }
   }
@@ -71,7 +71,7 @@ public:
   App() {
     joystickZone.setListener(
       new Handler<App>(this, &App::onZoneEvent),
-      ON_ACTIVE | ON_INACTIVE
+      ON_PRESS | ON_RELEASE
     );
   }
 };

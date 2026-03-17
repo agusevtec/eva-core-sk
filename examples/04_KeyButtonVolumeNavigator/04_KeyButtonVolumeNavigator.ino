@@ -1,7 +1,7 @@
 /**
- * eva Library - KeyButton Demo: Volume & Menu Navigation
+ * eva Library - ScrollButton Demo: Volume & Menu Navigation
  * 
- * Simple demonstration of KeyButton with auto-repeat:
+ * Simple demonstration of ScrollButton with auto-repeat:
  * - Volume Up/Down: Auto-repeat for fast tuning
  * - Menu navigation: Short press = move, Long press = select
  * 
@@ -15,7 +15,7 @@
 
 #include <evaTac.h>
 #include <evaRepeatTimer.h>
-#include <evaKeyButton.h>
+#include <evaScrollButton.h>
 
 using namespace eva;
 
@@ -31,7 +31,7 @@ struct {
 
 class App : public IHandler {
 private:
-  // KeyButtons with auto-repeat for volume
+  // ScrollButtons with auto-repeat for volume
   KeyPullUpButton<2> volUpBtn;
   KeyPullUpButton<3> volDownBtn;
   
@@ -59,7 +59,7 @@ public:
   
   void showScreen() {
     Serial.println("\033[2J\033[H");  // Clear screen
-    Serial.println("=== KeyButton Demo ===");
+    Serial.println("=== ScrollButton Demo ===");
     Serial.println("[Volume] UP:pin2 DOWN:pin3 (auto-repeat)");
     Serial.println("[Menu]   UP:pin4 DOWN:pin5 SELECT:pin6");
     Serial.println("------------------------");

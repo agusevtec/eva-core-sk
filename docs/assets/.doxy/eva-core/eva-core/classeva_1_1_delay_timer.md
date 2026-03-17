@@ -76,10 +76,10 @@ Inherited by the following classes: [eva::CountdownTimer](classeva_1_1_countdown
 | ---: | :--- |
 |   | [**DelayTimer**](#function-delaytimer-12) () <br> |
 |   | [**DelayTimer**](#function-delaytimer-22) ([**IHandler**](classeva_1_1_i_handler.md) \* listener) <br> |
-|  bool | [**isRunning**](#function-isrunning) () <br> |
-|  DelayTimer \* | [**setListener**](#function-setlistener) ([**IHandler**](classeva_1_1_i_handler.md) \* listener) <br> |
+|  bool | [**isRunning**](#function-isrunning) () <br>_Checks if the timer is currently active._  |
+|  DelayTimer \* | [**setListener**](#function-setlistener) ([**IHandler**](classeva_1_1_i_handler.md) \* listener) <br>_Assigns or changes the event listener._  |
 |  void | [**start**](#function-start-12) (unsigned short delay, [**IHandler**](classeva_1_1_i_handler.md) \* listener) <br>_Starts the timer._  |
-|  void | [**start**](#function-start-22) (unsigned short delay) <br> |
+|  void | [**start**](#function-start-22) (unsigned short delay) <br>_Starts the timer._  |
 |  void | [**stop**](#function-stop) () <br>_Stops the timer._  |
 
 
@@ -202,6 +202,7 @@ eva::DelayTimer::DelayTimer (
 
 ### function isRunning 
 
+_Checks if the timer is currently active._ 
 ```C++
 bool eva::DelayTimer::isRunning () 
 ```
@@ -209,12 +210,24 @@ bool eva::DelayTimer::isRunning ()
 
 
 
+
+**Returns:**
+
+true if timer is running and will fire, false otherwise 
+
+
+
+
+
+        
+
 <hr>
 
 
 
 ### function setListener 
 
+_Assigns or changes the event listener._ 
 ```C++
 DelayTimer * eva::DelayTimer::setListener (
     IHandler * listener
@@ -223,6 +236,24 @@ DelayTimer * eva::DelayTimer::setListener (
 
 
 
+
+
+**Parameters:**
+
+
+* `listener` Pointer to [**IHandler**](classeva_1_1_i_handler.md) implementation that will receive timer events 
+
+
+
+**Returns:**
+
+Pointer to this [**DelayTimer**](classeva_1_1_delay_timer.md) instance for method chaining 
+
+
+
+
+
+        
 
 <hr>
 
@@ -259,6 +290,7 @@ void eva::DelayTimer::start (
 
 ### function start [2/2]
 
+_Starts the timer._ 
 ```C++
 void eva::DelayTimer::start (
     unsigned short delay
@@ -267,6 +299,17 @@ void eva::DelayTimer::start (
 
 
 
+
+
+**Parameters:**
+
+
+* `delay` Delay in milliseconds
+
+Listener must be assigned via constructor or [**setListener()**](classeva_1_1_delay_timer.md#function-setlistener). Use overloaded version with listener parameter if not pre-assigned. 
+
+
+        
 
 <hr>
 

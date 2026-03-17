@@ -7,7 +7,6 @@
  * - Reports success/failure after retries
  */
 
-
 #include <evaTac.h>
 #include <evaCountdownTimer.h>
 #include <evaButton.h>
@@ -15,49 +14,42 @@
 
 using namespace eva;
 
-class App : public IHandler {
+class App {
 private:
-  PullUpButton<2> connectButton;    // Start connection attempt
-  BlinkingIndicator led{13};                  // Status LED
-  CountdownTimer retryTimer;          // Retry timer
-  unsigned char attempt = 0;
+  PullUpButton<3> connectButton{new Handler<App>(this, &App::onConnectPress), ON_PRESS};
+  BlinkingIndicator led{13};
+  CountdownTimer retryTimer{new Handler<App>(this, &App::onRetryTimer)};
 
 public:
   App() {
-    connectButton.setListener(this, ON_PRESS);
-    retryTimer.setListener(this);
     Serial.println("CountdownTimer Demo: Connection Retry");
     Serial.println("Press button to start - retries 3 times");
   }
-  
-  void invoke(void* sender, CallbackInfo info) override {
-    if (sender == &connectButton) {
-      Serial.println("\nStarting connection...");
-      attempt = 0;
-      led.on(200, 50);  // Blink while connecting
-      retryTimer.start(1000, 3, this);  // Retry 3 times, 1s apart
-    }
-    else if (sender == &retryTimer) {
-      // info.eventArg contains remaining retries (2,1,0)
-      attempt = 3 - info.eventArg;
-      
-      if (info.eventArg > 0) {
-        Serial.print("Retry attempt ");
-        Serial.print(attempt);
-        Serial.println(" failed - trying again");
-      } else {
-        // All retries exhausted
-        Serial.println("All retries failed - connection timeout");
-        led.off();
-      }
+
+  void onConnectPress(void*, CallbackInfo) {
+    Serial.println("\nStarting connection...");
+    led.on(200, 50);
+    retryTimer.start(1000, 3);
+  }
+
+  void onRetryTimer(void*, CallbackInfo info) {
+    // info.eventArg contains remaining retries (2,1,0)
+    unsigned char attempt = 3 - info.eventArg;
+    
+    if (info.eventArg > 0) {
+      Serial.print("Retry attempt ");
+      Serial.print(attempt);
+      Serial.println(" failed");
+    } else {
+      Serial.println("All retries failed");
+      led.off();
     }
   }
 };
 
-App app;
-
 void setup() {
   Serial.begin(9600);
+  static App app;
 }
 
 void loop() {

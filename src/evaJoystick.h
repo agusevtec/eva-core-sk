@@ -1,9 +1,13 @@
 #ifndef EVAJOYSTICK_H_
 #define EVAJOYSTICK_H_
 #include "evaStdReaders.h"
-#include "evaCommon.h"
+
 namespace eva
 {
+  inline static signed short SIGN(signed short x)
+  {
+    return (((x) > 0) - ((x) < 0));
+  }
   /**
    * @brief Joystick axis reader with trim adjustment
    * @tparam READER Underlying reader type

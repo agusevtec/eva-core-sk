@@ -14,10 +14,11 @@
 
 * **checkLongPress** ([**eva::Button**](classeva_1_1_button.md))
 * **countdown** ([**eva::CountdownIndicator**](classeva_1_1_countdown_indicator.md))
-* **checkRepeatTime** ([**eva::KeyButton**](classeva_1_1_key_button.md))
 * **clear** ([**eva::List**](classeva_1_1_list.md))
 * **count** ([**eva::List**](classeva_1_1_list.md))
+* **checkRepeatTime** ([**eva::ScrollButton**](classeva_1_1_scroll_button.md))
 * **checkActivating** ([**eva::Switch**](classeva_1_1_switch.md))
+* **checkChanging** ([**eva::Switch**](classeva_1_1_switch.md))
 * **checkDeactivating** ([**eva::Switch**](classeva_1_1_switch.md))
 * **curiosity** ([**eva::Switch**](classeva_1_1_switch.md))
 
@@ -46,6 +47,7 @@
 ## g
 
 * **getValue** ([**eva::AnalogPinReader**](classeva_1_1_analog_pin_reader.md), [**eva::BinarizeEqDecor**](classeva_1_1_binarize_eq_decor.md), [**eva::BinarizeGtDecor**](classeva_1_1_binarize_gt_decor.md), [**eva::BinarizeLtDecor**](classeva_1_1_binarize_lt_decor.md), [**eva::DigitalPinReader**](classeva_1_1_digital_pin_reader.md), [**eva::IReader**](classeva_1_1_i_reader.md), [**eva::IReaderAdapter**](classeva_1_1_i_reader_adapter.md), [**eva::Joystick**](classeva_1_1_joystick.md), [**eva::QuantizeDecor**](classeva_1_1_quantize_decor.md), [**eva::Slider**](classeva_1_1_slider.md), [**eva::StabilizeDecor**](classeva_1_1_stabilize_decor.md), [**eva::Switch**](classeva_1_1_switch.md))
+* **getRemaining** ([**eva::CountdownTimer**](classeva_1_1_countdown_timer.md))
 * **getTrim** ([**eva::Joystick**](classeva_1_1_joystick.md))
 * **getLevel** ([**eva::QuantizeDecor**](classeva_1_1_quantize_decor.md))
 
@@ -54,12 +56,13 @@
 
 * **heartbeatTimer** ([**eva::BlinkingIndicator**](classeva_1_1_blinking_indicator.md))
 * **handleActivating** ([**eva::Button**](classeva_1_1_button.md), [**eva::Switch**](classeva_1_1_switch.md))
-* **handleDeactivating** ([**eva::Button**](classeva_1_1_button.md), [**eva::KeyButton**](classeva_1_1_key_button.md), [**eva::Switch**](classeva_1_1_switch.md))
-* **handleLongPress** ([**eva::Button**](classeva_1_1_button.md), [**eva::KeyButton**](classeva_1_1_key_button.md))
+* **handleDeactivating** ([**eva::Button**](classeva_1_1_button.md), [**eva::ScrollButton**](classeva_1_1_scroll_button.md), [**eva::Switch**](classeva_1_1_switch.md))
+* **handleLongPress** ([**eva::Button**](classeva_1_1_button.md), [**eva::ScrollButton**](classeva_1_1_scroll_button.md))
 * **Handler** ([**eva::Handler**](classeva_1_1_handler.md))
 * **HandlerF** ([**eva::HandlerF**](classeva_1_1_handler_f.md))
-* **handleRepeatTime** ([**eva::KeyButton**](classeva_1_1_key_button.md))
 * **head** ([**eva::List**](classeva_1_1_list.md))
+* **handleRepeatTime** ([**eva::ScrollButton**](classeva_1_1_scroll_button.md))
+* **handleChanging** ([**eva::Switch**](classeva_1_1_switch.md))
 
 
 ## i
@@ -81,11 +84,11 @@
 ## l
 
 * **listener** ([**eva::CountdownIndicator**](classeva_1_1_countdown_indicator.md), [**eva::DelayTimer**](classeva_1_1_delay_timer.md), [**eva::Switch**](classeva_1_1_switch.md))
-* **lastRepeatTime** ([**eva::KeyButton**](classeva_1_1_key_button.md))
 * **List** ([**eva::List**](classeva_1_1_list.md))
 * **length** ([**eva::List**](classeva_1_1_list.md))
 * **ListIterator** ([**eva::ListIterator**](structeva_1_1_list_iterator.md))
 * **levels** ([**eva::QuantizeDecor**](classeva_1_1_quantize_decor.md))
+* **lastRepeatTime** ([**eva::ScrollButton**](classeva_1_1_scroll_button.md))
 * **levelCode** ([**eva::Switch**](classeva_1_1_switch.md))
 * **last** ([**eva::Tickable**](classeva_1_1_tickable.md))
 
@@ -139,7 +142,7 @@
 
 ## t
 
-* **tick** ([**eva::Button**](classeva_1_1_button.md), [**eva::CountdownTimer**](classeva_1_1_countdown_timer.md), [**eva::DelayTimer**](classeva_1_1_delay_timer.md), [**eva::KeyButton**](classeva_1_1_key_button.md), [**eva::RepeatTimer**](classeva_1_1_repeat_timer.md), [**eva::Switch**](classeva_1_1_switch.md), [**eva::Tickable**](classeva_1_1_tickable.md))
+* **tick** ([**eva::Button**](classeva_1_1_button.md), [**eva::CountdownTimer**](classeva_1_1_countdown_timer.md), [**eva::DelayTimer**](classeva_1_1_delay_timer.md), [**eva::RepeatTimer**](classeva_1_1_repeat_timer.md), [**eva::ScrollButton**](classeva_1_1_scroll_button.md), [**eva::Switch**](classeva_1_1_switch.md), [**eva::Tickable**](classeva_1_1_tickable.md))
 * **trim** ([**eva::Joystick**](classeva_1_1_joystick.md))
 * **tail** ([**eva::List**](classeva_1_1_list.md))
 * **Tickable** ([**eva::Tickable**](classeva_1_1_tickable.md))

@@ -41,13 +41,13 @@
         <childnode refid="5" relation="include">
         </childnode>
       </node>
-      <node id="10">
-        <label>src/evaKeyButton.h</label>
-        <link refid="eva_key_button_8h_source"/>
-      </node>
       <node id="7">
         <label>src/evaRepeatTimer.h</label>
         <link refid="eva_repeat_timer_8h_source"/>
+      </node>
+      <node id="10">
+        <label>src/evaScrollButton.h</label>
+        <link refid="eva_scroll_button_8h_source"/>
       </node>
       <node id="8">
         <label>src/evaSwitch.h</label>

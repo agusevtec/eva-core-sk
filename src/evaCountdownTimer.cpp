@@ -1,6 +1,5 @@
 #include "evaCountdownTimer.h"
 #include <Arduino.h>
-#include "evaCommon.h"
 
 using namespace eva;
 
@@ -28,7 +27,7 @@ void CountdownTimer::tick()
     if (IS_BEFORE(millis(), this->nextFire))
         return;
 
-    if (this->remainingCount-- > 0)
+    if (--this->remainingCount > 0)
         this->nextFire += this->period;
     else
         stop();

@@ -95,9 +95,10 @@ Inherits the following classes: [eva::DelayTimer](classeva_1_1_delay_timer.md)
 | ---: | :--- |
 |   | [**DelayTimer**](#function-delaytimer-12) () <br> |
 |   | [**DelayTimer**](#function-delaytimer-22) ([**IHandler**](classeva_1_1_i_handler.md) \* listener) <br> |
-|  [**CountdownTimer**](classeva_1_1_countdown_timer.md) \* | [**setListener**](#function-setlistener) ([**IHandler**](classeva_1_1_i_handler.md) \* listener) <br> |
+|  unsigned char | [**getRemaining**](#function-getremaining) () <br>_Returns the number of remaining timer ticks._  |
+|  [**CountdownTimer**](classeva_1_1_countdown_timer.md) \* | [**setListener**](#function-setlistener) ([**IHandler**](classeva_1_1_i_handler.md) \* listener) <br>_Assigns or changes the event listener._  |
 |  void | [**start**](#function-start-12) (unsigned short period, unsigned char count, [**IHandler**](classeva_1_1_i_handler.md) \* listener) <br>_Starts or restarts the repeating timer._  |
-|  void | [**start**](#function-start-22) (unsigned short period, unsigned char count) <br> |
+|  void | [**start**](#function-start-22) (unsigned short period, unsigned char count) <br>_Starts or restarts the countdown timer._  |
 
 
 ## Public Functions inherited from eva::DelayTimer
@@ -108,10 +109,10 @@ See [eva::DelayTimer](classeva_1_1_delay_timer.md)
 | ---: | :--- |
 |   | [**DelayTimer**](classeva_1_1_delay_timer.md#function-delaytimer-12) () <br> |
 |   | [**DelayTimer**](classeva_1_1_delay_timer.md#function-delaytimer-22) ([**IHandler**](classeva_1_1_i_handler.md) \* listener) <br> |
-|  bool | [**isRunning**](classeva_1_1_delay_timer.md#function-isrunning) () <br> |
-|  DelayTimer \* | [**setListener**](classeva_1_1_delay_timer.md#function-setlistener) ([**IHandler**](classeva_1_1_i_handler.md) \* listener) <br> |
+|  bool | [**isRunning**](classeva_1_1_delay_timer.md#function-isrunning) () <br>_Checks if the timer is currently active._  |
+|  DelayTimer \* | [**setListener**](classeva_1_1_delay_timer.md#function-setlistener) ([**IHandler**](classeva_1_1_i_handler.md) \* listener) <br>_Assigns or changes the event listener._  |
 |  void | [**start**](classeva_1_1_delay_timer.md#function-start-12) (unsigned short delay, [**IHandler**](classeva_1_1_i_handler.md) \* listener) <br>_Starts the timer._  |
-|  void | [**start**](classeva_1_1_delay_timer.md#function-start-22) (unsigned short delay) <br> |
+|  void | [**start**](classeva_1_1_delay_timer.md#function-start-22) (unsigned short delay) <br>_Starts the timer._  |
 |  void | [**stop**](classeva_1_1_delay_timer.md#function-stop) () <br>_Stops the timer._  |
 
 
@@ -262,8 +263,34 @@ eva::CountdownTimer::DelayTimer (
 
 
 
+### function getRemaining 
+
+_Returns the number of remaining timer ticks._ 
+```C++
+unsigned char eva::CountdownTimer::getRemaining () 
+```
+
+
+
+
+
+**Returns:**
+
+Number of pending executions (0 if timer is not running) 
+
+
+
+
+
+        
+
+<hr>
+
+
+
 ### function setListener 
 
+_Assigns or changes the event listener._ 
 ```C++
 CountdownTimer * eva::CountdownTimer::setListener (
     IHandler * listener
@@ -272,6 +299,24 @@ CountdownTimer * eva::CountdownTimer::setListener (
 
 
 
+
+
+**Parameters:**
+
+
+* `listener` Pointer to [**IHandler**](classeva_1_1_i_handler.md) implementation that will receive timer events 
+
+
+
+**Returns:**
+
+Pointer to this [**CountdownTimer**](classeva_1_1_countdown_timer.md) instance for method chaining 
+
+
+
+
+
+        
 
 <hr>
 
@@ -296,6 +341,7 @@ void eva::CountdownTimer::start (
 
 
 * `period` Interval in milliseconds 
+* `count` Number of iterations 
 * `listener` [**Handler**](classeva_1_1_handler.md) to invoke on each tick 
 
 
@@ -309,6 +355,7 @@ void eva::CountdownTimer::start (
 
 ### function start [2/2]
 
+_Starts or restarts the countdown timer._ 
 ```C++
 void eva::CountdownTimer::start (
     unsigned short period,
@@ -318,6 +365,18 @@ void eva::CountdownTimer::start (
 
 
 
+
+
+**Parameters:**
+
+
+* `period` Interval in milliseconds 
+* `count` Number of iterations
+
+Listener must be assigned via constructor or [**setListener()**](classeva_1_1_countdown_timer.md#function-setlistener). Use overloaded version with listener parameter if not pre-assigned. 
+
+
+        
 
 <hr>
 

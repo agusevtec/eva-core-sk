@@ -12,18 +12,14 @@ namespace eva
     static const unsigned char ON_PRESS = 0x01;
     static const unsigned char ON_RELEASE = 0x02;
 
-    static const unsigned char ON_CHANGE = ON_PRESS | ON_RELEASE;
-
-    /// aliases
-    static const unsigned char ON_ACTIVE = ON_PRESS;
-    static const unsigned char ON_INACTIVE = ON_RELEASE;
+    static const unsigned char ON_CHANGE = 0x04;
 
     /**
      * @brief Universal switch/button class for multi-valued input sources.
      *
      * This class handles both switch and button behavior within the same component.
      * The difference is purely semantic:
-     * -# React to ON_ACTIVE/ON_INACTIVE for switch-like behavior
+     * -# React to ON_CHANGE for switch-like behavior
      * -# React to ON_PRESS/ON_RELEASE for button-like behavior
      *
      * Typical applications:
@@ -107,6 +103,11 @@ namespace eva
                 this->levelCode = 0;
         }
 
+        bool checkChanging(unsigned char wasLevelCode)
+        {
+            return (wasLevelCode != this->levelCode);
+        }
+
         /// active -> inactive or different state
         bool checkDeactivating(unsigned char wasLevelCode)
         {
@@ -126,16 +127,19 @@ namespace eva
                     this->listener->invoke(this, {eventType, eventCode});
         }
 
+        void handleChanging()
+        {
+            this->notify(ON_CHANGE, this->levelCode);
+        }
+
         void handleDeactivating(unsigned char wasLevelCode)
         {
             this->notify(ON_RELEASE, wasLevelCode);
-            //this->notify(ON_CHANGE, wasLevelCode);
         }
 
         void handleActivating()
         {
             this->notify(ON_PRESS, this->levelCode);
-            //this->notify(ON_CHANGE, this->levelCode);
         }
 
     private:
@@ -146,6 +150,9 @@ namespace eva
 
             unsigned char wasLevelCode = this->levelCode;
             updateState();
+            
+            if (checkChanging(wasLevelCode))
+                handleChanging();
 
             if (checkDeactivating(wasLevelCode))
                 handleDeactivating(wasLevelCode);

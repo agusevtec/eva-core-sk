@@ -55,14 +55,14 @@ public:
     if (sender == &reportTimer)
     {
       // Read all values
-      signed char slider = slider.getValue();
+      signed short sliderValue = slider.getValue();
       signed char joyX = joystickX.getValue();
       signed char joyY = joystickY.getValue();
       signed char trimX = joystick3.getValue();
       signed char trimY = joystick3.getValue(); // Same axis for demo
 
       // Print all values in CSV format
-      Serial.print(slider);
+      Serial.print(sliderValue);
       Serial.print('|');
       Serial.print(joyX);
       Serial.print('|');

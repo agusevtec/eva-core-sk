@@ -160,8 +160,10 @@ See [eva::Tickable](classeva_1_1_tickable.md)
 | Type | Name |
 | ---: | :--- |
 |  bool | [**checkActivating**](#function-checkactivating) (unsigned char wasLevelCode) <br>_inactive or different -&gt; active_  |
+|  bool | [**checkChanging**](#function-checkchanging) (unsigned char wasLevelCode) <br> |
 |  bool | [**checkDeactivating**](#function-checkdeactivating) (unsigned char wasLevelCode) <br>_active -&gt; inactive or different state_  |
 |  void | [**handleActivating**](#function-handleactivating) () <br> |
+|  void | [**handleChanging**](#function-handlechanging) () <br> |
 |  void | [**handleDeactivating**](#function-handledeactivating) (unsigned char wasLevelCode) <br> |
 |  void | [**notify**](#function-notify) (unsigned short eventType, signed short eventCode) <br> |
 |  void | [**updateState**](#function-updatestate) () <br> |
@@ -177,7 +179,7 @@ See [eva::Tickable](classeva_1_1_tickable.md)
 
 
 This class handles both switch and button behavior within the same component. The difference is purely semantic:
-* React to ON\_ACTIVE/ON\_INACTIVE for switch-like behavior
+* React to ON\_CHANGE for switch-like behavior
 * React to ON\_PRESS/ON\_RELEASE for button-like behavior
 
 
@@ -407,6 +409,21 @@ inline bool eva::Switch::checkActivating (
 
 
 
+### function checkChanging 
+
+```C++
+inline bool eva::Switch::checkChanging (
+    unsigned char wasLevelCode
+) 
+```
+
+
+
+
+<hr>
+
+
+
 ### function checkDeactivating 
 
 _active -&gt; inactive or different state_ 
@@ -427,6 +444,19 @@ inline bool eva::Switch::checkDeactivating (
 
 ```C++
 inline void eva::Switch::handleActivating () 
+```
+
+
+
+
+<hr>
+
+
+
+### function handleChanging 
+
+```C++
+inline void eva::Switch::handleChanging () 
 ```
 
 

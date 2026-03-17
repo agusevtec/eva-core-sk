@@ -11,9 +11,13 @@
 #ifndef EVAJOYSTICK_H_
 #define EVAJOYSTICK_H_
 #include "evaStdReaders.h"
-#include "evaCommon.h"
+
 namespace eva
 {
+  inline static signed short SIGN(signed short x)
+  {
+    return (((x) > 0) - ((x) < 0));
+  }
   template <class READER, int MIN, int MIDDLE, int MAX>
   class Joystick : public READER
   {

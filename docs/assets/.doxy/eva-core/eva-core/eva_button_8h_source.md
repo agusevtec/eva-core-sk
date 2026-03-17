@@ -14,10 +14,11 @@
 #pragma once
 
 #include "evaSwitch.h"
-#include "evaCommon.h"
 
 namespace eva
 {
+    static const unsigned short LONGPRESS_DELAY = 750;
+
     static const unsigned char ON_SHORTCLICK = 0x08;
     static const unsigned char ON_LONGCLICK = 0x10;
     static const unsigned char ON_LONGPRESS = 0x20;
@@ -64,6 +65,9 @@ namespace eva
             unsigned long now = millis();
             unsigned char wasLevelCode = this->levelCode;
             this->updateState();
+
+            if (this->checkChanging(wasLevelCode))
+                this->handleChanging();
 
             if (checkLongPress(now))
                 handleLongPress();

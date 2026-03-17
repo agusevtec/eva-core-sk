@@ -17,7 +17,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.4">
     
     
       
@@ -941,11 +941,11 @@
 </tr>
 <tr>
 <td style="text-align: right;">bool</td>
-<td style="text-align: left;"><a href="#function-isrunning"><strong>isRunning</strong></a> () <br></td>
+<td style="text-align: left;"><a href="#function-isrunning"><strong>isRunning</strong></a> () <br><em>Checks if the timer is currently active.</em></td>
 </tr>
 <tr>
 <td style="text-align: right;">DelayTimer *</td>
-<td style="text-align: left;"><a href="#function-setlistener"><strong>setListener</strong></a> (<a href="../classeva_1_1_i_handler/"><strong>IHandler</strong></a> * listener) <br></td>
+<td style="text-align: left;"><a href="#function-setlistener"><strong>setListener</strong></a> (<a href="../classeva_1_1_i_handler/"><strong>IHandler</strong></a> * listener) <br><em>Assigns or changes the event listener.</em></td>
 </tr>
 <tr>
 <td style="text-align: right;">void</td>
@@ -953,7 +953,7 @@
 </tr>
 <tr>
 <td style="text-align: right;">void</td>
-<td style="text-align: left;"><a href="#function-start-22"><strong>start</strong></a> (unsigned short delay) <br></td>
+<td style="text-align: left;"><a href="#function-start-22"><strong>start</strong></a> (unsigned short delay) <br><em>Starts the timer.</em></td>
 </tr>
 <tr>
 <td style="text-align: right;">void</td>
@@ -1063,17 +1063,27 @@
 <hr>
 
 <h3 id="function-isrunning">function isRunning<a class="headerlink" href="#function-isrunning" title="Permanent link">&para;</a></h3>
+<p><em>Checks if the timer is currently active.</em> </p>
 <div class="codehilite"><pre><span></span><code><span class="kt">bool</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">DelayTimer</span><span class="o">::</span><span class="n">isRunning</span><span class="w"> </span><span class="p">()</span><span class="w"> </span>
 </code></pre></div>
 
+<p><strong>Returns:</strong></p>
+<p>true if timer is running and will fire, false otherwise </p>
 <hr>
 
 <h3 id="function-setlistener">function setListener<a class="headerlink" href="#function-setlistener" title="Permanent link">&para;</a></h3>
+<p><em>Assigns or changes the event listener.</em> </p>
 <div class="codehilite"><pre><span></span><code><span class="n">DelayTimer</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">DelayTimer</span><span class="o">::</span><span class="n">setListener</span><span class="w"> </span><span class="p">(</span>
 <span class="w">    </span><span class="n">IHandler</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">listener</span>
 <span class="p">)</span><span class="w"> </span>
 </code></pre></div>
 
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>listener</code> Pointer to <a href="../classeva_1_1_i_handler/"><strong>IHandler</strong></a> implementation that will receive timer events </li>
+</ul>
+<p><strong>Returns:</strong></p>
+<p>Pointer to this <a href="./"><strong>DelayTimer</strong></a> instance for method chaining </p>
 <hr>
 
 <h3 id="function-start-12">function start [1/2]<a class="headerlink" href="#function-start-12" title="Permanent link">&para;</a></h3>
@@ -1092,11 +1102,17 @@
 <hr>
 
 <h3 id="function-start-22">function start [2/2]<a class="headerlink" href="#function-start-22" title="Permanent link">&para;</a></h3>
+<p><em>Starts the timer.</em> </p>
 <div class="codehilite"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">DelayTimer</span><span class="o">::</span><span class="n">start</span><span class="w"> </span><span class="p">(</span>
 <span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">delay</span>
 <span class="p">)</span><span class="w"> </span>
 </code></pre></div>
 
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>delay</code> Delay in milliseconds</li>
+</ul>
+<p>Listener must be assigned via constructor or <a href="./#function-setlistener"><strong>setListener()</strong></a>. Use overloaded version with listener parameter if not pre-assigned. </p>
 <hr>
 
 <h3 id="function-stop">function stop<a class="headerlink" href="#function-stop" title="Permanent link">&para;</a></h3>

@@ -47,11 +47,11 @@
 | class | [**IReaderAdapter**](classeva_1_1_i_reader_adapter.md) &lt;class T&gt;<br>_Adapter that converts any class with getValue() into an_ [_**IReader**_](classeva_1_1_i_reader.md) _._ |
 | class | [**Indicator**](classeva_1_1_indicator.md) <br>_Basic indicator (LED) control._  |
 | class | [**Joystick**](classeva_1_1_joystick.md) &lt;class READER, MIN, MIDDLE, MAX&gt;<br>[_**Joystick**_](classeva_1_1_joystick.md) _axis reader with trim adjustment._ |
-| class | [**KeyButton**](classeva_1_1_key_button.md) &lt;class READER&gt;<br>[_**Button**_](classeva_1_1_button.md) _with auto-repeat (typematic) functionality._ |
 | class | [**List**](classeva_1_1_list.md) &lt;class ItemClass&gt;<br>_Simple singly-linked list container._  |
 | struct | [**ListIterator**](structeva_1_1_list_iterator.md) &lt;class ItemClass&gt;<br>_Iterator node for_ [_**List**_](classeva_1_1_list.md) _._ |
 | class | [**QuantizeDecor**](classeva_1_1_quantize_decor.md) &lt;class READER, LEVELS&gt;<br>_Decorator that quantizes analog readings to discrete levels._  |
 | class | [**RepeatTimer**](classeva_1_1_repeat_timer.md) <br>_Timer that fires repeatedly at fixed intervals._  |
+| class | [**ScrollButton**](classeva_1_1_scroll_button.md) &lt;class READER&gt;<br>[_**Button**_](classeva_1_1_button.md) _with auto-repeat (typematic) functionality._ |
 | class | [**Slider**](classeva_1_1_slider.md) &lt;class READER, MIN, MAX&gt;<br>_Maps analog readings to 0-255 range._  |
 | class | [**StabilizeDecor**](classeva_1_1_stabilize_decor.md) &lt;class READER&gt;<br>_Decorator that stabilizes readings by requiring value to be stable for a period._  |
 | class | [**Switch**](classeva_1_1_switch.md) &lt;class READER&gt;<br>_Universal switch/button class for multi-valued input sources._  |
@@ -63,8 +63,8 @@
 | Type | Name |
 | ---: | :--- |
 | typedef [**Button**](classeva_1_1_button.md)&lt; [**BinarizeEqDecor**](classeva_1_1_binarize_eq_decor.md)&lt; [**StabilizeDecor**](classeva_1_1_stabilize_decor.md)&lt; [**DigitalPinReader**](classeva_1_1_digital_pin_reader.md)&lt; PIN, PIN\_MODE &gt; &gt;, ACTIVATES\_ON &gt; &gt; | [**KeyPinButton**](#typedef-keypinbutton)  <br>_Digital pin key-button with debouncing and level normalization._  |
-| typedef [**KeyButton**](classeva_1_1_key_button.md)&lt; [**QuantizeDecor**](classeva_1_1_quantize_decor.md)&lt; [**StabilizeDecor**](classeva_1_1_stabilize_decor.md)&lt; [**AnalogPinReader**](classeva_1_1_analog_pin_reader.md)&lt; PIN, PIN\_MODE &gt; &gt;, LEVELS... &gt; &gt; | [**KeyPinMultiButton**](#typedef-keypinmultibutton)  <br>_Multiple key-buttons on a single ADC pin using resistor ladder._  |
-| typedef [**KeyButton**](classeva_1_1_key_button.md)&lt; [**BinarizeEqDecor**](classeva_1_1_binarize_eq_decor.md)&lt; [**StabilizeDecor**](classeva_1_1_stabilize_decor.md)&lt; [**DigitalPinReader**](classeva_1_1_digital_pin_reader.md)&lt; PIN, INPUT\_PULLUP &gt; &gt;, LOW &gt; &gt; | [**KeyPullUpButton**](#typedef-keypullupbutton)  <br>_Pull-up key-button (active LOW, connect to GND)._  |
+| typedef [**ScrollButton**](classeva_1_1_scroll_button.md)&lt; [**QuantizeDecor**](classeva_1_1_quantize_decor.md)&lt; [**StabilizeDecor**](classeva_1_1_stabilize_decor.md)&lt; [**AnalogPinReader**](classeva_1_1_analog_pin_reader.md)&lt; PIN, PIN\_MODE &gt; &gt;, LEVELS... &gt; &gt; | [**KeyPinMultiButton**](#typedef-keypinmultibutton)  <br>_Multiple key-buttons on a single ADC pin using resistor ladder._  |
+| typedef [**ScrollButton**](classeva_1_1_scroll_button.md)&lt; [**BinarizeEqDecor**](classeva_1_1_binarize_eq_decor.md)&lt; [**StabilizeDecor**](classeva_1_1_stabilize_decor.md)&lt; [**DigitalPinReader**](classeva_1_1_digital_pin_reader.md)&lt; PIN, INPUT\_PULLUP &gt; &gt;, LOW &gt; &gt; | [**KeyPullUpButton**](#typedef-keypullupbutton)  <br>_Pull-up key-button (active LOW, connect to GND)._  |
 | typedef [**Button**](classeva_1_1_button.md)&lt; [**BinarizeEqDecor**](classeva_1_1_binarize_eq_decor.md)&lt; [**StabilizeDecor**](classeva_1_1_stabilize_decor.md)&lt; [**DigitalPinReader**](classeva_1_1_digital_pin_reader.md)&lt; PIN, PIN\_MODE &gt; &gt;, ACTIVATES\_ON &gt; &gt; | [**PinButton**](#typedef-pinbutton)  <br>_Digital pin button with debouncing and level normalization._  |
 | typedef [**Joystick**](classeva_1_1_joystick.md)&lt; [**AnalogPinReader**](classeva_1_1_analog_pin_reader.md)&lt; PIN, PIN\_MODE &gt;, MIN, MIDDLE, MAX &gt; | [**PinJoystick**](#typedef-pinjoystick)  <br>_Pin-based joystick with custom center position._  |
 | typedef [**Button**](classeva_1_1_button.md)&lt; [**QuantizeDecor**](classeva_1_1_quantize_decor.md)&lt; [**StabilizeDecor**](classeva_1_1_stabilize_decor.md)&lt; [**AnalogPinReader**](classeva_1_1_analog_pin_reader.md)&lt; PIN, PIN\_MODE &gt; &gt;, LEVELS... &gt; &gt; | [**PinMultiButton**](#typedef-pinmultibutton)  <br>_Multiple buttons on a single ADC pin using resistor ladder._  |
@@ -84,15 +84,16 @@
 
 | Type | Name |
 | ---: | :--- |
-|  const unsigned char | [**ON\_ACTIVE**](#variable-on_active)   = `ON\_PRESS`<br> |
-|  const unsigned char | [**ON\_CHANGE**](#variable-on_change)   = `0x1`<br> |
-|  const unsigned char | [**ON\_INACTIVE**](#variable-on_inactive)   = `ON\_RELEASE`<br> |
+|  const unsigned short | [**DEBOUNCE\_DELAY**](#variable-debounce_delay)   = `120`<br> |
+|  const unsigned short | [**LONGPRESS\_DELAY**](#variable-longpress_delay)   = `750`<br> |
+|  const unsigned char | [**ON\_CHANGE**](#variable-on_change)   = `0x04`<br> |
 |  const unsigned char | [**ON\_LONGCLICK**](#variable-on_longclick)   = `0x10`<br> |
 |  const unsigned char | [**ON\_LONGPRESS**](#variable-on_longpress)   = `0x20`<br> |
-|  const unsigned char | [**ON\_PRESS**](#variable-on_press)   = `0x02`<br> |
-|  const unsigned char | [**ON\_RELEASE**](#variable-on_release)   = `0x04`<br> |
+|  const unsigned char | [**ON\_PRESS**](#variable-on_press)   = `0x01`<br> |
+|  const unsigned char | [**ON\_RELEASE**](#variable-on_release)   = `0x02`<br> |
 |  const unsigned char | [**ON\_REPEATKEY**](#variable-on_repeatkey)   = `0x40`<br> |
 |  const unsigned char | [**ON\_SHORTCLICK**](#variable-on_shortclick)   = `0x08`<br> |
+|  const unsigned short | [**REPEAT\_DELAY**](#variable-repeat_delay)   = `400`<br> |
 
 
 
@@ -118,6 +119,7 @@
 
 | Type | Name |
 | ---: | :--- |
+|  signed short | [**SIGN**](#function-sign) (signed short x) <br> |
 |  bool | [**in\_between**](#function-in_between) (signed short x, signed short a, signed short b) <br> |
 
 
@@ -192,7 +194,7 @@ Long click threshold is fixed at 750ms.
 
 _Multiple key-buttons on a single ADC pin using resistor ladder._ 
 ```C++
-using eva::KeyPinMultiButton = KeyButton<QuantizeDecor<StabilizeDecor<AnalogPinReader<PIN, PIN_MODE>>, LEVELS...>>;
+using eva::KeyPinMultiButton = ScrollButton<QuantizeDecor<StabilizeDecor<AnalogPinReader<PIN, PIN_MODE>>, LEVELS...>>;
 ```
 
 
@@ -239,7 +241,7 @@ Generates standard button events for each button, with the button number encoded
 
 _Pull-up key-button (active LOW, connect to GND)._ 
 ```C++
-using eva::KeyPullUpButton = KeyButton<BinarizeEqDecor<StabilizeDecor<DigitalPinReader<PIN, INPUT_PULLUP>>, LOW>>;
+using eva::KeyPullUpButton = ScrollButton<BinarizeEqDecor<StabilizeDecor<DigitalPinReader<PIN, INPUT_PULLUP>>, LOW>>;
 ```
 
 
@@ -585,10 +587,23 @@ Convenience alias for the most common Arduino switch wiring:
 
 
 
-### variable ON\_ACTIVE 
+### variable DEBOUNCE\_DELAY 
 
 ```C++
-const unsigned char eva::ON_ACTIVE;
+const unsigned short eva::DEBOUNCE_DELAY;
+```
+
+
+
+
+<hr>
+
+
+
+### variable LONGPRESS\_DELAY 
+
+```C++
+const unsigned short eva::LONGPRESS_DELAY;
 ```
 
 
@@ -602,19 +617,6 @@ const unsigned char eva::ON_ACTIVE;
 
 ```C++
 const unsigned char eva::ON_CHANGE;
-```
-
-
-
-
-<hr>
-
-
-
-### variable ON\_INACTIVE 
-
-```C++
-const unsigned char eva::ON_INACTIVE;
 ```
 
 
@@ -699,6 +701,19 @@ const unsigned char eva::ON_SHORTCLICK;
 
 
 <hr>
+
+
+
+### variable REPEAT\_DELAY 
+
+```C++
+const unsigned short eva::REPEAT_DELAY;
+```
+
+
+
+
+<hr>
 ## Public Functions Documentation
 
 
@@ -717,6 +732,21 @@ void eva::tac ()
 <hr>
 ## Public Static Functions Documentation
 
+
+
+
+### function SIGN 
+
+```C++
+static inline signed short eva::SIGN (
+    signed short x
+) 
+```
+
+
+
+
+<hr>
 
 
 

@@ -33,13 +33,13 @@ test(switch_detects_activation)
     TestSwitch sw;
     MockHandler handler;
 
-    sw.setListener(&handler, ON_ACTIVE);
+    sw.setListener(&handler, ON_PRESS);
     sw.setValue(1);
     sw.tac();
 
     assertEqual(sw.getValue(), 1);
     assertEqual(handler.callCount, 1);
-    assertEqual((int)handler.lastEventType, (int)ON_ACTIVE);
+    assertEqual((int)handler.lastEventType, (int)ON_PRESS);
 }
 
 test(switch_detects_deactivation)
@@ -47,7 +47,7 @@ test(switch_detects_deactivation)
     TestSwitch sw;
     MockHandler handler;
 
-    sw.setListener(&handler, ON_INACTIVE);
+    sw.setListener(&handler, ON_RELEASE);
 
     sw.setValue(1);
     sw.tac();
@@ -82,7 +82,7 @@ test(switch_no_event_when_no_change)
     TestSwitch sw;
     MockHandler handler;
 
-    sw.setListener(&handler, ON_ACTIVE);
+    sw.setListener(&handler, ON_PRESS);
     sw.setValue(1);
     sw.tac();
     assertEqual(handler.callCount, 1);
@@ -97,7 +97,7 @@ test(switch_can_be_disabled)
     TestSwitch sw;
     MockHandler handler;
 
-    sw.setListener(&handler, ON_ACTIVE);
+    sw.setListener(&handler, ON_PRESS);
     sw.enable(false);
 
     sw.setValue(1);
@@ -111,7 +111,7 @@ test(switch_can_be_reenabled)
     TestSwitch sw;
     MockHandler handler;
 
-    sw.setListener(&handler, ON_ACTIVE);
+    sw.setListener(&handler, ON_PRESS);
     sw.enable(false);
 
     sw.setValue(1);
@@ -192,7 +192,7 @@ test(switch_switch_directly_onswitched)
     btn.tac();
 
     assertEqual(handler.callCount, 1);
-    assertEqual((int)handler.lastEventType, (int)ON_PRESS);
+    assertEqual((int)handler.lastEventType, (int)ON_CHANGE);
     assertEqual((int)handler.lastArgs, 1);
 
     handler.reset();
@@ -200,7 +200,9 @@ test(switch_switch_directly_onswitched)
     btn.setValue(2);
     btn.tac();
 
-    assertEqual(handler.callCount, 2);
+    assertEqual(handler.callCount, 1);
+    assertEqual((int)handler.lastEventType, (int)ON_CHANGE);
+    assertEqual((int)handler.lastArgs, 2);
 }
 
 

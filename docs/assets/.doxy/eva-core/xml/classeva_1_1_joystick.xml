@@ -37,7 +37,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaJoystick.h" line="50" column="18" bodyfile="src/evaJoystick.h" bodystart="50" bodyend="-1"/>
+        <location file="src/evaJoystick.h" line="54" column="18" bodyfile="src/evaJoystick.h" bodystart="54" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -57,7 +57,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaJoystick.h" line="22" column="17" bodyfile="src/evaJoystick.h" bodystart="22" bodyend="29"/>
+        <location file="src/evaJoystick.h" line="26" column="17" bodyfile="src/evaJoystick.h" bodystart="26" bodyend="33"/>
       </memberdef>
       <memberdef kind="function" id="classeva_1_1_joystick_1a3db635e97473a9c8e2a7be61db84a0a9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -86,7 +86,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaJoystick.h" line="35" column="10" bodyfile="src/evaJoystick.h" bodystart="35" bodyend="38"/>
+        <location file="src/evaJoystick.h" line="39" column="10" bodyfile="src/evaJoystick.h" bodystart="39" bodyend="42"/>
       </memberdef>
       <memberdef kind="function" id="classeva_1_1_joystick_1adc8f58454b523885d8da94f8ba4e1c1b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>signed short</type>
@@ -104,7 +104,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaJoystick.h" line="44" column="18" bodyfile="src/evaJoystick.h" bodystart="44" bodyend="47"/>
+        <location file="src/evaJoystick.h" line="48" column="18" bodyfile="src/evaJoystick.h" bodystart="48" bodyend="51"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -168,7 +168,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="src/evaJoystick.h" line="15" column="3" bodyfile="src/evaJoystick.h" bodystart="16" bodyend="51"/>
+    <location file="src/evaJoystick.h" line="19" column="3" bodyfile="src/evaJoystick.h" bodystart="20" bodyend="55"/>
     <listofallmembers>
       <member refid="classeva_1_1_joystick_1adc8f58454b523885d8da94f8ba4e1c1b" prot="public" virt="non-virtual"><scope>eva::Joystick</scope><name>getTrim</name></member>
       <member refid="classeva_1_1_joystick_1ae97cb6c9ab9e38d004f425fa161c3ce2" prot="public" virt="non-virtual"><scope>eva::Joystick</scope><name>getValue</name></member>

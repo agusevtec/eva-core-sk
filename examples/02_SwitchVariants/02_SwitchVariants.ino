@@ -1,112 +1,101 @@
 /**
  * eva Library - Switch Initialization Variants
+ * 
+ * Demonstrates different switch types and their event handling:
+ * - toggleSwitch: ON_CHANGE for both ON/OFF states
+ * - pushButton: ON_PRESS for press events only
+ * - activeHighSwitch: ON_CHANGE for active HIGH toggles
+ * - multiPositionSwitch: ON_CHANGE for multiple position selector
+ * - multiButtonPad: ON_RELEASE for button release events
+ * - jumperBank: Custom reader combining two pins as 2-bit value (0-3)
  */
 
 #include <evaTac.h>
-#include <evaRepeatTimer.h>
 #include <evaSwitch.h>
 
 using namespace eva;
 
 class App {
 private:
-  // Power switch: track active/inactive states
-  // Digital pin 2 to GND (using internal pull-up) - On/Off Switch
-  // Physical switches - use ON_ACTIVE/ON_INACTIVE
-  PullupSwitch<2> modeToggle{ new Handler<App>(this, &App::onPowerSwitchActive), ON_CHANGE };
+  // Simple toggle switch - reports both "ON" and "OFF" state changes
+  PullupSwitch<2> toggleSwitch{ new Handler<App>(this, &App::onToggleSwitch), ON_CHANGE };
 
-  // Reset button: press and release events
-  // The class is a  same but semantic is differ: use aliases ON_RELEASE
-  // Switch 2: Digital pin 3 to GND (using internal pull-up) - Momentary Button
-  PinSwitch<3, INPUT_PULLUP, LOW> connectButton{ new Handler<App>(this, &App::onResetButtonRelease), ON_RELEASE };
+  // Push button - reports only press events (release ignored)
+  // With ON_PRESS | ON_RELEASE it behaves like a simple button (both press and release events)
+  // When using ON_PRESS | ON_RELEASE, value 0 means no button is active
+  PullupSwitch<3> pushButton{ new Handler<App>(this, &App::onPushButtonPress), ON_PRESS };
 
-  // Start button: only care about press
-  // Switch 3: Digital pin 4 to 5V (active HIGH) - Active High Button
-  PinSwitch<4, INPUT, HIGH> startButton{ new Handler<App>(this, &App::onStartButtonPress), ON_PRESS };
+  // Active HIGH toggle - reports both "ON" and "OFF" state changes
+  PinSwitch<4, INPUT, HIGH> activeHighSwitch{ new Handler<App>(this, &App::onActiveHighSwitch), ON_CHANGE };
 
-  // Keypad buttons: individual handlers per button using eventArg
-  // Multi-switch on ADC - treat as buttons (press/release)
-  // Resistor ladder: Multiple switches on A0 with different resistors
-  PinMultiSwitch<A0, INPUT, 400, 300, 230, 180> keypadButtons{ new Handler<App>(this, &App::onKeypadButtonRelease), ON_RELEASE };
+  // Multi-position switch (e.g., rotary/selector) - reports which position is active
+  PinMultiSwitch<A0, INPUT, 0, 200, 400, 600> multiPositionSwitch{ new Handler<App>(this, &App::onMultiPositionSwitch), ON_CHANGE };
 
-  // Status reporting
-  RepeatTimer reportTimer{ 3000, new Handler<App>(this, &App::onReportTimer) };
-  bool devicePowered = false;
+  // Multiple buttons on a single ADC pin using resistor ladder:
+  //   ADC Pin  -----+--R1--+--R2--+--R3--+--R4--+
+  //  (analog A1)    |      |      |      |      |
+  //                  \      \      \      \      \
+  //                 |      |      |      |      |
+  //      GND   -----+------+------+------+------+
+  //
+  // Each button produces different ADC value when pressed/
+  // Using ON_RELEASE to detect when button is released
+  //
+  // Note:
+  // The first value in the list (here is 0) is reserved to indicate "inactive" state
+  PinMultiSwitch<A1, INPUT_PULLUP, 0, 200, 400, 600> multiButtonPad{ new Handler<App>(this, &App::onMultiButtonRelease), ON_RELEASE };
+
+  // Custom reader that reads two jumper pins as a 2-bit value (0-3)
+  class JumpersBank {
+  public:
+    JumpersBank() {
+      pinMode(4, INPUT_PULLUP);
+      pinMode(5, INPUT_PULLUP);
+    }
+    
+    signed short getValue() {
+      // Returns: 0,1,2,3 depending on jumper configuration
+      return digitalRead(4) * 2 + digitalRead(5);
+    }
+  };
+  // Jumper bank (2 pins) - reports 2-bit configuration value (0-3) on any change
+  Switch<StabilizeDecor<JumpersBank>> jumperBank{ new Handler<App>(this, &App::onJumperBankChanged), ON_CHANGE };
 
 public:
   App() {
     Serial.begin(9600);
-    showStatus();
+    Serial.println("=== Switch Variants Demo ===");
   }
 
-  // Power switch handlers
-  void onPowerSwitchActive(void* sender, CallbackInfo cbInfo) {
-    if (cbInfo.eventType & ON_ACTIVE) {
-      devicePowered = true;
-      Serial.println("*** POWER ON ***");
-      showStatus();
-    }
-    if (cbInfo.eventType & ON_INACTIVE) {
-      devicePowered = false;
-      Serial.println("*** POWER OFF ***");
-      showStatus();
-    }
-  }
- 
-  // Reset button handlers
-  void onResetButtonPress(void*, CallbackInfo) {
-    Serial.println("Reset button PRESSED - preparing reset...");
+  void onToggleSwitch(void*, CallbackInfo info) {
+    Serial.print("Toggle switch (pin2): ");
+    Serial.println(info.eventArg ? "ON" : "OFF");
   }
 
-  void onResetButtonRelease(void*, CallbackInfo) {
-    if (devicePowered) {
-      Serial.println("Reset button RELEASED - executing reset!");
-    } else {
-      Serial.println("Reset ignored - device is off");
-    }
+  void onPushButtonPress(void*, CallbackInfo) {
+    Serial.println("Push button (pin3): PRESSED");
   }
 
-  // Start button handler (press only)
-  void onStartButtonPress(void*, CallbackInfo) {
-    if (devicePowered) {
-      Serial.println("Start button PRESSED - beginning operation");
-    } else {
-      Serial.println("Start ignored - device is off");
-    }
+  void onActiveHighSwitch(void*, CallbackInfo info) {
+    Serial.print("Active HIGH switch (pin4): ");
+    Serial.println(info.eventArg ? "ON" : "OFF");
   }
 
-
-  void onKeypadButtonRelease(void*, CallbackInfo info) {
-    Serial.print("Keypad button ");
-    Serial.print(info.eventArg);
-    Serial.println(" RELEASED");
-    Serial.print("  -> Action for button ");
+  void onMultiPositionSwitch(void*, CallbackInfo info) {
+    Serial.print("Multi-position switch (A0): ");
+    Serial.print("Position ");
     Serial.println(info.eventArg);
   }
 
-  void onReportTimer(void*, CallbackInfo) {
-    showStatus();
+  void onMultiButtonRelease(void*, CallbackInfo info) {
+    Serial.print("Multi-button pad (A1): Button ");
+    Serial.print(info.eventArg);
+    Serial.println(" released");
   }
 
-  void showStatus() {
-    Serial.println("\n--- System Status ---");
-    Serial.print("Device: ");
-    Serial.println(devicePowered ? "ON" : "OFF");
-    Serial.print("Power switch: ");
-    Serial.println(modeToggle.getValue() ? "ACTIVE (ON)" : "INACTIVE (OFF)");
-
-    Serial.print("Reset button: ");
-    Serial.println(connectButton.getValue() ? "PRESSED" : "released");
-
-    Serial.print("Keypad active button: ");
-    signed char val = keypadButtons.getValue();
-    if (val > 0) {
-      Serial.print("Button ");
-      Serial.println(val);
-    } else {
-      Serial.println("none");
-    }
-    Serial.println("--------------------\n");
+  void onJumperBankChanged(void*, CallbackInfo info) {
+    Serial.print("Jumper bank (pins 4,5): Configuration ");
+    Serial.println(info.eventArg);
   }
 };
 

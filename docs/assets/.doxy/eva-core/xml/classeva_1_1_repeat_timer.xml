@@ -17,7 +17,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaRepeatTimer.h" line="41" column="24" bodyfile="src/evaRepeatTimer.h" bodystart="41" bodyend="-1"/>
+        <location file="src/evaRepeatTimer.h" line="66" column="24" bodyfile="src/evaRepeatTimer.h" bodystart="66" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -73,12 +73,25 @@
           <declname>period</declname>
         </param>
         <briefdescription>
+<para>Changes the timer period. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>period</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>New interval in milliseconds </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Pointer to this <ref refid="classeva_1_1_repeat_timer" kindref="compound">RepeatTimer</ref> instance for method chaining </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaRepeatTimer.h" line="24" column="21"/>
+        <location file="src/evaRepeatTimer.h" line="30" column="21"/>
       </memberdef>
       <memberdef kind="function" id="classeva_1_1_repeat_timer_1af78ac49afc2ae6ee4b23928283178a09" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classeva_1_1_repeat_timer_1ad2e84533c5ae3faca906d755ea6b73cd" kindref="member">RepeatTimer</ref> *</type>
@@ -91,12 +104,25 @@
           <declname>listener</declname>
         </param>
         <briefdescription>
+<para>Assigns or changes the event listener. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>listener</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to <ref refid="classeva_1_1_i_handler" kindref="compound">IHandler</ref> implementation that will receive timer events </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Pointer to this <ref refid="classeva_1_1_repeat_timer" kindref="compound">RepeatTimer</ref> instance for method chaining </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaRepeatTimer.h" line="26" column="21"/>
+        <location file="src/evaRepeatTimer.h" line="37" column="21"/>
       </memberdef>
       <memberdef kind="function" id="classeva_1_1_repeat_timer_1a3b212e76c646014c0b148d4ea91cb55f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -137,7 +163,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaRepeatTimer.h" line="33" column="14"/>
+        <location file="src/evaRepeatTimer.h" line="44" column="14"/>
       </memberdef>
       <memberdef kind="function" id="classeva_1_1_repeat_timer_1a1f560606edcb5f2f5a9d6435f8ee9eaf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -150,12 +176,23 @@
           <declname>period</declname>
         </param>
         <briefdescription>
+<para>Starts or restarts the countdown timer. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>period</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Interval in milliseconds</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Listener must be assigned via constructor or <ref refid="classeva_1_1_repeat_timer_1af78ac49afc2ae6ee4b23928283178a09" kindref="member">setListener()</ref>. Use overloaded version with listener parameter if not pre-assigned. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaRepeatTimer.h" line="34" column="14"/>
+        <location file="src/evaRepeatTimer.h" line="52" column="14"/>
       </memberdef>
       <memberdef kind="function" id="classeva_1_1_repeat_timer_1a8ed99322c858d9e544dd935ac7489198" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -164,12 +201,23 @@
         <name>start</name>
         <qualifiedname>eva::RepeatTimer::start</qualifiedname>
         <briefdescription>
+<para>Starts or restarts the countdown timer. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>period</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Interval in milliseconds</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Listener and period must be assigned via constructor or <ref refid="classeva_1_1_repeat_timer_1af78ac49afc2ae6ee4b23928283178a09" kindref="member">setListener()</ref> and <ref refid="classeva_1_1_repeat_timer_1a9d8300f6be9bcbd119c80898b5abf80d" kindref="member">setPeriod()</ref>. Use overloaded versions if not pre-assigned. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaRepeatTimer.h" line="35" column="14"/>
+        <location file="src/evaRepeatTimer.h" line="60" column="14"/>
       </memberdef>
       <memberdef kind="function" id="classeva_1_1_repeat_timer_1a971246536c3cca838038b493c4da414c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -218,7 +266,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaRepeatTimer.h" line="38" column="14"/>
+        <location file="src/evaRepeatTimer.h" line="63" column="14"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -269,7 +317,7 @@
         <link refid="classeva_1_1_tickable"/>
       </node>
     </collaborationgraph>
-    <location file="src/evaRepeatTimer.h" line="12" column="5" bodyfile="src/evaRepeatTimer.h" bodystart="13" bodyend="42"/>
+    <location file="src/evaRepeatTimer.h" line="12" column="5" bodyfile="src/evaRepeatTimer.h" bodystart="13" bodyend="67"/>
     <listofallmembers>
       <member refid="classeva_1_1_repeat_timer_1a971246536c3cca838038b493c4da414c" prot="public" virt="non-virtual"><scope>eva::RepeatTimer</scope><name>DelayTimer</name></member>
       <member refid="classeva_1_1_repeat_timer_1a5889ee3ab5a8f31a35f8849c12be2323" prot="public" virt="non-virtual"><scope>eva::RepeatTimer</scope><name>DelayTimer</name></member>

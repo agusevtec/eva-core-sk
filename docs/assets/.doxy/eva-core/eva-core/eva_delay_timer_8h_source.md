@@ -15,13 +15,16 @@
 #include "evaTickable.h"
 #include "evaHandler.h"
 
+#define IS_BEFORE(t1, t2) (((t2) - (t1)) <= 0x7FFFFFFFUL)
+
+
 namespace eva
 {
     class DelayTimer : public Tickable
     {
     public:
         DelayTimer();
-        
+
         DelayTimer(IHandler *listener);
 
         void start(unsigned short delay, IHandler *listener);
@@ -30,8 +33,8 @@ namespace eva
 
         bool isRunning();
 
-        DelayTimer* setListener(IHandler *listener);
-        
+        DelayTimer *setListener(IHandler *listener);
+
         void stop();
 
     protected:
@@ -42,7 +45,6 @@ namespace eva
         IHandler *listener;
     };
 }
-
 
 #endif
 ```

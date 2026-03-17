@@ -17,11 +17,11 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.4">
     
     
       
-        <title>File evaCommon.h - EVA Core | EVA Survival Kit</title>
+        <title>File evaScrollButton.h - EVA Core | EVA Survival Kit</title>
       
     
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#file-evacommonh" class="md-skip">
+        <a href="#file-evascrollbuttonh" class="md-skip">
           Skip to content
         </a>
       
@@ -98,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              File evaCommon.h
+              File evaScrollButton.h
             
           </span>
         </div>
@@ -672,6 +672,36 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#namespaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Namespaces
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Classes
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -690,30 +720,45 @@
   
 
 
-<h1 id="file-evacommonh">File evaCommon.h<a class="headerlink" href="#file-evacommonh" title="Permanent link">&para;</a></h1>
-<p><a href="../files/"><strong>File List</strong></a> <strong>&gt;</strong> <a href="../dir_68267d1309a1af8e8297ef4c3efbcdba/"><strong>src</strong></a> <strong>&gt;</strong> <a href="../eva_common_8h/"><strong>evaCommon.h</strong></a></p>
-<p><a href="../eva_common_8h/">Go to the documentation of this file</a></p>
-<div class="codehilite"><pre><span></span><code><span class="cp">#ifndef EVACOMMON_H</span>
-<span class="cp">#define EVACOMMON_H</span>
-
-<span class="cp">#pragma once</span>
-<span class="cp">#ifndef DEBOUNCE_DELAY</span>
-<span class="w">    </span><span class="cp">#define DEBOUNCE_DELAY 120</span>
-<span class="cp">#endif</span>
-
-<span class="cp">#ifndef LONGPRESS_DELAY</span>
-<span class="w">    </span><span class="cp">#define LONGPRESS_DELAY 750</span>
-<span class="cp">#endif</span>
-
-<span class="cp">#ifndef REPEAT_DELAY</span>
-<span class="w">    </span><span class="cp">#define REPEAT_DELAY 400</span>
-<span class="cp">#endif</span>
-
-<span class="cp">#define SIGN(x) (((x) &gt; 0) - ((x) &lt; 0))</span>
-<span class="cp">#define IS_BEFORE(t1, t2) (((t2) - (t1)) &lt;= 0x7FFFFFFFUL)</span>
-
-<span class="cp">#endif</span>
-</code></pre></div>
+<h1 id="file-evascrollbuttonh">File evaScrollButton.h<a class="headerlink" href="#file-evascrollbuttonh" title="Permanent link">&para;</a></h1>
+<p><a href="../files/"><strong>FileList</strong></a> <strong>&gt;</strong> <a href="../dir_68267d1309a1af8e8297ef4c3efbcdba/"><strong>src</strong></a> <strong>&gt;</strong> <a href="./"><strong>evaScrollButton.h</strong></a></p>
+<p><a href="../eva_scroll_button_8h_source/">Go to the source code of this file</a></p>
+<ul>
+<li><code>#include "evaButton.h"</code></li>
+<li><code>#include "evaCommon.h"</code></li>
+</ul>
+<h2 id="namespaces">Namespaces<a class="headerlink" href="#namespaces" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Type</th>
+<th style="text-align: left;">Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">namespace</td>
+<td style="text-align: left;"><a href="../namespaceeva/"><strong>eva</strong></a> <br></td>
+</tr>
+</tbody>
+</table>
+<h2 id="classes">Classes<a class="headerlink" href="#classes" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Type</th>
+<th style="text-align: left;">Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">class</td>
+<td style="text-align: left;"><a href="../classeva_1_1_scroll_button/"><strong>ScrollButton</strong></a> &lt;class READER&gt;<br><a href="../classeva_1_1_button/"><em><strong>Button</strong></em></a> <em>with auto-repeat (typematic) functionality.</em></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p>The documentation for this class was generated from the following file <code>src/evaScrollButton.h</code></p>
 
 
 

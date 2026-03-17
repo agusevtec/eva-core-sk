@@ -22,6 +22,7 @@ test(button_detects_press)
     assertEqual(handler.callCount, 1);
     assertEqual((int)handler.lastEventType, (int)ON_PRESS);
 }
+
 test(button_detects_release)
 {
     TestButton btn;

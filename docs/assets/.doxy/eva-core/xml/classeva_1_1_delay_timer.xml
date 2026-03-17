@@ -19,7 +19,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaDelayTimer.h" line="42" column="23" bodyfile="src/evaDelayTimer.h" bodystart="42" bodyend="-1"/>
+        <location file="src/evaDelayTimer.h" line="61" column="23" bodyfile="src/evaDelayTimer.h" bodystart="61" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classeva_1_1_delay_timer_1a79cfcb6054cd07ae88faa66e96e1a29f" prot="protected" static="no" mutable="no">
         <type><ref refid="classeva_1_1_i_handler" kindref="compound">IHandler</ref> *</type>
@@ -33,7 +33,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaDelayTimer.h" line="43" column="18" bodyfile="src/evaDelayTimer.h" bodystart="43" bodyend="-1"/>
+        <location file="src/evaDelayTimer.h" line="62" column="18" bodyfile="src/evaDelayTimer.h" bodystart="62" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -49,7 +49,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaDelayTimer.h" line="16" column="9"/>
+        <location file="src/evaDelayTimer.h" line="19" column="9"/>
       </memberdef>
       <memberdef kind="function" id="classeva_1_1_delay_timer_1a5889ee3ab5a8f31a35f8849c12be2323" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -67,7 +67,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaDelayTimer.h" line="18" column="9"/>
+        <location file="src/evaDelayTimer.h" line="21" column="9"/>
       </memberdef>
       <memberdef kind="function" id="classeva_1_1_delay_timer_1a09341604aaf16757f0b663545ded5b62" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -108,7 +108,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaDelayTimer.h" line="25" column="14"/>
+        <location file="src/evaDelayTimer.h" line="28" column="14"/>
       </memberdef>
       <memberdef kind="function" id="classeva_1_1_delay_timer_1afed3e0879fabc3878788791895a95c0f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -121,12 +121,23 @@
           <declname>delay</declname>
         </param>
         <briefdescription>
+<para>Starts the timer. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>delay</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Delay in milliseconds</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Listener must be assigned via constructor or <ref refid="classeva_1_1_delay_timer_1a37416cde9f8aac62cadee90695e75efe" kindref="member">setListener()</ref>. Use overloaded version with listener parameter if not pre-assigned. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaDelayTimer.h" line="27" column="14"/>
+        <location file="src/evaDelayTimer.h" line="37" column="14"/>
       </memberdef>
       <memberdef kind="function" id="classeva_1_1_delay_timer_1a4d615ec24c146a2b46feea535a8e7830" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -135,12 +146,16 @@
         <name>isRunning</name>
         <qualifiedname>eva::DelayTimer::isRunning</qualifiedname>
         <briefdescription>
+<para>Checks if the timer is currently active. </para>
         </briefdescription>
         <detaileddescription>
+<para><simplesect kind="return"><para>true if timer is running and will fire, false otherwise </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaDelayTimer.h" line="29" column="14"/>
+        <location file="src/evaDelayTimer.h" line="43" column="14"/>
       </memberdef>
       <memberdef kind="function" id="classeva_1_1_delay_timer_1a37416cde9f8aac62cadee90695e75efe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>DelayTimer *</type>
@@ -153,12 +168,25 @@
           <declname>listener</declname>
         </param>
         <briefdescription>
+<para>Assigns or changes the event listener. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>listener</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to <ref refid="classeva_1_1_i_handler" kindref="compound">IHandler</ref> implementation that will receive timer events </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Pointer to this <ref refid="classeva_1_1_delay_timer" kindref="compound">DelayTimer</ref> instance for method chaining </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaDelayTimer.h" line="31" column="20"/>
+        <location file="src/evaDelayTimer.h" line="50" column="20"/>
       </memberdef>
       <memberdef kind="function" id="classeva_1_1_delay_timer_1a0e61d51bcd42b77a47381496ddb8445c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -173,7 +201,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaDelayTimer.h" line="36" column="14"/>
+        <location file="src/evaDelayTimer.h" line="55" column="14"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="protected-func">
@@ -191,7 +219,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaDelayTimer.h" line="39" column="14"/>
+        <location file="src/evaDelayTimer.h" line="58" column="14"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -242,7 +270,7 @@
         <link refid="classeva_1_1_tickable"/>
       </node>
     </collaborationgraph>
-    <location file="src/evaDelayTimer.h" line="13" column="5" bodyfile="src/evaDelayTimer.h" bodystart="14" bodyend="44"/>
+    <location file="src/evaDelayTimer.h" line="16" column="5" bodyfile="src/evaDelayTimer.h" bodystart="17" bodyend="63"/>
     <listofallmembers>
       <member refid="classeva_1_1_delay_timer_1a971246536c3cca838038b493c4da414c" prot="public" virt="non-virtual"><scope>eva::DelayTimer</scope><name>DelayTimer</name></member>
       <member refid="classeva_1_1_delay_timer_1a5889ee3ab5a8f31a35f8849c12be2323" prot="public" virt="non-virtual"><scope>eva::DelayTimer</scope><name>DelayTimer</name></member>

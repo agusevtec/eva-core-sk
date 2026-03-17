@@ -3,6 +3,11 @@
 
 
 
+## d
+
+* **DEBOUNCE\_DELAY** ([**eva**](namespaceeva.md))
+
+
 ## i
 
 * **in\_between** ([**eva**](namespaceeva.md))
@@ -15,11 +20,14 @@
 * **KeyPullUpButton** ([**eva**](namespaceeva.md))
 
 
+## l
+
+* **LONGPRESS\_DELAY** ([**eva**](namespaceeva.md))
+
+
 ## o
 
-* **ON\_ACTIVE** ([**eva**](namespaceeva.md))
 * **ON\_CHANGE** ([**eva**](namespaceeva.md))
-* **ON\_INACTIVE** ([**eva**](namespaceeva.md))
 * **ON\_LONGCLICK** ([**eva**](namespaceeva.md))
 * **ON\_LONGPRESS** ([**eva**](namespaceeva.md))
 * **ON\_PRESS** ([**eva**](namespaceeva.md))
@@ -39,6 +47,16 @@
 * **PinSymmetricJoystick** ([**eva**](namespaceeva.md))
 * **PullUpButton** ([**eva**](namespaceeva.md))
 * **PullupSwitch** ([**eva**](namespaceeva.md))
+
+
+## r
+
+* **REPEAT\_DELAY** ([**eva**](namespaceeva.md))
+
+
+## s
+
+* **SIGN** ([**eva**](namespaceeva.md))
 
 
 ## t

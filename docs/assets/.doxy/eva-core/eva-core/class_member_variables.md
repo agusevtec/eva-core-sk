@@ -52,9 +52,9 @@
 ## l
 
 * **listener** ([**eva::CountdownIndicator**](classeva_1_1_countdown_indicator.md), [**eva::DelayTimer**](classeva_1_1_delay_timer.md), [**eva::Switch**](classeva_1_1_switch.md))
-* **lastRepeatTime** ([**eva::KeyButton**](classeva_1_1_key_button.md))
 * **length** ([**eva::List**](classeva_1_1_list.md))
 * **levels** ([**eva::QuantizeDecor**](classeva_1_1_quantize_decor.md))
+* **lastRepeatTime** ([**eva::ScrollButton**](classeva_1_1_scroll_button.md))
 * **levelCode** ([**eva::Switch**](classeva_1_1_switch.md))
 * **last** ([**eva::Tickable**](classeva_1_1_tickable.md))
 

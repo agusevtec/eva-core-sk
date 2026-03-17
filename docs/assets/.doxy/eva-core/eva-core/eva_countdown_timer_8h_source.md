@@ -24,7 +24,10 @@ namespace eva
         CountdownTimer *setListener(IHandler *listener);
 
         void start(unsigned short period, unsigned char count, IHandler *listener);
+
         void start(unsigned short period, unsigned char count);
+ 
+        unsigned char getRemaining();
 
     private:
         void tick() override;

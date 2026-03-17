@@ -29,8 +29,8 @@
         <link refid="eva_joystick_8h_source"/>
       </node>
       <node id="6">
-        <label>src/evaKeyButton.h</label>
-        <link refid="eva_key_button_8h_source"/>
+        <label>src/evaScrollButton.h</label>
+        <link refid="eva_scroll_button_8h_source"/>
       </node>
       <node id="3">
         <label>src/evaSlider.h</label>

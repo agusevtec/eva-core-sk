@@ -17,7 +17,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaCountdownTimer.h" line="31" column="24" bodyfile="src/evaCountdownTimer.h" bodystart="31" bodyend="-1"/>
+        <location file="src/evaCountdownTimer.h" line="52" column="24" bodyfile="src/evaCountdownTimer.h" bodystart="52" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classeva_1_1_countdown_timer_1a4ad9fe360a886b01459824b9de268538" prot="private" static="no" mutable="no">
         <type>unsigned char</type>
@@ -31,7 +31,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaCountdownTimer.h" line="32" column="23" bodyfile="src/evaCountdownTimer.h" bodystart="32" bodyend="-1"/>
+        <location file="src/evaCountdownTimer.h" line="53" column="23" bodyfile="src/evaCountdownTimer.h" bodystart="53" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -46,12 +46,25 @@
           <declname>listener</declname>
         </param>
         <briefdescription>
+<para>Assigns or changes the event listener. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>listener</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to <ref refid="classeva_1_1_i_handler" kindref="compound">IHandler</ref> implementation that will receive timer events </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Pointer to this <ref refid="classeva_1_1_countdown_timer" kindref="compound">CountdownTimer</ref> instance for method chaining </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaCountdownTimer.h" line="17" column="24"/>
+        <location file="src/evaCountdownTimer.h" line="22" column="24"/>
       </memberdef>
       <memberdef kind="function" id="classeva_1_1_countdown_timer_1a895fb90883c085c20f946bb2a21f78df" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -85,6 +98,14 @@
 </parameteritem>
 <parameteritem>
 <parameternamelist>
+<parametername>count</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of iterations </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
 <parametername>listener</parametername>
 </parameternamelist>
 <parameterdescription>
@@ -96,7 +117,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaCountdownTimer.h" line="24" column="14"/>
+        <location file="src/evaCountdownTimer.h" line="30" column="14"/>
       </memberdef>
       <memberdef kind="function" id="classeva_1_1_countdown_timer_1a4d623df89d82a86a1dc059721ceca2e7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -113,12 +134,49 @@
           <declname>count</declname>
         </param>
         <briefdescription>
+<para>Starts or restarts the countdown timer. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>period</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Interval in milliseconds </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>count</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of iterations</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Listener must be assigned via constructor or <ref refid="classeva_1_1_countdown_timer_1a7ec153656555d5873e7250e20bf4303e" kindref="member">setListener()</ref>. Use overloaded version with listener parameter if not pre-assigned. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaCountdownTimer.h" line="25" column="14"/>
+        <location file="src/evaCountdownTimer.h" line="40" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classeva_1_1_countdown_timer_1a4cbcb7d35dd49ccfa714aa045d25fed7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned char</type>
+        <definition>unsigned char eva::CountdownTimer::getRemaining</definition>
+        <argsstring>()</argsstring>
+        <name>getRemaining</name>
+        <qualifiedname>eva::CountdownTimer::getRemaining</qualifiedname>
+        <briefdescription>
+<para>Returns the number of remaining timer ticks. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Number of pending executions (0 if timer is not running) </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evaCountdownTimer.h" line="46" column="23"/>
       </memberdef>
       <memberdef kind="function" id="classeva_1_1_countdown_timer_1a971246536c3cca838038b493c4da414c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -167,7 +225,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaCountdownTimer.h" line="28" column="14"/>
+        <location file="src/evaCountdownTimer.h" line="49" column="14"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -218,10 +276,11 @@
         <link refid="classeva_1_1_tickable"/>
       </node>
     </collaborationgraph>
-    <location file="src/evaCountdownTimer.h" line="12" column="5" bodyfile="src/evaCountdownTimer.h" bodystart="13" bodyend="33"/>
+    <location file="src/evaCountdownTimer.h" line="12" column="5" bodyfile="src/evaCountdownTimer.h" bodystart="13" bodyend="54"/>
     <listofallmembers>
       <member refid="classeva_1_1_countdown_timer_1a971246536c3cca838038b493c4da414c" prot="public" virt="non-virtual"><scope>eva::CountdownTimer</scope><name>DelayTimer</name></member>
       <member refid="classeva_1_1_countdown_timer_1a5889ee3ab5a8f31a35f8849c12be2323" prot="public" virt="non-virtual"><scope>eva::CountdownTimer</scope><name>DelayTimer</name></member>
+      <member refid="classeva_1_1_countdown_timer_1a4cbcb7d35dd49ccfa714aa045d25fed7" prot="public" virt="non-virtual"><scope>eva::CountdownTimer</scope><name>getRemaining</name></member>
       <member refid="classeva_1_1_delay_timer_1a4d615ec24c146a2b46feea535a8e7830" prot="public" virt="non-virtual"><scope>eva::CountdownTimer</scope><name>isRunning</name></member>
       <member refid="classeva_1_1_delay_timer_1a79cfcb6054cd07ae88faa66e96e1a29f" prot="protected" virt="non-virtual"><scope>eva::CountdownTimer</scope><name>listener</name></member>
       <member refid="classeva_1_1_delay_timer_1aaa15353150b005949a4cb0345ebf83ca" prot="protected" virt="non-virtual"><scope>eva::CountdownTimer</scope><name>nextFire</name></member>

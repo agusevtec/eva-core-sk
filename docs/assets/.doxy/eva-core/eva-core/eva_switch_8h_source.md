@@ -19,12 +19,10 @@
 
 namespace eva
 {
-    static const unsigned char ON_CHANGE = 0x1;
-    static const unsigned char ON_PRESS = 0x02;
-    static const unsigned char ON_RELEASE = 0x04;
+    static const unsigned char ON_PRESS = 0x01;
+    static const unsigned char ON_RELEASE = 0x02;
 
-    static const unsigned char ON_ACTIVE = ON_PRESS;
-    static const unsigned char ON_INACTIVE = ON_RELEASE;
+    static const unsigned char ON_CHANGE = 0x04;
 
     template <class READER>
     class Switch : public READER, public Tickable
@@ -72,6 +70,11 @@ namespace eva
                 this->levelCode = 0;
         }
 
+        bool checkChanging(unsigned char wasLevelCode)
+        {
+            return (wasLevelCode != this->levelCode);
+        }
+
         bool checkDeactivating(unsigned char wasLevelCode)
         {
             return (wasLevelCode > 0) && (wasLevelCode != this->levelCode);
@@ -89,16 +92,19 @@ namespace eva
                     this->listener->invoke(this, {eventType, eventCode});
         }
 
+        void handleChanging()
+        {
+            this->notify(ON_CHANGE, this->levelCode);
+        }
+
         void handleDeactivating(unsigned char wasLevelCode)
         {
             this->notify(ON_RELEASE, wasLevelCode);
-            this->notify(ON_CHANGE, wasLevelCode);
         }
 
         void handleActivating()
         {
             this->notify(ON_PRESS, this->levelCode);
-            this->notify(ON_CHANGE, this->levelCode);
         }
 
     private:
@@ -109,6 +115,9 @@ namespace eva
 
             unsigned char wasLevelCode = this->levelCode;
             updateState();
+            
+            if (checkChanging(wasLevelCode))
+                handleChanging();
 
             if (checkDeactivating(wasLevelCode))
                 handleDeactivating(wasLevelCode);

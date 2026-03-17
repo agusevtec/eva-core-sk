@@ -29,7 +29,7 @@ void BlinkingIndicator::on(unsigned short period, unsigned char dutycyclePercent
   startCycle();
 }
 
-void BlinkingIndicator::invoke(void *msgSender, CallbackInfo cbInfo)
+void BlinkingIndicator::invoke(void *msgSender, CallbackInfo)
 {
   if (msgSender == &this->heartbeatTimer)
     startCycle();

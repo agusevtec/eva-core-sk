@@ -14,10 +14,11 @@
 #pragma once
 
 #include <Arduino.h>
-#include "evaCommon.h"
 
 namespace eva
 {
+    static const unsigned short DEBOUNCE_DELAY = 120;
+
     inline static bool in_between(signed short x, signed short a, signed short b)
     {
         if ((a <= b) && (a <= x) && (x <= b))
@@ -88,6 +89,7 @@ namespace eva
     class QuantizeDecor : public READER
     {
         static_assert(sizeof...(LEVELS) >= 2, "QuantizeDecor requires at least 2 levels");
+
     public:
         signed short getValue()
         {

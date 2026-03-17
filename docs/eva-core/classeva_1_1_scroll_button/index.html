@@ -17,11 +17,11 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.4">
     
     
       
-        <title>File evaKeyButton.h - EVA Core | EVA Survival Kit</title>
+        <title>Class eva::ScrollButton - EVA Core | EVA Survival Kit</title>
       
     
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#file-evakeybuttonh" class="md-skip">
+        <a href="#class-evascrollbutton" class="md-skip">
           Skip to content
         </a>
       
@@ -98,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              File evaKeyButton.h
+              Class eva::ScrollButton
             
           </span>
         </div>
@@ -672,6 +672,102 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#public-functions-inherited-from-evaswitch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Public Functions inherited from eva::Switch
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#public-functions-inherited-from-evatickable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Public Functions inherited from eva::Tickable
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#public-static-functions-inherited-from-evatickable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Public Static Functions inherited from eva::Tickable
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#protected-attributes-inherited-from-evabutton" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Protected Attributes inherited from eva::Button
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#protected-attributes-inherited-from-evaswitch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Protected Attributes inherited from eva::Switch
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#protected-functions-inherited-from-evabutton" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Protected Functions inherited from eva::Button
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#protected-functions-inherited-from-evaswitch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Protected Functions inherited from eva::Switch
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#detailed-description" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Description
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -690,91 +786,228 @@
   
 
 
-<h1 id="file-evakeybuttonh">File evaKeyButton.h<a class="headerlink" href="#file-evakeybuttonh" title="Permanent link">&para;</a></h1>
-<p><a href="../files/"><strong>File List</strong></a> <strong>&gt;</strong> <a href="../dir_68267d1309a1af8e8297ef4c3efbcdba/"><strong>src</strong></a> <strong>&gt;</strong> <a href="../eva_key_button_8h/"><strong>evaKeyButton.h</strong></a></p>
-<p><a href="../eva_key_button_8h/">Go to the documentation of this file</a></p>
-<div class="codehilite"><pre><span></span><code><span class="cp">#ifndef EVAKEYBUTTON_H</span>
-<span class="cp">#define EVAKEYBUTTON_H</span>
-
-<span class="cp">#pragma once</span>
-
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;evaButton.h&quot;</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;evaCommon.h&quot;</span>
-
-<span class="k">namespace</span><span class="w"> </span><span class="nn">eva</span>
-<span class="p">{</span>
-<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">ON_REPEATKEY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x40</span><span class="p">;</span>
-
-<span class="w">    </span><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">READER</span><span class="o">&gt;</span>
-<span class="w">    </span><span class="k">class</span><span class="w"> </span><span class="nc">KeyButton</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">Button</span><span class="o">&lt;</span><span class="n">READER</span><span class="o">&gt;</span>
-<span class="w">    </span><span class="p">{</span>
-<span class="w">    </span><span class="k">public</span><span class="o">:</span>
-<span class="w">        </span><span class="k">using</span><span class="w"> </span><span class="n">Button</span><span class="o">&lt;</span><span class="n">READER</span><span class="o">&gt;::</span><span class="n">Button</span><span class="p">;</span>
-
-<span class="w">    </span><span class="k">private</span><span class="o">:</span>
-
-<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">handleLongPress</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">now</span><span class="p">)</span>
-<span class="w">        </span><span class="p">{</span>
-<span class="w">            </span><span class="n">Button</span><span class="o">&lt;</span><span class="n">Reader</span><span class="o">&gt;::</span><span class="n">handleLongpress</span><span class="p">();</span>
-<span class="w">            </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">notify</span><span class="p">(</span><span class="n">ON_REPEATKEY</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">levelCode</span><span class="p">);</span>
-<span class="w">            </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">lastRepeatTime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">max</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">now</span><span class="p">);</span>
-<span class="w">        </span><span class="p">}</span>
-
-<span class="w">        </span><span class="kt">void</span><span class="w"> </span><span class="n">handleDeactivating</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">wasLevelCode</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">now</span><span class="p">)</span>
-<span class="w">        </span><span class="p">{</span>
-<span class="w">            </span><span class="n">Button</span><span class="o">&lt;</span><span class="n">READER</span><span class="o">&gt;::</span><span class="n">handleDeactivating</span><span class="p">(</span><span class="n">wasLevelCode</span><span class="p">);</span>
-<span class="w">            </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">lastRepeatTime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-<span class="w">        </span><span class="p">}</span>
-
-<span class="w">        </span><span class="kt">bool</span><span class="w"> </span><span class="n">checkRepeatTime</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">now</span><span class="p">)</span>
-<span class="w">        </span><span class="p">{</span>
-<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">lastRepeatTime</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">(</span><span class="n">now</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">lastRepeatTime</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">REPEAT_DELAY</span><span class="p">;</span>
-<span class="w">        </span><span class="p">}</span>
-
-<span class="w">        </span><span class="kt">void</span><span class="w"> </span><span class="n">handleRepeatTime</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">now</span><span class="p">)</span>
-<span class="w">        </span><span class="p">{</span>
-<span class="w">            </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">notify</span><span class="p">(</span><span class="n">ON_REPEATKEY</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">levelCode</span><span class="p">);</span>
-<span class="w">            </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">lastRepeatTime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">max</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">now</span><span class="p">);</span>
-<span class="w">        </span><span class="p">}</span>
-
-<span class="w">    </span><span class="k">private</span><span class="o">:</span>
-<span class="w">        </span><span class="kt">void</span><span class="w"> </span><span class="n">tick</span><span class="p">()</span><span class="w"> </span><span class="k">override</span>
-<span class="w">        </span><span class="p">{</span>
-<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="o">-&gt;</span><span class="n">levelCode</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
-<span class="w">                </span><span class="k">return</span><span class="p">;</span>
-
-<span class="w">            </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">now</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">millis</span><span class="p">();</span>
-<span class="w">            </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">wasLevelCode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">levelCode</span><span class="p">;</span>
-<span class="w">            </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">updateState</span><span class="p">();</span>
-
-<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">checkLongPress</span><span class="p">(</span><span class="n">now</span><span class="p">))</span>
-<span class="w">                </span><span class="n">handleLongPress</span><span class="p">();</span>
-
-<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">checkRepeatTime</span><span class="p">(</span><span class="n">now</span><span class="p">))</span>
-<span class="w">                </span><span class="n">handleRepeatTime</span><span class="p">(</span><span class="n">now</span><span class="p">);</span>
-
-<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="o">-&gt;</span><span class="n">checkDeactivating</span><span class="p">(</span><span class="n">wasLevelCode</span><span class="p">))</span>
-<span class="w">                </span><span class="n">handleDeactivating</span><span class="p">(</span><span class="n">wasLevelCode</span><span class="p">,</span><span class="w"> </span><span class="n">now</span><span class="p">);</span>
-
-<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="o">-&gt;</span><span class="n">checkActivating</span><span class="p">(</span><span class="n">wasLevelCode</span><span class="p">))</span>
-<span class="w">                </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">handleActivating</span><span class="p">(</span><span class="n">now</span><span class="p">);</span>
-<span class="w">        </span><span class="p">}</span>
-
-<span class="w">    </span><span class="k">private</span><span class="o">:</span>
-<span class="w">        </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">lastRepeatTime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-<span class="w">    </span><span class="p">};</span>
-
-<span class="w">    </span><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">int</span><span class="w"> </span><span class="n">PIN</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">PIN_MODE</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">ACTIVATES_ON</span><span class="o">&gt;</span>
-<span class="w">    </span><span class="k">using</span><span class="w"> </span><span class="n">KeyPinButton</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Button</span><span class="o">&lt;</span><span class="n">BinarizeEqDecor</span><span class="o">&lt;</span><span class="n">StabilizeDecor</span><span class="o">&lt;</span><span class="n">DigitalPinReader</span><span class="o">&lt;</span><span class="n">PIN</span><span class="p">,</span><span class="w"> </span><span class="n">PIN_MODE</span><span class="o">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">ACTIVATES_ON</span><span class="o">&gt;&gt;</span><span class="p">;</span>
-
-<span class="w">    </span><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">int</span><span class="w"> </span><span class="n">PIN</span><span class="o">&gt;</span>
-<span class="w">    </span><span class="k">using</span><span class="w"> </span><span class="n">KeyPullUpButton</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">KeyButton</span><span class="o">&lt;</span><span class="n">BinarizeEqDecor</span><span class="o">&lt;</span><span class="n">StabilizeDecor</span><span class="o">&lt;</span><span class="n">DigitalPinReader</span><span class="o">&lt;</span><span class="n">PIN</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT_PULLUP</span><span class="o">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="o">&gt;&gt;</span><span class="p">;</span>
-
-<span class="w">    </span><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">int</span><span class="w"> </span><span class="n">PIN</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">PIN_MODE</span><span class="p">,</span><span class="w"> </span><span class="kt">signed</span><span class="w"> </span><span class="kt">short</span><span class="p">...</span><span class="w"> </span><span class="n">LEVELS</span><span class="o">&gt;</span>
-<span class="w">    </span><span class="k">using</span><span class="w"> </span><span class="n">KeyPinMultiButton</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">KeyButton</span><span class="o">&lt;</span><span class="n">QuantizeDecor</span><span class="o">&lt;</span><span class="n">StabilizeDecor</span><span class="o">&lt;</span><span class="n">AnalogPinReader</span><span class="o">&lt;</span><span class="n">PIN</span><span class="p">,</span><span class="w"> </span><span class="n">PIN_MODE</span><span class="o">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">LEVELS</span><span class="p">...</span><span class="o">&gt;&gt;</span><span class="p">;</span>
-<span class="p">};</span>
-<span class="cp">#endif</span>
-</code></pre></div>
+<h1 id="class-evascrollbutton">Class eva::ScrollButton<a class="headerlink" href="#class-evascrollbutton" title="Permanent link">&para;</a></h1>
+<p><strong>template &lt;class READER&gt;</strong></p>
+<p><a href="../annotated/"><strong>ClassList</strong></a> <strong>&gt;</strong> <a href="../namespaceeva/"><strong>eva</strong></a> <strong>&gt;</strong> <a href="./"><strong>ScrollButton</strong></a></p>
+<p><a href="../classeva_1_1_button/"><em><strong>Button</strong></em></a> <em>with auto-repeat (typematic) functionality.</em><a href="#detailed-description">More...</a></p>
+<ul>
+<li><code>#include &lt;evaScrollButton.h&gt;</code></li>
+</ul>
+<p>Inherits the following classes: <a href="../classeva_1_1_button/">eva::Button</a></p>
+<h2 id="public-functions-inherited-from-evaswitch">Public Functions inherited from eva::Switch<a class="headerlink" href="#public-functions-inherited-from-evaswitch" title="Permanent link">&para;</a></h2>
+<p>See <a href="../classeva_1_1_switch/">eva::Switch</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Type</th>
+<th style="text-align: left;">Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"><a href="../classeva_1_1_switch/#function-switch-12"><strong>Switch</strong></a> () <br></td>
+</tr>
+<tr>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"><a href="../classeva_1_1_switch/#function-switch-22"><strong>Switch</strong></a> (<a href="../classeva_1_1_i_handler/"><strong>IHandler</strong></a> * listener, unsigned short eventMask) <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">Switch *</td>
+<td style="text-align: left;"><a href="../classeva_1_1_switch/#function-enable"><strong>enable</strong></a> (bool enabled) <br><em>Enables or disables the switch.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">signed short</td>
+<td style="text-align: left;"><a href="../classeva_1_1_switch/#function-getvalue"><strong>getValue</strong></a> () <br><em>Gets the current level code.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">Switch *</td>
+<td style="text-align: left;"><a href="../classeva_1_1_switch/#function-setlistener"><strong>setListener</strong></a> (<a href="../classeva_1_1_i_handler/"><strong>IHandler</strong></a> * listener, unsigned short eventMask) <br><em>Sets the event listener for this switch.</em></td>
+</tr>
+</tbody>
+</table>
+<h2 id="public-functions-inherited-from-evatickable">Public Functions inherited from eva::Tickable<a class="headerlink" href="#public-functions-inherited-from-evatickable" title="Permanent link">&para;</a></h2>
+<p>See <a href="../classeva_1_1_tickable/">eva::Tickable</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Type</th>
+<th style="text-align: left;">Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"><a href="../classeva_1_1_tickable/#function-tickable-13"><strong>Tickable</strong></a> () <br></td>
+</tr>
+<tr>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"><a href="../classeva_1_1_tickable/#function-tickable-23"><strong>Tickable</strong></a> (const Tickable &amp;) = delete<br></td>
+</tr>
+<tr>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"><a href="../classeva_1_1_tickable/#function-tickable-33"><strong>Tickable</strong></a> (Tickable &amp;&amp;) = delete<br></td>
+</tr>
+<tr>
+<td style="text-align: right;">Tickable &amp;</td>
+<td style="text-align: left;"><a href="../classeva_1_1_tickable/#function-operator"><strong>operator=</strong></a> (const Tickable &amp;) = delete<br></td>
+</tr>
+<tr>
+<td style="text-align: right;">Tickable &amp;</td>
+<td style="text-align: left;"><a href="../classeva_1_1_tickable/#function-operator_1"><strong>operator=</strong></a> (Tickable &amp;&amp;) = delete<br></td>
+</tr>
+<tr>
+<td style="text-align: right;">virtual</td>
+<td style="text-align: left;"><a href="../classeva_1_1_tickable/#function-tickable"><strong>~Tickable</strong></a> () <br></td>
+</tr>
+</tbody>
+</table>
+<h2 id="public-static-functions-inherited-from-evatickable">Public Static Functions inherited from eva::Tickable<a class="headerlink" href="#public-static-functions-inherited-from-evatickable" title="Permanent link">&para;</a></h2>
+<p>See <a href="../classeva_1_1_tickable/">eva::Tickable</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Type</th>
+<th style="text-align: left;">Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">void</td>
+<td style="text-align: left;"><a href="../classeva_1_1_tickable/#function-tac"><strong>tac</strong></a> () <br><em>Triggers tick on this and all linked tickables.</em></td>
+</tr>
+</tbody>
+</table>
+<h2 id="protected-attributes-inherited-from-evabutton">Protected Attributes inherited from eva::Button<a class="headerlink" href="#protected-attributes-inherited-from-evabutton" title="Permanent link">&para;</a></h2>
+<p>See <a href="../classeva_1_1_button/">eva::Button</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Type</th>
+<th style="text-align: left;">Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">unsigned long</td>
+<td style="text-align: left;"><a href="../classeva_1_1_button/#variable-presstime"><strong>pressTime</strong></a>   = <code>0</code><br></td>
+</tr>
+</tbody>
+</table>
+<h2 id="protected-attributes-inherited-from-evaswitch">Protected Attributes inherited from eva::Switch<a class="headerlink" href="#protected-attributes-inherited-from-evaswitch" title="Permanent link">&para;</a></h2>
+<p>See <a href="../classeva_1_1_switch/">eva::Switch</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Type</th>
+<th style="text-align: left;">Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">unsigned char</td>
+<td style="text-align: left;"><a href="../classeva_1_1_switch/#variable-curiosity"><strong>curiosity</strong></a>   = <code>0</code><br></td>
+</tr>
+<tr>
+<td style="text-align: right;">signed char</td>
+<td style="text-align: left;"><a href="../classeva_1_1_switch/#variable-levelcode"><strong>levelCode</strong></a>   = <code>0</code><br></td>
+</tr>
+<tr>
+<td style="text-align: right;"><a href="../classeva_1_1_i_handler/"><strong>IHandler</strong></a> *</td>
+<td style="text-align: left;"><a href="../classeva_1_1_switch/#variable-listener"><strong>listener</strong></a>   = <code>nullptr</code><br></td>
+</tr>
+</tbody>
+</table>
+<h2 id="protected-functions-inherited-from-evabutton">Protected Functions inherited from eva::Button<a class="headerlink" href="#protected-functions-inherited-from-evabutton" title="Permanent link">&para;</a></h2>
+<p>See <a href="../classeva_1_1_button/">eva::Button</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Type</th>
+<th style="text-align: left;">Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">bool</td>
+<td style="text-align: left;"><a href="../classeva_1_1_button/#function-checklongpress"><strong>checkLongPress</strong></a> (unsigned long now) <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">void</td>
+<td style="text-align: left;"><a href="../classeva_1_1_button/#function-handleactivating"><strong>handleActivating</strong></a> (unsigned long now) <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">void</td>
+<td style="text-align: left;"><a href="../classeva_1_1_button/#function-handledeactivating"><strong>handleDeactivating</strong></a> (unsigned char wasLevelCode, unsigned long now) <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">void</td>
+<td style="text-align: left;"><a href="../classeva_1_1_button/#function-handlelongpress"><strong>handleLongPress</strong></a> () <br></td>
+</tr>
+</tbody>
+</table>
+<h2 id="protected-functions-inherited-from-evaswitch">Protected Functions inherited from eva::Switch<a class="headerlink" href="#protected-functions-inherited-from-evaswitch" title="Permanent link">&para;</a></h2>
+<p>See <a href="../classeva_1_1_switch/">eva::Switch</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Type</th>
+<th style="text-align: left;">Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">bool</td>
+<td style="text-align: left;"><a href="../classeva_1_1_switch/#function-checkactivating"><strong>checkActivating</strong></a> (unsigned char wasLevelCode) <br><em>inactive or different -&gt; active</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">bool</td>
+<td style="text-align: left;"><a href="../classeva_1_1_switch/#function-checkchanging"><strong>checkChanging</strong></a> (unsigned char wasLevelCode) <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">bool</td>
+<td style="text-align: left;"><a href="../classeva_1_1_switch/#function-checkdeactivating"><strong>checkDeactivating</strong></a> (unsigned char wasLevelCode) <br><em>active -&gt; inactive or different state</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">void</td>
+<td style="text-align: left;"><a href="../classeva_1_1_switch/#function-handleactivating"><strong>handleActivating</strong></a> () <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">void</td>
+<td style="text-align: left;"><a href="../classeva_1_1_switch/#function-handlechanging"><strong>handleChanging</strong></a> () <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">void</td>
+<td style="text-align: left;"><a href="../classeva_1_1_switch/#function-handledeactivating"><strong>handleDeactivating</strong></a> (unsigned char wasLevelCode) <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">void</td>
+<td style="text-align: left;"><a href="../classeva_1_1_switch/#function-notify"><strong>notify</strong></a> (unsigned short eventType, signed short eventCode) <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">void</td>
+<td style="text-align: left;"><a href="../classeva_1_1_switch/#function-updatestate"><strong>updateState</strong></a> () <br></td>
+</tr>
+</tbody>
+</table>
+<h2 id="detailed-description">Detailed Description<a class="headerlink" href="#detailed-description" title="Permanent link">&para;</a></h2>
+<p>This class extends <a href="../classeva_1_1_button/"><strong>Button</strong></a> by adding periodic ON_REPEAT events while the button is held down. The naming reflects the primary use case (keyboard-like repeat).</p>
+<ul>
+<li>ON_CHANGE - Any state change</li>
+<li>ON_PRESS - <a href="../classeva_1_1_button/"><strong>Button</strong></a> becomes active (switch to active state)</li>
+<li>ON_RELEASE - <a href="../classeva_1_1_button/"><strong>Button</strong></a> becomes inactive (switch to inactive state)</li>
+<li>ON_SHORTCLICK - Press and release within LONGPRESS_DELAY</li>
+<li>ON_LONGCLICK - Press and hold longer than LONGPRESS_DELAY then release</li>
+<li>ON_LONGPRESS - Press and hold longer than LONGPRESS_DELAY (no release)</li>
+<li>ON_REPEATKEY - Periodic events while holding (after LONGPRESS_DELAY)</li>
+</ul>
+<p><strong>Template parameters:</strong></p>
+<ul>
+<li><code>READER</code> Input reader type that returns numeric codes (0 = no button, &gt;0 = button identifier)</li>
+</ul>
+<p><strong>See also:</strong> <a href="../classeva_1_1_button/"><strong>Button</strong></a> Base class for click detection </p>
+<hr />
+<p>The documentation for this class was generated from the following file <code>src/evaScrollButton.h</code></p>
 
 
 

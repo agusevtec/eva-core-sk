@@ -19,28 +19,28 @@ This inheritance list is sorted roughly, but not completely, alphabetically:
 * **class** [**eva::Tickable**](classeva_1_1_tickable.md) _Base class for objects that need periodic updates._     
     * **class** [**eva::Switch**](classeva_1_1_switch.md) _Universal switch/button class for multi-valued input sources._     
         * **class** [**eva::Button**](classeva_1_1_button.md) [_**Button**_](classeva_1_1_button.md) _with press/release and click detection._    
-            * **class** [**eva::KeyButton**](classeva_1_1_key_button.md) [_**Button**_](classeva_1_1_button.md) _with auto-repeat (typematic) functionality._
+            * **class** [**eva::ScrollButton**](classeva_1_1_scroll_button.md) [_**Button**_](classeva_1_1_button.md) _with auto-repeat (typematic) functionality._
         * **class** [**eva::Button**](classeva_1_1_button.md) [_**Button**_](classeva_1_1_button.md) _with press/release and click detection._    
-            * **class** [**eva::KeyButton**](classeva_1_1_key_button.md) [_**Button**_](classeva_1_1_button.md) _with auto-repeat (typematic) functionality._
+            * **class** [**eva::ScrollButton**](classeva_1_1_scroll_button.md) [_**Button**_](classeva_1_1_button.md) _with auto-repeat (typematic) functionality._
         * **class** [**eva::Button**](classeva_1_1_button.md) [_**Button**_](classeva_1_1_button.md) _with press/release and click detection._    
-            * **class** [**eva::KeyButton**](classeva_1_1_key_button.md) [_**Button**_](classeva_1_1_button.md) _with auto-repeat (typematic) functionality._
+            * **class** [**eva::ScrollButton**](classeva_1_1_scroll_button.md) [_**Button**_](classeva_1_1_button.md) _with auto-repeat (typematic) functionality._
     * **class** [**eva::Switch**](classeva_1_1_switch.md) _Universal switch/button class for multi-valued input sources._     
         * **class** [**eva::Button**](classeva_1_1_button.md) [_**Button**_](classeva_1_1_button.md) _with press/release and click detection._    
-            * **class** [**eva::KeyButton**](classeva_1_1_key_button.md) [_**Button**_](classeva_1_1_button.md) _with auto-repeat (typematic) functionality._
+            * **class** [**eva::ScrollButton**](classeva_1_1_scroll_button.md) [_**Button**_](classeva_1_1_button.md) _with auto-repeat (typematic) functionality._
         * **class** [**eva::Button**](classeva_1_1_button.md) [_**Button**_](classeva_1_1_button.md) _with press/release and click detection._    
-            * **class** [**eva::KeyButton**](classeva_1_1_key_button.md) [_**Button**_](classeva_1_1_button.md) _with auto-repeat (typematic) functionality._
+            * **class** [**eva::ScrollButton**](classeva_1_1_scroll_button.md) [_**Button**_](classeva_1_1_button.md) _with auto-repeat (typematic) functionality._
         * **class** [**eva::Button**](classeva_1_1_button.md) [_**Button**_](classeva_1_1_button.md) _with press/release and click detection._    
-            * **class** [**eva::KeyButton**](classeva_1_1_key_button.md) [_**Button**_](classeva_1_1_button.md) _with auto-repeat (typematic) functionality._
+            * **class** [**eva::ScrollButton**](classeva_1_1_scroll_button.md) [_**Button**_](classeva_1_1_button.md) _with auto-repeat (typematic) functionality._
     * **class** [**eva::DelayTimer**](classeva_1_1_delay_timer.md) _One-shot timer that fires after a delay._     
         * **class** [**eva::CountdownTimer**](classeva_1_1_countdown_timer.md) _Timer that fires repeatedly at fixed intervals._ 
         * **class** [**eva::RepeatTimer**](classeva_1_1_repeat_timer.md) _Timer that fires repeatedly at fixed intervals._ 
     * **class** [**eva::Switch**](classeva_1_1_switch.md) _Universal switch/button class for multi-valued input sources._     
         * **class** [**eva::Button**](classeva_1_1_button.md) [_**Button**_](classeva_1_1_button.md) _with press/release and click detection._    
-            * **class** [**eva::KeyButton**](classeva_1_1_key_button.md) [_**Button**_](classeva_1_1_button.md) _with auto-repeat (typematic) functionality._
+            * **class** [**eva::ScrollButton**](classeva_1_1_scroll_button.md) [_**Button**_](classeva_1_1_button.md) _with auto-repeat (typematic) functionality._
         * **class** [**eva::Button**](classeva_1_1_button.md) [_**Button**_](classeva_1_1_button.md) _with press/release and click detection._    
-            * **class** [**eva::KeyButton**](classeva_1_1_key_button.md) [_**Button**_](classeva_1_1_button.md) _with auto-repeat (typematic) functionality._
+            * **class** [**eva::ScrollButton**](classeva_1_1_scroll_button.md) [_**Button**_](classeva_1_1_button.md) _with auto-repeat (typematic) functionality._
         * **class** [**eva::Button**](classeva_1_1_button.md) [_**Button**_](classeva_1_1_button.md) _with press/release and click detection._    
-            * **class** [**eva::KeyButton**](classeva_1_1_key_button.md) [_**Button**_](classeva_1_1_button.md) _with auto-repeat (typematic) functionality._
+            * **class** [**eva::ScrollButton**](classeva_1_1_scroll_button.md) [_**Button**_](classeva_1_1_button.md) _with auto-repeat (typematic) functionality._
 * **class** [**eva::DigitalPinReader**](classeva_1_1_digital_pin_reader.md) _Reads digital pin value._ 
 * **class** [**eva::IReader**](classeva_1_1_i_reader.md) _Interface for value readers._     
     * **class** [**eva::IReaderAdapter**](classeva_1_1_i_reader_adapter.md) _Adapter that converts any class with getValue() into an_ [_**IReader**_](classeva_1_1_i_reader.md) _._
@@ -51,45 +51,45 @@ This inheritance list is sorted roughly, but not completely, alphabetically:
     * **class** [**eva::BinarizeEqDecor**](classeva_1_1_binarize_eq_decor.md) _Decorator that converts reading to binary based on level._     
         * **class** [**eva::Switch**](classeva_1_1_switch.md) _Universal switch/button class for multi-valued input sources._     
             * **class** [**eva::Button**](classeva_1_1_button.md) [_**Button**_](classeva_1_1_button.md) _with press/release and click detection._    
-                * **class** [**eva::KeyButton**](classeva_1_1_key_button.md) [_**Button**_](classeva_1_1_button.md) _with auto-repeat (typematic) functionality._
+                * **class** [**eva::ScrollButton**](classeva_1_1_scroll_button.md) [_**Button**_](classeva_1_1_button.md) _with auto-repeat (typematic) functionality._
             * **class** [**eva::Button**](classeva_1_1_button.md) [_**Button**_](classeva_1_1_button.md) _with press/release and click detection._    
-                * **class** [**eva::KeyButton**](classeva_1_1_key_button.md) [_**Button**_](classeva_1_1_button.md) _with auto-repeat (typematic) functionality._
+                * **class** [**eva::ScrollButton**](classeva_1_1_scroll_button.md) [_**Button**_](classeva_1_1_button.md) _with auto-repeat (typematic) functionality._
             * **class** [**eva::Button**](classeva_1_1_button.md) [_**Button**_](classeva_1_1_button.md) _with press/release and click detection._    
-                * **class** [**eva::KeyButton**](classeva_1_1_key_button.md) [_**Button**_](classeva_1_1_button.md) _with auto-repeat (typematic) functionality._
+                * **class** [**eva::ScrollButton**](classeva_1_1_scroll_button.md) [_**Button**_](classeva_1_1_button.md) _with auto-repeat (typematic) functionality._
     * **class** [**eva::BinarizeGtDecor**](classeva_1_1_binarize_gt_decor.md) _Decorator that converts analog reading to binary based on 'greater then' threshold condition._ 
     * **class** [**eva::BinarizeLtDecor**](classeva_1_1_binarize_lt_decor.md) _Decorator that converts analog reading to binary based on 'less then' threshold condition._ 
     * **class** [**eva::Switch**](classeva_1_1_switch.md) _Universal switch/button class for multi-valued input sources._     
         * **class** [**eva::Button**](classeva_1_1_button.md) [_**Button**_](classeva_1_1_button.md) _with press/release and click detection._    
-            * **class** [**eva::KeyButton**](classeva_1_1_key_button.md) [_**Button**_](classeva_1_1_button.md) _with auto-repeat (typematic) functionality._
+            * **class** [**eva::ScrollButton**](classeva_1_1_scroll_button.md) [_**Button**_](classeva_1_1_button.md) _with auto-repeat (typematic) functionality._
         * **class** [**eva::Button**](classeva_1_1_button.md) [_**Button**_](classeva_1_1_button.md) _with press/release and click detection._    
-            * **class** [**eva::KeyButton**](classeva_1_1_key_button.md) [_**Button**_](classeva_1_1_button.md) _with auto-repeat (typematic) functionality._
+            * **class** [**eva::ScrollButton**](classeva_1_1_scroll_button.md) [_**Button**_](classeva_1_1_button.md) _with auto-repeat (typematic) functionality._
         * **class** [**eva::Button**](classeva_1_1_button.md) [_**Button**_](classeva_1_1_button.md) _with press/release and click detection._    
-            * **class** [**eva::KeyButton**](classeva_1_1_key_button.md) [_**Button**_](classeva_1_1_button.md) _with auto-repeat (typematic) functionality._
+            * **class** [**eva::ScrollButton**](classeva_1_1_scroll_button.md) [_**Button**_](classeva_1_1_button.md) _with auto-repeat (typematic) functionality._
     * **class** [**eva::Joystick**](classeva_1_1_joystick.md) [_**Joystick**_](classeva_1_1_joystick.md) _axis reader with trim adjustment._
-    * **class** [**eva::Switch**](classeva_1_1_switch.md) _Universal switch/button class for multi-valued input sources._     
-        * **class** [**eva::Button**](classeva_1_1_button.md) [_**Button**_](classeva_1_1_button.md) _with press/release and click detection._    
-            * **class** [**eva::KeyButton**](classeva_1_1_key_button.md) [_**Button**_](classeva_1_1_button.md) _with auto-repeat (typematic) functionality._
-        * **class** [**eva::Button**](classeva_1_1_button.md) [_**Button**_](classeva_1_1_button.md) _with press/release and click detection._    
-            * **class** [**eva::KeyButton**](classeva_1_1_key_button.md) [_**Button**_](classeva_1_1_button.md) _with auto-repeat (typematic) functionality._
-        * **class** [**eva::Button**](classeva_1_1_button.md) [_**Button**_](classeva_1_1_button.md) _with press/release and click detection._    
-            * **class** [**eva::KeyButton**](classeva_1_1_key_button.md) [_**Button**_](classeva_1_1_button.md) _with auto-repeat (typematic) functionality._
     * **class** [**eva::QuantizeDecor**](classeva_1_1_quantize_decor.md) _Decorator that quantizes analog readings to discrete levels._     
         * **class** [**eva::Switch**](classeva_1_1_switch.md) _Universal switch/button class for multi-valued input sources._     
             * **class** [**eva::Button**](classeva_1_1_button.md) [_**Button**_](classeva_1_1_button.md) _with press/release and click detection._    
-                * **class** [**eva::KeyButton**](classeva_1_1_key_button.md) [_**Button**_](classeva_1_1_button.md) _with auto-repeat (typematic) functionality._
+                * **class** [**eva::ScrollButton**](classeva_1_1_scroll_button.md) [_**Button**_](classeva_1_1_button.md) _with auto-repeat (typematic) functionality._
             * **class** [**eva::Button**](classeva_1_1_button.md) [_**Button**_](classeva_1_1_button.md) _with press/release and click detection._    
-                * **class** [**eva::KeyButton**](classeva_1_1_key_button.md) [_**Button**_](classeva_1_1_button.md) _with auto-repeat (typematic) functionality._
+                * **class** [**eva::ScrollButton**](classeva_1_1_scroll_button.md) [_**Button**_](classeva_1_1_button.md) _with auto-repeat (typematic) functionality._
             * **class** [**eva::Button**](classeva_1_1_button.md) [_**Button**_](classeva_1_1_button.md) _with press/release and click detection._    
-                * **class** [**eva::KeyButton**](classeva_1_1_key_button.md) [_**Button**_](classeva_1_1_button.md) _with auto-repeat (typematic) functionality._
+                * **class** [**eva::ScrollButton**](classeva_1_1_scroll_button.md) [_**Button**_](classeva_1_1_button.md) _with auto-repeat (typematic) functionality._
+    * **class** [**eva::Switch**](classeva_1_1_switch.md) _Universal switch/button class for multi-valued input sources._     
+        * **class** [**eva::Button**](classeva_1_1_button.md) [_**Button**_](classeva_1_1_button.md) _with press/release and click detection._    
+            * **class** [**eva::ScrollButton**](classeva_1_1_scroll_button.md) [_**Button**_](classeva_1_1_button.md) _with auto-repeat (typematic) functionality._
+        * **class** [**eva::Button**](classeva_1_1_button.md) [_**Button**_](classeva_1_1_button.md) _with press/release and click detection._    
+            * **class** [**eva::ScrollButton**](classeva_1_1_scroll_button.md) [_**Button**_](classeva_1_1_button.md) _with auto-repeat (typematic) functionality._
+        * **class** [**eva::Button**](classeva_1_1_button.md) [_**Button**_](classeva_1_1_button.md) _with press/release and click detection._    
+            * **class** [**eva::ScrollButton**](classeva_1_1_scroll_button.md) [_**Button**_](classeva_1_1_button.md) _with auto-repeat (typematic) functionality._
     * **class** [**eva::Slider**](classeva_1_1_slider.md) _Maps analog readings to 0-255 range._ 
     * **class** [**eva::StabilizeDecor**](classeva_1_1_stabilize_decor.md) _Decorator that stabilizes readings by requiring value to be stable for a period._ 
     * **class** [**eva::Switch**](classeva_1_1_switch.md) _Universal switch/button class for multi-valued input sources._     
         * **class** [**eva::Button**](classeva_1_1_button.md) [_**Button**_](classeva_1_1_button.md) _with press/release and click detection._    
-            * **class** [**eva::KeyButton**](classeva_1_1_key_button.md) [_**Button**_](classeva_1_1_button.md) _with auto-repeat (typematic) functionality._
+            * **class** [**eva::ScrollButton**](classeva_1_1_scroll_button.md) [_**Button**_](classeva_1_1_button.md) _with auto-repeat (typematic) functionality._
         * **class** [**eva::Button**](classeva_1_1_button.md) [_**Button**_](classeva_1_1_button.md) _with press/release and click detection._    
-            * **class** [**eva::KeyButton**](classeva_1_1_key_button.md) [_**Button**_](classeva_1_1_button.md) _with auto-repeat (typematic) functionality._
+            * **class** [**eva::ScrollButton**](classeva_1_1_scroll_button.md) [_**Button**_](classeva_1_1_button.md) _with auto-repeat (typematic) functionality._
         * **class** [**eva::Button**](classeva_1_1_button.md) [_**Button**_](classeva_1_1_button.md) _with press/release and click detection._    
-            * **class** [**eva::KeyButton**](classeva_1_1_key_button.md) [_**Button**_](classeva_1_1_button.md) _with auto-repeat (typematic) functionality._
+            * **class** [**eva::ScrollButton**](classeva_1_1_scroll_button.md) [_**Button**_](classeva_1_1_button.md) _with auto-repeat (typematic) functionality._
 * **class** **T**    
     * **class** [**eva::IReaderAdapter**](classeva_1_1_i_reader_adapter.md) _Adapter that converts any class with getValue() into an_ [_**IReader**_](classeva_1_1_i_reader.md) _._
 

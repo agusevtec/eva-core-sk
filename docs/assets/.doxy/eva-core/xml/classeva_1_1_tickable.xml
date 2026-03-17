@@ -182,10 +182,10 @@
         <reimplementedby refid="classeva_1_1_button_1a5b6706381ba6ff94e445a41889bf2c48">tick</reimplementedby>
         <reimplementedby refid="classeva_1_1_countdown_timer_1af134fa838e3417c5b93e27635922d2dd">tick</reimplementedby>
         <reimplementedby refid="classeva_1_1_delay_timer_1a7cf30bb1be1a9a5002fde64adc479096">tick</reimplementedby>
-        <reimplementedby refid="classeva_1_1_key_button_1ac73b9e5b58f1fd21aa5cb2100d98b613">tick</reimplementedby>
-        <reimplementedby refid="classeva_1_1_key_button_1ac73b9e5b58f1fd21aa5cb2100d98b613">tick</reimplementedby>
-        <reimplementedby refid="classeva_1_1_key_button_1ac73b9e5b58f1fd21aa5cb2100d98b613">tick</reimplementedby>
         <reimplementedby refid="classeva_1_1_repeat_timer_1a84f35ebcd37c05ac743599b1ae7f2eb5">tick</reimplementedby>
+        <reimplementedby refid="classeva_1_1_scroll_button_1a38ce62deaaced541a8a13394e59af012">tick</reimplementedby>
+        <reimplementedby refid="classeva_1_1_scroll_button_1a38ce62deaaced541a8a13394e59af012">tick</reimplementedby>
+        <reimplementedby refid="classeva_1_1_scroll_button_1a38ce62deaaced541a8a13394e59af012">tick</reimplementedby>
         <reimplementedby refid="classeva_1_1_switch_1ad68f945aa49eefdc685d1b7a84358655">tick</reimplementedby>
         <reimplementedby refid="classeva_1_1_switch_1ad68f945aa49eefdc685d1b7a84358655">tick</reimplementedby>
         <reimplementedby refid="classeva_1_1_switch_1ad68f945aa49eefdc685d1b7a84358655">tick</reimplementedby>
@@ -240,28 +240,28 @@
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="12">
-        <label>eva::KeyButton&lt; BinarizeEqDecor&lt; StabilizeDecor&lt; DigitalPinReader&lt; PIN, INPUT_PULLUP &gt; &gt;, LOW &gt; &gt;</label>
-        <link refid="classeva_1_1_key_button"/>
-        <childnode refid="11" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="5">
-        <label>eva::KeyButton&lt; QuantizeDecor&lt; StabilizeDecor&lt; AnalogPinReader&lt; PIN, PIN_MODE &gt; &gt;, LEVELS... &gt; &gt;</label>
-        <link refid="classeva_1_1_key_button"/>
-        <childnode refid="4" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="14">
-        <label>eva::KeyButton&lt; READER &gt;</label>
-        <link refid="classeva_1_1_key_button"/>
-        <childnode refid="13" relation="public-inheritance">
-        </childnode>
-      </node>
       <node id="8">
         <label>eva::RepeatTimer</label>
         <link refid="classeva_1_1_repeat_timer"/>
         <childnode refid="6" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>eva::ScrollButton&lt; BinarizeEqDecor&lt; StabilizeDecor&lt; DigitalPinReader&lt; PIN, INPUT_PULLUP &gt; &gt;, LOW &gt; &gt;</label>
+        <link refid="classeva_1_1_scroll_button"/>
+        <childnode refid="11" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>eva::ScrollButton&lt; QuantizeDecor&lt; StabilizeDecor&lt; AnalogPinReader&lt; PIN, PIN_MODE &gt; &gt;, LEVELS... &gt; &gt;</label>
+        <link refid="classeva_1_1_scroll_button"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>eva::ScrollButton&lt; READER &gt;</label>
+        <link refid="classeva_1_1_scroll_button"/>
+        <childnode refid="13" relation="public-inheritance">
         </childnode>
       </node>
       <node id="9">

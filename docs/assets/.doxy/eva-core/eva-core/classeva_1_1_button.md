@@ -19,7 +19,7 @@
 Inherits the following classes: [eva::Switch](classeva_1_1_switch.md)
 
 
-Inherited by the following classes: [eva::KeyButton](classeva_1_1_key_button.md)
+Inherited by the following classes: [eva::ScrollButton](classeva_1_1_scroll_button.md)
 
 
 
@@ -225,8 +225,10 @@ See [eva::Switch](classeva_1_1_switch.md)
 | Type | Name |
 | ---: | :--- |
 |  bool | [**checkActivating**](classeva_1_1_switch.md#function-checkactivating) (unsigned char wasLevelCode) <br>_inactive or different -&gt; active_  |
+|  bool | [**checkChanging**](classeva_1_1_switch.md#function-checkchanging) (unsigned char wasLevelCode) <br> |
 |  bool | [**checkDeactivating**](classeva_1_1_switch.md#function-checkdeactivating) (unsigned char wasLevelCode) <br>_active -&gt; inactive or different state_  |
 |  void | [**handleActivating**](classeva_1_1_switch.md#function-handleactivating) () <br> |
+|  void | [**handleChanging**](classeva_1_1_switch.md#function-handlechanging) () <br> |
 |  void | [**handleDeactivating**](classeva_1_1_switch.md#function-handledeactivating) (unsigned char wasLevelCode) <br> |
 |  void | [**notify**](classeva_1_1_switch.md#function-notify) (unsigned short eventType, signed short eventCode) <br> |
 |  void | [**updateState**](classeva_1_1_switch.md#function-updatestate) () <br> |

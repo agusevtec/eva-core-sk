@@ -1,18 +1,18 @@
 
 
-# Class eva::KeyButton
+# Class eva::ScrollButton
 
 **template &lt;class READER&gt;**
 
 
 
-[**ClassList**](annotated.md) **>** [**eva**](namespaceeva.md) **>** [**KeyButton**](classeva_1_1_key_button.md)
+[**ClassList**](annotated.md) **>** [**eva**](namespaceeva.md) **>** [**ScrollButton**](classeva_1_1_scroll_button.md)
 
 
 
 [_**Button**_](classeva_1_1_button.md) _with auto-repeat (typematic) functionality._[More...](#detailed-description)
 
-* `#include <evaKeyButton.h>`
+* `#include <evaScrollButton.h>`
 
 
 
@@ -274,8 +274,10 @@ See [eva::Switch](classeva_1_1_switch.md)
 | Type | Name |
 | ---: | :--- |
 |  bool | [**checkActivating**](classeva_1_1_switch.md#function-checkactivating) (unsigned char wasLevelCode) <br>_inactive or different -&gt; active_  |
+|  bool | [**checkChanging**](classeva_1_1_switch.md#function-checkchanging) (unsigned char wasLevelCode) <br> |
 |  bool | [**checkDeactivating**](classeva_1_1_switch.md#function-checkdeactivating) (unsigned char wasLevelCode) <br>_active -&gt; inactive or different state_  |
 |  void | [**handleActivating**](classeva_1_1_switch.md#function-handleactivating) () <br> |
+|  void | [**handleChanging**](classeva_1_1_switch.md#function-handlechanging) () <br> |
 |  void | [**handleDeactivating**](classeva_1_1_switch.md#function-handledeactivating) (unsigned char wasLevelCode) <br> |
 |  void | [**notify**](classeva_1_1_switch.md#function-notify) (unsigned short eventType, signed short eventCode) <br> |
 |  void | [**updateState**](classeva_1_1_switch.md#function-updatestate) () <br> |
@@ -325,5 +327,5 @@ This class extends [**Button**](classeva_1_1_button.md) by adding periodic ON\_R
     
 
 ------------------------------
-The documentation for this class was generated from the following file `src/evaKeyButton.h`
+The documentation for this class was generated from the following file `src/evaScrollButton.h`
 

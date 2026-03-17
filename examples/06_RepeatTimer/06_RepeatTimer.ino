@@ -7,54 +7,47 @@
  * - Can be stopped/started with button
  */
 
-
 #include <evaTac.h>
 #include <evaRepeatTimer.h>
 #include <evaButton.h>
-#include <evaSlider.h>
 #include <evaIndicator.h>
 
 using namespace eva;
 
-
-class App : public IHandler {
+class App {
 private:
-  PullUpButton<2> button;       // Start/stop button
-  Indicator led{13};             // Status LED
-  RepeatTimer timer{1000, this}; // 1-second periodic timer
+  PullUpButton<3> button{new Handler<App>(this, &App::onButtonPress), ON_PRESS};
+  Indicator led{13};
+  RepeatTimer tickTimer{1000, new Handler<App>(this, &App::onTickTimer)};
   bool running = true;
 
 public:
   App() {
-    button.setListener(this, ON_PRESS);
     Serial.println("RepeatTimer Demo: Timer ticks every second");
     Serial.println("Press button to pause/resume");
   }
-  
-  void invoke(void* sender, CallbackInfo info) override {
-    if (sender == &button) {
-      running = !running;
-      if (running) {
-        timer.start();  // Resume timer
-        Serial.println("Timer resumed");
-      } else {
-        timer.stop();   // Pause timer
-        Serial.println("Timer paused");
-        led.off();
-      }
-    }
-    else if (sender == &timer) {
-      // Timer tick - toggle LED and print
+
+  void onButtonPress(void*, CallbackInfo) {
+    running = !running;
+    if (running) {
+      tickTimer.start();
+      Serial.println("Timer resumed");
       led.on();
-      Serial.println("tick");
+    } else {
+      tickTimer.stop();
+      Serial.println("Timer paused");
+      led.off();
     }
+  }
+
+  void onTickTimer(void*, CallbackInfo) {
+    Serial.println("tick");
   }
 };
 
-App app;
-
 void setup() {
   Serial.begin(9600);
+  static App app;
 }
 
 void loop() {
