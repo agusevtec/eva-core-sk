@@ -49,7 +49,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaDelayTimer.h" line="19" column="9"/>
+        <location file="src/evaDelayTimer.h" line="18" column="9"/>
       </memberdef>
       <memberdef kind="function" id="classeva_1_1_delay_timer_1a5889ee3ab5a8f31a35f8849c12be2323" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -67,7 +67,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaDelayTimer.h" line="21" column="9"/>
+        <location file="src/evaDelayTimer.h" line="20" column="9"/>
       </memberdef>
       <memberdef kind="function" id="classeva_1_1_delay_timer_1a09341604aaf16757f0b663545ded5b62" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -108,7 +108,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaDelayTimer.h" line="28" column="14"/>
+        <location file="src/evaDelayTimer.h" line="27" column="14"/>
       </memberdef>
       <memberdef kind="function" id="classeva_1_1_delay_timer_1afed3e0879fabc3878788791895a95c0f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -137,7 +137,7 @@ Listener must be assigned via constructor or <ref refid="classeva_1_1_delay_time
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaDelayTimer.h" line="37" column="14"/>
+        <location file="src/evaDelayTimer.h" line="36" column="14"/>
       </memberdef>
       <memberdef kind="function" id="classeva_1_1_delay_timer_1a4d615ec24c146a2b46feea535a8e7830" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -155,7 +155,7 @@ Listener must be assigned via constructor or <ref refid="classeva_1_1_delay_time
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaDelayTimer.h" line="43" column="14"/>
+        <location file="src/evaDelayTimer.h" line="42" column="14"/>
       </memberdef>
       <memberdef kind="function" id="classeva_1_1_delay_timer_1a37416cde9f8aac62cadee90695e75efe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>DelayTimer *</type>
@@ -186,7 +186,7 @@ Listener must be assigned via constructor or <ref refid="classeva_1_1_delay_time
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaDelayTimer.h" line="50" column="20"/>
+        <location file="src/evaDelayTimer.h" line="49" column="20"/>
       </memberdef>
       <memberdef kind="function" id="classeva_1_1_delay_timer_1a0e61d51bcd42b77a47381496ddb8445c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -201,10 +201,24 @@ Listener must be assigned via constructor or <ref refid="classeva_1_1_delay_time
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaDelayTimer.h" line="55" column="14"/>
+        <location file="src/evaDelayTimer.h" line="54" column="14"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classeva_1_1_delay_timer_1aadecb847985e9b5c4e6c9e2a3f4e435d" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool eva::DelayTimer::checkTimeElapsed</definition>
+        <argsstring>()</argsstring>
+        <name>checkTimeElapsed</name>
+        <qualifiedname>eva::DelayTimer::checkTimeElapsed</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evaDelayTimer.h" line="57" column="14"/>
+      </memberdef>
       <memberdef kind="function" id="classeva_1_1_delay_timer_1a7cf30bb1be1a9a5002fde64adc479096" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
         <definition>void eva::DelayTimer::tick</definition>
@@ -270,8 +284,9 @@ Listener must be assigned via constructor or <ref refid="classeva_1_1_delay_time
         <link refid="classeva_1_1_tickable"/>
       </node>
     </collaborationgraph>
-    <location file="src/evaDelayTimer.h" line="16" column="5" bodyfile="src/evaDelayTimer.h" bodystart="17" bodyend="63"/>
+    <location file="src/evaDelayTimer.h" line="15" column="5" bodyfile="src/evaDelayTimer.h" bodystart="16" bodyend="63"/>
     <listofallmembers>
+      <member refid="classeva_1_1_delay_timer_1aadecb847985e9b5c4e6c9e2a3f4e435d" prot="protected" virt="non-virtual"><scope>eva::DelayTimer</scope><name>checkTimeElapsed</name></member>
       <member refid="classeva_1_1_delay_timer_1a971246536c3cca838038b493c4da414c" prot="public" virt="non-virtual"><scope>eva::DelayTimer</scope><name>DelayTimer</name></member>
       <member refid="classeva_1_1_delay_timer_1a5889ee3ab5a8f31a35f8849c12be2323" prot="public" virt="non-virtual"><scope>eva::DelayTimer</scope><name>DelayTimer</name></member>
       <member refid="classeva_1_1_delay_timer_1a4d615ec24c146a2b46feea535a8e7830" prot="public" virt="non-virtual"><scope>eva::DelayTimer</scope><name>isRunning</name></member>

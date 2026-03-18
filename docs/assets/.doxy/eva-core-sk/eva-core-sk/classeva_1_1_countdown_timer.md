@@ -219,6 +219,7 @@ See [eva::DelayTimer](classeva_1_1_delay_timer.md)
 
 | Type | Name |
 | ---: | :--- |
+|  bool | [**checkTimeElapsed**](classeva_1_1_delay_timer.md#function-checktimeelapsed) () <br> |
 | virtual void | [**tick**](classeva_1_1_delay_timer.md#function-tick) () override<br> |
 
 

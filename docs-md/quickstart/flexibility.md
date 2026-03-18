@@ -43,7 +43,7 @@ public:
 
 // Step 3: Assemble into a Button
 using DifferentialSwitch = Switch<
-  StabilizeDecor<
+  DebounceDecor<
     ZoneMapper<
       DifferentialReader<A0, A1>
     >
@@ -109,7 +109,7 @@ public:
 signed short ExternalStateReader::lastValue = 0;
 
 // Use it with standard Button
-using VirtualButton = Button<StabilizeDecor<ExternalStateReader>>;
+using VirtualButton = Button<DebounceDecor<ExternalStateReader>>;
 
 // Now any external code can inject button events:
 // ExternalStateReader::update(1);  // Press

@@ -172,7 +172,7 @@ namespace eva
      *
      * Combines:
      * - DigitalPinReader for raw pin reading
-     * - StabilizeDecor for debouncing (120ms stability)
+     * - DebounceDecor for debouncing (120ms stability)
      * - BinarizeEqDecor for mapping to active/inactive based on specified level
      *
      * @tparam PIN Arduino pin number
@@ -180,7 +180,7 @@ namespace eva
      * @tparam ACTIVE_LEVEL Level that means active (LOW or HIGH)
      */
     template <int PIN, int PIN_MODE, int ACTIVE_LEVEL>
-    using PinSwitch = Switch<BinarizeEqDecor<StabilizeDecor<DigitalPinReader<PIN, PIN_MODE>>, ACTIVE_LEVEL>>;
+    using PinSwitch = Switch<BinarizeEqDecor<DebounceDecor<DigitalPinReader<PIN, PIN_MODE>>, ACTIVE_LEVEL>>;
 
     /**
      * @brief Pull-up switch (active LOW, connect to GND).
@@ -208,14 +208,14 @@ namespace eva
      *
      * Each switch produces a different ADC value when activated. The
      * QuantizeDecor maps these values to discrete level codes (1, 2, 3...).
-     * StabilizeDecor provides debouncing.
+     * DebounceDecor provides debouncing.
      *
      * @tparam PIN Arduino analog pin number
      * @tparam PIN_MODE Pin mode (usually INPUT)
      * @tparam LEVELS Threshold values for each switch (expected ADC readings)
      */
     template <int PIN, int PIN_MODE, signed short... LEVELS>
-    using PinMultiSwitch = Switch<QuantizeDecor<StabilizeDecor<AnalogPinReader<PIN, PIN_MODE>>, LEVELS...>>;
+    using PinMultiSwitch = Switch<QuantizeDecor<DebounceDecor<AnalogPinReader<PIN, PIN_MODE>>, LEVELS...>>;
 };
 
 #endif

@@ -1,6 +1,6 @@
 /**
  * eva Library - RepeatTimer Example (Simple Scheduler)
- * 
+ *
  * A periodic timer that fires every second:
  * - Prints "tick" to Serial
  * - Toggles LED on/off
@@ -14,7 +14,8 @@
 
 using namespace eva;
 
-class App {
+class App
+{
 private:
   PullUpButton<3> button{new Handler<App>(this, &App::onButtonPress), ON_PRESS};
   Indicator led{13};
@@ -22,34 +23,43 @@ private:
   bool running = true;
 
 public:
-  App() {
+  App()
+  {
     Serial.println("RepeatTimer Demo: Timer ticks every second");
     Serial.println("Press button to pause/resume");
   }
 
-  void onButtonPress(void*, CallbackInfo) {
+  void onButtonPress(void *, CallbackInfo)
+  {
     running = !running;
-    if (running) {
+    if (running)
+    {
       tickTimer.start();
       Serial.println("Timer resumed");
       led.on();
-    } else {
+    }
+    else
+    {
       tickTimer.stop();
       Serial.println("Timer paused");
       led.off();
     }
   }
 
-  void onTickTimer(void*, CallbackInfo) {
+  void onTickTimer(void *, CallbackInfo)
+  {
     Serial.println("tick");
   }
 };
 
-void setup() {
+void setup()
+{
   Serial.begin(9600);
+  Serial.println("=== RepeatTimer Demo ===");
   static App app;
 }
 
-void loop() {
+void loop()
+{
   eva::tac();
 }

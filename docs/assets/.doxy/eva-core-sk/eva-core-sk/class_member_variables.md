@@ -18,6 +18,7 @@
 
 * **dutycyclePercent** ([**eva::BlinkingIndicator**](classeva_1_1_blinking_indicator.md))
 * **dutycycleTimer** ([**eva::BlinkingIndicator**](classeva_1_1_blinking_indicator.md))
+* **deadZone** ([**eva::Joystick**](classeva_1_1_joystick.md))
 
 
 ## e
@@ -45,8 +46,8 @@
 
 ## k
 
-* **keepValueTill** ([**eva::StabilizeDecor**](classeva_1_1_stabilize_decor.md))
-* **keepedValue** ([**eva::StabilizeDecor**](classeva_1_1_stabilize_decor.md))
+* **keepValueTill** ([**eva::DebounceDecor**](classeva_1_1_debounce_decor.md))
+* **keepedValue** ([**eva::DebounceDecor**](classeva_1_1_debounce_decor.md))
 
 
 ## l

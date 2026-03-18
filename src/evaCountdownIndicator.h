@@ -9,6 +9,13 @@ namespace eva
 {
     /**
      * @brief Indicator that blinks a specified number of times then notifies listener
+     * 
+     * Note:
+     * This class serves as a demonstration of library concepts and is intentionally
+     * kept simple for clarity. Performance optimization was not the primary focus.
+     * It is recommended for prototyping stages to validate your application logic.
+     * For production use with strict timing requirements, consider implementing
+     * a custom solution based on your specific needs.
      */
     class CountdownIndicator : public BlinkingIndicator
     {

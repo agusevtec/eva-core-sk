@@ -16,17 +16,17 @@
 
 namespace eva
 {
-  template <class READER, int MIN, int MAX>
+  template <class READER, int MIN_POS, int MAX_POS>
   class Slider : public READER
   {
   public:
     signed short getValue()
     {
-      return constrain(map(READER::getValue(), MIN, MAX, 0, 255), 0, 255);
+      return constrain(map(READER::getValue(), MIN_POS, MAX_POS, 1000, 2000), 1000, 2000);
     }
   };
-  template <int PIN, int PIN_MODE, int MIN, int MAX>
-  using PinSlider = Slider<AnalogPinReader<PIN, PIN_MODE>, MIN, MAX>;
+  template <int PIN, int PIN_MODE, int MIN_POS, int MAX_POS>
+  using PinSlider = Slider<AnalogPinReader<PIN, PIN_MODE>, MIN_POS, MAX_POS>;
 };
 
 #endif

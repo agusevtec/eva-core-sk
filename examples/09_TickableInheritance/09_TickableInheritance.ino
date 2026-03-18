@@ -63,7 +63,7 @@ protected:
 
 void setup() {
   Serial.begin(9600);
-  Serial.println("\n=== Timer vs Tickable Comparison ===\n");
+  Serial.println("=== Timer vs Tickable Comparison ===");
   static ComponentV1 comp1;
   static ComponentV2 comp2;
 }

@@ -8,7 +8,7 @@
 
 
 
-[_**Indicator**_](classeva_1_1_indicator.md) _that blinks with specified period and duty cycle._
+[_**Indicator**_](classeva_1_1_indicator.md) _that blinks with specified period and duty cycle._[More...](#detailed-description)
 
 * `#include <evaBlinkingIndicator.h>`
 
@@ -211,6 +211,13 @@ See [eva::IHandler](classeva_1_1_i_handler.md)
 
 
 
+## Detailed Description
+
+
+Note: This class serves as a demonstration of library concepts and is intentionally kept simple for clarity. Performance optimization was not the primary focus. It is recommended for prototyping stages to validate your application logic. For production use with strict timing requirements, consider implementing a custom solution based on your specific needs. 
+
+
+    
 ## Public Functions Documentation
 
 

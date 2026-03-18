@@ -700,7 +700,6 @@
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;evaTickable.h&quot;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;evaHandler.h&quot;</span>
 
-<span class="cp">#define IS_BEFORE(t1, t2) (((t2) - (t1)) &lt;= 0x7FFFFFFFUL)</span>
 
 
 <span class="k">namespace</span><span class="w"> </span><span class="nn">eva</span>
@@ -723,7 +722,8 @@
 <span class="w">        </span><span class="kt">void</span><span class="w"> </span><span class="nf">stop</span><span class="p">();</span>
 
 <span class="w">    </span><span class="k">protected</span><span class="o">:</span>
-<span class="w">        </span><span class="kt">void</span><span class="w"> </span><span class="n">tick</span><span class="p">()</span><span class="w"> </span><span class="k">override</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">bool</span><span class="w"> </span><span class="n">checkTimeElapsed</span><span class="p">();</span>
+<span class="w">        </span><span class="kt">void</span><span class="w"> </span><span class="nf">tick</span><span class="p">()</span><span class="w"> </span><span class="k">override</span><span class="p">;</span>
 
 <span class="w">    </span><span class="k">protected</span><span class="o">:</span>
 <span class="w">        </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">nextFire</span><span class="p">;</span>

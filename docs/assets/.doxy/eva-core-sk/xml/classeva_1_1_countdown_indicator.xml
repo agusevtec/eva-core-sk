@@ -17,7 +17,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaCountdownIndicator.h" line="47" column="23" bodyfile="src/evaCountdownIndicator.h" bodystart="47" bodyend="-1"/>
+        <location file="src/evaCountdownIndicator.h" line="54" column="23" bodyfile="src/evaCountdownIndicator.h" bodystart="54" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classeva_1_1_countdown_indicator_1a2fcaad8cf80b8e888f689e98fddc4778" prot="private" static="no" mutable="no">
         <type><ref refid="classeva_1_1_i_handler" kindref="compound">IHandler</ref> *</type>
@@ -31,7 +31,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaCountdownIndicator.h" line="48" column="18" bodyfile="src/evaCountdownIndicator.h" bodystart="48" bodyend="-1"/>
+        <location file="src/evaCountdownIndicator.h" line="55" column="18" bodyfile="src/evaCountdownIndicator.h" bodystart="55" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -64,7 +64,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaCountdownIndicator.h" line="24" column="28"/>
+        <location file="src/evaCountdownIndicator.h" line="31" column="28"/>
       </memberdef>
       <memberdef kind="function" id="classeva_1_1_countdown_indicator_1afe8269b84d5818056930e7a5580932ed" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -117,7 +117,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaCountdownIndicator.h" line="32" column="14"/>
+        <location file="src/evaCountdownIndicator.h" line="39" column="14"/>
       </memberdef>
       <memberdef kind="function" id="classeva_1_1_countdown_indicator_1a58adb3482a6b5836485a85f04245db4a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -182,7 +182,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaCountdownIndicator.h" line="41" column="14"/>
+        <location file="src/evaCountdownIndicator.h" line="48" column="14"/>
       </memberdef>
       <memberdef kind="function" id="classeva_1_1_countdown_indicator_1a987af6bb4ca1c2c112274cde4d9a9088" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -197,7 +197,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaCountdownIndicator.h" line="17" column="9"/>
+        <location file="src/evaCountdownIndicator.h" line="24" column="9"/>
       </memberdef>
       <memberdef kind="function" id="classeva_1_1_countdown_indicator_1a41787cfbc1be93c04e26c9e2fa8a307e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -238,7 +238,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaCountdownIndicator.h" line="17" column="9"/>
+        <location file="src/evaCountdownIndicator.h" line="24" column="9"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="private-func">
@@ -263,13 +263,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaCountdownIndicator.h" line="44" column="14"/>
+        <location file="src/evaCountdownIndicator.h" line="51" column="14"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
 <para><ref refid="classeva_1_1_indicator" kindref="compound">Indicator</ref> that blinks a specified number of times then notifies listener. </para>
     </briefdescription>
     <detaileddescription>
+<para>Note: This class serves as a demonstration of library concepts and is intentionally kept simple for clarity. Performance optimization was not the primary focus. It is recommended for prototyping stages to validate your application logic. For production use with strict timing requirements, consider implementing a custom solution based on your specific needs. </para>
     </detaileddescription>
     <inheritancegraph>
       <node id="2">
@@ -336,7 +337,7 @@
         <link refid="classeva_1_1_tickable"/>
       </node>
     </collaborationgraph>
-    <location file="src/evaCountdownIndicator.h" line="13" column="5" bodyfile="src/evaCountdownIndicator.h" bodystart="14" bodyend="49"/>
+    <location file="src/evaCountdownIndicator.h" line="20" column="5" bodyfile="src/evaCountdownIndicator.h" bodystart="21" bodyend="56"/>
     <listofallmembers>
       <member refid="classeva_1_1_countdown_indicator_1a514ba44ea102faa908eca8e27164e67b" prot="private" virt="non-virtual"><scope>eva::CountdownIndicator</scope><name>countdown</name></member>
       <member refid="classeva_1_1_blinking_indicator_1a5dda788ae17df90c5a64108fe3d8773c" prot="protected" virt="non-virtual"><scope>eva::CountdownIndicator</scope><name>dutycyclePercent</name></member>

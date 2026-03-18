@@ -45,12 +45,17 @@ bool DelayTimer::isRunning()
     return this->nextFire != 0;
 }
 
+bool eva::DelayTimer::checkTimeElapsed()
+{
+    return millis() - this->nextFire <= 0x7FFFFFFF;
+}
+
 void DelayTimer::tick()
 {
     if (!isRunning())
         return;
 
-    if (IS_BEFORE(millis(), this->nextFire))
+    if (!checkTimeElapsed())
         return;
 
     stop();

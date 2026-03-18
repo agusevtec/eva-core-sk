@@ -1,14 +1,5 @@
 /**
  * eva Library - Slider and Joystick Examples
- *
- * This example demonstrates various initialization options for:
- * - Slider (analog input mapped to 0-255 range)
- * - Joystick (with trim adjustment and different center configurations)
- *
- * Hardware connections:
- * - Potentiometer on A0 (wiper) for slider
- * - Joystick X-axis on A1, Y-axis on A2
- * - Optional: second potentiometer on A3 for additional slider
  */
 
 #include <evaTac.h>
@@ -23,7 +14,7 @@ class App : public IHandler
 private:
   // === SLIDER VARIANTS ===
 
-  // Slider with restricted range (200-800 mapped to 0-255)
+  // Slider with restricted range (200-800 mapped to 1000-2000)
   // Useful when potentiometer doesn't use full range
   PinSlider<A3, INPUT, 200, 800> slider;
 
@@ -42,11 +33,6 @@ private:
 public:
   App()
   {
-    Serial.println("=== Slider and Joystick Demo ===");
-    Serial.println("Slider on A0, A3 | Joystick X:A1 Y:A2");
-    Serial.println("Format: Slider1|Slider2|JoyX|JoyY|TrimmedX|TrimmedY");
-
-    // Set trim for trimmed joystick (example calibration)
     joystick3.setTrim(10); // Small positive trim
   }
 
@@ -54,14 +40,12 @@ public:
   {
     if (sender == &reportTimer)
     {
-      // Read all values
       signed short sliderValue = slider.getValue();
       signed char joyX = joystickX.getValue();
       signed char joyY = joystickY.getValue();
       signed char trimX = joystick3.getValue();
-      signed char trimY = joystick3.getValue(); // Same axis for demo
+      signed char trimY = joystick3.getValue(); 
 
-      // Print all values in CSV format
       Serial.print(sliderValue);
       Serial.print('|');
       Serial.print(joyX);
@@ -72,7 +56,6 @@ public:
       Serial.print('|');
       Serial.println(trimY);
 
-      // Print joystick trim value
       Serial.print("Trim value: ");
       Serial.println(joystick3.getTrim());
     }
@@ -82,6 +65,7 @@ public:
 void setup()
 {
   Serial.begin(9600);
+  Serial.println("=== Slider and Joystick Demo ===");
   static App app;
 }
 

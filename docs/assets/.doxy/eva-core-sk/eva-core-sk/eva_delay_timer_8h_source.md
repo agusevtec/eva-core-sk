@@ -15,7 +15,6 @@
 #include "evaTickable.h"
 #include "evaHandler.h"
 
-#define IS_BEFORE(t1, t2) (((t2) - (t1)) <= 0x7FFFFFFFUL)
 
 
 namespace eva
@@ -38,6 +37,7 @@ namespace eva
         void stop();
 
     protected:
+        bool checkTimeElapsed();
         void tick() override;
 
     protected:

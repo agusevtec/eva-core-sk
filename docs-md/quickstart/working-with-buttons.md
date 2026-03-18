@@ -54,7 +54,7 @@ The `PinButton` alias demonstrates the library's composable architecture:
 
 ```cpp
 template <int PIN, int PIN_MODE, int ACTIVATES_ON>
-using PinButton = Button<BinarizeEqDecor<StabilizeDecor<DigitalPinReader<PIN, PINMODE>>, ACTIVATES_ON>>;
+using PinButton = Button<BinarizeEqDecor<DebounceDecor<DigitalPinReader<PIN, PINMODE>>, ACTIVATES_ON>>;
 ```
 
 This builds the button from several layers:
@@ -62,7 +62,7 @@ This builds the button from several layers:
 | Layer | Purpose |
 |-------|---------|
 | `DigitalPinReader<PIN, PIN_MODE>` | Reads the raw digital pin value |
-| `StabilizeDecor<...>` | Stabilizes readings (120ms debounce) |
+| `DebounceDecor<...>` | Stabilizes readings (120ms debounce) |
 | `BinarizeEqDecor<..., ACTIVATES_ON>` | Converts the reading to 0/1 based on active level |
 | `Button<...>` | Adds press/release/click detection logic |
 
@@ -155,7 +155,7 @@ The `PinMultiButton` alias shows an even more sophisticated composition:
 
 ```cpp
 template <int PIN, int PINMODE, signed short... LEVELS>
-using PinMultiButton = Button<QuantizeDecor<StabilizeDecor<AnalogPinReader<PIN, PINMODE>>, LEVELS...>>;
+using PinMultiButton = Button<QuantizeDecor<DebounceDecor<AnalogPinReader<PIN, PINMODE>>, LEVELS...>>;
 ```
 
 The layers:
@@ -163,7 +163,7 @@ The layers:
 | Layer | Purpose |
 |-------|---------|
 | `AnalogPinReader<PIN, PINMODE>` | Reads raw analog values |
-| `StabilizeDecor<...>` | Stabilizes readings (120ms debounce) |
+| `DebounceDecor<...>` | Stabilizes readings (120ms debounce) |
 | `QuantizeDecor<..., LEVELS...>` | Maps analog values to button indices (1..n) |
 | `Button<...>` | Adds button state machine and event generation |
 

@@ -14,11 +14,10 @@
 #pragma once
 
 #include "evaButton.h"
-#include "evaCommon.h"
 
 namespace eva
 {
-    static const unsigned short REPEAT_DELAY = 400;
+    static const unsigned short REPEAT_DELAY = 300;
 
     static const unsigned char ON_REPEATKEY = 0x40;
 
@@ -63,7 +62,7 @@ namespace eva
             unsigned char wasLevelCode = this->levelCode;
             this->updateState();
 
-            if (this->(wasLevelCode))
+            if (this->checkChanging(wasLevelCode))
                 this->handleChanging();
 
             if (checkLongPress(now))
@@ -84,13 +83,13 @@ namespace eva
     };
 
     template <int PIN, int PIN_MODE, int ACTIVATES_ON>
-    using KeyPinButton = Button<BinarizeEqDecor<StabilizeDecor<DigitalPinReader<PIN, PIN_MODE>>, ACTIVATES_ON>>;
+    using PinScrollButton = Button<BinarizeEqDecor<DebounceDecor<DigitalPinReader<PIN, PIN_MODE>>, ACTIVATES_ON>>;
 
     template <int PIN>
-    using KeyPullUpButton = ScrollButton<BinarizeEqDecor<StabilizeDecor<DigitalPinReader<PIN, INPUT_PULLUP>>, LOW>>;
+    using PullupScrollButton = ScrollButton<BinarizeEqDecor<DebounceDecor<DigitalPinReader<PIN, INPUT_PULLUP>>, LOW>>;
 
     template <int PIN, int PIN_MODE, signed short... LEVELS>
-    using KeyPinMultiButton = ScrollButton<QuantizeDecor<StabilizeDecor<AnalogPinReader<PIN, PIN_MODE>>, LEVELS...>>;
+    using PinScrollMultiButton = ScrollButton<QuantizeDecor<DebounceDecor<AnalogPinReader<PIN, PIN_MODE>>, LEVELS...>>;
 };
 #endif
 ```

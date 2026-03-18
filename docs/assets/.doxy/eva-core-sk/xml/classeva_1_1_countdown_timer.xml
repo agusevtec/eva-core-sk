@@ -278,6 +278,7 @@ Listener must be assigned via constructor or <ref refid="classeva_1_1_countdown_
     </collaborationgraph>
     <location file="src/evaCountdownTimer.h" line="12" column="5" bodyfile="src/evaCountdownTimer.h" bodystart="13" bodyend="54"/>
     <listofallmembers>
+      <member refid="classeva_1_1_delay_timer_1aadecb847985e9b5c4e6c9e2a3f4e435d" prot="protected" virt="non-virtual"><scope>eva::CountdownTimer</scope><name>checkTimeElapsed</name></member>
       <member refid="classeva_1_1_countdown_timer_1a971246536c3cca838038b493c4da414c" prot="public" virt="non-virtual"><scope>eva::CountdownTimer</scope><name>DelayTimer</name></member>
       <member refid="classeva_1_1_countdown_timer_1a5889ee3ab5a8f31a35f8849c12be2323" prot="public" virt="non-virtual"><scope>eva::CountdownTimer</scope><name>DelayTimer</name></member>
       <member refid="classeva_1_1_countdown_timer_1a4cbcb7d35dd49ccfa714aa045d25fed7" prot="public" virt="non-virtual"><scope>eva::CountdownTimer</scope><name>getRemaining</name></member>

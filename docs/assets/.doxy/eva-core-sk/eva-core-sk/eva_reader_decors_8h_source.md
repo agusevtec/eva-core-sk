@@ -28,7 +28,7 @@ namespace eva
         return false;
     }
     template <class READER>
-    class StabilizeDecor : public READER
+    class DebounceDecor : public READER
     {
     public:
         signed short getValue()

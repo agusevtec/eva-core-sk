@@ -24,7 +24,7 @@ void CountdownTimer::tick()
     if (!isRunning())
         return;
 
-    if (IS_BEFORE(millis(), this->nextFire))
+    if (!this->checkTimeElapsed())
         return;
 
     if (--this->remainingCount > 0)
