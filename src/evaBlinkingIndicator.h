@@ -8,9 +8,16 @@
 
 namespace eva
 {
-  /**
-   * @brief Indicator that blinks with specified period and duty cycle
-   */
+ /**
+ * @brief Indicator that blinks with specified period and duty cycle
+ * 
+ * Note:
+ * This class serves as a demonstration of library concepts and is intentionally
+ * kept simple for clarity. Performance optimization was not the primary focus.
+ * It is recommended for prototyping stages to validate your application logic.
+ * For production use with strict timing requirements, consider implementing
+ * a custom solution based on your specific needs.
+ */
   class BlinkingIndicator : public Indicator, public IHandler
   {
   public:

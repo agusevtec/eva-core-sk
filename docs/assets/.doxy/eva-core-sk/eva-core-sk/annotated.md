@@ -14,6 +14,7 @@ Here are the classes, structs, unions and interfaces with brief descriptions:
     * **struct** [**CallbackInfo**](structeva_1_1_callback_info.md)     
     * **class** [**CountdownIndicator**](classeva_1_1_countdown_indicator.md) [_**Indicator**_](classeva_1_1_indicator.md) _that blinks a specified number of times then notifies listener._    
     * **class** [**CountdownTimer**](classeva_1_1_countdown_timer.md) _Timer that fires repeatedly at fixed intervals._     
+    * **class** [**DebounceDecor**](classeva_1_1_debounce_decor.md) _Decorator that stabilizes readings by requiring value to be stable for a period._     
     * **class** [**DelayTimer**](classeva_1_1_delay_timer.md) _One-shot timer that fires after a delay._     
     * **class** [**DigitalPinReader**](classeva_1_1_digital_pin_reader.md) _Reads digital pin value._     
     * **class** [**Handler**](classeva_1_1_handler.md) [_**Handler**_](classeva_1_1_handler.md) _that calls a member method._    
@@ -22,14 +23,13 @@ Here are the classes, structs, unions and interfaces with brief descriptions:
     * **class** [**IReader**](classeva_1_1_i_reader.md) _Interface for value readers._     
     * **class** [**IReaderAdapter**](classeva_1_1_i_reader_adapter.md) _Adapter that converts any class with getValue() into an_ [_**IReader**_](classeva_1_1_i_reader.md) _._    
     * **class** [**Indicator**](classeva_1_1_indicator.md) _Basic indicator (LED) control._     
-    * **class** [**Joystick**](classeva_1_1_joystick.md) [_**Joystick**_](classeva_1_1_joystick.md) _axis reader with trim adjustment._    
+    * **class** [**Joystick**](classeva_1_1_joystick.md) [_**Joystick**_](classeva_1_1_joystick.md) _axis reader (range 1000-1500-2000) with trim adjustment._    
     * **class** [**List**](classeva_1_1_list.md) _Simple singly-linked list container._     
     * **struct** [**ListIterator**](structeva_1_1_list_iterator.md) _Iterator node for_ [_**List**_](classeva_1_1_list.md) _._    
     * **class** [**QuantizeDecor**](classeva_1_1_quantize_decor.md) _Decorator that quantizes analog readings to discrete levels._     
     * **class** [**RepeatTimer**](classeva_1_1_repeat_timer.md) _Timer that fires repeatedly at fixed intervals._     
     * **class** [**ScrollButton**](classeva_1_1_scroll_button.md) [_**Button**_](classeva_1_1_button.md) _with auto-repeat (typematic) functionality._    
-    * **class** [**Slider**](classeva_1_1_slider.md) _Maps analog readings to 0-255 range._     
-    * **class** [**StabilizeDecor**](classeva_1_1_stabilize_decor.md) _Decorator that stabilizes readings by requiring value to be stable for a period._     
+    * **class** [**Slider**](classeva_1_1_slider.md) _Maps analog readings to 1000-2000 range._     
     * **class** [**Switch**](classeva_1_1_switch.md) _Universal switch/button class for multi-valued input sources._     
     * **class** [**Tickable**](classeva_1_1_tickable.md) _Base class for objects that need periodic updates._     
 

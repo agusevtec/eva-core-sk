@@ -319,6 +319,7 @@ Listener and period must be assigned via constructor or <ref refid="classeva_1_1
     </collaborationgraph>
     <location file="src/evaRepeatTimer.h" line="12" column="5" bodyfile="src/evaRepeatTimer.h" bodystart="13" bodyend="67"/>
     <listofallmembers>
+      <member refid="classeva_1_1_delay_timer_1aadecb847985e9b5c4e6c9e2a3f4e435d" prot="protected" virt="non-virtual"><scope>eva::RepeatTimer</scope><name>checkTimeElapsed</name></member>
       <member refid="classeva_1_1_repeat_timer_1a971246536c3cca838038b493c4da414c" prot="public" virt="non-virtual"><scope>eva::RepeatTimer</scope><name>DelayTimer</name></member>
       <member refid="classeva_1_1_repeat_timer_1a5889ee3ab5a8f31a35f8849c12be2323" prot="public" virt="non-virtual"><scope>eva::RepeatTimer</scope><name>DelayTimer</name></member>
       <member refid="classeva_1_1_delay_timer_1a4d615ec24c146a2b46feea535a8e7830" prot="public" virt="non-virtual"><scope>eva::RepeatTimer</scope><name>isRunning</name></member>

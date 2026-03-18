@@ -4,11 +4,10 @@
 #pragma once
 
 #include "evaButton.h"
-#include "evaCommon.h"
 
 namespace eva
 {
-    static const unsigned short REPEAT_DELAY = 400;
+    static const unsigned short REPEAT_DELAY = 300;
 
     static const unsigned char ON_REPEATKEY = 0x40;
 
@@ -73,7 +72,7 @@ namespace eva
             unsigned char wasLevelCode = this->levelCode;
             this->updateState();
 
-            if (this->(wasLevelCode))
+            if (this->checkChanging(wasLevelCode))
                 this->handleChanging();
 
             if (checkLongPress(now))
@@ -98,7 +97,7 @@ namespace eva
      *
      * Combines:
      * - DigitalPinReader for raw pin reading
-     * - StabilizeDecor for debouncing (120ms stability)
+     * - DebounceDecor for debouncing (120ms stability)
      * - BinarizeEqDecor for mapping to active/inactive based on specified level
      *
      * Long click threshold is fixed at 750ms.
@@ -108,7 +107,7 @@ namespace eva
      * @tparam ACTIVATES_ON Level that means "pressed" (LOW or HIGH)
      */
     template <int PIN, int PIN_MODE, int ACTIVATES_ON>
-    using KeyPinButton = Button<BinarizeEqDecor<StabilizeDecor<DigitalPinReader<PIN, PIN_MODE>>, ACTIVATES_ON>>;
+    using PinScrollButton = Button<BinarizeEqDecor<DebounceDecor<DigitalPinReader<PIN, PIN_MODE>>, ACTIVATES_ON>>;
 
     /**
      * @brief Pull-up key-button (active LOW, connect to GND).
@@ -122,7 +121,7 @@ namespace eva
      * @tparam PIN Arduino pin number
      */
     template <int PIN>
-    using KeyPullUpButton = ScrollButton<BinarizeEqDecor<StabilizeDecor<DigitalPinReader<PIN, INPUT_PULLUP>>, LOW>>;
+    using PullupScrollButton = ScrollButton<BinarizeEqDecor<DebounceDecor<DigitalPinReader<PIN, INPUT_PULLUP>>, LOW>>;
 
     /**
      * @brief Multiple key-buttons on a single ADC pin using resistor ladder.
@@ -138,7 +137,7 @@ namespace eva
      *
      * Each button produces a different ADC value when pressed. The
      * QuantizeDecor maps these values to discrete button codes (1, 2, 3...).
-     * StabilizeDecor provides debouncing.
+     * DebounceDecor provides debouncing.
      *
      * Generates standard button events for each button, with the button
      * number encoded in the event mask.
@@ -150,6 +149,6 @@ namespace eva
      * @see PinMultiSwitch For use cases without click detection
      */
     template <int PIN, int PIN_MODE, signed short... LEVELS>
-    using KeyPinMultiButton = ScrollButton<QuantizeDecor<StabilizeDecor<AnalogPinReader<PIN, PIN_MODE>>, LEVELS...>>;
+    using PinScrollMultiButton = ScrollButton<QuantizeDecor<DebounceDecor<AnalogPinReader<PIN, PIN_MODE>>, LEVELS...>>;
 };
 #endif

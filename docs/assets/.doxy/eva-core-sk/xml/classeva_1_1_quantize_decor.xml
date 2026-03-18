@@ -3,7 +3,7 @@
   <compounddef id="classeva_1_1_quantize_decor" kind="class" language="C++" prot="public">
     <compoundname>eva::QuantizeDecor</compoundname>
     <basecompoundref prot="public" virt="non-virtual">READER</basecompoundref>
-    <derivedcompoundref refid="classeva_1_1_switch" prot="public" virt="non-virtual">eva::Switch&lt; QuantizeDecor&lt; StabilizeDecor&lt; AnalogPinReader&lt; PIN, PIN_MODE &gt; &gt;, LEVELS... &gt; &gt;</derivedcompoundref>
+    <derivedcompoundref refid="classeva_1_1_switch" prot="public" virt="non-virtual">eva::Switch&lt; QuantizeDecor&lt; DebounceDecor&lt; AnalogPinReader&lt; PIN, PIN_MODE &gt; &gt;, LEVELS... &gt; &gt;</derivedcompoundref>
     <includes refid="eva_reader_decors_8h" local="no">evaReaderDecors.h</includes>
     <templateparamlist>
       <param>
@@ -93,7 +93,7 @@
         <label>READER</label>
       </node>
       <node id="4">
-        <label>eva::Button&lt; QuantizeDecor&lt; StabilizeDecor&lt; AnalogPinReader&lt; PIN, PIN_MODE &gt; &gt;, LEVELS... &gt; &gt;</label>
+        <label>eva::Button&lt; QuantizeDecor&lt; DebounceDecor&lt; AnalogPinReader&lt; PIN, PIN_MODE &gt; &gt;, LEVELS... &gt; &gt;</label>
         <link refid="classeva_1_1_button"/>
         <childnode refid="3" relation="public-inheritance">
         </childnode>
@@ -105,13 +105,13 @@
         </childnode>
       </node>
       <node id="5">
-        <label>eva::ScrollButton&lt; QuantizeDecor&lt; StabilizeDecor&lt; AnalogPinReader&lt; PIN, PIN_MODE &gt; &gt;, LEVELS... &gt; &gt;</label>
+        <label>eva::ScrollButton&lt; QuantizeDecor&lt; DebounceDecor&lt; AnalogPinReader&lt; PIN, PIN_MODE &gt; &gt;, LEVELS... &gt; &gt;</label>
         <link refid="classeva_1_1_scroll_button"/>
         <childnode refid="4" relation="public-inheritance">
         </childnode>
       </node>
       <node id="3">
-        <label>eva::Switch&lt; QuantizeDecor&lt; StabilizeDecor&lt; AnalogPinReader&lt; PIN, PIN_MODE &gt; &gt;, LEVELS... &gt; &gt;</label>
+        <label>eva::Switch&lt; QuantizeDecor&lt; DebounceDecor&lt; AnalogPinReader&lt; PIN, PIN_MODE &gt; &gt;, LEVELS... &gt; &gt;</label>
         <link refid="classeva_1_1_switch"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>

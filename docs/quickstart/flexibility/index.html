@@ -857,7 +857,7 @@
 
 <span class="c1">// Step 3: Assemble into a Button</span>
 <span class="k">using</span><span class="w"> </span><span class="n">DifferentialSwitch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Switch</span><span class="o">&lt;</span>
-<span class="w">  </span><span class="n">StabilizeDecor</span><span class="o">&lt;</span>
+<span class="w">  </span><span class="n">DebounceDecor</span><span class="o">&lt;</span>
 <span class="w">    </span><span class="n">ZoneMapper</span><span class="o">&lt;</span>
 <span class="w">      </span><span class="n">DifferentialReader</span><span class="o">&lt;</span><span class="n">A0</span><span class="p">,</span><span class="w"> </span><span class="n">A1</span><span class="o">&gt;</span>
 <span class="w">    </span><span class="o">&gt;</span>
@@ -924,7 +924,7 @@
 <span class="kt">signed</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">ExternalStateReader</span><span class="o">::</span><span class="n">lastValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 
 <span class="c1">// Use it with standard Button</span>
-<span class="k">using</span><span class="w"> </span><span class="n">VirtualButton</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Button</span><span class="o">&lt;</span><span class="n">StabilizeDecor</span><span class="o">&lt;</span><span class="n">ExternalStateReader</span><span class="o">&gt;&gt;</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">VirtualButton</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Button</span><span class="o">&lt;</span><span class="n">DebounceDecor</span><span class="o">&lt;</span><span class="n">ExternalStateReader</span><span class="o">&gt;&gt;</span><span class="p">;</span>
 
 <span class="c1">// Now any external code can inject button events:</span>
 <span class="c1">// ExternalStateReader::update(1);  // Press</span>

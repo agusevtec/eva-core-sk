@@ -34,7 +34,7 @@ void RepeatTimer::tick()
     if (!isRunning())
         return;
 
-    if (IS_BEFORE(millis(), this->nextFire))
+    if (!this->checkTimeElapsed())
         return;
 
     this->nextFire += this->period;

@@ -102,7 +102,7 @@ namespace eva
      *
      * Combines:
      * - DigitalPinReader for raw pin reading
-     * - StabilizeDecor for debouncing (120ms stability)
+     * - DebounceDecor for debouncing (120ms stability)
      * - BinarizeEqDecor for mapping to active/inactive based on specified level
      *
      * Long click threshold is fixed at 750ms.
@@ -112,7 +112,7 @@ namespace eva
      * @tparam ACTIVATES_ON Level that means "pressed" (LOW or HIGH)
      */
     template <int PIN, int PIN_MODE, int ACTIVATES_ON>
-    using PinButton = Button<BinarizeEqDecor<StabilizeDecor<DigitalPinReader<PIN, PIN_MODE>>, ACTIVATES_ON>>;
+    using PinButton = Button<BinarizeEqDecor<DebounceDecor<DigitalPinReader<PIN, PIN_MODE>>, ACTIVATES_ON>>;
 
     /**
      * @brief Pull-up button (active LOW, connect to GND).
@@ -126,7 +126,7 @@ namespace eva
      * @tparam PIN Arduino pin number
      */
     template <int PIN>
-    using PullUpButton = Button<BinarizeEqDecor<StabilizeDecor<DigitalPinReader<PIN, INPUT_PULLUP>>, LOW>>;
+    using PullUpButton = Button<BinarizeEqDecor<DebounceDecor<DigitalPinReader<PIN, INPUT_PULLUP>>, LOW>>;
 
     /**
      * @brief Multiple buttons on a single ADC pin using resistor ladder.
@@ -142,7 +142,7 @@ namespace eva
      *
      * Each button produces a different ADC value when pressed. The
      * QuantizeDecor maps these values to discrete button codes (1, 2, 3...).
-     * StabilizeDecor provides debouncing.
+     * DebounceDecor provides debouncing.
      *
      * Generates standard button events for each button, with the button
      * number encoded in the event mask.
@@ -154,6 +154,6 @@ namespace eva
      * @see PinMultiSwitch For use cases without click detection
      */
     template <int PIN, int PIN_MODE, signed short... LEVELS>
-    using PinMultiButton = Button<QuantizeDecor<StabilizeDecor<AnalogPinReader<PIN, PIN_MODE>>, LEVELS...>>;
+    using PinMultiButton = Button<QuantizeDecor<DebounceDecor<AnalogPinReader<PIN, PIN_MODE>>, LEVELS...>>;
 };
 #endif

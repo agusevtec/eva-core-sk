@@ -1,136 +1,81 @@
 /**
- * eva Library - ScrollButton Demo: Volume & Menu Navigation
- * 
- * Simple demonstration of ScrollButton with auto-repeat:
- * - Volume Up/Down: Auto-repeat for fast tuning
- * - Menu navigation: Short press = move, Long press = select
- * 
- * Hardware connections (pull-up buttons to GND):
- * - Volume Up: pin 2
- * - Volume Down: pin 3
- * - Menu Up: pin 4
- * - Menu Down: pin 5
- * - Select: pin 6
+ * eva Library - ScrollButton with Custom KeyPad Demo
+ *
+ * Two input methods:
+ * 1. Volume control with PullUpScrollButton (auto-repeat)
+ * 2. Navigation pad with custom 4-direction reader
  */
 
 #include <evaTac.h>
-#include <evaRepeatTimer.h>
 #include <evaScrollButton.h>
 
 using namespace eva;
 
-// Application state
-struct {
-  unsigned char volume = 42;       // 0-100
-  unsigned char menuPos = 0;       // 0-4 (5 menu items)
-  bool menuActive = false;
-  const char* menuItems[5] = {
-    "Playback", "Equalizer", "Bluetooth", "Settings", "About"
-  };
-} state;
-
-class App : public IHandler {
+class App {
 private:
-  // ScrollButtons with auto-repeat for volume
-  KeyPullUpButton<2> volUpBtn;
-  KeyPullUpButton<3> volDownBtn;
+  /** @brief Scroll button for volume up with auto-repeat on hold */
+  PullupScrollButton<2> volPlus{ &onVolumeButtonPressedHandler, ON_PRESS | ON_REPEATKEY };
   
-  // Regular buttons for menu (no repeat)
-  PullUpButton<4> menuUpBtn;
-  PullUpButton<5> menuDownBtn;
-  PullUpButton<6> selectBtn;
+  /** @brief Scroll button for volume down with auto-repeat on hold */
+  PullupScrollButton<3> volMinus{ &onVolumeButtonPressedHandler, ON_PRESS | ON_REPEATKEY };
+
+  /**
+   * @brief Custom reader for 2-direction navigation pad
+   * 
+   * Returns 'L' when left button (pin4) is pressed,
+   * 'R' when right button (pin5) is pressed,
+   * 0 when no button is pressed.
+   */
+  class NavPadReader {
+  public:
+    NavPadReader() {
+      pinMode(4, INPUT_PULLUP);
+      pinMode(5, INPUT_PULLUP);
+    }
+
+    signed short getValue() {
+      if (digitalRead(4) == LOW)
+        return 'L';  // Left
+      if (digitalRead(5) == LOW)
+        return 'R';  // Right
+      return 0;      // No button pressed
+    }
+  };
   
-  RepeatTimer displayTimer{500, this};  // Refresh display
+  /** @brief Scroll button for menu navigation using custom keypad reader */
+  ScrollButton<NavPadReader> navigationKeypad{&onNavigationKeypadPressedHandler, ON_PRESS | ON_REPEATKEY };
+
+  unsigned char volume = 10;
+  unsigned char menuPos = 0;
 
 public:
-  App() {
-    // Volume buttons: respond to both press and repeat
-    volUpBtn.setListener(this, ON_PRESS | ON_REPEATKEY);
-    volDownBtn.setListener(this, ON_PRESS | ON_REPEATKEY);
-    
-    // Menu buttons: only short clicks
-    menuUpBtn.setListener(this, ON_SHORTCLICK);
-    menuDownBtn.setListener(this, ON_SHORTCLICK);
-    selectBtn.setListener(this, ON_SHORTCLICK | ON_LONGCLICK);
-    
-    Serial.begin(9600);
-    showScreen();
+
+  Handler<App> onVolumeButtonPressedHandler{ this, &App::onVolumeButtonPressed };
+  void onVolumeButtonPressed(void *sender, CallbackInfo info) {
+    int delta = (sender == &volPlus) ? 1 : -1;
+    volume = constrain(volume + delta, 0, 10);
+    Serial.print("Volume: ");
+    Serial.println(volume);
   }
-  
-  void showScreen() {
-    Serial.println("\033[2J\033[H");  // Clear screen
-    Serial.println("=== ScrollButton Demo ===");
-    Serial.println("[Volume] UP:pin2 DOWN:pin3 (auto-repeat)");
-    Serial.println("[Menu]   UP:pin4 DOWN:pin5 SELECT:pin6");
-    Serial.println("------------------------");
-    
-    // Show volume bar
-    Serial.print("Volume: [");
-    for (int i = 0; i < 20; i++) {
-      if (i < state.volume / 5) Serial.print('#');
-      else Serial.print('-');
+
+  Handler<App> onNavigationKeypadPressedHandler{ this, &App::onNavigationKeypadPressed };
+  void onNavigationKeypadPressed(void *sender, CallbackInfo info) {
+    switch (info.eventArg) {
+      case 'L': menuPos--; break;
+      case 'R': menuPos++; break;
+      default: return;
     }
-    Serial.print("] ");
-    Serial.print(state.volume);
-    Serial.println("%");
-    
-    // Show menu
-    Serial.println("\nMenu (long press Select to toggle):");
-    if (state.menuActive) {
-      for (int i = 0; i < 5; i++) {
-        Serial.print(i == state.menuPos ? " > " : "   ");
-        Serial.println(state.menuItems[i]);
-      }
-    } else {
-      Serial.println("  [menu inactive]");
-    }
-    Serial.println("------------------------");
-  }
-  
-  void invoke(void* sender, CallbackInfo info) override {
-    // Volume control
-    if (sender == &volUpBtn) {
-      if (state.volume < 100) {
-        state.volume += (info.eventType == ON_REPEATKEY) ? 5 : 1;
-        if (state.volume > 100) state.volume = 100;
-      }
-    }
-    else if (sender == &volDownBtn) {
-      if (state.volume > 0) {
-        state.volume -= (info.eventType == ON_REPEATKEY) ? 5 : 1;
-        if (state.volume < 0) state.volume = 0;
-      }
-    }
-    
-    // Menu navigation (only when menu active)
-    else if (sender == &menuUpBtn && state.menuActive) {
-      if (state.menuPos > 0) state.menuPos--;
-    }
-    else if (sender == &menuDownBtn && state.menuActive) {
-      if (state.menuPos < 4) state.menuPos++;
-    }
-    
-    // Select button
-    else if (sender == &selectBtn) {
-      if (info.eventType == ON_LONGCLICK) {
-        state.menuActive = !state.menuActive;
-      } else if (info.eventType == ON_SHORTCLICK && state.menuActive) {
-        Serial.print("Selected: ");
-        Serial.println(state.menuItems[state.menuPos]);
-      }
-    }
-    
-    // Update display
-    if (sender != &displayTimer) {
-      showScreen();
-    }
+    menuPos = constrain(menuPos, 0, 10);
+
+    Serial.print("Menu option: ");
+    Serial.println(menuPos);
   }
 };
 
-App app;
-
 void setup() {
-  // Serial already initialized in App constructor
+  Serial.begin(9600);
+  static App app;
+  Serial.println("=== ScrollButton Demo ===");
 }
 
 void loop() {

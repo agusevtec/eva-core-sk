@@ -2,7 +2,7 @@
 
 # Class eva::Slider
 
-**template &lt;class READER, int MIN, int MAX&gt;**
+**template &lt;class READER, int MIN\_POS, int MAX\_POS&gt;**
 
 
 
@@ -10,7 +10,7 @@
 
 
 
-_Maps analog readings to 0-255 range._ 
+_Maps analog readings to 1000-2000 range._ 
 
 * `#include <evaSlider.h>`
 

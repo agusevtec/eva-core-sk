@@ -65,7 +65,7 @@ Flexibility without performance loss. Everything resolves at compile time.
 - **Utilities**: `List`
 
 ### Reader Decorators
-- `StabilizeDecor` debouncing with 120ms stabilization
+- `DebounceDecor` debouncing with 120ms stabilization
 - `BinarizeEqDecor`, `BinarizeGtDecor`, `BinarizeLtDecor` convert to 0/1 based on level
 - `QuantizeDecor` map analog values to discrete levels
 

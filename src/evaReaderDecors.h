@@ -21,7 +21,7 @@ namespace eva
      * @brief Decorator that stabilizes readings by requiring value to be stable for a period
      */
     template <class READER>
-    class StabilizeDecor : public READER
+    class DebounceDecor : public READER
     {
     public:
         signed short getValue()

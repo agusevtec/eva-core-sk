@@ -11,7 +11,7 @@ Look at how buttons are built:
 
 ```cpp
 template <int PIN, int PINMODE, int ACTIVATES_ON>
-using PinButton = Button<BinarizeEqDecor<StabilizeDecor<DigitalPinReader<PIN, PINMODE>>, ACTIVATES_ON>>;
+using PinButton = Button<BinarizeEqDecor<DebounceDecor<DigitalPinReader<PIN, PINMODE>>, ACTIVATES_ON>>;
 ```
 
 This entire chain resolves at compile time. 
@@ -50,7 +50,7 @@ public:
 
 class App {
 private:
-  Switch<StabilizeDecor<MyBankReader>> navButtons;
+  Switch<DebounceDecor<MyBankReader>> navButtons;
   
   void onButtonPress(void* sender, CallbackInfo cbInfo) {
     char button = cbInfo.eventArg;  // 'u', 'd', 'l', or 'r'

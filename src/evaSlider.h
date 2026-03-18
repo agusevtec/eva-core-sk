@@ -7,9 +7,9 @@
 namespace eva
 {
   /**
-   * @brief Maps analog readings to 0-255 range
+   * @brief Maps analog readings to 1000-2000 range
    */
-  template <class READER, int MIN, int MAX>
+  template <class READER, int MIN_POS, int MAX_POS>
   class Slider : public READER
   {
   public:
@@ -19,18 +19,18 @@ namespace eva
      */
     signed short getValue()
     {
-      return constrain(map(READER::getValue(), MIN, MAX, 0, 255), 0, 255);
+      return constrain(map(READER::getValue(), MIN_POS, MAX_POS, 1000, 2000), 1000, 2000);
     }
   };
   /**
    * @brief Pin-based slider mapping analog readings to 0-255 range
    * @tparam PIN Arduino pin number
    * @tparam PIN_MODE Pin mode (usually INPUT)
-   * @tparam MIN Minimum analog reading
-   * @tparam MAX Maximum analog reading
+   * @tparam MIN_POS Minimum analog reading
+   * @tparam MAX_POS Maximum analog reading
    */
-  template <int PIN, int PIN_MODE, int MIN, int MAX>
-  using PinSlider = Slider<AnalogPinReader<PIN, PIN_MODE>, MIN, MAX>;
+  template <int PIN, int PIN_MODE, int MIN_POS, int MAX_POS>
+  using PinSlider = Slider<AnalogPinReader<PIN, PIN_MODE>, MIN_POS, MAX_POS>;
 };
 
 #endif

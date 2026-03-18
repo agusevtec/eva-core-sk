@@ -4,8 +4,8 @@
     <compoundname>eva::Switch</compoundname>
     <basecompoundref prot="public" virt="non-virtual">READER</basecompoundref>
     <basecompoundref refid="classeva_1_1_tickable" prot="public" virt="non-virtual">eva::Tickable</basecompoundref>
-    <derivedcompoundref refid="classeva_1_1_button" prot="public" virt="non-virtual">eva::Button&lt; BinarizeEqDecor&lt; StabilizeDecor&lt; DigitalPinReader&lt; PIN, PIN_MODE &gt; &gt;, ACTIVATES_ON &gt; &gt;</derivedcompoundref>
-    <derivedcompoundref refid="classeva_1_1_button" prot="public" virt="non-virtual">eva::Button&lt; BinarizeEqDecor&lt; StabilizeDecor&lt; DigitalPinReader&lt; PIN, INPUT_PULLUP &gt; &gt;, LOW &gt; &gt;</derivedcompoundref>
+    <derivedcompoundref refid="classeva_1_1_button" prot="public" virt="non-virtual">eva::Button&lt; BinarizeEqDecor&lt; DebounceDecor&lt; DigitalPinReader&lt; PIN, PIN_MODE &gt; &gt;, ACTIVATES_ON &gt; &gt;</derivedcompoundref>
+    <derivedcompoundref refid="classeva_1_1_button" prot="public" virt="non-virtual">eva::Button&lt; BinarizeEqDecor&lt; DebounceDecor&lt; DigitalPinReader&lt; PIN, INPUT_PULLUP &gt; &gt;, LOW &gt; &gt;</derivedcompoundref>
     <derivedcompoundref refid="classeva_1_1_button" prot="public" virt="non-virtual">eva::Button&lt; READER &gt;</derivedcompoundref>
     <includes refid="eva_switch_8h" local="no">evaSwitch.h</includes>
     <templateparamlist>
@@ -388,13 +388,13 @@
         <label>READER</label>
       </node>
       <node id="5">
-        <label>eva::Button&lt; BinarizeEqDecor&lt; StabilizeDecor&lt; DigitalPinReader&lt; PIN, INPUT_PULLUP &gt; &gt;, LOW &gt; &gt;</label>
+        <label>eva::Button&lt; BinarizeEqDecor&lt; DebounceDecor&lt; DigitalPinReader&lt; PIN, INPUT_PULLUP &gt; &gt;, LOW &gt; &gt;</label>
         <link refid="classeva_1_1_button"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
       <node id="4">
-        <label>eva::Button&lt; BinarizeEqDecor&lt; StabilizeDecor&lt; DigitalPinReader&lt; PIN, PIN_MODE &gt; &gt;, ACTIVATES_ON &gt; &gt;</label>
+        <label>eva::Button&lt; BinarizeEqDecor&lt; DebounceDecor&lt; DigitalPinReader&lt; PIN, PIN_MODE &gt; &gt;, ACTIVATES_ON &gt; &gt;</label>
         <link refid="classeva_1_1_button"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
@@ -406,7 +406,7 @@
         </childnode>
       </node>
       <node id="6">
-        <label>eva::ScrollButton&lt; BinarizeEqDecor&lt; StabilizeDecor&lt; DigitalPinReader&lt; PIN, INPUT_PULLUP &gt; &gt;, LOW &gt; &gt;</label>
+        <label>eva::ScrollButton&lt; BinarizeEqDecor&lt; DebounceDecor&lt; DigitalPinReader&lt; PIN, INPUT_PULLUP &gt; &gt;, LOW &gt; &gt;</label>
         <link refid="classeva_1_1_scroll_button"/>
         <childnode refid="5" relation="public-inheritance">
         </childnode>

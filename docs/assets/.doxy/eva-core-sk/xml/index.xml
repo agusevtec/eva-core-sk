@@ -58,6 +58,11 @@
     <member refid="classeva_1_1_countdown_timer_1a5889ee3ab5a8f31a35f8849c12be2323" kind="function"><name>DelayTimer</name></member>
     <member refid="classeva_1_1_countdown_timer_1af134fa838e3417c5b93e27635922d2dd" kind="function"><name>tick</name></member>
   </compound>
+  <compound refid="classeva_1_1_debounce_decor" kind="class"><name>eva::DebounceDecor</name>
+    <member refid="classeva_1_1_debounce_decor_1aa33cfc45eb23367315c205e928cdef63" kind="variable"><name>keepValueTill</name></member>
+    <member refid="classeva_1_1_debounce_decor_1a64d406568eb6ccbe1611f69dd37378c5" kind="variable"><name>keepedValue</name></member>
+    <member refid="classeva_1_1_debounce_decor_1ad7b7a63cc7f5ba68c5eb59c54cc857e4" kind="function"><name>getValue</name></member>
+  </compound>
   <compound refid="classeva_1_1_delay_timer" kind="class"><name>eva::DelayTimer</name>
     <member refid="classeva_1_1_delay_timer_1aaa15353150b005949a4cb0345ebf83ca" kind="variable"><name>nextFire</name></member>
     <member refid="classeva_1_1_delay_timer_1a79cfcb6054cd07ae88faa66e96e1a29f" kind="variable"><name>listener</name></member>
@@ -68,6 +73,7 @@
     <member refid="classeva_1_1_delay_timer_1a4d615ec24c146a2b46feea535a8e7830" kind="function"><name>isRunning</name></member>
     <member refid="classeva_1_1_delay_timer_1a37416cde9f8aac62cadee90695e75efe" kind="function"><name>setListener</name></member>
     <member refid="classeva_1_1_delay_timer_1a0e61d51bcd42b77a47381496ddb8445c" kind="function"><name>stop</name></member>
+    <member refid="classeva_1_1_delay_timer_1aadecb847985e9b5c4e6c9e2a3f4e435d" kind="function"><name>checkTimeElapsed</name></member>
     <member refid="classeva_1_1_delay_timer_1a7cf30bb1be1a9a5002fde64adc479096" kind="function"><name>tick</name></member>
   </compound>
   <compound refid="classeva_1_1_digital_pin_reader" kind="class"><name>eva::DigitalPinReader</name>
@@ -102,10 +108,14 @@
     <member refid="classeva_1_1_i_reader_adapter_1aa76060a13929f9ee0bd7a8112cb40866" kind="function"><name>getValue</name></member>
   </compound>
   <compound refid="classeva_1_1_joystick" kind="class"><name>eva::Joystick</name>
-    <member refid="classeva_1_1_joystick_1a9b3227cbf2fee627535e01ad65199fa6" kind="variable"><name>trim</name></member>
-    <member refid="classeva_1_1_joystick_1ae97cb6c9ab9e38d004f425fa161c3ce2" kind="function"><name>getValue</name></member>
-    <member refid="classeva_1_1_joystick_1a3db635e97473a9c8e2a7be61db84a0a9" kind="function"><name>setTrim</name></member>
-    <member refid="classeva_1_1_joystick_1adc8f58454b523885d8da94f8ba4e1c1b" kind="function"><name>getTrim</name></member>
+    <member refid="classeva_1_1_joystick_1a950b5912c7e6ab63a369d3d924682060" kind="variable"><name>trim</name></member>
+    <member refid="classeva_1_1_joystick_1ab01e8bc4f5f04467574dc33ea4d4d93c" kind="variable"><name>deadZone</name></member>
+    <member refid="classeva_1_1_joystick_1a6fa503c4d3d28d95c486e70b80ef15f7" kind="function"><name>getValue</name></member>
+    <member refid="classeva_1_1_joystick_1a0959565a3f2139f39c40bbab75a8ad8f" kind="function"><name>setTrim</name></member>
+    <member refid="classeva_1_1_joystick_1a653ca3b875eb7e61cc3f174f6aa05a24" kind="function"><name>addTrim</name></member>
+    <member refid="classeva_1_1_joystick_1a430f97cc7b474557ff4e44c66d4ef99b" kind="function"><name>getTrim</name></member>
+    <member refid="classeva_1_1_joystick_1a3d9f430bd34bd47231c003945421f411" kind="function"><name>setDeadZone</name></member>
+    <member refid="classeva_1_1_joystick_1acc5939ab7a32b341f71192e8c73a2f06" kind="function"><name>getDeadZone</name></member>
   </compound>
   <compound refid="classeva_1_1_list" kind="class"><name>eva::List</name>
     <member refid="classeva_1_1_list_1af62b22e278861f9d633714308917a0db" kind="variable"><name>head</name></member>
@@ -156,12 +166,7 @@
     <member refid="classeva_1_1_scroll_button_1a38ce62deaaced541a8a13394e59af012" kind="function"><name>tick</name></member>
   </compound>
   <compound refid="classeva_1_1_slider" kind="class"><name>eva::Slider</name>
-    <member refid="classeva_1_1_slider_1a79d81c2a90db92ed470fc64d2b950caf" kind="function"><name>getValue</name></member>
-  </compound>
-  <compound refid="classeva_1_1_stabilize_decor" kind="class"><name>eva::StabilizeDecor</name>
-    <member refid="classeva_1_1_stabilize_decor_1a59ee155ba90cf493a00b9ba21146f68c" kind="variable"><name>keepValueTill</name></member>
-    <member refid="classeva_1_1_stabilize_decor_1a3f0d4de6e9d6b144a67ab3378f1f180f" kind="variable"><name>keepedValue</name></member>
-    <member refid="classeva_1_1_stabilize_decor_1aaa25725a97619b2158239d649b280ec3" kind="function"><name>getValue</name></member>
+    <member refid="classeva_1_1_slider_1a14cfca41f4b9916d08120cd3fc74a88c" kind="function"><name>getValue</name></member>
   </compound>
   <compound refid="classeva_1_1_switch" kind="class"><name>eva::Switch</name>
     <member refid="classeva_1_1_switch_1a7c219494c63d04c510b2520d762d0a7b" kind="variable"><name>curiosity</name></member>
@@ -196,18 +201,18 @@
     <member refid="classeva_1_1_tickable_1ac7bb568a397ac2147fd6e292d2846ba6" kind="function"><name>tick</name></member>
   </compound>
   <compound refid="namespaceeva" kind="namespace"><name>eva</name>
-    <member refid="eva_button_8h_1af7966ca0e9d6b65bef9de0830ca6df5b" kind="typedef"><name>PinButton</name></member>
-    <member refid="eva_button_8h_1affe8465bf145bd51e50d91687a4698e6" kind="typedef"><name>PullUpButton</name></member>
-    <member refid="eva_button_8h_1a8d29da7d3489fb33384bd8f8ccb21435" kind="typedef"><name>PinMultiButton</name></member>
-    <member refid="eva_joystick_8h_1aff092189042321d52ea4475f0ed0d0dc" kind="typedef"><name>PinSymmetricJoystick</name></member>
-    <member refid="eva_joystick_8h_1a0fd39256f892cf4cd8c58d66131769c5" kind="typedef"><name>PinJoystick</name></member>
-    <member refid="eva_scroll_button_8h_1ad94c32e054f68c57c010a09e261a309c" kind="typedef"><name>KeyPinButton</name></member>
-    <member refid="eva_scroll_button_8h_1a6821bd5745a1617907c051fc96bc3d7a" kind="typedef"><name>KeyPullUpButton</name></member>
-    <member refid="eva_scroll_button_8h_1a4294e4c88cecd348619f5ab8ae43d037" kind="typedef"><name>KeyPinMultiButton</name></member>
-    <member refid="eva_slider_8h_1a62d965ecb30757f74e3dcc7ebcb15b2b" kind="typedef"><name>PinSlider</name></member>
-    <member refid="eva_switch_8h_1ad787e973cdbd068f9f1cc23ff151ce74" kind="typedef"><name>PinSwitch</name></member>
+    <member refid="eva_button_8h_1aeea2eb41250309b580d704805c9fcf34" kind="typedef"><name>PinButton</name></member>
+    <member refid="eva_button_8h_1af0470e4348fcbc1a90067de858e2645a" kind="typedef"><name>PullUpButton</name></member>
+    <member refid="eva_button_8h_1a33789c899363a430ee9f03633bd6ded5" kind="typedef"><name>PinMultiButton</name></member>
+    <member refid="eva_joystick_8h_1a76c31fd4f54c687e8cc7b8cb4b0f35d7" kind="typedef"><name>PinSymmetricJoystick</name></member>
+    <member refid="eva_joystick_8h_1a05e65d614cc86ed6e498dd953872e505" kind="typedef"><name>PinJoystick</name></member>
+    <member refid="eva_scroll_button_8h_1a5a6a59b6dbb08940cca1a6a89b7b4b51" kind="typedef"><name>PinScrollButton</name></member>
+    <member refid="eva_scroll_button_8h_1a69eba75d65f6c0fe72df3a5ac95c46c7" kind="typedef"><name>PullupScrollButton</name></member>
+    <member refid="eva_scroll_button_8h_1ad9ac3213dc6362f2e4d121f3c9673885" kind="typedef"><name>PinScrollMultiButton</name></member>
+    <member refid="eva_slider_8h_1aec8dd6405eda9c9c2b58e1c31dd8f414" kind="typedef"><name>PinSlider</name></member>
+    <member refid="eva_switch_8h_1a1965386770156ddeb6f000cdf7e29706" kind="typedef"><name>PinSwitch</name></member>
     <member refid="eva_switch_8h_1a69f7de1ebb1e7c1b70aa7d7dc11cdec5" kind="typedef"><name>PullupSwitch</name></member>
-    <member refid="eva_switch_8h_1afeb4db37763710b769578c7a201440c0" kind="typedef"><name>PinMultiSwitch</name></member>
+    <member refid="eva_switch_8h_1a8b934afbd3db64bad1e3375047507193" kind="typedef"><name>PinMultiSwitch</name></member>
     <member refid="eva_button_8h_1ae4ae98a5e87f00b45d52b743d0983e0d" kind="variable"><name>LONGPRESS_DELAY</name></member>
     <member refid="eva_button_8h_1a9f0afdfaa61b59c313463ec31444bc58" kind="variable"><name>ON_SHORTCLICK</name></member>
     <member refid="eva_button_8h_1ae072ea6457bf4f70dfe4420571701571" kind="variable"><name>ON_LONGCLICK</name></member>
@@ -218,7 +223,6 @@
     <member refid="eva_switch_8h_1a0dc3da3ced5a1c2b4e4d2acc8b381254" kind="variable"><name>ON_PRESS</name></member>
     <member refid="eva_switch_8h_1a6c443d221db88ada2b9c14a5bc5c7265" kind="variable"><name>ON_RELEASE</name></member>
     <member refid="eva_switch_8h_1a68626a8136afbee89173c7beb3f20104" kind="variable"><name>ON_CHANGE</name></member>
-    <member refid="eva_joystick_8h_1a6222d6f31a35ccf216a68c8cea11a338" kind="function"><name>SIGN</name></member>
     <member refid="eva_reader_decors_8h_1a6255eaf96812f4c24b664549811675b8" kind="function"><name>in_between</name></member>
     <member refid="eva_tac_8h_1ad0744b1e82e36d68b85273f06b00957d" kind="function"><name>tac</name></member>
   </compound>
@@ -231,7 +235,6 @@
   <compound refid="eva_countdown_timer_8h" kind="file"><name>evaCountdownTimer.h</name>
   </compound>
   <compound refid="eva_delay_timer_8h" kind="file"><name>evaDelayTimer.h</name>
-    <member refid="eva_delay_timer_8h_1a2d3ed49820ead661b0e93608528b8def" kind="define"><name>IS_BEFORE</name></member>
   </compound>
   <compound refid="eva_handler_8h" kind="file"><name>evaHandler.h</name>
   </compound>

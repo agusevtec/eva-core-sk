@@ -8,7 +8,7 @@
 
 
 
-[_**Indicator**_](classeva_1_1_indicator.md) _that blinks a specified number of times then notifies listener._
+[_**Indicator**_](classeva_1_1_indicator.md) _that blinks a specified number of times then notifies listener._[More...](#detailed-description)
 
 * `#include <evaCountdownIndicator.h>`
 
@@ -273,6 +273,13 @@ See [eva::BlinkingIndicator](classeva_1_1_blinking_indicator.md)
 
 
 
+## Detailed Description
+
+
+Note: This class serves as a demonstration of library concepts and is intentionally kept simple for clarity. Performance optimization was not the primary focus. It is recommended for prototyping stages to validate your application logic. For production use with strict timing requirements, consider implementing a custom solution based on your specific needs. 
+
+
+    
 ## Public Functions Documentation
 
 

@@ -34,6 +34,8 @@
 
 ## d
 
+* [**DebounceDecor**](classeva_1_1_debounce_decor.md)
+([**eva**](namespaceeva.md))
 * [**DelayTimer**](classeva_1_1_delay_timer.md)
 ([**eva**](namespaceeva.md))
 * [**DigitalPinReader**](classeva_1_1_digital_pin_reader.md)
@@ -91,8 +93,6 @@
 * [**ScrollButton**](classeva_1_1_scroll_button.md)
 ([**eva**](namespaceeva.md))
 * [**Slider**](classeva_1_1_slider.md)
-([**eva**](namespaceeva.md))
-* [**StabilizeDecor**](classeva_1_1_stabilize_decor.md)
 ([**eva**](namespaceeva.md))
 * [**Switch**](classeva_1_1_switch.md)
 ([**eva**](namespaceeva.md))

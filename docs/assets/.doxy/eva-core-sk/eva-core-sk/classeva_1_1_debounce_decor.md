@@ -1,12 +1,12 @@
 
 
-# Class eva::StabilizeDecor
+# Class eva::DebounceDecor
 
 **template &lt;class READER&gt;**
 
 
 
-[**ClassList**](annotated.md) **>** [**eva**](namespaceeva.md) **>** [**StabilizeDecor**](classeva_1_1_stabilize_decor.md)
+[**ClassList**](annotated.md) **>** [**eva**](namespaceeva.md) **>** [**DebounceDecor**](classeva_1_1_debounce_decor.md)
 
 
 
@@ -92,7 +92,7 @@ Inherits the following classes: READER
 ### function getValue 
 
 ```C++
-inline signed short eva::StabilizeDecor::getValue () 
+inline signed short eva::DebounceDecor::getValue () 
 ```
 
 

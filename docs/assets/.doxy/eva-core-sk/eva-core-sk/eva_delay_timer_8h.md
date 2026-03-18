@@ -86,31 +86,7 @@
 
 
 
-## Macros
 
-| Type | Name |
-| ---: | :--- |
-| define  | [**IS\_BEFORE**](eva_delay_timer_8h.md#define-is_before) (t1, t2) `(((t2) - (t1)) &lt;= 0x7FFFFFFFUL)`<br> |
-
-## Macro Definition Documentation
-
-
-
-
-
-### define IS\_BEFORE 
-
-```C++
-#define IS_BEFORE (
-    t1,
-    t2
-) `(((t2) - (t1)) <= 0x7FFFFFFFUL)`
-```
-
-
-
-
-<hr>
 
 ------------------------------
 The documentation for this class was generated from the following file `src/evaDelayTimer.h`

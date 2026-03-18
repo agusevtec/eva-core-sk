@@ -158,6 +158,7 @@ See [eva::Tickable](classeva_1_1_tickable.md)
 
 | Type | Name |
 | ---: | :--- |
+|  bool | [**checkTimeElapsed**](#function-checktimeelapsed) () <br> |
 | virtual void | [**tick**](#function-tick) () override<br> |
 
 
@@ -356,6 +357,19 @@ unsigned long eva::DelayTimer::nextFire;
 <hr>
 ## Protected Functions Documentation
 
+
+
+
+### function checkTimeElapsed 
+
+```C++
+bool eva::DelayTimer::checkTimeElapsed () 
+```
+
+
+
+
+<hr>
 
 
 

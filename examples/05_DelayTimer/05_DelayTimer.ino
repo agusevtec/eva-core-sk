@@ -51,6 +51,7 @@ public:
 void setup()
 {
   Serial.begin(9600);
+  Serial.println("=== DelayTimer Demo ===");
   static App app;
 }
 
