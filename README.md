@@ -2,7 +2,7 @@
 
 **Event-driven architecture for Arduino**
 
-EVA is not just a library it's a concept. Instead of fighting with `loop()` and filling it with ever-growing state-checking code, you build your application from components that know how to update themselves. One call to `eva::tac()` drives everything.
+EVA (Extremely Versatile Architecture) is not just a library it's a concept. Instead of fighting with `loop()` and filling it with ever-growing state-checking code, you build your application from components that know how to update themselves. One call to `eva::tac()` drives everything.
 
 ## Quick Example
 
