@@ -1,0 +1,10 @@
+/docs/ export-ignore
+/docs-md/ export-ignore
+/tests/ export-ignore
+/tools/ export-ignore
+.gitattributes export-ignore
+workspace.code-workspace export-ignore
+adno-ide15-checkin.cmd export-ignore
+adno-ide15-checkout.cmd export-ignore
+configure.sh export-ignore
+configure.cmd export-ignore
