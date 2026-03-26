@@ -3,53 +3,31 @@
 using namespace eva;
 
 Tickable *Tickable::first = nullptr;
-Tickable *Tickable::last = nullptr;
 
-Tickable::Tickable() : next(nullptr)
+Tickable::Tickable()
 {
-  if (first == nullptr)
-  {
-    first = this;
-    last = this;
-  }
-  else
-  {
-    last->next = this;
-    last = this;
-  }
+  this->next = first;
+  first = this;
 }
 
 Tickable::~Tickable()
 {
-  Tickable *prev = nullptr;
-  Tickable *current = first;
-
-  while (current != this && current != nullptr)
-  {
-    prev = current;
-    current = current->next;
-  }
-
-  if (current == this)
-  {
-    if (prev == nullptr)
-      first = this->next;
-    else
-      prev->next = this->next;
-
-    if (this == last)
-      last = prev;
-  }
-  this->next = nullptr;
+  for (Tickable **p = &first; *p != 0; p = &((*p)->next))
+    if (*p == this)
+    {
+      *p = this->next;
+      this->next = 0;
+      return;
+    }
 }
 
 void Tickable::tac()
 {
-    Tickable* current = first;
-    while (current)
-    {
-        Tickable* next = current->next;
-        current->tick();
-        current = next;
-    }
+  Tickable *current = first;
+  while (current)
+  {
+    Tickable *next = current->next;
+    current->tick();
+    current = next;
+  }
 }
