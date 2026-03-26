@@ -1,8 +1,8 @@
-# eva-core-sk
+# EVA Core | EVA survival kit (eva-core-sk)
 
-**Event-driven architecture for Arduino**
+A library providing the architectural core with essential components for event-driven Arduino applications.
 
-EVA (Extremely Versatile Architecture) is not just a library it's a concept. Instead of fighting with `loop()` and filling it with ever-growing state-checking code, you build your application from components that know how to update themselves. One call to `eva::tac()` drives everything.
+It implements—and in fact defines—a concept: Extremely Versatile Architecture (EVA). This approach is designed to make user code comfortable and intuitive. Instead of fighting with loop() and filling it with ever-growing state-checking code, you build your application from components that know how to update themselves. A single call to eva::tac() drives everything.
 
 ## Quick Example
 
@@ -91,7 +91,7 @@ Full documentation is available at **[https://agusevtec.github.io/eva-core-sk](h
 
 EVA is growing. Future modules include:
 - `Boxy` GUI / windowing library
-- `Drequency meter` frequency measurement
+- `Frequency meter` frequency measurement
 - `Motor drivers` motor drivers
 
 **Want to make your library part of the ecosystem?** [Read the invitation](https://agusevtec.github.io/eva-core-sk/ecosystem/invitation)

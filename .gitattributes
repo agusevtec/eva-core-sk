@@ -8,3 +8,6 @@ adno-ide15-checkin.cmd export-ignore
 adno-ide15-checkout.cmd export-ignore
 configure.sh export-ignore
 configure.cmd export-ignore
+Makefile export-ignore
+mkdocs.yml export-ignore
+

@@ -1,13 +1,15 @@
 # Why EVA?
 
+## Extremely Versatile Architecture (EVA)
+
+### Declaration
+
 EVA is a concept of comfortable user code. A set of principles that make Arduino development enjoyable rather than painful:
 
 - **Self-documenting** — code reads like a story, not a puzzle
 - **Testability** — components can be verified in isolation
 - **Performance** — optimization focused on critical paths, not dogma
 - **Refactoring-friendly** — changing structure doesn't break behavior
-
-**eva-core-sk** is a concrete implementation of this concept—a library that puts these principles into practice.
 
 ---
 
@@ -23,9 +25,11 @@ EVA is a concept of comfortable user code. A set of principles that make Arduino
 
 ---
 
-### Two Domains
+### Implementation
 
-eva-core-sk is organized into two distinct layers:
+EVA Core | EVA Survival Kit (eva-core-sk) is a concrete implementation of this concept—a library that puts these principles into practice. Architectural core with essential components for event-driven Arduino applications.
+
+**eva-core-sk** is organized into two distinct domains:
 
 - **Core** — the engine: `Tickable`, `Handler`, `IReader`. These are the fundamental building blocks that make the concept work.
 - **Survival Kit (SK)** — ready-to-use components: `Button`, `Switch`, `Timer`, `Indicator`, and more. These are what you reach for when building actual applications.
