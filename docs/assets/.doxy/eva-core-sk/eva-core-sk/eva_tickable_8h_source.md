@@ -17,10 +17,10 @@ namespace eva
   {
   public:
     Tickable();
-    Tickable(const Tickable&) = delete;
-    Tickable& operator=(const Tickable&) = delete;
-    Tickable(Tickable&&) = delete;
-    Tickable& operator=(Tickable&&) = delete;
+    Tickable(const Tickable &) = delete;
+    Tickable &operator=(const Tickable &) = delete;
+    Tickable(Tickable &&) = delete;
+    Tickable &operator=(Tickable &&) = delete;
     virtual ~Tickable();
 
     static void tac();
@@ -30,7 +30,7 @@ namespace eva
 
   private:
     Tickable *next = 0;
-    static Tickable *last;
+//static Tickable *last;
     static Tickable *first;
   };
 };

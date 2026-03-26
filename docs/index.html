@@ -280,6 +280,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#extremely-versatile-architecture-eva" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Extremely Versatile Architecture (EVA)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Extremely Versatile Architecture (EVA)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#declaration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Declaration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#the-four-pillars" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -289,19 +312,19 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#two-domains" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#implementation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Two Domains
+        Implementation
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#the-result" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -309,6 +332,11 @@
       
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -761,6 +789,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#extremely-versatile-architecture-eva" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Extremely Versatile Architecture (EVA)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Extremely Versatile Architecture (EVA)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#declaration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Declaration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#the-four-pillars" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -770,19 +821,19 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#two-domains" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#implementation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Two Domains
+        Implementation
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#the-result" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -790,6 +841,11 @@
       
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -814,6 +870,8 @@
 
 
 <h1 id="why-eva">Why EVA?<a class="headerlink" href="#why-eva" title="Permanent link">&para;</a></h1>
+<h2 id="extremely-versatile-architecture-eva">Extremely Versatile Architecture (EVA)<a class="headerlink" href="#extremely-versatile-architecture-eva" title="Permanent link">&para;</a></h2>
+<h3 id="declaration">Declaration<a class="headerlink" href="#declaration" title="Permanent link">&para;</a></h3>
 <p>EVA is a concept of comfortable user code. A set of principles that make Arduino development enjoyable rather than painful:</p>
 <ul>
 <li><strong>Self-documenting</strong> — code reads like a story, not a puzzle</li>
@@ -821,7 +879,6 @@
 <li><strong>Performance</strong> — optimization focused on critical paths, not dogma</li>
 <li><strong>Refactoring-friendly</strong> — changing structure doesn't break behavior</li>
 </ul>
-<p><strong>eva-core-sk</strong> is a concrete implementation of this concept—a library that puts these principles into practice.</p>
 <hr />
 <h3 id="the-four-pillars">The Four Pillars<a class="headerlink" href="#the-four-pillars" title="Permanent link">&para;</a></h3>
 <p><strong>First</strong>, many components—either explicitly or implicitly—claim their own slice and only their slice of the famous Arduino loop(), and user code is encouraged to do the same. Timings become a natural part of the contract between objects—whether between user objects and library objects, or among user objects themselves.</p>
@@ -829,8 +886,9 @@
 <p><strong>Third</strong>, delegates via <code>Handler</code> bind events to methods naturally. Components do not poll. They notify when something happens.</p>
 <p><strong>Fourth</strong>, the layered architecture continues into user code, creating many connection points and making testing simple.</p>
 <hr />
-<h3 id="two-domains">Two Domains<a class="headerlink" href="#two-domains" title="Permanent link">&para;</a></h3>
-<p>eva-core-sk is organized into two distinct layers:</p>
+<h3 id="implementation">Implementation<a class="headerlink" href="#implementation" title="Permanent link">&para;</a></h3>
+<p>EVA Core | EVA Survival Kit (eva-core-sk) is a concrete implementation of this concept—a library that puts these principles into practice. Architectural core with essential components for event-driven Arduino applications.</p>
+<p><strong>eva-core-sk</strong> is organized into two distinct domains:</p>
 <ul>
 <li><strong>Core</strong> — the engine: <code>Tickable</code>, <code>Handler</code>, <code>IReader</code>. These are the fundamental building blocks that make the concept work.</li>
 <li><strong>Survival Kit (SK)</strong> — ready-to-use components: <code>Button</code>, <code>Switch</code>, <code>Timer</code>, <code>Indicator</code>, and more. These are what you reach for when building actual applications.</li>

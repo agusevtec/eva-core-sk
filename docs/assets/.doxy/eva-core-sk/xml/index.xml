@@ -189,7 +189,6 @@
   </compound>
   <compound refid="classeva_1_1_tickable" kind="class"><name>eva::Tickable</name>
     <member refid="classeva_1_1_tickable_1a31b3f41cac1a6044d3a9439bdad50513" kind="variable"><name>next</name></member>
-    <member refid="classeva_1_1_tickable_1a3dd424f8024538602774328056cf2b2d" kind="variable"><name>last</name></member>
     <member refid="classeva_1_1_tickable_1aaeefcfc8b081298e1c16a1908d39678b" kind="variable"><name>first</name></member>
     <member refid="classeva_1_1_tickable_1a667f47cdee5f03eed323cebb27e8ab8e" kind="function"><name>Tickable</name></member>
     <member refid="classeva_1_1_tickable_1aa8efa54edd7140587548e7973de356df" kind="function"><name>Tickable</name></member>

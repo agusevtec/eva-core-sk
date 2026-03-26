@@ -25,20 +25,6 @@
       </memberdef>
     </sectiondef>
     <sectiondef kind="private-static-attrib">
-      <memberdef kind="variable" id="classeva_1_1_tickable_1a3dd424f8024538602774328056cf2b2d" prot="private" static="yes" mutable="no">
-        <type>Tickable *</type>
-        <definition>Tickable* eva::Tickable::last</definition>
-        <argsstring></argsstring>
-        <name>last</name>
-        <qualifiedname>eva::Tickable::last</qualifiedname>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="src/evaTickable.h" line="29" column="21" bodyfile="src/evaTickable.h" bodystart="29" bodyend="-1"/>
-      </memberdef>
       <memberdef kind="variable" id="classeva_1_1_tickable_1aaeefcfc8b081298e1c16a1908d39678b" prot="private" static="yes" mutable="no">
         <type>Tickable *</type>
         <definition>Tickable* eva::Tickable::first</definition>
@@ -290,7 +276,6 @@
     <location file="src/evaTickable.h" line="9" column="3" bodyfile="src/evaTickable.h" bodystart="10" bodyend="31"/>
     <listofallmembers>
       <member refid="classeva_1_1_tickable_1aaeefcfc8b081298e1c16a1908d39678b" prot="private" virt="non-virtual"><scope>eva::Tickable</scope><name>first</name></member>
-      <member refid="classeva_1_1_tickable_1a3dd424f8024538602774328056cf2b2d" prot="private" virt="non-virtual"><scope>eva::Tickable</scope><name>last</name></member>
       <member refid="classeva_1_1_tickable_1a31b3f41cac1a6044d3a9439bdad50513" prot="private" virt="non-virtual"><scope>eva::Tickable</scope><name>next</name></member>
       <member refid="classeva_1_1_tickable_1a865abbef0ee038e0db5eff81747949e7" prot="public" virt="non-virtual"><scope>eva::Tickable</scope><name>operator=</name></member>
       <member refid="classeva_1_1_tickable_1a698d78c5c54122f25b42080e001561d2" prot="public" virt="non-virtual"><scope>eva::Tickable</scope><name>operator=</name></member>

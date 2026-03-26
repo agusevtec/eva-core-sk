@@ -94,7 +94,6 @@
 * **levels** ([**eva::QuantizeDecor**](classeva_1_1_quantize_decor.md))
 * **lastRepeatTime** ([**eva::ScrollButton**](classeva_1_1_scroll_button.md))
 * **levelCode** ([**eva::Switch**](classeva_1_1_switch.md))
-* **last** ([**eva::Tickable**](classeva_1_1_tickable.md))
 
 
 ## m
