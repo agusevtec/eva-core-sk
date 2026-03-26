@@ -1,7 +1,9 @@
+/build-tests/ export-ignore
 /docs/ export-ignore
 /docs-md/ export-ignore
 /tests/ export-ignore
 /tools/ export-ignore
+.gitignore export-ignore
 .gitattributes export-ignore
 workspace.code-workspace export-ignore
 adno-ide15-checkin.cmd export-ignore
@@ -10,4 +12,4 @@ configure.sh export-ignore
 configure.cmd export-ignore
 Makefile export-ignore
 mkdocs.yml export-ignore
-
+requirements.txt export-ignore 
