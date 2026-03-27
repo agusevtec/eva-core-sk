@@ -11,7 +11,7 @@ namespace eva
      *
      * Provides a simple heartbeat mechanism with fixed period.
      * Derived classes must implement onHeartbeat() which will be called
-     * at regular intervals when update() is called.
+     * at regular intervals.
      *
      * The period is set at construction and cannot be changed (immutable).
      */

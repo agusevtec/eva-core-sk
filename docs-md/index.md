@@ -31,7 +31,7 @@ EVA Core | EVA Survival Kit (eva-core-sk) is a concrete implementation of this c
 
 **eva-core-sk** is organized into two distinct domains:
 
-- **Core** — the engine: `Tickable`, `Handler`, `IReader`. These are the fundamental building blocks that make the concept work.
+- **Core** — the engine: `Tickable`, `Handler`, `IReader`, `Heartbeat`. These are the fundamental building blocks that make the concept work.
 - **Survival Kit (SK)** — ready-to-use components: `Button`, `Switch`, `Timer`, `Indicator`, and more. These are what you reach for when building actual applications.
 
 ---

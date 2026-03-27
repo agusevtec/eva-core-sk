@@ -9,6 +9,7 @@ IReader	KEYWORD1
 IReaderAdapter	KEYWORD1
 DelayTimer	KEYWORD1
 RepeatTimer	KEYWORD1
+Heartbeat 	KEYWORD1
 
 #######################################
 # Switch & Button Classes
@@ -82,3 +83,4 @@ append	KEYWORD2
 first	KEYWORD2
 count	KEYWORD
 startCycle	KEYWORD2
+onHeartbeat	KEYWORD2
