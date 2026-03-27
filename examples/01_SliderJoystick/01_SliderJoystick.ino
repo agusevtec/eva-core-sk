@@ -3,13 +3,13 @@
  */
 
 #include <evaTac.h>
-#include <evaRepeatTimer.h>
 #include <evaJoystick.h>
 #include <evaSlider.h>
+#include <evaHeartbeat.h>
 
 using namespace eva;
 
-class App : public IHandler
+class App : public Heartbeat
 {
 private:
   // === SLIDER VARIANTS ===
@@ -27,38 +27,33 @@ private:
   // Joystick (center manually predefined as 400)
   PinJoystick<A4, INPUT, 0, 400, 1023> joystick3;
 
-  // Timer for periodic reporting
-  RepeatTimer reportTimer{1000, this};
-
 public:
   App()
+      : Heartbeat(1000)
   {
     joystick3.setTrim(10); // Small positive trim
   }
 
-  void invoke(void *sender, CallbackInfo info) override
+  void onHeartbeat() override
   {
-    if (sender == &reportTimer)
-    {
-      signed short sliderValue = slider.getValue();
-      signed char joyX = joystickX.getValue();
-      signed char joyY = joystickY.getValue();
-      signed char trimX = joystick3.getValue();
-      signed char trimY = joystick3.getValue(); 
+    signed short sliderValue = slider.getValue();
+    signed char joyX = joystickX.getValue();
+    signed char joyY = joystickY.getValue();
+    signed char trimX = joystick3.getValue();
+    signed char trimY = joystick3.getValue();
 
-      Serial.print(sliderValue);
-      Serial.print('|');
-      Serial.print(joyX);
-      Serial.print('|');
-      Serial.print(joyY);
-      Serial.print('|');
-      Serial.print(trimX);
-      Serial.print('|');
-      Serial.println(trimY);
+    Serial.print(sliderValue);
+    Serial.print('|');
+    Serial.print(joyX);
+    Serial.print('|');
+    Serial.print(joyY);
+    Serial.print('|');
+    Serial.print(trimX);
+    Serial.print('|');
+    Serial.println(trimY);
 
-      Serial.print("Trim value: ");
-      Serial.println(joystick3.getTrim());
-    }
+    Serial.print("Trim value: ");
+    Serial.println(joystick3.getTrim());
   }
 };
 

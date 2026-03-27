@@ -106,6 +106,7 @@ class App{
 ```
 
 - Clean, readable, refactor-friendly
+
 - Perfect for prototypes and memory consumption careless cases
 
 ### Direct IHandler Implementation (Minimal)
@@ -121,6 +122,27 @@ class App : public IHandler {
 
 - For the cases when RAM matters
 
+### Heartbeat Subclass (Periodic simplicity)
+
+```cpp
+class App : public Heartbeat {
+public:
+  App(unsigned long periodMs) : Heartbeat(1000) {}
+  
+protected:
+  void onHeartbeat() override {
+    // Called automatically every 1000ms milliseconds
+    // No need to manage timers or check millis()
+  }
+};
+```
+
+- Fixed period set once, never changes (immutable)
+
+- No timer objects to manage, no handlers to register
+
+- Perfect for periodic tasks 
+
 ### Tickable Subclass (Tightest control)
 ```cpp
 class App : public Tickable {
@@ -132,7 +154,9 @@ class App : public Tickable {
 };
 ```
 - One virtual call per `loop()` iteration
+
 - Maximum control, minimum abstraction
+
 - Ideal for performance-critical or continuously monitored logic
 
 ## Choose the Right Tool: Hierarchies Built for Efficiency

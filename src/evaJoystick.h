@@ -11,7 +11,7 @@ namespace eva
    * @tparam MIDDLE_POS Center value
    * @tparam MAX_POS Maximum analog value
    */
-  template <class READER, int MIN_POS, int MIDDLE_POS, int MAX_POS>
+  template <class READER, unsigned short MIN_POS, unsigned short MIDDLE_POS, unsigned short MAX_POS>
   class Joystick : public READER
   {
   public:
@@ -81,8 +81,8 @@ namespace eva
    * @tparam MIN_POS Minimum analog reading
    * @tparam MAX_POS Maximum analog reading
    */
-  template <int PIN, int PIN_MODE, int MIN_POS, int MAX_POS>
-  using PinSymmetricJoystick = Joystick<AnalogPinReader<PIN, PIN_MODE>, MIN_POS, (MAX_POS - MIN_POS) / 2, MAX_POS>;
+  template <int PIN, int PIN_MODE, unsigned short MIN_POS, unsigned short MAX_POS>
+  using PinSymmetricJoystick = Joystick<AnalogPinReader<PIN, PIN_MODE>, MIN_POS, (MAX_POS + MIN_POS) / 2, MAX_POS>;
   /**
    * @brief Pin-based joystick with custom center position
    * @tparam PIN Arduino pin number
@@ -91,7 +91,7 @@ namespace eva
    * @tparam MIDDLE_POS Center position reading
    * @tparam MAX_POS Maximum analog reading
    */
-  template <int PIN, int PIN_MODE, int MIN_POS, int MIDDLE_POS, int MAX_POS>
+  template <int PIN, int PIN_MODE, unsigned short MIN_POS, unsigned short MIDDLE_POS, unsigned short MAX_POS>
   using PinJoystick = Joystick<AnalogPinReader<PIN, PIN_MODE>, MIN_POS, MIDDLE_POS, MAX_POS>;
 };
 

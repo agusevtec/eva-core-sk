@@ -167,3 +167,6 @@ The layers:
 | `QuantizeDecor<..., LEVELS...>` | Maps analog values to button indices (1..n) |
 | `Button<...>` | Adds button state machine and event generation |
 
+Because the composition forms a single inheritance chain, all public methods of every layer remain accessible on the final object. This allows you to reach through the abstraction layers when needed.
+
+For example, when a button press is detected, you can retrieve which physical button (level) triggered the event by calling getLevel() from QuantizeDecor
