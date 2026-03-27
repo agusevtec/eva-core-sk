@@ -53,6 +53,7 @@
 ## l
 
 * **listener** ([**eva::CountdownIndicator**](classeva_1_1_countdown_indicator.md), [**eva::DelayTimer**](classeva_1_1_delay_timer.md), [**eva::Switch**](classeva_1_1_switch.md))
+* **lastBeatMs** ([**eva::Heartbeat**](classeva_1_1_heartbeat.md))
 * **length** ([**eva::List**](classeva_1_1_list.md))
 * **levels** ([**eva::QuantizeDecor**](classeva_1_1_quantize_decor.md))
 * **lastRepeatTime** ([**eva::ScrollButton**](classeva_1_1_scroll_button.md))
@@ -75,6 +76,7 @@
 
 * **period** ([**eva::BlinkingIndicator**](classeva_1_1_blinking_indicator.md), [**eva::CountdownTimer**](classeva_1_1_countdown_timer.md), [**eva::RepeatTimer**](classeva_1_1_repeat_timer.md))
 * **pressTime** ([**eva::Button**](classeva_1_1_button.md))
+* **periodMs** ([**eva::Heartbeat**](classeva_1_1_heartbeat.md))
 * **pin** ([**eva::Indicator**](classeva_1_1_indicator.md))
 
 

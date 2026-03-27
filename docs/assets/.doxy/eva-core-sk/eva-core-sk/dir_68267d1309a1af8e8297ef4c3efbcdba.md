@@ -27,6 +27,7 @@
 | file | [**evaCountdownTimer.h**](eva_countdown_timer_8h.md) <br> |
 | file | [**evaDelayTimer.h**](eva_delay_timer_8h.md) <br> |
 | file | [**evaHandler.h**](eva_handler_8h.md) <br> |
+| file | [**evaHeartbeat.h**](eva_heartbeat_8h.md) <br> |
 | file | [**evaIReader.h**](eva_i_reader_8h.md) <br> |
 | file | [**evaIndicator.h**](eva_indicator_8h.md) <br> |
 | file | [**evaJoystick.h**](eva_joystick_8h.md) <br> |

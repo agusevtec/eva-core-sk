@@ -19,6 +19,7 @@ Here are the classes, structs, unions and interfaces with brief descriptions:
     * **class** [**DigitalPinReader**](classeva_1_1_digital_pin_reader.md) _Reads digital pin value._     
     * **class** [**Handler**](classeva_1_1_handler.md) [_**Handler**_](classeva_1_1_handler.md) _that calls a member method._    
     * **class** [**HandlerF**](classeva_1_1_handler_f.md) [_**Handler**_](classeva_1_1_handler.md) _that calls a free function._    
+    * **class** [**Heartbeat**](classeva_1_1_heartbeat.md) _Base class for components that need periodic updates._     
     * **class** [**IHandler**](classeva_1_1_i_handler.md) _Interface for message handlers._     
     * **class** [**IReader**](classeva_1_1_i_reader.md) _Interface for value readers._     
     * **class** [**IReaderAdapter**](classeva_1_1_i_reader_adapter.md) _Adapter that converts any class with getValue() into an_ [_**IReader**_](classeva_1_1_i_reader.md) _._    

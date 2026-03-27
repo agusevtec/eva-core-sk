@@ -11,6 +11,7 @@
     <innerclass refid="classeva_1_1_i_handler" prot="public">eva::IHandler</innerclass>
     <innerclass refid="classeva_1_1_handler" prot="public">eva::Handler</innerclass>
     <innerclass refid="classeva_1_1_handler_f" prot="public">eva::HandlerF</innerclass>
+    <innerclass refid="classeva_1_1_heartbeat" prot="public">eva::Heartbeat</innerclass>
     <innerclass refid="classeva_1_1_indicator" prot="public">eva::Indicator</innerclass>
     <innerclass refid="classeva_1_1_i_reader" prot="public">eva::IReader</innerclass>
     <innerclass refid="classeva_1_1_i_reader_adapter" prot="public">eva::IReaderAdapter</innerclass>
@@ -201,7 +202,7 @@
         </inbodydescription>
         <location file="src/evaButton.h" line="157" column="5" bodyfile="src/evaButton.h" bodystart="157" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="eva_joystick_8h_1a76c31fd4f54c687e8cc7b8cb4b0f35d7" prot="public" static="no">
+      <memberdef kind="typedef" id="eva_joystick_8h_1a053c0b1754d79dcdedef9243ff883270" prot="public" static="no">
         <templateparamlist>
           <param>
             <type>int</type>
@@ -214,18 +215,18 @@
             <defname>PIN_MODE</defname>
           </param>
           <param>
-            <type>int</type>
+            <type>unsigned short</type>
             <declname>MIN_POS</declname>
             <defname>MIN_POS</defname>
           </param>
           <param>
-            <type>int</type>
+            <type>unsigned short</type>
             <declname>MAX_POS</declname>
             <defname>MAX_POS</defname>
           </param>
         </templateparamlist>
-        <type><ref refid="classeva_1_1_joystick" kindref="compound">Joystick</ref>&lt; <ref refid="classeva_1_1_analog_pin_reader" kindref="compound">AnalogPinReader</ref>&lt; PIN, PIN_MODE &gt;, MIN_POS,(MAX_POS - MIN_POS)/2, MAX_POS &gt;</type>
-        <definition>using eva::PinSymmetricJoystick = Joystick&lt;AnalogPinReader&lt;PIN, PIN_MODE&gt;, MIN_POS, (MAX_POS - MIN_POS) / 2, MAX_POS&gt;</definition>
+        <type><ref refid="classeva_1_1_joystick" kindref="compound">Joystick</ref>&lt; <ref refid="classeva_1_1_analog_pin_reader" kindref="compound">AnalogPinReader</ref>&lt; PIN, PIN_MODE &gt;, MIN_POS,(MAX_POS+MIN_POS)/2, MAX_POS &gt;</type>
+        <definition>using eva::PinSymmetricJoystick = Joystick&lt;AnalogPinReader&lt;PIN, PIN_MODE&gt;, MIN_POS, (MAX_POS + MIN_POS) / 2, MAX_POS&gt;</definition>
         <argsstring></argsstring>
         <name>PinSymmetricJoystick</name>
         <qualifiedname>eva::PinSymmetricJoystick</qualifiedname>
@@ -285,17 +286,17 @@
             <defname>PIN_MODE</defname>
           </param>
           <param>
-            <type>int</type>
+            <type>unsigned short</type>
             <declname>MIN_POS</declname>
             <defname>MIN_POS</defname>
           </param>
           <param>
-            <type>int</type>
+            <type>unsigned short</type>
             <declname>MIDDLE_POS</declname>
             <defname>MIDDLE_POS</defname>
           </param>
           <param>
-            <type>int</type>
+            <type>unsigned short</type>
             <declname>MAX_POS</declname>
             <defname>MAX_POS</defname>
           </param>
@@ -530,7 +531,7 @@
       <memberdef kind="typedef" id="eva_slider_8h_1aec8dd6405eda9c9c2b58e1c31dd8f414" prot="public" static="no">
         <templateparamlist>
           <param>
-            <type>int</type>
+            <type>unsigned short</type>
             <declname>PIN</declname>
             <defname>PIN</defname>
           </param>
@@ -540,12 +541,12 @@
             <defname>PIN_MODE</defname>
           </param>
           <param>
-            <type>int</type>
+            <type>unsigned short</type>
             <declname>MIN_POS</declname>
             <defname>MIN_POS</defname>
           </param>
           <param>
-            <type>int</type>
+            <type>unsigned short</type>
             <declname>MAX_POS</declname>
             <defname>MAX_POS</defname>
           </param>

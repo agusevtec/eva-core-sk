@@ -1067,6 +1067,8 @@
 </tr>
 </tbody>
 </table>
+<p>Because the composition forms a single inheritance chain, all public methods of every layer remain accessible on the final object. This allows you to reach through the abstraction layers when needed.</p>
+<p>For example, when a button press is detected, you can retrieve which physical button (level) triggered the event by calling getLevel() from QuantizeDecor</p>
 
 
 

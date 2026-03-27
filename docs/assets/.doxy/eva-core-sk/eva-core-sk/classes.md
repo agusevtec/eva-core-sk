@@ -48,6 +48,8 @@
 ([**eva**](namespaceeva.md))
 * [**HandlerF**](classeva_1_1_handler_f.md)
 ([**eva**](namespaceeva.md))
+* [**Heartbeat**](classeva_1_1_heartbeat.md)
+([**eva**](namespaceeva.md))
 
 
 ## i

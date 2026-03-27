@@ -2,7 +2,7 @@
 
 # Class eva::Joystick
 
-**template &lt;class READER, int MIN\_POS, int MIDDLE\_POS, int MAX\_POS&gt;**
+**template &lt;class READER, unsigned short MIN\_POS, unsigned short MIDDLE\_POS, unsigned short MAX\_POS&gt;**
 
 
 

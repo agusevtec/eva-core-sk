@@ -16,7 +16,7 @@
 
 namespace eva
 {
-  template <class READER, int MIN_POS, int MAX_POS>
+  template <class READER, unsigned short MIN_POS, unsigned short MAX_POS>
   class Slider : public READER
   {
   public:
@@ -25,7 +25,7 @@ namespace eva
       return constrain(map(READER::getValue(), MIN_POS, MAX_POS, 1000, 2000), 1000, 2000);
     }
   };
-  template <int PIN, int PIN_MODE, int MIN_POS, int MAX_POS>
+  template <unsigned short PIN, int PIN_MODE, unsigned short MIN_POS, unsigned short MAX_POS>
   using PinSlider = Slider<AnalogPinReader<PIN, PIN_MODE>, MIN_POS, MAX_POS>;
 };
 

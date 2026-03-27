@@ -51,6 +51,7 @@
 
 * **getValue** ([**eva::AnalogPinReader**](classeva_1_1_analog_pin_reader.md), [**eva::BinarizeEqDecor**](classeva_1_1_binarize_eq_decor.md), [**eva::BinarizeGtDecor**](classeva_1_1_binarize_gt_decor.md), [**eva::BinarizeLtDecor**](classeva_1_1_binarize_lt_decor.md), [**eva::DebounceDecor**](classeva_1_1_debounce_decor.md), [**eva::DigitalPinReader**](classeva_1_1_digital_pin_reader.md), [**eva::IReader**](classeva_1_1_i_reader.md), [**eva::IReaderAdapter**](classeva_1_1_i_reader_adapter.md), [**eva::Joystick**](classeva_1_1_joystick.md), [**eva::QuantizeDecor**](classeva_1_1_quantize_decor.md), [**eva::Slider**](classeva_1_1_slider.md), [**eva::Switch**](classeva_1_1_switch.md))
 * **getRemaining** ([**eva::CountdownTimer**](classeva_1_1_countdown_timer.md))
+* **getPeriod** ([**eva::Heartbeat**](classeva_1_1_heartbeat.md))
 * **getDeadZone** ([**eva::Joystick**](classeva_1_1_joystick.md))
 * **getTrim** ([**eva::Joystick**](classeva_1_1_joystick.md))
 * **getLevel** ([**eva::QuantizeDecor**](classeva_1_1_quantize_decor.md))
@@ -64,6 +65,7 @@
 * **handleLongPress** ([**eva::Button**](classeva_1_1_button.md), [**eva::ScrollButton**](classeva_1_1_scroll_button.md))
 * **Handler** ([**eva::Handler**](classeva_1_1_handler.md))
 * **HandlerF** ([**eva::HandlerF**](classeva_1_1_handler_f.md))
+* **Heartbeat** ([**eva::Heartbeat**](classeva_1_1_heartbeat.md))
 * **head** ([**eva::List**](classeva_1_1_list.md))
 * **handleRepeatTime** ([**eva::ScrollButton**](classeva_1_1_scroll_button.md))
 * **handleChanging** ([**eva::Switch**](classeva_1_1_switch.md))
@@ -88,6 +90,7 @@
 ## l
 
 * **listener** ([**eva::CountdownIndicator**](classeva_1_1_countdown_indicator.md), [**eva::DelayTimer**](classeva_1_1_delay_timer.md), [**eva::Switch**](classeva_1_1_switch.md))
+* **lastBeatMs** ([**eva::Heartbeat**](classeva_1_1_heartbeat.md))
 * **List** ([**eva::List**](classeva_1_1_list.md))
 * **length** ([**eva::List**](classeva_1_1_list.md))
 * **ListIterator** ([**eva::ListIterator**](structeva_1_1_list_iterator.md))
@@ -113,6 +116,7 @@
 
 * **off** ([**eva::BlinkingIndicator**](classeva_1_1_blinking_indicator.md), [**eva::Indicator**](classeva_1_1_indicator.md))
 * **on** ([**eva::BlinkingIndicator**](classeva_1_1_blinking_indicator.md), [**eva::CountdownIndicator**](classeva_1_1_countdown_indicator.md), [**eva::Indicator**](classeva_1_1_indicator.md))
+* **onHeartbeat** ([**eva::Heartbeat**](classeva_1_1_heartbeat.md))
 * **operator=** ([**eva::List**](classeva_1_1_list.md), [**eva::Tickable**](classeva_1_1_tickable.md))
 * **operator[]** ([**eva::List**](classeva_1_1_list.md))
 
@@ -121,6 +125,7 @@
 
 * **period** ([**eva::BlinkingIndicator**](classeva_1_1_blinking_indicator.md), [**eva::CountdownTimer**](classeva_1_1_countdown_timer.md), [**eva::RepeatTimer**](classeva_1_1_repeat_timer.md))
 * **pressTime** ([**eva::Button**](classeva_1_1_button.md))
+* **periodMs** ([**eva::Heartbeat**](classeva_1_1_heartbeat.md))
 * **pin** ([**eva::Indicator**](classeva_1_1_indicator.md))
 
 
@@ -146,7 +151,7 @@
 
 ## t
 
-* **tick** ([**eva::Button**](classeva_1_1_button.md), [**eva::CountdownTimer**](classeva_1_1_countdown_timer.md), [**eva::DelayTimer**](classeva_1_1_delay_timer.md), [**eva::RepeatTimer**](classeva_1_1_repeat_timer.md), [**eva::ScrollButton**](classeva_1_1_scroll_button.md), [**eva::Switch**](classeva_1_1_switch.md), [**eva::Tickable**](classeva_1_1_tickable.md))
+* **tick** ([**eva::Button**](classeva_1_1_button.md), [**eva::CountdownTimer**](classeva_1_1_countdown_timer.md), [**eva::DelayTimer**](classeva_1_1_delay_timer.md), [**eva::Heartbeat**](classeva_1_1_heartbeat.md), [**eva::RepeatTimer**](classeva_1_1_repeat_timer.md), [**eva::ScrollButton**](classeva_1_1_scroll_button.md), [**eva::Switch**](classeva_1_1_switch.md), [**eva::Tickable**](classeva_1_1_tickable.md))
 * **trim** ([**eva::Joystick**](classeva_1_1_joystick.md))
 * **tail** ([**eva::List**](classeva_1_1_list.md))
 * **Tickable** ([**eva::Tickable**](classeva_1_1_tickable.md))
@@ -160,6 +165,7 @@
 
 ## ~
 
+* **~Heartbeat** ([**eva::Heartbeat**](classeva_1_1_heartbeat.md))
 * **~List** ([**eva::List**](classeva_1_1_list.md))
 * **~Tickable** ([**eva::Tickable**](classeva_1_1_tickable.md))
 

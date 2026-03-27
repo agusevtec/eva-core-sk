@@ -1154,6 +1154,10 @@
 </tr>
 <tr>
 <td style="text-align: right;">class</td>
+<td style="text-align: left;"><a href="../classeva_1_1_heartbeat/"><strong>Heartbeat</strong></a> <br><em>Base class for components that need periodic updates.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">class</td>
 <td style="text-align: left;"><a href="../classeva_1_1_i_handler/"><strong>IHandler</strong></a> <br><em>Interface for message handlers.</em></td>
 </tr>
 <tr>
@@ -1248,7 +1252,7 @@
 <td style="text-align: left;"><a href="#typedef-pinswitch"><strong>PinSwitch</strong></a>  <br><em>Digital pin switch with debouncing and level normalization.</em></td>
 </tr>
 <tr>
-<td style="text-align: right;">typedef <a href="../classeva_1_1_joystick/"><strong>Joystick</strong></a>&lt; <a href="../classeva_1_1_analog_pin_reader/"><strong>AnalogPinReader</strong></a>&lt; PIN, PIN_MODE &gt;, MIN_POS,(MAX_POS - MIN_POS)/2, MAX_POS &gt;</td>
+<td style="text-align: right;">typedef <a href="../classeva_1_1_joystick/"><strong>Joystick</strong></a>&lt; <a href="../classeva_1_1_analog_pin_reader/"><strong>AnalogPinReader</strong></a>&lt; PIN, PIN_MODE &gt;, MIN_POS,(MAX_POS+MIN_POS)/2, MAX_POS &gt;</td>
 <td style="text-align: left;"><a href="#typedef-pinsymmetricjoystick"><strong>PinSymmetricJoystick</strong></a>  <br><em>Pin-based joystick with symmetric range (MIN_POS to MAX_POS, center at midpoint).</em></td>
 </tr>
 <tr>
@@ -1501,7 +1505,7 @@
 
 <h3 id="typedef-pinsymmetricjoystick">typedef PinSymmetricJoystick<a class="headerlink" href="#typedef-pinsymmetricjoystick" title="Permanent link">&para;</a></h3>
 <p><em>Pin-based joystick with symmetric range (MIN_POS to MAX_POS, center at midpoint).</em> </p>
-<div class="codehilite"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">PinSymmetricJoystick</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Joystick</span><span class="o">&lt;</span><span class="n">AnalogPinReader</span><span class="o">&lt;</span><span class="n">PIN</span><span class="p">,</span><span class="w"> </span><span class="n">PIN_MODE</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">MIN_POS</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">MAX_POS</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">MIN_POS</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">MAX_POS</span><span class="o">&gt;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">PinSymmetricJoystick</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Joystick</span><span class="o">&lt;</span><span class="n">AnalogPinReader</span><span class="o">&lt;</span><span class="n">PIN</span><span class="p">,</span><span class="w"> </span><span class="n">PIN_MODE</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">MIN_POS</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">MAX_POS</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">MIN_POS</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">MAX_POS</span><span class="o">&gt;</span><span class="p">;</span>
 </code></pre></div>
 
 <p><strong>Template parameters:</strong></p>

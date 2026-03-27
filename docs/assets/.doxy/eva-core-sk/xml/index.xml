@@ -91,6 +91,15 @@
     <member refid="classeva_1_1_handler_f_1a15c88fbc7353f617d49e7b3f315e9fab" kind="function"><name>HandlerF</name></member>
     <member refid="classeva_1_1_handler_f_1a177cc07aec81924a9bf58a673ddf9ef6" kind="function"><name>invoke</name></member>
   </compound>
+  <compound refid="classeva_1_1_heartbeat" kind="class"><name>eva::Heartbeat</name>
+    <member refid="classeva_1_1_heartbeat_1a83d4a0c428403e2280b8093697e0dad4" kind="variable"><name>periodMs</name></member>
+    <member refid="classeva_1_1_heartbeat_1a1cc37c7fc1e8e9a47394c676d48d485c" kind="variable"><name>lastBeatMs</name></member>
+    <member refid="classeva_1_1_heartbeat_1a3e145aa3d580e403397d8e59d36a84ec" kind="function"><name>onHeartbeat</name></member>
+    <member refid="classeva_1_1_heartbeat_1ad18f109bb8f83cdd5f8ec8ead2b0312b" kind="function"><name>Heartbeat</name></member>
+    <member refid="classeva_1_1_heartbeat_1a1a4c3c0f5faa69e1bd25d831f012b526" kind="function"><name>~Heartbeat</name></member>
+    <member refid="classeva_1_1_heartbeat_1adce9a250ce4084170f1afb1093f5dd5b" kind="function"><name>tick</name></member>
+    <member refid="classeva_1_1_heartbeat_1a9291db0d04f513d529b22f872de2fdeb" kind="function"><name>getPeriod</name></member>
+  </compound>
   <compound refid="classeva_1_1_i_handler" kind="class"><name>eva::IHandler</name>
     <member refid="classeva_1_1_i_handler_1a2c2e49933b5f061904700baad54b5167" kind="function"><name>invoke</name></member>
   </compound>
@@ -203,7 +212,7 @@
     <member refid="eva_button_8h_1aeea2eb41250309b580d704805c9fcf34" kind="typedef"><name>PinButton</name></member>
     <member refid="eva_button_8h_1af0470e4348fcbc1a90067de858e2645a" kind="typedef"><name>PullUpButton</name></member>
     <member refid="eva_button_8h_1a33789c899363a430ee9f03633bd6ded5" kind="typedef"><name>PinMultiButton</name></member>
-    <member refid="eva_joystick_8h_1a76c31fd4f54c687e8cc7b8cb4b0f35d7" kind="typedef"><name>PinSymmetricJoystick</name></member>
+    <member refid="eva_joystick_8h_1a053c0b1754d79dcdedef9243ff883270" kind="typedef"><name>PinSymmetricJoystick</name></member>
     <member refid="eva_joystick_8h_1a05e65d614cc86ed6e498dd953872e505" kind="typedef"><name>PinJoystick</name></member>
     <member refid="eva_scroll_button_8h_1a5a6a59b6dbb08940cca1a6a89b7b4b51" kind="typedef"><name>PinScrollButton</name></member>
     <member refid="eva_scroll_button_8h_1a69eba75d65f6c0fe72df3a5ac95c46c7" kind="typedef"><name>PullupScrollButton</name></member>
@@ -236,6 +245,8 @@
   <compound refid="eva_delay_timer_8h" kind="file"><name>evaDelayTimer.h</name>
   </compound>
   <compound refid="eva_handler_8h" kind="file"><name>evaHandler.h</name>
+  </compound>
+  <compound refid="eva_heartbeat_8h" kind="file"><name>evaHeartbeat.h</name>
   </compound>
   <compound refid="eva_indicator_8h" kind="file"><name>evaIndicator.h</name>
   </compound>

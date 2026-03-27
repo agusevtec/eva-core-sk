@@ -9,12 +9,12 @@
         <type>class READER</type>
       </param>
       <param>
-        <type>int</type>
+        <type>unsigned short</type>
         <declname>MIN_POS</declname>
         <defname>MIN_POS</defname>
       </param>
       <param>
-        <type>int</type>
+        <type>unsigned short</type>
         <declname>MAX_POS</declname>
         <defname>MAX_POS</defname>
       </param>

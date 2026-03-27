@@ -11,6 +11,7 @@ Here is a list of all files with brief descriptions:
     * **file** [**evaCountdownTimer.h**](eva_countdown_timer_8h.md)     
     * **file** [**evaDelayTimer.h**](eva_delay_timer_8h.md)     
     * **file** [**evaHandler.h**](eva_handler_8h.md)     
+    * **file** [**evaHeartbeat.h**](eva_heartbeat_8h.md)     
     * **file** [**evaIReader.h**](eva_i_reader_8h.md)     
     * **file** [**evaIndicator.h**](eva_indicator_8h.md)     
     * **file** [**evaJoystick.h**](eva_joystick_8h.md)     

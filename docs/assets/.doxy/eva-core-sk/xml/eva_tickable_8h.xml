@@ -3,6 +3,7 @@
   <compounddef id="eva_tickable_8h" kind="file" language="C++">
     <compoundname>evaTickable.h</compoundname>
     <includedby refid="eva_delay_timer_8h" local="yes">src/evaDelayTimer.h</includedby>
+    <includedby refid="eva_heartbeat_8h" local="no">src/evaHeartbeat.h</includedby>
     <includedby refid="eva_switch_8h" local="yes">src/evaSwitch.h</includedby>
     <invincdepgraph>
       <node id="5">
@@ -11,10 +12,10 @@
         <childnode refid="6" relation="include">
         </childnode>
       </node>
-      <node id="9">
+      <node id="10">
         <label>src/evaButton.h</label>
         <link refid="eva_button_8h_source"/>
-        <childnode refid="10" relation="include">
+        <childnode refid="11" relation="include">
         </childnode>
       </node>
       <node id="6">
@@ -35,6 +36,10 @@
         <childnode refid="7" relation="include">
         </childnode>
       </node>
+      <node id="8">
+        <label>src/evaHeartbeat.h</label>
+        <link refid="eva_heartbeat_8h_source"/>
+      </node>
       <node id="4">
         <label>src/evaIndicator.h</label>
         <link refid="eva_indicator_8h_source"/>
@@ -45,14 +50,14 @@
         <label>src/evaRepeatTimer.h</label>
         <link refid="eva_repeat_timer_8h_source"/>
       </node>
-      <node id="10">
+      <node id="11">
         <label>src/evaScrollButton.h</label>
         <link refid="eva_scroll_button_8h_source"/>
       </node>
-      <node id="8">
+      <node id="9">
         <label>src/evaSwitch.h</label>
         <link refid="eva_switch_8h_source"/>
-        <childnode refid="9" relation="include">
+        <childnode refid="10" relation="include">
         </childnode>
       </node>
       <node id="1">
@@ -61,6 +66,8 @@
         <childnode refid="2" relation="include">
         </childnode>
         <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
         </childnode>
       </node>
     </invincdepgraph>

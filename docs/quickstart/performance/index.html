@@ -476,6 +476,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#heartbeat-subclass-periodic-simplicity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Heartbeat Subclass (Periodic simplicity)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#tickable-subclass-tightest-control" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -922,6 +933,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#heartbeat-subclass-periodic-simplicity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Heartbeat Subclass (Periodic simplicity)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#tickable-subclass-tightest-control" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1098,8 +1120,12 @@ Look at how buttons are built:</p>
 </code></pre></div>
 
 <ul>
-<li>Clean, readable, refactor-friendly</li>
-<li>Perfect for prototypes and memory consumption careless cases</li>
+<li>
+<p>Clean, readable, refactor-friendly</p>
+</li>
+<li>
+<p>Perfect for prototypes and memory consumption careless cases</p>
+</li>
 </ul>
 <h3 id="direct-ihandler-implementation-minimal">Direct IHandler Implementation (Minimal)<a class="headerlink" href="#direct-ihandler-implementation-minimal" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">App</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">IHandler</span><span class="w"> </span><span class="p">{</span>
@@ -1114,6 +1140,30 @@ Look at how buttons are built:</p>
 <ul>
 <li>For the cases when RAM matters</li>
 </ul>
+<h3 id="heartbeat-subclass-periodic-simplicity">Heartbeat Subclass (Periodic simplicity)<a class="headerlink" href="#heartbeat-subclass-periodic-simplicity" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">App</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">Heartbeat</span><span class="w"> </span><span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+<span class="w">  </span><span class="n">App</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">periodMs</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Heartbeat</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+
+<span class="k">protected</span><span class="o">:</span>
+<span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="n">onHeartbeat</span><span class="p">()</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Called automatically every 1000ms milliseconds</span>
+<span class="w">    </span><span class="c1">// No need to manage timers or check millis()</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div>
+
+<ul>
+<li>
+<p>Fixed period set once, never changes (immutable)</p>
+</li>
+<li>
+<p>No timer objects to manage, no handlers to register</p>
+</li>
+<li>
+<p>Perfect for periodic tasks </p>
+</li>
+</ul>
 <h3 id="tickable-subclass-tightest-control">Tickable Subclass (Tightest control)<a class="headerlink" href="#tickable-subclass-tightest-control" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">App</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">Tickable</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">tick</span><span class="p">()</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="p">{</span>
@@ -1125,9 +1175,15 @@ Look at how buttons are built:</p>
 </code></pre></div>
 
 <ul>
-<li>One virtual call per <code>loop()</code> iteration</li>
-<li>Maximum control, minimum abstraction</li>
-<li>Ideal for performance-critical or continuously monitored logic</li>
+<li>
+<p>One virtual call per <code>loop()</code> iteration</p>
+</li>
+<li>
+<p>Maximum control, minimum abstraction</p>
+</li>
+<li>
+<p>Ideal for performance-critical or continuously monitored logic</p>
+</li>
 </ul>
 <h2 id="choose-the-right-tool-hierarchies-built-for-efficiency">Choose the Right Tool: Hierarchies Built for Efficiency<a class="headerlink" href="#choose-the-right-tool-hierarchies-built-for-efficiency" title="Permanent link">&para;</a></h2>
 <p>The library provides class hierarchies that let you pick the exact level of functionality you need—no more, no less.</p>

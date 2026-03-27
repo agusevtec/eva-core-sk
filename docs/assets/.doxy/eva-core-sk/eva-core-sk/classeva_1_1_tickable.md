@@ -16,7 +16,7 @@ _Base class for objects that need periodic updates._
 
 
 
-Inherited by the following classes: [eva::Switch](classeva_1_1_switch.md),  [eva::Switch](classeva_1_1_switch.md),  [eva::DelayTimer](classeva_1_1_delay_timer.md),  [eva::Switch](classeva_1_1_switch.md)
+Inherited by the following classes: [eva::Switch](classeva_1_1_switch.md),  [eva::Switch](classeva_1_1_switch.md),  [eva::DelayTimer](classeva_1_1_delay_timer.md),  [eva::Heartbeat](classeva_1_1_heartbeat.md),  [eva::Switch](classeva_1_1_switch.md)
 
 
 

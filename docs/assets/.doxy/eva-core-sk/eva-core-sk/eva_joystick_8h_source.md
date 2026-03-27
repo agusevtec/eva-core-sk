@@ -14,7 +14,7 @@
 
 namespace eva
 {
-  template <class READER, int MIN_POS, int MIDDLE_POS, int MAX_POS>
+  template <class READER, unsigned short MIN_POS, unsigned short MIDDLE_POS, unsigned short MAX_POS>
   class Joystick : public READER
   {
   public:
@@ -57,9 +57,9 @@ namespace eva
     signed char trim = 0;
     unsigned char deadZone = 0;
   };
-  template <int PIN, int PIN_MODE, int MIN_POS, int MAX_POS>
-  using PinSymmetricJoystick = Joystick<AnalogPinReader<PIN, PIN_MODE>, MIN_POS, (MAX_POS - MIN_POS) / 2, MAX_POS>;
-  template <int PIN, int PIN_MODE, int MIN_POS, int MIDDLE_POS, int MAX_POS>
+  template <int PIN, int PIN_MODE, unsigned short MIN_POS, unsigned short MAX_POS>
+  using PinSymmetricJoystick = Joystick<AnalogPinReader<PIN, PIN_MODE>, MIN_POS, (MAX_POS + MIN_POS) / 2, MAX_POS>;
+  template <int PIN, int PIN_MODE, unsigned short MIN_POS, unsigned short MIDDLE_POS, unsigned short MAX_POS>
   using PinJoystick = Joystick<AnalogPinReader<PIN, PIN_MODE>, MIN_POS, MIDDLE_POS, MAX_POS>;
 };
 
