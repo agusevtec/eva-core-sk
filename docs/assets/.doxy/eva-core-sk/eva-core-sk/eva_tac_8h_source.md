@@ -8,14 +8,12 @@
 
 
 ```C++
-#ifndef EVATAC_H_
-#define EVATAC_H_
+#pragma once
 
 namespace eva
 {
     void tac();
 };
-#endif
 ```
 
 

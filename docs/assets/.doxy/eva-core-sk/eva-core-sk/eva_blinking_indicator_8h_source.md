@@ -8,9 +8,6 @@
 
 
 ```C++
-#ifndef EVABLINKINGINDICATOR_H
-#define EVABLINKINGINDICATOR_H
-
 #pragma once
 
 #include "evaIndicator.h"
@@ -42,7 +39,7 @@ namespace eva
     unsigned char dutycyclePercent;
   };
 }
-#endif
+
 ```
 
 

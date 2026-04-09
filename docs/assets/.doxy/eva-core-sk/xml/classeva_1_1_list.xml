@@ -22,7 +22,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaList.h" line="24" column="18" bodyfile="src/evaList.h" bodystart="24" bodyend="-1"/>
+        <location file="src/evaList.h" line="23" column="18" bodyfile="src/evaList.h" bodystart="23" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classeva_1_1_list_1aca0d3cbc84e5f5cdf4397d1440eb1559" prot="private" static="no" mutable="no">
         <type><ref refid="structeva_1_1_list_iterator" kindref="compound">ListIterator</ref>&lt; ItemClass &gt; *</type>
@@ -37,7 +37,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaList.h" line="25" column="18" bodyfile="src/evaList.h" bodystart="25" bodyend="-1"/>
+        <location file="src/evaList.h" line="24" column="18" bodyfile="src/evaList.h" bodystart="24" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classeva_1_1_list_1a764b5d92ff4eb5078a4096b79a906eba" prot="private" static="no" mutable="no">
         <type>unsigned</type>
@@ -52,7 +52,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaList.h" line="26" column="14" bodyfile="src/evaList.h" bodystart="26" bodyend="26"/>
+        <location file="src/evaList.h" line="25" column="14" bodyfile="src/evaList.h" bodystart="25" bodyend="25"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -69,7 +69,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaList.h" line="32" column="5"/>
+        <location file="src/evaList.h" line="31" column="5"/>
       </memberdef>
       <memberdef kind="function" id="classeva_1_1_list_1ab03b1364e9d7b5ede2a358e26064a80c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
@@ -98,7 +98,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaList.h" line="38" column="5" bodyfile="src/evaList.h" bodystart="38" bodyend="42"/>
+        <location file="src/evaList.h" line="37" column="5" bodyfile="src/evaList.h" bodystart="37" bodyend="41"/>
       </memberdef>
       <memberdef kind="function" id="classeva_1_1_list_1aae36963344a2857ec653480c2b12e25e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classeva_1_1_list_1a675da9fb355ee9bc63b82f1ff212c3c9" kindref="member">List</ref> &amp;</type>
@@ -129,7 +129,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaList.h" line="49" column="10" bodyfile="src/evaList.h" bodystart="49" bodyend="57"/>
+        <location file="src/evaList.h" line="48" column="10" bodyfile="src/evaList.h" bodystart="48" bodyend="56"/>
       </memberdef>
       <memberdef kind="function" id="classeva_1_1_list_1aeac16ea2dd410c8d2655252fca0604ba" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
@@ -144,7 +144,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaList.h" line="62" column="5" bodyfile="src/evaList.h" bodystart="62" bodyend="65"/>
+        <location file="src/evaList.h" line="61" column="5" bodyfile="src/evaList.h" bodystart="61" bodyend="64"/>
       </memberdef>
       <memberdef kind="function" id="classeva_1_1_list_1af8613606cbc1f80f0eb652d385e8ca6e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -173,7 +173,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaList.h" line="71" column="10" bodyfile="src/evaList.h" bodystart="71" bodyend="78"/>
+        <location file="src/evaList.h" line="70" column="10" bodyfile="src/evaList.h" bodystart="70" bodyend="77"/>
       </memberdef>
       <memberdef kind="function" id="classeva_1_1_list_1a2a44fb70b62552e49bbe6b3b247a3e64" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>int</type>
@@ -204,7 +204,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaList.h" line="85" column="9" bodyfile="src/evaList.h" bodystart="85" bodyend="95"/>
+        <location file="src/evaList.h" line="84" column="9" bodyfile="src/evaList.h" bodystart="84" bodyend="94"/>
       </memberdef>
       <memberdef kind="function" id="classeva_1_1_list_1a517c771673a41bd5dbbdf8321f49624f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -235,7 +235,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaList.h" line="102" column="10" bodyfile="src/evaList.h" bodystart="102" bodyend="108"/>
+        <location file="src/evaList.h" line="101" column="10" bodyfile="src/evaList.h" bodystart="101" bodyend="107"/>
       </memberdef>
       <memberdef kind="function" id="classeva_1_1_list_1a556bd1f1e8aa63d2ee02b328e5de8ef5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -266,7 +266,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaList.h" line="115" column="10" bodyfile="src/evaList.h" bodystart="115" bodyend="139"/>
+        <location file="src/evaList.h" line="114" column="10" bodyfile="src/evaList.h" bodystart="114" bodyend="138"/>
       </memberdef>
       <memberdef kind="function" id="classeva_1_1_list_1a4f193eb023aa9d4923395d8fbf8ca9c7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -281,7 +281,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaList.h" line="144" column="10" bodyfile="src/evaList.h" bodystart="144" bodyend="156"/>
+        <location file="src/evaList.h" line="143" column="10" bodyfile="src/evaList.h" bodystart="143" bodyend="155"/>
       </memberdef>
       <memberdef kind="function" id="classeva_1_1_list_1a8739655e45ea8b1913c34601ac7c669f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="structeva_1_1_list_iterator" kindref="compound">ListIterator</ref>&lt; ItemClass &gt; *</type>
@@ -299,7 +299,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaList.h" line="162" column="18" bodyfile="src/evaList.h" bodystart="162" bodyend="165"/>
+        <location file="src/evaList.h" line="161" column="18" bodyfile="src/evaList.h" bodystart="161" bodyend="164"/>
       </memberdef>
       <memberdef kind="function" id="classeva_1_1_list_1a5761dff2c54fc44070e16bdd1194227a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>ItemClass *</type>
@@ -330,7 +330,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaList.h" line="172" column="15" bodyfile="src/evaList.h" bodystart="172" bodyend="179"/>
+        <location file="src/evaList.h" line="171" column="15" bodyfile="src/evaList.h" bodystart="171" bodyend="178"/>
       </memberdef>
       <memberdef kind="function" id="classeva_1_1_list_1a864ed719a2d4af4a7b118efe548b24f5" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>unsigned</type>
@@ -348,7 +348,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaList.h" line="185" column="21" bodyfile="src/evaList.h" bodystart="185" bodyend="188"/>
+        <location file="src/evaList.h" line="184" column="21" bodyfile="src/evaList.h" bodystart="184" bodyend="187"/>
       </memberdef>
       <memberdef kind="function" id="classeva_1_1_list_1ad3d9fe8df99912dd67f89c3816a03523" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -366,7 +366,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaList.h" line="194" column="17" bodyfile="src/evaList.h" bodystart="194" bodyend="197"/>
+        <location file="src/evaList.h" line="193" column="17" bodyfile="src/evaList.h" bodystart="193" bodyend="196"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -384,7 +384,7 @@
 </parameterlist>
 </para>
     </detaileddescription>
-    <location file="src/evaList.h" line="22" column="3" bodyfile="src/evaList.h" bodystart="23" bodyend="198"/>
+    <location file="src/evaList.h" line="21" column="3" bodyfile="src/evaList.h" bodystart="22" bodyend="197"/>
     <listofallmembers>
       <member refid="classeva_1_1_list_1af8613606cbc1f80f0eb652d385e8ca6e" prot="public" virt="non-virtual"><scope>eva::List</scope><name>append</name></member>
       <member refid="classeva_1_1_list_1a4f193eb023aa9d4923395d8fbf8ca9c7" prot="public" virt="non-virtual"><scope>eva::List</scope><name>clear</name></member>

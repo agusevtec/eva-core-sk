@@ -1,6 +1,3 @@
-#ifndef EVA_HEARTBEAT_H_
-#define EVA_HEARTBEAT_H_
-
 #pragma once
 #include <evaTickable.h>
 
@@ -54,5 +51,3 @@ namespace eva
     };
 
 }
-
-#endif

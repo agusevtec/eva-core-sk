@@ -4,8 +4,6 @@ using namespace eva;
 CountdownIndicator *eva::CountdownIndicator::setListener(IHandler *listener)
 {
     this->listener = listener;
-    Serial.print("set-listener: ");
-    Serial.println((long)this->listener);
     return this;
 }
 

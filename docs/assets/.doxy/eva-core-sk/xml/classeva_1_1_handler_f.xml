@@ -17,7 +17,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaHandler.h" line="63" column="9" bodyfile="src/evaHandler.h" bodystart="63" bodyend="-1"/>
+        <location file="src/evaHandler.h" line="60" column="9" bodyfile="src/evaHandler.h" bodystart="60" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -37,7 +37,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaHandler.h" line="52" column="9" bodyfile="src/evaHandler.h" bodystart="52" bodyend="55"/>
+        <location file="src/evaHandler.h" line="49" column="9" bodyfile="src/evaHandler.h" bodystart="49" bodyend="52"/>
       </memberdef>
       <memberdef kind="function" id="classeva_1_1_handler_f_1a177cc07aec81924a9bf58a673ddf9ef6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
         <type>void</type>
@@ -60,7 +60,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaHandler.h" line="57" column="14" bodyfile="src/evaHandler.h" bodystart="57" bodyend="60"/>
+        <location file="src/evaHandler.h" line="54" column="14" bodyfile="src/evaHandler.h" bodystart="54" bodyend="57"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -92,7 +92,7 @@
         <link refid="classeva_1_1_i_handler"/>
       </node>
     </collaborationgraph>
-    <location file="src/evaHandler.h" line="49" column="5" bodyfile="src/evaHandler.h" bodystart="50" bodyend="64"/>
+    <location file="src/evaHandler.h" line="46" column="5" bodyfile="src/evaHandler.h" bodystart="47" bodyend="61"/>
     <listofallmembers>
       <member refid="classeva_1_1_handler_f_1a6d716cfaadc8ea89ea4bb8e94ffb3d67" prot="private" virt="non-virtual"><scope>eva::HandlerF</scope><name>function</name></member>
       <member refid="classeva_1_1_handler_f_1a15c88fbc7353f617d49e7b3f315e9fab" prot="public" virt="non-virtual"><scope>eva::HandlerF</scope><name>HandlerF</name></member>

@@ -8,8 +8,7 @@
 
 
 ```C++
-#ifndef EVAJOYSTICK_H_
-#define EVAJOYSTICK_H_
+#pragma once
 #include "evaStdReaders.h"
 
 namespace eva
@@ -62,8 +61,6 @@ namespace eva
   template <int PIN, int PIN_MODE, unsigned short MIN_POS, unsigned short MIDDLE_POS, unsigned short MAX_POS>
   using PinJoystick = Joystick<AnalogPinReader<PIN, PIN_MODE>, MIN_POS, MIDDLE_POS, MAX_POS>;
 };
-
-#endif
 ```
 
 

@@ -8,9 +8,6 @@
 
 
 ```C++
-#ifndef COUNTDOWNINDICATOR_H
-#define COUNTDOWNINDICATOR_H
-
 #pragma once
 
 #include "evaBlinkingIndicator.h"
@@ -38,7 +35,6 @@ namespace eva
     };
 }
 
-#endif
 ```
 
 

@@ -23,7 +23,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaScrollButton.h" line="92" column="23" bodyfile="src/evaScrollButton.h" bodystart="92" bodyend="-1"/>
+        <location file="src/evaScrollButton.h" line="89" column="23" bodyfile="src/evaScrollButton.h" bodystart="89" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="private-func">
@@ -43,7 +43,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaScrollButton.h" line="41" column="14" bodyfile="src/evaScrollButton.h" bodystart="41" bodyend="46"/>
+        <location file="src/evaScrollButton.h" line="38" column="14" bodyfile="src/evaScrollButton.h" bodystart="38" bodyend="43"/>
       </memberdef>
       <memberdef kind="function" id="classeva_1_1_scroll_button_1a16f1d26cc1641636dd69b8752addf4a4" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -65,7 +65,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaScrollButton.h" line="48" column="14" bodyfile="src/evaScrollButton.h" bodystart="48" bodyend="52"/>
+        <location file="src/evaScrollButton.h" line="45" column="14" bodyfile="src/evaScrollButton.h" bodystart="45" bodyend="49"/>
       </memberdef>
       <memberdef kind="function" id="classeva_1_1_scroll_button_1a4bf16a4931ba8ab9543e1acbfd097604" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -83,7 +83,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaScrollButton.h" line="54" column="14" bodyfile="src/evaScrollButton.h" bodystart="54" bodyend="57"/>
+        <location file="src/evaScrollButton.h" line="51" column="14" bodyfile="src/evaScrollButton.h" bodystart="51" bodyend="54"/>
       </memberdef>
       <memberdef kind="function" id="classeva_1_1_scroll_button_1a293d635951a3d0a32c10650613ebe91b" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -101,7 +101,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaScrollButton.h" line="59" column="14" bodyfile="src/evaScrollButton.h" bodystart="59" bodyend="63"/>
+        <location file="src/evaScrollButton.h" line="56" column="14" bodyfile="src/evaScrollButton.h" bodystart="56" bodyend="60"/>
       </memberdef>
       <memberdef kind="function" id="classeva_1_1_scroll_button_1a38ce62deaaced541a8a13394e59af012" prot="private" static="no" const="no" explicit="no" inline="yes" virt="virtual">
         <type>void</type>
@@ -116,7 +116,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaScrollButton.h" line="66" column="14" bodyfile="src/evaScrollButton.h" bodystart="66" bodyend="89"/>
+        <location file="src/evaScrollButton.h" line="63" column="14" bodyfile="src/evaScrollButton.h" bodystart="63" bodyend="86"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -212,7 +212,7 @@
         <link refid="classeva_1_1_tickable"/>
       </node>
     </collaborationgraph>
-    <location file="src/evaScrollButton.h" line="35" column="5" bodyfile="src/evaScrollButton.h" bodystart="36" bodyend="93"/>
+    <location file="src/evaScrollButton.h" line="32" column="5" bodyfile="src/evaScrollButton.h" bodystart="33" bodyend="90"/>
     <listofallmembers>
       <member refid="classeva_1_1_switch_1a60b259c79db04ab3d39eb12300950663" prot="protected" virt="non-virtual"><scope>eva::ScrollButton</scope><name>checkActivating</name></member>
       <member refid="classeva_1_1_switch_1a1fd197ddd39785ed538298ac5d90bf9d" prot="protected" virt="non-virtual"><scope>eva::ScrollButton</scope><name>checkChanging</name></member>

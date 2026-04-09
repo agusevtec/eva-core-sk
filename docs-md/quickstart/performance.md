@@ -31,7 +31,7 @@ using namespace eva;
 
 class MyBankReader {
 public:
-  ButtonBankReader() {
+  MyBankReader() {
     pinMode(2, INPUT_PULLUP);
     pinMode(3, INPUT_PULLUP);
     pinMode(4, INPUT_PULLUP);
@@ -149,7 +149,6 @@ class App : public Tickable {
   void tick() override {
     // Called on every loop() iteration
     // Do your own timing
-    return 0;
   }
 };
 ```

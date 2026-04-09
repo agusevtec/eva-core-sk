@@ -1,6 +1,3 @@
-#ifndef EVASCROLLBUTTON_H
-#define EVASCROLLBUTTON_H
-
 #pragma once
 
 #include "evaButton.h"
@@ -151,4 +148,3 @@ namespace eva
     template <int PIN, int PIN_MODE, signed short... LEVELS>
     using PinScrollMultiButton = ScrollButton<QuantizeDecor<DebounceDecor<AnalogPinReader<PIN, PIN_MODE>>, LEVELS...>>;
 };
-#endif

@@ -8,9 +8,6 @@
 
 
 ```C++
-#ifndef EVACOUNTDOWNTIMER_H
-#define EVACOUNTDOWNTIMER_H
-
 #pragma once
 #include "evaDelayTimer.h"
 
@@ -38,7 +35,6 @@ namespace eva
     };
 };
 
-#endif
 ```
 
 

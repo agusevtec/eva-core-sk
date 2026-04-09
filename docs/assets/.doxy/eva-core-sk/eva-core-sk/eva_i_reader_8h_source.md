@@ -8,9 +8,6 @@
 
 
 ```C++
-#ifndef EVAIREADER_H
-#define EVAIREADER_H
-
 #pragma once
 
 namespace eva
@@ -31,8 +28,6 @@ namespace eva
         }
     };
 };
-
-#endif
 ```
 
 

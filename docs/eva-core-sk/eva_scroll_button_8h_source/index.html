@@ -693,10 +693,7 @@
 <h1 id="file-evascrollbuttonh">File evaScrollButton.h<a class="headerlink" href="#file-evascrollbuttonh" title="Permanent link">&para;</a></h1>
 <p><a href="../files/"><strong>File List</strong></a> <strong>&gt;</strong> <a href="../dir_68267d1309a1af8e8297ef4c3efbcdba/"><strong>src</strong></a> <strong>&gt;</strong> <a href="../eva_scroll_button_8h/"><strong>evaScrollButton.h</strong></a></p>
 <p><a href="../eva_scroll_button_8h/">Go to the documentation of this file</a></p>
-<div class="codehilite"><pre><span></span><code><span class="cp">#ifndef EVASCROLLBUTTON_H</span>
-<span class="cp">#define EVASCROLLBUTTON_H</span>
-
-<span class="cp">#pragma once</span>
+<div class="codehilite"><pre><span></span><code><span class="cp">#pragma once</span>
 
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;evaButton.h&quot;</span>
 
@@ -776,7 +773,6 @@
 <span class="w">    </span><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">int</span><span class="w"> </span><span class="n">PIN</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">PIN_MODE</span><span class="p">,</span><span class="w"> </span><span class="kt">signed</span><span class="w"> </span><span class="kt">short</span><span class="p">...</span><span class="w"> </span><span class="n">LEVELS</span><span class="o">&gt;</span>
 <span class="w">    </span><span class="k">using</span><span class="w"> </span><span class="n">PinScrollMultiButton</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ScrollButton</span><span class="o">&lt;</span><span class="n">QuantizeDecor</span><span class="o">&lt;</span><span class="n">DebounceDecor</span><span class="o">&lt;</span><span class="n">AnalogPinReader</span><span class="o">&lt;</span><span class="n">PIN</span><span class="p">,</span><span class="w"> </span><span class="n">PIN_MODE</span><span class="o">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">LEVELS</span><span class="p">...</span><span class="o">&gt;&gt;</span><span class="p">;</span>
 <span class="p">};</span>
-<span class="cp">#endif</span>
 </code></pre></div>
 
 

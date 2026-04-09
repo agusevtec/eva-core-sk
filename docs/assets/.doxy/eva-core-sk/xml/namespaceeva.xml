@@ -94,7 +94,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaButton.h" line="115" column="5" bodyfile="src/evaButton.h" bodystart="115" bodyend="-1"/>
+        <location file="src/evaButton.h" line="112" column="5" bodyfile="src/evaButton.h" bodystart="112" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="eva_button_8h_1af0470e4348fcbc1a90067de858e2645a" prot="public" static="no">
         <templateparamlist>
@@ -132,7 +132,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaButton.h" line="129" column="5" bodyfile="src/evaButton.h" bodystart="129" bodyend="-1"/>
+        <location file="src/evaButton.h" line="126" column="5" bodyfile="src/evaButton.h" bodystart="126" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="eva_button_8h_1a33789c899363a430ee9f03633bd6ded5" prot="public" static="no">
         <templateparamlist>
@@ -200,7 +200,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaButton.h" line="157" column="5" bodyfile="src/evaButton.h" bodystart="157" bodyend="-1"/>
+        <location file="src/evaButton.h" line="154" column="5" bodyfile="src/evaButton.h" bodystart="154" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="eva_joystick_8h_1a053c0b1754d79dcdedef9243ff883270" prot="public" static="no">
         <templateparamlist>
@@ -271,7 +271,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaJoystick.h" line="85" column="3" bodyfile="src/evaJoystick.h" bodystart="85" bodyend="-1"/>
+        <location file="src/evaJoystick.h" line="84" column="3" bodyfile="src/evaJoystick.h" bodystart="84" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="eva_joystick_8h_1a05e65d614cc86ed6e498dd953872e505" prot="public" static="no">
         <templateparamlist>
@@ -355,7 +355,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaJoystick.h" line="95" column="3" bodyfile="src/evaJoystick.h" bodystart="95" bodyend="-1"/>
+        <location file="src/evaJoystick.h" line="94" column="3" bodyfile="src/evaJoystick.h" bodystart="94" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="eva_scroll_button_8h_1a5a6a59b6dbb08940cca1a6a89b7b4b51" prot="public" static="no">
         <templateparamlist>
@@ -420,7 +420,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaScrollButton.h" line="110" column="5" bodyfile="src/evaScrollButton.h" bodystart="110" bodyend="-1"/>
+        <location file="src/evaScrollButton.h" line="107" column="5" bodyfile="src/evaScrollButton.h" bodystart="107" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="eva_scroll_button_8h_1a69eba75d65f6c0fe72df3a5ac95c46c7" prot="public" static="no">
         <templateparamlist>
@@ -458,7 +458,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaScrollButton.h" line="124" column="5" bodyfile="src/evaScrollButton.h" bodystart="124" bodyend="-1"/>
+        <location file="src/evaScrollButton.h" line="121" column="5" bodyfile="src/evaScrollButton.h" bodystart="121" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="eva_scroll_button_8h_1ad9ac3213dc6362f2e4d121f3c9673885" prot="public" static="no">
         <templateparamlist>
@@ -526,7 +526,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaScrollButton.h" line="152" column="5" bodyfile="src/evaScrollButton.h" bodystart="152" bodyend="-1"/>
+        <location file="src/evaScrollButton.h" line="149" column="5" bodyfile="src/evaScrollButton.h" bodystart="149" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="eva_slider_8h_1aec8dd6405eda9c9c2b58e1c31dd8f414" prot="public" static="no">
         <templateparamlist>
@@ -597,7 +597,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaSlider.h" line="33" column="3" bodyfile="src/evaSlider.h" bodystart="33" bodyend="-1"/>
+        <location file="src/evaSlider.h" line="32" column="3" bodyfile="src/evaSlider.h" bodystart="32" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="eva_switch_8h_1a1965386770156ddeb6f000cdf7e29706" prot="public" static="no">
         <templateparamlist>
@@ -661,7 +661,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaSwitch.h" line="183" column="5" bodyfile="src/evaSwitch.h" bodystart="183" bodyend="-1"/>
+        <location file="src/evaSwitch.h" line="181" column="5" bodyfile="src/evaSwitch.h" bodystart="181" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="eva_switch_8h_1a69f7de1ebb1e7c1b70aa7d7dc11cdec5" prot="public" static="no">
         <templateparamlist>
@@ -698,7 +698,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaSwitch.h" line="195" column="5" bodyfile="src/evaSwitch.h" bodystart="195" bodyend="-1"/>
+        <location file="src/evaSwitch.h" line="193" column="5" bodyfile="src/evaSwitch.h" bodystart="193" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="eva_switch_8h_1a8b934afbd3db64bad1e3375047507193" prot="public" static="no">
         <templateparamlist>
@@ -763,7 +763,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaSwitch.h" line="218" column="5" bodyfile="src/evaSwitch.h" bodystart="218" bodyend="-1"/>
+        <location file="src/evaSwitch.h" line="216" column="5" bodyfile="src/evaSwitch.h" bodystart="216" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="var">
@@ -780,7 +780,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaButton.h" line="10" column="33" bodyfile="src/evaButton.h" bodystart="10" bodyend="-1"/>
+        <location file="src/evaButton.h" line="7" column="33" bodyfile="src/evaButton.h" bodystart="7" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="eva_button_8h_1a9f0afdfaa61b59c313463ec31444bc58" prot="public" static="yes" mutable="no">
         <type>const unsigned char</type>
@@ -795,7 +795,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaButton.h" line="12" column="32" bodyfile="src/evaButton.h" bodystart="12" bodyend="-1"/>
+        <location file="src/evaButton.h" line="9" column="32" bodyfile="src/evaButton.h" bodystart="9" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="eva_button_8h_1ae072ea6457bf4f70dfe4420571701571" prot="public" static="yes" mutable="no">
         <type>const unsigned char</type>
@@ -810,7 +810,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaButton.h" line="13" column="32" bodyfile="src/evaButton.h" bodystart="13" bodyend="-1"/>
+        <location file="src/evaButton.h" line="10" column="32" bodyfile="src/evaButton.h" bodystart="10" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="eva_button_8h_1a8084941916bac4c197a6e7b08d033134" prot="public" static="yes" mutable="no">
         <type>const unsigned char</type>
@@ -825,7 +825,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaButton.h" line="14" column="32" bodyfile="src/evaButton.h" bodystart="14" bodyend="-1"/>
+        <location file="src/evaButton.h" line="11" column="32" bodyfile="src/evaButton.h" bodystart="11" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="eva_reader_decors_8h_1a415459cc564ee6c2cc1ceae1879fd24a" prot="public" static="yes" mutable="no">
         <type>const unsigned short</type>
@@ -840,7 +840,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaReaderDecors.h" line="10" column="33" bodyfile="src/evaReaderDecors.h" bodystart="10" bodyend="-1"/>
+        <location file="src/evaReaderDecors.h" line="7" column="33" bodyfile="src/evaReaderDecors.h" bodystart="7" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="eva_scroll_button_8h_1a6144cad481d8224faf85ab8f640aa324" prot="public" static="yes" mutable="no">
         <type>const unsigned short</type>
@@ -855,7 +855,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaScrollButton.h" line="10" column="33" bodyfile="src/evaScrollButton.h" bodystart="10" bodyend="-1"/>
+        <location file="src/evaScrollButton.h" line="7" column="33" bodyfile="src/evaScrollButton.h" bodystart="7" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="eva_scroll_button_8h_1af559901eaff180228ddd5e69d98cb89e" prot="public" static="yes" mutable="no">
         <type>const unsigned char</type>
@@ -870,7 +870,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaScrollButton.h" line="12" column="32" bodyfile="src/evaScrollButton.h" bodystart="12" bodyend="-1"/>
+        <location file="src/evaScrollButton.h" line="9" column="32" bodyfile="src/evaScrollButton.h" bodystart="9" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="eva_switch_8h_1a0dc3da3ced5a1c2b4e4d2acc8b381254" prot="public" static="yes" mutable="no">
         <type>const unsigned char</type>
@@ -885,7 +885,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaSwitch.h" line="12" column="32" bodyfile="src/evaSwitch.h" bodystart="12" bodyend="-1"/>
+        <location file="src/evaSwitch.h" line="10" column="32" bodyfile="src/evaSwitch.h" bodystart="10" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="eva_switch_8h_1a6c443d221db88ada2b9c14a5bc5c7265" prot="public" static="yes" mutable="no">
         <type>const unsigned char</type>
@@ -900,7 +900,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaSwitch.h" line="13" column="32" bodyfile="src/evaSwitch.h" bodystart="13" bodyend="-1"/>
+        <location file="src/evaSwitch.h" line="11" column="32" bodyfile="src/evaSwitch.h" bodystart="11" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="eva_switch_8h_1a68626a8136afbee89173c7beb3f20104" prot="public" static="yes" mutable="no">
         <type>const unsigned char</type>
@@ -915,7 +915,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaSwitch.h" line="15" column="32" bodyfile="src/evaSwitch.h" bodystart="15" bodyend="-1"/>
+        <location file="src/evaSwitch.h" line="13" column="32" bodyfile="src/evaSwitch.h" bodystart="13" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="func">
@@ -943,7 +943,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaReaderDecors.h" line="12" column="24" bodyfile="src/evaReaderDecors.h" bodystart="12" bodyend="19"/>
+        <location file="src/evaReaderDecors.h" line="9" column="24" bodyfile="src/evaReaderDecors.h" bodystart="9" bodyend="16"/>
       </memberdef>
       <memberdef kind="function" id="eva_tac_8h_1ad0744b1e82e36d68b85273f06b00957d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -958,13 +958,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaTac.h" line="9" column="10" declfile="src/evaTac.h" declline="9" declcolumn="10"/>
+        <location file="src/evaTac.h" line="8" column="10" declfile="src/evaTac.h" declline="8" declcolumn="10"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="src/evaBlinkingIndicator.h" line="9" column="1"/>
+    <location file="src/evaBlinkingIndicator.h" line="6" column="1"/>
   </compounddef>
 </doxygen>

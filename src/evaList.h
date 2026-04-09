@@ -1,5 +1,4 @@
-#ifndef EVALIST_H_
-#define EVALIST_H_
+#pragma once
 
 namespace eva
 {
@@ -196,6 +195,4 @@ namespace eva
       return this->length == 0;
     }
   };
-};
-
-#endif
+}

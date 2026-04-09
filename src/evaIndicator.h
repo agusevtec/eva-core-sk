@@ -1,5 +1,4 @@
-#ifndef EVAINDICATOR_H_
-#define EVAINDICATOR_H_
+#pragma once
 #include "evaDelayTimer.h"
 
 #include <Arduino.h>
@@ -36,5 +35,3 @@ namespace eva
 
 
 }
-
-#endif

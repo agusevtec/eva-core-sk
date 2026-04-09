@@ -8,8 +8,7 @@
 
 
 ```C++
-#ifndef EVATICKABLE_H
-#define EVATICKABLE_H
+#pragma once
 
 namespace eva
 {
@@ -30,11 +29,10 @@ namespace eva
 
   private:
     Tickable *next = 0;
-//static Tickable *last;
     static Tickable *first;
   };
-};
-#endif
+}
+
 ```
 
 

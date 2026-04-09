@@ -1,6 +1,3 @@
-#ifndef EVAREADERDECORS_H
-#define EVAREADERDECORS_H
-
 #pragma once
 
 #include <Arduino.h>
@@ -128,5 +125,3 @@ namespace eva
         const signed short levels[sizeof...(LEVELS)] = {LEVELS...};
     };
 }
-
-#endif

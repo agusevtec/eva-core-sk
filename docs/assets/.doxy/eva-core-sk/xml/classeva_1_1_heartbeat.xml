@@ -1,0 +1,183 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="classeva_1_1_heartbeat" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>eva::Heartbeat</compoundname>
+    <basecompoundref refid="classeva_1_1_tickable" prot="public" virt="non-virtual">eva::Tickable</basecompoundref>
+    <includes refid="eva_heartbeat_8h" local="no">evaHeartbeat.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classeva_1_1_heartbeat_1a83d4a0c428403e2280b8093697e0dad4" prot="private" static="no" mutable="no">
+        <type>const unsigned long</type>
+        <definition>const unsigned long eva::Heartbeat::periodMs</definition>
+        <argsstring></argsstring>
+        <name>periodMs</name>
+        <qualifiedname>eva::Heartbeat::periodMs</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evaHeartbeat.h" line="18" column="29" bodyfile="src/evaHeartbeat.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classeva_1_1_heartbeat_1a1cc37c7fc1e8e9a47394c676d48d485c" prot="private" static="no" mutable="no">
+        <type>unsigned long</type>
+        <definition>unsigned long eva::Heartbeat::lastBeatMs</definition>
+        <argsstring></argsstring>
+        <name>lastBeatMs</name>
+        <qualifiedname>eva::Heartbeat::lastBeatMs</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evaHeartbeat.h" line="19" column="23" bodyfile="src/evaHeartbeat.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classeva_1_1_heartbeat_1a3e145aa3d580e403397d8e59d36a84ec" prot="protected" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void eva::Heartbeat::onHeartbeat</definition>
+        <argsstring>()=0</argsstring>
+        <name>onHeartbeat</name>
+        <qualifiedname>eva::Heartbeat::onHeartbeat</qualifiedname>
+        <briefdescription>
+<para>Virtual method to be overridden by derived classes. Called at each heartbeat interval. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evaHeartbeat.h" line="26" column="22"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classeva_1_1_heartbeat_1ad18f109bb8f83cdd5f8ec8ead2b0312b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>eva::Heartbeat::Heartbeat</definition>
+        <argsstring>(unsigned long periodMs)</argsstring>
+        <name>Heartbeat</name>
+        <qualifiedname>eva::Heartbeat::Heartbeat</qualifiedname>
+        <param>
+          <type>unsigned long</type>
+          <declname>periodMs</declname>
+        </param>
+        <briefdescription>
+<para>Constructor with fixed period. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>periodMs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classeva_1_1_heartbeat" kindref="compound">Heartbeat</ref> period in milliseconds. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evaHeartbeat.h" line="33" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classeva_1_1_heartbeat_1a1a4c3c0f5faa69e1bd25d831f012b526" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>virtual eva::Heartbeat::~Heartbeat</definition>
+        <argsstring>()=default</argsstring>
+        <name>~Heartbeat</name>
+        <qualifiedname>eva::Heartbeat::~Heartbeat</qualifiedname>
+        <briefdescription>
+<para>Virtual destructor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evaHeartbeat.h" line="38" column="17"/>
+      </memberdef>
+      <memberdef kind="function" id="classeva_1_1_heartbeat_1adce9a250ce4084170f1afb1093f5dd5b" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void eva::Heartbeat::tick</definition>
+        <argsstring>() override</argsstring>
+        <name>tick</name>
+        <qualifiedname>eva::Heartbeat::tick</qualifiedname>
+        <reimplements refid="classeva_1_1_tickable_1ac7bb568a397ac2147fd6e292d2846ba6">tick</reimplements>
+        <briefdescription>
+<para>Update method - call this regularly from main loop. Checks if period has elapsed and calls <ref refid="classeva_1_1_heartbeat_1a3e145aa3d580e403397d8e59d36a84ec" kindref="member">onHeartbeat()</ref> if needed. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evaHeartbeat.h" line="44" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classeva_1_1_heartbeat_1a9291db0d04f513d529b22f872de2fdeb" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned long</type>
+        <definition>unsigned long eva::Heartbeat::getPeriod</definition>
+        <argsstring>() const</argsstring>
+        <name>getPeriod</name>
+        <qualifiedname>eva::Heartbeat::getPeriod</qualifiedname>
+        <briefdescription>
+<para>Get the heartbeat period. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Period in milliseconds (immutable). </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evaHeartbeat.h" line="50" column="23"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Base class for components that need periodic updates. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Provides a simple heartbeat mechanism with fixed period. Derived classes must implement <ref refid="classeva_1_1_heartbeat_1a3e145aa3d580e403397d8e59d36a84ec" kindref="member">onHeartbeat()</ref> which will be called at regular intervals.</para>
+<para>The period is set at construction and cannot be changed (immutable). </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>eva::Heartbeat</label>
+        <link refid="classeva_1_1_heartbeat"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>eva::Tickable</label>
+        <link refid="classeva_1_1_tickable"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>eva::Heartbeat</label>
+        <link refid="classeva_1_1_heartbeat"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>eva::Tickable</label>
+        <link refid="classeva_1_1_tickable"/>
+      </node>
+    </collaborationgraph>
+    <location file="src/evaHeartbeat.h" line="15" column="5" bodyfile="src/evaHeartbeat.h" bodystart="16" bodyend="51"/>
+    <listofallmembers>
+      <member refid="classeva_1_1_heartbeat_1a9291db0d04f513d529b22f872de2fdeb" prot="public" virt="non-virtual"><scope>eva::Heartbeat</scope><name>getPeriod</name></member>
+      <member refid="classeva_1_1_heartbeat_1ad18f109bb8f83cdd5f8ec8ead2b0312b" prot="public" virt="non-virtual"><scope>eva::Heartbeat</scope><name>Heartbeat</name></member>
+      <member refid="classeva_1_1_heartbeat_1a1cc37c7fc1e8e9a47394c676d48d485c" prot="private" virt="non-virtual"><scope>eva::Heartbeat</scope><name>lastBeatMs</name></member>
+      <member refid="classeva_1_1_heartbeat_1a3e145aa3d580e403397d8e59d36a84ec" prot="protected" virt="pure-virtual"><scope>eva::Heartbeat</scope><name>onHeartbeat</name></member>
+      <member refid="classeva_1_1_tickable_1a865abbef0ee038e0db5eff81747949e7" prot="public" virt="non-virtual"><scope>eva::Heartbeat</scope><name>operator=</name></member>
+      <member refid="classeva_1_1_tickable_1a698d78c5c54122f25b42080e001561d2" prot="public" virt="non-virtual"><scope>eva::Heartbeat</scope><name>operator=</name></member>
+      <member refid="classeva_1_1_heartbeat_1a83d4a0c428403e2280b8093697e0dad4" prot="private" virt="non-virtual"><scope>eva::Heartbeat</scope><name>periodMs</name></member>
+      <member refid="classeva_1_1_tickable_1aa59c892bc8901a7840e5af7e431a15a3" prot="public" virt="non-virtual"><scope>eva::Heartbeat</scope><name>tac</name></member>
+      <member refid="classeva_1_1_heartbeat_1adce9a250ce4084170f1afb1093f5dd5b" prot="public" virt="virtual"><scope>eva::Heartbeat</scope><name>tick</name></member>
+      <member refid="classeva_1_1_tickable_1a667f47cdee5f03eed323cebb27e8ab8e" prot="public" virt="non-virtual"><scope>eva::Heartbeat</scope><name>Tickable</name></member>
+      <member refid="classeva_1_1_tickable_1aa8efa54edd7140587548e7973de356df" prot="public" virt="non-virtual"><scope>eva::Heartbeat</scope><name>Tickable</name></member>
+      <member refid="classeva_1_1_tickable_1a80af7d23456d2e0bec8a2c6b8f9f8f10" prot="public" virt="non-virtual"><scope>eva::Heartbeat</scope><name>Tickable</name></member>
+      <member refid="classeva_1_1_heartbeat_1a1a4c3c0f5faa69e1bd25d831f012b526" prot="public" virt="virtual"><scope>eva::Heartbeat</scope><name>~Heartbeat</name></member>
+      <member refid="classeva_1_1_tickable_1a6b6ff95372ce0b94618029e05ed2b50a" prot="public" virt="virtual"><scope>eva::Heartbeat</scope><name>~Tickable</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

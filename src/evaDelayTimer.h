@@ -1,11 +1,6 @@
-#ifndef EVADELAYTIMER_H
-#define EVADELAYTIMER_H
-
 #pragma once
 #include "evaTickable.h"
 #include "evaHandler.h"
-
-
 
 namespace eva
 {
@@ -62,5 +57,3 @@ namespace eva
         IHandler *listener;
     };
 }
-
-#endif

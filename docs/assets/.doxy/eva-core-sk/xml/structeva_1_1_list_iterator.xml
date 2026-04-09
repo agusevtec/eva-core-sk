@@ -21,7 +21,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaList.h" line="12" column="15" bodyfile="src/evaList.h" bodystart="12" bodyend="-1"/>
+        <location file="src/evaList.h" line="11" column="15" bodyfile="src/evaList.h" bodystart="11" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structeva_1_1_list_iterator_1a1d2a502a56ce139f3a250cdd1213bba6" prot="public" static="no" mutable="no">
         <type>ListIterator&lt; ItemClass &gt; *</type>
@@ -35,7 +35,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaList.h" line="13" column="18" bodyfile="src/evaList.h" bodystart="13" bodyend="-1"/>
+        <location file="src/evaList.h" line="12" column="18" bodyfile="src/evaList.h" bodystart="12" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -55,7 +55,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaList.h" line="14" column="5" bodyfile="src/evaList.h" bodystart="14" bodyend="14"/>
+        <location file="src/evaList.h" line="13" column="5" bodyfile="src/evaList.h" bodystart="13" bodyend="13"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -63,7 +63,7 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="src/evaList.h" line="10" column="3" bodyfile="src/evaList.h" bodystart="11" bodyend="15"/>
+    <location file="src/evaList.h" line="9" column="3" bodyfile="src/evaList.h" bodystart="10" bodyend="14"/>
     <listofallmembers>
       <member refid="structeva_1_1_list_iterator_1a673ff85eaf58de491d4710d7fb6c5226" prot="public" virt="non-virtual"><scope>eva::ListIterator</scope><name>item</name></member>
       <member refid="structeva_1_1_list_iterator_1acc56acea81145467c6a08e57325898f7" prot="public" virt="non-virtual"><scope>eva::ListIterator</scope><name>ListIterator</name></member>

@@ -29,7 +29,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaReaderDecors.h" line="128" column="28" bodyfile="src/evaReaderDecors.h" bodystart="128" bodyend="128"/>
+        <location file="src/evaReaderDecors.h" line="125" column="28" bodyfile="src/evaReaderDecors.h" bodystart="125" bodyend="125"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -49,7 +49,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaReaderDecors.h" line="103" column="22" bodyfile="src/evaReaderDecors.h" bodystart="103" bodyend="113"/>
+        <location file="src/evaReaderDecors.h" line="100" column="22" bodyfile="src/evaReaderDecors.h" bodystart="100" bodyend="110"/>
       </memberdef>
       <memberdef kind="function" id="classeva_1_1_quantize_decor_1a4531ca88488c8b52918ae83f74f5f670" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>signed short</type>
@@ -80,7 +80,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaReaderDecors.h" line="120" column="22" bodyfile="src/evaReaderDecors.h" bodystart="120" bodyend="125"/>
+        <location file="src/evaReaderDecors.h" line="117" column="22" bodyfile="src/evaReaderDecors.h" bodystart="117" bodyend="122"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -128,7 +128,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="src/evaReaderDecors.h" line="94" column="5" bodyfile="src/evaReaderDecors.h" bodystart="95" bodyend="129"/>
+    <location file="src/evaReaderDecors.h" line="91" column="5" bodyfile="src/evaReaderDecors.h" bodystart="92" bodyend="126"/>
     <listofallmembers>
       <member refid="classeva_1_1_quantize_decor_1a4531ca88488c8b52918ae83f74f5f670" prot="public" virt="non-virtual"><scope>eva::QuantizeDecor</scope><name>getLevel</name></member>
       <member refid="classeva_1_1_quantize_decor_1af9835250527826076402e3591535890c" prot="public" virt="non-virtual"><scope>eva::QuantizeDecor</scope><name>getValue</name></member>

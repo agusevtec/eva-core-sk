@@ -31,7 +31,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaHandler.h" line="20" column="22"/>
+        <location file="src/evaHandler.h" line="17" column="22"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -69,7 +69,7 @@
         <link refid="classeva_1_1_i_handler"/>
       </node>
     </inheritancegraph>
-    <location file="src/evaHandler.h" line="17" column="5" bodyfile="src/evaHandler.h" bodystart="18" bodyend="21"/>
+    <location file="src/evaHandler.h" line="14" column="5" bodyfile="src/evaHandler.h" bodystart="15" bodyend="18"/>
     <listofallmembers>
       <member refid="classeva_1_1_i_handler_1a2c2e49933b5f061904700baad54b5167" prot="public" virt="pure-virtual"><scope>eva::IHandler</scope><name>invoke</name></member>
     </listofallmembers>

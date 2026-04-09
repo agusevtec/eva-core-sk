@@ -8,9 +8,6 @@
 
 
 ```C++
-#ifndef EVAHANDLER_H
-#define EVAHANDLER_H
-
 #pragma once
 namespace eva
 {
@@ -63,7 +60,6 @@ namespace eva
         void (*function)(void *, CallbackInfo);
     };
 }
-#endif
 ```
 
 

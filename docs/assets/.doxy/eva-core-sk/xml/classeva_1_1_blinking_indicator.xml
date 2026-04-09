@@ -19,7 +19,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaBlinkingIndicator.h" line="50" column="16" bodyfile="src/evaBlinkingIndicator.h" bodystart="50" bodyend="-1"/>
+        <location file="src/evaBlinkingIndicator.h" line="47" column="16" bodyfile="src/evaBlinkingIndicator.h" bodystart="47" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classeva_1_1_blinking_indicator_1a9d2c6ec0d96f3a61b76fd5925792fcec" prot="protected" static="no" mutable="no">
         <type><ref refid="classeva_1_1_delay_timer" kindref="compound">DelayTimer</ref></type>
@@ -33,7 +33,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaBlinkingIndicator.h" line="51" column="16" bodyfile="src/evaBlinkingIndicator.h" bodystart="51" bodyend="-1"/>
+        <location file="src/evaBlinkingIndicator.h" line="48" column="16" bodyfile="src/evaBlinkingIndicator.h" bodystart="48" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classeva_1_1_blinking_indicator_1a88e67083cd04c9f1f1b6c7b55c7e00bf" prot="protected" static="no" mutable="no">
         <type>unsigned short</type>
@@ -47,7 +47,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaBlinkingIndicator.h" line="52" column="20" bodyfile="src/evaBlinkingIndicator.h" bodystart="52" bodyend="-1"/>
+        <location file="src/evaBlinkingIndicator.h" line="49" column="20" bodyfile="src/evaBlinkingIndicator.h" bodystart="49" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classeva_1_1_blinking_indicator_1a5dda788ae17df90c5a64108fe3d8773c" prot="protected" static="no" mutable="no">
         <type>unsigned char</type>
@@ -61,7 +61,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaBlinkingIndicator.h" line="53" column="19" bodyfile="src/evaBlinkingIndicator.h" bodystart="53" bodyend="-1"/>
+        <location file="src/evaBlinkingIndicator.h" line="50" column="19" bodyfile="src/evaBlinkingIndicator.h" bodystart="50" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -78,7 +78,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaBlinkingIndicator.h" line="29" column="10"/>
+        <location file="src/evaBlinkingIndicator.h" line="26" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classeva_1_1_blinking_indicator_1ab3f73cc4ea348e04ed9a1221ce65d928" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -93,7 +93,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaBlinkingIndicator.h" line="34" column="10"/>
+        <location file="src/evaBlinkingIndicator.h" line="31" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classeva_1_1_blinking_indicator_1a41787cfbc1be93c04e26c9e2fa8a307e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -134,7 +134,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaBlinkingIndicator.h" line="41" column="10"/>
+        <location file="src/evaBlinkingIndicator.h" line="38" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classeva_1_1_blinking_indicator_1ac381219f25099518c68e9c2d97ac4de2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -176,7 +176,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaBlinkingIndicator.h" line="24" column="5"/>
+        <location file="src/evaBlinkingIndicator.h" line="21" column="5"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="protected-func">
@@ -192,7 +192,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaBlinkingIndicator.h" line="44" column="10"/>
+        <location file="src/evaBlinkingIndicator.h" line="41" column="10"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="private-func">
@@ -218,7 +218,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaBlinkingIndicator.h" line="47" column="10"/>
+        <location file="src/evaBlinkingIndicator.h" line="44" column="10"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -286,7 +286,7 @@
         <link refid="classeva_1_1_tickable"/>
       </node>
     </collaborationgraph>
-    <location file="src/evaBlinkingIndicator.h" line="21" column="3" bodyfile="src/evaBlinkingIndicator.h" bodystart="22" bodyend="54"/>
+    <location file="src/evaBlinkingIndicator.h" line="18" column="3" bodyfile="src/evaBlinkingIndicator.h" bodystart="19" bodyend="51"/>
     <listofallmembers>
       <member refid="classeva_1_1_blinking_indicator_1a5dda788ae17df90c5a64108fe3d8773c" prot="protected" virt="non-virtual"><scope>eva::BlinkingIndicator</scope><name>dutycyclePercent</name></member>
       <member refid="classeva_1_1_blinking_indicator_1a9d2c6ec0d96f3a61b76fd5925792fcec" prot="protected" virt="non-virtual"><scope>eva::BlinkingIndicator</scope><name>dutycycleTimer</name></member>

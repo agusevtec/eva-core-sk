@@ -8,9 +8,6 @@
 
 
 ```C++
-#ifndef EVAREPEATTIMER_H
-#define EVAREPEATTIMER_H
-
 #pragma once
 #include "evaDelayTimer.h"
 
@@ -39,8 +36,6 @@ namespace eva
         unsigned short period;
     };
 };
-
-#endif
 ```
 
 

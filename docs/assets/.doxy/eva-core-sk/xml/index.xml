@@ -263,7 +263,6 @@
   <compound refid="eva_scroll_button_8h" kind="file"><name>evaScrollButton.h</name>
   </compound>
   <compound refid="eva_slider_8h" kind="file"><name>evaSlider.h</name>
-    <member refid="eva_slider_8h_1ac25f947babf736afd3bf6cbef6097eb8" kind="define"><name>EVASLIDER_H</name></member>
   </compound>
   <compound refid="eva_std_readers_8h" kind="file"><name>evaStdReaders.h</name>
   </compound>

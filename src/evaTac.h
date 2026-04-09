@@ -1,5 +1,4 @@
-#ifndef EVATAC_H_
-#define EVATAC_H_
+#pragma once
 
 namespace eva
 {
@@ -8,4 +7,3 @@ namespace eva
      */
     void tac();
 };
-#endif

@@ -24,7 +24,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaIReader.h" line="48" column="30" bodyfile="src/evaIReader.h" bodystart="48" bodyend="51"/>
+        <location file="src/evaIReader.h" line="45" column="30" bodyfile="src/evaIReader.h" bodystart="45" bodyend="48"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -84,7 +84,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="src/evaIReader.h" line="45" column="5" bodyfile="src/evaIReader.h" bodystart="46" bodyend="52"/>
+    <location file="src/evaIReader.h" line="42" column="5" bodyfile="src/evaIReader.h" bodystart="43" bodyend="49"/>
     <listofallmembers>
       <member refid="classeva_1_1_i_reader_adapter_1aa76060a13929f9ee0bd7a8112cb40866" prot="public" virt="virtual"><scope>eva::IReaderAdapter</scope><name>getValue</name></member>
     </listofallmembers>

@@ -86,28 +86,7 @@
 
 
 
-## Macros
 
-| Type | Name |
-| ---: | :--- |
-| define  | [**EVASLIDER\_H**](eva_slider_8h.md#define-evaslider_h)  <br> |
-
-## Macro Definition Documentation
-
-
-
-
-
-### define EVASLIDER\_H 
-
-```C++
-#define EVASLIDER_H 
-```
-
-
-
-
-<hr>
 
 ------------------------------
 The documentation for this class was generated from the following file `src/evaSlider.h`

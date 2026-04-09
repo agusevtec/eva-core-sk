@@ -36,7 +36,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaSlider.h" line="20" column="18" bodyfile="src/evaSlider.h" bodystart="20" bodyend="23"/>
+        <location file="src/evaSlider.h" line="19" column="18" bodyfile="src/evaSlider.h" bodystart="19" bodyend="22"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -66,7 +66,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="src/evaSlider.h" line="13" column="3" bodyfile="src/evaSlider.h" bodystart="14" bodyend="24"/>
+    <location file="src/evaSlider.h" line="12" column="3" bodyfile="src/evaSlider.h" bodystart="13" bodyend="23"/>
     <listofallmembers>
       <member refid="classeva_1_1_slider_1a14cfca41f4b9916d08120cd3fc74a88c" prot="public" virt="non-virtual"><scope>eva::Slider</scope><name>getValue</name></member>
     </listofallmembers>

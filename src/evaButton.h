@@ -1,6 +1,3 @@
-#ifndef EVABUTTON_H
-#define EVABUTTON_H
-
 #pragma once
 
 #include "evaSwitch.h"
@@ -155,5 +152,5 @@ namespace eva
      */
     template <int PIN, int PIN_MODE, signed short... LEVELS>
     using PinMultiButton = Button<QuantizeDecor<DebounceDecor<AnalogPinReader<PIN, PIN_MODE>>, LEVELS...>>;
-};
-#endif
+}
+

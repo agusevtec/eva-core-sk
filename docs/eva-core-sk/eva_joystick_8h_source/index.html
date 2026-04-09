@@ -693,8 +693,7 @@
 <h1 id="file-evajoystickh">File evaJoystick.h<a class="headerlink" href="#file-evajoystickh" title="Permanent link">&para;</a></h1>
 <p><a href="../files/"><strong>File List</strong></a> <strong>&gt;</strong> <a href="../dir_68267d1309a1af8e8297ef4c3efbcdba/"><strong>src</strong></a> <strong>&gt;</strong> <a href="../eva_joystick_8h/"><strong>evaJoystick.h</strong></a></p>
 <p><a href="../eva_joystick_8h/">Go to the documentation of this file</a></p>
-<div class="codehilite"><pre><span></span><code><span class="cp">#ifndef EVAJOYSTICK_H_</span>
-<span class="cp">#define EVAJOYSTICK_H_</span>
+<div class="codehilite"><pre><span></span><code><span class="cp">#pragma once</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;evaStdReaders.h&quot;</span>
 
 <span class="k">namespace</span><span class="w"> </span><span class="nn">eva</span>
@@ -747,8 +746,6 @@
 <span class="w">  </span><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">int</span><span class="w"> </span><span class="n">PIN</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">PIN_MODE</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">MIN_POS</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">MIDDLE_POS</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">MAX_POS</span><span class="o">&gt;</span>
 <span class="w">  </span><span class="k">using</span><span class="w"> </span><span class="n">PinJoystick</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Joystick</span><span class="o">&lt;</span><span class="n">AnalogPinReader</span><span class="o">&lt;</span><span class="n">PIN</span><span class="p">,</span><span class="w"> </span><span class="n">PIN_MODE</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">MIN_POS</span><span class="p">,</span><span class="w"> </span><span class="n">MIDDLE_POS</span><span class="p">,</span><span class="w"> </span><span class="n">MAX_POS</span><span class="o">&gt;</span><span class="p">;</span>
 <span class="p">};</span>
-
-<span class="cp">#endif</span>
 </code></pre></div>
 
 

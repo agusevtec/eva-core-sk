@@ -18,7 +18,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaIReader.h" line="26" column="30"/>
+        <location file="src/evaIReader.h" line="23" column="30"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -47,7 +47,7 @@
         </childnode>
       </node>
     </inheritancegraph>
-    <location file="src/evaIReader.h" line="23" column="5" bodyfile="src/evaIReader.h" bodystart="24" bodyend="27"/>
+    <location file="src/evaIReader.h" line="20" column="5" bodyfile="src/evaIReader.h" bodystart="21" bodyend="24"/>
     <listofallmembers>
       <member refid="classeva_1_1_i_reader_1a5d1954d1483e24890d9d8ada880be70c" prot="public" virt="pure-virtual"><scope>eva::IReader</scope><name>getValue</name></member>
     </listofallmembers>

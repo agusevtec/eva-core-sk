@@ -22,7 +22,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaHandler.h" line="42" column="9" bodyfile="src/evaHandler.h" bodystart="42" bodyend="-1"/>
+        <location file="src/evaHandler.h" line="39" column="9" bodyfile="src/evaHandler.h" bodystart="39" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classeva_1_1_handler_1a56ae4c93826addbcb15564ac71760c9a" prot="private" static="no" mutable="no">
         <type>T *</type>
@@ -36,7 +36,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaHandler.h" line="43" column="11" bodyfile="src/evaHandler.h" bodystart="43" bodyend="-1"/>
+        <location file="src/evaHandler.h" line="40" column="11" bodyfile="src/evaHandler.h" bodystart="40" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -60,7 +60,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaHandler.h" line="31" column="9" bodyfile="src/evaHandler.h" bodystart="31" bodyend="34"/>
+        <location file="src/evaHandler.h" line="28" column="9" bodyfile="src/evaHandler.h" bodystart="28" bodyend="31"/>
       </memberdef>
       <memberdef kind="function" id="classeva_1_1_handler_1aff64bbaf430e27aae26eb8b6d4a9d332" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
         <type>void</type>
@@ -83,7 +83,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaHandler.h" line="36" column="14" bodyfile="src/evaHandler.h" bodystart="36" bodyend="39"/>
+        <location file="src/evaHandler.h" line="33" column="14" bodyfile="src/evaHandler.h" bodystart="33" bodyend="36"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -125,7 +125,7 @@
         <link refid="classeva_1_1_i_handler"/>
       </node>
     </collaborationgraph>
-    <location file="src/evaHandler.h" line="28" column="5" bodyfile="src/evaHandler.h" bodystart="29" bodyend="44"/>
+    <location file="src/evaHandler.h" line="25" column="5" bodyfile="src/evaHandler.h" bodystart="26" bodyend="41"/>
     <listofallmembers>
       <member refid="classeva_1_1_handler_1a071af9b84a2df7dadd16125ba10d17b4" prot="public" virt="non-virtual"><scope>eva::Handler</scope><name>Handler</name></member>
       <member refid="classeva_1_1_handler_1aff64bbaf430e27aae26eb8b6d4a9d332" prot="public" virt="virtual"><scope>eva::Handler</scope><name>invoke</name></member>

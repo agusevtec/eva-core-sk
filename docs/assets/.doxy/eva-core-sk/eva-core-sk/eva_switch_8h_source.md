@@ -8,8 +8,6 @@
 
 
 ```C++
-#ifndef EVATOGGLE_H
-#define EVATOGGLE_H
 #pragma once
 
 #include "evaTickable.h"
@@ -141,8 +139,6 @@ namespace eva
     template <int PIN, int PIN_MODE, signed short... LEVELS>
     using PinMultiSwitch = Switch<QuantizeDecor<DebounceDecor<AnalogPinReader<PIN, PIN_MODE>>, LEVELS...>>;
 };
-
-#endif
 ```
 
 

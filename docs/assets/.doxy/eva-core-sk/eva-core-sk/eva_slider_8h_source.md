@@ -8,8 +8,7 @@
 
 
 ```C++
-#ifndef EVASLIDER_H_
-#define EVASLIDER_H
+#pragma once
 
 #include "evaStdReaders.h"
 #include <Arduino.h>
@@ -28,8 +27,6 @@ namespace eva
   template <unsigned short PIN, int PIN_MODE, unsigned short MIN_POS, unsigned short MAX_POS>
   using PinSlider = Slider<AnalogPinReader<PIN, PIN_MODE>, MIN_POS, MAX_POS>;
 };
-
-#endif
 ```
 
 

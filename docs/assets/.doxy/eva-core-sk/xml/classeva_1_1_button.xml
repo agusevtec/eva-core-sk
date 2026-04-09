@@ -24,7 +24,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaButton.h" line="97" column="23" bodyfile="src/evaButton.h" bodystart="97" bodyend="-1"/>
+        <location file="src/evaButton.h" line="94" column="23" bodyfile="src/evaButton.h" bodystart="94" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="protected-func">
@@ -44,7 +44,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaButton.h" line="47" column="14" bodyfile="src/evaButton.h" bodystart="47" bodyend="50"/>
+        <location file="src/evaButton.h" line="44" column="14" bodyfile="src/evaButton.h" bodystart="44" bodyend="47"/>
       </memberdef>
       <memberdef kind="function" id="classeva_1_1_button_1af5127a62e48fda066544300d8980efc9" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -58,7 +58,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaButton.h" line="52" column="14" bodyfile="src/evaButton.h" bodystart="52" bodyend="56"/>
+        <location file="src/evaButton.h" line="49" column="14" bodyfile="src/evaButton.h" bodystart="49" bodyend="53"/>
       </memberdef>
       <memberdef kind="function" id="classeva_1_1_button_1a46ad3c53815c0fb1a5b646c56f3aafc0" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -80,7 +80,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaButton.h" line="58" column="14" bodyfile="src/evaButton.h" bodystart="58" bodyend="64"/>
+        <location file="src/evaButton.h" line="55" column="14" bodyfile="src/evaButton.h" bodystart="55" bodyend="61"/>
       </memberdef>
       <memberdef kind="function" id="classeva_1_1_button_1af55a289d104d1232d1ce778d06a5c1d0" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -98,7 +98,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaButton.h" line="66" column="14" bodyfile="src/evaButton.h" bodystart="66" bodyend="70"/>
+        <location file="src/evaButton.h" line="63" column="14" bodyfile="src/evaButton.h" bodystart="63" bodyend="67"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="private-func">
@@ -118,7 +118,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaButton.h" line="74" column="14" bodyfile="src/evaButton.h" bodystart="74" bodyend="94"/>
+        <location file="src/evaButton.h" line="71" column="14" bodyfile="src/evaButton.h" bodystart="71" bodyend="91"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -211,7 +211,7 @@
         <link refid="classeva_1_1_tickable"/>
       </node>
     </collaborationgraph>
-    <location file="src/evaButton.h" line="41" column="5" bodyfile="src/evaButton.h" bodystart="42" bodyend="98"/>
+    <location file="src/evaButton.h" line="38" column="5" bodyfile="src/evaButton.h" bodystart="39" bodyend="95"/>
     <listofallmembers>
       <member refid="classeva_1_1_switch_1a60b259c79db04ab3d39eb12300950663" prot="protected" virt="non-virtual"><scope>eva::Button</scope><name>checkActivating</name></member>
       <member refid="classeva_1_1_switch_1a1fd197ddd39785ed538298ac5d90bf9d" prot="protected" virt="non-virtual"><scope>eva::Button</scope><name>checkChanging</name></member>
