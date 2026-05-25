@@ -28,6 +28,10 @@ namespace eva
                 return this->keepedValue;
 
             signed short value = READER::getValue();
+
+            if (!READER::isValid())
+                return this->keepedValue;
+
             if (value != this->keepedValue)
             {
                 this->keepValueTill = now + DEBOUNCE_DELAY;
@@ -100,6 +104,10 @@ namespace eva
         signed short getValue()
         {
             signed short value = READER::getValue() * 2;
+
+            if (!READER::isValid())
+                return 0;
+
             unsigned char i;
             for (i = 1; i < sizeof...(LEVELS) - 1; i++)
                 if (in_between(value, this->levels[i - 1] + this->levels[i], this->levels[i] + this->levels[i + 1]))

@@ -21,6 +21,7 @@ namespace eva
     {
     public:
         virtual signed short getValue() = 0;
+        virtual bool isValid() = 0;
     };
 
     /**
@@ -45,6 +46,10 @@ namespace eva
         virtual signed short getValue() override
         {
             return T::getValue();
+        }
+        virtual bool isValid()
+        {
+            return T::isValid();
         }
     };
 };

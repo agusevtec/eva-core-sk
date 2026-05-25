@@ -22,6 +22,10 @@ namespace eva
         {
             return digitalRead(PIN);
         }
+        bool isValid()
+        {
+            return true;
+        }
     };
 
     /**
@@ -39,6 +43,10 @@ namespace eva
         signed short getValue()
         {
             return analogRead(PIN);
+        }
+        bool isValid()
+        {
+            return true;
         }
     };
 

@@ -51,6 +51,10 @@ private:
         return 'r';
       return 0;
     }
+    bool isValid()
+    {
+      return true;
+    }
   };
   // Custom 4-direction keypad with debouncing - returns 'u','d','l','r' on press
   Button<DebounceDecor<MyKeyPad>> navPad{new Handler<App>(this, &App::onNavPadPress), ON_PRESS};
