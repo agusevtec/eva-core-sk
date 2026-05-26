@@ -75,7 +75,7 @@ namespace eva
 
             unsigned long now = millis();
             unsigned char wasLevelCode = this->levelCode;
-            if (!updateState())
+            if (!this->updateState())
                 return;
 
             if (this->checkChanging(wasLevelCode))

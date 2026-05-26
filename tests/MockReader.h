@@ -3,6 +3,7 @@
 class MockReader {
 private:
     signed short value = 0;
+    bool valid = true;
     
 public:
     signed short getValue() { 
@@ -12,5 +13,12 @@ public:
     void setValue(signed short v) { 
         value = v; 
     }
+    
+    bool isValid() {
+        return valid;
+    }
+    
+    void setValid(bool v) {
+        valid = v;
+    }
 };
-

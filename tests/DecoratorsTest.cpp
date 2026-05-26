@@ -63,3 +63,33 @@ test(quantize_decor_reverse) {
     reader.setValue(300);
     assertEqual(reader.getValue(), 3);
 }
+
+// NEW TESTS FOR isValid() FUNCTIONALITY
+test(debounce_decor_keeps_last_valid_on_invalid_read) {
+    DebounceDecor<MockReader> reader;
+    
+    reader.setValue(100);
+    reader.setValid(true);
+    assertEqual(reader.getValue(), 100);
+    
+    reader.setValue(200);
+    reader.setValid(false);
+    assertEqual(reader.getValue(), 100);
+    
+    reader.setValid(true);
+    assertEqual(reader.getValue(), 200);
+}
+
+test(quantize_decor_returns_zero_on_invalid) {
+    QuantizeDecor<MockReader, 0, 100, 200, 300> reader;
+    
+    reader.setValue(150);
+    reader.setValid(true);
+    assertEqual(reader.getValue(), 1);
+    
+    reader.setValid(false);
+    assertEqual(reader.getValue(), 0);
+    
+    reader.setValid(true);
+    assertEqual(reader.getValue(), 1);
+}

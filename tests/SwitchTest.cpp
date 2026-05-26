@@ -227,3 +227,52 @@ test(switch_multiple_buttons)
         btn.tac();
     }
 }
+
+// NEW TESTS FOR isValid() FUNCTIONALITY
+test(switch_does_not_update_state_on_invalid_read)
+{
+    TestSwitch sw;
+    MockHandler handler;
+    
+    sw.setListener(&handler, ON_PRESS | ON_RELEASE);
+    
+    sw.setValue(1);
+    sw.setValid(true);
+    sw.tac();
+    assertEqual(sw.getValue(), 1);
+    assertEqual(handler.callCount, 1);
+    
+    handler.reset();
+    sw.setValid(false);
+    sw.setValue(0);
+    sw.tac();
+    assertEqual(sw.getValue(), 1);
+    assertEqual(handler.callCount, 0);
+}
+
+test(switch_does_not_generate_events_during_invalid_period)
+{
+    TestSwitch sw;
+    MockHandler handler;
+    
+    sw.setListener(&handler, ON_PRESS | ON_RELEASE);
+    
+    sw.setValue(1);
+    sw.setValid(true);
+    sw.tac();
+    assertEqual(handler.callCount, 1);
+    
+    handler.reset();
+    sw.setValid(false);
+    sw.tac();
+    assertEqual(handler.callCount, 0);
+    
+    sw.setValue(0);
+    sw.tac();
+    assertEqual(handler.callCount, 0);
+    
+    sw.setValid(true);
+    sw.tac();
+    assertEqual(sw.getValue(), 1);
+    assertEqual(handler.callCount, 0);
+}
