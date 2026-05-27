@@ -2,7 +2,7 @@
 
 # Class eva::QuantizeDecor
 
-**template &lt;class READER, signed short... LEVELS&gt;**
+**template &lt;class TReader, signed short... LEVELS&gt;**
 
 
 
@@ -16,7 +16,7 @@ _Decorator that quantizes analog readings to discrete levels._
 
 
 
-Inherits the following classes: READER
+Inherits the following classes: TReader
 
 
 Inherited by the following classes: [eva::Switch](classeva_1_1_switch.md)

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
   <compounddef id="classeva_1_1_analog_pin_reader" kind="class" language="C++" prot="public">
     <compoundname>eva::AnalogPinReader</compoundname>
     <derivedcompoundref refid="classeva_1_1_joystick" prot="public" virt="non-virtual">eva::Joystick&lt; AnalogPinReader&lt; PIN, PIN_MODE &gt;, MIN_POS,(MAX_POS+MIN_POS)/2, MAX_POS &gt;</derivedcompoundref>
@@ -31,7 +31,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaStdReaders.h" line="34" column="9" bodyfile="src/evaStdReaders.h" bodystart="34" bodyend="37"/>
+        <location file="src/evaStdReaders.h" line="38" column="9" bodyfile="src/evaStdReaders.h" bodystart="38" bodyend="41"/>
       </memberdef>
       <memberdef kind="function" id="classeva_1_1_analog_pin_reader_1a8088e6f4af47bbedd85777792d288a65" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>signed short</type>
@@ -45,7 +45,21 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaStdReaders.h" line="39" column="22" bodyfile="src/evaStdReaders.h" bodystart="39" bodyend="42"/>
+        <location file="src/evaStdReaders.h" line="43" column="22" bodyfile="src/evaStdReaders.h" bodystart="43" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="classeva_1_1_analog_pin_reader_1a25aad0ffc5608dc2390c8edba54c5ee2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool eva::AnalogPinReader&lt; PIN, PIN_MODE &gt;::isValid</definition>
+        <argsstring>()</argsstring>
+        <name>isValid</name>
+        <qualifiedname>eva::AnalogPinReader::isValid</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evaStdReaders.h" line="47" column="14" bodyfile="src/evaStdReaders.h" bodystart="47" bodyend="50"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -77,10 +91,11 @@
         </childnode>
       </node>
     </inheritancegraph>
-    <location file="src/evaStdReaders.h" line="31" column="5" bodyfile="src/evaStdReaders.h" bodystart="32" bodyend="43"/>
+    <location file="src/evaStdReaders.h" line="35" column="5" bodyfile="src/evaStdReaders.h" bodystart="36" bodyend="51"/>
     <listofallmembers>
       <member refid="classeva_1_1_analog_pin_reader_1adf062711df7cd9415fb2994510a3aaef" prot="public" virt="non-virtual"><scope>eva::AnalogPinReader</scope><name>AnalogPinReader</name></member>
       <member refid="classeva_1_1_analog_pin_reader_1a8088e6f4af47bbedd85777792d288a65" prot="public" virt="non-virtual"><scope>eva::AnalogPinReader</scope><name>getValue</name></member>
+      <member refid="classeva_1_1_analog_pin_reader_1a25aad0ffc5608dc2390c8edba54c5ee2" prot="public" virt="non-virtual"><scope>eva::AnalogPinReader</scope><name>isValid</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

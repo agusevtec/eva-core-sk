@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
   <compounddef id="classeva_1_1_i_reader_adapter" kind="class" language="C++" prot="public">
     <compoundname>eva::IReaderAdapter</compoundname>
     <basecompoundref refid="classeva_1_1_i_reader" prot="public" virt="non-virtual">eva::IReader</basecompoundref>
@@ -24,7 +24,22 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaIReader.h" line="45" column="30" bodyfile="src/evaIReader.h" bodystart="45" bodyend="48"/>
+        <location file="src/evaIReader.h" line="46" column="30" bodyfile="src/evaIReader.h" bodystart="46" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="function" id="classeva_1_1_i_reader_adapter_1aad2fb666a3627b39ed328bffe81ef50b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>bool</type>
+        <definition>virtual bool eva::IReaderAdapter&lt; T &gt;::isValid</definition>
+        <argsstring>() override</argsstring>
+        <name>isValid</name>
+        <qualifiedname>eva::IReaderAdapter::isValid</qualifiedname>
+        <reimplements refid="classeva_1_1_i_reader_1af85a3097b6c5558d674d74705f1835bc">isValid</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evaIReader.h" line="50" column="22" bodyfile="src/evaIReader.h" bodystart="50" bodyend="53"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -84,9 +99,10 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="src/evaIReader.h" line="42" column="5" bodyfile="src/evaIReader.h" bodystart="43" bodyend="49"/>
+    <location file="src/evaIReader.h" line="43" column="5" bodyfile="src/evaIReader.h" bodystart="44" bodyend="54"/>
     <listofallmembers>
       <member refid="classeva_1_1_i_reader_adapter_1aa76060a13929f9ee0bd7a8112cb40866" prot="public" virt="virtual"><scope>eva::IReaderAdapter</scope><name>getValue</name></member>
+      <member refid="classeva_1_1_i_reader_adapter_1aad2fb666a3627b39ed328bffe81ef50b" prot="public" virt="virtual"><scope>eva::IReaderAdapter</scope><name>isValid</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

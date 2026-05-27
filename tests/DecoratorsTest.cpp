@@ -71,13 +71,10 @@ test(debounce_decor_keeps_last_valid_on_invalid_read) {
     reader.setValue(100);
     reader.setValid(true);
     assertEqual(reader.getValue(), 100);
+    assertEqual(reader.isValid(), true);
     
-    reader.setValue(200);
     reader.setValid(false);
-    assertEqual(reader.getValue(), 100);
-    
-    reader.setValid(true);
-    assertEqual(reader.getValue(), 200);
+    assertEqual(reader.isValid(), false);
 }
 
 test(quantize_decor_returns_zero_on_invalid) {

@@ -2,7 +2,7 @@
 
 # Class eva::Switch
 
-**template &lt;class READER&gt;**
+**template &lt;class TReader&gt;**
 
 
 
@@ -16,7 +16,7 @@ _Universal switch/button class for multi-valued input sources._ [More...](#detai
 
 
 
-Inherits the following classes: READER,  [eva::Tickable](classeva_1_1_tickable.md)
+Inherits the following classes: TReader,  [eva::Tickable](classeva_1_1_tickable.md)
 
 
 Inherited by the following classes: [eva::Button](classeva_1_1_button.md),  [eva::Button](classeva_1_1_button.md),  [eva::Button](classeva_1_1_button.md)
@@ -166,7 +166,7 @@ See [eva::Tickable](classeva_1_1_tickable.md)
 |  void | [**handleChanging**](#function-handlechanging) () <br> |
 |  void | [**handleDeactivating**](#function-handledeactivating) (unsigned char wasLevelCode) <br> |
 |  void | [**notify**](#function-notify) (unsigned short eventType, signed short eventCode) <br> |
-|  void | [**updateState**](#function-updatestate) () <br> |
+|  bool | [**updateState**](#function-updatestate) () <br> |
 
 
 
@@ -203,7 +203,7 @@ Events include both the event type and the level code in argsMask, allowing iden
 **Template parameters:**
 
 
-* `READER` Input reader type that returns numeric codes (0 = inactive, &gt;0 = active state identifier) 
+* `TReader` Input reader type that returns numeric codes (0 = inactive, &gt;0 = active state identifier) 
 
 
 
@@ -355,7 +355,7 @@ Pointer to this for method chaining
 ### variable curiosity 
 
 ```C++
-unsigned char eva::Switch< READER >::curiosity;
+unsigned char eva::Switch< TReader >::curiosity;
 ```
 
 
@@ -368,7 +368,7 @@ unsigned char eva::Switch< READER >::curiosity;
 ### variable levelCode 
 
 ```C++
-signed char eva::Switch< READER >::levelCode;
+signed char eva::Switch< TReader >::levelCode;
 ```
 
 
@@ -381,7 +381,7 @@ signed char eva::Switch< READER >::levelCode;
 ### variable listener 
 
 ```C++
-IHandler* eva::Switch< READER >::listener;
+IHandler* eva::Switch< TReader >::listener;
 ```
 
 
@@ -500,7 +500,7 @@ inline void eva::Switch::notify (
 ### function updateState 
 
 ```C++
-inline void eva::Switch::updateState () 
+inline bool eva::Switch::updateState () 
 ```
 
 

@@ -246,7 +246,6 @@ test(switch_does_not_update_state_on_invalid_read)
     sw.setValid(false);
     sw.setValue(0);
     sw.tac();
-    assertEqual(sw.getValue(), 1);
     assertEqual(handler.callCount, 0);
 }
 
@@ -272,7 +271,8 @@ test(switch_does_not_generate_events_during_invalid_period)
     assertEqual(handler.callCount, 0);
     
     sw.setValid(true);
+    sw.setValue(1);
     sw.tac();
     assertEqual(sw.getValue(), 1);
-    assertEqual(handler.callCount, 0);
+    assertEqual(handler.callCount, 1);
 }

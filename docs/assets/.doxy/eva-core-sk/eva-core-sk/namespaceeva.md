@@ -30,15 +30,15 @@
 | Type | Name |
 | ---: | :--- |
 | class | [**AnalogPinReader**](classeva_1_1_analog_pin_reader.md) &lt;PIN, PIN\_MODE&gt;<br>_Reads analog pin value._  |
-| class | [**BinarizeEqDecor**](classeva_1_1_binarize_eq_decor.md) &lt;class READER, ACTIVATES\_ON&gt;<br>_Decorator that converts reading to binary based on level._  |
-| class | [**BinarizeGtDecor**](classeva_1_1_binarize_gt_decor.md) &lt;class READER, THRESHOLD&gt;<br>_Decorator that converts analog reading to binary based on 'greater then' threshold condition._  |
-| class | [**BinarizeLtDecor**](classeva_1_1_binarize_lt_decor.md) &lt;class READER, THRESHOLD&gt;<br>_Decorator that converts analog reading to binary based on 'less then' threshold condition._  |
+| class | [**BinarizeEqDecor**](classeva_1_1_binarize_eq_decor.md) &lt;class TReader, ACTIVATES\_ON&gt;<br>_Decorator that converts reading to binary based on level._  |
+| class | [**BinarizeGtDecor**](classeva_1_1_binarize_gt_decor.md) &lt;class TReader, THRESHOLD&gt;<br>_Decorator that converts analog reading to binary based on 'greater then' threshold condition._  |
+| class | [**BinarizeLtDecor**](classeva_1_1_binarize_lt_decor.md) &lt;class TReader, THRESHOLD&gt;<br>_Decorator that converts analog reading to binary based on 'less then' threshold condition._  |
 | class | [**BlinkingIndicator**](classeva_1_1_blinking_indicator.md) <br>[_**Indicator**_](classeva_1_1_indicator.md) _that blinks with specified period and duty cycle._ |
-| class | [**Button**](classeva_1_1_button.md) &lt;class READER&gt;<br>[_**Button**_](classeva_1_1_button.md) _with press/release and click detection._ |
+| class | [**Button**](classeva_1_1_button.md) &lt;class TReader&gt;<br>[_**Button**_](classeva_1_1_button.md) _with press/release and click detection._ |
 | struct | [**CallbackInfo**](structeva_1_1_callback_info.md) <br> |
 | class | [**CountdownIndicator**](classeva_1_1_countdown_indicator.md) <br>[_**Indicator**_](classeva_1_1_indicator.md) _that blinks a specified number of times then notifies listener._ |
 | class | [**CountdownTimer**](classeva_1_1_countdown_timer.md) <br>_Timer that fires repeatedly at fixed intervals._  |
-| class | [**DebounceDecor**](classeva_1_1_debounce_decor.md) &lt;class READER&gt;<br>_Decorator that stabilizes readings by requiring value to be stable for a period._  |
+| class | [**DebounceDecor**](classeva_1_1_debounce_decor.md) &lt;class TReader&gt;<br>_Decorator that stabilizes readings by requiring value to be stable for a period._  |
 | class | [**DelayTimer**](classeva_1_1_delay_timer.md) <br>_One-shot timer that fires after a delay._  |
 | class | [**DigitalPinReader**](classeva_1_1_digital_pin_reader.md) &lt;PIN, PIN\_MODE&gt;<br>_Reads digital pin value._  |
 | class | [**Handler**](classeva_1_1_handler.md) &lt;class T&gt;<br>[_**Handler**_](classeva_1_1_handler.md) _that calls a member method._ |
@@ -48,14 +48,14 @@
 | class | [**IReader**](classeva_1_1_i_reader.md) <br>_Interface for value readers._  |
 | class | [**IReaderAdapter**](classeva_1_1_i_reader_adapter.md) &lt;class T&gt;<br>_Adapter that converts any class with getValue() into an_ [_**IReader**_](classeva_1_1_i_reader.md) _._ |
 | class | [**Indicator**](classeva_1_1_indicator.md) <br>_Basic indicator (LED) control._  |
-| class | [**Joystick**](classeva_1_1_joystick.md) &lt;class READER, MIN\_POS, MIDDLE\_POS, MAX\_POS&gt;<br>[_**Joystick**_](classeva_1_1_joystick.md) _axis reader (range 1000-1500-2000) with trim adjustment._ |
+| class | [**Joystick**](classeva_1_1_joystick.md) &lt;class TReader, MIN\_POS, MIDDLE\_POS, MAX\_POS&gt;<br>[_**Joystick**_](classeva_1_1_joystick.md) _axis reader (range 1000-1500-2000) with trim adjustment._ |
 | class | [**List**](classeva_1_1_list.md) &lt;class ItemClass&gt;<br>_Simple singly-linked list container._  |
 | struct | [**ListIterator**](structeva_1_1_list_iterator.md) &lt;class ItemClass&gt;<br>_Iterator node for_ [_**List**_](classeva_1_1_list.md) _._ |
-| class | [**QuantizeDecor**](classeva_1_1_quantize_decor.md) &lt;class READER, LEVELS&gt;<br>_Decorator that quantizes analog readings to discrete levels._  |
+| class | [**QuantizeDecor**](classeva_1_1_quantize_decor.md) &lt;class TReader, LEVELS&gt;<br>_Decorator that quantizes analog readings to discrete levels._  |
 | class | [**RepeatTimer**](classeva_1_1_repeat_timer.md) <br>_Timer that fires repeatedly at fixed intervals._  |
-| class | [**ScrollButton**](classeva_1_1_scroll_button.md) &lt;class READER&gt;<br>[_**Button**_](classeva_1_1_button.md) _with auto-repeat (typematic) functionality._ |
-| class | [**Slider**](classeva_1_1_slider.md) &lt;class READER, MIN\_POS, MAX\_POS&gt;<br>_Maps analog readings to 1000-2000 range._  |
-| class | [**Switch**](classeva_1_1_switch.md) &lt;class READER&gt;<br>_Universal switch/button class for multi-valued input sources._  |
+| class | [**ScrollButton**](classeva_1_1_scroll_button.md) &lt;class TReader&gt;<br>[_**Button**_](classeva_1_1_button.md) _with auto-repeat (typematic) functionality._ |
+| class | [**Slider**](classeva_1_1_slider.md) &lt;class TReader, MIN\_POS, MAX\_POS&gt;<br>_Maps analog readings to 1000-2000 range._  |
+| class | [**Switch**](classeva_1_1_switch.md) &lt;class TReader&gt;<br>_Universal switch/button class for multi-valued input sources._  |
 | class | [**Tickable**](classeva_1_1_tickable.md) <br>_Base class for objects that need periodic updates._  |
 
 

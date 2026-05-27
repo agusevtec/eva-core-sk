@@ -38,7 +38,7 @@
 
 | Type | Name |
 | ---: | :--- |
-| class | [**Switch**](classeva_1_1_switch.md) &lt;class READER&gt;<br>_Universal switch/button class for multi-valued input sources._  |
+| class | [**Switch**](classeva_1_1_switch.md) &lt;class TReader&gt;<br>_Universal switch/button class for multi-valued input sources._  |
 
 
 

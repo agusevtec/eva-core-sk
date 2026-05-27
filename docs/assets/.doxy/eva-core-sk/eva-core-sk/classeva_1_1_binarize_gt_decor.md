@@ -2,7 +2,7 @@
 
 # Class eva::BinarizeGtDecor
 
-**template &lt;class READER, int THRESHOLD&gt;**
+**template &lt;class TReader, int THRESHOLD&gt;**
 
 
 
@@ -16,7 +16,7 @@ _Decorator that converts analog reading to binary based on 'greater then' thresh
 
 
 
-Inherits the following classes: READER
+Inherits the following classes: TReader
 
 
 

@@ -26,7 +26,7 @@ namespace eva
      *
      * Long click threshold is fixed at 750ms.
      *
-     * @tparam READER Input reader type that returns numeric codes
+     * @tparam TReader Input reader type that returns numeric codes
      *                (0 = no button, >0 = button identifier)
      *
      * @see Switch Base class for active/inactive state management
@@ -34,11 +34,11 @@ namespace eva
      * @see PullUpButton Pull-up button convenience alias
      * @see PinMultiButton Multiple buttons on one ADC pin
      */
-    template <class READER>
-    class Button : public Switch<READER>
+    template <class TReader>
+    class Button : public Switch<TReader>
     {
     public:
-        using Switch<READER>::Switch;
+        using Switch<TReader>::Switch;
 
     protected:
         bool checkLongPress(unsigned long now)
@@ -54,7 +54,7 @@ namespace eva
 
         void handleDeactivating(unsigned char wasLevelCode, unsigned long now)
         {
-            Switch<READER>::handleDeactivating(wasLevelCode);
+            Switch<TReader>::handleDeactivating(wasLevelCode);
             if (this->pressTime)
                 this->notify(((now - this->pressTime) <= LONGPRESS_DELAY) ? ON_SHORTCLICK : ON_LONGCLICK, wasLevelCode);
             this->pressTime = 0;
@@ -62,7 +62,7 @@ namespace eva
 
         void handleActivating(unsigned long now)
         {
-            Switch<READER>::handleActivating();
+            Switch<TReader>::handleActivating();
             this->pressTime = now;
         }
 

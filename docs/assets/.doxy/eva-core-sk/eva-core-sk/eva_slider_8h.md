@@ -36,7 +36,7 @@
 
 | Type | Name |
 | ---: | :--- |
-| class | [**Slider**](classeva_1_1_slider.md) &lt;class READER, MIN\_POS, MAX\_POS&gt;<br>_Maps analog readings to 1000-2000 range._  |
+| class | [**Slider**](classeva_1_1_slider.md) &lt;class TReader, MIN\_POS, MAX\_POS&gt;<br>_Maps analog readings to 1000-2000 range._  |
 
 
 

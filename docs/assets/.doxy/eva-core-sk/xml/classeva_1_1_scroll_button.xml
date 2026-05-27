@@ -1,18 +1,18 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
   <compounddef id="classeva_1_1_scroll_button" kind="class" language="C++" prot="public">
     <compoundname>eva::ScrollButton</compoundname>
-    <basecompoundref refid="classeva_1_1_button" prot="public" virt="non-virtual">eva::Button&lt; READER &gt;</basecompoundref>
+    <basecompoundref refid="classeva_1_1_button" prot="public" virt="non-virtual">eva::Button&lt; TReader &gt;</basecompoundref>
     <includes refid="eva_scroll_button_8h" local="no">evaScrollButton.h</includes>
     <templateparamlist>
       <param>
-        <type>class READER</type>
+        <type>class TReader</type>
       </param>
     </templateparamlist>
     <sectiondef kind="private-attrib">
-      <memberdef kind="variable" id="classeva_1_1_scroll_button_1a692896ecc6798530f2138d0ddead7afc" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="classeva_1_1_scroll_button_1a7aa73d1a5a6a5862b4f989a0345773dc" prot="private" static="no" mutable="no">
         <type>unsigned long</type>
-        <definition>unsigned long eva::ScrollButton&lt; READER &gt;::lastRepeatTime</definition>
+        <definition>unsigned long eva::ScrollButton&lt; TReader &gt;::lastRepeatTime</definition>
         <argsstring></argsstring>
         <name>lastRepeatTime</name>
         <qualifiedname>eva::ScrollButton::lastRepeatTime</qualifiedname>
@@ -23,13 +23,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaScrollButton.h" line="89" column="23" bodyfile="src/evaScrollButton.h" bodystart="89" bodyend="-1"/>
+        <location file="src/evaScrollButton.h" line="90" column="23" bodyfile="src/evaScrollButton.h" bodystart="90" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="private-func">
-      <memberdef kind="function" id="classeva_1_1_scroll_button_1a9eb116ff39a6bbf07672361dfa327617" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classeva_1_1_scroll_button_1adb26b1be55f035a1c3fb3785e54e759d" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
-        <definition>void eva::ScrollButton&lt; READER &gt;::handleLongPress</definition>
+        <definition>void eva::ScrollButton&lt; TReader &gt;::handleLongPress</definition>
         <argsstring>(unsigned long now)</argsstring>
         <name>handleLongPress</name>
         <qualifiedname>eva::ScrollButton::handleLongPress</qualifiedname>
@@ -45,9 +45,9 @@
         </inbodydescription>
         <location file="src/evaScrollButton.h" line="38" column="14" bodyfile="src/evaScrollButton.h" bodystart="38" bodyend="43"/>
       </memberdef>
-      <memberdef kind="function" id="classeva_1_1_scroll_button_1a16f1d26cc1641636dd69b8752addf4a4" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classeva_1_1_scroll_button_1a789c6905e323b964ad1199b7572ff364" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
-        <definition>void eva::ScrollButton&lt; READER &gt;::handleDeactivating</definition>
+        <definition>void eva::ScrollButton&lt; TReader &gt;::handleDeactivating</definition>
         <argsstring>(unsigned char wasLevelCode, unsigned long now)</argsstring>
         <name>handleDeactivating</name>
         <qualifiedname>eva::ScrollButton::handleDeactivating</qualifiedname>
@@ -67,9 +67,9 @@
         </inbodydescription>
         <location file="src/evaScrollButton.h" line="45" column="14" bodyfile="src/evaScrollButton.h" bodystart="45" bodyend="49"/>
       </memberdef>
-      <memberdef kind="function" id="classeva_1_1_scroll_button_1a4bf16a4931ba8ab9543e1acbfd097604" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classeva_1_1_scroll_button_1a858378bec78db3b916462fb9aef013b2" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
-        <definition>bool eva::ScrollButton&lt; READER &gt;::checkRepeatTime</definition>
+        <definition>bool eva::ScrollButton&lt; TReader &gt;::checkRepeatTime</definition>
         <argsstring>(unsigned long now)</argsstring>
         <name>checkRepeatTime</name>
         <qualifiedname>eva::ScrollButton::checkRepeatTime</qualifiedname>
@@ -85,9 +85,9 @@
         </inbodydescription>
         <location file="src/evaScrollButton.h" line="51" column="14" bodyfile="src/evaScrollButton.h" bodystart="51" bodyend="54"/>
       </memberdef>
-      <memberdef kind="function" id="classeva_1_1_scroll_button_1a293d635951a3d0a32c10650613ebe91b" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classeva_1_1_scroll_button_1a4f73503b73603c16142e0e7b2954170f" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
-        <definition>void eva::ScrollButton&lt; READER &gt;::handleRepeatTime</definition>
+        <definition>void eva::ScrollButton&lt; TReader &gt;::handleRepeatTime</definition>
         <argsstring>(unsigned long now)</argsstring>
         <name>handleRepeatTime</name>
         <qualifiedname>eva::ScrollButton::handleRepeatTime</qualifiedname>
@@ -103,20 +103,20 @@
         </inbodydescription>
         <location file="src/evaScrollButton.h" line="56" column="14" bodyfile="src/evaScrollButton.h" bodystart="56" bodyend="60"/>
       </memberdef>
-      <memberdef kind="function" id="classeva_1_1_scroll_button_1a38ce62deaaced541a8a13394e59af012" prot="private" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+      <memberdef kind="function" id="classeva_1_1_scroll_button_1aceea17c62f1d6e8503cd9890b726bd77" prot="private" static="no" const="no" explicit="no" inline="yes" virt="virtual">
         <type>void</type>
-        <definition>void eva::ScrollButton&lt; READER &gt;::tick</definition>
+        <definition>void eva::ScrollButton&lt; TReader &gt;::tick</definition>
         <argsstring>() override</argsstring>
         <name>tick</name>
         <qualifiedname>eva::ScrollButton::tick</qualifiedname>
-        <reimplements refid="classeva_1_1_button_1a5b6706381ba6ff94e445a41889bf2c48">tick</reimplements>
+        <reimplements refid="classeva_1_1_button_1abebc2853c7518655d6938a20062c4533">tick</reimplements>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaScrollButton.h" line="63" column="14" bodyfile="src/evaScrollButton.h" bodystart="63" bodyend="86"/>
+        <location file="src/evaScrollButton.h" line="63" column="14" bodyfile="src/evaScrollButton.h" bodystart="63" bodyend="87"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -136,7 +136,7 @@
 </para>
 <para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
-<parametername>READER</parametername>
+<parametername>TReader</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>Input reader type that returns numeric codes (0 = no button, &gt;0 = button identifier)</para>
@@ -149,22 +149,22 @@
     </detaileddescription>
     <inheritancegraph>
       <node id="4">
-        <label>READER</label>
+        <label>TReader</label>
       </node>
       <node id="2">
-        <label>eva::Button&lt; READER &gt;</label>
+        <label>eva::Button&lt; TReader &gt;</label>
         <link refid="classeva_1_1_button"/>
         <childnode refid="3" relation="public-inheritance">
         </childnode>
       </node>
       <node id="1">
-        <label>eva::ScrollButton&lt; READER &gt;</label>
+        <label>eva::ScrollButton&lt; TReader &gt;</label>
         <link refid="classeva_1_1_scroll_button"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
       <node id="3">
-        <label>eva::Switch&lt; READER &gt;</label>
+        <label>eva::Switch&lt; TReader &gt;</label>
         <link refid="classeva_1_1_switch"/>
         <childnode refid="4" relation="public-inheritance">
         </childnode>
@@ -178,10 +178,10 @@
     </inheritancegraph>
     <collaborationgraph>
       <node id="4">
-        <label>READER</label>
+        <label>TReader</label>
       </node>
       <node id="2">
-        <label>eva::Button&lt; READER &gt;</label>
+        <label>eva::Button&lt; TReader &gt;</label>
         <link refid="classeva_1_1_button"/>
         <childnode refid="3" relation="public-inheritance">
         </childnode>
@@ -191,13 +191,13 @@
         <link refid="classeva_1_1_i_handler"/>
       </node>
       <node id="1">
-        <label>eva::ScrollButton&lt; READER &gt;</label>
+        <label>eva::ScrollButton&lt; TReader &gt;</label>
         <link refid="classeva_1_1_scroll_button"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
       <node id="3">
-        <label>eva::Switch&lt; READER &gt;</label>
+        <label>eva::Switch&lt; TReader &gt;</label>
         <link refid="classeva_1_1_switch"/>
         <childnode refid="4" relation="public-inheritance">
         </childnode>
@@ -212,40 +212,40 @@
         <link refid="classeva_1_1_tickable"/>
       </node>
     </collaborationgraph>
-    <location file="src/evaScrollButton.h" line="32" column="5" bodyfile="src/evaScrollButton.h" bodystart="33" bodyend="90"/>
+    <location file="src/evaScrollButton.h" line="32" column="5" bodyfile="src/evaScrollButton.h" bodystart="33" bodyend="91"/>
     <listofallmembers>
-      <member refid="classeva_1_1_switch_1a60b259c79db04ab3d39eb12300950663" prot="protected" virt="non-virtual"><scope>eva::ScrollButton</scope><name>checkActivating</name></member>
-      <member refid="classeva_1_1_switch_1a1fd197ddd39785ed538298ac5d90bf9d" prot="protected" virt="non-virtual"><scope>eva::ScrollButton</scope><name>checkChanging</name></member>
-      <member refid="classeva_1_1_switch_1abd7e6c9d94b8b015dce282ef1b8ed4db" prot="protected" virt="non-virtual"><scope>eva::ScrollButton</scope><name>checkDeactivating</name></member>
-      <member refid="classeva_1_1_button_1a0d5940eb3994633ca7487d540db1a949" prot="protected" virt="non-virtual"><scope>eva::ScrollButton</scope><name>checkLongPress</name></member>
-      <member refid="classeva_1_1_scroll_button_1a4bf16a4931ba8ab9543e1acbfd097604" prot="private" virt="non-virtual"><scope>eva::ScrollButton</scope><name>checkRepeatTime</name></member>
-      <member refid="classeva_1_1_switch_1a7c219494c63d04c510b2520d762d0a7b" prot="protected" virt="non-virtual"><scope>eva::ScrollButton</scope><name>curiosity</name></member>
-      <member refid="classeva_1_1_switch_1a453e44d5f0f0678f0d8ac63c3049ebaa" prot="public" virt="non-virtual"><scope>eva::ScrollButton</scope><name>enable</name></member>
-      <member refid="classeva_1_1_switch_1af39a84a03462bc07f361bc1b11d6a4ad" prot="public" virt="non-virtual"><scope>eva::ScrollButton</scope><name>getValue</name></member>
-      <member refid="classeva_1_1_button_1af55a289d104d1232d1ce778d06a5c1d0" prot="protected" virt="non-virtual"><scope>eva::ScrollButton</scope><name>handleActivating</name></member>
-      <member refid="classeva_1_1_switch_1a8042847e08e291edb8551a0ccb32410a" prot="protected" virt="non-virtual" ambiguityscope="eva::Switch::"><scope>eva::ScrollButton</scope><name>handleActivating</name></member>
-      <member refid="classeva_1_1_switch_1a7ef0dfef929f647c76f2e29ab30f8255" prot="protected" virt="non-virtual"><scope>eva::ScrollButton</scope><name>handleChanging</name></member>
-      <member refid="classeva_1_1_scroll_button_1a16f1d26cc1641636dd69b8752addf4a4" prot="private" virt="non-virtual"><scope>eva::ScrollButton</scope><name>handleDeactivating</name></member>
-      <member refid="classeva_1_1_switch_1a39fc8078d9881aba45ace8a1b856ee48" prot="protected" virt="non-virtual" ambiguityscope="eva::Switch::"><scope>eva::ScrollButton</scope><name>handleDeactivating</name></member>
-      <member refid="classeva_1_1_scroll_button_1a9eb116ff39a6bbf07672361dfa327617" prot="private" virt="non-virtual"><scope>eva::ScrollButton</scope><name>handleLongPress</name></member>
-      <member refid="classeva_1_1_button_1af5127a62e48fda066544300d8980efc9" prot="protected" virt="non-virtual" ambiguityscope="eva::Button::"><scope>eva::ScrollButton</scope><name>handleLongPress</name></member>
-      <member refid="classeva_1_1_scroll_button_1a293d635951a3d0a32c10650613ebe91b" prot="private" virt="non-virtual"><scope>eva::ScrollButton</scope><name>handleRepeatTime</name></member>
-      <member refid="classeva_1_1_scroll_button_1a692896ecc6798530f2138d0ddead7afc" prot="private" virt="non-virtual"><scope>eva::ScrollButton</scope><name>lastRepeatTime</name></member>
-      <member refid="classeva_1_1_switch_1a3ab8ea29fbe7597e51ec36d8551ced3b" prot="protected" virt="non-virtual"><scope>eva::ScrollButton</scope><name>levelCode</name></member>
-      <member refid="classeva_1_1_switch_1a37672eb95c86d0b8311bd778655e87ba" prot="protected" virt="non-virtual"><scope>eva::ScrollButton</scope><name>listener</name></member>
-      <member refid="classeva_1_1_switch_1aa1fb0a62fa105cb2a2de78bbaa950292" prot="protected" virt="non-virtual"><scope>eva::ScrollButton</scope><name>notify</name></member>
+      <member refid="classeva_1_1_switch_1a71459e60a1940789d1ecd5bd41221a87" prot="protected" virt="non-virtual"><scope>eva::ScrollButton</scope><name>checkActivating</name></member>
+      <member refid="classeva_1_1_switch_1ae6d5bb9161ffc5212040b91fefa8a02d" prot="protected" virt="non-virtual"><scope>eva::ScrollButton</scope><name>checkChanging</name></member>
+      <member refid="classeva_1_1_switch_1a75504f0b1b48773fd8573028128873bb" prot="protected" virt="non-virtual"><scope>eva::ScrollButton</scope><name>checkDeactivating</name></member>
+      <member refid="classeva_1_1_button_1a1ba6399c323cbe75c2f60561b3b73d4b" prot="protected" virt="non-virtual"><scope>eva::ScrollButton</scope><name>checkLongPress</name></member>
+      <member refid="classeva_1_1_scroll_button_1a858378bec78db3b916462fb9aef013b2" prot="private" virt="non-virtual"><scope>eva::ScrollButton</scope><name>checkRepeatTime</name></member>
+      <member refid="classeva_1_1_switch_1a436ea08c5357cfcfe7cf1c3322b5b8bf" prot="protected" virt="non-virtual"><scope>eva::ScrollButton</scope><name>curiosity</name></member>
+      <member refid="classeva_1_1_switch_1a8a890d15c86a9ecf55faf80de5f67877" prot="public" virt="non-virtual"><scope>eva::ScrollButton</scope><name>enable</name></member>
+      <member refid="classeva_1_1_switch_1a7d28a44500d18d6b7778706aa6b002bd" prot="public" virt="non-virtual"><scope>eva::ScrollButton</scope><name>getValue</name></member>
+      <member refid="classeva_1_1_button_1a4dcf94c7a83f4956c307902cc7003f67" prot="protected" virt="non-virtual"><scope>eva::ScrollButton</scope><name>handleActivating</name></member>
+      <member refid="classeva_1_1_switch_1aff9730bfc3bf6699116a301c81882bcd" prot="protected" virt="non-virtual" ambiguityscope="eva::Switch::"><scope>eva::ScrollButton</scope><name>handleActivating</name></member>
+      <member refid="classeva_1_1_switch_1ad03a1013196c31922f33a97222d30e86" prot="protected" virt="non-virtual"><scope>eva::ScrollButton</scope><name>handleChanging</name></member>
+      <member refid="classeva_1_1_scroll_button_1a789c6905e323b964ad1199b7572ff364" prot="private" virt="non-virtual"><scope>eva::ScrollButton</scope><name>handleDeactivating</name></member>
+      <member refid="classeva_1_1_switch_1a331fac6d20254dd52ba6fcdaae21476a" prot="protected" virt="non-virtual" ambiguityscope="eva::Switch::"><scope>eva::ScrollButton</scope><name>handleDeactivating</name></member>
+      <member refid="classeva_1_1_scroll_button_1adb26b1be55f035a1c3fb3785e54e759d" prot="private" virt="non-virtual"><scope>eva::ScrollButton</scope><name>handleLongPress</name></member>
+      <member refid="classeva_1_1_button_1a4e1918442a4d051c6f58b12113816da5" prot="protected" virt="non-virtual" ambiguityscope="eva::Button::"><scope>eva::ScrollButton</scope><name>handleLongPress</name></member>
+      <member refid="classeva_1_1_scroll_button_1a4f73503b73603c16142e0e7b2954170f" prot="private" virt="non-virtual"><scope>eva::ScrollButton</scope><name>handleRepeatTime</name></member>
+      <member refid="classeva_1_1_scroll_button_1a7aa73d1a5a6a5862b4f989a0345773dc" prot="private" virt="non-virtual"><scope>eva::ScrollButton</scope><name>lastRepeatTime</name></member>
+      <member refid="classeva_1_1_switch_1a66e734b4df3d25b9d2dc1d0dbec7a3ca" prot="protected" virt="non-virtual"><scope>eva::ScrollButton</scope><name>levelCode</name></member>
+      <member refid="classeva_1_1_switch_1a46d55c4fe417cad51ba4843ff396416d" prot="protected" virt="non-virtual"><scope>eva::ScrollButton</scope><name>listener</name></member>
+      <member refid="classeva_1_1_switch_1ac8818376d9edd1f16afc5ce672c5d05b" prot="protected" virt="non-virtual"><scope>eva::ScrollButton</scope><name>notify</name></member>
       <member refid="classeva_1_1_tickable_1a865abbef0ee038e0db5eff81747949e7" prot="public" virt="non-virtual"><scope>eva::ScrollButton</scope><name>operator=</name></member>
       <member refid="classeva_1_1_tickable_1a698d78c5c54122f25b42080e001561d2" prot="public" virt="non-virtual"><scope>eva::ScrollButton</scope><name>operator=</name></member>
-      <member refid="classeva_1_1_button_1a3d2aa61b3ce3991af47071a4ee5cc94f" prot="protected" virt="non-virtual"><scope>eva::ScrollButton</scope><name>pressTime</name></member>
-      <member refid="classeva_1_1_switch_1a1e58d00667fc3558f7747e46bf2ded46" prot="public" virt="non-virtual"><scope>eva::ScrollButton</scope><name>setListener</name></member>
-      <member refid="classeva_1_1_switch_1a7fee637f0ad36be86dac83b9c6b6083b" prot="public" virt="non-virtual"><scope>eva::ScrollButton</scope><name>Switch</name></member>
-      <member refid="classeva_1_1_switch_1aad39fa0b2f7181ab6855ee4b0edc944e" prot="public" virt="non-virtual"><scope>eva::ScrollButton</scope><name>Switch</name></member>
+      <member refid="classeva_1_1_button_1ac625c9cd7defb90bffb73433d31bf187" prot="protected" virt="non-virtual"><scope>eva::ScrollButton</scope><name>pressTime</name></member>
+      <member refid="classeva_1_1_switch_1abf4edaea5d55ec6434a628566a91ca73" prot="public" virt="non-virtual"><scope>eva::ScrollButton</scope><name>setListener</name></member>
+      <member refid="classeva_1_1_switch_1aa6d89e5d51856f964db04768dcf74de8" prot="public" virt="non-virtual"><scope>eva::ScrollButton</scope><name>Switch</name></member>
+      <member refid="classeva_1_1_switch_1a995c8430f59508048ba47ee722f7f2a4" prot="public" virt="non-virtual"><scope>eva::ScrollButton</scope><name>Switch</name></member>
       <member refid="classeva_1_1_tickable_1aa59c892bc8901a7840e5af7e431a15a3" prot="public" virt="non-virtual"><scope>eva::ScrollButton</scope><name>tac</name></member>
-      <member refid="classeva_1_1_scroll_button_1a38ce62deaaced541a8a13394e59af012" prot="private" virt="virtual"><scope>eva::ScrollButton</scope><name>tick</name></member>
+      <member refid="classeva_1_1_scroll_button_1aceea17c62f1d6e8503cd9890b726bd77" prot="private" virt="virtual"><scope>eva::ScrollButton</scope><name>tick</name></member>
       <member refid="classeva_1_1_tickable_1a667f47cdee5f03eed323cebb27e8ab8e" prot="public" virt="non-virtual"><scope>eva::ScrollButton</scope><name>Tickable</name></member>
       <member refid="classeva_1_1_tickable_1aa8efa54edd7140587548e7973de356df" prot="public" virt="non-virtual"><scope>eva::ScrollButton</scope><name>Tickable</name></member>
       <member refid="classeva_1_1_tickable_1a80af7d23456d2e0bec8a2c6b8f9f8f10" prot="public" virt="non-virtual"><scope>eva::ScrollButton</scope><name>Tickable</name></member>
-      <member refid="classeva_1_1_switch_1afd52bbbe14228dba1733f8d3b4620f26" prot="protected" virt="non-virtual"><scope>eva::ScrollButton</scope><name>updateState</name></member>
+      <member refid="classeva_1_1_switch_1afcb704c824ee0ce1415fc183d84983e0" prot="protected" virt="non-virtual"><scope>eva::ScrollButton</scope><name>updateState</name></member>
       <member refid="classeva_1_1_tickable_1a6b6ff95372ce0b94618029e05ed2b50a" prot="public" virt="virtual"><scope>eva::ScrollButton</scope><name>~Tickable</name></member>
     </listofallmembers>
   </compounddef>

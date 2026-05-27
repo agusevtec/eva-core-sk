@@ -2,7 +2,7 @@
 
 # Class eva::Joystick
 
-**template &lt;class READER, unsigned short MIN\_POS, unsigned short MIDDLE\_POS, unsigned short MAX\_POS&gt;**
+**template &lt;class TReader, unsigned short MIN\_POS, unsigned short MIDDLE\_POS, unsigned short MAX\_POS&gt;**
 
 
 
@@ -16,7 +16,7 @@
 
 
 
-Inherits the following classes: READER
+Inherits the following classes: TReader
 
 
 
@@ -97,7 +97,7 @@ Inherits the following classes: READER
 **Template parameters:**
 
 
-* `READER` Underlying reader type 
+* `TReader` Underlying reader type 
 * `MIN_POS` Minimum analog value 
 * `MIDDLE_POS` Center value 
 * `MAX_POS` Maximum analog value 

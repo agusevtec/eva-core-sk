@@ -30,13 +30,13 @@ namespace eva
      * Events include both the event type and the level code in argsMask,
      * allowing identification of which specific input triggered the event.
      *
-     * @tparam READER Input reader type that returns numeric codes
+     * @tparam TReader Input reader type that returns numeric codes
      *                (0 = inactive, >0 = active state identifier)
      * @see PinSwitch Digital pin switches with debouncing (typical use)
      * @see PullUpSwitch Pull-up switches convenience alias
      * @see PinMultiSwitch Multiple switches on one ADC pin     */
-    template <class READER>
-    class Switch : public READER, public Tickable
+    template <class TReader>
+    class Switch : public TReader, public Tickable
     {
     public:
         Switch()
@@ -96,8 +96,8 @@ namespace eva
     protected:
         bool updateState()
         {
-            this->levelCode = READER::getValue();
-            if (!READER::isValid())
+            this->levelCode = TReader::getValue();
+            if (!TReader::isValid())
                 return false;
 
             if (this->levelCode < 0)

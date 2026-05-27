@@ -56,6 +56,7 @@ _Reads digital pin value._
 | ---: | :--- |
 |   | [**DigitalPinReader**](#function-digitalpinreader) () <br> |
 |  signed short | [**getValue**](#function-getvalue) () <br> |
+|  bool | [**isValid**](#function-isvalid) () <br> |
 
 
 
@@ -106,6 +107,19 @@ inline eva::DigitalPinReader::DigitalPinReader ()
 
 ```C++
 inline signed short eva::DigitalPinReader::getValue () 
+```
+
+
+
+
+<hr>
+
+
+
+### function isValid 
+
+```C++
+inline bool eva::DigitalPinReader::isValid () 
 ```
 
 

@@ -5,13 +5,13 @@ namespace eva
 {
   /**
    * @brief Joystick axis reader (range 1000-1500-2000) with trim adjustment
-   * @tparam READER Underlying reader type
+   * @tparam TReader Underlying reader type
    * @tparam MIN_POS Minimum analog value
    * @tparam MIDDLE_POS Center value
    * @tparam MAX_POS Maximum analog value
    */
-  template <class READER, unsigned short MIN_POS, unsigned short MIDDLE_POS, unsigned short MAX_POS>
-  class Joystick : public READER
+  template <class TReader, unsigned short MIN_POS, unsigned short MIDDLE_POS, unsigned short MAX_POS>
+  class Joystick : public TReader
   {
   public:
     /**
@@ -20,7 +20,7 @@ namespace eva
      */
     signed short getValue()
     {
-      signed short value = READER::getValue();
+      signed short value = TReader::getValue();
       if ((value < MIDDLE_POS) ^ (MIN_POS < MAX_POS))
         return constrain(map(value, MIDDLE_POS, MAX_POS, 1500 + this->trim - this->deadZone, 2000), 1500 + this->trim, 2000);
       else

@@ -1,18 +1,18 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
   <compounddef id="classeva_1_1_debounce_decor" kind="class" language="C++" prot="public">
     <compoundname>eva::DebounceDecor</compoundname>
-    <basecompoundref prot="public" virt="non-virtual">READER</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">TReader</basecompoundref>
     <includes refid="eva_reader_decors_8h" local="no">evaReaderDecors.h</includes>
     <templateparamlist>
       <param>
-        <type>class READER</type>
+        <type>class TReader</type>
       </param>
     </templateparamlist>
     <sectiondef kind="private-attrib">
-      <memberdef kind="variable" id="classeva_1_1_debounce_decor_1aa33cfc45eb23367315c205e928cdef63" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="classeva_1_1_debounce_decor_1a8393a59114e20d8a91d7aa693feb6f72" prot="private" static="no" mutable="no">
         <type>unsigned long</type>
-        <definition>unsigned long eva::DebounceDecor&lt; READER &gt;::keepValueTill</definition>
+        <definition>unsigned long eva::DebounceDecor&lt; TReader &gt;::keepValueTill</definition>
         <argsstring></argsstring>
         <name>keepValueTill</name>
         <qualifiedname>eva::DebounceDecor::keepValueTill</qualifiedname>
@@ -23,11 +23,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaReaderDecors.h" line="40" column="23" bodyfile="src/evaReaderDecors.h" bodystart="40" bodyend="-1"/>
+        <location file="src/evaReaderDecors.h" line="44" column="23" bodyfile="src/evaReaderDecors.h" bodystart="44" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classeva_1_1_debounce_decor_1a64d406568eb6ccbe1611f69dd37378c5" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="classeva_1_1_debounce_decor_1a08dbb439a2fbbe2a6c303305f9f500e1" prot="private" static="no" mutable="no">
         <type>signed short</type>
-        <definition>signed short eva::DebounceDecor&lt; READER &gt;::keepedValue</definition>
+        <definition>signed short eva::DebounceDecor&lt; TReader &gt;::keepedValue</definition>
         <argsstring></argsstring>
         <name>keepedValue</name>
         <qualifiedname>eva::DebounceDecor::keepedValue</qualifiedname>
@@ -38,13 +38,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaReaderDecors.h" line="41" column="22" bodyfile="src/evaReaderDecors.h" bodystart="41" bodyend="-1"/>
+        <location file="src/evaReaderDecors.h" line="45" column="22" bodyfile="src/evaReaderDecors.h" bodystart="45" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
-      <memberdef kind="function" id="classeva_1_1_debounce_decor_1ad7b7a63cc7f5ba68c5eb59c54cc857e4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classeva_1_1_debounce_decor_1af6e5231badc84e9fc6481f1db0ae7c26" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>signed short</type>
-        <definition>signed short eva::DebounceDecor&lt; READER &gt;::getValue</definition>
+        <definition>signed short eva::DebounceDecor&lt; TReader &gt;::getValue</definition>
         <argsstring>()</argsstring>
         <name>getValue</name>
         <qualifiedname>eva::DebounceDecor::getValue</qualifiedname>
@@ -54,7 +54,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaReaderDecors.h" line="24" column="22" bodyfile="src/evaReaderDecors.h" bodystart="24" bodyend="37"/>
+        <location file="src/evaReaderDecors.h" line="24" column="22" bodyfile="src/evaReaderDecors.h" bodystart="24" bodyend="41"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -64,10 +64,10 @@
     </detaileddescription>
     <inheritancegraph>
       <node id="2">
-        <label>READER</label>
+        <label>TReader</label>
       </node>
       <node id="1">
-        <label>eva::DebounceDecor&lt; READER &gt;</label>
+        <label>eva::DebounceDecor&lt; TReader &gt;</label>
         <link refid="classeva_1_1_debounce_decor"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
@@ -75,20 +75,20 @@
     </inheritancegraph>
     <collaborationgraph>
       <node id="2">
-        <label>READER</label>
+        <label>TReader</label>
       </node>
       <node id="1">
-        <label>eva::DebounceDecor&lt; READER &gt;</label>
+        <label>eva::DebounceDecor&lt; TReader &gt;</label>
         <link refid="classeva_1_1_debounce_decor"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="src/evaReaderDecors.h" line="21" column="5" bodyfile="src/evaReaderDecors.h" bodystart="22" bodyend="42"/>
+    <location file="src/evaReaderDecors.h" line="21" column="5" bodyfile="src/evaReaderDecors.h" bodystart="22" bodyend="46"/>
     <listofallmembers>
-      <member refid="classeva_1_1_debounce_decor_1ad7b7a63cc7f5ba68c5eb59c54cc857e4" prot="public" virt="non-virtual"><scope>eva::DebounceDecor</scope><name>getValue</name></member>
-      <member refid="classeva_1_1_debounce_decor_1a64d406568eb6ccbe1611f69dd37378c5" prot="private" virt="non-virtual"><scope>eva::DebounceDecor</scope><name>keepedValue</name></member>
-      <member refid="classeva_1_1_debounce_decor_1aa33cfc45eb23367315c205e928cdef63" prot="private" virt="non-virtual"><scope>eva::DebounceDecor</scope><name>keepValueTill</name></member>
+      <member refid="classeva_1_1_debounce_decor_1af6e5231badc84e9fc6481f1db0ae7c26" prot="public" virt="non-virtual"><scope>eva::DebounceDecor</scope><name>getValue</name></member>
+      <member refid="classeva_1_1_debounce_decor_1a08dbb439a2fbbe2a6c303305f9f500e1" prot="private" virt="non-virtual"><scope>eva::DebounceDecor</scope><name>keepedValue</name></member>
+      <member refid="classeva_1_1_debounce_decor_1a8393a59114e20d8a91d7aa693feb6f72" prot="private" virt="non-virtual"><scope>eva::DebounceDecor</scope><name>keepValueTill</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

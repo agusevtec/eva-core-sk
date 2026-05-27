@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
   <compounddef id="classeva_1_1_binarize_lt_decor" kind="class" language="C++" prot="public">
     <compoundname>eva::BinarizeLtDecor</compoundname>
-    <basecompoundref prot="public" virt="non-virtual">READER</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">TReader</basecompoundref>
     <includes refid="eva_reader_decors_8h" local="no">evaReaderDecors.h</includes>
     <templateparamlist>
       <param>
-        <type>class READER</type>
+        <type>class TReader</type>
       </param>
       <param>
         <type>int</type>
@@ -15,9 +15,9 @@
       </param>
     </templateparamlist>
     <sectiondef kind="public-func">
-      <memberdef kind="function" id="classeva_1_1_binarize_lt_decor_1a8de1cee9a8534b398469faed69991b50" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classeva_1_1_binarize_lt_decor_1a373cd51632badfce41af685e92b7ef3e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>signed short</type>
-        <definition>signed short eva::BinarizeLtDecor&lt; READER, THRESHOLD &gt;::getValue</definition>
+        <definition>signed short eva::BinarizeLtDecor&lt; TReader, THRESHOLD &gt;::getValue</definition>
         <argsstring>()</argsstring>
         <name>getValue</name>
         <qualifiedname>eva::BinarizeLtDecor::getValue</qualifiedname>
@@ -27,7 +27,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaReaderDecors.h" line="64" column="22" bodyfile="src/evaReaderDecors.h" bodystart="64" bodyend="69"/>
+        <location file="src/evaReaderDecors.h" line="68" column="22" bodyfile="src/evaReaderDecors.h" bodystart="68" bodyend="73"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -37,10 +37,10 @@
     </detaileddescription>
     <inheritancegraph>
       <node id="2">
-        <label>READER</label>
+        <label>TReader</label>
       </node>
       <node id="1">
-        <label>eva::BinarizeLtDecor&lt; READER, THRESHOLD &gt;</label>
+        <label>eva::BinarizeLtDecor&lt; TReader, THRESHOLD &gt;</label>
         <link refid="classeva_1_1_binarize_lt_decor"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
@@ -48,18 +48,18 @@
     </inheritancegraph>
     <collaborationgraph>
       <node id="2">
-        <label>READER</label>
+        <label>TReader</label>
       </node>
       <node id="1">
-        <label>eva::BinarizeLtDecor&lt; READER, THRESHOLD &gt;</label>
+        <label>eva::BinarizeLtDecor&lt; TReader, THRESHOLD &gt;</label>
         <link refid="classeva_1_1_binarize_lt_decor"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="src/evaReaderDecors.h" line="61" column="5" bodyfile="src/evaReaderDecors.h" bodystart="62" bodyend="70"/>
+    <location file="src/evaReaderDecors.h" line="65" column="5" bodyfile="src/evaReaderDecors.h" bodystart="66" bodyend="74"/>
     <listofallmembers>
-      <member refid="classeva_1_1_binarize_lt_decor_1a8de1cee9a8534b398469faed69991b50" prot="public" virt="non-virtual"><scope>eva::BinarizeLtDecor</scope><name>getValue</name></member>
+      <member refid="classeva_1_1_binarize_lt_decor_1a373cd51632badfce41af685e92b7ef3e" prot="public" virt="non-virtual"><scope>eva::BinarizeLtDecor</scope><name>getValue</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

@@ -2,7 +2,7 @@
 
 # Class eva::ScrollButton
 
-**template &lt;class READER&gt;**
+**template &lt;class TReader&gt;**
 
 
 
@@ -280,7 +280,7 @@ See [eva::Switch](classeva_1_1_switch.md)
 |  void | [**handleChanging**](classeva_1_1_switch.md#function-handlechanging) () <br> |
 |  void | [**handleDeactivating**](classeva_1_1_switch.md#function-handledeactivating) (unsigned char wasLevelCode) <br> |
 |  void | [**notify**](classeva_1_1_switch.md#function-notify) (unsigned short eventType, signed short eventCode) <br> |
-|  void | [**updateState**](classeva_1_1_switch.md#function-updatestate) () <br> |
+|  bool | [**updateState**](classeva_1_1_switch.md#function-updatestate) () <br> |
 
 
 
@@ -316,7 +316,7 @@ This class extends [**Button**](classeva_1_1_button.md) by adding periodic ON\_R
 **Template parameters:**
 
 
-* `READER` Input reader type that returns numeric codes (0 = no button, &gt;0 = button identifier)
+* `TReader` Input reader type that returns numeric codes (0 = no button, &gt;0 = button identifier)
 
 
 

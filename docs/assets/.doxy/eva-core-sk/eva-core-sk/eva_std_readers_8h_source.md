@@ -29,6 +29,10 @@ namespace eva
         {
             return digitalRead(PIN);
         }
+        bool isValid()
+        {
+            return true;
+        }
     };
 
     template <int PIN, int PIN_MODE>
@@ -43,6 +47,10 @@ namespace eva
         signed short getValue()
         {
             return analogRead(PIN);
+        }
+        bool isValid()
+        {
+            return true;
         }
     };
 

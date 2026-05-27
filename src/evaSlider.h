@@ -8,8 +8,8 @@ namespace eva
   /**
    * @brief Maps analog readings to 1000-2000 range
    */
-  template <class READER, unsigned short MIN_POS, unsigned short MAX_POS>
-  class Slider : public READER
+  template <class TReader, unsigned short MIN_POS, unsigned short MAX_POS>
+  class Slider : public TReader
   {
   public:
     /**
@@ -18,7 +18,7 @@ namespace eva
      */
     signed short getValue()
     {
-      return constrain(map(READER::getValue(), MIN_POS, MAX_POS, 1000, 2000), 1000, 2000);
+      return constrain(map(TReader::getValue(), MIN_POS, MAX_POS, 1000, 2000), 1000, 2000);
     }
   };
   /**

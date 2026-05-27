@@ -22,22 +22,30 @@ public:
   {
     return analogRead(IN1) - analogRead(IN2);
   }
+  bool isValid()
+  {
+    return true;
+  }
 };
 
 // Step 2: Map raw differences to meaningful codes
-template <class READER>
-class ZoneMapper : public READER
+template <class TReader>
+class ZoneMapper : public TReader
 {
 public:
   signed short getValue()
   {
-    signed short diff = READER::getValue();
+    signed short diff = TReader::getValue();
     
     if (diff < -100)
       return 1;  // Left zone
     if (diff < 100)
       return 0;  // Center zone (nothing happening)
     return 2;    // Right zone
+  }
+  bool isValid()
+  {
+    return true;
   }
 };
 

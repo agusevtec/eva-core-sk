@@ -18,23 +18,23 @@ namespace eva
 
     static const unsigned char ON_REPEATKEY = 0x40;
 
-    template <class READER>
-    class ScrollButton : public Button<READER>
+    template <class TReader>
+    class ScrollButton : public Button<TReader>
     {
     public:
-        using Button<READER>::Button;
+        using Button<TReader>::Button;
 
     private:
         void handleLongPress(unsigned long now)
         {
-            Button<READER>::handleLongPress();
+            Button<TReader>::handleLongPress();
             this->notify(ON_REPEATKEY, this->levelCode);
             this->lastRepeatTime = max(1, now);
         }
 
         void handleDeactivating(unsigned char wasLevelCode, unsigned long now)
         {
-            Button<READER>::handleDeactivating(wasLevelCode, now);
+            Button<TReader>::handleDeactivating(wasLevelCode, now);
             this->lastRepeatTime = 0;
         }
 
@@ -57,8 +57,9 @@ namespace eva
 
             unsigned long now = millis();
             unsigned char wasLevelCode = this->levelCode;
-            this->updateState();
-
+            if (!updateState())
+                return;
+                
             if (this->checkChanging(wasLevelCode))
                 this->handleChanging();
 

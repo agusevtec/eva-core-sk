@@ -54,6 +54,7 @@ Inherited by the following classes: [eva::IReaderAdapter](classeva_1_1_i_reader_
 | Type | Name |
 | ---: | :--- |
 | virtual signed short | [**getValue**](#function-getvalue) () = 0<br> |
+| virtual bool | [**isValid**](#function-isvalid) () = 0<br> |
 
 
 
@@ -111,6 +112,19 @@ This two-tier approach gives us benefits:
 
 ```C++
 virtual signed short eva::IReader::getValue () = 0
+```
+
+
+
+
+<hr>
+
+
+
+### function isValid 
+
+```C++
+virtual bool eva::IReader::isValid () = 0
 ```
 
 

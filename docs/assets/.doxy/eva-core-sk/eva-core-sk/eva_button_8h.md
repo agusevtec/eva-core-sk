@@ -35,7 +35,7 @@
 
 | Type | Name |
 | ---: | :--- |
-| class | [**Button**](classeva_1_1_button.md) &lt;class READER&gt;<br>[_**Button**_](classeva_1_1_button.md) _with press/release and click detection._ |
+| class | [**Button**](classeva_1_1_button.md) &lt;class TReader&gt;<br>[_**Button**_](classeva_1_1_button.md) _with press/release and click detection._ |
 
 
 

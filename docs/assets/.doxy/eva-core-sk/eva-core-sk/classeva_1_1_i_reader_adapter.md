@@ -76,6 +76,7 @@ Inherits the following classes: [eva::IReader](classeva_1_1_i_reader.md),  T
 | Type | Name |
 | ---: | :--- |
 | virtual signed short | [**getValue**](#function-getvalue) () override<br> |
+| virtual bool | [**isValid**](#function-isvalid) () override<br> |
 
 
 ## Public Functions inherited from eva::IReader
@@ -85,6 +86,7 @@ See [eva::IReader](classeva_1_1_i_reader.md)
 | Type | Name |
 | ---: | :--- |
 | virtual signed short | [**getValue**](classeva_1_1_i_reader.md#function-getvalue) () = 0<br> |
+| virtual bool | [**isValid**](classeva_1_1_i_reader.md#function-isvalid) () = 0<br> |
 
 
 
@@ -182,6 +184,21 @@ inline virtual signed short eva::IReaderAdapter::getValue () override
 
 
 Implements [*eva::IReader::getValue*](classeva_1_1_i_reader.md#function-getvalue)
+
+
+<hr>
+
+
+
+### function isValid 
+
+```C++
+inline virtual bool eva::IReaderAdapter::isValid () override
+```
+
+
+
+Implements [*eva::IReader::isValid*](classeva_1_1_i_reader.md#function-isvalid)
 
 
 <hr>

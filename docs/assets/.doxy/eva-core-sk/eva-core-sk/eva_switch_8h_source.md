@@ -22,8 +22,8 @@ namespace eva
 
     static const unsigned char ON_CHANGE = 0x04;
 
-    template <class READER>
-    class Switch : public READER, public Tickable
+    template <class TReader>
+    class Switch : public TReader, public Tickable
     {
     public:
         Switch()
@@ -61,11 +61,16 @@ namespace eva
         }
 
     protected:
-        void updateState()
+        bool updateState()
         {
-            this->levelCode = READER::getValue();
+            this->levelCode = TReader::getValue();
+            if (!TReader::isValid())
+                return false;
+
             if (this->levelCode < 0)
                 this->levelCode = 0;
+
+            return true;
         }
 
         bool checkChanging(unsigned char wasLevelCode)
@@ -112,8 +117,9 @@ namespace eva
                 return;
 
             unsigned char wasLevelCode = this->levelCode;
-            updateState();
-            
+            if (!updateState())
+                return;
+
             if (checkChanging(wasLevelCode))
                 handleChanging();
 

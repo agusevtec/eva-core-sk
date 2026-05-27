@@ -48,7 +48,7 @@ This inheritance list is sorted roughly, but not completely, alphabetically:
 * **class** [**eva::List**](classeva_1_1_list.md) _Simple singly-linked list container._ 
 * **struct** [**eva::CallbackInfo**](structeva_1_1_callback_info.md) 
 * **struct** [**eva::ListIterator**](structeva_1_1_list_iterator.md) _Iterator node for_ [_**List**_](classeva_1_1_list.md) _._
-* **class** **READER**    
+* **class** **TReader**    
     * **class** [**eva::BinarizeEqDecor**](classeva_1_1_binarize_eq_decor.md) _Decorator that converts reading to binary based on level._     
         * **class** [**eva::Switch**](classeva_1_1_switch.md) _Universal switch/button class for multi-valued input sources._     
             * **class** [**eva::Button**](classeva_1_1_button.md) [_**Button**_](classeva_1_1_button.md) _with press/release and click detection._    

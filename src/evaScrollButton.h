@@ -23,28 +23,28 @@ namespace eva
      * - ON_LONGPRESS  - Press and hold longer than LONGPRESS_DELAY (no release)
      * - ON_REPEATKEY  - Periodic events while holding (after LONGPRESS_DELAY)
      *
-     * @tparam READER Input reader type that returns numeric codes
+     * @tparam TReader Input reader type that returns numeric codes
      *                (0 = no button, >0 = button identifier)
      *
      * @see Button Base class for click detection
      */
-    template <class READER>
-    class ScrollButton : public Button<READER>
+    template <class TReader>
+    class ScrollButton : public Button<TReader>
     {
     public:
-        using Button<READER>::Button;
+        using Button<TReader>::Button;
 
     private:
         void handleLongPress(unsigned long now)
         {
-            Button<READER>::handleLongPress();
+            Button<TReader>::handleLongPress();
             this->notify(ON_REPEATKEY, this->levelCode);
             this->lastRepeatTime = max(1, now);
         }
 
         void handleDeactivating(unsigned char wasLevelCode, unsigned long now)
         {
-            Button<READER>::handleDeactivating(wasLevelCode, now);
+            Button<TReader>::handleDeactivating(wasLevelCode, now);
             this->lastRepeatTime = 0;
         }
 

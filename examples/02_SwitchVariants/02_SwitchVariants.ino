@@ -53,6 +53,11 @@ private:
       // Returns: 0,1,2,3 depending on jumper configuration
       return digitalRead(4) * 2 + digitalRead(5);
     }
+
+    bool isValid()
+    {
+      return true;
+    }
   };
   // Jumper bank (2 pins) - reports 2-bit configuration value (0-3) on any change
   Switch<DebounceDecor<JumpersBank>> jumperBank{new Handler<App>(this, &App::onJumperBankChanged), ON_CHANGE};

@@ -17,8 +17,8 @@ namespace eva
     /**
      * @brief Decorator that stabilizes readings by requiring value to be stable for a period
      */
-    template <class READER>
-    class DebounceDecor : public READER
+    template <class TReader>
+    class DebounceDecor : public TReader
     {
     public:
         signed short getValue()
@@ -27,9 +27,9 @@ namespace eva
             if (this->keepValueTill and (now < this->keepValueTill))
                 return this->keepedValue;
 
-            signed short value = READER::getValue();
+            signed short value = TReader::getValue();
 
-            if (!READER::isValid())
+            if (!TReader::isValid())
                 return this->keepedValue;
 
             if (value != this->keepedValue)
@@ -48,26 +48,26 @@ namespace eva
     /**
      * @brief Decorator that converts reading to binary based on level
      */
-    template <class READER, int ACTIVATES_ON>
-    class BinarizeEqDecor : public READER
+    template <class TReader, int ACTIVATES_ON>
+    class BinarizeEqDecor : public TReader
     {
     public:
         signed short getValue()
         {
-            return READER::getValue() == ACTIVATES_ON;
+            return TReader::getValue() == ACTIVATES_ON;
         }
     };
 
     /**
      * @brief Decorator that converts analog reading to binary based on 'less then' threshold condition
      */
-    template <class READER, int THRESHOLD>
-    class BinarizeLtDecor : public READER
+    template <class TReader, int THRESHOLD>
+    class BinarizeLtDecor : public TReader
     {
     public:
         signed short getValue()
         {
-            if (READER::getValue() <= THRESHOLD)
+            if (TReader::getValue() <= THRESHOLD)
                 return 1;
             return 0;
         }
@@ -76,13 +76,13 @@ namespace eva
     /**
      * @brief Decorator that converts analog reading to binary based on 'greater then' threshold condition
      */
-    template <class READER, int THRESHOLD>
-    class BinarizeGtDecor : public READER
+    template <class TReader, int THRESHOLD>
+    class BinarizeGtDecor : public TReader
     {
     public:
         signed short getValue()
         {
-            if (READER::getValue() >= THRESHOLD)
+            if (TReader::getValue() >= THRESHOLD)
                 return 1;
             return 0;
         }
@@ -91,8 +91,8 @@ namespace eva
     /**
      * @brief Decorator that quantizes analog readings to discrete levels
      */
-    template <class READER, signed short... LEVELS>
-    class QuantizeDecor : public READER
+    template <class TReader, signed short... LEVELS>
+    class QuantizeDecor : public TReader
     {
         static_assert(sizeof...(LEVELS) >= 2, "QuantizeDecor requires at least 2 levels");
 
@@ -103,9 +103,9 @@ namespace eva
          */
         signed short getValue()
         {
-            signed short value = READER::getValue() * 2;
+            signed short value = TReader::getValue() * 2;
 
-            if (!READER::isValid())
+            if (!TReader::isValid())
                 return 0;
 
             unsigned char i;

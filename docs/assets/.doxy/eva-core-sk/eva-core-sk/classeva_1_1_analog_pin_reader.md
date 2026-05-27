@@ -57,6 +57,7 @@ Inherited by the following classes: [eva::Joystick](classeva_1_1_joystick.md),  
 | ---: | :--- |
 |   | [**AnalogPinReader**](#function-analogpinreader) () <br> |
 |  signed short | [**getValue**](#function-getvalue) () <br> |
+|  bool | [**isValid**](#function-isvalid) () <br> |
 
 
 
@@ -107,6 +108,19 @@ inline eva::AnalogPinReader::AnalogPinReader ()
 
 ```C++
 inline signed short eva::AnalogPinReader::getValue () 
+```
+
+
+
+
+<hr>
+
+
+
+### function isValid 
+
+```C++
+inline bool eva::AnalogPinReader::isValid () 
 ```
 
 

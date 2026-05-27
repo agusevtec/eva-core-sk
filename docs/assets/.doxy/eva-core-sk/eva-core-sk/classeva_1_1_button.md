@@ -2,7 +2,7 @@
 
 # Class eva::Button
 
-**template &lt;class READER&gt;**
+**template &lt;class TReader&gt;**
 
 
 
@@ -231,7 +231,7 @@ See [eva::Switch](classeva_1_1_switch.md)
 |  void | [**handleChanging**](classeva_1_1_switch.md#function-handlechanging) () <br> |
 |  void | [**handleDeactivating**](classeva_1_1_switch.md#function-handledeactivating) (unsigned char wasLevelCode) <br> |
 |  void | [**notify**](classeva_1_1_switch.md#function-notify) (unsigned short eventType, signed short eventCode) <br> |
-|  void | [**updateState**](classeva_1_1_switch.md#function-updatestate) () <br> |
+|  bool | [**updateState**](classeva_1_1_switch.md#function-updatestate) () <br> |
 
 
 
@@ -266,7 +266,7 @@ Long click threshold is fixed at 750ms.
 **Template parameters:**
 
 
-* `READER` Input reader type that returns numeric codes (0 = no button, &gt;0 = button identifier)
+* `TReader` Input reader type that returns numeric codes (0 = no button, &gt;0 = button identifier)
 
 
 
@@ -292,7 +292,7 @@ Long click threshold is fixed at 750ms.
 ### variable pressTime 
 
 ```C++
-unsigned long eva::Button< READER >::pressTime;
+unsigned long eva::Button< TReader >::pressTime;
 ```
 
 

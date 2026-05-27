@@ -1,13 +1,13 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
   <compounddef id="classeva_1_1_binarize_eq_decor" kind="class" language="C++" prot="public">
     <compoundname>eva::BinarizeEqDecor</compoundname>
-    <basecompoundref prot="public" virt="non-virtual">READER</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">TReader</basecompoundref>
     <derivedcompoundref refid="classeva_1_1_switch" prot="public" virt="non-virtual">eva::Switch&lt; BinarizeEqDecor&lt; DebounceDecor&lt; DigitalPinReader&lt; PIN, PIN_MODE &gt; &gt;, ACTIVE_LEVEL &gt; &gt;</derivedcompoundref>
     <includes refid="eva_reader_decors_8h" local="no">evaReaderDecors.h</includes>
     <templateparamlist>
       <param>
-        <type>class READER</type>
+        <type>class TReader</type>
       </param>
       <param>
         <type>int</type>
@@ -16,9 +16,9 @@
       </param>
     </templateparamlist>
     <sectiondef kind="public-func">
-      <memberdef kind="function" id="classeva_1_1_binarize_eq_decor_1ac3bc54dd2c3fa42fa26bcff9de938570" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classeva_1_1_binarize_eq_decor_1a72c1f0d97e3f2ad84fcf4ded72c2311d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>signed short</type>
-        <definition>signed short eva::BinarizeEqDecor&lt; READER, ACTIVATES_ON &gt;::getValue</definition>
+        <definition>signed short eva::BinarizeEqDecor&lt; TReader, ACTIVATES_ON &gt;::getValue</definition>
         <argsstring>()</argsstring>
         <name>getValue</name>
         <qualifiedname>eva::BinarizeEqDecor::getValue</qualifiedname>
@@ -28,7 +28,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaReaderDecors.h" line="51" column="22" bodyfile="src/evaReaderDecors.h" bodystart="51" bodyend="54"/>
+        <location file="src/evaReaderDecors.h" line="55" column="22" bodyfile="src/evaReaderDecors.h" bodystart="55" bodyend="58"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -38,10 +38,10 @@
     </detaileddescription>
     <inheritancegraph>
       <node id="2">
-        <label>READER</label>
+        <label>TReader</label>
       </node>
       <node id="1">
-        <label>eva::BinarizeEqDecor&lt; READER, ACTIVATES_ON &gt;</label>
+        <label>eva::BinarizeEqDecor&lt; TReader, ACTIVATES_ON &gt;</label>
         <link refid="classeva_1_1_binarize_eq_decor"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
@@ -55,18 +55,18 @@
     </inheritancegraph>
     <collaborationgraph>
       <node id="2">
-        <label>READER</label>
+        <label>TReader</label>
       </node>
       <node id="1">
-        <label>eva::BinarizeEqDecor&lt; READER, ACTIVATES_ON &gt;</label>
+        <label>eva::BinarizeEqDecor&lt; TReader, ACTIVATES_ON &gt;</label>
         <link refid="classeva_1_1_binarize_eq_decor"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="src/evaReaderDecors.h" line="48" column="5" bodyfile="src/evaReaderDecors.h" bodystart="49" bodyend="55"/>
+    <location file="src/evaReaderDecors.h" line="52" column="5" bodyfile="src/evaReaderDecors.h" bodystart="53" bodyend="59"/>
     <listofallmembers>
-      <member refid="classeva_1_1_binarize_eq_decor_1ac3bc54dd2c3fa42fa26bcff9de938570" prot="public" virt="non-virtual"><scope>eva::BinarizeEqDecor</scope><name>getValue</name></member>
+      <member refid="classeva_1_1_binarize_eq_decor_1a72c1f0d97e3f2ad84fcf4ded72c2311d" prot="public" virt="non-virtual"><scope>eva::BinarizeEqDecor</scope><name>getValue</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

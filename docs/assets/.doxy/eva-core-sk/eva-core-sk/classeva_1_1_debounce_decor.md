@@ -2,7 +2,7 @@
 
 # Class eva::DebounceDecor
 
-**template &lt;class READER&gt;**
+**template &lt;class TReader&gt;**
 
 
 
@@ -16,7 +16,7 @@ _Decorator that stabilizes readings by requiring value to be stable for a period
 
 
 
-Inherits the following classes: READER
+Inherits the following classes: TReader
 
 
 

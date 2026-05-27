@@ -2,7 +2,7 @@
 
 # Class eva::BinarizeEqDecor
 
-**template &lt;class READER, int ACTIVATES\_ON&gt;**
+**template &lt;class TReader, int ACTIVATES\_ON&gt;**
 
 
 
@@ -16,7 +16,7 @@ _Decorator that converts reading to binary based on level._
 
 
 
-Inherits the following classes: READER
+Inherits the following classes: TReader
 
 
 Inherited by the following classes: [eva::Switch](classeva_1_1_switch.md)

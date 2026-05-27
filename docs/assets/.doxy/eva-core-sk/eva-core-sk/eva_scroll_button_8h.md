@@ -35,7 +35,7 @@
 
 | Type | Name |
 | ---: | :--- |
-| class | [**ScrollButton**](classeva_1_1_scroll_button.md) &lt;class READER&gt;<br>[_**Button**_](classeva_1_1_button.md) _with auto-repeat (typematic) functionality._ |
+| class | [**ScrollButton**](classeva_1_1_scroll_button.md) &lt;class TReader&gt;<br>[_**Button**_](classeva_1_1_button.md) _with auto-repeat (typematic) functionality._ |
 
 
 

@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
   <compounddef id="classeva_1_1_joystick" kind="class" language="C++" prot="public">
     <compoundname>eva::Joystick</compoundname>
-    <basecompoundref prot="public" virt="non-virtual">READER</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">TReader</basecompoundref>
     <includes refid="eva_joystick_8h" local="no">evaJoystick.h</includes>
     <templateparamlist>
       <param>
-        <type>class READER</type>
+        <type>class TReader</type>
       </param>
       <param>
         <type>unsigned short</type>
@@ -25,9 +25,9 @@
       </param>
     </templateparamlist>
     <sectiondef kind="private-attrib">
-      <memberdef kind="variable" id="classeva_1_1_joystick_1a950b5912c7e6ab63a369d3d924682060" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="classeva_1_1_joystick_1a224365d815c38d802cf0cc62399d9393" prot="private" static="no" mutable="no">
         <type>signed char</type>
-        <definition>signed char eva::Joystick&lt; READER, MIN_POS, MIDDLE_POS, MAX_POS &gt;::trim</definition>
+        <definition>signed char eva::Joystick&lt; TReader, MIN_POS, MIDDLE_POS, MAX_POS &gt;::trim</definition>
         <argsstring></argsstring>
         <name>trim</name>
         <qualifiedname>eva::Joystick::trim</qualifiedname>
@@ -40,9 +40,9 @@
         </inbodydescription>
         <location file="src/evaJoystick.h" line="73" column="17" bodyfile="src/evaJoystick.h" bodystart="73" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classeva_1_1_joystick_1ab01e8bc4f5f04467574dc33ea4d4d93c" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="classeva_1_1_joystick_1abc98b56af015aec2113b70f2fd251b35" prot="private" static="no" mutable="no">
         <type>unsigned char</type>
-        <definition>unsigned char eva::Joystick&lt; READER, MIN_POS, MIDDLE_POS, MAX_POS &gt;::deadZone</definition>
+        <definition>unsigned char eva::Joystick&lt; TReader, MIN_POS, MIDDLE_POS, MAX_POS &gt;::deadZone</definition>
         <argsstring></argsstring>
         <name>deadZone</name>
         <qualifiedname>eva::Joystick::deadZone</qualifiedname>
@@ -57,9 +57,9 @@
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
-      <memberdef kind="function" id="classeva_1_1_joystick_1a6fa503c4d3d28d95c486e70b80ef15f7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classeva_1_1_joystick_1acf2bcedf67c93f416e87cd70c091f69c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>signed short</type>
-        <definition>signed short eva::Joystick&lt; READER, MIN_POS, MIDDLE_POS, MAX_POS &gt;::getValue</definition>
+        <definition>signed short eva::Joystick&lt; TReader, MIN_POS, MIDDLE_POS, MAX_POS &gt;::getValue</definition>
         <argsstring>()</argsstring>
         <name>getValue</name>
         <qualifiedname>eva::Joystick::getValue</qualifiedname>
@@ -75,9 +75,9 @@
         </inbodydescription>
         <location file="src/evaJoystick.h" line="21" column="18" bodyfile="src/evaJoystick.h" bodystart="21" bodyend="28"/>
       </memberdef>
-      <memberdef kind="function" id="classeva_1_1_joystick_1a0959565a3f2139f39c40bbab75a8ad8f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classeva_1_1_joystick_1a2952351695ec15373dddb2c80b1abf83" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
-        <definition>void eva::Joystick&lt; READER, MIN_POS, MIDDLE_POS, MAX_POS &gt;::setTrim</definition>
+        <definition>void eva::Joystick&lt; TReader, MIN_POS, MIDDLE_POS, MAX_POS &gt;::setTrim</definition>
         <argsstring>(short trim)</argsstring>
         <name>setTrim</name>
         <qualifiedname>eva::Joystick::setTrim</qualifiedname>
@@ -104,9 +104,9 @@
         </inbodydescription>
         <location file="src/evaJoystick.h" line="34" column="10" bodyfile="src/evaJoystick.h" bodystart="34" bodyend="37"/>
       </memberdef>
-      <memberdef kind="function" id="classeva_1_1_joystick_1a653ca3b875eb7e61cc3f174f6aa05a24" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classeva_1_1_joystick_1abf8f76725f9481d69a9bff9ccfaff019" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
-        <definition>void eva::Joystick&lt; READER, MIN_POS, MIDDLE_POS, MAX_POS &gt;::addTrim</definition>
+        <definition>void eva::Joystick&lt; TReader, MIN_POS, MIDDLE_POS, MAX_POS &gt;::addTrim</definition>
         <argsstring>(short trimIncrement)</argsstring>
         <name>addTrim</name>
         <qualifiedname>eva::Joystick::addTrim</qualifiedname>
@@ -133,9 +133,9 @@
         </inbodydescription>
         <location file="src/evaJoystick.h" line="43" column="10" bodyfile="src/evaJoystick.h" bodystart="43" bodyend="46"/>
       </memberdef>
-      <memberdef kind="function" id="classeva_1_1_joystick_1a430f97cc7b474557ff4e44c66d4ef99b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classeva_1_1_joystick_1a865c26a601cc29a4b44d7eca7a46eeea" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>signed short</type>
-        <definition>signed short eva::Joystick&lt; READER, MIN_POS, MIDDLE_POS, MAX_POS &gt;::getTrim</definition>
+        <definition>signed short eva::Joystick&lt; TReader, MIN_POS, MIDDLE_POS, MAX_POS &gt;::getTrim</definition>
         <argsstring>()</argsstring>
         <name>getTrim</name>
         <qualifiedname>eva::Joystick::getTrim</qualifiedname>
@@ -151,9 +151,9 @@
         </inbodydescription>
         <location file="src/evaJoystick.h" line="52" column="18" bodyfile="src/evaJoystick.h" bodystart="52" bodyend="55"/>
       </memberdef>
-      <memberdef kind="function" id="classeva_1_1_joystick_1a3d9f430bd34bd47231c003945421f411" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classeva_1_1_joystick_1a574c63a478919b3d71af378d4da4e89d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
-        <definition>void eva::Joystick&lt; READER, MIN_POS, MIDDLE_POS, MAX_POS &gt;::setDeadZone</definition>
+        <definition>void eva::Joystick&lt; TReader, MIN_POS, MIDDLE_POS, MAX_POS &gt;::setDeadZone</definition>
         <argsstring>(short deadZone)</argsstring>
         <name>setDeadZone</name>
         <qualifiedname>eva::Joystick::setDeadZone</qualifiedname>
@@ -169,9 +169,9 @@
         </inbodydescription>
         <location file="src/evaJoystick.h" line="57" column="10" bodyfile="src/evaJoystick.h" bodystart="57" bodyend="60"/>
       </memberdef>
-      <memberdef kind="function" id="classeva_1_1_joystick_1acc5939ab7a32b341f71192e8c73a2f06" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classeva_1_1_joystick_1a9af387252293caf1d37743fbac6248f9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>signed short</type>
-        <definition>signed short eva::Joystick&lt; READER, MIN_POS, MIDDLE_POS, MAX_POS &gt;::getDeadZone</definition>
+        <definition>signed short eva::Joystick&lt; TReader, MIN_POS, MIDDLE_POS, MAX_POS &gt;::getDeadZone</definition>
         <argsstring>()</argsstring>
         <name>getDeadZone</name>
         <qualifiedname>eva::Joystick::getDeadZone</qualifiedname>
@@ -194,7 +194,7 @@
     <detaileddescription>
 <para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
-<parametername>READER</parametername>
+<parametername>TReader</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>Underlying reader type </para>
@@ -229,10 +229,10 @@
     </detaileddescription>
     <inheritancegraph>
       <node id="2">
-        <label>READER</label>
+        <label>TReader</label>
       </node>
       <node id="1">
-        <label>eva::Joystick&lt; READER, MIN_POS, MIDDLE_POS, MAX_POS &gt;</label>
+        <label>eva::Joystick&lt; TReader, MIN_POS, MIDDLE_POS, MAX_POS &gt;</label>
         <link refid="classeva_1_1_joystick"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
@@ -240,10 +240,10 @@
     </inheritancegraph>
     <collaborationgraph>
       <node id="2">
-        <label>READER</label>
+        <label>TReader</label>
       </node>
       <node id="1">
-        <label>eva::Joystick&lt; READER, MIN_POS, MIDDLE_POS, MAX_POS &gt;</label>
+        <label>eva::Joystick&lt; TReader, MIN_POS, MIDDLE_POS, MAX_POS &gt;</label>
         <link refid="classeva_1_1_joystick"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
@@ -251,14 +251,14 @@
     </collaborationgraph>
     <location file="src/evaJoystick.h" line="14" column="3" bodyfile="src/evaJoystick.h" bodystart="15" bodyend="75"/>
     <listofallmembers>
-      <member refid="classeva_1_1_joystick_1a653ca3b875eb7e61cc3f174f6aa05a24" prot="public" virt="non-virtual"><scope>eva::Joystick</scope><name>addTrim</name></member>
-      <member refid="classeva_1_1_joystick_1ab01e8bc4f5f04467574dc33ea4d4d93c" prot="private" virt="non-virtual"><scope>eva::Joystick</scope><name>deadZone</name></member>
-      <member refid="classeva_1_1_joystick_1acc5939ab7a32b341f71192e8c73a2f06" prot="public" virt="non-virtual"><scope>eva::Joystick</scope><name>getDeadZone</name></member>
-      <member refid="classeva_1_1_joystick_1a430f97cc7b474557ff4e44c66d4ef99b" prot="public" virt="non-virtual"><scope>eva::Joystick</scope><name>getTrim</name></member>
-      <member refid="classeva_1_1_joystick_1a6fa503c4d3d28d95c486e70b80ef15f7" prot="public" virt="non-virtual"><scope>eva::Joystick</scope><name>getValue</name></member>
-      <member refid="classeva_1_1_joystick_1a3d9f430bd34bd47231c003945421f411" prot="public" virt="non-virtual"><scope>eva::Joystick</scope><name>setDeadZone</name></member>
-      <member refid="classeva_1_1_joystick_1a0959565a3f2139f39c40bbab75a8ad8f" prot="public" virt="non-virtual"><scope>eva::Joystick</scope><name>setTrim</name></member>
-      <member refid="classeva_1_1_joystick_1a950b5912c7e6ab63a369d3d924682060" prot="private" virt="non-virtual"><scope>eva::Joystick</scope><name>trim</name></member>
+      <member refid="classeva_1_1_joystick_1abf8f76725f9481d69a9bff9ccfaff019" prot="public" virt="non-virtual"><scope>eva::Joystick</scope><name>addTrim</name></member>
+      <member refid="classeva_1_1_joystick_1abc98b56af015aec2113b70f2fd251b35" prot="private" virt="non-virtual"><scope>eva::Joystick</scope><name>deadZone</name></member>
+      <member refid="classeva_1_1_joystick_1a9af387252293caf1d37743fbac6248f9" prot="public" virt="non-virtual"><scope>eva::Joystick</scope><name>getDeadZone</name></member>
+      <member refid="classeva_1_1_joystick_1a865c26a601cc29a4b44d7eca7a46eeea" prot="public" virt="non-virtual"><scope>eva::Joystick</scope><name>getTrim</name></member>
+      <member refid="classeva_1_1_joystick_1acf2bcedf67c93f416e87cd70c091f69c" prot="public" virt="non-virtual"><scope>eva::Joystick</scope><name>getValue</name></member>
+      <member refid="classeva_1_1_joystick_1a574c63a478919b3d71af378d4da4e89d" prot="public" virt="non-virtual"><scope>eva::Joystick</scope><name>setDeadZone</name></member>
+      <member refid="classeva_1_1_joystick_1a2952351695ec15373dddb2c80b1abf83" prot="public" virt="non-virtual"><scope>eva::Joystick</scope><name>setTrim</name></member>
+      <member refid="classeva_1_1_joystick_1a224365d815c38d802cf0cc62399d9393" prot="private" virt="non-virtual"><scope>eva::Joystick</scope><name>trim</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

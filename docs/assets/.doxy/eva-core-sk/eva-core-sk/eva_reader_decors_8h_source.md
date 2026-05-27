@@ -24,8 +24,8 @@ namespace eva
             return true;
         return false;
     }
-    template <class READER>
-    class DebounceDecor : public READER
+    template <class TReader>
+    class DebounceDecor : public TReader
     {
     public:
         signed short getValue()
@@ -34,7 +34,11 @@ namespace eva
             if (this->keepValueTill and (now < this->keepValueTill))
                 return this->keepedValue;
 
-            signed short value = READER::getValue();
+            signed short value = TReader::getValue();
+
+            if (!TReader::isValid())
+                return this->keepedValue;
+
             if (value != this->keepedValue)
             {
                 this->keepValueTill = now + DEBOUNCE_DELAY;
@@ -48,49 +52,53 @@ namespace eva
         signed short keepedValue = 0;
     };
 
-    template <class READER, int ACTIVATES_ON>
-    class BinarizeEqDecor : public READER
+    template <class TReader, int ACTIVATES_ON>
+    class BinarizeEqDecor : public TReader
     {
     public:
         signed short getValue()
         {
-            return READER::getValue() == ACTIVATES_ON;
+            return TReader::getValue() == ACTIVATES_ON;
         }
     };
 
-    template <class READER, int THRESHOLD>
-    class BinarizeLtDecor : public READER
+    template <class TReader, int THRESHOLD>
+    class BinarizeLtDecor : public TReader
     {
     public:
         signed short getValue()
         {
-            if (READER::getValue() <= THRESHOLD)
+            if (TReader::getValue() <= THRESHOLD)
                 return 1;
             return 0;
         }
     };
 
-    template <class READER, int THRESHOLD>
-    class BinarizeGtDecor : public READER
+    template <class TReader, int THRESHOLD>
+    class BinarizeGtDecor : public TReader
     {
     public:
         signed short getValue()
         {
-            if (READER::getValue() >= THRESHOLD)
+            if (TReader::getValue() >= THRESHOLD)
                 return 1;
             return 0;
         }
     };
 
-    template <class READER, signed short... LEVELS>
-    class QuantizeDecor : public READER
+    template <class TReader, signed short... LEVELS>
+    class QuantizeDecor : public TReader
     {
         static_assert(sizeof...(LEVELS) >= 2, "QuantizeDecor requires at least 2 levels");
 
     public:
         signed short getValue()
         {
-            signed short value = READER::getValue() * 2;
+            signed short value = TReader::getValue() * 2;
+
+            if (!TReader::isValid())
+                return 0;
+
             unsigned char i;
             for (i = 1; i < sizeof...(LEVELS) - 1; i++)
                 if (in_between(value, this->levels[i - 1] + this->levels[i], this->levels[i] + this->levels[i + 1]))

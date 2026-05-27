@@ -62,6 +62,7 @@
 
 ## i
 
+* **isValid** ([**eva::AnalogPinReader**](classeva_1_1_analog_pin_reader.md), [**eva::DigitalPinReader**](classeva_1_1_digital_pin_reader.md), [**eva::IReader**](classeva_1_1_i_reader.md), [**eva::IReaderAdapter**](classeva_1_1_i_reader_adapter.md))
 * **Indicator** ([**eva::BlinkingIndicator**](classeva_1_1_blinking_indicator.md), [**eva::Indicator**](classeva_1_1_indicator.md))
 * **invoke** ([**eva::BlinkingIndicator**](classeva_1_1_blinking_indicator.md), [**eva::CountdownIndicator**](classeva_1_1_countdown_indicator.md), [**eva::Handler**](classeva_1_1_handler.md), [**eva::HandlerF**](classeva_1_1_handler_f.md), [**eva::IHandler**](classeva_1_1_i_handler.md))
 * **isRunning** ([**eva::DelayTimer**](classeva_1_1_delay_timer.md))

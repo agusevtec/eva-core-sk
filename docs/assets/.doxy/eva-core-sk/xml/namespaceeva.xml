@@ -1,33 +1,33 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
   <compounddef id="namespaceeva" kind="namespace" language="C++">
     <compoundname>eva</compoundname>
+    <innerclass refid="classeva_1_1_analog_pin_reader" prot="public">eva::AnalogPinReader</innerclass>
+    <innerclass refid="classeva_1_1_binarize_eq_decor" prot="public">eva::BinarizeEqDecor</innerclass>
+    <innerclass refid="classeva_1_1_binarize_gt_decor" prot="public">eva::BinarizeGtDecor</innerclass>
+    <innerclass refid="classeva_1_1_binarize_lt_decor" prot="public">eva::BinarizeLtDecor</innerclass>
     <innerclass refid="classeva_1_1_blinking_indicator" prot="public">eva::BlinkingIndicator</innerclass>
     <innerclass refid="classeva_1_1_button" prot="public">eva::Button</innerclass>
+    <innerclass refid="structeva_1_1_callback_info" prot="public">eva::CallbackInfo</innerclass>
     <innerclass refid="classeva_1_1_countdown_indicator" prot="public">eva::CountdownIndicator</innerclass>
     <innerclass refid="classeva_1_1_countdown_timer" prot="public">eva::CountdownTimer</innerclass>
+    <innerclass refid="classeva_1_1_debounce_decor" prot="public">eva::DebounceDecor</innerclass>
     <innerclass refid="classeva_1_1_delay_timer" prot="public">eva::DelayTimer</innerclass>
-    <innerclass refid="structeva_1_1_callback_info" prot="public">eva::CallbackInfo</innerclass>
-    <innerclass refid="classeva_1_1_i_handler" prot="public">eva::IHandler</innerclass>
+    <innerclass refid="classeva_1_1_digital_pin_reader" prot="public">eva::DigitalPinReader</innerclass>
     <innerclass refid="classeva_1_1_handler" prot="public">eva::Handler</innerclass>
     <innerclass refid="classeva_1_1_handler_f" prot="public">eva::HandlerF</innerclass>
     <innerclass refid="classeva_1_1_heartbeat" prot="public">eva::Heartbeat</innerclass>
+    <innerclass refid="classeva_1_1_i_handler" prot="public">eva::IHandler</innerclass>
     <innerclass refid="classeva_1_1_indicator" prot="public">eva::Indicator</innerclass>
     <innerclass refid="classeva_1_1_i_reader" prot="public">eva::IReader</innerclass>
     <innerclass refid="classeva_1_1_i_reader_adapter" prot="public">eva::IReaderAdapter</innerclass>
     <innerclass refid="classeva_1_1_joystick" prot="public">eva::Joystick</innerclass>
-    <innerclass refid="structeva_1_1_list_iterator" prot="public">eva::ListIterator</innerclass>
     <innerclass refid="classeva_1_1_list" prot="public">eva::List</innerclass>
-    <innerclass refid="classeva_1_1_debounce_decor" prot="public">eva::DebounceDecor</innerclass>
-    <innerclass refid="classeva_1_1_binarize_eq_decor" prot="public">eva::BinarizeEqDecor</innerclass>
-    <innerclass refid="classeva_1_1_binarize_lt_decor" prot="public">eva::BinarizeLtDecor</innerclass>
-    <innerclass refid="classeva_1_1_binarize_gt_decor" prot="public">eva::BinarizeGtDecor</innerclass>
+    <innerclass refid="structeva_1_1_list_iterator" prot="public">eva::ListIterator</innerclass>
     <innerclass refid="classeva_1_1_quantize_decor" prot="public">eva::QuantizeDecor</innerclass>
     <innerclass refid="classeva_1_1_repeat_timer" prot="public">eva::RepeatTimer</innerclass>
     <innerclass refid="classeva_1_1_scroll_button" prot="public">eva::ScrollButton</innerclass>
     <innerclass refid="classeva_1_1_slider" prot="public">eva::Slider</innerclass>
-    <innerclass refid="classeva_1_1_digital_pin_reader" prot="public">eva::DigitalPinReader</innerclass>
-    <innerclass refid="classeva_1_1_analog_pin_reader" prot="public">eva::AnalogPinReader</innerclass>
     <innerclass refid="classeva_1_1_switch" prot="public">eva::Switch</innerclass>
     <innerclass refid="classeva_1_1_tickable" prot="public">eva::Tickable</innerclass>
     <sectiondef kind="typedef">
@@ -94,7 +94,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaButton.h" line="112" column="5" bodyfile="src/evaButton.h" bodystart="112" bodyend="-1"/>
+        <location file="src/evaButton.h" line="113" column="5" bodyfile="src/evaButton.h" bodystart="113" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="eva_button_8h_1af0470e4348fcbc1a90067de858e2645a" prot="public" static="no">
         <templateparamlist>
@@ -132,7 +132,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaButton.h" line="126" column="5" bodyfile="src/evaButton.h" bodystart="126" bodyend="-1"/>
+        <location file="src/evaButton.h" line="127" column="5" bodyfile="src/evaButton.h" bodystart="127" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="eva_button_8h_1a33789c899363a430ee9f03633bd6ded5" prot="public" static="no">
         <templateparamlist>
@@ -200,7 +200,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaButton.h" line="154" column="5" bodyfile="src/evaButton.h" bodystart="154" bodyend="-1"/>
+        <location file="src/evaButton.h" line="155" column="5" bodyfile="src/evaButton.h" bodystart="155" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="eva_joystick_8h_1a053c0b1754d79dcdedef9243ff883270" prot="public" static="no">
         <templateparamlist>
@@ -420,7 +420,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaScrollButton.h" line="107" column="5" bodyfile="src/evaScrollButton.h" bodystart="107" bodyend="-1"/>
+        <location file="src/evaScrollButton.h" line="108" column="5" bodyfile="src/evaScrollButton.h" bodystart="108" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="eva_scroll_button_8h_1a69eba75d65f6c0fe72df3a5ac95c46c7" prot="public" static="no">
         <templateparamlist>
@@ -458,7 +458,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaScrollButton.h" line="121" column="5" bodyfile="src/evaScrollButton.h" bodystart="121" bodyend="-1"/>
+        <location file="src/evaScrollButton.h" line="122" column="5" bodyfile="src/evaScrollButton.h" bodystart="122" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="eva_scroll_button_8h_1ad9ac3213dc6362f2e4d121f3c9673885" prot="public" static="no">
         <templateparamlist>
@@ -526,7 +526,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaScrollButton.h" line="149" column="5" bodyfile="src/evaScrollButton.h" bodystart="149" bodyend="-1"/>
+        <location file="src/evaScrollButton.h" line="150" column="5" bodyfile="src/evaScrollButton.h" bodystart="150" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="eva_slider_8h_1aec8dd6405eda9c9c2b58e1c31dd8f414" prot="public" static="no">
         <templateparamlist>
@@ -661,7 +661,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaSwitch.h" line="181" column="5" bodyfile="src/evaSwitch.h" bodystart="181" bodyend="-1"/>
+        <location file="src/evaSwitch.h" line="187" column="5" bodyfile="src/evaSwitch.h" bodystart="187" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="eva_switch_8h_1a69f7de1ebb1e7c1b70aa7d7dc11cdec5" prot="public" static="no">
         <templateparamlist>
@@ -698,7 +698,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaSwitch.h" line="193" column="5" bodyfile="src/evaSwitch.h" bodystart="193" bodyend="-1"/>
+        <location file="src/evaSwitch.h" line="199" column="5" bodyfile="src/evaSwitch.h" bodystart="199" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="eva_switch_8h_1a8b934afbd3db64bad1e3375047507193" prot="public" static="no">
         <templateparamlist>
@@ -763,7 +763,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaSwitch.h" line="216" column="5" bodyfile="src/evaSwitch.h" bodystart="216" bodyend="-1"/>
+        <location file="src/evaSwitch.h" line="222" column="5" bodyfile="src/evaSwitch.h" bodystart="222" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="var">

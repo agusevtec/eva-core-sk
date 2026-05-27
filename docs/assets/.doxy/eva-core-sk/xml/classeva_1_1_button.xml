@@ -1,19 +1,19 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
   <compounddef id="classeva_1_1_button" kind="class" language="C++" prot="public">
     <compoundname>eva::Button</compoundname>
-    <basecompoundref refid="classeva_1_1_switch" prot="public" virt="non-virtual">eva::Switch&lt; READER &gt;</basecompoundref>
-    <derivedcompoundref refid="classeva_1_1_scroll_button" prot="public" virt="non-virtual">eva::ScrollButton&lt; READER &gt;</derivedcompoundref>
+    <basecompoundref refid="classeva_1_1_switch" prot="public" virt="non-virtual">eva::Switch&lt; TReader &gt;</basecompoundref>
+    <derivedcompoundref refid="classeva_1_1_scroll_button" prot="public" virt="non-virtual">eva::ScrollButton&lt; TReader &gt;</derivedcompoundref>
     <includes refid="eva_button_8h" local="no">evaButton.h</includes>
     <templateparamlist>
       <param>
-        <type>class READER</type>
+        <type>class TReader</type>
       </param>
     </templateparamlist>
     <sectiondef kind="protected-attrib">
-      <memberdef kind="variable" id="classeva_1_1_button_1a3d2aa61b3ce3991af47071a4ee5cc94f" prot="protected" static="no" mutable="no">
+      <memberdef kind="variable" id="classeva_1_1_button_1ac625c9cd7defb90bffb73433d31bf187" prot="protected" static="no" mutable="no">
         <type>unsigned long</type>
-        <definition>unsigned long eva::Button&lt; READER &gt;::pressTime</definition>
+        <definition>unsigned long eva::Button&lt; TReader &gt;::pressTime</definition>
         <argsstring></argsstring>
         <name>pressTime</name>
         <qualifiedname>eva::Button::pressTime</qualifiedname>
@@ -24,13 +24,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaButton.h" line="94" column="23" bodyfile="src/evaButton.h" bodystart="94" bodyend="-1"/>
+        <location file="src/evaButton.h" line="95" column="23" bodyfile="src/evaButton.h" bodystart="95" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="protected-func">
-      <memberdef kind="function" id="classeva_1_1_button_1a0d5940eb3994633ca7487d540db1a949" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classeva_1_1_button_1a1ba6399c323cbe75c2f60561b3b73d4b" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
-        <definition>bool eva::Button&lt; READER &gt;::checkLongPress</definition>
+        <definition>bool eva::Button&lt; TReader &gt;::checkLongPress</definition>
         <argsstring>(unsigned long now)</argsstring>
         <name>checkLongPress</name>
         <qualifiedname>eva::Button::checkLongPress</qualifiedname>
@@ -46,9 +46,9 @@
         </inbodydescription>
         <location file="src/evaButton.h" line="44" column="14" bodyfile="src/evaButton.h" bodystart="44" bodyend="47"/>
       </memberdef>
-      <memberdef kind="function" id="classeva_1_1_button_1af5127a62e48fda066544300d8980efc9" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classeva_1_1_button_1a4e1918442a4d051c6f58b12113816da5" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
-        <definition>void eva::Button&lt; READER &gt;::handleLongPress</definition>
+        <definition>void eva::Button&lt; TReader &gt;::handleLongPress</definition>
         <argsstring>()</argsstring>
         <name>handleLongPress</name>
         <qualifiedname>eva::Button::handleLongPress</qualifiedname>
@@ -60,9 +60,9 @@
         </inbodydescription>
         <location file="src/evaButton.h" line="49" column="14" bodyfile="src/evaButton.h" bodystart="49" bodyend="53"/>
       </memberdef>
-      <memberdef kind="function" id="classeva_1_1_button_1a46ad3c53815c0fb1a5b646c56f3aafc0" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classeva_1_1_button_1a5c33f38750a43b0109d5274488866b8d" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
-        <definition>void eva::Button&lt; READER &gt;::handleDeactivating</definition>
+        <definition>void eva::Button&lt; TReader &gt;::handleDeactivating</definition>
         <argsstring>(unsigned char wasLevelCode, unsigned long now)</argsstring>
         <name>handleDeactivating</name>
         <qualifiedname>eva::Button::handleDeactivating</qualifiedname>
@@ -82,9 +82,9 @@
         </inbodydescription>
         <location file="src/evaButton.h" line="55" column="14" bodyfile="src/evaButton.h" bodystart="55" bodyend="61"/>
       </memberdef>
-      <memberdef kind="function" id="classeva_1_1_button_1af55a289d104d1232d1ce778d06a5c1d0" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classeva_1_1_button_1a4dcf94c7a83f4956c307902cc7003f67" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
-        <definition>void eva::Button&lt; READER &gt;::handleActivating</definition>
+        <definition>void eva::Button&lt; TReader &gt;::handleActivating</definition>
         <argsstring>(unsigned long now)</argsstring>
         <name>handleActivating</name>
         <qualifiedname>eva::Button::handleActivating</qualifiedname>
@@ -102,23 +102,23 @@
       </memberdef>
     </sectiondef>
     <sectiondef kind="private-func">
-      <memberdef kind="function" id="classeva_1_1_button_1a5b6706381ba6ff94e445a41889bf2c48" prot="private" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+      <memberdef kind="function" id="classeva_1_1_button_1abebc2853c7518655d6938a20062c4533" prot="private" static="no" const="no" explicit="no" inline="yes" virt="virtual">
         <type>void</type>
-        <definition>void eva::Button&lt; READER &gt;::tick</definition>
+        <definition>void eva::Button&lt; TReader &gt;::tick</definition>
         <argsstring>() override</argsstring>
         <name>tick</name>
         <qualifiedname>eva::Button::tick</qualifiedname>
         <reimplements refid="classeva_1_1_tickable_1ac7bb568a397ac2147fd6e292d2846ba6">tick</reimplements>
-        <reimplementedby refid="classeva_1_1_scroll_button_1a38ce62deaaced541a8a13394e59af012">tick</reimplementedby>
-        <reimplementedby refid="classeva_1_1_scroll_button_1a38ce62deaaced541a8a13394e59af012">tick</reimplementedby>
-        <reimplementedby refid="classeva_1_1_scroll_button_1a38ce62deaaced541a8a13394e59af012">tick</reimplementedby>
+        <reimplementedby refid="classeva_1_1_scroll_button_1aceea17c62f1d6e8503cd9890b726bd77">tick</reimplementedby>
+        <reimplementedby refid="classeva_1_1_scroll_button_1aceea17c62f1d6e8503cd9890b726bd77">tick</reimplementedby>
+        <reimplementedby refid="classeva_1_1_scroll_button_1aceea17c62f1d6e8503cd9890b726bd77">tick</reimplementedby>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaButton.h" line="71" column="14" bodyfile="src/evaButton.h" bodystart="71" bodyend="91"/>
+        <location file="src/evaButton.h" line="71" column="14" bodyfile="src/evaButton.h" bodystart="71" bodyend="92"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -135,7 +135,7 @@
 <para>Long click threshold is fixed at 750ms.</para>
 <para><parameterlist kind="templateparam"><parameteritem>
 <parameternamelist>
-<parametername>READER</parametername>
+<parametername>TReader</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>Input reader type that returns numeric codes (0 = no button, &gt;0 = button identifier)</para>
@@ -154,22 +154,22 @@
     </detaileddescription>
     <inheritancegraph>
       <node id="3">
-        <label>READER</label>
+        <label>TReader</label>
       </node>
       <node id="1">
-        <label>eva::Button&lt; READER &gt;</label>
+        <label>eva::Button&lt; TReader &gt;</label>
         <link refid="classeva_1_1_button"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
       <node id="5">
-        <label>eva::ScrollButton&lt; READER &gt;</label>
+        <label>eva::ScrollButton&lt; TReader &gt;</label>
         <link refid="classeva_1_1_scroll_button"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
       <node id="2">
-        <label>eva::Switch&lt; READER &gt;</label>
+        <label>eva::Switch&lt; TReader &gt;</label>
         <link refid="classeva_1_1_switch"/>
         <childnode refid="3" relation="public-inheritance">
         </childnode>
@@ -183,10 +183,10 @@
     </inheritancegraph>
     <collaborationgraph>
       <node id="3">
-        <label>READER</label>
+        <label>TReader</label>
       </node>
       <node id="1">
-        <label>eva::Button&lt; READER &gt;</label>
+        <label>eva::Button&lt; TReader &gt;</label>
         <link refid="classeva_1_1_button"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
@@ -196,7 +196,7 @@
         <link refid="classeva_1_1_i_handler"/>
       </node>
       <node id="2">
-        <label>eva::Switch&lt; READER &gt;</label>
+        <label>eva::Switch&lt; TReader &gt;</label>
         <link refid="classeva_1_1_switch"/>
         <childnode refid="3" relation="public-inheritance">
         </childnode>
@@ -211,36 +211,36 @@
         <link refid="classeva_1_1_tickable"/>
       </node>
     </collaborationgraph>
-    <location file="src/evaButton.h" line="38" column="5" bodyfile="src/evaButton.h" bodystart="39" bodyend="95"/>
+    <location file="src/evaButton.h" line="38" column="5" bodyfile="src/evaButton.h" bodystart="39" bodyend="96"/>
     <listofallmembers>
-      <member refid="classeva_1_1_switch_1a60b259c79db04ab3d39eb12300950663" prot="protected" virt="non-virtual"><scope>eva::Button</scope><name>checkActivating</name></member>
-      <member refid="classeva_1_1_switch_1a1fd197ddd39785ed538298ac5d90bf9d" prot="protected" virt="non-virtual"><scope>eva::Button</scope><name>checkChanging</name></member>
-      <member refid="classeva_1_1_switch_1abd7e6c9d94b8b015dce282ef1b8ed4db" prot="protected" virt="non-virtual"><scope>eva::Button</scope><name>checkDeactivating</name></member>
-      <member refid="classeva_1_1_button_1a0d5940eb3994633ca7487d540db1a949" prot="protected" virt="non-virtual"><scope>eva::Button</scope><name>checkLongPress</name></member>
-      <member refid="classeva_1_1_switch_1a7c219494c63d04c510b2520d762d0a7b" prot="protected" virt="non-virtual"><scope>eva::Button</scope><name>curiosity</name></member>
-      <member refid="classeva_1_1_switch_1a453e44d5f0f0678f0d8ac63c3049ebaa" prot="public" virt="non-virtual"><scope>eva::Button</scope><name>enable</name></member>
-      <member refid="classeva_1_1_switch_1af39a84a03462bc07f361bc1b11d6a4ad" prot="public" virt="non-virtual"><scope>eva::Button</scope><name>getValue</name></member>
-      <member refid="classeva_1_1_button_1af55a289d104d1232d1ce778d06a5c1d0" prot="protected" virt="non-virtual"><scope>eva::Button</scope><name>handleActivating</name></member>
-      <member refid="classeva_1_1_switch_1a8042847e08e291edb8551a0ccb32410a" prot="protected" virt="non-virtual" ambiguityscope="eva::Switch::"><scope>eva::Button</scope><name>handleActivating</name></member>
-      <member refid="classeva_1_1_switch_1a7ef0dfef929f647c76f2e29ab30f8255" prot="protected" virt="non-virtual"><scope>eva::Button</scope><name>handleChanging</name></member>
-      <member refid="classeva_1_1_button_1a46ad3c53815c0fb1a5b646c56f3aafc0" prot="protected" virt="non-virtual"><scope>eva::Button</scope><name>handleDeactivating</name></member>
-      <member refid="classeva_1_1_switch_1a39fc8078d9881aba45ace8a1b856ee48" prot="protected" virt="non-virtual" ambiguityscope="eva::Switch::"><scope>eva::Button</scope><name>handleDeactivating</name></member>
-      <member refid="classeva_1_1_button_1af5127a62e48fda066544300d8980efc9" prot="protected" virt="non-virtual"><scope>eva::Button</scope><name>handleLongPress</name></member>
-      <member refid="classeva_1_1_switch_1a3ab8ea29fbe7597e51ec36d8551ced3b" prot="protected" virt="non-virtual"><scope>eva::Button</scope><name>levelCode</name></member>
-      <member refid="classeva_1_1_switch_1a37672eb95c86d0b8311bd778655e87ba" prot="protected" virt="non-virtual"><scope>eva::Button</scope><name>listener</name></member>
-      <member refid="classeva_1_1_switch_1aa1fb0a62fa105cb2a2de78bbaa950292" prot="protected" virt="non-virtual"><scope>eva::Button</scope><name>notify</name></member>
+      <member refid="classeva_1_1_switch_1a71459e60a1940789d1ecd5bd41221a87" prot="protected" virt="non-virtual"><scope>eva::Button</scope><name>checkActivating</name></member>
+      <member refid="classeva_1_1_switch_1ae6d5bb9161ffc5212040b91fefa8a02d" prot="protected" virt="non-virtual"><scope>eva::Button</scope><name>checkChanging</name></member>
+      <member refid="classeva_1_1_switch_1a75504f0b1b48773fd8573028128873bb" prot="protected" virt="non-virtual"><scope>eva::Button</scope><name>checkDeactivating</name></member>
+      <member refid="classeva_1_1_button_1a1ba6399c323cbe75c2f60561b3b73d4b" prot="protected" virt="non-virtual"><scope>eva::Button</scope><name>checkLongPress</name></member>
+      <member refid="classeva_1_1_switch_1a436ea08c5357cfcfe7cf1c3322b5b8bf" prot="protected" virt="non-virtual"><scope>eva::Button</scope><name>curiosity</name></member>
+      <member refid="classeva_1_1_switch_1a8a890d15c86a9ecf55faf80de5f67877" prot="public" virt="non-virtual"><scope>eva::Button</scope><name>enable</name></member>
+      <member refid="classeva_1_1_switch_1a7d28a44500d18d6b7778706aa6b002bd" prot="public" virt="non-virtual"><scope>eva::Button</scope><name>getValue</name></member>
+      <member refid="classeva_1_1_button_1a4dcf94c7a83f4956c307902cc7003f67" prot="protected" virt="non-virtual"><scope>eva::Button</scope><name>handleActivating</name></member>
+      <member refid="classeva_1_1_switch_1aff9730bfc3bf6699116a301c81882bcd" prot="protected" virt="non-virtual" ambiguityscope="eva::Switch::"><scope>eva::Button</scope><name>handleActivating</name></member>
+      <member refid="classeva_1_1_switch_1ad03a1013196c31922f33a97222d30e86" prot="protected" virt="non-virtual"><scope>eva::Button</scope><name>handleChanging</name></member>
+      <member refid="classeva_1_1_button_1a5c33f38750a43b0109d5274488866b8d" prot="protected" virt="non-virtual"><scope>eva::Button</scope><name>handleDeactivating</name></member>
+      <member refid="classeva_1_1_switch_1a331fac6d20254dd52ba6fcdaae21476a" prot="protected" virt="non-virtual" ambiguityscope="eva::Switch::"><scope>eva::Button</scope><name>handleDeactivating</name></member>
+      <member refid="classeva_1_1_button_1a4e1918442a4d051c6f58b12113816da5" prot="protected" virt="non-virtual"><scope>eva::Button</scope><name>handleLongPress</name></member>
+      <member refid="classeva_1_1_switch_1a66e734b4df3d25b9d2dc1d0dbec7a3ca" prot="protected" virt="non-virtual"><scope>eva::Button</scope><name>levelCode</name></member>
+      <member refid="classeva_1_1_switch_1a46d55c4fe417cad51ba4843ff396416d" prot="protected" virt="non-virtual"><scope>eva::Button</scope><name>listener</name></member>
+      <member refid="classeva_1_1_switch_1ac8818376d9edd1f16afc5ce672c5d05b" prot="protected" virt="non-virtual"><scope>eva::Button</scope><name>notify</name></member>
       <member refid="classeva_1_1_tickable_1a865abbef0ee038e0db5eff81747949e7" prot="public" virt="non-virtual"><scope>eva::Button</scope><name>operator=</name></member>
       <member refid="classeva_1_1_tickable_1a698d78c5c54122f25b42080e001561d2" prot="public" virt="non-virtual"><scope>eva::Button</scope><name>operator=</name></member>
-      <member refid="classeva_1_1_button_1a3d2aa61b3ce3991af47071a4ee5cc94f" prot="protected" virt="non-virtual"><scope>eva::Button</scope><name>pressTime</name></member>
-      <member refid="classeva_1_1_switch_1a1e58d00667fc3558f7747e46bf2ded46" prot="public" virt="non-virtual"><scope>eva::Button</scope><name>setListener</name></member>
-      <member refid="classeva_1_1_switch_1a7fee637f0ad36be86dac83b9c6b6083b" prot="public" virt="non-virtual"><scope>eva::Button</scope><name>Switch</name></member>
-      <member refid="classeva_1_1_switch_1aad39fa0b2f7181ab6855ee4b0edc944e" prot="public" virt="non-virtual"><scope>eva::Button</scope><name>Switch</name></member>
+      <member refid="classeva_1_1_button_1ac625c9cd7defb90bffb73433d31bf187" prot="protected" virt="non-virtual"><scope>eva::Button</scope><name>pressTime</name></member>
+      <member refid="classeva_1_1_switch_1abf4edaea5d55ec6434a628566a91ca73" prot="public" virt="non-virtual"><scope>eva::Button</scope><name>setListener</name></member>
+      <member refid="classeva_1_1_switch_1aa6d89e5d51856f964db04768dcf74de8" prot="public" virt="non-virtual"><scope>eva::Button</scope><name>Switch</name></member>
+      <member refid="classeva_1_1_switch_1a995c8430f59508048ba47ee722f7f2a4" prot="public" virt="non-virtual"><scope>eva::Button</scope><name>Switch</name></member>
       <member refid="classeva_1_1_tickable_1aa59c892bc8901a7840e5af7e431a15a3" prot="public" virt="non-virtual"><scope>eva::Button</scope><name>tac</name></member>
-      <member refid="classeva_1_1_button_1a5b6706381ba6ff94e445a41889bf2c48" prot="private" virt="virtual"><scope>eva::Button</scope><name>tick</name></member>
+      <member refid="classeva_1_1_button_1abebc2853c7518655d6938a20062c4533" prot="private" virt="virtual"><scope>eva::Button</scope><name>tick</name></member>
       <member refid="classeva_1_1_tickable_1a667f47cdee5f03eed323cebb27e8ab8e" prot="public" virt="non-virtual"><scope>eva::Button</scope><name>Tickable</name></member>
       <member refid="classeva_1_1_tickable_1aa8efa54edd7140587548e7973de356df" prot="public" virt="non-virtual"><scope>eva::Button</scope><name>Tickable</name></member>
       <member refid="classeva_1_1_tickable_1a80af7d23456d2e0bec8a2c6b8f9f8f10" prot="public" virt="non-virtual"><scope>eva::Button</scope><name>Tickable</name></member>
-      <member refid="classeva_1_1_switch_1afd52bbbe14228dba1733f8d3b4620f26" prot="protected" virt="non-virtual"><scope>eva::Button</scope><name>updateState</name></member>
+      <member refid="classeva_1_1_switch_1afcb704c824ee0ce1415fc183d84983e0" prot="protected" virt="non-virtual"><scope>eva::Button</scope><name>updateState</name></member>
       <member refid="classeva_1_1_tickable_1a6b6ff95372ce0b94618029e05ed2b50a" prot="public" virt="virtual"><scope>eva::Button</scope><name>~Tickable</name></member>
     </listofallmembers>
   </compounddef>

@@ -2,7 +2,7 @@
 
 # Class eva::Slider
 
-**template &lt;class READER, unsigned short MIN\_POS, unsigned short MAX\_POS&gt;**
+**template &lt;class TReader, unsigned short MIN\_POS, unsigned short MAX\_POS&gt;**
 
 
 
@@ -16,7 +16,7 @@ _Maps analog readings to 1000-2000 range._
 
 
 
-Inherits the following classes: READER
+Inherits the following classes: TReader
 
 
 
