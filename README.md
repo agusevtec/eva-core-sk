@@ -90,10 +90,12 @@ Full documentation is available at **[https://agusevtec.github.io/eva-core-sk](h
 
 ## Ecosystem
 
-EVA is growing. Future modules include:
-- `Boxy` GUI / windowing library
-- `Frequency meter` frequency measurement
-- `Motor drivers` motor drivers
+Currently, there is only one other project within the ecosystem:
+- `Motor drivers` – micro-motor drivers: https://github.com/agusevtec/eva-motors
+
+But EVA is growing. Future modules will include:
+- `Boxy` – GUI / windowing library
+- `Frequency meter` – frequency measurement
 
 **Want to make your library part of the ecosystem?** [Read the invitation](https://agusevtec.github.io/eva-core-sk/ecosystem/invitation)
 
