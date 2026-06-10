@@ -55,7 +55,6 @@ namespace eva
         void handleDeactivating(unsigned char wasLevelCode, unsigned long now)
         {
             Switch<TReader>::handleDeactivating(wasLevelCode);
-            Serial.println("Wow!");
             this->notify((pressTime > 0) ? ON_SHORTCLICK : ON_LONGCLICK, wasLevelCode);
             this->pressTime = 0;
         }
