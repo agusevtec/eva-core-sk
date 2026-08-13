@@ -14,15 +14,16 @@ It implements—and in fact defines—a concept: Extremely Versatile Architectur
 using namespace eva;
 
 class App {
-  PullUpButton<3> button = { new Handler<App>(this, &App::onButtonClick), ON_SHORTCLICK };
-  CountdownTimer countdownTimer = { new Handler<App>(this, &App::onTimerTick) };
+  PullUpButton<3> button = { &onButtonClickHandler, ON_SHORTCLICK };
+  CountdownTimer countdownTimer = { &onTimerTickHandler };
 
+  Handler<App> onButtonClickHandler{ this, &App::onButtonClick };
   void onButtonClick(void* sender, CallbackInfo cbInfo) {
     Serial.println("Button clicked!");
     if (!countdownTimer.isRunning())
       countdownTimer.start(1000, 5);
   }
-
+  Handler<App> onTimerTickHandler{ this, &App::onTimerTick };
   void onTimerTick(void* sender, CallbackInfo cbInfo) {
     Serial.println("Countdown!");
   }
