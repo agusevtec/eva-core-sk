@@ -1,4 +1,4 @@
-# EVA Core | EVA survival kit (eva-core-sk)
+# EVA Core | EVA Survival Kit (eva-core-sk)
 
 A library providing the architectural core with essential components for event-driven Arduino applications.
 
