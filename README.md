@@ -14,8 +14,8 @@ It implements—and in fact defines—a concept: Extremely Versatile Architectur
 using namespace eva;
 
 class App {
-  PullUpButton<3> button { &onButtonClickHandler, ON_SHORTCLICK };
-  CountdownTimer countdownTimer { &onTimerTickHandler };
+  PullUpButton<3> button{ &onButtonClickHandler, ON_SHORTCLICK };
+  CountdownTimer countdownTimer{ &onTimerTickHandler };
 
   Handler<App> onButtonClickHandler{ this, &App::onButtonClick };
   void onButtonClick(void* sender, CallbackInfo cbInfo) {
