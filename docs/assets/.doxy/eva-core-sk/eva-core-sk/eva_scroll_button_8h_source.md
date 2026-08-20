@@ -29,7 +29,7 @@ namespace eva
         {
             Button<TReader>::handleLongPress();
             this->notify(ON_REPEATKEY, this->levelCode);
-            this->lastRepeatTime = max(1, now);
+            this->lastRepeatTime = max((unsigned long)1, now);
         }
 
         void handleDeactivating(unsigned char wasLevelCode, unsigned long now)
@@ -46,7 +46,7 @@ namespace eva
         void handleRepeatTime(unsigned long now)
         {
             this->notify(ON_REPEATKEY, this->levelCode);
-            this->lastRepeatTime = max(1, now);
+            this->lastRepeatTime = max((unsigned long)1, now);
         }
 
     private:
@@ -57,13 +57,13 @@ namespace eva
 
             unsigned long now = millis();
             unsigned char wasLevelCode = this->levelCode;
-            if (!updateState())
+            if (!this->updateState())
                 return;
                 
             if (this->checkChanging(wasLevelCode))
                 this->handleChanging();
 
-            if (checkLongPress(now))
+            if (this->checkLongPress(now))
                 handleLongPress(now);
 
             if (checkRepeatTime(now))

@@ -29,7 +29,7 @@ namespace eva
     protected:
         bool checkLongPress(unsigned long now)
         {
-           return this->pressTime && (now - this->pressTime) > LONGPRESS_DELAY; 
+            return this->pressTime && (now - this->pressTime) > LONGPRESS_DELAY;
         }
 
         void handleLongPress()
@@ -41,8 +41,7 @@ namespace eva
         void handleDeactivating(unsigned char wasLevelCode, unsigned long now)
         {
             Switch<TReader>::handleDeactivating(wasLevelCode);
-            if (this->pressTime)
-                this->notify(((now - this->pressTime) <= LONGPRESS_DELAY) ? ON_SHORTCLICK : ON_LONGCLICK, wasLevelCode);
+            this->notify((pressTime > 0) ? ON_SHORTCLICK : ON_LONGCLICK, wasLevelCode);
             this->pressTime = 0;
         }
 
@@ -51,7 +50,6 @@ namespace eva
             Switch<TReader>::handleActivating();
             this->pressTime = now;
         }
-
 
     private:
         void tick() override
@@ -90,7 +88,6 @@ namespace eva
     template <int PIN, int PIN_MODE, signed short... LEVELS>
     using PinMultiButton = Button<QuantizeDecor<DebounceDecor<AnalogPinReader<PIN, PIN_MODE>>, LEVELS...>>;
 }
-
 ```
 
 
