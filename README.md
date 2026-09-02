@@ -24,7 +24,7 @@ class App {
       countdownTimer.start(1000, 5);
   }
 
-  Handler<App> onTimerTickHandler{ this, &App::onTimerTick };
+  Handler<App> onTimerTickHandler{ this, &onTimerTick };
   void onTimerTick(void* sender, CallbackInfo cbInfo) {
     Serial.println("Countdown!");
   }
