@@ -2,7 +2,7 @@
 
 # Class eva::DigitalPinReader
 
-**template &lt;int PIN, int PIN\_MODE&gt;**
+**template &lt;int tPin, int tPinMode&gt;**
 
 
 
@@ -10,7 +10,7 @@
 
 
 
-_Reads digital pin value._ 
+_Reads digital pin value._ [More...](#detailed-description)
 
 * `#include <evaStdReaders.h>`
 
@@ -54,9 +54,9 @@ _Reads digital pin value._
 
 | Type | Name |
 | ---: | :--- |
-|   | [**DigitalPinReader**](#function-digitalpinreader) () <br> |
-|  signed short | [**getValue**](#function-getvalue) () <br> |
-|  bool | [**isValid**](#function-isvalid) () <br> |
+|   | [**DigitalPinReader**](#function-digitalpinreader) () <br>_Constructs a_ [_**DigitalPinReader**_](classeva_1_1_digital_pin_reader.md) _and configures pin mode._ |
+|  signed short | [**getValue**](#function-getvalue) () <br>_Reads digital pin value._  |
+|  bool | [**isValid**](#function-isvalid) () <br>_Checks if reader is valid._  |
 
 
 
@@ -85,6 +85,21 @@ _Reads digital pin value._
 
 
 
+## Detailed Description
+
+
+
+
+**Template parameters:**
+
+
+* `tPin` Arduino pin number 
+* `tPinMode` Pin mode (INPUT, INPUT\_PULLUP, etc.) 
+
+
+
+
+    
 ## Public Functions Documentation
 
 
@@ -92,6 +107,7 @@ _Reads digital pin value._
 
 ### function DigitalPinReader 
 
+_Constructs a_ [_**DigitalPinReader**_](classeva_1_1_digital_pin_reader.md) _and configures pin mode._
 ```C++
 inline eva::DigitalPinReader::DigitalPinReader () 
 ```
@@ -105,6 +121,7 @@ inline eva::DigitalPinReader::DigitalPinReader ()
 
 ### function getValue 
 
+_Reads digital pin value._ 
 ```C++
 inline signed short eva::DigitalPinReader::getValue () 
 ```
@@ -112,18 +129,41 @@ inline signed short eva::DigitalPinReader::getValue ()
 
 
 
+
+**Returns:**
+
+HIGH or LOW 
+
+
+
+
+
+        
+
 <hr>
 
 
 
 ### function isValid 
 
+_Checks if reader is valid._ 
 ```C++
 inline bool eva::DigitalPinReader::isValid () 
 ```
 
 
 
+
+
+**Returns:**
+
+Always true for digital pin reader 
+
+
+
+
+
+        
 
 <hr>
 

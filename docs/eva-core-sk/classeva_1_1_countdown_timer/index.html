@@ -849,7 +849,7 @@
 
 <h1 id="class-evacountdowntimer">Class eva::CountdownTimer<a class="headerlink" href="#class-evacountdowntimer" title="Permanent link">&para;</a></h1>
 <p><a href="../annotated/"><strong>ClassList</strong></a> <strong>&gt;</strong> <a href="../namespaceeva/"><strong>eva</strong></a> <strong>&gt;</strong> <a href="./"><strong>CountdownTimer</strong></a></p>
-<p><em>Timer that fires repeatedly at fixed intervals.</em> </p>
+<p><em>Timer that fires a specified number of times at fixed intervals.</em> </p>
 <ul>
 <li><code>#include &lt;evaCountdownTimer.h&gt;</code></li>
 </ul>
@@ -865,11 +865,11 @@
 <tbody>
 <tr>
 <td style="text-align: right;"></td>
-<td style="text-align: left;"><a href="#function-delaytimer-12"><strong>DelayTimer</strong></a> () <br></td>
+<td style="text-align: left;"><a href="#function-delaytimer-12"><strong>DelayTimer</strong></a> () <br><em>Constructs a</em> <a href="./"><em><strong>CountdownTimer</strong></em></a> <em>.</em></td>
 </tr>
 <tr>
 <td style="text-align: right;"></td>
-<td style="text-align: left;"><a href="#function-delaytimer-22"><strong>DelayTimer</strong></a> (<a href="../classeva_1_1_i_handler/"><strong>IHandler</strong></a> * listener) <br></td>
+<td style="text-align: left;"><a href="#function-delaytimer-22"><strong>DelayTimer</strong></a> (<a href="../classeva_1_1_i_handler/"><strong>IHandler</strong></a> * listener) <br><em>Constructs a</em> <a href="./"><em><strong>CountdownTimer</strong></em></a> <em>.</em></td>
 </tr>
 <tr>
 <td style="text-align: right;">unsigned char</td>
@@ -901,18 +901,18 @@
 <tbody>
 <tr>
 <td style="text-align: right;"></td>
-<td style="text-align: left;"><a href="../classeva_1_1_delay_timer/#function-delaytimer-12"><strong>DelayTimer</strong></a> () <br></td>
+<td style="text-align: left;"><a href="../classeva_1_1_delay_timer/#function-delaytimer-12"><strong>DelayTimer</strong></a> () <br><em>Constructs a</em> <a href="../classeva_1_1_delay_timer/"><em><strong>DelayTimer</strong></em></a> <em>with no listener.</em></td>
 </tr>
 <tr>
 <td style="text-align: right;"></td>
-<td style="text-align: left;"><a href="../classeva_1_1_delay_timer/#function-delaytimer-22"><strong>DelayTimer</strong></a> (<a href="../classeva_1_1_i_handler/"><strong>IHandler</strong></a> * listener) <br></td>
+<td style="text-align: left;"><a href="../classeva_1_1_delay_timer/#function-delaytimer-22"><strong>DelayTimer</strong></a> (<a href="../classeva_1_1_i_handler/"><strong>IHandler</strong></a> * listener) <br><em>Constructs a</em> <a href="../classeva_1_1_delay_timer/"><em><strong>DelayTimer</strong></em></a> <em>with a listener.</em></td>
 </tr>
 <tr>
 <td style="text-align: right;">bool</td>
 <td style="text-align: left;"><a href="../classeva_1_1_delay_timer/#function-isrunning"><strong>isRunning</strong></a> () <br><em>Checks if the timer is currently active.</em></td>
 </tr>
 <tr>
-<td style="text-align: right;">DelayTimer *</td>
+<td style="text-align: right;"><a href="../classeva_1_1_delay_timer/#function-delaytimer-12"><strong>DelayTimer</strong></a> *</td>
 <td style="text-align: left;"><a href="../classeva_1_1_delay_timer/#function-setlistener"><strong>setListener</strong></a> (<a href="../classeva_1_1_i_handler/"><strong>IHandler</strong></a> * listener) <br><em>Assigns or changes the event listener.</em></td>
 </tr>
 <tr>
@@ -1023,12 +1023,14 @@
 </table>
 <h2 id="public-functions-documentation">Public Functions Documentation<a class="headerlink" href="#public-functions-documentation" title="Permanent link">&para;</a></h2>
 <h3 id="function-delaytimer-12">function DelayTimer [1/2]<a class="headerlink" href="#function-delaytimer-12" title="Permanent link">&para;</a></h3>
+<p><em>Constructs a</em> <a href="./"><em><strong>CountdownTimer</strong></em></a> <em>.</em></p>
 <div class="codehilite"><pre><span></span><code><span class="n">eva</span><span class="o">::</span><span class="n">CountdownTimer</span><span class="o">::</span><span class="n">DelayTimer</span><span class="w"> </span><span class="p">()</span><span class="w"> </span>
 </code></pre></div>
 
 <hr>
 
 <h3 id="function-delaytimer-22">function DelayTimer [2/2]<a class="headerlink" href="#function-delaytimer-22" title="Permanent link">&para;</a></h3>
+<p><em>Constructs a</em> <a href="./"><em><strong>CountdownTimer</strong></em></a> <em>.</em></p>
 <div class="codehilite"><pre><span></span><code><span class="n">eva</span><span class="o">::</span><span class="n">CountdownTimer</span><span class="o">::</span><span class="n">DelayTimer</span><span class="w"> </span><span class="p">(</span>
 <span class="w">    </span><span class="n">IHandler</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">listener</span>
 <span class="p">)</span><span class="w"> </span>

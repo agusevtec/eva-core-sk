@@ -690,6 +690,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#detailed-description" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Description
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#public-functions-documentation" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -700,6 +711,17 @@
   
     <nav class="md-nav" aria-label="Public Functions Documentation">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function-binarizeeqdecor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        function BinarizeEqDecor
+      
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#function-getvalue" class="md-nav__link">
@@ -738,9 +760,9 @@
 
 
 <h1 id="class-evabinarizeeqdecor">Class eva::BinarizeEqDecor<a class="headerlink" href="#class-evabinarizeeqdecor" title="Permanent link">&para;</a></h1>
-<p><strong>template &lt;class TReader, int ACTIVATES_ON&gt;</strong></p>
+<p><strong>template &lt;class TReader, int tActivatesOn&gt;</strong></p>
 <p><a href="../annotated/"><strong>ClassList</strong></a> <strong>&gt;</strong> <a href="../namespaceeva/"><strong>eva</strong></a> <strong>&gt;</strong> <a href="./"><strong>BinarizeEqDecor</strong></a></p>
-<p><em>Decorator that converts reading to binary based on level.</em> </p>
+<p><em>Decorator that converts reading to binary based on level equality.</em> <a href="#detailed-description">More...</a></p>
 <ul>
 <li><code>#include &lt;evaReaderDecors.h&gt;</code></li>
 </ul>
@@ -756,16 +778,43 @@
 </thead>
 <tbody>
 <tr>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"><a href="#function-binarizeeqdecor"><strong>BinarizeEqDecor</strong></a> (Args... args) <br><em>Constructs a</em> <a href="./"><em><strong>BinarizeEqDecor</strong></em></a> <em>.</em></td>
+</tr>
+<tr>
 <td style="text-align: right;">signed short</td>
-<td style="text-align: left;"><a href="#function-getvalue"><strong>getValue</strong></a> () <br></td>
+<td style="text-align: left;"><a href="#function-getvalue"><strong>getValue</strong></a> () <br><em>Gets binary value based on equality check.</em></td>
 </tr>
 </tbody>
 </table>
+<h2 id="detailed-description">Detailed Description<a class="headerlink" href="#detailed-description" title="Permanent link">&para;</a></h2>
+<p><strong>Template parameters:</strong></p>
+<ul>
+<li><code>TReader</code> Underlying reader type </li>
+<li><code>tActivatesOn</code> Value that maps to active state (1) </li>
+</ul>
 <h2 id="public-functions-documentation">Public Functions Documentation<a class="headerlink" href="#public-functions-documentation" title="Permanent link">&para;</a></h2>
+<h3 id="function-binarizeeqdecor">function BinarizeEqDecor<a class="headerlink" href="#function-binarizeeqdecor" title="Permanent link">&para;</a></h3>
+<p><em>Constructs a</em> <a href="./"><em><strong>BinarizeEqDecor</strong></em></a> <em>.</em></p>
+<div class="codehilite"><pre><span></span><code><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span><span class="w"> </span><span class="n">Args</span><span class="o">&gt;</span>
+<span class="kr">inline</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">BinarizeEqDecor</span><span class="o">::</span><span class="n">BinarizeEqDecor</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="n">Args</span><span class="p">...</span><span class="w"> </span><span class="n">args</span>
+<span class="p">)</span><span class="w"> </span>
+</code></pre></div>
+
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>args</code> Additional arguments passed to TReader constructor </li>
+</ul>
+<hr>
+
 <h3 id="function-getvalue">function getValue<a class="headerlink" href="#function-getvalue" title="Permanent link">&para;</a></h3>
+<p><em>Gets binary value based on equality check.</em> </p>
 <div class="codehilite"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="kt">signed</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">BinarizeEqDecor</span><span class="o">::</span><span class="n">getValue</span><span class="w"> </span><span class="p">()</span><span class="w"> </span>
 </code></pre></div>
 
+<p><strong>Returns:</strong></p>
+<p>1 if value equals tActivatesOn, 0 otherwise </p>
 <hr>
 
 <hr />

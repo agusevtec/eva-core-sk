@@ -8,26 +8,24 @@
 
 
 ```C++
-#ifndef EVASTDREADERS_H
-#define EVASTDREADERS_H
-#include <Arduino.h>
-
 #pragma once
+
+#include <Arduino.h>
 
 namespace eva
 {
-    template <int PIN, int PIN_MODE>
+    template <int tPin, int tPinMode>
     class DigitalPinReader
     {
     public:
         DigitalPinReader()
         {
-            pinMode(PIN, PIN_MODE);
+            pinMode(tPin, tPinMode);
         }
 
         signed short getValue()
         {
-            return digitalRead(PIN);
+            return digitalRead(tPin);
         }
         bool isValid()
         {
@@ -35,27 +33,53 @@ namespace eva
         }
     };
 
-    template <int PIN, int PIN_MODE>
+    template <int tPin, int tPinMode>
     class AnalogPinReader
     {
     public:
         AnalogPinReader()
         {
-            pinMode(PIN, PIN_MODE);
+            pinMode(tPin, tPinMode);
         }
 
         signed short getValue()
         {
-            return analogRead(PIN);
+            return analogRead(tPin);
         }
+        
         bool isValid()
         {
             return true;
         }
     };
 
+    class AnalogMutablePinReader
+    {
+    public:
+        AnalogMutablePinReader(uint8_t aPin, uint8_t aMode);
+
+        signed short getValue();
+
+        bool isValid();
+
+    private:
+        uint8_t mPin;
+    };
+
+    class DigitalMutablePinReader
+    {
+    public:
+        DigitalMutablePinReader(uint8_t aPin, uint8_t aMode);
+
+        signed short getValue();
+
+        bool isValid();
+
+    private:
+        uint8_t mPin;
+    };
+
 };
-#endif
 ```
 
 

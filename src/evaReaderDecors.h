@@ -6,6 +6,13 @@ namespace eva
 {
     static const unsigned short DEBOUNCE_DELAY = 120;
 
+    /**
+     * @brief Checks if value x is between a and b (inclusive)
+     * @param x Value to check
+     * @param a Lower bound
+     * @param b Upper bound
+     * @return true if x is between a and b inclusive
+     */
     inline static bool in_between(signed short x, signed short a, signed short b)
     {
         if ((a <= b) && (a <= x) && (x <= b))
@@ -16,11 +23,24 @@ namespace eva
     }
     /**
      * @brief Decorator that stabilizes readings by requiring value to be stable for a period
+     * @tparam TReader Underlying reader type
      */
     template <class TReader>
     class DebounceDecor : public TReader
     {
     public:
+        /**
+         * @brief Constructs a DebounceDecor
+         * @param args Additional arguments passed to TReader constructor
+         */
+        template <typename... Args>
+        DebounceDecor(Args... args) : TReader(args...)
+        {
+        }
+        /**
+         * @brief Gets debounced value
+         * @return Stable reading after debounce period
+         */
         signed short getValue()
         {
             unsigned long now = millis();
@@ -46,25 +66,54 @@ namespace eva
     };
 
     /**
-     * @brief Decorator that converts reading to binary based on level
+     * @brief Decorator that converts reading to binary based on level equality
+     * @tparam TReader Underlying reader type
+     * @tparam tActivatesOn Value that maps to active state (1)
      */
-    template <class TReader, int ACTIVATES_ON>
+    template <class TReader, int tActivatesOn>
     class BinarizeEqDecor : public TReader
     {
     public:
+        /**
+         * @brief Constructs a BinarizeEqDecor
+         * @param args Additional arguments passed to TReader constructor
+         */
+        template <typename... Args>
+        BinarizeEqDecor(Args... args) : TReader(args...)
+        {
+        }
+
+        /**
+         * @brief Gets binary value based on equality check
+         * @return 1 if value equals tActivatesOn, 0 otherwise
+         */
         signed short getValue()
         {
-            return TReader::getValue() == ACTIVATES_ON;
+            return TReader::getValue() == tActivatesOn;
         }
     };
 
     /**
-     * @brief Decorator that converts analog reading to binary based on 'less then' threshold condition
+     * @brief Decorator that converts analog reading to binary based on 'less than' threshold condition
+     * @tparam TReader Underlying reader type
+     * @tparam THRESHOLD Threshold value
      */
     template <class TReader, int THRESHOLD>
     class BinarizeLtDecor : public TReader
     {
     public:
+        /**
+         * @brief Constructs a BinarizeLtDecor
+         * @param args Additional arguments passed to TReader constructor
+         */
+        template <typename... Args>
+        BinarizeLtDecor(Args... args) : TReader(args...)
+        {
+        }
+        /**
+         * @brief Gets binary value based on less than comparison
+         * @return 1 if value <= THRESHOLD, 0 otherwise
+         */
         signed short getValue()
         {
             if (TReader::getValue() <= THRESHOLD)
@@ -74,12 +123,26 @@ namespace eva
     };
 
     /**
-     * @brief Decorator that converts analog reading to binary based on 'greater then' threshold condition
+     * @brief Decorator that converts analog reading to binary based on 'greater than' threshold condition
+     * @tparam TReader Underlying reader type
+     * @tparam THRESHOLD Threshold value
      */
     template <class TReader, int THRESHOLD>
     class BinarizeGtDecor : public TReader
     {
     public:
+        /**
+         * @brief Constructs a BinarizeGtDecor
+         * @param args Additional arguments passed to TReader constructor
+         */
+        template <typename... Args>
+        BinarizeGtDecor(Args... args) : TReader(args...)
+        {
+        }
+        /**
+         * @brief Gets binary value based on greater than comparison
+         * @return 1 if value >= THRESHOLD, 0 otherwise
+         */
         signed short getValue()
         {
             if (TReader::getValue() >= THRESHOLD)
@@ -90,13 +153,23 @@ namespace eva
 
     /**
      * @brief Decorator that quantizes analog readings to discrete levels
+     * @tparam TReader Underlying reader type
+     * @tparam tLevels Threshold values for each level
      */
-    template <class TReader, signed short... LEVELS>
+    template <class TReader, signed short... tLevels>
     class QuantizeDecor : public TReader
     {
-        static_assert(sizeof...(LEVELS) >= 2, "QuantizeDecor requires at least 2 levels");
+        static_assert(sizeof...(tLevels) >= 2, "QuantizeDecor requires at least 2 levels");
 
     public:
+        /**
+         * @brief Constructs a QuantizeDecor
+         * @param args Additional arguments passed to TReader constructor
+         */
+        template <typename... Args>
+        QuantizeDecor(Args... args) : TReader(args...)
+        {
+        }
         /**
          * @brief Gets quantized level index
          * @return Level index (0 for no input, 1..n for specific levels)
@@ -109,7 +182,7 @@ namespace eva
                 return 0;
 
             unsigned char i;
-            for (i = 1; i < sizeof...(LEVELS) - 1; i++)
+            for (i = 1; i < sizeof...(tLevels) - 1; i++)
                 if (in_between(value, this->levels[i - 1] + this->levels[i], this->levels[i] + this->levels[i + 1]))
                     return i;
             if (in_between(value, this->levels[i - 1] + this->levels[i], 3 * this->levels[i] - this->levels[i - 1]))
@@ -124,12 +197,12 @@ namespace eva
          */
         signed short getLevel(unsigned char index)
         {
-            if ((index < 0) || (index > sizeof...(LEVELS)))
+            if ((index < 0) || (index > sizeof...(tLevels)))
                 return 0;
             return this->levels[index];
         }
 
     private:
-        const signed short levels[sizeof...(LEVELS)] = {LEVELS...};
+        const signed short levels[sizeof...(tLevels)] = {tLevels...};
     };
 }

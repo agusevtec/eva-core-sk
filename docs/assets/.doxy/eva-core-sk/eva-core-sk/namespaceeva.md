@@ -29,18 +29,20 @@
 
 | Type | Name |
 | ---: | :--- |
-| class | [**AnalogPinReader**](classeva_1_1_analog_pin_reader.md) &lt;PIN, PIN\_MODE&gt;<br>_Reads analog pin value._  |
-| class | [**BinarizeEqDecor**](classeva_1_1_binarize_eq_decor.md) &lt;class TReader, ACTIVATES\_ON&gt;<br>_Decorator that converts reading to binary based on level._  |
-| class | [**BinarizeGtDecor**](classeva_1_1_binarize_gt_decor.md) &lt;class TReader, THRESHOLD&gt;<br>_Decorator that converts analog reading to binary based on 'greater then' threshold condition._  |
-| class | [**BinarizeLtDecor**](classeva_1_1_binarize_lt_decor.md) &lt;class TReader, THRESHOLD&gt;<br>_Decorator that converts analog reading to binary based on 'less then' threshold condition._  |
+| class | [**AnalogMutablePinReader**](classeva_1_1_analog_mutable_pin_reader.md) <br>_Reads analog pin value with runtime pin configuration._  |
+| class | [**AnalogPinReader**](classeva_1_1_analog_pin_reader.md) &lt;tPin, tPinMode&gt;<br>_Reads analog pin value._  |
+| class | [**BinarizeEqDecor**](classeva_1_1_binarize_eq_decor.md) &lt;class TReader, tActivatesOn&gt;<br>_Decorator that converts reading to binary based on level equality._  |
+| class | [**BinarizeGtDecor**](classeva_1_1_binarize_gt_decor.md) &lt;class TReader, THRESHOLD&gt;<br>_Decorator that converts analog reading to binary based on 'greater than' threshold condition._  |
+| class | [**BinarizeLtDecor**](classeva_1_1_binarize_lt_decor.md) &lt;class TReader, THRESHOLD&gt;<br>_Decorator that converts analog reading to binary based on 'less than' threshold condition._  |
 | class | [**BlinkingIndicator**](classeva_1_1_blinking_indicator.md) <br>[_**Indicator**_](classeva_1_1_indicator.md) _that blinks with specified period and duty cycle._ |
 | class | [**Button**](classeva_1_1_button.md) &lt;class TReader&gt;<br>[_**Button**_](classeva_1_1_button.md) _with press/release and click detection._ |
 | struct | [**CallbackInfo**](structeva_1_1_callback_info.md) <br> |
 | class | [**CountdownIndicator**](classeva_1_1_countdown_indicator.md) <br>[_**Indicator**_](classeva_1_1_indicator.md) _that blinks a specified number of times then notifies listener._ |
-| class | [**CountdownTimer**](classeva_1_1_countdown_timer.md) <br>_Timer that fires repeatedly at fixed intervals._  |
+| class | [**CountdownTimer**](classeva_1_1_countdown_timer.md) <br>_Timer that fires a specified number of times at fixed intervals._  |
 | class | [**DebounceDecor**](classeva_1_1_debounce_decor.md) &lt;class TReader&gt;<br>_Decorator that stabilizes readings by requiring value to be stable for a period._  |
 | class | [**DelayTimer**](classeva_1_1_delay_timer.md) <br>_One-shot timer that fires after a delay._  |
-| class | [**DigitalPinReader**](classeva_1_1_digital_pin_reader.md) &lt;PIN, PIN\_MODE&gt;<br>_Reads digital pin value._  |
+| class | [**DigitalMutablePinReader**](classeva_1_1_digital_mutable_pin_reader.md) <br>_Reads digital pin value with runtime pin configuration._  |
+| class | [**DigitalPinReader**](classeva_1_1_digital_pin_reader.md) &lt;tPin, tPinMode&gt;<br>_Reads digital pin value._  |
 | class | [**Handler**](classeva_1_1_handler.md) &lt;class T&gt;<br>[_**Handler**_](classeva_1_1_handler.md) _that calls a member method._ |
 | class | [**HandlerF**](classeva_1_1_handler_f.md) <br>[_**Handler**_](classeva_1_1_handler.md) _that calls a free function._ |
 | class | [**Heartbeat**](classeva_1_1_heartbeat.md) <br>_Base class for components that need periodic updates._  |
@@ -48,13 +50,13 @@
 | class | [**IReader**](classeva_1_1_i_reader.md) <br>_Interface for value readers._  |
 | class | [**IReaderAdapter**](classeva_1_1_i_reader_adapter.md) &lt;class T&gt;<br>_Adapter that converts any class with getValue() into an_ [_**IReader**_](classeva_1_1_i_reader.md) _._ |
 | class | [**Indicator**](classeva_1_1_indicator.md) <br>_Basic indicator (LED) control._  |
-| class | [**Joystick**](classeva_1_1_joystick.md) &lt;class TReader, MIN\_POS, MIDDLE\_POS, MAX\_POS&gt;<br>[_**Joystick**_](classeva_1_1_joystick.md) _axis reader (range 1000-1500-2000) with trim adjustment._ |
+| class | [**Joystick**](classeva_1_1_joystick.md) &lt;class TReader, tMinPos, tMiddlePos, tMaxPos&gt;<br>[_**Joystick**_](classeva_1_1_joystick.md) _axis reader (range 1000-1500-2000) with trim adjustment._ |
 | class | [**List**](classeva_1_1_list.md) &lt;class ItemClass&gt;<br>_Simple singly-linked list container._  |
 | struct | [**ListIterator**](structeva_1_1_list_iterator.md) &lt;class ItemClass&gt;<br>_Iterator node for_ [_**List**_](classeva_1_1_list.md) _._ |
-| class | [**QuantizeDecor**](classeva_1_1_quantize_decor.md) &lt;class TReader, LEVELS&gt;<br>_Decorator that quantizes analog readings to discrete levels._  |
+| class | [**QuantizeDecor**](classeva_1_1_quantize_decor.md) &lt;class TReader, tLevels&gt;<br>_Decorator that quantizes analog readings to discrete levels._  |
 | class | [**RepeatTimer**](classeva_1_1_repeat_timer.md) <br>_Timer that fires repeatedly at fixed intervals._  |
 | class | [**ScrollButton**](classeva_1_1_scroll_button.md) &lt;class TReader&gt;<br>[_**Button**_](classeva_1_1_button.md) _with auto-repeat (typematic) functionality._ |
-| class | [**Slider**](classeva_1_1_slider.md) &lt;class TReader, MIN\_POS, MAX\_POS&gt;<br>_Maps analog readings to 1000-2000 range._  |
+| class | [**Slider**](classeva_1_1_slider.md) &lt;class TReader, tMinPos, tMaxPos&gt;<br>_Maps analog readings to 1000-2000 range._  |
 | class | [**Switch**](classeva_1_1_switch.md) &lt;class TReader&gt;<br>_Universal switch/button class for multi-valued input sources._  |
 | class | [**Tickable**](classeva_1_1_tickable.md) <br>_Base class for objects that need periodic updates._  |
 
@@ -63,18 +65,18 @@
 
 | Type | Name |
 | ---: | :--- |
-| typedef [**Button**](classeva_1_1_button.md)&lt; [**BinarizeEqDecor**](classeva_1_1_binarize_eq_decor.md)&lt; [**DebounceDecor**](classeva_1_1_debounce_decor.md)&lt; [**DigitalPinReader**](classeva_1_1_digital_pin_reader.md)&lt; PIN, PIN\_MODE &gt; &gt;, ACTIVATES\_ON &gt; &gt; | [**PinButton**](#typedef-pinbutton)  <br>_Digital pin button with debouncing and level normalization._  |
-| typedef [**Joystick**](classeva_1_1_joystick.md)&lt; [**AnalogPinReader**](classeva_1_1_analog_pin_reader.md)&lt; PIN, PIN\_MODE &gt;, MIN\_POS, MIDDLE\_POS, MAX\_POS &gt; | [**PinJoystick**](#typedef-pinjoystick)  <br>_Pin-based joystick with custom center position._  |
-| typedef [**Button**](classeva_1_1_button.md)&lt; [**QuantizeDecor**](classeva_1_1_quantize_decor.md)&lt; [**DebounceDecor**](classeva_1_1_debounce_decor.md)&lt; [**AnalogPinReader**](classeva_1_1_analog_pin_reader.md)&lt; PIN, PIN\_MODE &gt; &gt;, LEVELS... &gt; &gt; | [**PinMultiButton**](#typedef-pinmultibutton)  <br>_Multiple buttons on a single ADC pin using resistor ladder._  |
-| typedef [**Switch**](classeva_1_1_switch.md)&lt; [**QuantizeDecor**](classeva_1_1_quantize_decor.md)&lt; [**DebounceDecor**](classeva_1_1_debounce_decor.md)&lt; [**AnalogPinReader**](classeva_1_1_analog_pin_reader.md)&lt; PIN, PIN\_MODE &gt; &gt;, LEVELS... &gt; &gt; | [**PinMultiSwitch**](#typedef-pinmultiswitch)  <br>_Multiple switches on a single ADC pin using resistor ladder._  |
-| typedef [**Button**](classeva_1_1_button.md)&lt; [**BinarizeEqDecor**](classeva_1_1_binarize_eq_decor.md)&lt; [**DebounceDecor**](classeva_1_1_debounce_decor.md)&lt; [**DigitalPinReader**](classeva_1_1_digital_pin_reader.md)&lt; PIN, PIN\_MODE &gt; &gt;, ACTIVATES\_ON &gt; &gt; | [**PinScrollButton**](#typedef-pinscrollbutton)  <br>_Digital pin key-button with debouncing and level normalization._  |
-| typedef [**ScrollButton**](classeva_1_1_scroll_button.md)&lt; [**QuantizeDecor**](classeva_1_1_quantize_decor.md)&lt; [**DebounceDecor**](classeva_1_1_debounce_decor.md)&lt; [**AnalogPinReader**](classeva_1_1_analog_pin_reader.md)&lt; PIN, PIN\_MODE &gt; &gt;, LEVELS... &gt; &gt; | [**PinScrollMultiButton**](#typedef-pinscrollmultibutton)  <br>_Multiple key-buttons on a single ADC pin using resistor ladder._  |
-| typedef [**Slider**](classeva_1_1_slider.md)&lt; [**AnalogPinReader**](classeva_1_1_analog_pin_reader.md)&lt; PIN, PIN\_MODE &gt;, MIN\_POS, MAX\_POS &gt; | [**PinSlider**](#typedef-pinslider)  <br>_Pin-based slider mapping analog readings to 0-255 range._  |
-| typedef [**Switch**](classeva_1_1_switch.md)&lt; [**BinarizeEqDecor**](classeva_1_1_binarize_eq_decor.md)&lt; [**DebounceDecor**](classeva_1_1_debounce_decor.md)&lt; [**DigitalPinReader**](classeva_1_1_digital_pin_reader.md)&lt; PIN, PIN\_MODE &gt; &gt;, ACTIVE\_LEVEL &gt; &gt; | [**PinSwitch**](#typedef-pinswitch)  <br>_Digital pin switch with debouncing and level normalization._  |
-| typedef [**Joystick**](classeva_1_1_joystick.md)&lt; [**AnalogPinReader**](classeva_1_1_analog_pin_reader.md)&lt; PIN, PIN\_MODE &gt;, MIN\_POS,(MAX\_POS+MIN\_POS)/2, MAX\_POS &gt; | [**PinSymmetricJoystick**](#typedef-pinsymmetricjoystick)  <br>_Pin-based joystick with symmetric range (MIN\_POS to MAX\_POS, center at midpoint)._  |
-| typedef [**Button**](classeva_1_1_button.md)&lt; [**BinarizeEqDecor**](classeva_1_1_binarize_eq_decor.md)&lt; [**DebounceDecor**](classeva_1_1_debounce_decor.md)&lt; [**DigitalPinReader**](classeva_1_1_digital_pin_reader.md)&lt; PIN, INPUT\_PULLUP &gt; &gt;, LOW &gt; &gt; | [**PullUpButton**](#typedef-pullupbutton)  <br>_Pull-up button (active LOW, connect to GND)._  |
-| typedef [**ScrollButton**](classeva_1_1_scroll_button.md)&lt; [**BinarizeEqDecor**](classeva_1_1_binarize_eq_decor.md)&lt; [**DebounceDecor**](classeva_1_1_debounce_decor.md)&lt; [**DigitalPinReader**](classeva_1_1_digital_pin_reader.md)&lt; PIN, INPUT\_PULLUP &gt; &gt;, LOW &gt; &gt; | [**PullupScrollButton**](#typedef-pullupscrollbutton)  <br>_Pull-up key-button (active LOW, connect to GND)._  |
-| typedef PinSwitch&lt; PIN, INPUT\_PULLUP, LOW &gt; | [**PullupSwitch**](#typedef-pullupswitch)  <br>_Pull-up switch (active LOW, connect to GND)._  |
+| typedef [**Button**](classeva_1_1_button.md)&lt; [**BinarizeEqDecor**](classeva_1_1_binarize_eq_decor.md)&lt; [**DebounceDecor**](classeva_1_1_debounce_decor.md)&lt; [**DigitalPinReader**](classeva_1_1_digital_pin_reader.md)&lt; tPin, tPinMode &gt; &gt;, tActivatesOn &gt; &gt; | [**PinButton**](#typedef-pinbutton)  <br>_Digital pin button with debouncing and level normalization._  |
+| typedef [**Joystick**](classeva_1_1_joystick.md)&lt; [**AnalogPinReader**](classeva_1_1_analog_pin_reader.md)&lt; tPin, tPinMode &gt;, tMinPos, tMiddlePos, tMaxPos &gt; | [**PinJoystick**](#typedef-pinjoystick)  <br>_Pin-based joystick with custom center position._  |
+| typedef [**Button**](classeva_1_1_button.md)&lt; [**QuantizeDecor**](classeva_1_1_quantize_decor.md)&lt; [**DebounceDecor**](classeva_1_1_debounce_decor.md)&lt; [**AnalogPinReader**](classeva_1_1_analog_pin_reader.md)&lt; tPin, tPinMode &gt; &gt;, tLevels... &gt; &gt; | [**PinMultiButton**](#typedef-pinmultibutton)  <br>_Multiple buttons on a single ADC pin using resistor ladder._  |
+| typedef [**Switch**](classeva_1_1_switch.md)&lt; [**QuantizeDecor**](classeva_1_1_quantize_decor.md)&lt; [**DebounceDecor**](classeva_1_1_debounce_decor.md)&lt; [**AnalogPinReader**](classeva_1_1_analog_pin_reader.md)&lt; tPin, tPinMode &gt; &gt;, tLevels... &gt; &gt; | [**PinMultiSwitch**](#typedef-pinmultiswitch)  <br>_Multiple switches on a single ADC pin using resistor ladder._  |
+| typedef [**Button**](classeva_1_1_button.md)&lt; [**BinarizeEqDecor**](classeva_1_1_binarize_eq_decor.md)&lt; [**DebounceDecor**](classeva_1_1_debounce_decor.md)&lt; [**DigitalPinReader**](classeva_1_1_digital_pin_reader.md)&lt; tPin, tPinMode &gt; &gt;, tActivatesOn &gt; &gt; | [**PinScrollButton**](#typedef-pinscrollbutton)  <br>_Digital pin key-button with debouncing and level normalization._  |
+| typedef [**ScrollButton**](classeva_1_1_scroll_button.md)&lt; [**QuantizeDecor**](classeva_1_1_quantize_decor.md)&lt; [**DebounceDecor**](classeva_1_1_debounce_decor.md)&lt; [**AnalogPinReader**](classeva_1_1_analog_pin_reader.md)&lt; tPin, tPinMode &gt; &gt;, tLevels... &gt; &gt; | [**PinScrollMultiButton**](#typedef-pinscrollmultibutton)  <br>_Multiple key-buttons on a single ADC pin using resistor ladder._  |
+| typedef [**Slider**](classeva_1_1_slider.md)&lt; [**AnalogPinReader**](classeva_1_1_analog_pin_reader.md)&lt; tPin, tPinMode &gt;, tMinPos, tMaxPos &gt; | [**PinSlider**](#typedef-pinslider)  <br>_Pin-based slider mapping analog readings to 0-255 range._  |
+| typedef [**Switch**](classeva_1_1_switch.md)&lt; [**BinarizeEqDecor**](classeva_1_1_binarize_eq_decor.md)&lt; [**DebounceDecor**](classeva_1_1_debounce_decor.md)&lt; [**DigitalPinReader**](classeva_1_1_digital_pin_reader.md)&lt; tPin, tPinMode &gt; &gt;, ACTIVE\_LEVEL &gt; &gt; | [**PinSwitch**](#typedef-pinswitch)  <br>_Digital pin switch with debouncing and level normalization._  |
+| typedef [**Joystick**](classeva_1_1_joystick.md)&lt; [**AnalogPinReader**](classeva_1_1_analog_pin_reader.md)&lt; tPin, tPinMode &gt;, tMinPos,(tMaxPos+tMinPos)/2, tMaxPos &gt; | [**PinSymmetricJoystick**](#typedef-pinsymmetricjoystick)  <br>_Pin-based joystick with symmetric range (tMinPos to tMaxPos, center at midpoint)._  |
+| typedef [**Button**](classeva_1_1_button.md)&lt; [**BinarizeEqDecor**](classeva_1_1_binarize_eq_decor.md)&lt; [**DebounceDecor**](classeva_1_1_debounce_decor.md)&lt; [**DigitalPinReader**](classeva_1_1_digital_pin_reader.md)&lt; tPin, INPUT\_PULLUP &gt; &gt;, LOW &gt; &gt; | [**PullUpButton**](#typedef-pullupbutton)  <br>_Pull-up button (active LOW, connect to GND)._  |
+| typedef [**ScrollButton**](classeva_1_1_scroll_button.md)&lt; [**BinarizeEqDecor**](classeva_1_1_binarize_eq_decor.md)&lt; [**DebounceDecor**](classeva_1_1_debounce_decor.md)&lt; [**DigitalPinReader**](classeva_1_1_digital_pin_reader.md)&lt; tPin, INPUT\_PULLUP &gt; &gt;, LOW &gt; &gt; | [**PullupScrollButton**](#typedef-pullupscrollbutton)  <br>_Pull-up key-button (active LOW, connect to GND)._  |
+| typedef PinSwitch&lt; tPin, INPUT\_PULLUP, LOW &gt; | [**PullupSwitch**](#typedef-pullupswitch)  <br>_Pull-up switch (active LOW, connect to GND)._  |
 
 
 
@@ -120,7 +122,7 @@
 
 | Type | Name |
 | ---: | :--- |
-|  bool | [**in\_between**](#function-in_between) (signed short x, signed short a, signed short b) <br> |
+|  bool | [**in\_between**](#function-in_between) (signed short x, signed short a, signed short b) <br>_Checks if value x is between a and b (inclusive)._  |
 
 
 
@@ -156,7 +158,7 @@
 
 _Digital pin button with debouncing and level normalization._ 
 ```C++
-using eva::PinButton = Button<BinarizeEqDecor<DebounceDecor<DigitalPinReader<PIN, PIN_MODE>>, ACTIVATES_ON>>;
+using eva::PinButton = Button<BinarizeEqDecor<DebounceDecor<DigitalPinReader<tPin, tPinMode>>, tActivatesOn>>;
 ```
 
 
@@ -177,9 +179,9 @@ Long click threshold is fixed at 750ms.
 **Template parameters:**
 
 
-* `PIN` Arduino pin number 
-* `PIN_MODE` Pin mode (INPUT, INPUT\_PULLUP, etc.) 
-* `ACTIVATES_ON` Level that means "pressed" (LOW or HIGH) 
+* `tPin` Arduino pin number 
+* `tPinMode` Pin mode (INPUT, INPUT\_PULLUP, etc.) 
+* `tActivatesOn` Level that means "pressed" (LOW or HIGH) 
 
 
 
@@ -194,7 +196,7 @@ Long click threshold is fixed at 750ms.
 
 _Pin-based joystick with custom center position._ 
 ```C++
-using eva::PinJoystick = Joystick<AnalogPinReader<PIN, PIN_MODE>, MIN_POS, MIDDLE_POS, MAX_POS>;
+using eva::PinJoystick = Joystick<AnalogPinReader<tPin, tPinMode>, tMinPos, tMiddlePos, tMaxPos>;
 ```
 
 
@@ -204,11 +206,11 @@ using eva::PinJoystick = Joystick<AnalogPinReader<PIN, PIN_MODE>, MIN_POS, MIDDL
 **Template parameters:**
 
 
-* `PIN` Arduino pin number 
-* `PIN_MODE` Pin mode (usually INPUT) 
-* `MIN_POS` Minimum analog reading 
-* `MIDDLE_POS` Center position reading 
-* `MAX_POS` Maximum analog reading 
+* `tPin` Arduino pin number 
+* `tPinMode` Pin mode (usually INPUT) 
+* `tMinPos` Minimum analog reading 
+* `tMiddlePos` Center position reading 
+* `tMaxPos` Maximum analog reading 
 
 
 
@@ -223,7 +225,7 @@ using eva::PinJoystick = Joystick<AnalogPinReader<PIN, PIN_MODE>, MIN_POS, MIDDL
 
 _Multiple buttons on a single ADC pin using resistor ladder._ 
 ```C++
-using eva::PinMultiButton = Button<QuantizeDecor<DebounceDecor<AnalogPinReader<PIN, PIN_MODE>>, LEVELS...>>;
+using eva::PinMultiButton = Button<QuantizeDecor<DebounceDecor<AnalogPinReader<tPin, tPinMode>>, tLevels...>>;
 ```
 
 
@@ -250,9 +252,9 @@ Generates standard button events for each button, with the button number encoded
 **Template parameters:**
 
 
-* `PIN` Arduino analog pin number 
-* `PIN_MODE` Pin mode (usually INPUT) 
-* `LEVELS` Threshold values for each button (expected ADC readings)
+* `tPin` Arduino analog pin number 
+* `tPinMode` Pin mode (usually INPUT) 
+* `tLevels` Threshold values for each button (expected ADC readings)
 
 
 
@@ -270,7 +272,7 @@ Generates standard button events for each button, with the button number encoded
 
 _Multiple switches on a single ADC pin using resistor ladder._ 
 ```C++
-using eva::PinMultiSwitch = Switch<QuantizeDecor<DebounceDecor<AnalogPinReader<PIN, PIN_MODE>>, LEVELS...>>;
+using eva::PinMultiSwitch = Switch<QuantizeDecor<DebounceDecor<AnalogPinReader<tPin, tPinMode>>, tLevels...>>;
 ```
 
 
@@ -294,9 +296,9 @@ Each switch produces a different ADC value when activated. The [**QuantizeDecor*
 **Template parameters:**
 
 
-* `PIN` Arduino analog pin number 
-* `PIN_MODE` Pin mode (usually INPUT) 
-* `LEVELS` Threshold values for each switch (expected ADC readings) 
+* `tPin` Arduino analog pin number 
+* `tPinMode` Pin mode (usually INPUT) 
+* `tLevels` Threshold values for each switch (expected ADC readings) 
 
 
 
@@ -311,7 +313,7 @@ Each switch produces a different ADC value when activated. The [**QuantizeDecor*
 
 _Digital pin key-button with debouncing and level normalization._ 
 ```C++
-using eva::PinScrollButton = Button<BinarizeEqDecor<DebounceDecor<DigitalPinReader<PIN, PIN_MODE>>, ACTIVATES_ON>>;
+using eva::PinScrollButton = Button<BinarizeEqDecor<DebounceDecor<DigitalPinReader<tPin, tPinMode>>, tActivatesOn>>;
 ```
 
 
@@ -332,9 +334,9 @@ Long click threshold is fixed at 750ms.
 **Template parameters:**
 
 
-* `PIN` Arduino pin number 
-* `PIN_MODE` Pin mode (INPUT, INPUT\_PULLUP, etc.) 
-* `ACTIVATES_ON` Level that means "pressed" (LOW or HIGH) 
+* `tPin` Arduino pin number 
+* `tPinMode` Pin mode (INPUT, INPUT\_PULLUP, etc.) 
+* `tActivatesOn` Level that means "pressed" (LOW or HIGH) 
 
 
 
@@ -349,7 +351,7 @@ Long click threshold is fixed at 750ms.
 
 _Multiple key-buttons on a single ADC pin using resistor ladder._ 
 ```C++
-using eva::PinScrollMultiButton = ScrollButton<QuantizeDecor<DebounceDecor<AnalogPinReader<PIN, PIN_MODE>>, LEVELS...>>;
+using eva::PinScrollMultiButton = ScrollButton<QuantizeDecor<DebounceDecor<AnalogPinReader<tPin, tPinMode>>, tLevels...>>;
 ```
 
 
@@ -376,9 +378,9 @@ Generates standard button events for each button, with the button number encoded
 **Template parameters:**
 
 
-* `PIN` Arduino analog pin number 
-* `PIN_MODE` Pin mode (usually INPUT) 
-* `LEVELS` Threshold values for each button (expected ADC readings)
+* `tPin` Arduino analog pin number 
+* `tPinMode` Pin mode (usually INPUT) 
+* `tLevels` Threshold values for each button (expected ADC readings)
 
 
 
@@ -396,7 +398,7 @@ Generates standard button events for each button, with the button number encoded
 
 _Pin-based slider mapping analog readings to 0-255 range._ 
 ```C++
-using eva::PinSlider = Slider<AnalogPinReader<PIN, PIN_MODE>, MIN_POS, MAX_POS>;
+using eva::PinSlider = Slider<AnalogPinReader<tPin, tPinMode>, tMinPos, tMaxPos>;
 ```
 
 
@@ -406,10 +408,10 @@ using eva::PinSlider = Slider<AnalogPinReader<PIN, PIN_MODE>, MIN_POS, MAX_POS>;
 **Template parameters:**
 
 
-* `PIN` Arduino pin number 
-* `PIN_MODE` Pin mode (usually INPUT) 
-* `MIN_POS` Minimum analog reading 
-* `MAX_POS` Maximum analog reading 
+* `tPin` Arduino pin number 
+* `tPinMode` Pin mode (usually INPUT) 
+* `tMinPos` Minimum analog reading 
+* `tMaxPos` Maximum analog reading 
 
 
 
@@ -424,7 +426,7 @@ using eva::PinSlider = Slider<AnalogPinReader<PIN, PIN_MODE>, MIN_POS, MAX_POS>;
 
 _Digital pin switch with debouncing and level normalization._ 
 ```C++
-using eva::PinSwitch = Switch<BinarizeEqDecor<DebounceDecor<DigitalPinReader<PIN, PIN_MODE>>, ACTIVE_LEVEL>>;
+using eva::PinSwitch = Switch<BinarizeEqDecor<DebounceDecor<DigitalPinReader<tPin, tPinMode>>, ACTIVE_LEVEL>>;
 ```
 
 
@@ -442,8 +444,8 @@ Combines:
 **Template parameters:**
 
 
-* `PIN` Arduino pin number 
-* `PIN_MODE` Pin mode (INPUT, INPUT\_PULLUP, etc.) 
+* `tPin` Arduino pin number 
+* `tPinMode` Pin mode (INPUT, INPUT\_PULLUP, etc.) 
 * `ACTIVE_LEVEL` Level that means active (LOW or HIGH) 
 
 
@@ -457,9 +459,9 @@ Combines:
 
 ### typedef PinSymmetricJoystick 
 
-_Pin-based joystick with symmetric range (MIN\_POS to MAX\_POS, center at midpoint)._ 
+_Pin-based joystick with symmetric range (tMinPos to tMaxPos, center at midpoint)._ 
 ```C++
-using eva::PinSymmetricJoystick = Joystick<AnalogPinReader<PIN, PIN_MODE>, MIN_POS, (MAX_POS + MIN_POS) / 2, MAX_POS>;
+using eva::PinSymmetricJoystick = Joystick<AnalogPinReader<tPin, tPinMode>, tMinPos, (tMaxPos + tMinPos) / 2, tMaxPos>;
 ```
 
 
@@ -469,10 +471,10 @@ using eva::PinSymmetricJoystick = Joystick<AnalogPinReader<PIN, PIN_MODE>, MIN_P
 **Template parameters:**
 
 
-* `PIN` Arduino pin number 
-* `PIN_MODE` Pin mode (usually INPUT) 
-* `MIN_POS` Minimum analog reading 
-* `MAX_POS` Maximum analog reading 
+* `tPin` Arduino pin number 
+* `tPinMode` Pin mode (usually INPUT) 
+* `tMinPos` Minimum analog reading 
+* `tMaxPos` Maximum analog reading 
 
 
 
@@ -487,7 +489,7 @@ using eva::PinSymmetricJoystick = Joystick<AnalogPinReader<PIN, PIN_MODE>, MIN_P
 
 _Pull-up button (active LOW, connect to GND)._ 
 ```C++
-using eva::PullUpButton = Button<BinarizeEqDecor<DebounceDecor<DigitalPinReader<PIN, INPUT_PULLUP>>, LOW>>;
+using eva::PullUpButton = Button<BinarizeEqDecor<DebounceDecor<DigitalPinReader<tPin, INPUT_PULLUP>>, LOW>>;
 ```
 
 
@@ -507,7 +509,7 @@ Generates all button events with proper debouncing.
 **Template parameters:**
 
 
-* `PIN` Arduino pin number 
+* `tPin` Arduino pin number 
 
 
 
@@ -522,7 +524,7 @@ Generates all button events with proper debouncing.
 
 _Pull-up key-button (active LOW, connect to GND)._ 
 ```C++
-using eva::PullupScrollButton = ScrollButton<BinarizeEqDecor<DebounceDecor<DigitalPinReader<PIN, INPUT_PULLUP>>, LOW>>;
+using eva::PullupScrollButton = ScrollButton<BinarizeEqDecor<DebounceDecor<DigitalPinReader<tPin, INPUT_PULLUP>>, LOW>>;
 ```
 
 
@@ -542,7 +544,7 @@ Generates all button events with proper debouncing.
 **Template parameters:**
 
 
-* `PIN` Arduino pin number 
+* `tPin` Arduino pin number 
 
 
 
@@ -557,7 +559,7 @@ Generates all button events with proper debouncing.
 
 _Pull-up switch (active LOW, connect to GND)._ 
 ```C++
-using eva::PullupSwitch = PinSwitch<PIN, INPUT_PULLUP, LOW>;
+using eva::PullupSwitch = PinSwitch<tPin, INPUT_PULLUP, LOW>;
 ```
 
 
@@ -574,7 +576,7 @@ Convenience alias for the most common Arduino switch wiring:
 **Template parameters:**
 
 
-* `PIN` Arduino pin number 
+* `tPin` Arduino pin number 
 
 
 
@@ -737,6 +739,7 @@ void eva::tac ()
 
 ### function in\_between 
 
+_Checks if value x is between a and b (inclusive)._ 
 ```C++
 static inline bool eva::in_between (
     signed short x,
@@ -747,6 +750,26 @@ static inline bool eva::in_between (
 
 
 
+
+
+**Parameters:**
+
+
+* `x` Value to check 
+* `a` Lower bound 
+* `b` Upper bound 
+
+
+
+**Returns:**
+
+true if x is between a and b inclusive 
+
+
+
+
+
+        
 
 <hr>
 

@@ -2,7 +2,7 @@
 
 # Class eva::Slider
 
-**template &lt;class TReader, unsigned short MIN\_POS, unsigned short MAX\_POS&gt;**
+**template &lt;class TReader, unsigned short tMinPos, unsigned short tMaxPos&gt;**
 
 
 
@@ -10,7 +10,7 @@
 
 
 
-_Maps analog readings to 1000-2000 range._ 
+_Maps analog readings to 1000-2000 range._ [More...](#detailed-description)
 
 * `#include <evaSlider.h>`
 
@@ -55,7 +55,9 @@ Inherits the following classes: TReader
 
 | Type | Name |
 | ---: | :--- |
-|  signed short | [**getValue**](#function-getvalue) () <br>_Gets normalized slider position._  |
+|   | [**Slider**](#function-slider) (Args... args) <br>_Constructs a_ [_**Slider**_](classeva_1_1_slider.md) _._ |
+|  signed short | [**getValue**](#function-getvalue-12) () <br>_Gets normalized slider position with custom range._  |
+|  signed short | [**getValue**](#function-getvalue-22) () <br>_Gets normalized slider position._  |
 
 
 
@@ -84,12 +86,90 @@ Inherits the following classes: TReader
 
 
 
+## Detailed Description
+
+
+
+
+**Template parameters:**
+
+
+* `TReader` Underlying reader type 
+* `tMinPos` Minimum analog reading 
+* `tMaxPos` Maximum analog reading 
+
+
+
+
+    
 ## Public Functions Documentation
 
 
 
 
-### function getValue 
+### function Slider 
+
+_Constructs a_ [_**Slider**_](classeva_1_1_slider.md) _._
+```C++
+template<typename... Args>
+inline eva::Slider::Slider (
+    Args... args
+) 
+```
+
+
+
+
+
+**Parameters:**
+
+
+* `args` Additional arguments passed to TReader constructor 
+
+
+
+
+        
+
+<hr>
+
+
+
+### function getValue [1/2]
+
+_Gets normalized slider position with custom range._ 
+```C++
+template<unsigned short MINPOS, unsigned short MAXPOS>
+inline signed short eva::Slider::getValue () 
+```
+
+
+
+
+
+**Template parameters:**
+
+
+* `MINPOS` Minimum analog reading 
+* `MAXPOS` Maximum analog reading 
+
+
+
+**Returns:**
+
+Value from 1000 to 2000 
+
+
+
+
+
+        
+
+<hr>
+
+
+
+### function getValue [2/2]
 
 _Gets normalized slider position._ 
 ```C++
@@ -102,7 +182,7 @@ inline signed short eva::Slider::getValue ()
 
 **Returns:**
 
-Value from 0 to 255 
+Value from 1000 to 2000 
 
 
 

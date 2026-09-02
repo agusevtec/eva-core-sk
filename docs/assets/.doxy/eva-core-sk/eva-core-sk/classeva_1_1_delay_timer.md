@@ -74,10 +74,10 @@ Inherited by the following classes: [eva::CountdownTimer](classeva_1_1_countdown
 
 | Type | Name |
 | ---: | :--- |
-|   | [**DelayTimer**](#function-delaytimer-12) () <br> |
-|   | [**DelayTimer**](#function-delaytimer-22) ([**IHandler**](classeva_1_1_i_handler.md) \* listener) <br> |
+|   | [**DelayTimer**](#function-delaytimer-12) () <br>_Constructs a_ [_**DelayTimer**_](classeva_1_1_delay_timer.md) _with no listener._ |
+|   | [**DelayTimer**](#function-delaytimer-22) ([**IHandler**](classeva_1_1_i_handler.md) \* listener) <br>_Constructs a_ [_**DelayTimer**_](classeva_1_1_delay_timer.md) _with a listener._ |
 |  bool | [**isRunning**](#function-isrunning) () <br>_Checks if the timer is currently active._  |
-|  DelayTimer \* | [**setListener**](#function-setlistener) ([**IHandler**](classeva_1_1_i_handler.md) \* listener) <br>_Assigns or changes the event listener._  |
+|  [**DelayTimer**](classeva_1_1_delay_timer.md#function-delaytimer-12) \* | [**setListener**](#function-setlistener) ([**IHandler**](classeva_1_1_i_handler.md) \* listener) <br>_Assigns or changes the event listener._  |
 |  void | [**start**](#function-start-12) (unsigned short delay, [**IHandler**](classeva_1_1_i_handler.md) \* listener) <br>_Starts the timer._  |
 |  void | [**start**](#function-start-22) (unsigned short delay) <br>_Starts the timer._  |
 |  void | [**stop**](#function-stop) () <br>_Stops the timer._  |
@@ -175,6 +175,7 @@ See [eva::Tickable](classeva_1_1_tickable.md)
 
 ### function DelayTimer [1/2]
 
+_Constructs a_ [_**DelayTimer**_](classeva_1_1_delay_timer.md) _with no listener._
 ```C++
 eva::DelayTimer::DelayTimer () 
 ```
@@ -188,6 +189,7 @@ eva::DelayTimer::DelayTimer ()
 
 ### function DelayTimer [2/2]
 
+_Constructs a_ [_**DelayTimer**_](classeva_1_1_delay_timer.md) _with a listener._
 ```C++
 eva::DelayTimer::DelayTimer (
     IHandler * listener
@@ -196,6 +198,17 @@ eva::DelayTimer::DelayTimer (
 
 
 
+
+
+**Parameters:**
+
+
+* `listener` [**Handler**](classeva_1_1_handler.md) to invoke when timer expires 
+
+
+
+
+        
 
 <hr>
 

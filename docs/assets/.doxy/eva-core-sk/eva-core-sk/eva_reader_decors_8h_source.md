@@ -28,6 +28,10 @@ namespace eva
     class DebounceDecor : public TReader
     {
     public:
+        template <typename... Args>
+        DebounceDecor(Args... args) : TReader(args...)
+        {
+        }
         signed short getValue()
         {
             unsigned long now = millis();
@@ -52,13 +56,18 @@ namespace eva
         signed short keepedValue = 0;
     };
 
-    template <class TReader, int ACTIVATES_ON>
+    template <class TReader, int tActivatesOn>
     class BinarizeEqDecor : public TReader
     {
     public:
+        template <typename... Args>
+        BinarizeEqDecor(Args... args) : TReader(args...)
+        {
+        }
+
         signed short getValue()
         {
-            return TReader::getValue() == ACTIVATES_ON;
+            return TReader::getValue() == tActivatesOn;
         }
     };
 
@@ -66,6 +75,10 @@ namespace eva
     class BinarizeLtDecor : public TReader
     {
     public:
+        template <typename... Args>
+        BinarizeLtDecor(Args... args) : TReader(args...)
+        {
+        }
         signed short getValue()
         {
             if (TReader::getValue() <= THRESHOLD)
@@ -78,6 +91,10 @@ namespace eva
     class BinarizeGtDecor : public TReader
     {
     public:
+        template <typename... Args>
+        BinarizeGtDecor(Args... args) : TReader(args...)
+        {
+        }
         signed short getValue()
         {
             if (TReader::getValue() >= THRESHOLD)
@@ -86,12 +103,16 @@ namespace eva
         }
     };
 
-    template <class TReader, signed short... LEVELS>
+    template <class TReader, signed short... tLevels>
     class QuantizeDecor : public TReader
     {
-        static_assert(sizeof...(LEVELS) >= 2, "QuantizeDecor requires at least 2 levels");
+        static_assert(sizeof...(tLevels) >= 2, "QuantizeDecor requires at least 2 levels");
 
     public:
+        template <typename... Args>
+        QuantizeDecor(Args... args) : TReader(args...)
+        {
+        }
         signed short getValue()
         {
             signed short value = TReader::getValue() * 2;
@@ -100,7 +121,7 @@ namespace eva
                 return 0;
 
             unsigned char i;
-            for (i = 1; i < sizeof...(LEVELS) - 1; i++)
+            for (i = 1; i < sizeof...(tLevels) - 1; i++)
                 if (in_between(value, this->levels[i - 1] + this->levels[i], this->levels[i] + this->levels[i + 1]))
                     return i;
             if (in_between(value, this->levels[i - 1] + this->levels[i], 3 * this->levels[i] - this->levels[i - 1]))
@@ -110,13 +131,13 @@ namespace eva
 
         signed short getLevel(unsigned char index)
         {
-            if ((index < 0) || (index > sizeof...(LEVELS)))
+            if ((index < 0) || (index > sizeof...(tLevels)))
                 return 0;
             return this->levels[index];
         }
 
     private:
-        const signed short levels[sizeof...(LEVELS)] = {LEVELS...};
+        const signed short levels[sizeof...(tLevels)] = {tLevels...};
     };
 }
 ```

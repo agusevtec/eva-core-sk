@@ -94,7 +94,7 @@ Inherited by the following classes: [eva::CountdownIndicator](classeva_1_1_count
 
 | Type | Name |
 | ---: | :--- |
-|   | [**Indicator**](#function-indicator) (unsigned pin, int activationLevel=HIGH) <br>_Constructor._  |
+|   | [**Indicator**](#function-indicator) (unsigned pin, int activationLevel=HIGH) <br>_Constructs a_ [_**BlinkingIndicator**_](classeva_1_1_blinking_indicator.md) _._ |
 |  void | [**off**](#function-off) () <br>_Turns off the indicator._  |
 |  void | [**on**](#function-on-12) () <br>_Turns on the indicator continuously._  |
 |  void | [**on**](#function-on-22) (unsigned short period, unsigned char dutycyclePercent) <br>_Turns on the indicator with blinking pattern._  |
@@ -225,7 +225,7 @@ Note: This class serves as a demonstration of library concepts and is intentiona
 
 ### function Indicator 
 
-_Constructor._ 
+_Constructs a_ [_**BlinkingIndicator**_](classeva_1_1_blinking_indicator.md) _._
 ```C++
 eva::BlinkingIndicator::Indicator (
     unsigned pin,

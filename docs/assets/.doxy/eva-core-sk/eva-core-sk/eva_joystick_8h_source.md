@@ -9,21 +9,34 @@
 
 ```C++
 #pragma once
+
 #include "evaStdReaders.h"
 
 namespace eva
 {
-  template <class TReader, unsigned short MIN_POS, unsigned short MIDDLE_POS, unsigned short MAX_POS>
+  template <class TReader, unsigned short tMinPos = 0, unsigned short tMiddlePos = 512, unsigned short tMaxPos = 1024>
   class Joystick : public TReader
   {
   public:
+    template <typename... Args>
+    Joystick(short aDeadZone = 0, Args... args) : TReader(args...) , trim(0)
+    {
+       setDeadZone(aDeadZone);
+    }
+
+    template <unsigned short MINPOS, unsigned short MIDDLEPOS, unsigned short MAXPOS>
     signed short getValue()
     {
       signed short value = TReader::getValue();
-      if ((value < MIDDLE_POS) ^ (MIN_POS < MAX_POS))
-        return constrain(map(value, MIDDLE_POS, MAX_POS, 1500 + this->trim - this->deadZone, 2000), 1500 + this->trim, 2000);
+      if ((value < MIDDLEPOS) ^ (MINPOS < MAXPOS))
+        return constrain(map(value, MIDDLEPOS, MAXPOS, 1500 + this->trim - this->deadZone, 2000), 1500 + this->trim, 2000);
       else
-        return constrain(map(value, MIN_POS, MIDDLE_POS, 1000, 1500 + this->trim + this->deadZone), 1000, 1500 + this->trim);
+        return constrain(map(value, MINPOS, MIDDLEPOS, 1000, 1500 + this->trim + this->deadZone), 1000, 1500 + this->trim);
+    }
+
+    signed short getValue()
+    {
+      return getValue<tMinPos, tMiddlePos, tMaxPos>();
     }
 
     void setTrim(short trim)
@@ -46,20 +59,20 @@ namespace eva
       this->deadZone = constrain(deadZone, 0, 255);
     }
 
-
     signed short getDeadZone()
     {
       return this->deadZone;
     }
 
   private:
-    signed char trim = 0;
-    unsigned char deadZone = 0;
+    signed char trim;
+    unsigned char deadZone;
   };
-  template <int PIN, int PIN_MODE, unsigned short MIN_POS, unsigned short MAX_POS>
-  using PinSymmetricJoystick = Joystick<AnalogPinReader<PIN, PIN_MODE>, MIN_POS, (MAX_POS + MIN_POS) / 2, MAX_POS>;
-  template <int PIN, int PIN_MODE, unsigned short MIN_POS, unsigned short MIDDLE_POS, unsigned short MAX_POS>
-  using PinJoystick = Joystick<AnalogPinReader<PIN, PIN_MODE>, MIN_POS, MIDDLE_POS, MAX_POS>;
+
+  template <int tPin, int tPinMode, unsigned short tMinPos, unsigned short tMaxPos>
+  using PinSymmetricJoystick = Joystick<AnalogPinReader<tPin, tPinMode>, tMinPos, (tMaxPos + tMinPos) / 2, tMaxPos>;
+  template <int tPin, int tPinMode, unsigned short tMinPos, unsigned short tMiddlePos, unsigned short tMaxPos>
+  using PinJoystick = Joystick<AnalogPinReader<tPin, tPinMode>, tMinPos, tMiddlePos, tMaxPos>;
 };
 ```
 

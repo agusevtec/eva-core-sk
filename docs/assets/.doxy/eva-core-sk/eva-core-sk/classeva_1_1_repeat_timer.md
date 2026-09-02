@@ -93,9 +93,9 @@ Inherits the following classes: [eva::DelayTimer](classeva_1_1_delay_timer.md)
 
 | Type | Name |
 | ---: | :--- |
-|   | [**DelayTimer**](#function-delaytimer-12) () <br> |
-|   | [**DelayTimer**](#function-delaytimer-22) ([**IHandler**](classeva_1_1_i_handler.md) \* listener) <br> |
-|   | [**RepeatTimer**](#function-repeattimer) (unsigned short period, [**IHandler**](classeva_1_1_i_handler.md) \* listener) <br>_Constructor that starts the timer._  |
+|   | [**DelayTimer**](#function-delaytimer-12) () <br>_Constructs a_ [_**RepeatTimer**_](classeva_1_1_repeat_timer.md) _with no listener._ |
+|   | [**DelayTimer**](#function-delaytimer-22) ([**IHandler**](classeva_1_1_i_handler.md) \* listener) <br>_Constructs a_ [_**RepeatTimer**_](classeva_1_1_repeat_timer.md) _with no listener._ |
+|   | [**RepeatTimer**](#function-repeattimer) (unsigned short period, [**IHandler**](classeva_1_1_i_handler.md) \* listener) <br>_Constructs a_ [_**RepeatTimer**_](classeva_1_1_repeat_timer.md) _and starts it._ |
 |  [**RepeatTimer**](classeva_1_1_repeat_timer.md#function-repeattimer) \* | [**setListener**](#function-setlistener) ([**IHandler**](classeva_1_1_i_handler.md) \* listener) <br>_Assigns or changes the event listener._  |
 |  [**RepeatTimer**](classeva_1_1_repeat_timer.md#function-repeattimer) \* | [**setPeriod**](#function-setperiod) (unsigned short period) <br>_Changes the timer period._  |
 |  void | [**start**](#function-start-13) (unsigned short period, [**IHandler**](classeva_1_1_i_handler.md) \* listener) <br>_Starts or restarts the repeating timer._  |
@@ -109,10 +109,10 @@ See [eva::DelayTimer](classeva_1_1_delay_timer.md)
 
 | Type | Name |
 | ---: | :--- |
-|   | [**DelayTimer**](classeva_1_1_delay_timer.md#function-delaytimer-12) () <br> |
-|   | [**DelayTimer**](classeva_1_1_delay_timer.md#function-delaytimer-22) ([**IHandler**](classeva_1_1_i_handler.md) \* listener) <br> |
+|   | [**DelayTimer**](classeva_1_1_delay_timer.md#function-delaytimer-12) () <br>_Constructs a_ [_**DelayTimer**_](classeva_1_1_delay_timer.md) _with no listener._ |
+|   | [**DelayTimer**](classeva_1_1_delay_timer.md#function-delaytimer-22) ([**IHandler**](classeva_1_1_i_handler.md) \* listener) <br>_Constructs a_ [_**DelayTimer**_](classeva_1_1_delay_timer.md) _with a listener._ |
 |  bool | [**isRunning**](classeva_1_1_delay_timer.md#function-isrunning) () <br>_Checks if the timer is currently active._  |
-|  DelayTimer \* | [**setListener**](classeva_1_1_delay_timer.md#function-setlistener) ([**IHandler**](classeva_1_1_i_handler.md) \* listener) <br>_Assigns or changes the event listener._  |
+|  [**DelayTimer**](classeva_1_1_delay_timer.md#function-delaytimer-12) \* | [**setListener**](classeva_1_1_delay_timer.md#function-setlistener) ([**IHandler**](classeva_1_1_i_handler.md) \* listener) <br>_Assigns or changes the event listener._  |
 |  void | [**start**](classeva_1_1_delay_timer.md#function-start-12) (unsigned short delay, [**IHandler**](classeva_1_1_i_handler.md) \* listener) <br>_Starts the timer._  |
 |  void | [**start**](classeva_1_1_delay_timer.md#function-start-22) (unsigned short delay) <br>_Starts the timer._  |
 |  void | [**stop**](classeva_1_1_delay_timer.md#function-stop) () <br>_Stops the timer._  |
@@ -240,6 +240,7 @@ See [eva::DelayTimer](classeva_1_1_delay_timer.md)
 
 ### function DelayTimer [1/2]
 
+_Constructs a_ [_**RepeatTimer**_](classeva_1_1_repeat_timer.md) _with no listener._
 ```C++
 eva::RepeatTimer::DelayTimer () 
 ```
@@ -253,6 +254,7 @@ eva::RepeatTimer::DelayTimer ()
 
 ### function DelayTimer [2/2]
 
+_Constructs a_ [_**RepeatTimer**_](classeva_1_1_repeat_timer.md) _with no listener._
 ```C++
 eva::RepeatTimer::DelayTimer (
     IHandler * listener
@@ -268,7 +270,7 @@ eva::RepeatTimer::DelayTimer (
 
 ### function RepeatTimer 
 
-_Constructor that starts the timer._ 
+_Constructs a_ [_**RepeatTimer**_](classeva_1_1_repeat_timer.md) _and starts it._
 ```C++
 eva::RepeatTimer::RepeatTimer (
     unsigned short period,

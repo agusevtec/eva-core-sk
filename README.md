@@ -17,7 +17,7 @@ class App {
   PullUpButton<3> button{ &onButtonClickHandler, ON_SHORTCLICK };
   CountdownTimer countdownTimer{ &onTimerTickHandler };
 
-  Handler<App> onButtonClickHandler{ this, &App::onButtonClick };
+  Handler<App> onButtonClickHandler{ this, &onButtonClick };
   void onButtonClick(void* sender, CallbackInfo cbInfo) {
     Serial.println("Button clicked!");
     if (!countdownTimer.isRunning())

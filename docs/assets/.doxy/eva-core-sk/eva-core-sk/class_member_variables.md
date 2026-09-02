@@ -62,6 +62,7 @@
 
 ## m
 
+* **mPin** ([**eva::AnalogMutablePinReader**](classeva_1_1_analog_mutable_pin_reader.md), [**eva::DigitalMutablePinReader**](classeva_1_1_digital_mutable_pin_reader.md))
 * **method** ([**eva::Handler**](classeva_1_1_handler.md))
 * **msgReceiver** ([**eva::Handler**](classeva_1_1_handler.md))
 

@@ -5,9 +5,17 @@
 
 ## a
 
+* **AnalogMutablePinReader** ([**eva::AnalogMutablePinReader**](classeva_1_1_analog_mutable_pin_reader.md))
 * **AnalogPinReader** ([**eva::AnalogPinReader**](classeva_1_1_analog_pin_reader.md))
 * **addTrim** ([**eva::Joystick**](classeva_1_1_joystick.md))
 * **append** ([**eva::List**](classeva_1_1_list.md))
+
+
+## b
+
+* **BinarizeEqDecor** ([**eva::BinarizeEqDecor**](classeva_1_1_binarize_eq_decor.md))
+* **BinarizeGtDecor** ([**eva::BinarizeGtDecor**](classeva_1_1_binarize_gt_decor.md))
+* **BinarizeLtDecor** ([**eva::BinarizeLtDecor**](classeva_1_1_binarize_lt_decor.md))
 
 
 ## c
@@ -25,6 +33,8 @@
 ## d
 
 * **DelayTimer** ([**eva::CountdownTimer**](classeva_1_1_countdown_timer.md), [**eva::DelayTimer**](classeva_1_1_delay_timer.md), [**eva::RepeatTimer**](classeva_1_1_repeat_timer.md))
+* **DebounceDecor** ([**eva::DebounceDecor**](classeva_1_1_debounce_decor.md))
+* **DigitalMutablePinReader** ([**eva::DigitalMutablePinReader**](classeva_1_1_digital_mutable_pin_reader.md))
 * **DigitalPinReader** ([**eva::DigitalPinReader**](classeva_1_1_digital_pin_reader.md))
 
 
@@ -40,7 +50,7 @@
 
 ## g
 
-* **getValue** ([**eva::AnalogPinReader**](classeva_1_1_analog_pin_reader.md), [**eva::BinarizeEqDecor**](classeva_1_1_binarize_eq_decor.md), [**eva::BinarizeGtDecor**](classeva_1_1_binarize_gt_decor.md), [**eva::BinarizeLtDecor**](classeva_1_1_binarize_lt_decor.md), [**eva::DebounceDecor**](classeva_1_1_debounce_decor.md), [**eva::DigitalPinReader**](classeva_1_1_digital_pin_reader.md), [**eva::IReader**](classeva_1_1_i_reader.md), [**eva::IReaderAdapter**](classeva_1_1_i_reader_adapter.md), [**eva::Joystick**](classeva_1_1_joystick.md), [**eva::QuantizeDecor**](classeva_1_1_quantize_decor.md), [**eva::Slider**](classeva_1_1_slider.md), [**eva::Switch**](classeva_1_1_switch.md))
+* **getValue** ([**eva::AnalogMutablePinReader**](classeva_1_1_analog_mutable_pin_reader.md), [**eva::AnalogPinReader**](classeva_1_1_analog_pin_reader.md), [**eva::BinarizeEqDecor**](classeva_1_1_binarize_eq_decor.md), [**eva::BinarizeGtDecor**](classeva_1_1_binarize_gt_decor.md), [**eva::BinarizeLtDecor**](classeva_1_1_binarize_lt_decor.md), [**eva::DebounceDecor**](classeva_1_1_debounce_decor.md), [**eva::DigitalMutablePinReader**](classeva_1_1_digital_mutable_pin_reader.md), [**eva::DigitalPinReader**](classeva_1_1_digital_pin_reader.md), [**eva::IReader**](classeva_1_1_i_reader.md), [**eva::IReaderAdapter**](classeva_1_1_i_reader_adapter.md), [**eva::Joystick**](classeva_1_1_joystick.md), [**eva::QuantizeDecor**](classeva_1_1_quantize_decor.md), [**eva::Slider**](classeva_1_1_slider.md), [**eva::Switch**](classeva_1_1_switch.md))
 * **getRemaining** ([**eva::CountdownTimer**](classeva_1_1_countdown_timer.md))
 * **getPeriod** ([**eva::Heartbeat**](classeva_1_1_heartbeat.md))
 * **getDeadZone** ([**eva::Joystick**](classeva_1_1_joystick.md))
@@ -62,12 +72,17 @@
 
 ## i
 
-* **isValid** ([**eva::AnalogPinReader**](classeva_1_1_analog_pin_reader.md), [**eva::DigitalPinReader**](classeva_1_1_digital_pin_reader.md), [**eva::IReader**](classeva_1_1_i_reader.md), [**eva::IReaderAdapter**](classeva_1_1_i_reader_adapter.md))
+* **isValid** ([**eva::AnalogMutablePinReader**](classeva_1_1_analog_mutable_pin_reader.md), [**eva::AnalogPinReader**](classeva_1_1_analog_pin_reader.md), [**eva::DigitalMutablePinReader**](classeva_1_1_digital_mutable_pin_reader.md), [**eva::DigitalPinReader**](classeva_1_1_digital_pin_reader.md), [**eva::IReader**](classeva_1_1_i_reader.md), [**eva::IReaderAdapter**](classeva_1_1_i_reader_adapter.md))
 * **Indicator** ([**eva::BlinkingIndicator**](classeva_1_1_blinking_indicator.md), [**eva::Indicator**](classeva_1_1_indicator.md))
 * **invoke** ([**eva::BlinkingIndicator**](classeva_1_1_blinking_indicator.md), [**eva::CountdownIndicator**](classeva_1_1_countdown_indicator.md), [**eva::Handler**](classeva_1_1_handler.md), [**eva::HandlerF**](classeva_1_1_handler_f.md), [**eva::IHandler**](classeva_1_1_i_handler.md))
 * **isRunning** ([**eva::DelayTimer**](classeva_1_1_delay_timer.md))
 * **indexOf** ([**eva::List**](classeva_1_1_list.md))
 * **isEmpty** ([**eva::List**](classeva_1_1_list.md))
+
+
+## j
+
+* **Joystick** ([**eva::Joystick**](classeva_1_1_joystick.md))
 
 
 ## l
@@ -90,6 +105,11 @@
 * **operator[]** ([**eva::List**](classeva_1_1_list.md))
 
 
+## q
+
+* **QuantizeDecor** ([**eva::QuantizeDecor**](classeva_1_1_quantize_decor.md))
+
+
 ## r
 
 * **remove** ([**eva::List**](classeva_1_1_list.md))
@@ -106,6 +126,7 @@
 * **setDeadZone** ([**eva::Joystick**](classeva_1_1_joystick.md))
 * **setTrim** ([**eva::Joystick**](classeva_1_1_joystick.md))
 * **setPeriod** ([**eva::RepeatTimer**](classeva_1_1_repeat_timer.md))
+* **Slider** ([**eva::Slider**](classeva_1_1_slider.md))
 * **Switch** ([**eva::Switch**](classeva_1_1_switch.md))
 
 

@@ -39,7 +39,6 @@ namespace eva
     unsigned char dutycyclePercent;
   };
 }
-
 ```
 
 

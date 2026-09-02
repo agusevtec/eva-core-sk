@@ -15,6 +15,42 @@
       </param>
     </templateparamlist>
     <sectiondef kind="public-func">
+      <memberdef kind="function" id="classeva_1_1_binarize_gt_decor_1a42ba74c17a32d504bacdcd3672695f56" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+        </templateparamlist>
+        <type></type>
+        <definition>eva::BinarizeGtDecor&lt; TReader, THRESHOLD &gt;::BinarizeGtDecor</definition>
+        <argsstring>(Args... args)</argsstring>
+        <name>BinarizeGtDecor</name>
+        <qualifiedname>eva::BinarizeGtDecor::BinarizeGtDecor</qualifiedname>
+        <param>
+          <type>Args...</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+<para>Constructs a <ref refid="classeva_1_1_binarize_gt_decor" kindref="compound">BinarizeGtDecor</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Additional arguments passed to TReader constructor </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evaReaderDecors.h" line="139" column="9" bodyfile="src/evaReaderDecors.h" bodystart="139" bodyend="141"/>
+      </memberdef>
       <memberdef kind="function" id="classeva_1_1_binarize_gt_decor_1a40b0d169827803f9a35baf71cc81f595" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>signed short</type>
         <definition>signed short eva::BinarizeGtDecor&lt; TReader, THRESHOLD &gt;::getValue</definition>
@@ -22,18 +58,40 @@
         <name>getValue</name>
         <qualifiedname>eva::BinarizeGtDecor::getValue</qualifiedname>
         <briefdescription>
+<para>Gets binary value based on greater than comparison. </para>
         </briefdescription>
         <detaileddescription>
+<para><simplesect kind="return"><para>1 if value &gt;= THRESHOLD, 0 otherwise </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaReaderDecors.h" line="83" column="22" bodyfile="src/evaReaderDecors.h" bodystart="83" bodyend="88"/>
+        <location file="src/evaReaderDecors.h" line="146" column="22" bodyfile="src/evaReaderDecors.h" bodystart="146" bodyend="151"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
-<para>Decorator that converts analog reading to binary based on &apos;greater then&apos; threshold condition. </para>
+<para>Decorator that converts analog reading to binary based on &apos;greater than&apos; threshold condition. </para>
     </briefdescription>
     <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>TReader</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Underlying reader type </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>THRESHOLD</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Threshold value </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
     </detaileddescription>
     <inheritancegraph>
       <node id="2">
@@ -57,8 +115,9 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="src/evaReaderDecors.h" line="80" column="5" bodyfile="src/evaReaderDecors.h" bodystart="81" bodyend="89"/>
+    <location file="src/evaReaderDecors.h" line="131" column="5" bodyfile="src/evaReaderDecors.h" bodystart="132" bodyend="152"/>
     <listofallmembers>
+      <member refid="classeva_1_1_binarize_gt_decor_1a42ba74c17a32d504bacdcd3672695f56" prot="public" virt="non-virtual"><scope>eva::BinarizeGtDecor</scope><name>BinarizeGtDecor</name></member>
       <member refid="classeva_1_1_binarize_gt_decor_1a40b0d169827803f9a35baf71cc81f595" prot="public" virt="non-virtual"><scope>eva::BinarizeGtDecor</scope><name>getValue</name></member>
     </listofallmembers>
   </compounddef>

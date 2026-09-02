@@ -1,4 +1,5 @@
 #pragma once
+
 #include "evaTickable.h"
 #include "evaHandler.h"
 
@@ -10,8 +11,15 @@ namespace eva
     class DelayTimer : public Tickable
     {
     public:
+        /**
+         * @brief Constructs a DelayTimer with no listener
+         */
         DelayTimer();
 
+        /**
+         * @brief Constructs a DelayTimer with a listener
+         * @param listener Handler to invoke when timer expires
+         */
         DelayTimer(IHandler *listener);
 
         /**

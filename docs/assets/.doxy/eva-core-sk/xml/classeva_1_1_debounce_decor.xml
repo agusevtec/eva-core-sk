@@ -23,7 +23,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaReaderDecors.h" line="44" column="23" bodyfile="src/evaReaderDecors.h" bodystart="44" bodyend="-1"/>
+        <location file="src/evaReaderDecors.h" line="64" column="23" bodyfile="src/evaReaderDecors.h" bodystart="64" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classeva_1_1_debounce_decor_1a08dbb439a2fbbe2a6c303305f9f500e1" prot="private" static="no" mutable="no">
         <type>signed short</type>
@@ -38,10 +38,46 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaReaderDecors.h" line="45" column="22" bodyfile="src/evaReaderDecors.h" bodystart="45" bodyend="-1"/>
+        <location file="src/evaReaderDecors.h" line="65" column="22" bodyfile="src/evaReaderDecors.h" bodystart="65" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
+      <memberdef kind="function" id="classeva_1_1_debounce_decor_1a769bb08dfd558fc125fa6db710da3b63" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+        </templateparamlist>
+        <type></type>
+        <definition>eva::DebounceDecor&lt; TReader &gt;::DebounceDecor</definition>
+        <argsstring>(Args... args)</argsstring>
+        <name>DebounceDecor</name>
+        <qualifiedname>eva::DebounceDecor::DebounceDecor</qualifiedname>
+        <param>
+          <type>Args...</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+<para>Constructs a <ref refid="classeva_1_1_debounce_decor" kindref="compound">DebounceDecor</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Additional arguments passed to TReader constructor </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evaReaderDecors.h" line="37" column="9" bodyfile="src/evaReaderDecors.h" bodystart="37" bodyend="39"/>
+      </memberdef>
       <memberdef kind="function" id="classeva_1_1_debounce_decor_1af6e5231badc84e9fc6481f1db0ae7c26" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>signed short</type>
         <definition>signed short eva::DebounceDecor&lt; TReader &gt;::getValue</definition>
@@ -49,18 +85,32 @@
         <name>getValue</name>
         <qualifiedname>eva::DebounceDecor::getValue</qualifiedname>
         <briefdescription>
+<para>Gets debounced value. </para>
         </briefdescription>
         <detaileddescription>
+<para><simplesect kind="return"><para>Stable reading after debounce period </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaReaderDecors.h" line="24" column="22" bodyfile="src/evaReaderDecors.h" bodystart="24" bodyend="41"/>
+        <location file="src/evaReaderDecors.h" line="44" column="22" bodyfile="src/evaReaderDecors.h" bodystart="44" bodyend="61"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
 <para>Decorator that stabilizes readings by requiring value to be stable for a period. </para>
     </briefdescription>
     <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>TReader</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Underlying reader type </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
     </detaileddescription>
     <inheritancegraph>
       <node id="2">
@@ -84,8 +134,9 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="src/evaReaderDecors.h" line="21" column="5" bodyfile="src/evaReaderDecors.h" bodystart="22" bodyend="46"/>
+    <location file="src/evaReaderDecors.h" line="29" column="5" bodyfile="src/evaReaderDecors.h" bodystart="30" bodyend="66"/>
     <listofallmembers>
+      <member refid="classeva_1_1_debounce_decor_1a769bb08dfd558fc125fa6db710da3b63" prot="public" virt="non-virtual"><scope>eva::DebounceDecor</scope><name>DebounceDecor</name></member>
       <member refid="classeva_1_1_debounce_decor_1af6e5231badc84e9fc6481f1db0ae7c26" prot="public" virt="non-virtual"><scope>eva::DebounceDecor</scope><name>getValue</name></member>
       <member refid="classeva_1_1_debounce_decor_1a08dbb439a2fbbe2a6c303305f9f500e1" prot="private" virt="non-virtual"><scope>eva::DebounceDecor</scope><name>keepedValue</name></member>
       <member refid="classeva_1_1_debounce_decor_1a8393a59114e20d8a91d7aa693feb6f72" prot="private" virt="non-virtual"><scope>eva::DebounceDecor</scope><name>keepValueTill</name></member>

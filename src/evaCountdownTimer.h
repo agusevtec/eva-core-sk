@@ -1,14 +1,18 @@
 #pragma once
+
 #include "evaDelayTimer.h"
 
 namespace eva
 {
     /**
-     * @brief Timer that fires repeatedly at fixed intervals
+     * @brief Timer that fires a specified number of times at fixed intervals
      */
     class CountdownTimer : public DelayTimer
     {
     public:
+        /**
+         * @brief Constructs a CountdownTimer
+         */
         using DelayTimer::DelayTimer;
 
         /**
@@ -50,4 +54,3 @@ namespace eva
         unsigned char remainingCount;
     };
 };
-

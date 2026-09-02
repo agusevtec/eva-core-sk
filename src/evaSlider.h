@@ -7,27 +7,49 @@ namespace eva
 {
   /**
    * @brief Maps analog readings to 1000-2000 range
+   * @tparam TReader Underlying reader type
+   * @tparam tMinPos Minimum analog reading
+   * @tparam tMaxPos Maximum analog reading
    */
-  template <class TReader, unsigned short MIN_POS, unsigned short MAX_POS>
+  template <class TReader, unsigned short tMinPos = 0, unsigned short tMaxPos = 1024>
   class Slider : public TReader
   {
   public:
     /**
+     * @brief Constructs a Slider
+     * @param args Additional arguments passed to TReader constructor
+     */
+    template <typename... Args>
+    Slider(Args... args) : TReader(args...)
+    {
+    }
+    /**
+     * @brief Gets normalized slider position with custom range
+     * @tparam MINPOS Minimum analog reading
+     * @tparam MAXPOS Maximum analog reading
+     * @return Value from 1000 to 2000
+     */
+    template <unsigned short MINPOS, unsigned short MAXPOS>
+    signed short getValue()
+    {
+      return constrain(map(TReader::getValue(), MINPOS, MAXPOS, 1000, 2000), 1000, 2000);
+    }
+    /**
      * @brief Gets normalized slider position
-     * @return Value from 0 to 255
+     * @return Value from 1000 to 2000
      */
     signed short getValue()
     {
-      return constrain(map(TReader::getValue(), MIN_POS, MAX_POS, 1000, 2000), 1000, 2000);
+      return getValue<tMinPos, tMaxPos>();
     }
   };
   /**
    * @brief Pin-based slider mapping analog readings to 0-255 range
-   * @tparam PIN Arduino pin number
-   * @tparam PIN_MODE Pin mode (usually INPUT)
-   * @tparam MIN_POS Minimum analog reading
-   * @tparam MAX_POS Maximum analog reading
+   * @tparam tPin Arduino pin number
+   * @tparam tPinMode Pin mode (usually INPUT)
+   * @tparam tMinPos Minimum analog reading
+   * @tparam tMaxPos Maximum analog reading
    */
-  template <unsigned short PIN, int PIN_MODE, unsigned short MIN_POS, unsigned short MAX_POS>
-  using PinSlider = Slider<AnalogPinReader<PIN, PIN_MODE>, MIN_POS, MAX_POS>;
+  template <unsigned short tPin, int tPinMode, unsigned short tMinPos, unsigned short tMaxPos>
+  using PinSlider = Slider<AnalogPinReader<tPin, tPinMode>, tMinPos, tMaxPos>;
 };

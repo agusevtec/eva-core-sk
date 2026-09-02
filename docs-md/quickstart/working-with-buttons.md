@@ -53,17 +53,17 @@ void loop() {
 The `PinButton` alias demonstrates the library's composable architecture:
 
 ```cpp
-template <int PIN, int PIN_MODE, int ACTIVATES_ON>
-using PinButton = Button<BinarizeEqDecor<DebounceDecor<DigitalPinReader<PIN, PINMODE>>, ACTIVATES_ON>>;
+template <int tPin, int tPinMode, int tActivatesOn>
+using PinButton = Button<BinarizeEqDecor<DebounceDecor<DigitalPinReader<tPin, PINMODE>>, tActivatesOn>>;
 ```
 
 This builds the button from several layers:
 
 | Layer | Purpose |
 |-------|---------|
-| `DigitalPinReader<PIN, PIN_MODE>` | Reads the raw digital pin value |
+| `DigitalPinReader<tPin, tPinMode>` | Reads the raw digital pin value |
 | `DebounceDecor<...>` | Stabilizes readings (120ms debounce) |
-| `BinarizeEqDecor<..., ACTIVATES_ON>` | Converts the reading to 0/1 based on active level |
+| `BinarizeEqDecor<..., tActivatesOn>` | Converts the reading to 0/1 based on active level |
 | `Button<...>` | Adds press/release/click detection logic |
 
 
@@ -154,17 +154,17 @@ Event information: The handler receives a CallbackInfo structure containing both
 The `PinMultiButton` alias shows an even more sophisticated composition:
 
 ```cpp
-template <int PIN, int PINMODE, signed short... LEVELS>
-using PinMultiButton = Button<QuantizeDecor<DebounceDecor<AnalogPinReader<PIN, PINMODE>>, LEVELS...>>;
+template <int tPin, int PINMODE, signed short... tLevels>
+using PinMultiButton = Button<QuantizeDecor<DebounceDecor<AnalogPinReader<tPin, PINMODE>>, tLevels...>>;
 ```
 
 The layers:
 
 | Layer | Purpose |
 |-------|---------|
-| `AnalogPinReader<PIN, PINMODE>` | Reads raw analog values |
+| `AnalogPinReader<tPin, PINMODE>` | Reads raw analog values |
 | `DebounceDecor<...>` | Stabilizes readings (120ms debounce) |
-| `QuantizeDecor<..., LEVELS...>` | Maps analog values to button indices (1..n) |
+| `QuantizeDecor<..., tLevels...>` | Maps analog values to button indices (1..n) |
 | `Button<...>` | Adds button state machine and event generation |
 
 Because the composition forms a single inheritance chain, all public methods of every layer remain accessible on the final object. This allows you to reach through the abstraction layers when needed.

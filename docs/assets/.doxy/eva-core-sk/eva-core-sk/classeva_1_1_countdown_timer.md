@@ -8,7 +8,7 @@
 
 
 
-_Timer that fires repeatedly at fixed intervals._ 
+_Timer that fires a specified number of times at fixed intervals._ 
 
 * `#include <evaCountdownTimer.h>`
 
@@ -93,8 +93,8 @@ Inherits the following classes: [eva::DelayTimer](classeva_1_1_delay_timer.md)
 
 | Type | Name |
 | ---: | :--- |
-|   | [**DelayTimer**](#function-delaytimer-12) () <br> |
-|   | [**DelayTimer**](#function-delaytimer-22) ([**IHandler**](classeva_1_1_i_handler.md) \* listener) <br> |
+|   | [**DelayTimer**](#function-delaytimer-12) () <br>_Constructs a_ [_**CountdownTimer**_](classeva_1_1_countdown_timer.md) _._ |
+|   | [**DelayTimer**](#function-delaytimer-22) ([**IHandler**](classeva_1_1_i_handler.md) \* listener) <br>_Constructs a_ [_**CountdownTimer**_](classeva_1_1_countdown_timer.md) _._ |
 |  unsigned char | [**getRemaining**](#function-getremaining) () <br>_Returns the number of remaining timer ticks._  |
 |  [**CountdownTimer**](classeva_1_1_countdown_timer.md) \* | [**setListener**](#function-setlistener) ([**IHandler**](classeva_1_1_i_handler.md) \* listener) <br>_Assigns or changes the event listener._  |
 |  void | [**start**](#function-start-12) (unsigned short period, unsigned char count, [**IHandler**](classeva_1_1_i_handler.md) \* listener) <br>_Starts or restarts the repeating timer._  |
@@ -107,10 +107,10 @@ See [eva::DelayTimer](classeva_1_1_delay_timer.md)
 
 | Type | Name |
 | ---: | :--- |
-|   | [**DelayTimer**](classeva_1_1_delay_timer.md#function-delaytimer-12) () <br> |
-|   | [**DelayTimer**](classeva_1_1_delay_timer.md#function-delaytimer-22) ([**IHandler**](classeva_1_1_i_handler.md) \* listener) <br> |
+|   | [**DelayTimer**](classeva_1_1_delay_timer.md#function-delaytimer-12) () <br>_Constructs a_ [_**DelayTimer**_](classeva_1_1_delay_timer.md) _with no listener._ |
+|   | [**DelayTimer**](classeva_1_1_delay_timer.md#function-delaytimer-22) ([**IHandler**](classeva_1_1_i_handler.md) \* listener) <br>_Constructs a_ [_**DelayTimer**_](classeva_1_1_delay_timer.md) _with a listener._ |
 |  bool | [**isRunning**](classeva_1_1_delay_timer.md#function-isrunning) () <br>_Checks if the timer is currently active._  |
-|  DelayTimer \* | [**setListener**](classeva_1_1_delay_timer.md#function-setlistener) ([**IHandler**](classeva_1_1_i_handler.md) \* listener) <br>_Assigns or changes the event listener._  |
+|  [**DelayTimer**](classeva_1_1_delay_timer.md#function-delaytimer-12) \* | [**setListener**](classeva_1_1_delay_timer.md#function-setlistener) ([**IHandler**](classeva_1_1_i_handler.md) \* listener) <br>_Assigns or changes the event listener._  |
 |  void | [**start**](classeva_1_1_delay_timer.md#function-start-12) (unsigned short delay, [**IHandler**](classeva_1_1_i_handler.md) \* listener) <br>_Starts the timer._  |
 |  void | [**start**](classeva_1_1_delay_timer.md#function-start-22) (unsigned short delay) <br>_Starts the timer._  |
 |  void | [**stop**](classeva_1_1_delay_timer.md#function-stop) () <br>_Stops the timer._  |
@@ -238,6 +238,7 @@ See [eva::DelayTimer](classeva_1_1_delay_timer.md)
 
 ### function DelayTimer [1/2]
 
+_Constructs a_ [_**CountdownTimer**_](classeva_1_1_countdown_timer.md) _._
 ```C++
 eva::CountdownTimer::DelayTimer () 
 ```
@@ -251,6 +252,7 @@ eva::CountdownTimer::DelayTimer ()
 
 ### function DelayTimer [2/2]
 
+_Constructs a_ [_**CountdownTimer**_](classeva_1_1_countdown_timer.md) _._
 ```C++
 eva::CountdownTimer::DelayTimer (
     IHandler * listener

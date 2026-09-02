@@ -17,7 +17,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaHeartbeat.h" line="18" column="29" bodyfile="src/evaHeartbeat.h" bodystart="18" bodyend="-1"/>
+        <location file="src/evaHeartbeat.h" line="19" column="29" bodyfile="src/evaHeartbeat.h" bodystart="19" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classeva_1_1_heartbeat_1a1cc37c7fc1e8e9a47394c676d48d485c" prot="private" static="no" mutable="no">
         <type>unsigned long</type>
@@ -31,7 +31,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaHeartbeat.h" line="19" column="23" bodyfile="src/evaHeartbeat.h" bodystart="19" bodyend="-1"/>
+        <location file="src/evaHeartbeat.h" line="20" column="23" bodyfile="src/evaHeartbeat.h" bodystart="20" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="protected-func">
@@ -48,7 +48,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaHeartbeat.h" line="26" column="22"/>
+        <location file="src/evaHeartbeat.h" line="27" column="22"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -79,7 +79,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaHeartbeat.h" line="33" column="9"/>
+        <location file="src/evaHeartbeat.h" line="34" column="9"/>
       </memberdef>
       <memberdef kind="function" id="classeva_1_1_heartbeat_1a1a4c3c0f5faa69e1bd25d831f012b526" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type></type>
@@ -94,7 +94,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaHeartbeat.h" line="38" column="17"/>
+        <location file="src/evaHeartbeat.h" line="39" column="17"/>
       </memberdef>
       <memberdef kind="function" id="classeva_1_1_heartbeat_1adce9a250ce4084170f1afb1093f5dd5b" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -110,7 +110,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaHeartbeat.h" line="44" column="14"/>
+        <location file="src/evaHeartbeat.h" line="45" column="14"/>
       </memberdef>
       <memberdef kind="function" id="classeva_1_1_heartbeat_1a9291db0d04f513d529b22f872de2fdeb" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>unsigned long</type>
@@ -128,7 +128,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaHeartbeat.h" line="50" column="23"/>
+        <location file="src/evaHeartbeat.h" line="51" column="23"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -162,7 +162,7 @@
         <link refid="classeva_1_1_tickable"/>
       </node>
     </collaborationgraph>
-    <location file="src/evaHeartbeat.h" line="15" column="5" bodyfile="src/evaHeartbeat.h" bodystart="16" bodyend="51"/>
+    <location file="src/evaHeartbeat.h" line="16" column="5" bodyfile="src/evaHeartbeat.h" bodystart="17" bodyend="52"/>
     <listofallmembers>
       <member refid="classeva_1_1_heartbeat_1a9291db0d04f513d529b22f872de2fdeb" prot="public" virt="non-virtual"><scope>eva::Heartbeat</scope><name>getPeriod</name></member>
       <member refid="classeva_1_1_heartbeat_1ad18f109bb8f83cdd5f8ec8ead2b0312b" prot="public" virt="non-virtual"><scope>eva::Heartbeat</scope><name>Heartbeat</name></member>

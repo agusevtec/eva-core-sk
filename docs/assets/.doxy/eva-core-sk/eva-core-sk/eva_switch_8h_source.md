@@ -26,12 +26,8 @@ namespace eva
     class Switch : public TReader, public Tickable
     {
     public:
-        Switch()
-        {
-            enable(true);
-        }
-
-        Switch(IHandler *listener, unsigned short eventMask)
+        template <typename... Args>
+        Switch(IHandler *listener = nullptr, unsigned short eventMask = 0, Args... args) : TReader(args...)
         {
             enable(true);
             setListener(listener, eventMask);
@@ -136,14 +132,14 @@ namespace eva
         IHandler *listener = nullptr;
     };
 
-    template <int PIN, int PIN_MODE, int ACTIVE_LEVEL>
-    using PinSwitch = Switch<BinarizeEqDecor<DebounceDecor<DigitalPinReader<PIN, PIN_MODE>>, ACTIVE_LEVEL>>;
+    template <int tPin, int tPinMode, int ACTIVE_LEVEL>
+    using PinSwitch = Switch<BinarizeEqDecor<DebounceDecor<DigitalPinReader<tPin, tPinMode>>, ACTIVE_LEVEL>>;
 
-    template <int PIN>
-    using PullupSwitch = PinSwitch<PIN, INPUT_PULLUP, LOW>;
+    template <int tPin>
+    using PullupSwitch = PinSwitch<tPin, INPUT_PULLUP, LOW>;
 
-    template <int PIN, int PIN_MODE, signed short... LEVELS>
-    using PinMultiSwitch = Switch<QuantizeDecor<DebounceDecor<AnalogPinReader<PIN, PIN_MODE>>, LEVELS...>>;
+    template <int tPin, int tPinMode, signed short... tLevels>
+    using PinMultiSwitch = Switch<QuantizeDecor<DebounceDecor<AnalogPinReader<tPin, tPinMode>>, tLevels...>>;
 };
 ```
 

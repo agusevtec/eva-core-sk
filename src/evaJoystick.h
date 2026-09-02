@@ -1,30 +1,56 @@
 #pragma once
+
 #include "evaStdReaders.h"
 
 namespace eva
 {
   /**
    * @brief Joystick axis reader (range 1000-1500-2000) with trim adjustment
+   * @param deadZone dead-zone value
    * @tparam TReader Underlying reader type
-   * @tparam MIN_POS Minimum analog value
-   * @tparam MIDDLE_POS Center value
-   * @tparam MAX_POS Maximum analog value
+   * @tparam tMinPos Minimum analog value
+   * @tparam tMiddlePos Center value
+   * @tparam tMaxPos Maximum analog value
    */
-  template <class TReader, unsigned short MIN_POS, unsigned short MIDDLE_POS, unsigned short MAX_POS>
+  template <class TReader, unsigned short tMinPos = 0, unsigned short tMiddlePos = 512, unsigned short tMaxPos = 1024>
   class Joystick : public TReader
   {
   public:
     /**
-     * @brief Gets normalized joystick position (1000 to 2000)
-     * @return Signed char value
+     * @brief Constructs a Joystick with optional dead zone
+     * @param aDeadZone Dead-zone value (0-255)
+     * @param args Additional arguments passed to TReader constructor
      */
+    template <typename... Args>
+    Joystick(short aDeadZone = 0, Args... args) : TReader(args...) , trim(0)
+    {
+       setDeadZone(aDeadZone);
+    }
+
+    /**
+     * @brief Gets normalized joystick position with custom ranges
+     * @tparam MINPOS Minimum analog value
+     * @tparam MIDDLEPOS Center analog value
+     * @tparam MAXPOS Maximum analog value
+     * @return Value from 1000 to 2000
+     */
+    template <unsigned short MINPOS, unsigned short MIDDLEPOS, unsigned short MAXPOS>
     signed short getValue()
     {
       signed short value = TReader::getValue();
-      if ((value < MIDDLE_POS) ^ (MIN_POS < MAX_POS))
-        return constrain(map(value, MIDDLE_POS, MAX_POS, 1500 + this->trim - this->deadZone, 2000), 1500 + this->trim, 2000);
+      if ((value < MIDDLEPOS) ^ (MINPOS < MAXPOS))
+        return constrain(map(value, MIDDLEPOS, MAXPOS, 1500 + this->trim - this->deadZone, 2000), 1500 + this->trim, 2000);
       else
-        return constrain(map(value, MIN_POS, MIDDLE_POS, 1000, 1500 + this->trim + this->deadZone), 1000, 1500 + this->trim);
+        return constrain(map(value, MINPOS, MIDDLEPOS, 1000, 1500 + this->trim + this->deadZone), 1000, 1500 + this->trim);
+    }
+
+    /**
+     * @brief Gets normalized joystick position (1000 to 2000)
+     * @return Value from 1000 to 2000
+     */
+    signed short getValue()
+    {
+      return getValue<tMinPos, tMiddlePos, tMaxPos>();
     }
 
     /**
@@ -38,7 +64,7 @@ namespace eva
 
     /**
      * @brief adds trim adjustment value
-     * @param trim Trim value
+     * @param trim value
      */
     void addTrim(short trimIncrement)
     {
@@ -47,21 +73,24 @@ namespace eva
 
     /**
      * @brief Gets current trim value
-     * @return deadZone value
+     * @return trim value
      */
     signed short getTrim()
     {
       return this->trim;
     }
 
+    /**
+     * @brief Sets dead-zone value
+     * @param deadZone dead-zone value
+     */
     void setDeadZone(short deadZone)
     {
       this->deadZone = constrain(deadZone, 0, 255);
     }
 
-
     /**
-     * @brief Gets current deadZone value
+     * @brief Gets current dead-zone value
      * @return deadZone value
      */
     signed short getDeadZone()
@@ -70,26 +99,27 @@ namespace eva
     }
 
   private:
-    signed char trim = 0;
-    unsigned char deadZone = 0;
+    signed char trim;
+    unsigned char deadZone;
   };
+
   /**
-   * @brief Pin-based joystick with symmetric range (MIN_POS to MAX_POS, center at midpoint)
-   * @tparam PIN Arduino pin number
-   * @tparam PIN_MODE Pin mode (usually INPUT)
-   * @tparam MIN_POS Minimum analog reading
-   * @tparam MAX_POS Maximum analog reading
+   * @brief Pin-based joystick with symmetric range (tMinPos to tMaxPos, center at midpoint)
+   * @tparam tPin Arduino pin number
+   * @tparam tPinMode Pin mode (usually INPUT)
+   * @tparam tMinPos Minimum analog reading
+   * @tparam tMaxPos Maximum analog reading
    */
-  template <int PIN, int PIN_MODE, unsigned short MIN_POS, unsigned short MAX_POS>
-  using PinSymmetricJoystick = Joystick<AnalogPinReader<PIN, PIN_MODE>, MIN_POS, (MAX_POS + MIN_POS) / 2, MAX_POS>;
+  template <int tPin, int tPinMode, unsigned short tMinPos, unsigned short tMaxPos>
+  using PinSymmetricJoystick = Joystick<AnalogPinReader<tPin, tPinMode>, tMinPos, (tMaxPos + tMinPos) / 2, tMaxPos>;
   /**
    * @brief Pin-based joystick with custom center position
-   * @tparam PIN Arduino pin number
-   * @tparam PIN_MODE Pin mode (usually INPUT)
-   * @tparam MIN_POS Minimum analog reading
-   * @tparam MIDDLE_POS Center position reading
-   * @tparam MAX_POS Maximum analog reading
+   * @tparam tPin Arduino pin number
+   * @tparam tPinMode Pin mode (usually INPUT)
+   * @tparam tMinPos Minimum analog reading
+   * @tparam tMiddlePos Center position reading
+   * @tparam tMaxPos Maximum analog reading
    */
-  template <int PIN, int PIN_MODE, unsigned short MIN_POS, unsigned short MIDDLE_POS, unsigned short MAX_POS>
-  using PinJoystick = Joystick<AnalogPinReader<PIN, PIN_MODE>, MIN_POS, MIDDLE_POS, MAX_POS>;
+  template <int tPin, int tPinMode, unsigned short tMinPos, unsigned short tMiddlePos, unsigned short tMaxPos>
+  using PinJoystick = Joystick<AnalogPinReader<tPin, tPinMode>, tMinPos, tMiddlePos, tMaxPos>;
 };

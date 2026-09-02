@@ -34,17 +34,20 @@ namespace eva
      *                (0 = inactive, >0 = active state identifier)
      * @see PinSwitch Digital pin switches with debouncing (typical use)
      * @see PullUpSwitch Pull-up switches convenience alias
-     * @see PinMultiSwitch Multiple switches on one ADC pin     */
+     * @see PinMultiSwitch Multiple switches on one ADC pin
+     */
     template <class TReader>
     class Switch : public TReader, public Tickable
     {
     public:
-        Switch()
-        {
-            enable(true);
-        }
-
-        Switch(IHandler *listener, unsigned short eventMask)
+        /**
+         * @brief Constructs a Switch
+         * @param listener Handler to receive events
+         * @param eventMask Bitmask of events to listen for (ON_PRESS, ON_RELEASE, ON_CHANGE)
+         * @param args Additional arguments passed to TReader constructor
+         */
+        template <typename... Args>
+        Switch(IHandler *listener = nullptr, unsigned short eventMask = 0, Args... args) : TReader(args...)
         {
             enable(true);
             setListener(listener, eventMask);
@@ -179,12 +182,12 @@ namespace eva
      * - DebounceDecor for debouncing (120ms stability)
      * - BinarizeEqDecor for mapping to active/inactive based on specified level
      *
-     * @tparam PIN Arduino pin number
-     * @tparam PIN_MODE Pin mode (INPUT, INPUT_PULLUP, etc.)
+     * @tparam tPin Arduino pin number
+     * @tparam tPinMode Pin mode (INPUT, INPUT_PULLUP, etc.)
      * @tparam ACTIVE_LEVEL Level that means active (LOW or HIGH)
      */
-    template <int PIN, int PIN_MODE, int ACTIVE_LEVEL>
-    using PinSwitch = Switch<BinarizeEqDecor<DebounceDecor<DigitalPinReader<PIN, PIN_MODE>>, ACTIVE_LEVEL>>;
+    template <int tPin, int tPinMode, int ACTIVE_LEVEL>
+    using PinSwitch = Switch<BinarizeEqDecor<DebounceDecor<DigitalPinReader<tPin, tPinMode>>, ACTIVE_LEVEL>>;
 
     /**
      * @brief Pull-up switch (active LOW, connect to GND).
@@ -193,10 +196,10 @@ namespace eva
      * - Pin set to INPUT_PULLUP
      * - Switch connects pin to GND when pressed
      *
-     * @tparam PIN Arduino pin number
+     * @tparam tPin Arduino pin number
      */
-    template <int PIN>
-    using PullupSwitch = PinSwitch<PIN, INPUT_PULLUP, LOW>;
+    template <int tPin>
+    using PullupSwitch = PinSwitch<tPin, INPUT_PULLUP, LOW>;
 
     /**
      * @brief Multiple switches on a single ADC pin using resistor ladder.
@@ -214,10 +217,10 @@ namespace eva
      * QuantizeDecor maps these values to discrete level codes (1, 2, 3...).
      * DebounceDecor provides debouncing.
      *
-     * @tparam PIN Arduino analog pin number
-     * @tparam PIN_MODE Pin mode (usually INPUT)
-     * @tparam LEVELS Threshold values for each switch (expected ADC readings)
+     * @tparam tPin Arduino analog pin number
+     * @tparam tPinMode Pin mode (usually INPUT)
+     * @tparam tLevels Threshold values for each switch (expected ADC readings)
      */
-    template <int PIN, int PIN_MODE, signed short... LEVELS>
-    using PinMultiSwitch = Switch<QuantizeDecor<DebounceDecor<AnalogPinReader<PIN, PIN_MODE>>, LEVELS...>>;
+    template <int tPin, int tPinMode, signed short... tLevels>
+    using PinMultiSwitch = Switch<QuantizeDecor<DebounceDecor<AnalogPinReader<tPin, tPinMode>>, tLevels...>>;
 };

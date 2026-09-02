@@ -15,17 +15,26 @@
 
 namespace eva
 {
-  template <class TReader, unsigned short MIN_POS, unsigned short MAX_POS>
+  template <class TReader, unsigned short tMinPos = 0, unsigned short tMaxPos = 1024>
   class Slider : public TReader
   {
   public:
+    template <typename... Args>
+    Slider(Args... args) : TReader(args...)
+    {
+    }
+    template <unsigned short MINPOS, unsigned short MAXPOS>
     signed short getValue()
     {
-      return constrain(map(TReader::getValue(), MIN_POS, MAX_POS, 1000, 2000), 1000, 2000);
+      return constrain(map(TReader::getValue(), MINPOS, MAXPOS, 1000, 2000), 1000, 2000);
+    }
+    signed short getValue()
+    {
+      return getValue<tMinPos, tMaxPos>();
     }
   };
-  template <unsigned short PIN, int PIN_MODE, unsigned short MIN_POS, unsigned short MAX_POS>
-  using PinSlider = Slider<AnalogPinReader<PIN, PIN_MODE>, MIN_POS, MAX_POS>;
+  template <unsigned short tPin, int tPinMode, unsigned short tMinPos, unsigned short tMaxPos>
+  using PinSlider = Slider<AnalogPinReader<tPin, tPinMode>, tMinPos, tMaxPos>;
 };
 ```
 

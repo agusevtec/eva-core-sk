@@ -3,7 +3,7 @@
   <compounddef id="eva_tickable_8h" kind="file" language="C++">
     <compoundname>evaTickable.h</compoundname>
     <includedby refid="eva_delay_timer_8h" local="yes">src/evaDelayTimer.h</includedby>
-    <includedby refid="eva_heartbeat_8h" local="no">src/evaHeartbeat.h</includedby>
+    <includedby refid="eva_heartbeat_8h" local="yes">src/evaHeartbeat.h</includedby>
     <includedby refid="eva_switch_8h" local="yes">src/evaSwitch.h</includedby>
     <invincdepgraph>
       <node id="5">
@@ -102,7 +102,6 @@
 <codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>Tickable<sp/>*first;</highlight></codeline>
 <codeline lineno="29"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
 <codeline lineno="30"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="31"><highlight class="normal"></highlight></codeline>
     </programlisting>
     <location file="src/evaTickable.h"/>
   </compounddef>

@@ -78,7 +78,7 @@ private:
 public:
   App() {
     joystickZone.setListener(
-      new Handler<App>(this, &App::onZoneEvent),
+      new Handler<App>(this, &onZoneEvent),
       ON_PRESS | ON_RELEASE
     );
   }

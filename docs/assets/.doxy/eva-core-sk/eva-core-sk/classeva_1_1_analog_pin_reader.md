@@ -2,7 +2,7 @@
 
 # Class eva::AnalogPinReader
 
-**template &lt;int PIN, int PIN\_MODE&gt;**
+**template &lt;int tPin, int tPinMode&gt;**
 
 
 
@@ -10,7 +10,7 @@
 
 
 
-_Reads analog pin value._ 
+_Reads analog pin value._ [More...](#detailed-description)
 
 * `#include <evaStdReaders.h>`
 
@@ -55,9 +55,9 @@ Inherited by the following classes: [eva::Joystick](classeva_1_1_joystick.md),  
 
 | Type | Name |
 | ---: | :--- |
-|   | [**AnalogPinReader**](#function-analogpinreader) () <br> |
-|  signed short | [**getValue**](#function-getvalue) () <br> |
-|  bool | [**isValid**](#function-isvalid) () <br> |
+|   | [**AnalogPinReader**](#function-analogpinreader) () <br>_Constructs an_ [_**AnalogPinReader**_](classeva_1_1_analog_pin_reader.md) _and configures pin mode._ |
+|  signed short | [**getValue**](#function-getvalue) () <br>_Reads analog pin value._  |
+|  bool | [**isValid**](#function-isvalid) () <br>_Checks if reader is valid._  |
 
 
 
@@ -86,6 +86,21 @@ Inherited by the following classes: [eva::Joystick](classeva_1_1_joystick.md),  
 
 
 
+## Detailed Description
+
+
+
+
+**Template parameters:**
+
+
+* `tPin` Arduino analog pin number 
+* `tPinMode` Pin mode (usually INPUT) 
+
+
+
+
+    
 ## Public Functions Documentation
 
 
@@ -93,6 +108,7 @@ Inherited by the following classes: [eva::Joystick](classeva_1_1_joystick.md),  
 
 ### function AnalogPinReader 
 
+_Constructs an_ [_**AnalogPinReader**_](classeva_1_1_analog_pin_reader.md) _and configures pin mode._
 ```C++
 inline eva::AnalogPinReader::AnalogPinReader () 
 ```
@@ -106,6 +122,7 @@ inline eva::AnalogPinReader::AnalogPinReader ()
 
 ### function getValue 
 
+_Reads analog pin value._ 
 ```C++
 inline signed short eva::AnalogPinReader::getValue () 
 ```
@@ -113,18 +130,41 @@ inline signed short eva::AnalogPinReader::getValue ()
 
 
 
+
+**Returns:**
+
+ADC reading (0-1023) 
+
+
+
+
+
+        
+
 <hr>
 
 
 
 ### function isValid 
 
+_Checks if reader is valid._ 
 ```C++
 inline bool eva::AnalogPinReader::isValid () 
 ```
 
 
 
+
+
+**Returns:**
+
+Always true for analog pin reader 
+
+
+
+
+
+        
 
 <hr>
 

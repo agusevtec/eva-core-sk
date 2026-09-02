@@ -36,13 +36,14 @@ class MyAppScheduler {
 private:
   RepeatTimer timer;
 
+  Handler<MyAppScheduler> onHeartBeatHandler{ this, &onHeartBeat };
   void onHeartBeat(void* sender, CallbackInfo cbInfo) {
     Serial.println("Heartbeat!");
   }
 
 public:
   MyAppScheduler()
-    : timer(1000, new Handler<MyAppScheduler>(this, &MyAppScheduler::onHeartBeat)) {
+    : timer(1000, &onHeartBeatHandler) {
   }
 };
 

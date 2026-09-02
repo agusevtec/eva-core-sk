@@ -35,7 +35,7 @@
 
 | Type | Name |
 | ---: | :--- |
-| class | [**CountdownTimer**](classeva_1_1_countdown_timer.md) <br>_Timer that fires repeatedly at fixed intervals._  |
+| class | [**CountdownTimer**](classeva_1_1_countdown_timer.md) <br>_Timer that fires a specified number of times at fixed intervals._  |
 
 
 

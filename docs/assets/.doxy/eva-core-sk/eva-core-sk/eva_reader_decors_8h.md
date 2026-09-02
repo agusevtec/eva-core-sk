@@ -35,11 +35,11 @@
 
 | Type | Name |
 | ---: | :--- |
-| class | [**BinarizeEqDecor**](classeva_1_1_binarize_eq_decor.md) &lt;class TReader, ACTIVATES\_ON&gt;<br>_Decorator that converts reading to binary based on level._  |
-| class | [**BinarizeGtDecor**](classeva_1_1_binarize_gt_decor.md) &lt;class TReader, THRESHOLD&gt;<br>_Decorator that converts analog reading to binary based on 'greater then' threshold condition._  |
-| class | [**BinarizeLtDecor**](classeva_1_1_binarize_lt_decor.md) &lt;class TReader, THRESHOLD&gt;<br>_Decorator that converts analog reading to binary based on 'less then' threshold condition._  |
+| class | [**BinarizeEqDecor**](classeva_1_1_binarize_eq_decor.md) &lt;class TReader, tActivatesOn&gt;<br>_Decorator that converts reading to binary based on level equality._  |
+| class | [**BinarizeGtDecor**](classeva_1_1_binarize_gt_decor.md) &lt;class TReader, THRESHOLD&gt;<br>_Decorator that converts analog reading to binary based on 'greater than' threshold condition._  |
+| class | [**BinarizeLtDecor**](classeva_1_1_binarize_lt_decor.md) &lt;class TReader, THRESHOLD&gt;<br>_Decorator that converts analog reading to binary based on 'less than' threshold condition._  |
 | class | [**DebounceDecor**](classeva_1_1_debounce_decor.md) &lt;class TReader&gt;<br>_Decorator that stabilizes readings by requiring value to be stable for a period._  |
-| class | [**QuantizeDecor**](classeva_1_1_quantize_decor.md) &lt;class TReader, LEVELS&gt;<br>_Decorator that quantizes analog readings to discrete levels._  |
+| class | [**QuantizeDecor**](classeva_1_1_quantize_decor.md) &lt;class TReader, tLevels&gt;<br>_Decorator that quantizes analog readings to discrete levels._  |
 
 
 

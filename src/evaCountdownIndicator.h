@@ -17,6 +17,11 @@ namespace eva
     class CountdownIndicator : public BlinkingIndicator
     {
     public:
+        /**
+         * @brief Constructs a CountdownIndicator
+         * @param pin Arduino pin number
+         * @param activationLevel Level that turns indicator on (LOW, HIGH, or PWM value)
+         */
         using BlinkingIndicator::BlinkingIndicator;
         using BlinkingIndicator::on;
 
@@ -52,4 +57,3 @@ namespace eva
         IHandler *listener;
     };
 }
-

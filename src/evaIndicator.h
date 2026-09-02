@@ -1,6 +1,6 @@
 #pragma once
-#include "evaDelayTimer.h"
 
+#include "evaDelayTimer.h"
 #include <Arduino.h>
 
 namespace eva

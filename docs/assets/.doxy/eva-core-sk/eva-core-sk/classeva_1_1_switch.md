@@ -76,11 +76,10 @@ Inherited by the following classes: [eva::Button](classeva_1_1_button.md),  [eva
 
 | Type | Name |
 | ---: | :--- |
-|   | [**Switch**](#function-switch-12) () <br> |
-|   | [**Switch**](#function-switch-22) ([**IHandler**](classeva_1_1_i_handler.md) \* listener, unsigned short eventMask) <br> |
-|  Switch \* | [**enable**](#function-enable) (bool enabled) <br>_Enables or disables the switch._  |
+|   | [**Switch**](#function-switch) ([**IHandler**](classeva_1_1_i_handler.md) \* listener=nullptr, unsigned short eventMask=0, Args... args) <br>_Constructs a_ [_**Switch**_](classeva_1_1_switch.md) _._ |
+|  [**Switch**](classeva_1_1_switch.md#function-switch) \* | [**enable**](#function-enable) (bool enabled) <br>_Enables or disables the switch._  |
 |  signed short | [**getValue**](#function-getvalue) () <br>_Gets the current level code._  |
-|  Switch \* | [**setListener**](#function-setlistener) ([**IHandler**](classeva_1_1_i_handler.md) \* listener, unsigned short eventMask) <br>_Sets the event listener for this switch._  |
+|  [**Switch**](classeva_1_1_switch.md#function-switch) \* | [**setListener**](#function-setlistener) ([**IHandler**](classeva_1_1_i_handler.md) \* listener, unsigned short eventMask) <br>_Sets the event listener for this switch._  |
 
 
 ## Public Functions inherited from eva::Tickable
@@ -223,30 +222,33 @@ Events include both the event type and the level code in argsMask, allowing iden
 
 
 
-### function Switch [1/2]
+### function Switch 
 
+_Constructs a_ [_**Switch**_](classeva_1_1_switch.md) _._
 ```C++
-inline eva::Switch::Switch () 
-```
-
-
-
-
-<hr>
-
-
-
-### function Switch [2/2]
-
-```C++
+template<typename... Args>
 inline eva::Switch::Switch (
-    IHandler * listener,
-    unsigned short eventMask
+    IHandler * listener=nullptr,
+    unsigned short eventMask=0,
+    Args... args
 ) 
 ```
 
 
 
+
+
+**Parameters:**
+
+
+* `listener` [**Handler**](classeva_1_1_handler.md) to receive events 
+* `eventMask` Bitmask of events to listen for (ON\_PRESS, ON\_RELEASE, ON\_CHANGE) 
+* `args` Additional arguments passed to TReader constructor 
+
+
+
+
+        
 
 <hr>
 

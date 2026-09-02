@@ -3,7 +3,7 @@
   <compounddef id="classeva_1_1_quantize_decor" kind="class" language="C++" prot="public">
     <compoundname>eva::QuantizeDecor</compoundname>
     <basecompoundref prot="public" virt="non-virtual">TReader</basecompoundref>
-    <derivedcompoundref refid="classeva_1_1_switch" prot="public" virt="non-virtual">eva::Switch&lt; QuantizeDecor&lt; DebounceDecor&lt; AnalogPinReader&lt; PIN, PIN_MODE &gt; &gt;, LEVELS... &gt; &gt;</derivedcompoundref>
+    <derivedcompoundref refid="classeva_1_1_switch" prot="public" virt="non-virtual">eva::Switch&lt; QuantizeDecor&lt; DebounceDecor&lt; AnalogPinReader&lt; tPin, tPinMode &gt; &gt;, tLevels... &gt; &gt;</derivedcompoundref>
     <includes refid="eva_reader_decors_8h" local="no">evaReaderDecors.h</includes>
     <templateparamlist>
       <param>
@@ -11,31 +11,67 @@
       </param>
       <param>
         <type>signed short...</type>
-        <declname>LEVELS</declname>
-        <defname>LEVELS</defname>
+        <declname>tLevels</declname>
+        <defname>tLevels</defname>
       </param>
     </templateparamlist>
     <sectiondef kind="private-attrib">
-      <memberdef kind="variable" id="classeva_1_1_quantize_decor_1a08578012dc6fb37c815632b626b58b82" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="classeva_1_1_quantize_decor_1a4e1443b7744f7f526846b60b2b6a3099" prot="private" static="no" mutable="no">
         <type>const signed short</type>
-        <definition>const signed short eva::QuantizeDecor&lt; TReader, LEVELS &gt;::levels[sizeof...(LEVELS)]</definition>
-        <argsstring>[sizeof...(LEVELS)]</argsstring>
+        <definition>const signed short eva::QuantizeDecor&lt; TReader, tLevels &gt;::levels[sizeof...(tLevels)]</definition>
+        <argsstring>[sizeof...(tLevels)]</argsstring>
         <name>levels</name>
         <qualifiedname>eva::QuantizeDecor::levels</qualifiedname>
-        <initializer>= {LEVELS...}</initializer>
+        <initializer>= {tLevels...}</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaReaderDecors.h" line="133" column="28" bodyfile="src/evaReaderDecors.h" bodystart="133" bodyend="133"/>
+        <location file="src/evaReaderDecors.h" line="206" column="28" bodyfile="src/evaReaderDecors.h" bodystart="206" bodyend="206"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
-      <memberdef kind="function" id="classeva_1_1_quantize_decor_1a5e93292628dac227bf198a8da3d35856" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classeva_1_1_quantize_decor_1a10c7aa2294a130e04a6a09d89d80bc83" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+        </templateparamlist>
+        <type></type>
+        <definition>eva::QuantizeDecor&lt; TReader, tLevels &gt;::QuantizeDecor</definition>
+        <argsstring>(Args... args)</argsstring>
+        <name>QuantizeDecor</name>
+        <qualifiedname>eva::QuantizeDecor::QuantizeDecor</qualifiedname>
+        <param>
+          <type>Args...</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+<para>Constructs a <ref refid="classeva_1_1_quantize_decor" kindref="compound">QuantizeDecor</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Additional arguments passed to TReader constructor </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evaReaderDecors.h" line="170" column="9" bodyfile="src/evaReaderDecors.h" bodystart="170" bodyend="172"/>
+      </memberdef>
+      <memberdef kind="function" id="classeva_1_1_quantize_decor_1aecc057c9193f48f8bccd3519fcb372f9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>signed short</type>
-        <definition>signed short eva::QuantizeDecor&lt; TReader, LEVELS &gt;::getValue</definition>
+        <definition>signed short eva::QuantizeDecor&lt; TReader, tLevels &gt;::getValue</definition>
         <argsstring>()</argsstring>
         <name>getValue</name>
         <qualifiedname>eva::QuantizeDecor::getValue</qualifiedname>
@@ -49,11 +85,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaReaderDecors.h" line="104" column="22" bodyfile="src/evaReaderDecors.h" bodystart="104" bodyend="118"/>
+        <location file="src/evaReaderDecors.h" line="177" column="22" bodyfile="src/evaReaderDecors.h" bodystart="177" bodyend="191"/>
       </memberdef>
-      <memberdef kind="function" id="classeva_1_1_quantize_decor_1a62100c714b0309e2eb76a711ecc4caea" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classeva_1_1_quantize_decor_1ad3ceb49cbc77ee34423cccccb695a9dc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>signed short</type>
-        <definition>signed short eva::QuantizeDecor&lt; TReader, LEVELS &gt;::getLevel</definition>
+        <definition>signed short eva::QuantizeDecor&lt; TReader, tLevels &gt;::getLevel</definition>
         <argsstring>(unsigned char index)</argsstring>
         <name>getLevel</name>
         <qualifiedname>eva::QuantizeDecor::getLevel</qualifiedname>
@@ -80,38 +116,56 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaReaderDecors.h" line="125" column="22" bodyfile="src/evaReaderDecors.h" bodystart="125" bodyend="130"/>
+        <location file="src/evaReaderDecors.h" line="198" column="22" bodyfile="src/evaReaderDecors.h" bodystart="198" bodyend="203"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
 <para>Decorator that quantizes analog readings to discrete levels. </para>
     </briefdescription>
     <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>TReader</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Underlying reader type </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>tLevels</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Threshold values for each level </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
     </detaileddescription>
     <inheritancegraph>
       <node id="2">
         <label>TReader</label>
       </node>
       <node id="4">
-        <label>eva::Button&lt; QuantizeDecor&lt; DebounceDecor&lt; AnalogPinReader&lt; PIN, PIN_MODE &gt; &gt;, LEVELS... &gt; &gt;</label>
+        <label>eva::Button&lt; QuantizeDecor&lt; DebounceDecor&lt; AnalogPinReader&lt; tPin, tPinMode &gt; &gt;, tLevels... &gt; &gt;</label>
         <link refid="classeva_1_1_button"/>
         <childnode refid="3" relation="public-inheritance">
         </childnode>
       </node>
       <node id="1">
-        <label>eva::QuantizeDecor&lt; TReader, LEVELS &gt;</label>
+        <label>eva::QuantizeDecor&lt; TReader, tLevels &gt;</label>
         <link refid="classeva_1_1_quantize_decor"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
       <node id="5">
-        <label>eva::ScrollButton&lt; QuantizeDecor&lt; DebounceDecor&lt; AnalogPinReader&lt; PIN, PIN_MODE &gt; &gt;, LEVELS... &gt; &gt;</label>
+        <label>eva::ScrollButton&lt; QuantizeDecor&lt; DebounceDecor&lt; AnalogPinReader&lt; tPin, tPinMode &gt; &gt;, tLevels... &gt; &gt;</label>
         <link refid="classeva_1_1_scroll_button"/>
         <childnode refid="4" relation="public-inheritance">
         </childnode>
       </node>
       <node id="3">
-        <label>eva::Switch&lt; QuantizeDecor&lt; DebounceDecor&lt; AnalogPinReader&lt; PIN, PIN_MODE &gt; &gt;, LEVELS... &gt; &gt;</label>
+        <label>eva::Switch&lt; QuantizeDecor&lt; DebounceDecor&lt; AnalogPinReader&lt; tPin, tPinMode &gt; &gt;, tLevels... &gt; &gt;</label>
         <link refid="classeva_1_1_switch"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
@@ -122,17 +176,18 @@
         <label>TReader</label>
       </node>
       <node id="1">
-        <label>eva::QuantizeDecor&lt; TReader, LEVELS &gt;</label>
+        <label>eva::QuantizeDecor&lt; TReader, tLevels &gt;</label>
         <link refid="classeva_1_1_quantize_decor"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="src/evaReaderDecors.h" line="95" column="5" bodyfile="src/evaReaderDecors.h" bodystart="96" bodyend="134"/>
+    <location file="src/evaReaderDecors.h" line="160" column="5" bodyfile="src/evaReaderDecors.h" bodystart="161" bodyend="207"/>
     <listofallmembers>
-      <member refid="classeva_1_1_quantize_decor_1a62100c714b0309e2eb76a711ecc4caea" prot="public" virt="non-virtual"><scope>eva::QuantizeDecor</scope><name>getLevel</name></member>
-      <member refid="classeva_1_1_quantize_decor_1a5e93292628dac227bf198a8da3d35856" prot="public" virt="non-virtual"><scope>eva::QuantizeDecor</scope><name>getValue</name></member>
-      <member refid="classeva_1_1_quantize_decor_1a08578012dc6fb37c815632b626b58b82" prot="private" virt="non-virtual"><scope>eva::QuantizeDecor</scope><name>levels</name></member>
+      <member refid="classeva_1_1_quantize_decor_1ad3ceb49cbc77ee34423cccccb695a9dc" prot="public" virt="non-virtual"><scope>eva::QuantizeDecor</scope><name>getLevel</name></member>
+      <member refid="classeva_1_1_quantize_decor_1aecc057c9193f48f8bccd3519fcb372f9" prot="public" virt="non-virtual"><scope>eva::QuantizeDecor</scope><name>getValue</name></member>
+      <member refid="classeva_1_1_quantize_decor_1a4e1443b7744f7f526846b60b2b6a3099" prot="private" virt="non-virtual"><scope>eva::QuantizeDecor</scope><name>levels</name></member>
+      <member refid="classeva_1_1_quantize_decor_1a10c7aa2294a130e04a6a09d89d80bc83" prot="public" virt="non-virtual"><scope>eva::QuantizeDecor</scope><name>QuantizeDecor</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

@@ -2,100 +2,127 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
   <compounddef id="classeva_1_1_analog_pin_reader" kind="class" language="C++" prot="public">
     <compoundname>eva::AnalogPinReader</compoundname>
-    <derivedcompoundref refid="classeva_1_1_joystick" prot="public" virt="non-virtual">eva::Joystick&lt; AnalogPinReader&lt; PIN, PIN_MODE &gt;, MIN_POS,(MAX_POS+MIN_POS)/2, MAX_POS &gt;</derivedcompoundref>
-    <derivedcompoundref refid="classeva_1_1_joystick" prot="public" virt="non-virtual">eva::Joystick&lt; AnalogPinReader&lt; PIN, PIN_MODE &gt;, MIN_POS, MIDDLE_POS, MAX_POS &gt;</derivedcompoundref>
-    <derivedcompoundref refid="classeva_1_1_slider" prot="public" virt="non-virtual">eva::Slider&lt; AnalogPinReader&lt; PIN, PIN_MODE &gt;, MIN_POS, MAX_POS &gt;</derivedcompoundref>
+    <derivedcompoundref refid="classeva_1_1_joystick" prot="public" virt="non-virtual">eva::Joystick&lt; AnalogPinReader&lt; tPin, tPinMode &gt;, tMinPos,(tMaxPos+tMinPos)/2, tMaxPos &gt;</derivedcompoundref>
+    <derivedcompoundref refid="classeva_1_1_joystick" prot="public" virt="non-virtual">eva::Joystick&lt; AnalogPinReader&lt; tPin, tPinMode &gt;, tMinPos, tMiddlePos, tMaxPos &gt;</derivedcompoundref>
+    <derivedcompoundref refid="classeva_1_1_slider" prot="public" virt="non-virtual">eva::Slider&lt; AnalogPinReader&lt; tPin, tPinMode &gt;, tMinPos, tMaxPos &gt;</derivedcompoundref>
     <includes refid="eva_std_readers_8h" local="no">evaStdReaders.h</includes>
     <templateparamlist>
       <param>
         <type>int</type>
-        <declname>PIN</declname>
-        <defname>PIN</defname>
+        <declname>tPin</declname>
+        <defname>tPin</defname>
       </param>
       <param>
         <type>int</type>
-        <declname>PIN_MODE</declname>
-        <defname>PIN_MODE</defname>
+        <declname>tPinMode</declname>
+        <defname>tPinMode</defname>
       </param>
     </templateparamlist>
     <sectiondef kind="public-func">
-      <memberdef kind="function" id="classeva_1_1_analog_pin_reader_1adf062711df7cd9415fb2994510a3aaef" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classeva_1_1_analog_pin_reader_1af3d3930bf025adf0f4e0c4e782084d12" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
-        <definition>eva::AnalogPinReader&lt; PIN, PIN_MODE &gt;::AnalogPinReader</definition>
+        <definition>eva::AnalogPinReader&lt; tPin, tPinMode &gt;::AnalogPinReader</definition>
         <argsstring>()</argsstring>
         <name>AnalogPinReader</name>
         <qualifiedname>eva::AnalogPinReader::AnalogPinReader</qualifiedname>
         <briefdescription>
+<para>Constructs an <ref refid="classeva_1_1_analog_pin_reader" kindref="compound">AnalogPinReader</ref> and configures pin mode. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaStdReaders.h" line="38" column="9" bodyfile="src/evaStdReaders.h" bodystart="38" bodyend="41"/>
+        <location file="src/evaStdReaders.h" line="54" column="9" bodyfile="src/evaStdReaders.h" bodystart="54" bodyend="57"/>
       </memberdef>
-      <memberdef kind="function" id="classeva_1_1_analog_pin_reader_1a8088e6f4af47bbedd85777792d288a65" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classeva_1_1_analog_pin_reader_1ac3b62f56e23d6001b462027f9272117a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>signed short</type>
-        <definition>signed short eva::AnalogPinReader&lt; PIN, PIN_MODE &gt;::getValue</definition>
+        <definition>signed short eva::AnalogPinReader&lt; tPin, tPinMode &gt;::getValue</definition>
         <argsstring>()</argsstring>
         <name>getValue</name>
         <qualifiedname>eva::AnalogPinReader::getValue</qualifiedname>
         <briefdescription>
+<para>Reads analog pin value. </para>
         </briefdescription>
         <detaileddescription>
+<para><simplesect kind="return"><para>ADC reading (0-1023) </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaStdReaders.h" line="43" column="22" bodyfile="src/evaStdReaders.h" bodystart="43" bodyend="46"/>
+        <location file="src/evaStdReaders.h" line="63" column="22" bodyfile="src/evaStdReaders.h" bodystart="63" bodyend="66"/>
       </memberdef>
-      <memberdef kind="function" id="classeva_1_1_analog_pin_reader_1a25aad0ffc5608dc2390c8edba54c5ee2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classeva_1_1_analog_pin_reader_1aac0792bce0b47a25645e0afbab0b845c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
-        <definition>bool eva::AnalogPinReader&lt; PIN, PIN_MODE &gt;::isValid</definition>
+        <definition>bool eva::AnalogPinReader&lt; tPin, tPinMode &gt;::isValid</definition>
         <argsstring>()</argsstring>
         <name>isValid</name>
         <qualifiedname>eva::AnalogPinReader::isValid</qualifiedname>
         <briefdescription>
+<para>Checks if reader is valid. </para>
         </briefdescription>
         <detaileddescription>
+<para><simplesect kind="return"><para>Always true for analog pin reader </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaStdReaders.h" line="47" column="14" bodyfile="src/evaStdReaders.h" bodystart="47" bodyend="50"/>
+        <location file="src/evaStdReaders.h" line="72" column="14" bodyfile="src/evaStdReaders.h" bodystart="72" bodyend="75"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
 <para>Reads analog pin value. </para>
     </briefdescription>
     <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>tPin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Arduino analog pin number </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>tPinMode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pin mode (usually INPUT) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
     </detaileddescription>
     <inheritancegraph>
       <node id="1">
-        <label>eva::AnalogPinReader&lt; PIN, PIN_MODE &gt;</label>
+        <label>eva::AnalogPinReader&lt; tPin, tPinMode &gt;</label>
         <link refid="classeva_1_1_analog_pin_reader"/>
       </node>
       <node id="3">
-        <label>eva::Joystick&lt; AnalogPinReader&lt; PIN, PIN_MODE &gt;, MIN_POS, MIDDLE_POS, MAX_POS &gt;</label>
+        <label>eva::Joystick&lt; AnalogPinReader&lt; tPin, tPinMode &gt;, tMinPos, tMiddlePos, tMaxPos &gt;</label>
         <link refid="classeva_1_1_joystick"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
       <node id="2">
-        <label>eva::Joystick&lt; AnalogPinReader&lt; PIN, PIN_MODE &gt;, MIN_POS,(MAX_POS+MIN_POS)/2, MAX_POS &gt;</label>
+        <label>eva::Joystick&lt; AnalogPinReader&lt; tPin, tPinMode &gt;, tMinPos,(tMaxPos+tMinPos)/2, tMaxPos &gt;</label>
         <link refid="classeva_1_1_joystick"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
       <node id="4">
-        <label>eva::Slider&lt; AnalogPinReader&lt; PIN, PIN_MODE &gt;, MIN_POS, MAX_POS &gt;</label>
+        <label>eva::Slider&lt; AnalogPinReader&lt; tPin, tPinMode &gt;, tMinPos, tMaxPos &gt;</label>
         <link refid="classeva_1_1_slider"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
-    <location file="src/evaStdReaders.h" line="35" column="5" bodyfile="src/evaStdReaders.h" bodystart="36" bodyend="51"/>
+    <location file="src/evaStdReaders.h" line="48" column="5" bodyfile="src/evaStdReaders.h" bodystart="49" bodyend="76"/>
     <listofallmembers>
-      <member refid="classeva_1_1_analog_pin_reader_1adf062711df7cd9415fb2994510a3aaef" prot="public" virt="non-virtual"><scope>eva::AnalogPinReader</scope><name>AnalogPinReader</name></member>
-      <member refid="classeva_1_1_analog_pin_reader_1a8088e6f4af47bbedd85777792d288a65" prot="public" virt="non-virtual"><scope>eva::AnalogPinReader</scope><name>getValue</name></member>
-      <member refid="classeva_1_1_analog_pin_reader_1a25aad0ffc5608dc2390c8edba54c5ee2" prot="public" virt="non-virtual"><scope>eva::AnalogPinReader</scope><name>isValid</name></member>
+      <member refid="classeva_1_1_analog_pin_reader_1af3d3930bf025adf0f4e0c4e782084d12" prot="public" virt="non-virtual"><scope>eva::AnalogPinReader</scope><name>AnalogPinReader</name></member>
+      <member refid="classeva_1_1_analog_pin_reader_1ac3b62f56e23d6001b462027f9272117a" prot="public" virt="non-virtual"><scope>eva::AnalogPinReader</scope><name>getValue</name></member>
+      <member refid="classeva_1_1_analog_pin_reader_1aac0792bce0b47a25645e0afbab0b845c" prot="public" virt="non-virtual"><scope>eva::AnalogPinReader</scope><name>isValid</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

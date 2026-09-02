@@ -32,6 +32,12 @@ namespace eva
     class ScrollButton : public Button<TReader>
     {
     public:
+        /**
+         * @brief Constructs a ScrollButton
+         * @param listener Handler to receive button events
+         * @param eventMask Bitmask of events to listen for
+         * @param args Additional arguments passed to TReader constructor
+         */
         using Button<TReader>::Button;
 
     private:
@@ -100,12 +106,12 @@ namespace eva
      *
      * Long click threshold is fixed at 750ms.
      *
-     * @tparam PIN Arduino pin number
-     * @tparam PIN_MODE Pin mode (INPUT, INPUT_PULLUP, etc.)
-     * @tparam ACTIVATES_ON Level that means "pressed" (LOW or HIGH)
+     * @tparam tPin Arduino pin number
+     * @tparam tPinMode Pin mode (INPUT, INPUT_PULLUP, etc.)
+     * @tparam tActivatesOn Level that means "pressed" (LOW or HIGH)
      */
-    template <int PIN, int PIN_MODE, int ACTIVATES_ON>
-    using PinScrollButton = Button<BinarizeEqDecor<DebounceDecor<DigitalPinReader<PIN, PIN_MODE>>, ACTIVATES_ON>>;
+    template <int tPin, int tPinMode, int tActivatesOn>
+    using PinScrollButton = Button<BinarizeEqDecor<DebounceDecor<DigitalPinReader<tPin, tPinMode>>, tActivatesOn>>;
 
     /**
      * @brief Pull-up key-button (active LOW, connect to GND).
@@ -116,10 +122,10 @@ namespace eva
      *
      * Generates all button events with proper debouncing.
      *
-     * @tparam PIN Arduino pin number
+     * @tparam tPin Arduino pin number
      */
-    template <int PIN>
-    using PullupScrollButton = ScrollButton<BinarizeEqDecor<DebounceDecor<DigitalPinReader<PIN, INPUT_PULLUP>>, LOW>>;
+    template <int tPin>
+    using PullupScrollButton = ScrollButton<BinarizeEqDecor<DebounceDecor<DigitalPinReader<tPin, INPUT_PULLUP>>, LOW>>;
 
     /**
      * @brief Multiple key-buttons on a single ADC pin using resistor ladder.
@@ -140,12 +146,12 @@ namespace eva
      * Generates standard button events for each button, with the button
      * number encoded in the event mask.
      *
-     * @tparam PIN Arduino analog pin number
-     * @tparam PIN_MODE Pin mode (usually INPUT)
-     * @tparam LEVELS Threshold values for each button (expected ADC readings)
+     * @tparam tPin Arduino analog pin number
+     * @tparam tPinMode Pin mode (usually INPUT)
+     * @tparam tLevels Threshold values for each button (expected ADC readings)
      *
      * @see PinMultiSwitch For use cases without click detection
      */
-    template <int PIN, int PIN_MODE, signed short... LEVELS>
-    using PinScrollMultiButton = ScrollButton<QuantizeDecor<DebounceDecor<AnalogPinReader<PIN, PIN_MODE>>, LEVELS...>>;
+    template <int tPin, int tPinMode, signed short... tLevels>
+    using PinScrollMultiButton = ScrollButton<QuantizeDecor<DebounceDecor<AnalogPinReader<tPin, tPinMode>>, tLevels...>>;
 };

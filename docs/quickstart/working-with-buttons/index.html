@@ -930,8 +930,8 @@
 
 <h2 id="how-pinbutton-is-built">How <code>PinButton</code> is Built<a class="headerlink" href="#how-pinbutton-is-built" title="Permanent link">&para;</a></h2>
 <p>The <code>PinButton</code> alias demonstrates the library's composable architecture:</p>
-<div class="codehilite"><pre><span></span><code><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">int</span><span class="w"> </span><span class="n">PIN</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">PIN_MODE</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">ACTIVATES_ON</span><span class="o">&gt;</span>
-<span class="k">using</span><span class="w"> </span><span class="n">PinButton</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Button</span><span class="o">&lt;</span><span class="n">BinarizeEqDecor</span><span class="o">&lt;</span><span class="n">DebounceDecor</span><span class="o">&lt;</span><span class="n">DigitalPinReader</span><span class="o">&lt;</span><span class="n">PIN</span><span class="p">,</span><span class="w"> </span><span class="n">PINMODE</span><span class="o">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">ACTIVATES_ON</span><span class="o">&gt;&gt;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><code><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">int</span><span class="w"> </span><span class="n">tPin</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">tPinMode</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">tActivatesOn</span><span class="o">&gt;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">PinButton</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Button</span><span class="o">&lt;</span><span class="n">BinarizeEqDecor</span><span class="o">&lt;</span><span class="n">DebounceDecor</span><span class="o">&lt;</span><span class="n">DigitalPinReader</span><span class="o">&lt;</span><span class="n">tPin</span><span class="p">,</span><span class="w"> </span><span class="n">PINMODE</span><span class="o">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">tActivatesOn</span><span class="o">&gt;&gt;</span><span class="p">;</span>
 </code></pre></div>
 
 <p>This builds the button from several layers:</p>
@@ -944,7 +944,7 @@
 </thead>
 <tbody>
 <tr>
-<td><code>DigitalPinReader&lt;PIN, PIN_MODE&gt;</code></td>
+<td><code>DigitalPinReader&lt;tPin, tPinMode&gt;</code></td>
 <td>Reads the raw digital pin value</td>
 </tr>
 <tr>
@@ -952,7 +952,7 @@
 <td>Stabilizes readings (120ms debounce)</td>
 </tr>
 <tr>
-<td><code>BinarizeEqDecor&lt;..., ACTIVATES_ON&gt;</code></td>
+<td><code>BinarizeEqDecor&lt;..., tActivatesOn&gt;</code></td>
 <td>Converts the reading to 0/1 based on active level</td>
 </tr>
 <tr>
@@ -1036,8 +1036,8 @@
 <p>Event information: The handler receives a CallbackInfo structure containing both the event type (the event mask) and the button identifier (1 for first button, 2 for second, etc.)</p>
 <h2 id="how-pinmultibutton-is-built">How <code>PinMultiButton</code> is Built<a class="headerlink" href="#how-pinmultibutton-is-built" title="Permanent link">&para;</a></h2>
 <p>The <code>PinMultiButton</code> alias shows an even more sophisticated composition:</p>
-<div class="codehilite"><pre><span></span><code><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">int</span><span class="w"> </span><span class="n">PIN</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">PINMODE</span><span class="p">,</span><span class="w"> </span><span class="kt">signed</span><span class="w"> </span><span class="kt">short</span><span class="p">...</span><span class="w"> </span><span class="n">LEVELS</span><span class="o">&gt;</span>
-<span class="k">using</span><span class="w"> </span><span class="n">PinMultiButton</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Button</span><span class="o">&lt;</span><span class="n">QuantizeDecor</span><span class="o">&lt;</span><span class="n">DebounceDecor</span><span class="o">&lt;</span><span class="n">AnalogPinReader</span><span class="o">&lt;</span><span class="n">PIN</span><span class="p">,</span><span class="w"> </span><span class="n">PINMODE</span><span class="o">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">LEVELS</span><span class="p">...</span><span class="o">&gt;&gt;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><code><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="kt">int</span><span class="w"> </span><span class="n">tPin</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">PINMODE</span><span class="p">,</span><span class="w"> </span><span class="kt">signed</span><span class="w"> </span><span class="kt">short</span><span class="p">...</span><span class="w"> </span><span class="n">tLevels</span><span class="o">&gt;</span>
+<span class="k">using</span><span class="w"> </span><span class="n">PinMultiButton</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Button</span><span class="o">&lt;</span><span class="n">QuantizeDecor</span><span class="o">&lt;</span><span class="n">DebounceDecor</span><span class="o">&lt;</span><span class="n">AnalogPinReader</span><span class="o">&lt;</span><span class="n">tPin</span><span class="p">,</span><span class="w"> </span><span class="n">PINMODE</span><span class="o">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">tLevels</span><span class="p">...</span><span class="o">&gt;&gt;</span><span class="p">;</span>
 </code></pre></div>
 
 <p>The layers:</p>
@@ -1050,7 +1050,7 @@
 </thead>
 <tbody>
 <tr>
-<td><code>AnalogPinReader&lt;PIN, PINMODE&gt;</code></td>
+<td><code>AnalogPinReader&lt;tPin, PINMODE&gt;</code></td>
 <td>Reads raw analog values</td>
 </tr>
 <tr>
@@ -1058,7 +1058,7 @@
 <td>Stabilizes readings (120ms debounce)</td>
 </tr>
 <tr>
-<td><code>QuantizeDecor&lt;..., LEVELS...&gt;</code></td>
+<td><code>QuantizeDecor&lt;..., tLevels...&gt;</code></td>
 <td>Maps analog values to button indices (1..n)</td>
 </tr>
 <tr>

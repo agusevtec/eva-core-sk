@@ -15,6 +15,42 @@
       </param>
     </templateparamlist>
     <sectiondef kind="public-func">
+      <memberdef kind="function" id="classeva_1_1_binarize_lt_decor_1ae41006242abb502e4f2711ee7ea54ce2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+        </templateparamlist>
+        <type></type>
+        <definition>eva::BinarizeLtDecor&lt; TReader, THRESHOLD &gt;::BinarizeLtDecor</definition>
+        <argsstring>(Args... args)</argsstring>
+        <name>BinarizeLtDecor</name>
+        <qualifiedname>eva::BinarizeLtDecor::BinarizeLtDecor</qualifiedname>
+        <param>
+          <type>Args...</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+<para>Constructs a <ref refid="classeva_1_1_binarize_lt_decor" kindref="compound">BinarizeLtDecor</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Additional arguments passed to TReader constructor </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evaReaderDecors.h" line="110" column="9" bodyfile="src/evaReaderDecors.h" bodystart="110" bodyend="112"/>
+      </memberdef>
       <memberdef kind="function" id="classeva_1_1_binarize_lt_decor_1a373cd51632badfce41af685e92b7ef3e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>signed short</type>
         <definition>signed short eva::BinarizeLtDecor&lt; TReader, THRESHOLD &gt;::getValue</definition>
@@ -22,18 +58,40 @@
         <name>getValue</name>
         <qualifiedname>eva::BinarizeLtDecor::getValue</qualifiedname>
         <briefdescription>
+<para>Gets binary value based on less than comparison. </para>
         </briefdescription>
         <detaileddescription>
+<para><simplesect kind="return"><para>1 if value &lt;= THRESHOLD, 0 otherwise </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaReaderDecors.h" line="68" column="22" bodyfile="src/evaReaderDecors.h" bodystart="68" bodyend="73"/>
+        <location file="src/evaReaderDecors.h" line="117" column="22" bodyfile="src/evaReaderDecors.h" bodystart="117" bodyend="122"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
-<para>Decorator that converts analog reading to binary based on &apos;less then&apos; threshold condition. </para>
+<para>Decorator that converts analog reading to binary based on &apos;less than&apos; threshold condition. </para>
     </briefdescription>
     <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>TReader</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Underlying reader type </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>THRESHOLD</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Threshold value </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
     </detaileddescription>
     <inheritancegraph>
       <node id="2">
@@ -57,8 +115,9 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="src/evaReaderDecors.h" line="65" column="5" bodyfile="src/evaReaderDecors.h" bodystart="66" bodyend="74"/>
+    <location file="src/evaReaderDecors.h" line="102" column="5" bodyfile="src/evaReaderDecors.h" bodystart="103" bodyend="123"/>
     <listofallmembers>
+      <member refid="classeva_1_1_binarize_lt_decor_1ae41006242abb502e4f2711ee7ea54ce2" prot="public" virt="non-virtual"><scope>eva::BinarizeLtDecor</scope><name>BinarizeLtDecor</name></member>
       <member refid="classeva_1_1_binarize_lt_decor_1a373cd51632badfce41af685e92b7ef3e" prot="public" virt="non-virtual"><scope>eva::BinarizeLtDecor</scope><name>getValue</name></member>
     </listofallmembers>
   </compounddef>

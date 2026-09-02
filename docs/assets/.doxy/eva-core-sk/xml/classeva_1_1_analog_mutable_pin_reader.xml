@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+  <compounddef id="classeva_1_1_analog_mutable_pin_reader" kind="class" language="C++" prot="public">
+    <compoundname>eva::AnalogMutablePinReader</compoundname>
+    <includes refid="eva_std_readers_8h" local="no">evaStdReaders.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classeva_1_1_analog_mutable_pin_reader_1a08ee346aa4b49ab39ced906667e2e782" prot="private" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t eva::AnalogMutablePinReader::mPin</definition>
+        <argsstring></argsstring>
+        <name>mPin</name>
+        <qualifiedname>eva::AnalogMutablePinReader::mPin</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evaStdReaders.h" line="104" column="17" bodyfile="src/evaStdReaders.h" bodystart="104" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classeva_1_1_analog_mutable_pin_reader_1a92cc6b0de8a765356e0df96d43c12e30" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>eva::AnalogMutablePinReader::AnalogMutablePinReader</definition>
+        <argsstring>(uint8_t aPin, uint8_t aMode)</argsstring>
+        <name>AnalogMutablePinReader</name>
+        <qualifiedname>eva::AnalogMutablePinReader::AnalogMutablePinReader</qualifiedname>
+        <param>
+          <type>uint8_t</type>
+          <declname>aPin</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>aMode</declname>
+        </param>
+        <briefdescription>
+<para>Constructs an <ref refid="classeva_1_1_analog_mutable_pin_reader" kindref="compound">AnalogMutablePinReader</ref> and configures pin. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>aPin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Arduino analog pin number </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>aMode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pin mode </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evaStdReaders.h" line="89" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classeva_1_1_analog_mutable_pin_reader_1a2ffe7021b05bca7a8614c61154b132a5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>signed short</type>
+        <definition>signed short eva::AnalogMutablePinReader::getValue</definition>
+        <argsstring>()</argsstring>
+        <name>getValue</name>
+        <qualifiedname>eva::AnalogMutablePinReader::getValue</qualifiedname>
+        <briefdescription>
+<para>Reads analog pin value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>ADC reading (0-1023) </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evaStdReaders.h" line="95" column="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classeva_1_1_analog_mutable_pin_reader_1a4463004fbbf1bba8f06ab6b1b722aabe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool eva::AnalogMutablePinReader::isValid</definition>
+        <argsstring>()</argsstring>
+        <name>isValid</name>
+        <qualifiedname>eva::AnalogMutablePinReader::isValid</qualifiedname>
+        <briefdescription>
+<para>Checks if reader is valid. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Always true </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evaStdReaders.h" line="101" column="14"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Reads analog pin value with runtime pin configuration. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/evaStdReaders.h" line="81" column="5" bodyfile="src/evaStdReaders.h" bodystart="82" bodyend="105"/>
+    <listofallmembers>
+      <member refid="classeva_1_1_analog_mutable_pin_reader_1a92cc6b0de8a765356e0df96d43c12e30" prot="public" virt="non-virtual"><scope>eva::AnalogMutablePinReader</scope><name>AnalogMutablePinReader</name></member>
+      <member refid="classeva_1_1_analog_mutable_pin_reader_1a2ffe7021b05bca7a8614c61154b132a5" prot="public" virt="non-virtual"><scope>eva::AnalogMutablePinReader</scope><name>getValue</name></member>
+      <member refid="classeva_1_1_analog_mutable_pin_reader_1a4463004fbbf1bba8f06ab6b1b722aabe" prot="public" virt="non-virtual"><scope>eva::AnalogMutablePinReader</scope><name>isValid</name></member>
+      <member refid="classeva_1_1_analog_mutable_pin_reader_1a08ee346aa4b49ab39ced906667e2e782" prot="private" virt="non-virtual"><scope>eva::AnalogMutablePinReader</scope><name>mPin</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

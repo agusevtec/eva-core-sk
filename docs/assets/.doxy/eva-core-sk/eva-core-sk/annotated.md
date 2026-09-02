@@ -5,17 +5,19 @@
 Here are the classes, structs, unions and interfaces with brief descriptions:
 
 * **namespace** [**eva**](namespaceeva.md)     
+    * **class** [**AnalogMutablePinReader**](classeva_1_1_analog_mutable_pin_reader.md) _Reads analog pin value with runtime pin configuration._     
     * **class** [**AnalogPinReader**](classeva_1_1_analog_pin_reader.md) _Reads analog pin value._     
-    * **class** [**BinarizeEqDecor**](classeva_1_1_binarize_eq_decor.md) _Decorator that converts reading to binary based on level._     
-    * **class** [**BinarizeGtDecor**](classeva_1_1_binarize_gt_decor.md) _Decorator that converts analog reading to binary based on 'greater then' threshold condition._     
-    * **class** [**BinarizeLtDecor**](classeva_1_1_binarize_lt_decor.md) _Decorator that converts analog reading to binary based on 'less then' threshold condition._     
+    * **class** [**BinarizeEqDecor**](classeva_1_1_binarize_eq_decor.md) _Decorator that converts reading to binary based on level equality._     
+    * **class** [**BinarizeGtDecor**](classeva_1_1_binarize_gt_decor.md) _Decorator that converts analog reading to binary based on 'greater than' threshold condition._     
+    * **class** [**BinarizeLtDecor**](classeva_1_1_binarize_lt_decor.md) _Decorator that converts analog reading to binary based on 'less than' threshold condition._     
     * **class** [**BlinkingIndicator**](classeva_1_1_blinking_indicator.md) [_**Indicator**_](classeva_1_1_indicator.md) _that blinks with specified period and duty cycle._    
     * **class** [**Button**](classeva_1_1_button.md) [_**Button**_](classeva_1_1_button.md) _with press/release and click detection._    
     * **struct** [**CallbackInfo**](structeva_1_1_callback_info.md)     
     * **class** [**CountdownIndicator**](classeva_1_1_countdown_indicator.md) [_**Indicator**_](classeva_1_1_indicator.md) _that blinks a specified number of times then notifies listener._    
-    * **class** [**CountdownTimer**](classeva_1_1_countdown_timer.md) _Timer that fires repeatedly at fixed intervals._     
+    * **class** [**CountdownTimer**](classeva_1_1_countdown_timer.md) _Timer that fires a specified number of times at fixed intervals._     
     * **class** [**DebounceDecor**](classeva_1_1_debounce_decor.md) _Decorator that stabilizes readings by requiring value to be stable for a period._     
     * **class** [**DelayTimer**](classeva_1_1_delay_timer.md) _One-shot timer that fires after a delay._     
+    * **class** [**DigitalMutablePinReader**](classeva_1_1_digital_mutable_pin_reader.md) _Reads digital pin value with runtime pin configuration._     
     * **class** [**DigitalPinReader**](classeva_1_1_digital_pin_reader.md) _Reads digital pin value._     
     * **class** [**Handler**](classeva_1_1_handler.md) [_**Handler**_](classeva_1_1_handler.md) _that calls a member method._    
     * **class** [**HandlerF**](classeva_1_1_handler_f.md) [_**Handler**_](classeva_1_1_handler.md) _that calls a free function._    

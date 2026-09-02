@@ -100,11 +100,10 @@ See [eva::Switch](classeva_1_1_switch.md)
 
 | Type | Name |
 | ---: | :--- |
-|   | [**Switch**](classeva_1_1_switch.md#function-switch-12) () <br> |
-|   | [**Switch**](classeva_1_1_switch.md#function-switch-22) ([**IHandler**](classeva_1_1_i_handler.md) \* listener, unsigned short eventMask) <br> |
-|  Switch \* | [**enable**](classeva_1_1_switch.md#function-enable) (bool enabled) <br>_Enables or disables the switch._  |
+|   | [**Switch**](classeva_1_1_switch.md#function-switch) ([**IHandler**](classeva_1_1_i_handler.md) \* listener=nullptr, unsigned short eventMask=0, Args... args) <br>_Constructs a_ [_**Switch**_](classeva_1_1_switch.md) _._ |
+|  [**Switch**](classeva_1_1_switch.md#function-switch) \* | [**enable**](classeva_1_1_switch.md#function-enable) (bool enabled) <br>_Enables or disables the switch._  |
 |  signed short | [**getValue**](classeva_1_1_switch.md#function-getvalue) () <br>_Gets the current level code._  |
-|  Switch \* | [**setListener**](classeva_1_1_switch.md#function-setlistener) ([**IHandler**](classeva_1_1_i_handler.md) \* listener, unsigned short eventMask) <br>_Sets the event listener for this switch._  |
+|  [**Switch**](classeva_1_1_switch.md#function-switch) \* | [**setListener**](classeva_1_1_switch.md#function-setlistener) ([**IHandler**](classeva_1_1_i_handler.md) \* listener, unsigned short eventMask) <br>_Sets the event listener for this switch._  |
 
 
 ## Public Functions inherited from eva::Tickable

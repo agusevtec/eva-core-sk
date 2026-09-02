@@ -126,7 +126,7 @@ See [eva::BlinkingIndicator](classeva_1_1_blinking_indicator.md)
 
 | Type | Name |
 | ---: | :--- |
-|   | [**Indicator**](classeva_1_1_blinking_indicator.md#function-indicator) (unsigned pin, int activationLevel=HIGH) <br>_Constructor._  |
+|   | [**Indicator**](classeva_1_1_blinking_indicator.md#function-indicator) (unsigned pin, int activationLevel=HIGH) <br>_Constructs a_ [_**BlinkingIndicator**_](classeva_1_1_blinking_indicator.md) _._ |
 |  void | [**off**](classeva_1_1_blinking_indicator.md#function-off) () <br>_Turns off the indicator._  |
 |  void | [**on**](classeva_1_1_blinking_indicator.md#function-on-12) () <br>_Turns on the indicator continuously._  |
 |  void | [**on**](classeva_1_1_blinking_indicator.md#function-on-22) (unsigned short period, unsigned char dutycyclePercent) <br>_Turns on the indicator with blinking pattern._  |

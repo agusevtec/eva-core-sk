@@ -79,14 +79,14 @@ namespace eva
         unsigned long pressTime = 0;
     };
 
-    template <int PIN, int PIN_MODE, int ACTIVATES_ON>
-    using PinButton = Button<BinarizeEqDecor<DebounceDecor<DigitalPinReader<PIN, PIN_MODE>>, ACTIVATES_ON>>;
+    template <int tPin, int tPinMode, int tActivatesOn>
+    using PinButton = Button<BinarizeEqDecor<DebounceDecor<DigitalPinReader<tPin, tPinMode>>, tActivatesOn>>;
 
-    template <int PIN>
-    using PullUpButton = Button<BinarizeEqDecor<DebounceDecor<DigitalPinReader<PIN, INPUT_PULLUP>>, LOW>>;
+    template <int tPin>
+    using PullUpButton = Button<BinarizeEqDecor<DebounceDecor<DigitalPinReader<tPin, INPUT_PULLUP>>, LOW>>;
 
-    template <int PIN, int PIN_MODE, signed short... LEVELS>
-    using PinMultiButton = Button<QuantizeDecor<DebounceDecor<AnalogPinReader<PIN, PIN_MODE>>, LEVELS...>>;
+    template <int tPin, int tPinMode, signed short... tLevels>
+    using PinMultiButton = Button<QuantizeDecor<DebounceDecor<AnalogPinReader<tPin, tPinMode>>, tLevels...>>;
 }
 ```
 

@@ -709,6 +709,7 @@
 <h1 id="class-hierarchy">Class Hierarchy<a class="headerlink" href="#class-hierarchy" title="Permanent link">&para;</a></h1>
 <p>This inheritance list is sorted roughly, but not completely, alphabetically:</p>
 <ul>
+<li><strong>class</strong> <a href="../classeva_1_1_analog_mutable_pin_reader/"><strong>eva::AnalogMutablePinReader</strong></a> <em>Reads analog pin value with runtime pin configuration.</em> </li>
 <li><strong>class</strong> <a href="../classeva_1_1_analog_pin_reader/"><strong>eva::AnalogPinReader</strong></a> <em>Reads analog pin value.</em>     <ul>
 <li><strong>class</strong> <a href="../classeva_1_1_joystick/"><strong>eva::Joystick</strong></a> <a href="../classeva_1_1_joystick/"><em><strong>Joystick</strong></em></a> <em>axis reader (range 1000-1500-2000) with trim adjustment.</em></li>
 <li><strong>class</strong> <a href="../classeva_1_1_joystick/"><strong>eva::Joystick</strong></a> <a href="../classeva_1_1_joystick/"><em><strong>Joystick</strong></em></a> <em>axis reader (range 1000-1500-2000) with trim adjustment.</em></li>
@@ -763,7 +764,7 @@
 </ul>
 </li>
 <li><strong>class</strong> <a href="../classeva_1_1_delay_timer/"><strong>eva::DelayTimer</strong></a> <em>One-shot timer that fires after a delay.</em>     <ul>
-<li><strong>class</strong> <a href="../classeva_1_1_countdown_timer/"><strong>eva::CountdownTimer</strong></a> <em>Timer that fires repeatedly at fixed intervals.</em> </li>
+<li><strong>class</strong> <a href="../classeva_1_1_countdown_timer/"><strong>eva::CountdownTimer</strong></a> <em>Timer that fires a specified number of times at fixed intervals.</em> </li>
 <li><strong>class</strong> <a href="../classeva_1_1_repeat_timer/"><strong>eva::RepeatTimer</strong></a> <em>Timer that fires repeatedly at fixed intervals.</em> </li>
 </ul>
 </li>
@@ -785,6 +786,7 @@
 </li>
 </ul>
 </li>
+<li><strong>class</strong> <a href="../classeva_1_1_digital_mutable_pin_reader/"><strong>eva::DigitalMutablePinReader</strong></a> <em>Reads digital pin value with runtime pin configuration.</em> </li>
 <li><strong>class</strong> <a href="../classeva_1_1_digital_pin_reader/"><strong>eva::DigitalPinReader</strong></a> <em>Reads digital pin value.</em> </li>
 <li><strong>class</strong> <a href="../classeva_1_1_i_reader/"><strong>eva::IReader</strong></a> <em>Interface for value readers.</em>     <ul>
 <li><strong>class</strong> <a href="../classeva_1_1_i_reader_adapter/"><strong>eva::IReaderAdapter</strong></a> <em>Adapter that converts any class with getValue() into an</em> <a href="../classeva_1_1_i_reader/"><em><strong>IReader</strong></em></a> <em>.</em></li>
@@ -794,7 +796,7 @@
 <li><strong>struct</strong> <a href="../structeva_1_1_callback_info/"><strong>eva::CallbackInfo</strong></a> </li>
 <li><strong>struct</strong> <a href="../structeva_1_1_list_iterator/"><strong>eva::ListIterator</strong></a> <em>Iterator node for</em> <a href="../classeva_1_1_list/"><em><strong>List</strong></em></a> <em>.</em></li>
 <li><strong>class</strong> <strong>TReader</strong>    <ul>
-<li><strong>class</strong> <a href="../classeva_1_1_binarize_eq_decor/"><strong>eva::BinarizeEqDecor</strong></a> <em>Decorator that converts reading to binary based on level.</em>     <ul>
+<li><strong>class</strong> <a href="../classeva_1_1_binarize_eq_decor/"><strong>eva::BinarizeEqDecor</strong></a> <em>Decorator that converts reading to binary based on level equality.</em>     <ul>
 <li><strong>class</strong> <a href="../classeva_1_1_switch/"><strong>eva::Switch</strong></a> <em>Universal switch/button class for multi-valued input sources.</em>     <ul>
 <li><strong>class</strong> <a href="../classeva_1_1_button/"><strong>eva::Button</strong></a> <a href="../classeva_1_1_button/"><em><strong>Button</strong></em></a> <em>with press/release and click detection.</em>    <ul>
 <li><strong>class</strong> <a href="../classeva_1_1_scroll_button/"><strong>eva::ScrollButton</strong></a> <a href="../classeva_1_1_button/"><em><strong>Button</strong></em></a> <em>with auto-repeat (typematic) functionality.</em></li>
@@ -812,8 +814,8 @@
 </li>
 </ul>
 </li>
-<li><strong>class</strong> <a href="../classeva_1_1_binarize_gt_decor/"><strong>eva::BinarizeGtDecor</strong></a> <em>Decorator that converts analog reading to binary based on 'greater then' threshold condition.</em> </li>
-<li><strong>class</strong> <a href="../classeva_1_1_binarize_lt_decor/"><strong>eva::BinarizeLtDecor</strong></a> <em>Decorator that converts analog reading to binary based on 'less then' threshold condition.</em> </li>
+<li><strong>class</strong> <a href="../classeva_1_1_binarize_gt_decor/"><strong>eva::BinarizeGtDecor</strong></a> <em>Decorator that converts analog reading to binary based on 'greater than' threshold condition.</em> </li>
+<li><strong>class</strong> <a href="../classeva_1_1_binarize_lt_decor/"><strong>eva::BinarizeLtDecor</strong></a> <em>Decorator that converts analog reading to binary based on 'less than' threshold condition.</em> </li>
 <li><strong>class</strong> <a href="../classeva_1_1_switch/"><strong>eva::Switch</strong></a> <em>Universal switch/button class for multi-valued input sources.</em>     <ul>
 <li><strong>class</strong> <a href="../classeva_1_1_button/"><strong>eva::Button</strong></a> <a href="../classeva_1_1_button/"><em><strong>Button</strong></em></a> <em>with press/release and click detection.</em>    <ul>
 <li><strong>class</strong> <a href="../classeva_1_1_scroll_button/"><strong>eva::ScrollButton</strong></a> <a href="../classeva_1_1_button/"><em><strong>Button</strong></em></a> <em>with auto-repeat (typematic) functionality.</em></li>

@@ -10,8 +10,8 @@ The eva-core-sk library is designed around this reality.
 Look at how buttons are built:
 
 ```cpp
-template <int PIN, int PINMODE, int ACTIVATES_ON>
-using PinButton = Button<BinarizeEqDecor<DebounceDecor<DigitalPinReader<PIN, PINMODE>>, ACTIVATES_ON>>;
+template <int tPin, int PINMODE, int tActivatesOn>
+using PinButton = Button<BinarizeEqDecor<DebounceDecor<DigitalPinReader<tPin, PINMODE>>, tActivatesOn>>;
 ```
 
 This entire chain resolves at compile time. 

@@ -1,5 +1,6 @@
 #include "evaCountdownTimer.h"
 #include <Arduino.h>
+#include "evaCountdownTimer.h"
 
 using namespace eva;
 
@@ -39,4 +40,9 @@ void CountdownTimer::tick()
 CountdownTimer *CountdownTimer::setListener(IHandler *listener)
 {
     return (CountdownTimer *)DelayTimer::setListener(listener);
+}
+
+unsigned char CountdownTimer::getRemaining()
+{
+    return remainingCount;
 }

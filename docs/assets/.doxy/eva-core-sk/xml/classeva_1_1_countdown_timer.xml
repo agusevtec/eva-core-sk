@@ -17,7 +17,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaCountdownTimer.h" line="49" column="24" bodyfile="src/evaCountdownTimer.h" bodystart="49" bodyend="-1"/>
+        <location file="src/evaCountdownTimer.h" line="53" column="24" bodyfile="src/evaCountdownTimer.h" bodystart="53" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classeva_1_1_countdown_timer_1a4ad9fe360a886b01459824b9de268538" prot="private" static="no" mutable="no">
         <type>unsigned char</type>
@@ -31,7 +31,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaCountdownTimer.h" line="50" column="23" bodyfile="src/evaCountdownTimer.h" bodystart="50" bodyend="-1"/>
+        <location file="src/evaCountdownTimer.h" line="54" column="23" bodyfile="src/evaCountdownTimer.h" bodystart="54" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -64,7 +64,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaCountdownTimer.h" line="19" column="24"/>
+        <location file="src/evaCountdownTimer.h" line="23" column="24"/>
       </memberdef>
       <memberdef kind="function" id="classeva_1_1_countdown_timer_1a895fb90883c085c20f946bb2a21f78df" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -117,7 +117,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaCountdownTimer.h" line="27" column="14"/>
+        <location file="src/evaCountdownTimer.h" line="31" column="14"/>
       </memberdef>
       <memberdef kind="function" id="classeva_1_1_countdown_timer_1a4d623df89d82a86a1dc059721ceca2e7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -158,7 +158,7 @@ Listener must be assigned via constructor or <ref refid="classeva_1_1_countdown_
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaCountdownTimer.h" line="37" column="14"/>
+        <location file="src/evaCountdownTimer.h" line="41" column="14"/>
       </memberdef>
       <memberdef kind="function" id="classeva_1_1_countdown_timer_1a4cbcb7d35dd49ccfa714aa045d25fed7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>unsigned char</type>
@@ -176,7 +176,7 @@ Listener must be assigned via constructor or <ref refid="classeva_1_1_countdown_
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaCountdownTimer.h" line="43" column="23"/>
+        <location file="src/evaCountdownTimer.h" line="47" column="23"/>
       </memberdef>
       <memberdef kind="function" id="classeva_1_1_countdown_timer_1a971246536c3cca838038b493c4da414c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -185,12 +185,13 @@ Listener must be assigned via constructor or <ref refid="classeva_1_1_countdown_
         <name>DelayTimer</name>
         <qualifiedname>eva::CountdownTimer::DelayTimer</qualifiedname>
         <briefdescription>
+<para>Constructs a <ref refid="classeva_1_1_countdown_timer" kindref="compound">CountdownTimer</ref>. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaCountdownTimer.h" line="12" column="9"/>
+        <location file="src/evaCountdownTimer.h" line="16" column="9"/>
       </memberdef>
       <memberdef kind="function" id="classeva_1_1_countdown_timer_1a5889ee3ab5a8f31a35f8849c12be2323" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -203,12 +204,13 @@ Listener must be assigned via constructor or <ref refid="classeva_1_1_countdown_
           <declname>listener</declname>
         </param>
         <briefdescription>
+<para>Constructs a <ref refid="classeva_1_1_countdown_timer" kindref="compound">CountdownTimer</ref>. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaCountdownTimer.h" line="12" column="9"/>
+        <location file="src/evaCountdownTimer.h" line="16" column="9"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="private-func">
@@ -225,11 +227,11 @@ Listener must be assigned via constructor or <ref refid="classeva_1_1_countdown_
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaCountdownTimer.h" line="46" column="14"/>
+        <location file="src/evaCountdownTimer.h" line="50" column="14"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
-<para>Timer that fires repeatedly at fixed intervals. </para>
+<para>Timer that fires a specified number of times at fixed intervals. </para>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
@@ -276,7 +278,7 @@ Listener must be assigned via constructor or <ref refid="classeva_1_1_countdown_
         <link refid="classeva_1_1_tickable"/>
       </node>
     </collaborationgraph>
-    <location file="src/evaCountdownTimer.h" line="9" column="5" bodyfile="src/evaCountdownTimer.h" bodystart="10" bodyend="51"/>
+    <location file="src/evaCountdownTimer.h" line="10" column="5" bodyfile="src/evaCountdownTimer.h" bodystart="11" bodyend="55"/>
     <listofallmembers>
       <member refid="classeva_1_1_delay_timer_1aadecb847985e9b5c4e6c9e2a3f4e435d" prot="protected" virt="non-virtual"><scope>eva::CountdownTimer</scope><name>checkTimeElapsed</name></member>
       <member refid="classeva_1_1_countdown_timer_1a971246536c3cca838038b493c4da414c" prot="public" virt="non-virtual"><scope>eva::CountdownTimer</scope><name>DelayTimer</name></member>

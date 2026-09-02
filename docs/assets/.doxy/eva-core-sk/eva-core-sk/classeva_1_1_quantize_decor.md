@@ -2,7 +2,7 @@
 
 # Class eva::QuantizeDecor
 
-**template &lt;class TReader, signed short... LEVELS&gt;**
+**template &lt;class TReader, signed short... tLevels&gt;**
 
 
 
@@ -10,7 +10,7 @@
 
 
 
-_Decorator that quantizes analog readings to discrete levels._ 
+_Decorator that quantizes analog readings to discrete levels._ [More...](#detailed-description)
 
 * `#include <evaReaderDecors.h>`
 
@@ -56,6 +56,7 @@ Inherited by the following classes: [eva::Switch](classeva_1_1_switch.md)
 
 | Type | Name |
 | ---: | :--- |
+|   | [**QuantizeDecor**](#function-quantizedecor) (Args... args) <br>_Constructs a_ [_**QuantizeDecor**_](classeva_1_1_quantize_decor.md) _._ |
 |  signed short | [**getLevel**](#function-getlevel) (unsigned char index) <br>_Gets threshold value for a level._  |
 |  signed short | [**getValue**](#function-getvalue) () <br>_Gets quantized level index._  |
 
@@ -86,8 +87,51 @@ Inherited by the following classes: [eva::Switch](classeva_1_1_switch.md)
 
 
 
+## Detailed Description
+
+
+
+
+**Template parameters:**
+
+
+* `TReader` Underlying reader type 
+* `tLevels` Threshold values for each level 
+
+
+
+
+    
 ## Public Functions Documentation
 
+
+
+
+### function QuantizeDecor 
+
+_Constructs a_ [_**QuantizeDecor**_](classeva_1_1_quantize_decor.md) _._
+```C++
+template<typename... Args>
+inline eva::QuantizeDecor::QuantizeDecor (
+    Args... args
+) 
+```
+
+
+
+
+
+**Parameters:**
+
+
+* `args` Additional arguments passed to TReader constructor 
+
+
+
+
+        
+
+<hr>
 
 
 

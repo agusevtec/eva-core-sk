@@ -18,6 +18,11 @@ namespace eva
   class BlinkingIndicator : public Indicator, public IHandler
   {
   public:
+    /**
+     * @brief Constructs a BlinkingIndicator
+     * @param pin Arduino pin number
+     * @param activationLevel Level that turns indicator on (LOW, HIGH, or PWM value)
+     */
     using Indicator::Indicator;
 
     /**
@@ -50,4 +55,3 @@ namespace eva
     unsigned char dutycyclePercent;
   };
 }
-

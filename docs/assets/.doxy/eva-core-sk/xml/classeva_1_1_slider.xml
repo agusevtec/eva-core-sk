@@ -10,19 +10,104 @@
       </param>
       <param>
         <type>unsigned short</type>
-        <declname>MIN_POS</declname>
-        <defname>MIN_POS</defname>
+        <declname>tMinPos</declname>
+        <defname>tMinPos</defname>
+        <defval>0</defval>
       </param>
       <param>
         <type>unsigned short</type>
-        <declname>MAX_POS</declname>
-        <defname>MAX_POS</defname>
+        <declname>tMaxPos</declname>
+        <defname>tMaxPos</defname>
+        <defval>1024</defval>
       </param>
     </templateparamlist>
     <sectiondef kind="public-func">
-      <memberdef kind="function" id="classeva_1_1_slider_1a24d7a43a779e50ec0967916f08724686" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classeva_1_1_slider_1ade6a3e0be6e049ade169822fb1abd8df" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+        </templateparamlist>
+        <type></type>
+        <definition>eva::Slider&lt; TReader, tMinPos, tMaxPos &gt;::Slider</definition>
+        <argsstring>(Args... args)</argsstring>
+        <name>Slider</name>
+        <qualifiedname>eva::Slider::Slider</qualifiedname>
+        <param>
+          <type>Args...</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+<para>Constructs a <ref refid="classeva_1_1_slider" kindref="compound">Slider</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Additional arguments passed to TReader constructor </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evaSlider.h" line="23" column="5" bodyfile="src/evaSlider.h" bodystart="23" bodyend="25"/>
+      </memberdef>
+      <memberdef kind="function" id="classeva_1_1_slider_1a0b42ee37d0d3baa5294cf8dc882061b1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>unsigned short</type>
+            <declname>MINPOS</declname>
+            <defname>MINPOS</defname>
+          </param>
+          <param>
+            <type>unsigned short</type>
+            <declname>MAXPOS</declname>
+            <defname>MAXPOS</defname>
+          </param>
+        </templateparamlist>
         <type>signed short</type>
-        <definition>signed short eva::Slider&lt; TReader, MIN_POS, MAX_POS &gt;::getValue</definition>
+        <definition>signed short eva::Slider&lt; TReader, tMinPos, tMaxPos &gt;::getValue</definition>
+        <argsstring>()</argsstring>
+        <name>getValue</name>
+        <qualifiedname>eva::Slider::getValue</qualifiedname>
+        <briefdescription>
+<para>Gets normalized slider position with custom range. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>MINPOS</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Minimum analog reading </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>MAXPOS</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Maximum analog reading </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Value from 1000 to 2000 </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evaSlider.h" line="33" column="18" bodyfile="src/evaSlider.h" bodystart="33" bodyend="36"/>
+      </memberdef>
+      <memberdef kind="function" id="classeva_1_1_slider_1a232d1b307281f6d37a89f8e9069cd8da" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>signed short</type>
+        <definition>signed short eva::Slider&lt; TReader, tMinPos, tMaxPos &gt;::getValue</definition>
         <argsstring>()</argsstring>
         <name>getValue</name>
         <qualifiedname>eva::Slider::getValue</qualifiedname>
@@ -30,26 +115,52 @@
 <para>Gets normalized slider position. </para>
         </briefdescription>
         <detaileddescription>
-<para><simplesect kind="return"><para>Value from 0 to 255 </para>
+<para><simplesect kind="return"><para>Value from 1000 to 2000 </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaSlider.h" line="19" column="18" bodyfile="src/evaSlider.h" bodystart="19" bodyend="22"/>
+        <location file="src/evaSlider.h" line="41" column="18" bodyfile="src/evaSlider.h" bodystart="41" bodyend="44"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
 <para>Maps analog readings to 1000-2000 range. </para>
     </briefdescription>
     <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>TReader</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Underlying reader type </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>tMinPos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Minimum analog reading </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>tMaxPos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Maximum analog reading </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
     </detaileddescription>
     <inheritancegraph>
       <node id="2">
         <label>TReader</label>
       </node>
       <node id="1">
-        <label>eva::Slider&lt; TReader, MIN_POS, MAX_POS &gt;</label>
+        <label>eva::Slider&lt; TReader, tMinPos, tMaxPos &gt;</label>
         <link refid="classeva_1_1_slider"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
@@ -60,15 +171,17 @@
         <label>TReader</label>
       </node>
       <node id="1">
-        <label>eva::Slider&lt; TReader, MIN_POS, MAX_POS &gt;</label>
+        <label>eva::Slider&lt; TReader, tMinPos, tMaxPos &gt;</label>
         <link refid="classeva_1_1_slider"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="src/evaSlider.h" line="12" column="3" bodyfile="src/evaSlider.h" bodystart="13" bodyend="23"/>
+    <location file="src/evaSlider.h" line="15" column="3" bodyfile="src/evaSlider.h" bodystart="16" bodyend="45"/>
     <listofallmembers>
-      <member refid="classeva_1_1_slider_1a24d7a43a779e50ec0967916f08724686" prot="public" virt="non-virtual"><scope>eva::Slider</scope><name>getValue</name></member>
+      <member refid="classeva_1_1_slider_1a0b42ee37d0d3baa5294cf8dc882061b1" prot="public" virt="non-virtual"><scope>eva::Slider</scope><name>getValue</name></member>
+      <member refid="classeva_1_1_slider_1a232d1b307281f6d37a89f8e9069cd8da" prot="public" virt="non-virtual"><scope>eva::Slider</scope><name>getValue</name></member>
+      <member refid="classeva_1_1_slider_1ade6a3e0be6e049ade169822fb1abd8df" prot="public" virt="non-virtual"><scope>eva::Slider</scope><name>Slider</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

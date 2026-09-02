@@ -3,7 +3,7 @@
   <compounddef id="classeva_1_1_binarize_eq_decor" kind="class" language="C++" prot="public">
     <compoundname>eva::BinarizeEqDecor</compoundname>
     <basecompoundref prot="public" virt="non-virtual">TReader</basecompoundref>
-    <derivedcompoundref refid="classeva_1_1_switch" prot="public" virt="non-virtual">eva::Switch&lt; BinarizeEqDecor&lt; DebounceDecor&lt; DigitalPinReader&lt; PIN, PIN_MODE &gt; &gt;, ACTIVE_LEVEL &gt; &gt;</derivedcompoundref>
+    <derivedcompoundref refid="classeva_1_1_switch" prot="public" virt="non-virtual">eva::Switch&lt; BinarizeEqDecor&lt; DebounceDecor&lt; DigitalPinReader&lt; tPin, tPinMode &gt; &gt;, ACTIVE_LEVEL &gt; &gt;</derivedcompoundref>
     <includes refid="eva_reader_decors_8h" local="no">evaReaderDecors.h</includes>
     <templateparamlist>
       <param>
@@ -11,43 +11,101 @@
       </param>
       <param>
         <type>int</type>
-        <declname>ACTIVATES_ON</declname>
-        <defname>ACTIVATES_ON</defname>
+        <declname>tActivatesOn</declname>
+        <defname>tActivatesOn</defname>
       </param>
     </templateparamlist>
     <sectiondef kind="public-func">
-      <memberdef kind="function" id="classeva_1_1_binarize_eq_decor_1a72c1f0d97e3f2ad84fcf4ded72c2311d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classeva_1_1_binarize_eq_decor_1a93f43eff2158fa4024391326f01984b7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+        </templateparamlist>
+        <type></type>
+        <definition>eva::BinarizeEqDecor&lt; TReader, tActivatesOn &gt;::BinarizeEqDecor</definition>
+        <argsstring>(Args... args)</argsstring>
+        <name>BinarizeEqDecor</name>
+        <qualifiedname>eva::BinarizeEqDecor::BinarizeEqDecor</qualifiedname>
+        <param>
+          <type>Args...</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+<para>Constructs a <ref refid="classeva_1_1_binarize_eq_decor" kindref="compound">BinarizeEqDecor</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Additional arguments passed to TReader constructor </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evaReaderDecors.h" line="82" column="9" bodyfile="src/evaReaderDecors.h" bodystart="82" bodyend="84"/>
+      </memberdef>
+      <memberdef kind="function" id="classeva_1_1_binarize_eq_decor_1af8d695546e78545496897339d441675c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>signed short</type>
-        <definition>signed short eva::BinarizeEqDecor&lt; TReader, ACTIVATES_ON &gt;::getValue</definition>
+        <definition>signed short eva::BinarizeEqDecor&lt; TReader, tActivatesOn &gt;::getValue</definition>
         <argsstring>()</argsstring>
         <name>getValue</name>
         <qualifiedname>eva::BinarizeEqDecor::getValue</qualifiedname>
         <briefdescription>
+<para>Gets binary value based on equality check. </para>
         </briefdescription>
         <detaileddescription>
+<para><simplesect kind="return"><para>1 if value equals tActivatesOn, 0 otherwise </para>
+</simplesect>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaReaderDecors.h" line="55" column="22" bodyfile="src/evaReaderDecors.h" bodystart="55" bodyend="58"/>
+        <location file="src/evaReaderDecors.h" line="90" column="22" bodyfile="src/evaReaderDecors.h" bodystart="90" bodyend="93"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
-<para>Decorator that converts reading to binary based on level. </para>
+<para>Decorator that converts reading to binary based on level equality. </para>
     </briefdescription>
     <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>TReader</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Underlying reader type </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>tActivatesOn</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value that maps to active state (1) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
     </detaileddescription>
     <inheritancegraph>
       <node id="2">
         <label>TReader</label>
       </node>
       <node id="1">
-        <label>eva::BinarizeEqDecor&lt; TReader, ACTIVATES_ON &gt;</label>
+        <label>eva::BinarizeEqDecor&lt; TReader, tActivatesOn &gt;</label>
         <link refid="classeva_1_1_binarize_eq_decor"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
       <node id="3">
-        <label>eva::Switch&lt; BinarizeEqDecor&lt; DebounceDecor&lt; DigitalPinReader&lt; PIN, PIN_MODE &gt; &gt;, ACTIVE_LEVEL &gt; &gt;</label>
+        <label>eva::Switch&lt; BinarizeEqDecor&lt; DebounceDecor&lt; DigitalPinReader&lt; tPin, tPinMode &gt; &gt;, ACTIVE_LEVEL &gt; &gt;</label>
         <link refid="classeva_1_1_switch"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
@@ -58,15 +116,16 @@
         <label>TReader</label>
       </node>
       <node id="1">
-        <label>eva::BinarizeEqDecor&lt; TReader, ACTIVATES_ON &gt;</label>
+        <label>eva::BinarizeEqDecor&lt; TReader, tActivatesOn &gt;</label>
         <link refid="classeva_1_1_binarize_eq_decor"/>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="src/evaReaderDecors.h" line="52" column="5" bodyfile="src/evaReaderDecors.h" bodystart="53" bodyend="59"/>
+    <location file="src/evaReaderDecors.h" line="74" column="5" bodyfile="src/evaReaderDecors.h" bodystart="75" bodyend="94"/>
     <listofallmembers>
-      <member refid="classeva_1_1_binarize_eq_decor_1a72c1f0d97e3f2ad84fcf4ded72c2311d" prot="public" virt="non-virtual"><scope>eva::BinarizeEqDecor</scope><name>getValue</name></member>
+      <member refid="classeva_1_1_binarize_eq_decor_1a93f43eff2158fa4024391326f01984b7" prot="public" virt="non-virtual"><scope>eva::BinarizeEqDecor</scope><name>BinarizeEqDecor</name></member>
+      <member refid="classeva_1_1_binarize_eq_decor_1af8d695546e78545496897339d441675c" prot="public" virt="non-virtual"><scope>eva::BinarizeEqDecor</scope><name>getValue</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

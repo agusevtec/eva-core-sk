@@ -1,4 +1,5 @@
 #pragma once
+
 #include "evaDelayTimer.h"
 
 namespace eva
@@ -9,10 +10,13 @@ namespace eva
     class RepeatTimer : public DelayTimer
     {
     public:
+        /**
+         * @brief Constructs a RepeatTimer with no listener
+         */
         using DelayTimer::DelayTimer;
 
         /**
-         * @brief Constructor that starts the timer
+         * @brief Constructs a RepeatTimer and starts it
          * @param period Interval in milliseconds
          * @param listener Handler to invoke on each tick
          */

@@ -713,6 +713,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#function-joystick" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        function Joystick
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#function-addtrim" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -746,10 +757,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#function-getvalue" class="md-nav__link">
+  <a href="#function-getvalue-12" class="md-nav__link">
     <span class="md-ellipsis">
       
-        function getValue
+        function getValue [1/2]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-getvalue-22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        function getValue [2/2]
       
     </span>
   </a>
@@ -804,7 +826,7 @@
 
 
 <h1 id="class-evajoystick">Class eva::Joystick<a class="headerlink" href="#class-evajoystick" title="Permanent link">&para;</a></h1>
-<p><strong>template &lt;class TReader, unsigned short MIN_POS, unsigned short MIDDLE_POS, unsigned short MAX_POS&gt;</strong></p>
+<p><strong>template &lt;class TReader, unsigned short tMinPos, unsigned short tMiddlePos, unsigned short tMaxPos&gt;</strong></p>
 <p><a href="../annotated/"><strong>ClassList</strong></a> <strong>&gt;</strong> <a href="../namespaceeva/"><strong>eva</strong></a> <strong>&gt;</strong> <a href="./"><strong>Joystick</strong></a></p>
 <p><a href="./"><em><strong>Joystick</strong></em></a> <em>axis reader (range 1000-1500-2000) with trim adjustment.</em><a href="#detailed-description">More...</a></p>
 <ul>
@@ -821,12 +843,16 @@
 </thead>
 <tbody>
 <tr>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"><a href="#function-joystick"><strong>Joystick</strong></a> (short aDeadZone=0, Args... args) <br><em>Constructs a</em> <a href="./"><em><strong>Joystick</strong></em></a> <em>with optional dead zone.</em></td>
+</tr>
+<tr>
 <td style="text-align: right;">void</td>
 <td style="text-align: left;"><a href="#function-addtrim"><strong>addTrim</strong></a> (short trimIncrement) <br><em>adds trim adjustment value</em></td>
 </tr>
 <tr>
 <td style="text-align: right;">signed short</td>
-<td style="text-align: left;"><a href="#function-getdeadzone"><strong>getDeadZone</strong></a> () <br><em>Gets current deadZone value.</em></td>
+<td style="text-align: left;"><a href="#function-getdeadzone"><strong>getDeadZone</strong></a> () <br><em>Gets current dead-zone value.</em></td>
 </tr>
 <tr>
 <td style="text-align: right;">signed short</td>
@@ -834,11 +860,15 @@
 </tr>
 <tr>
 <td style="text-align: right;">signed short</td>
-<td style="text-align: left;"><a href="#function-getvalue"><strong>getValue</strong></a> () <br><em>Gets normalized joystick position (1000 to 2000).</em></td>
+<td style="text-align: left;"><a href="#function-getvalue-12"><strong>getValue</strong></a> () <br><em>Gets normalized joystick position with custom ranges.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">signed short</td>
+<td style="text-align: left;"><a href="#function-getvalue-22"><strong>getValue</strong></a> () <br><em>Gets normalized joystick position (1000 to 2000).</em></td>
 </tr>
 <tr>
 <td style="text-align: right;">void</td>
-<td style="text-align: left;"><a href="#function-setdeadzone"><strong>setDeadZone</strong></a> (short deadZone) <br></td>
+<td style="text-align: left;"><a href="#function-setdeadzone"><strong>setDeadZone</strong></a> (short deadZone) <br><em>Sets dead-zone value.</em></td>
 </tr>
 <tr>
 <td style="text-align: right;">void</td>
@@ -847,14 +877,34 @@
 </tbody>
 </table>
 <h2 id="detailed-description">Detailed Description<a class="headerlink" href="#detailed-description" title="Permanent link">&para;</a></h2>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>deadZone</code> dead-zone value </li>
+</ul>
 <p><strong>Template parameters:</strong></p>
 <ul>
 <li><code>TReader</code> Underlying reader type </li>
-<li><code>MIN_POS</code> Minimum analog value </li>
-<li><code>MIDDLE_POS</code> Center value </li>
-<li><code>MAX_POS</code> Maximum analog value </li>
+<li><code>tMinPos</code> Minimum analog value </li>
+<li><code>tMiddlePos</code> Center value </li>
+<li><code>tMaxPos</code> Maximum analog value </li>
 </ul>
 <h2 id="public-functions-documentation">Public Functions Documentation<a class="headerlink" href="#public-functions-documentation" title="Permanent link">&para;</a></h2>
+<h3 id="function-joystick">function Joystick<a class="headerlink" href="#function-joystick" title="Permanent link">&para;</a></h3>
+<p><em>Constructs a</em> <a href="./"><em><strong>Joystick</strong></em></a> <em>with optional dead zone.</em></p>
+<div class="codehilite"><pre><span></span><code><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span><span class="w"> </span><span class="n">Args</span><span class="o">&gt;</span>
+<span class="kr">inline</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">Joystick</span><span class="o">::</span><span class="n">Joystick</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="kt">short</span><span class="w"> </span><span class="n">aDeadZone</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="n">Args</span><span class="p">...</span><span class="w"> </span><span class="n">args</span>
+<span class="p">)</span><span class="w"> </span>
+</code></pre></div>
+
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>aDeadZone</code> Dead-zone value (0-255) </li>
+<li><code>args</code> Additional arguments passed to TReader constructor </li>
+</ul>
+<hr>
+
 <h3 id="function-addtrim">function addTrim<a class="headerlink" href="#function-addtrim" title="Permanent link">&para;</a></h3>
 <p><em>adds trim adjustment value</em> </p>
 <div class="codehilite"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">Joystick</span><span class="o">::</span><span class="n">addTrim</span><span class="w"> </span><span class="p">(</span>
@@ -864,12 +914,12 @@
 
 <p><strong>Parameters:</strong></p>
 <ul>
-<li><code>trim</code> Trim value </li>
+<li><code>trim</code> value </li>
 </ul>
 <hr>
 
 <h3 id="function-getdeadzone">function getDeadZone<a class="headerlink" href="#function-getdeadzone" title="Permanent link">&para;</a></h3>
-<p><em>Gets current deadZone value.</em> </p>
+<p><em>Gets current dead-zone value.</em> </p>
 <div class="codehilite"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="kt">signed</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">Joystick</span><span class="o">::</span><span class="n">getDeadZone</span><span class="w"> </span><span class="p">()</span><span class="w"> </span>
 </code></pre></div>
 
@@ -883,24 +933,45 @@
 </code></pre></div>
 
 <p><strong>Returns:</strong></p>
-<p>deadZone value </p>
+<p>trim value </p>
 <hr>
 
-<h3 id="function-getvalue">function getValue<a class="headerlink" href="#function-getvalue" title="Permanent link">&para;</a></h3>
+<h3 id="function-getvalue-12">function getValue [1/2]<a class="headerlink" href="#function-getvalue-12" title="Permanent link">&para;</a></h3>
+<p><em>Gets normalized joystick position with custom ranges.</em> </p>
+<div class="codehilite"><pre><span></span><code><span class="k">template</span><span class="o">&lt;</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">MINPOS</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">MIDDLEPOS</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">MAXPOS</span><span class="o">&gt;</span>
+<span class="kr">inline</span><span class="w"> </span><span class="kt">signed</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">Joystick</span><span class="o">::</span><span class="n">getValue</span><span class="w"> </span><span class="p">()</span><span class="w"> </span>
+</code></pre></div>
+
+<p><strong>Template parameters:</strong></p>
+<ul>
+<li><code>MINPOS</code> Minimum analog value </li>
+<li><code>MIDDLEPOS</code> Center analog value </li>
+<li><code>MAXPOS</code> Maximum analog value </li>
+</ul>
+<p><strong>Returns:</strong></p>
+<p>Value from 1000 to 2000 </p>
+<hr>
+
+<h3 id="function-getvalue-22">function getValue [2/2]<a class="headerlink" href="#function-getvalue-22" title="Permanent link">&para;</a></h3>
 <p><em>Gets normalized joystick position (1000 to 2000).</em> </p>
 <div class="codehilite"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="kt">signed</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">Joystick</span><span class="o">::</span><span class="n">getValue</span><span class="w"> </span><span class="p">()</span><span class="w"> </span>
 </code></pre></div>
 
 <p><strong>Returns:</strong></p>
-<p>Signed char value </p>
+<p>Value from 1000 to 2000 </p>
 <hr>
 
 <h3 id="function-setdeadzone">function setDeadZone<a class="headerlink" href="#function-setdeadzone" title="Permanent link">&para;</a></h3>
+<p><em>Sets dead-zone value.</em> </p>
 <div class="codehilite"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">Joystick</span><span class="o">::</span><span class="n">setDeadZone</span><span class="w"> </span><span class="p">(</span>
 <span class="w">    </span><span class="kt">short</span><span class="w"> </span><span class="n">deadZone</span>
 <span class="p">)</span><span class="w"> </span>
 </code></pre></div>
 
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>deadZone</code> dead-zone value </li>
+</ul>
 <hr>
 
 <h3 id="function-settrim">function setTrim<a class="headerlink" href="#function-settrim" title="Permanent link">&para;</a></h3>

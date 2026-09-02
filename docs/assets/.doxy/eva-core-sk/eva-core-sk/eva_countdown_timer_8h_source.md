@@ -9,6 +9,7 @@
 
 ```C++
 #pragma once
+
 #include "evaDelayTimer.h"
 
 namespace eva
@@ -34,7 +35,6 @@ namespace eva
         unsigned char remainingCount;
     };
 };
-
 ```
 
 
