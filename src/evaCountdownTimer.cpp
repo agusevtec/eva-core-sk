@@ -15,7 +15,7 @@ void CountdownTimer::start(unsigned short period, unsigned char count, IHandler 
         DelayTimer::stop();
 }
 
-void eva::CountdownTimer::start(unsigned short period, unsigned char count)
+void CountdownTimer::start(unsigned short period, unsigned char count)
 {
     start(period, count, this->listener);
 }

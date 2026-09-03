@@ -19,12 +19,12 @@ void RepeatTimer::start(unsigned short period, IHandler *listener)
         stop();
 }
 
-void eva::RepeatTimer::start(unsigned short period)
+void RepeatTimer::start(unsigned short period)
 {
     start(period, this->listener);
 }
 
-void eva::RepeatTimer::start()
+void RepeatTimer::start()
 {
     start(this->period, this->listener);
 }
