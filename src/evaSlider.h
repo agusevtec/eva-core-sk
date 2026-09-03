@@ -25,14 +25,13 @@ namespace eva
     }
     /**
      * @brief Gets normalized slider position with custom range
-     * @tparam MINPOS Minimum analog reading
-     * @tparam MAXPOS Maximum analog reading
+     * @param aMinPos Minimum analog reading
+     * @param aMaxPos Maximum analog reading
      * @return Value from 1000 to 2000
      */
-    template <unsigned short MINPOS, unsigned short MAXPOS>
-    signed short getValue()
+    signed short getValue(unsigned short aMinPos, unsigned short aMaxPos)
     {
-      return constrain(map(TReader::getValue(), MINPOS, MAXPOS, 1000, 2000), 1000, 2000);
+      return constrain(map(TReader::getValue(), aMinPos, aMaxPos, 1000, 2000), 1000, 2000);
     }
     /**
      * @brief Gets normalized slider position
@@ -40,7 +39,7 @@ namespace eva
      */
     signed short getValue()
     {
-      return getValue<tMinPos, tMaxPos>();
+      return getValue(tMinPos, tMaxPos);
     }
   };
   /**

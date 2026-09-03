@@ -22,7 +22,7 @@ namespace eva
      * @param args Additional arguments passed to TReader constructor
      */
     template <typename... Args>
-    Joystick(short aDeadZone = 0, Args... args) : TReader(args...) , trim(0)
+    Joystick(unsigned char aDeadZone = 0, Args... args) : TReader(args...) , trim(0)
     {
        setDeadZone(aDeadZone);
     }
@@ -83,16 +83,16 @@ namespace eva
      * @brief Sets dead-zone value
      * @param deadZone dead-zone value
      */
-    void setDeadZone(short deadZone)
+    void setDeadZone(unsigned char deadZone)
     {
-      this->deadZone = constrain(deadZone, 0, 255);
+      this->deadZone = deadZone;
     }
 
     /**
      * @brief Gets current dead-zone value
      * @return deadZone value
      */
-    signed short getDeadZone()
+    unsigned char getDeadZone()
     {
       return this->deadZone;
     }
