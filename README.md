@@ -23,7 +23,7 @@ class App {
   }
 
   eva::Handler<App> onTimerTickHandler{ this, &onTimerTick };
-  void onTimerTick(void* sender, eva::CallbackInfo cbInfo) {
+  void onTimerElapsed(void* sender, eva::CallbackInfo cbInfo) {
     Serial.println("Countdown!");
   }
 };
