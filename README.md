@@ -11,21 +11,19 @@ It implements—and in fact defines—a concept: Extremely Versatile Architectur
 #include <evaButton.h>
 #include <evaCountdownTimer.h>
 
-using namespace eva;
-
 class App {
-  PullUpButton<3> button{ &onButtonClickHandler, ON_SHORTCLICK };
-  CountdownTimer countdownTimer{ &onTimerTickHandler };
+  eva::PullUpButton<3> button{ &onButtonClickHandler, eva::ON_SHORTCLICK };
+  eva::CountdownTimer countdownTimer{ &onTimerTickHandler };
 
-  Handler<App> onButtonClickHandler{ this, &onButtonClick };
-  void onButtonClick(void* sender, CallbackInfo cbInfo) {
+  eva::Handler<App> onButtonClickHandler{ this, &onButtonClick };
+  void onButtonClick(void* sender, eva::CallbackInfo cbInfo) {
     Serial.println("Button clicked!");
     if (!countdownTimer.isRunning())
       countdownTimer.start(1000, 5);
   }
 
-  Handler<App> onTimerTickHandler{ this, &onTimerTick };
-  void onTimerTick(void* sender, CallbackInfo cbInfo) {
+  eva::Handler<App> onTimerTickHandler{ this, &onTimerTick };
+  void onTimerTick(void* sender, eva::CallbackInfo cbInfo) {
     Serial.println("Countdown!");
   }
 };
