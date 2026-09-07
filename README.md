@@ -16,7 +16,7 @@ class App {
   eva::CountdownTimer countdownTimer{ &onTimerTickHandler };
 
   eva::Handler<App> onButtonClickHandler{ this, &onButtonClick };
-  void onButtonClick(void* sender, eva::CallbackInfo cbInfo) {
+  void onButtonClicked(void* sender, eva::CallbackInfo cbInfo) {
     Serial.println("Button clicked!");
     if (!countdownTimer.isRunning())
       countdownTimer.start(1000, 5);
