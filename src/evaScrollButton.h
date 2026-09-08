@@ -171,4 +171,17 @@ namespace eva
      */
     template <int tPin, int tPinMode, signed short... tLevels>
     using PinMultiScrollButton = ScrollButton<QuantizeDecor<DebounceDecor<AnalogPinReader<tPin, tPinMode>>, tLevels...>>;
+
+    template <int tPin>
+    struct PullupScrollButton
+    {
+        static_assert(tPin < 0, "PullupSwitch is deprecated and was renamed to PullUpScrollButton!");
+    };
+
+    template <int tPin>
+    struct PinScrollMultiButton
+    {
+        static_assert(tPin < 0, "PullupSwitch is deprecated and was renamed to PinMultiScrollButton!");
+    };
+
 };

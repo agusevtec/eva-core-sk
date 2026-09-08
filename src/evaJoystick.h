@@ -32,15 +32,15 @@ namespace eva
      * @param aMinPos Minimum analog value
      * @param aMiddlePos Center analog value
      * @param aMaxPos Maximum analog value
-     * @return Value from -1000 to 1000
+     * @return Value from 1000 to 2000
      */
     signed short getValue(unsigned short aMinPos, unsigned short aMiddlePos, unsigned short aMaxPos)
     {
       signed short value = TReader::getValue();
       if ((value < aMiddlePos) ^ (aMinPos < aMaxPos))
-        return constrain(map(value, aMiddlePos, aMaxPos, this->trim - this->deadZone, 1000), this->trim, 1000);
+        return constrain(map(value, aMiddlePos, aMaxPos, 1500 + this->trim - this->deadZone, 2000), 1500 + this->trim, 2000);
       else
-        return constrain(map(value, aMinPos, aMiddlePos, -1000, this->trim + this->deadZone), -1000, this->trim);
+        return constrain(map(value, aMinPos, aMiddlePos, 1000, 1500 + this->trim + this->deadZone), 1000, 1500 + this->trim);
     }
 
     /**

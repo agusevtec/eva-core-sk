@@ -40,15 +40,16 @@ namespace eva
 
         unsigned short calculateTimeConstant()
         {
-            signed short change = abs(mTargetValue - mLastTargetValue);
+            // Считаем ошибку (дистанцию до цели), а не прирост цели за 10мс
+            signed short error = abs(mTargetValue - mCurrentValue);
 
-            if (change >= 200)
+            if (error >= 200)
                 return mMinTimeConstantMs;
-            else if (change <= 5)
+            else if (error <= 5)
                 return mMaxTimeConstantMs;
             else
             {
-                return mMaxTimeConstantMs - ((change - 5) * (mMaxTimeConstantMs - mMinTimeConstantMs) / 195);
+                return mMaxTimeConstantMs - ((error - 5) * (mMaxTimeConstantMs - mMinTimeConstantMs) / 195);
             }
         }
 
@@ -56,8 +57,7 @@ namespace eva
         void onHeartbeat() override
         {
             mTargetValue = constrain(TReader::getValue(), -1000, 1000);
-            mCurrentTimeConstantMs = calculateTimeConstant();
-            mLastTargetValue = mTargetValue;
+            mCurrentTimeConstantMs = calculateTimeConstant(); // Пересчитываем от error
 
             if (abs(mTargetValue) <= kDeadzone && abs(mCurrentValue) <= kDeadzone)
             {
