@@ -31,7 +31,7 @@ namespace eva
      */
     signed short getValue(unsigned short aMinPos, unsigned short aMaxPos)
     {
-      return constrain(map(TReader::getValue(), aMinPos, aMaxPos, 1000, 2000), 1000, 2000);
+      return constrain(map(TReader::getValue(), aMinPos, aMaxPos, 0, 1000), 0, 1000);
     }
     /**
      * @brief Gets normalized slider position

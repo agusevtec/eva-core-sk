@@ -40,7 +40,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaJoystick.h" line="102" column="17" bodyfile="src/evaJoystick.h" bodystart="102" bodyend="-1"/>
+        <location file="src/evaJoystick.h" line="101" column="17" bodyfile="src/evaJoystick.h" bodystart="101" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classeva_1_1_joystick_1a554833b027987782b81f4f7363f37e1f" prot="private" static="no" mutable="no">
         <type>unsigned char</type>
@@ -54,11 +54,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaJoystick.h" line="103" column="19" bodyfile="src/evaJoystick.h" bodystart="103" bodyend="-1"/>
+        <location file="src/evaJoystick.h" line="102" column="19" bodyfile="src/evaJoystick.h" bodystart="102" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
-      <memberdef kind="function" id="classeva_1_1_joystick_1a411569600fa3e18b2d52f611861ee393" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classeva_1_1_joystick_1a9edb458556dbb6c95432d6ed97d7306e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename...</type>
@@ -68,11 +68,11 @@
         </templateparamlist>
         <type></type>
         <definition>eva::Joystick&lt; TReader, tMinPos, tMiddlePos, tMaxPos &gt;::Joystick</definition>
-        <argsstring>(short aDeadZone=0, Args... args)</argsstring>
+        <argsstring>(unsigned char aDeadZone=0, Args... args)</argsstring>
         <name>Joystick</name>
         <qualifiedname>eva::Joystick::Joystick</qualifiedname>
         <param>
-          <type>short</type>
+          <type>unsigned char</type>
           <declname>aDeadZone</declname>
           <defval>0</defval>
         </param>
@@ -107,36 +107,31 @@
         </inbodydescription>
         <location file="src/evaJoystick.h" line="25" column="5" bodyfile="src/evaJoystick.h" bodystart="25" bodyend="28"/>
       </memberdef>
-      <memberdef kind="function" id="classeva_1_1_joystick_1abc2deff59bb9205ed16bea89b08f6714" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <templateparamlist>
-          <param>
-            <type>unsigned short</type>
-            <declname>MINPOS</declname>
-            <defname>MINPOS</defname>
-          </param>
-          <param>
-            <type>unsigned short</type>
-            <declname>MIDDLEPOS</declname>
-            <defname>MIDDLEPOS</defname>
-          </param>
-          <param>
-            <type>unsigned short</type>
-            <declname>MAXPOS</declname>
-            <defname>MAXPOS</defname>
-          </param>
-        </templateparamlist>
+      <memberdef kind="function" id="classeva_1_1_joystick_1a7a66e63f0a26f029c5c4b2be7d64ccc3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>signed short</type>
         <definition>signed short eva::Joystick&lt; TReader, tMinPos, tMiddlePos, tMaxPos &gt;::getValue</definition>
-        <argsstring>()</argsstring>
+        <argsstring>(unsigned short aMinPos, unsigned short aMiddlePos, unsigned short aMaxPos)</argsstring>
         <name>getValue</name>
         <qualifiedname>eva::Joystick::getValue</qualifiedname>
+        <param>
+          <type>unsigned short</type>
+          <declname>aMinPos</declname>
+        </param>
+        <param>
+          <type>unsigned short</type>
+          <declname>aMiddlePos</declname>
+        </param>
+        <param>
+          <type>unsigned short</type>
+          <declname>aMaxPos</declname>
+        </param>
         <briefdescription>
 <para>Gets normalized joystick position with custom ranges. </para>
         </briefdescription>
         <detaileddescription>
-<para><parameterlist kind="templateparam"><parameteritem>
+<para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
-<parametername>MINPOS</parametername>
+<parametername>aMinPos</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>Minimum analog value </para>
@@ -144,7 +139,7 @@
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername>MIDDLEPOS</parametername>
+<parametername>aMiddlePos</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>Center analog value </para>
@@ -152,20 +147,20 @@
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername>MAXPOS</parametername>
+<parametername>aMaxPos</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>Maximum analog value </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>Value from 1000 to 2000 </para>
+<simplesect kind="return"><para>Value from -1000 to 1000 </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaJoystick.h" line="38" column="18" bodyfile="src/evaJoystick.h" bodystart="38" bodyend="45"/>
+        <location file="src/evaJoystick.h" line="37" column="18" bodyfile="src/evaJoystick.h" bodystart="37" bodyend="44"/>
       </memberdef>
       <memberdef kind="function" id="classeva_1_1_joystick_1a5ef74c82b6fc8cb91d96554762ca898c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>signed short</type>
@@ -183,7 +178,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaJoystick.h" line="51" column="18" bodyfile="src/evaJoystick.h" bodystart="51" bodyend="54"/>
+        <location file="src/evaJoystick.h" line="50" column="18" bodyfile="src/evaJoystick.h" bodystart="50" bodyend="53"/>
       </memberdef>
       <memberdef kind="function" id="classeva_1_1_joystick_1a04bac91178f262a442dc68cb224da3c9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -212,7 +207,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaJoystick.h" line="60" column="10" bodyfile="src/evaJoystick.h" bodystart="60" bodyend="63"/>
+        <location file="src/evaJoystick.h" line="59" column="10" bodyfile="src/evaJoystick.h" bodystart="59" bodyend="62"/>
       </memberdef>
       <memberdef kind="function" id="classeva_1_1_joystick_1a9994938fd1ac6124f492c80bbe3dfddc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -241,7 +236,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaJoystick.h" line="69" column="10" bodyfile="src/evaJoystick.h" bodystart="69" bodyend="72"/>
+        <location file="src/evaJoystick.h" line="68" column="10" bodyfile="src/evaJoystick.h" bodystart="68" bodyend="71"/>
       </memberdef>
       <memberdef kind="function" id="classeva_1_1_joystick_1a89d77fce5509cbf7949ee5a3adb4dc6f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>signed short</type>
@@ -259,16 +254,16 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaJoystick.h" line="78" column="18" bodyfile="src/evaJoystick.h" bodystart="78" bodyend="81"/>
+        <location file="src/evaJoystick.h" line="77" column="18" bodyfile="src/evaJoystick.h" bodystart="77" bodyend="80"/>
       </memberdef>
-      <memberdef kind="function" id="classeva_1_1_joystick_1ace15eaf6a3d8afc4e362553932b0a6f5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classeva_1_1_joystick_1ac7b15d7def02b4bf3b2130b233bdb473" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
         <definition>void eva::Joystick&lt; TReader, tMinPos, tMiddlePos, tMaxPos &gt;::setDeadZone</definition>
-        <argsstring>(short deadZone)</argsstring>
+        <argsstring>(unsigned char deadZone)</argsstring>
         <name>setDeadZone</name>
         <qualifiedname>eva::Joystick::setDeadZone</qualifiedname>
         <param>
-          <type>short</type>
+          <type>unsigned char</type>
           <declname>deadZone</declname>
         </param>
         <briefdescription>
@@ -288,11 +283,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaJoystick.h" line="87" column="10" bodyfile="src/evaJoystick.h" bodystart="87" bodyend="90"/>
+        <location file="src/evaJoystick.h" line="86" column="10" bodyfile="src/evaJoystick.h" bodystart="86" bodyend="89"/>
       </memberdef>
-      <memberdef kind="function" id="classeva_1_1_joystick_1a8da7e5d74e1554c5de1dec0940aeec70" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type>signed short</type>
-        <definition>signed short eva::Joystick&lt; TReader, tMinPos, tMiddlePos, tMaxPos &gt;::getDeadZone</definition>
+      <memberdef kind="function" id="classeva_1_1_joystick_1a7e52ddfc83797d3e40fd2b56360c69e5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>unsigned char</type>
+        <definition>unsigned char eva::Joystick&lt; TReader, tMinPos, tMiddlePos, tMaxPos &gt;::getDeadZone</definition>
         <argsstring>()</argsstring>
         <name>getDeadZone</name>
         <qualifiedname>eva::Joystick::getDeadZone</qualifiedname>
@@ -306,7 +301,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaJoystick.h" line="96" column="18" bodyfile="src/evaJoystick.h" bodystart="96" bodyend="99"/>
+        <location file="src/evaJoystick.h" line="95" column="19" bodyfile="src/evaJoystick.h" bodystart="95" bodyend="98"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -379,16 +374,16 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="src/evaJoystick.h" line="16" column="3" bodyfile="src/evaJoystick.h" bodystart="17" bodyend="104"/>
+    <location file="src/evaJoystick.h" line="16" column="3" bodyfile="src/evaJoystick.h" bodystart="17" bodyend="103"/>
     <listofallmembers>
       <member refid="classeva_1_1_joystick_1a9994938fd1ac6124f492c80bbe3dfddc" prot="public" virt="non-virtual"><scope>eva::Joystick</scope><name>addTrim</name></member>
       <member refid="classeva_1_1_joystick_1a554833b027987782b81f4f7363f37e1f" prot="private" virt="non-virtual"><scope>eva::Joystick</scope><name>deadZone</name></member>
-      <member refid="classeva_1_1_joystick_1a8da7e5d74e1554c5de1dec0940aeec70" prot="public" virt="non-virtual"><scope>eva::Joystick</scope><name>getDeadZone</name></member>
+      <member refid="classeva_1_1_joystick_1a7e52ddfc83797d3e40fd2b56360c69e5" prot="public" virt="non-virtual"><scope>eva::Joystick</scope><name>getDeadZone</name></member>
       <member refid="classeva_1_1_joystick_1a89d77fce5509cbf7949ee5a3adb4dc6f" prot="public" virt="non-virtual"><scope>eva::Joystick</scope><name>getTrim</name></member>
-      <member refid="classeva_1_1_joystick_1abc2deff59bb9205ed16bea89b08f6714" prot="public" virt="non-virtual"><scope>eva::Joystick</scope><name>getValue</name></member>
+      <member refid="classeva_1_1_joystick_1a7a66e63f0a26f029c5c4b2be7d64ccc3" prot="public" virt="non-virtual"><scope>eva::Joystick</scope><name>getValue</name></member>
       <member refid="classeva_1_1_joystick_1a5ef74c82b6fc8cb91d96554762ca898c" prot="public" virt="non-virtual"><scope>eva::Joystick</scope><name>getValue</name></member>
-      <member refid="classeva_1_1_joystick_1a411569600fa3e18b2d52f611861ee393" prot="public" virt="non-virtual"><scope>eva::Joystick</scope><name>Joystick</name></member>
-      <member refid="classeva_1_1_joystick_1ace15eaf6a3d8afc4e362553932b0a6f5" prot="public" virt="non-virtual"><scope>eva::Joystick</scope><name>setDeadZone</name></member>
+      <member refid="classeva_1_1_joystick_1a9edb458556dbb6c95432d6ed97d7306e" prot="public" virt="non-virtual"><scope>eva::Joystick</scope><name>Joystick</name></member>
+      <member refid="classeva_1_1_joystick_1ac7b15d7def02b4bf3b2130b233bdb473" prot="public" virt="non-virtual"><scope>eva::Joystick</scope><name>setDeadZone</name></member>
       <member refid="classeva_1_1_joystick_1a04bac91178f262a442dc68cb224da3c9" prot="public" virt="non-virtual"><scope>eva::Joystick</scope><name>setTrim</name></member>
       <member refid="classeva_1_1_joystick_1a79de4d26d60171bf538f7e6700adf75a" prot="private" virt="non-virtual"><scope>eva::Joystick</scope><name>trim</name></member>
     </listofallmembers>

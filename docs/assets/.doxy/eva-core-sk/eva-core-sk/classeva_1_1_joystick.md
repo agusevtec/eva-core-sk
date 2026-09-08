@@ -55,13 +55,13 @@ Inherits the following classes: TReader
 
 | Type | Name |
 | ---: | :--- |
-|   | [**Joystick**](#function-joystick) (short aDeadZone=0, Args... args) <br>_Constructs a_ [_**Joystick**_](classeva_1_1_joystick.md) _with optional dead zone._ |
+|   | [**Joystick**](#function-joystick) (unsigned char aDeadZone=0, Args... args) <br>_Constructs a_ [_**Joystick**_](classeva_1_1_joystick.md) _with optional dead zone._ |
 |  void | [**addTrim**](#function-addtrim) (short trimIncrement) <br>_adds trim adjustment value_  |
-|  signed short | [**getDeadZone**](#function-getdeadzone) () <br>_Gets current dead-zone value._  |
+|  unsigned char | [**getDeadZone**](#function-getdeadzone) () <br>_Gets current dead-zone value._  |
 |  signed short | [**getTrim**](#function-gettrim) () <br>_Gets current trim value._  |
-|  signed short | [**getValue**](#function-getvalue-12) () <br>_Gets normalized joystick position with custom ranges._  |
+|  signed short | [**getValue**](#function-getvalue-12) (unsigned short aMinPos, unsigned short aMiddlePos, unsigned short aMaxPos) <br>_Gets normalized joystick position with custom ranges._  |
 |  signed short | [**getValue**](#function-getvalue-22) () <br>_Gets normalized joystick position (1000 to 2000)._  |
-|  void | [**setDeadZone**](#function-setdeadzone) (short deadZone) <br>_Sets dead-zone value._  |
+|  void | [**setDeadZone**](#function-setdeadzone) (unsigned char deadZone) <br>_Sets dead-zone value._  |
 |  void | [**setTrim**](#function-settrim) (short trim) <br>_Sets trim adjustment value._  |
 
 
@@ -126,7 +126,7 @@ _Constructs a_ [_**Joystick**_](classeva_1_1_joystick.md) _with optional dead zo
 ```C++
 template<typename... Args>
 inline eva::Joystick::Joystick (
-    short aDeadZone=0,
+    unsigned char aDeadZone=0,
     Args... args
 ) 
 ```
@@ -181,7 +181,7 @@ inline void eva::Joystick::addTrim (
 
 _Gets current dead-zone value._ 
 ```C++
-inline signed short eva::Joystick::getDeadZone () 
+inline unsigned char eva::Joystick::getDeadZone () 
 ```
 
 
@@ -231,26 +231,29 @@ trim value
 
 _Gets normalized joystick position with custom ranges._ 
 ```C++
-template<unsigned short MINPOS, unsigned short MIDDLEPOS, unsigned short MAXPOS>
-inline signed short eva::Joystick::getValue () 
+inline signed short eva::Joystick::getValue (
+    unsigned short aMinPos,
+    unsigned short aMiddlePos,
+    unsigned short aMaxPos
+) 
 ```
 
 
 
 
 
-**Template parameters:**
+**Parameters:**
 
 
-* `MINPOS` Minimum analog value 
-* `MIDDLEPOS` Center analog value 
-* `MAXPOS` Maximum analog value 
+* `aMinPos` Minimum analog value 
+* `aMiddlePos` Center analog value 
+* `aMaxPos` Maximum analog value 
 
 
 
 **Returns:**
 
-Value from 1000 to 2000 
+Value from -1000 to 1000 
 
 
 
@@ -292,7 +295,7 @@ Value from 1000 to 2000
 _Sets dead-zone value._ 
 ```C++
 inline void eva::Joystick::setDeadZone (
-    short deadZone
+    unsigned char deadZone
 ) 
 ```
 

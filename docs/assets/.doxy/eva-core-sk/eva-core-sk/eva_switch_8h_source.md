@@ -27,45 +27,49 @@ namespace eva
     {
     public:
         template <typename... Args>
-        Switch(IHandler *listener = nullptr, unsigned short eventMask = 0, Args... args) : TReader(args...)
+        Switch(IHandler *listener = nullptr, unsigned char eventMask = 0, Args... args) : TReader(args...)
         {
             enable(true);
             setListener(listener, eventMask);
         }
 
-        Switch *setListener(IHandler *listener, unsigned short eventMask)
+        Switch *setListener(IHandler *listener, unsigned char eventMask)
         {
             this->listener = listener;
-            this->curiosity = eventMask;
+            this->eventMask = eventMask & 0x7F;
             return this;
         }
 
         Switch *enable(bool enabled)
         {
-            if (this->levelCode < 0 && enabled)
+            if (!enabled)
                 this->levelCode = 0;
-            if (this->levelCode >= 0 && !enabled)
-                this->levelCode = -1;
+
+            this->enabled = enabled;
             return this;
+        }
+
+        bool isEnabled() const
+        {
+            return this->enabled;
         }
 
         signed short getValue()
         {
-            if (this->levelCode > 0)
-                return this->levelCode;
-            return 0;
+            return this->enabled ? this->levelCode : 0;
         }
 
     protected:
         bool updateState()
         {
-            this->levelCode = TReader::getValue();
             if (!TReader::isValid())
-                return false;
-
-            if (this->levelCode < 0)
+            {
                 this->levelCode = 0;
+                return false;
+            }
 
+            signed short rawVal = TReader::getValue();
+            this->levelCode = ((0 <= rawVal) && (rawVal <= 255)) ? rawVal : 0;
             return true;
         }
 
@@ -87,7 +91,7 @@ namespace eva
         void notify(unsigned short eventType, signed short eventCode)
         {
             if (this->listener)
-                if (this->curiosity & eventType)
+                if (this->eventMask & eventType)
                     this->listener->invoke(this, {eventType, eventCode});
         }
 
@@ -109,7 +113,7 @@ namespace eva
     private:
         void tick() override
         {
-            if (this->levelCode < 0)
+            if (!isEnabled())
                 return;
 
             unsigned char wasLevelCode = this->levelCode;
@@ -127,8 +131,9 @@ namespace eva
         }
 
     protected:
-        unsigned char curiosity = 0;
-        signed char levelCode = 0;
+        unsigned char eventMask : 7;
+        bool enabled : 1;
+        unsigned char levelCode = 0;
         IHandler *listener = nullptr;
     };
 
@@ -136,7 +141,7 @@ namespace eva
     using PinSwitch = Switch<BinarizeEqDecor<DebounceDecor<DigitalPinReader<tPin, tPinMode>>, ACTIVE_LEVEL>>;
 
     template <int tPin>
-    using PullupSwitch = PinSwitch<tPin, INPUT_PULLUP, LOW>;
+    using PullUpSwitch = PinSwitch<tPin, INPUT_PULLUP, LOW>;
 
     template <int tPin, int tPinMode, signed short... tLevels>
     using PinMultiSwitch = Switch<QuantizeDecor<DebounceDecor<AnalogPinReader<tPin, tPinMode>>, tLevels...>>;

@@ -56,7 +56,7 @@ Inherits the following classes: TReader
 | Type | Name |
 | ---: | :--- |
 |   | [**Slider**](#function-slider) (Args... args) <br>_Constructs a_ [_**Slider**_](classeva_1_1_slider.md) _._ |
-|  signed short | [**getValue**](#function-getvalue-12) () <br>_Gets normalized slider position with custom range._  |
+|  signed short | [**getValue**](#function-getvalue-12) (unsigned short aMinPos, unsigned short aMaxPos) <br>_Gets normalized slider position with custom range._  |
 |  signed short | [**getValue**](#function-getvalue-22) () <br>_Gets normalized slider position._  |
 
 
@@ -139,19 +139,21 @@ inline eva::Slider::Slider (
 
 _Gets normalized slider position with custom range._ 
 ```C++
-template<unsigned short MINPOS, unsigned short MAXPOS>
-inline signed short eva::Slider::getValue () 
+inline signed short eva::Slider::getValue (
+    unsigned short aMinPos,
+    unsigned short aMaxPos
+) 
 ```
 
 
 
 
 
-**Template parameters:**
+**Parameters:**
 
 
-* `MINPOS` Minimum analog reading 
-* `MAXPOS` Maximum analog reading 
+* `aMinPos` Minimum analog reading 
+* `aMaxPos` Maximum analog reading 
 
 
 

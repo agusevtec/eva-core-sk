@@ -23,14 +23,13 @@ namespace eva
     Slider(Args... args) : TReader(args...)
     {
     }
-    template <unsigned short MINPOS, unsigned short MAXPOS>
-    signed short getValue()
+    signed short getValue(unsigned short aMinPos, unsigned short aMaxPos)
     {
-      return constrain(map(TReader::getValue(), MINPOS, MAXPOS, 1000, 2000), 1000, 2000);
+      return constrain(map(TReader::getValue(), aMinPos, aMaxPos, 0, 1000), 0, 1000);
     }
     signed short getValue()
     {
-      return getValue<tMinPos, tMaxPos>();
+      return getValue(tMinPos, tMaxPos);
     }
   };
   template <unsigned short tPin, int tPinMode, unsigned short tMinPos, unsigned short tMaxPos>

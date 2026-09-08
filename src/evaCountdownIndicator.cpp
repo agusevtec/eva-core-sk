@@ -1,4 +1,5 @@
 #include "evaCountdownIndicator.h"
+
 using namespace eva;
 
 CountdownIndicator *eva::CountdownIndicator::setListener(IHandler *listener)

@@ -31,7 +31,7 @@ namespace eva
      * allowing identification of which specific input triggered the event.
      *
      * @tparam TReader Input reader type that returns numeric codes
-     *                (0 = inactive, >0 = active state identifier)
+     *                 (0 = inactive, >0 = active state identifier)
      * @see PinSwitch Digital pin switches with debouncing (typical use)
      * @see PullUpSwitch Pull-up switches convenience alias
      * @see PinMultiSwitch Multiple switches on one ADC pin
@@ -47,7 +47,7 @@ namespace eva
          * @param args Additional arguments passed to TReader constructor
          */
         template <typename... Args>
-        Switch(IHandler *listener = nullptr, unsigned short eventMask = 0, Args... args) : TReader(args...)
+        Switch(IHandler *listener = nullptr, unsigned char eventMask = 0, Args... args) : TReader(args...)
         {
             enable(true);
             setListener(listener, eventMask);
@@ -60,10 +60,10 @@ namespace eva
          * @param eventMask Bitmask of events to listen for (ON_PRESS, ON_RELEASE, ON_CHANGE)
          * @return Pointer to this for method chaining
          */
-        Switch *setListener(IHandler *listener, unsigned short eventMask)
+        Switch *setListener(IHandler *listener, unsigned char eventMask)
         {
             this->listener = listener;
-            this->curiosity = eventMask;
+            this->eventMask = eventMask & 0x7F;
             return this;
         }
 
@@ -77,11 +77,21 @@ namespace eva
          */
         Switch *enable(bool enabled)
         {
-            if (this->levelCode < 0 && enabled)
+            if (!enabled)
                 this->levelCode = 0;
-            if (this->levelCode >= 0 && !enabled)
-                this->levelCode = -1;
+
+            this->enabled = enabled;
             return this;
+        }
+
+        /**
+         * @brief Checks if the switch is enabled.
+         *
+         * @return True if enabled, false otherwise
+         */
+        bool isEnabled() const
+        {
+            return this->enabled;
         }
 
         /**
@@ -91,21 +101,20 @@ namespace eva
          */
         signed short getValue()
         {
-            if (this->levelCode > 0)
-                return this->levelCode;
-            return 0;
+            return this->enabled ? this->levelCode : 0;
         }
 
     protected:
         bool updateState()
         {
-            this->levelCode = TReader::getValue();
             if (!TReader::isValid())
-                return false;
-
-            if (this->levelCode < 0)
+            {
                 this->levelCode = 0;
+                return false;
+            }
 
+            signed short rawVal = TReader::getValue();
+            this->levelCode = ((0 <= rawVal) && (rawVal <= 255)) ? rawVal : 0;
             return true;
         }
 
@@ -129,7 +138,7 @@ namespace eva
         void notify(unsigned short eventType, signed short eventCode)
         {
             if (this->listener)
-                if (this->curiosity & eventType)
+                if (this->eventMask & eventType)
                     this->listener->invoke(this, {eventType, eventCode});
         }
 
@@ -151,7 +160,7 @@ namespace eva
     private:
         void tick() override
         {
-            if (this->levelCode < 0)
+            if (!isEnabled())
                 return;
 
             unsigned char wasLevelCode = this->levelCode;
@@ -169,8 +178,9 @@ namespace eva
         }
 
     protected:
-        unsigned char curiosity = 0;
-        signed char levelCode = 0;
+        unsigned char eventMask : 7;
+        bool enabled : 1;
+        unsigned char levelCode = 0;
         IHandler *listener = nullptr;
     };
 
@@ -199,7 +209,7 @@ namespace eva
      * @tparam tPin Arduino pin number
      */
     template <int tPin>
-    using PullupSwitch = PinSwitch<tPin, INPUT_PULLUP, LOW>;
+    using PullUpSwitch = PinSwitch<tPin, INPUT_PULLUP, LOW>;
 
     /**
      * @brief Multiple switches on a single ADC pin using resistor ladder.
@@ -208,9 +218,9 @@ namespace eva
      * ```
      *    ADC Pin  -----+--R1--+--R2--+-- ... -Rn-+
      *   (analog in)    |      |      |           |
-     *                   \      \      \           \
+     *                  \      \      \           \
      *                  |      |      |           |
-     *      GND    -----+------+------+-- ... ----+
+     *    GND      -----+------+------+-- ... ----+
      * ```
      *
      * Each switch produces a different ADC value when activated. The

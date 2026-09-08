@@ -76,10 +76,11 @@ Inherited by the following classes: [eva::Button](classeva_1_1_button.md),  [eva
 
 | Type | Name |
 | ---: | :--- |
-|   | [**Switch**](#function-switch) ([**IHandler**](classeva_1_1_i_handler.md) \* listener=nullptr, unsigned short eventMask=0, Args... args) <br>_Constructs a_ [_**Switch**_](classeva_1_1_switch.md) _._ |
+|   | [**Switch**](#function-switch) ([**IHandler**](classeva_1_1_i_handler.md) \* listener=nullptr, unsigned char eventMask=0, Args... args) <br>_Constructs a_ [_**Switch**_](classeva_1_1_switch.md) _._ |
 |  [**Switch**](classeva_1_1_switch.md#function-switch) \* | [**enable**](#function-enable) (bool enabled) <br>_Enables or disables the switch._  |
 |  signed short | [**getValue**](#function-getvalue) () <br>_Gets the current level code._  |
-|  [**Switch**](classeva_1_1_switch.md#function-switch) \* | [**setListener**](#function-setlistener) ([**IHandler**](classeva_1_1_i_handler.md) \* listener, unsigned short eventMask) <br>_Sets the event listener for this switch._  |
+|  bool | [**isEnabled**](#function-isenabled) () const<br>_Checks if the switch is enabled._  |
+|  [**Switch**](classeva_1_1_switch.md#function-switch) \* | [**setListener**](#function-setlistener) ([**IHandler**](classeva_1_1_i_handler.md) \* listener, unsigned char eventMask) <br>_Sets the event listener for this switch._  |
 
 
 ## Public Functions inherited from eva::Tickable
@@ -119,8 +120,9 @@ See [eva::Tickable](classeva_1_1_tickable.md)
 
 | Type | Name |
 | ---: | :--- |
-|  unsigned char | [**curiosity**](#variable-curiosity)   = `0`<br> |
-|  signed char | [**levelCode**](#variable-levelcode)   = `0`<br> |
+|  bool | [**enabled**](#variable-enabled)  <br> |
+|  unsigned char | [**eventMask**](#variable-eventmask)  <br> |
+|  unsigned char | [**levelCode**](#variable-levelcode)   = `0`<br> |
 |  [**IHandler**](classeva_1_1_i_handler.md) \* | [**listener**](#variable-listener)   = `nullptr`<br> |
 
 
@@ -229,7 +231,7 @@ _Constructs a_ [_**Switch**_](classeva_1_1_switch.md) _._
 template<typename... Args>
 inline eva::Switch::Switch (
     IHandler * listener=nullptr,
-    unsigned short eventMask=0,
+    unsigned char eventMask=0,
     Args... args
 ) 
 ```
@@ -316,13 +318,38 @@ Level code (0 for inactive, positive value for active state)
 
 
 
+### function isEnabled 
+
+_Checks if the switch is enabled._ 
+```C++
+inline bool eva::Switch::isEnabled () const
+```
+
+
+
+
+
+**Returns:**
+
+True if enabled, false otherwise 
+
+
+
+
+
+        
+
+<hr>
+
+
+
 ### function setListener 
 
 _Sets the event listener for this switch._ 
 ```C++
 inline Switch * eva::Switch::setListener (
     IHandler * listener,
-    unsigned short eventMask
+    unsigned char eventMask
 ) 
 ```
 
@@ -354,10 +381,23 @@ Pointer to this for method chaining
 
 
 
-### variable curiosity 
+### variable enabled 
 
 ```C++
-unsigned char eva::Switch< TReader >::curiosity;
+bool eva::Switch< TReader >::enabled;
+```
+
+
+
+
+<hr>
+
+
+
+### variable eventMask 
+
+```C++
+unsigned char eva::Switch< TReader >::eventMask;
 ```
 
 
@@ -370,7 +410,7 @@ unsigned char eva::Switch< TReader >::curiosity;
 ### variable levelCode 
 
 ```C++
-signed char eva::Switch< TReader >::levelCode;
+unsigned char eva::Switch< TReader >::levelCode;
 ```
 
 

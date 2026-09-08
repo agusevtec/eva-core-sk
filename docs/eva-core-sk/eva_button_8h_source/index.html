@@ -702,14 +702,23 @@
 <span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">LONGPRESS_DELAY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">750</span><span class="p">;</span>
 
 <span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">ON_SHORTCLICK</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x08</span><span class="p">;</span>
-<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">ON_LONGCLICK</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x10</span><span class="p">;</span>
-<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">ON_LONGPRESS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x20</span><span class="p">;</span>
+<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">ON_LONGCLICK</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="mh">0x10</span><span class="p">;</span>
+<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">ON_LONGPRESS</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="mh">0x20</span><span class="p">;</span>
 
 <span class="w">    </span><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">TReader</span><span class="o">&gt;</span>
 <span class="w">    </span><span class="k">class</span><span class="w"> </span><span class="nc">Button</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">Switch</span><span class="o">&lt;</span><span class="n">TReader</span><span class="o">&gt;</span>
 <span class="w">    </span><span class="p">{</span>
 <span class="w">    </span><span class="k">public</span><span class="o">:</span>
 <span class="w">        </span><span class="k">using</span><span class="w"> </span><span class="n">Switch</span><span class="o">&lt;</span><span class="n">TReader</span><span class="o">&gt;::</span><span class="n">Switch</span><span class="p">;</span>
+
+<span class="w">        </span><span class="n">Button</span><span class="w"> </span><span class="o">*</span><span class="nf">enable</span><span class="p">(</span><span class="kt">bool</span><span class="w"> </span><span class="n">enabled</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">enabled</span><span class="p">)</span>
+<span class="w">                </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">pressTime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+
+<span class="w">            </span><span class="n">Switch</span><span class="o">&lt;</span><span class="n">TReader</span><span class="o">&gt;::</span><span class="n">enable</span><span class="p">(</span><span class="n">enabled</span><span class="p">);</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
 
 <span class="w">    </span><span class="k">protected</span><span class="o">:</span>
 <span class="w">        </span><span class="kt">bool</span><span class="w"> </span><span class="n">checkLongPress</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">now</span><span class="p">)</span>
@@ -726,7 +735,7 @@
 <span class="w">        </span><span class="kt">void</span><span class="w"> </span><span class="n">handleDeactivating</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">wasLevelCode</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">now</span><span class="p">)</span>
 <span class="w">        </span><span class="p">{</span>
 <span class="w">            </span><span class="n">Switch</span><span class="o">&lt;</span><span class="n">TReader</span><span class="o">&gt;::</span><span class="n">handleDeactivating</span><span class="p">(</span><span class="n">wasLevelCode</span><span class="p">);</span>
-<span class="w">            </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">notify</span><span class="p">((</span><span class="n">pressTime</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">ON_SHORTCLICK</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">ON_LONGCLICK</span><span class="p">,</span><span class="w"> </span><span class="n">wasLevelCode</span><span class="p">);</span>
+<span class="w">            </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">notify</span><span class="p">((</span><span class="k">this</span><span class="o">-&gt;</span><span class="n">pressTime</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">ON_SHORTCLICK</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">ON_LONGCLICK</span><span class="p">,</span><span class="w"> </span><span class="n">wasLevelCode</span><span class="p">);</span>
 <span class="w">            </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">pressTime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 <span class="w">        </span><span class="p">}</span>
 
@@ -739,25 +748,26 @@
 <span class="w">    </span><span class="k">private</span><span class="o">:</span>
 <span class="w">        </span><span class="kt">void</span><span class="w"> </span><span class="n">tick</span><span class="p">()</span><span class="w"> </span><span class="k">override</span>
 <span class="w">        </span><span class="p">{</span>
-<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="o">-&gt;</span><span class="n">levelCode</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="k">this</span><span class="o">-&gt;</span><span class="n">isEnabled</span><span class="p">())</span>
 <span class="w">                </span><span class="k">return</span><span class="p">;</span>
 
 <span class="w">            </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">now</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">millis</span><span class="p">();</span>
 <span class="w">            </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">wasLevelCode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">levelCode</span><span class="p">;</span>
+
 <span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="k">this</span><span class="o">-&gt;</span><span class="n">updateState</span><span class="p">())</span>
 <span class="w">                </span><span class="k">return</span><span class="p">;</span>
 
 <span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="o">-&gt;</span><span class="n">checkChanging</span><span class="p">(</span><span class="n">wasLevelCode</span><span class="p">))</span>
 <span class="w">                </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">handleChanging</span><span class="p">();</span>
 
-<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">checkLongPress</span><span class="p">(</span><span class="n">now</span><span class="p">))</span>
-<span class="w">                </span><span class="n">handleLongPress</span><span class="p">();</span>
-
 <span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="o">-&gt;</span><span class="n">checkDeactivating</span><span class="p">(</span><span class="n">wasLevelCode</span><span class="p">))</span>
 <span class="w">                </span><span class="n">handleDeactivating</span><span class="p">(</span><span class="n">wasLevelCode</span><span class="p">,</span><span class="w"> </span><span class="n">now</span><span class="p">);</span>
 
 <span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="o">-&gt;</span><span class="n">checkActivating</span><span class="p">(</span><span class="n">wasLevelCode</span><span class="p">))</span>
 <span class="w">                </span><span class="n">handleActivating</span><span class="p">(</span><span class="n">now</span><span class="p">);</span>
+
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">checkLongPress</span><span class="p">(</span><span class="n">now</span><span class="p">))</span>
+<span class="w">                </span><span class="n">handleLongPress</span><span class="p">();</span>
 <span class="w">        </span><span class="p">}</span>
 
 <span class="w">    </span><span class="k">protected</span><span class="o">:</span>

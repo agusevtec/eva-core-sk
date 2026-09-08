@@ -19,24 +19,23 @@ namespace eva
   {
   public:
     template <typename... Args>
-    Joystick(short aDeadZone = 0, Args... args) : TReader(args...) , trim(0)
+    Joystick(unsigned char aDeadZone = 0, Args... args) : TReader(args...) , trim(0)
     {
        setDeadZone(aDeadZone);
     }
 
-    template <unsigned short MINPOS, unsigned short MIDDLEPOS, unsigned short MAXPOS>
-    signed short getValue()
+    signed short getValue(unsigned short aMinPos, unsigned short aMiddlePos, unsigned short aMaxPos)
     {
       signed short value = TReader::getValue();
-      if ((value < MIDDLEPOS) ^ (MINPOS < MAXPOS))
-        return constrain(map(value, MIDDLEPOS, MAXPOS, 1500 + this->trim - this->deadZone, 2000), 1500 + this->trim, 2000);
+      if ((value < aMiddlePos) ^ (aMinPos < aMaxPos))
+        return constrain(map(value, aMiddlePos, aMaxPos, this->trim - this->deadZone, 1000), this->trim, 1000);
       else
-        return constrain(map(value, MINPOS, MIDDLEPOS, 1000, 1500 + this->trim + this->deadZone), 1000, 1500 + this->trim);
+        return constrain(map(value, aMinPos, aMiddlePos, -1000, this->trim + this->deadZone), -1000, this->trim);
     }
 
     signed short getValue()
     {
-      return getValue<tMinPos, tMiddlePos, tMaxPos>();
+      return getValue(tMinPos, tMiddlePos, tMaxPos);
     }
 
     void setTrim(short trim)
@@ -54,12 +53,12 @@ namespace eva
       return this->trim;
     }
 
-    void setDeadZone(short deadZone)
+    void setDeadZone(unsigned char deadZone)
     {
-      this->deadZone = constrain(deadZone, 0, 255);
+      this->deadZone = deadZone;
     }
 
-    signed short getDeadZone()
+    unsigned char getDeadZone()
     {
       return this->deadZone;
     }

@@ -30,7 +30,6 @@
 * **checkActivating** ([**eva::Switch**](classeva_1_1_switch.md))
 * **checkChanging** ([**eva::Switch**](classeva_1_1_switch.md))
 * **checkDeactivating** ([**eva::Switch**](classeva_1_1_switch.md))
-* **curiosity** ([**eva::Switch**](classeva_1_1_switch.md))
 
 
 ## d
@@ -46,9 +45,11 @@
 
 ## e
 
+* **enable** ([**eva::Button**](classeva_1_1_button.md), [**eva::ScrollButton**](classeva_1_1_scroll_button.md), [**eva::Switch**](classeva_1_1_switch.md))
 * **eventArg** ([**eva::CallbackInfo**](structeva_1_1_callback_info.md))
 * **eventType** ([**eva::CallbackInfo**](structeva_1_1_callback_info.md))
-* **enable** ([**eva::Switch**](classeva_1_1_switch.md))
+* **enabled** ([**eva::Switch**](classeva_1_1_switch.md))
+* **eventMask** ([**eva::Switch**](classeva_1_1_switch.md))
 
 
 ## f
@@ -90,6 +91,7 @@
 * **indexOf** ([**eva::List**](classeva_1_1_list.md))
 * **isEmpty** ([**eva::List**](classeva_1_1_list.md))
 * **item** ([**eva::ListIterator**](structeva_1_1_list_iterator.md))
+* **isEnabled** ([**eva::Switch**](classeva_1_1_switch.md))
 
 
 ## j

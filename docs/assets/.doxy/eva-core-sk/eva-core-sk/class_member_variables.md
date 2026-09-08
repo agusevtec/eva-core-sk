@@ -11,7 +11,6 @@
 ## c
 
 * **countdown** ([**eva::CountdownIndicator**](classeva_1_1_countdown_indicator.md))
-* **curiosity** ([**eva::Switch**](classeva_1_1_switch.md))
 
 
 ## d
@@ -25,6 +24,8 @@
 
 * **eventArg** ([**eva::CallbackInfo**](structeva_1_1_callback_info.md))
 * **eventType** ([**eva::CallbackInfo**](structeva_1_1_callback_info.md))
+* **enabled** ([**eva::Switch**](classeva_1_1_switch.md))
+* **eventMask** ([**eva::Switch**](classeva_1_1_switch.md))
 
 
 ## f

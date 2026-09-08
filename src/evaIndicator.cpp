@@ -1,5 +1,6 @@
 #include "evaIndicator.h"
 #include <Arduino.h>
+
 using namespace eva;
 
 Indicator::Indicator(unsigned pin, int activatesBy)

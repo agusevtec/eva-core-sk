@@ -40,7 +40,7 @@
 
 ## e
 
-* **enable** ([**eva::Switch**](classeva_1_1_switch.md))
+* **enable** ([**eva::Button**](classeva_1_1_button.md), [**eva::ScrollButton**](classeva_1_1_scroll_button.md), [**eva::Switch**](classeva_1_1_switch.md))
 
 
 ## f
@@ -78,6 +78,7 @@
 * **isRunning** ([**eva::DelayTimer**](classeva_1_1_delay_timer.md))
 * **indexOf** ([**eva::List**](classeva_1_1_list.md))
 * **isEmpty** ([**eva::List**](classeva_1_1_list.md))
+* **isEnabled** ([**eva::Switch**](classeva_1_1_switch.md))
 
 
 ## j

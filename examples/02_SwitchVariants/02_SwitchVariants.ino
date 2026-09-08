@@ -11,12 +11,12 @@ class App
 {
 private:
   // Simple toggle switch - reports both "ON" and "OFF" state changes
-  PullupSwitch<2> toggleSwitch{new Handler<App>(this, &App::onToggleSwitch), ON_CHANGE};
+  PullUpSwitch<2> toggleSwitch{new Handler<App>(this, &App::onToggleSwitch), ON_CHANGE};
 
   // Push button - reports only press events (release ignored)
   // With ON_PRESS | ON_RELEASE it behaves like a simple button (both press and release events)
   // When using ON_PRESS | ON_RELEASE, value 0 means no button is active
-  PullupSwitch<3> pushButton{new Handler<App>(this, &App::onPushButtonPress), ON_PRESS};
+  PullUpSwitch<3> pushButton{new Handler<App>(this, &App::onPushButtonPress), ON_PRESS};
 
   // Active HIGH toggle - reports both "ON" and "OFF" state changes
   PinSwitch<4, INPUT, HIGH> activeHighSwitch{new Handler<App>(this, &App::onActiveHighSwitch), ON_CHANGE};

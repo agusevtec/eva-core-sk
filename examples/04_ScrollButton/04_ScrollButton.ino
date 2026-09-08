@@ -14,10 +14,10 @@ using namespace eva;
 class App {
 private:
   /** @brief Scroll button for volume up with auto-repeat on hold */
-  PullupScrollButton<2> volPlus{ &onVolumeButtonPressedHandler, ON_PRESS | ON_REPEATKEY };
+  PullUpScrollButton<2> volPlus{ &onVolumeButtonPressedHandler, ON_PRESS | ON_REPEATKEY };
   
   /** @brief Scroll button for volume down with auto-repeat on hold */
-  PullupScrollButton<3> volMinus{ &onVolumeButtonPressedHandler, ON_PRESS | ON_REPEATKEY };
+  PullUpScrollButton<3> volMinus{ &onVolumeButtonPressedHandler, ON_PRESS | ON_REPEATKEY };
 
   /**
    * @brief Custom reader for 2-direction navigation pad

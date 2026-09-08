@@ -111,8 +111,20 @@ Inherits the following classes: [eva::Button](classeva_1_1_button.md)
 
 
 
+## Public Functions
+
+| Type | Name |
+| ---: | :--- |
+|  [**ScrollButton**](classeva_1_1_scroll_button.md) \* | [**enable**](#function-enable) (bool enabled) <br>_Enables or disables the scroll button._  |
 
 
+## Public Functions inherited from eva::Button
+
+See [eva::Button](classeva_1_1_button.md)
+
+| Type | Name |
+| ---: | :--- |
+|  [**Button**](classeva_1_1_button.md) \* | [**enable**](classeva_1_1_button.md#function-enable) (bool enabled) <br>_Enables or disables the button._  |
 
 
 ## Public Functions inherited from eva::Switch
@@ -121,10 +133,11 @@ See [eva::Switch](classeva_1_1_switch.md)
 
 | Type | Name |
 | ---: | :--- |
-|   | [**Switch**](classeva_1_1_switch.md#function-switch) ([**IHandler**](classeva_1_1_i_handler.md) \* listener=nullptr, unsigned short eventMask=0, Args... args) <br>_Constructs a_ [_**Switch**_](classeva_1_1_switch.md) _._ |
+|   | [**Switch**](classeva_1_1_switch.md#function-switch) ([**IHandler**](classeva_1_1_i_handler.md) \* listener=nullptr, unsigned char eventMask=0, Args... args) <br>_Constructs a_ [_**Switch**_](classeva_1_1_switch.md) _._ |
 |  [**Switch**](classeva_1_1_switch.md#function-switch) \* | [**enable**](classeva_1_1_switch.md#function-enable) (bool enabled) <br>_Enables or disables the switch._  |
 |  signed short | [**getValue**](classeva_1_1_switch.md#function-getvalue) () <br>_Gets the current level code._  |
-|  [**Switch**](classeva_1_1_switch.md#function-switch) \* | [**setListener**](classeva_1_1_switch.md#function-setlistener) ([**IHandler**](classeva_1_1_i_handler.md) \* listener, unsigned short eventMask) <br>_Sets the event listener for this switch._  |
+|  bool | [**isEnabled**](classeva_1_1_switch.md#function-isenabled) () const<br>_Checks if the switch is enabled._  |
+|  [**Switch**](classeva_1_1_switch.md#function-switch) \* | [**setListener**](classeva_1_1_switch.md#function-setlistener) ([**IHandler**](classeva_1_1_i_handler.md) \* listener, unsigned char eventMask) <br>_Sets the event listener for this switch._  |
 
 
 ## Public Functions inherited from eva::Tickable
@@ -172,6 +185,11 @@ See [eva::Tickable](classeva_1_1_tickable.md)
 
 
 
+## Protected Attributes
+
+| Type | Name |
+| ---: | :--- |
+|  unsigned long | [**lastRepeatTime**](#variable-lastrepeattime)   = `0`<br> |
 
 
 ## Protected Attributes inherited from eva::Button
@@ -189,8 +207,9 @@ See [eva::Switch](classeva_1_1_switch.md)
 
 | Type | Name |
 | ---: | :--- |
-|  unsigned char | [**curiosity**](classeva_1_1_switch.md#variable-curiosity)   = `0`<br> |
-|  signed char | [**levelCode**](classeva_1_1_switch.md#variable-levelcode)   = `0`<br> |
+|  bool | [**enabled**](classeva_1_1_switch.md#variable-enabled)  <br> |
+|  unsigned char | [**eventMask**](classeva_1_1_switch.md#variable-eventmask)  <br> |
+|  unsigned char | [**levelCode**](classeva_1_1_switch.md#variable-levelcode)   = `0`<br> |
 |  [**IHandler**](classeva_1_1_i_handler.md) \* | [**listener**](classeva_1_1_switch.md#variable-listener)   = `nullptr`<br> |
 
 
@@ -252,6 +271,14 @@ See [eva::Switch](classeva_1_1_switch.md)
 
 
 
+## Protected Functions
+
+| Type | Name |
+| ---: | :--- |
+|  bool | [**checkRepeatTime**](#function-checkrepeattime) (unsigned long now) <br> |
+|  void | [**handleDeactivating**](#function-handledeactivating) (unsigned char wasLevelCode, unsigned long now) <br> |
+|  void | [**handleLongPress**](#function-handlelongpress) (unsigned long now) <br> |
+|  void | [**handleRepeatTime**](#function-handlerepeattime) (unsigned long now) <br> |
 
 
 ## Protected Functions inherited from eva::Button
@@ -324,6 +351,123 @@ This class extends [**Button**](classeva_1_1_button.md) by adding periodic ON\_R
 
 
     
+## Public Functions Documentation
+
+
+
+
+### function enable 
+
+_Enables or disables the scroll button._ 
+```C++
+inline ScrollButton * eva::ScrollButton::enable (
+    bool enabled
+) 
+```
+
+
+
+Overridden to clear repeat timing state when disabled.
+
+
+
+
+**Parameters:**
+
+
+* `enabled` True to enable, false to disable 
+
+
+
+**Returns:**
+
+Pointer to this for method chaining 
+
+
+
+
+
+        
+
+<hr>
+## Protected Attributes Documentation
+
+
+
+
+### variable lastRepeatTime 
+
+```C++
+unsigned long eva::ScrollButton< TReader >::lastRepeatTime;
+```
+
+
+
+
+<hr>
+## Protected Functions Documentation
+
+
+
+
+### function checkRepeatTime 
+
+```C++
+inline bool eva::ScrollButton::checkRepeatTime (
+    unsigned long now
+) 
+```
+
+
+
+
+<hr>
+
+
+
+### function handleDeactivating 
+
+```C++
+inline void eva::ScrollButton::handleDeactivating (
+    unsigned char wasLevelCode,
+    unsigned long now
+) 
+```
+
+
+
+
+<hr>
+
+
+
+### function handleLongPress 
+
+```C++
+inline void eva::ScrollButton::handleLongPress (
+    unsigned long now
+) 
+```
+
+
+
+
+<hr>
+
+
+
+### function handleRepeatTime 
+
+```C++
+inline void eva::ScrollButton::handleRepeatTime (
+    unsigned long now
+) 
+```
+
+
+
+
+<hr>
 
 ------------------------------
 The documentation for this class was generated from the following file `src/evaScrollButton.h`

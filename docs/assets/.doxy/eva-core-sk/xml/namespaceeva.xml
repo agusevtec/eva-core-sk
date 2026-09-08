@@ -96,7 +96,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaButton.h" line="117" column="5" bodyfile="src/evaButton.h" bodystart="117" bodyend="-1"/>
+        <location file="src/evaButton.h" line="129" column="5" bodyfile="src/evaButton.h" bodystart="129" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="eva_button_8h_1ad20ed0d6bbb48f06ffff58bd3c033809" prot="public" static="no">
         <templateparamlist>
@@ -134,7 +134,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaButton.h" line="131" column="5" bodyfile="src/evaButton.h" bodystart="131" bodyend="-1"/>
+        <location file="src/evaButton.h" line="143" column="5" bodyfile="src/evaButton.h" bodystart="143" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="eva_button_8h_1a9bf94744712e9d318f23811b0df20a98" prot="public" static="no">
         <templateparamlist>
@@ -202,7 +202,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaButton.h" line="159" column="5" bodyfile="src/evaButton.h" bodystart="159" bodyend="-1"/>
+        <location file="src/evaButton.h" line="171" column="5" bodyfile="src/evaButton.h" bodystart="171" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="eva_joystick_8h_1a232f7055517f268cb4aad660303a7e05" prot="public" static="no">
         <templateparamlist>
@@ -273,7 +273,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaJoystick.h" line="114" column="3" bodyfile="src/evaJoystick.h" bodystart="114" bodyend="-1"/>
+        <location file="src/evaJoystick.h" line="113" column="3" bodyfile="src/evaJoystick.h" bodystart="113" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="eva_joystick_8h_1a07f376d7a2629453b5aa013507902a17" prot="public" static="no">
         <templateparamlist>
@@ -357,9 +357,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaJoystick.h" line="124" column="3" bodyfile="src/evaJoystick.h" bodystart="124" bodyend="-1"/>
+        <location file="src/evaJoystick.h" line="123" column="3" bodyfile="src/evaJoystick.h" bodystart="123" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="eva_scroll_button_8h_1a21df1fbb171994ecbf79ea2670f230ab" prot="public" static="no">
+      <memberdef kind="typedef" id="eva_scroll_button_8h_1ade9dd8c850d22b3b5cadb2682c80ff7a" prot="public" static="no">
         <templateparamlist>
           <param>
             <type>int</type>
@@ -377,8 +377,8 @@
             <defname>tActivatesOn</defname>
           </param>
         </templateparamlist>
-        <type><ref refid="classeva_1_1_button" kindref="compound">Button</ref>&lt; <ref refid="classeva_1_1_binarize_eq_decor" kindref="compound">BinarizeEqDecor</ref>&lt; <ref refid="classeva_1_1_debounce_decor" kindref="compound">DebounceDecor</ref>&lt; <ref refid="classeva_1_1_digital_pin_reader" kindref="compound">DigitalPinReader</ref>&lt; tPin, tPinMode &gt; &gt;, tActivatesOn &gt; &gt;</type>
-        <definition>using eva::PinScrollButton = Button&lt;BinarizeEqDecor&lt;DebounceDecor&lt;DigitalPinReader&lt;tPin, tPinMode&gt;&gt;, tActivatesOn&gt;&gt;</definition>
+        <type><ref refid="classeva_1_1_scroll_button" kindref="compound">ScrollButton</ref>&lt; <ref refid="classeva_1_1_binarize_eq_decor" kindref="compound">BinarizeEqDecor</ref>&lt; <ref refid="classeva_1_1_debounce_decor" kindref="compound">DebounceDecor</ref>&lt; <ref refid="classeva_1_1_digital_pin_reader" kindref="compound">DigitalPinReader</ref>&lt; tPin, tPinMode &gt; &gt;, tActivatesOn &gt; &gt;</type>
+        <definition>using eva::PinScrollButton = ScrollButton&lt;BinarizeEqDecor&lt;DebounceDecor&lt;DigitalPinReader&lt;tPin, tPinMode&gt;&gt;, tActivatesOn&gt;&gt;</definition>
         <argsstring></argsstring>
         <name>PinScrollButton</name>
         <qualifiedname>eva::PinScrollButton</qualifiedname>
@@ -422,9 +422,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaScrollButton.h" line="114" column="5" bodyfile="src/evaScrollButton.h" bodystart="114" bodyend="-1"/>
+        <location file="src/evaScrollButton.h" line="131" column="5" bodyfile="src/evaScrollButton.h" bodystart="131" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="eva_scroll_button_8h_1a48f1146c0f9245bcda69b217ce028b4f" prot="public" static="no">
+      <memberdef kind="typedef" id="eva_scroll_button_8h_1aa374389acf46536b8e8337e737939121" prot="public" static="no">
         <templateparamlist>
           <param>
             <type>int</type>
@@ -433,10 +433,10 @@
           </param>
         </templateparamlist>
         <type><ref refid="classeva_1_1_scroll_button" kindref="compound">ScrollButton</ref>&lt; <ref refid="classeva_1_1_binarize_eq_decor" kindref="compound">BinarizeEqDecor</ref>&lt; <ref refid="classeva_1_1_debounce_decor" kindref="compound">DebounceDecor</ref>&lt; <ref refid="classeva_1_1_digital_pin_reader" kindref="compound">DigitalPinReader</ref>&lt; tPin, INPUT_PULLUP &gt; &gt;, LOW &gt; &gt;</type>
-        <definition>using eva::PullupScrollButton = ScrollButton&lt;BinarizeEqDecor&lt;DebounceDecor&lt;DigitalPinReader&lt;tPin, INPUT_PULLUP&gt;&gt;, LOW&gt;&gt;</definition>
+        <definition>using eva::PullUpScrollButton = ScrollButton&lt;BinarizeEqDecor&lt;DebounceDecor&lt;DigitalPinReader&lt;tPin, INPUT_PULLUP&gt;&gt;, LOW&gt;&gt;</definition>
         <argsstring></argsstring>
-        <name>PullupScrollButton</name>
-        <qualifiedname>eva::PullupScrollButton</qualifiedname>
+        <name>PullUpScrollButton</name>
+        <qualifiedname>eva::PullUpScrollButton</qualifiedname>
         <briefdescription>
 <para>Pull-up key-button (active LOW, connect to GND). </para>
         </briefdescription>
@@ -460,9 +460,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaScrollButton.h" line="128" column="5" bodyfile="src/evaScrollButton.h" bodystart="128" bodyend="-1"/>
+        <location file="src/evaScrollButton.h" line="145" column="5" bodyfile="src/evaScrollButton.h" bodystart="145" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="eva_scroll_button_8h_1a49dc3081c4eebedb1e12487d7f56c382" prot="public" static="no">
+      <memberdef kind="typedef" id="eva_scroll_button_8h_1ad6543f957969285c707e88a02a1b3203" prot="public" static="no">
         <templateparamlist>
           <param>
             <type>int</type>
@@ -481,19 +481,19 @@
           </param>
         </templateparamlist>
         <type><ref refid="classeva_1_1_scroll_button" kindref="compound">ScrollButton</ref>&lt; <ref refid="classeva_1_1_quantize_decor" kindref="compound">QuantizeDecor</ref>&lt; <ref refid="classeva_1_1_debounce_decor" kindref="compound">DebounceDecor</ref>&lt; <ref refid="classeva_1_1_analog_pin_reader" kindref="compound">AnalogPinReader</ref>&lt; tPin, tPinMode &gt; &gt;, tLevels... &gt; &gt;</type>
-        <definition>using eva::PinScrollMultiButton = ScrollButton&lt;QuantizeDecor&lt;DebounceDecor&lt;AnalogPinReader&lt;tPin, tPinMode&gt;&gt;, tLevels...&gt;&gt;</definition>
+        <definition>using eva::PinMultiScrollButton = ScrollButton&lt;QuantizeDecor&lt;DebounceDecor&lt;AnalogPinReader&lt;tPin, tPinMode&gt;&gt;, tLevels...&gt;&gt;</definition>
         <argsstring></argsstring>
-        <name>PinScrollMultiButton</name>
-        <qualifiedname>eva::PinScrollMultiButton</qualifiedname>
+        <name>PinMultiScrollButton</name>
+        <qualifiedname>eva::PinMultiScrollButton</qualifiedname>
         <briefdescription>
 <para>Multiple key-buttons on a single ADC pin using resistor ladder. </para>
         </briefdescription>
         <detaileddescription>
 <para>Hardware connection: <programlisting><codeline><highlight class="normal"><sp/>ADC<sp/>Pin<sp/><sp/>-----+--R1--+--R2--+--<sp/>...<sp/>-Rn-+</highlight></codeline>
 <codeline><highlight class="normal">(analog<sp/>in)<sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\<sp/><sp/><sp/><sp/><sp/><sp/>\<sp/><sp/><sp/><sp/><sp/><sp/>\<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\<sp/><sp/><sp/><sp/><sp/><sp/>\<sp/><sp/><sp/><sp/><sp/><sp/>\<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/>GND<sp/><sp/><sp/><sp/>-----+------+------+--<sp/>...<sp/>----+</highlight></codeline>
+<codeline><highlight class="normal"><sp/>GND<sp/><sp/><sp/><sp/><sp/><sp/>-----+------+------+--<sp/>...<sp/>----+</highlight></codeline>
 </programlisting></para>
 <para>Each button produces a different ADC value when pressed. The <ref refid="classeva_1_1_quantize_decor" kindref="compound">QuantizeDecor</ref> maps these values to discrete button codes (1, 2, 3...). <ref refid="classeva_1_1_debounce_decor" kindref="compound">DebounceDecor</ref> provides debouncing.</para>
 <para>Generates standard button events for each button, with the button number encoded in the event mask.</para>
@@ -528,7 +528,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaScrollButton.h" line="156" column="5" bodyfile="src/evaScrollButton.h" bodystart="156" bodyend="-1"/>
+        <location file="src/evaScrollButton.h" line="173" column="5" bodyfile="src/evaScrollButton.h" bodystart="173" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="eva_slider_8h_1ac03e4e3ae7a608331da6629a8d2fccd1" prot="public" static="no">
         <templateparamlist>
@@ -599,7 +599,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaSlider.h" line="54" column="3" bodyfile="src/evaSlider.h" bodystart="54" bodyend="-1"/>
+        <location file="src/evaSlider.h" line="53" column="3" bodyfile="src/evaSlider.h" bodystart="53" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="eva_switch_8h_1ae0d08ef231652fb40bdca61ef40cc049" prot="public" static="no">
         <templateparamlist>
@@ -663,9 +663,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaSwitch.h" line="190" column="5" bodyfile="src/evaSwitch.h" bodystart="190" bodyend="-1"/>
+        <location file="src/evaSwitch.h" line="200" column="5" bodyfile="src/evaSwitch.h" bodystart="200" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="eva_switch_8h_1a53ed7674c343e90e7d7033f11a32677d" prot="public" static="no">
+      <memberdef kind="typedef" id="eva_switch_8h_1ad9d265475784a9e3f036c7c929db82bf" prot="public" static="no">
         <templateparamlist>
           <param>
             <type>int</type>
@@ -674,10 +674,10 @@
           </param>
         </templateparamlist>
         <type>PinSwitch&lt; tPin, INPUT_PULLUP, LOW &gt;</type>
-        <definition>using eva::PullupSwitch = PinSwitch&lt;tPin, INPUT_PULLUP, LOW&gt;</definition>
+        <definition>using eva::PullUpSwitch = PinSwitch&lt;tPin, INPUT_PULLUP, LOW&gt;</definition>
         <argsstring></argsstring>
-        <name>PullupSwitch</name>
-        <qualifiedname>eva::PullupSwitch</qualifiedname>
+        <name>PullUpSwitch</name>
+        <qualifiedname>eva::PullUpSwitch</qualifiedname>
         <briefdescription>
 <para>Pull-up switch (active LOW, connect to GND). </para>
         </briefdescription>
@@ -700,7 +700,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaSwitch.h" line="202" column="5" bodyfile="src/evaSwitch.h" bodystart="202" bodyend="-1"/>
+        <location file="src/evaSwitch.h" line="212" column="5" bodyfile="src/evaSwitch.h" bodystart="212" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="eva_switch_8h_1ac9703ece4c0d2a523525b34aecd9b97f" prot="public" static="no">
         <templateparamlist>
@@ -731,9 +731,9 @@
         <detaileddescription>
 <para>Hardware connection: <programlisting><codeline><highlight class="normal"><sp/>ADC<sp/>Pin<sp/><sp/>-----+--R1--+--R2--+--<sp/>...<sp/>-Rn-+</highlight></codeline>
 <codeline><highlight class="normal">(analog<sp/>in)<sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\<sp/><sp/><sp/><sp/><sp/><sp/>\<sp/><sp/><sp/><sp/><sp/><sp/>\<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\<sp/><sp/><sp/><sp/><sp/><sp/>\<sp/><sp/><sp/><sp/><sp/><sp/>\<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/>GND<sp/><sp/><sp/><sp/>-----+------+------+--<sp/>...<sp/>----+</highlight></codeline>
+<codeline><highlight class="normal"><sp/>GND<sp/><sp/><sp/><sp/><sp/><sp/>-----+------+------+--<sp/>...<sp/>----+</highlight></codeline>
 </programlisting></para>
 <para>Each switch produces a different ADC value when activated. The <ref refid="classeva_1_1_quantize_decor" kindref="compound">QuantizeDecor</ref> maps these values to discrete level codes (1, 2, 3...). <ref refid="classeva_1_1_debounce_decor" kindref="compound">DebounceDecor</ref> provides debouncing.</para>
 <para><parameterlist kind="templateparam"><parameteritem>
@@ -765,7 +765,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaSwitch.h" line="225" column="5" bodyfile="src/evaSwitch.h" bodystart="225" bodyend="-1"/>
+        <location file="src/evaSwitch.h" line="235" column="5" bodyfile="src/evaSwitch.h" bodystart="235" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="var">

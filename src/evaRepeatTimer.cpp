@@ -3,7 +3,6 @@
 
 using namespace eva;
 
-
 RepeatTimer::RepeatTimer(unsigned short period, IHandler *listener)
 {
     start(period, listener);

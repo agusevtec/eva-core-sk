@@ -1,4 +1,5 @@
 #include "evaBlinkingIndicator.h"
+
 using namespace eva;
 
 void BlinkingIndicator::on()

@@ -17,14 +17,23 @@ namespace eva
     static const unsigned short LONGPRESS_DELAY = 750;
 
     static const unsigned char ON_SHORTCLICK = 0x08;
-    static const unsigned char ON_LONGCLICK = 0x10;
-    static const unsigned char ON_LONGPRESS = 0x20;
+    static const unsigned char ON_LONGCLICK  = 0x10;
+    static const unsigned char ON_LONGPRESS  = 0x20;
 
     template <class TReader>
     class Button : public Switch<TReader>
     {
     public:
         using Switch<TReader>::Switch;
+
+        Button *enable(bool enabled)
+        {
+            if (!enabled)
+                this->pressTime = 0;
+
+            Switch<TReader>::enable(enabled);
+            return this;
+        }
 
     protected:
         bool checkLongPress(unsigned long now)
@@ -41,7 +50,7 @@ namespace eva
         void handleDeactivating(unsigned char wasLevelCode, unsigned long now)
         {
             Switch<TReader>::handleDeactivating(wasLevelCode);
-            this->notify((pressTime > 0) ? ON_SHORTCLICK : ON_LONGCLICK, wasLevelCode);
+            this->notify((this->pressTime > 0) ? ON_SHORTCLICK : ON_LONGCLICK, wasLevelCode);
             this->pressTime = 0;
         }
 
@@ -54,25 +63,26 @@ namespace eva
     private:
         void tick() override
         {
-            if (this->levelCode < 0)
+            if (!this->isEnabled())
                 return;
 
             unsigned long now = millis();
             unsigned char wasLevelCode = this->levelCode;
+
             if (!this->updateState())
                 return;
 
             if (this->checkChanging(wasLevelCode))
                 this->handleChanging();
 
-            if (checkLongPress(now))
-                handleLongPress();
-
             if (this->checkDeactivating(wasLevelCode))
                 handleDeactivating(wasLevelCode, now);
 
             if (this->checkActivating(wasLevelCode))
                 handleActivating(now);
+
+            if (checkLongPress(now))
+                handleLongPress();
         }
 
     protected:

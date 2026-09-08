@@ -58,31 +58,27 @@
         </inbodydescription>
         <location file="src/evaSlider.h" line="23" column="5" bodyfile="src/evaSlider.h" bodystart="23" bodyend="25"/>
       </memberdef>
-      <memberdef kind="function" id="classeva_1_1_slider_1a0b42ee37d0d3baa5294cf8dc882061b1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <templateparamlist>
-          <param>
-            <type>unsigned short</type>
-            <declname>MINPOS</declname>
-            <defname>MINPOS</defname>
-          </param>
-          <param>
-            <type>unsigned short</type>
-            <declname>MAXPOS</declname>
-            <defname>MAXPOS</defname>
-          </param>
-        </templateparamlist>
+      <memberdef kind="function" id="classeva_1_1_slider_1a22dd265d6942716bd0bfbab0191f6553" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>signed short</type>
         <definition>signed short eva::Slider&lt; TReader, tMinPos, tMaxPos &gt;::getValue</definition>
-        <argsstring>()</argsstring>
+        <argsstring>(unsigned short aMinPos, unsigned short aMaxPos)</argsstring>
         <name>getValue</name>
         <qualifiedname>eva::Slider::getValue</qualifiedname>
+        <param>
+          <type>unsigned short</type>
+          <declname>aMinPos</declname>
+        </param>
+        <param>
+          <type>unsigned short</type>
+          <declname>aMaxPos</declname>
+        </param>
         <briefdescription>
 <para>Gets normalized slider position with custom range. </para>
         </briefdescription>
         <detaileddescription>
-<para><parameterlist kind="templateparam"><parameteritem>
+<para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
-<parametername>MINPOS</parametername>
+<parametername>aMinPos</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>Minimum analog reading </para>
@@ -90,7 +86,7 @@
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername>MAXPOS</parametername>
+<parametername>aMaxPos</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>Maximum analog reading </para>
@@ -103,7 +99,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaSlider.h" line="33" column="18" bodyfile="src/evaSlider.h" bodystart="33" bodyend="36"/>
+        <location file="src/evaSlider.h" line="32" column="18" bodyfile="src/evaSlider.h" bodystart="32" bodyend="35"/>
       </memberdef>
       <memberdef kind="function" id="classeva_1_1_slider_1a232d1b307281f6d37a89f8e9069cd8da" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>signed short</type>
@@ -121,7 +117,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaSlider.h" line="41" column="18" bodyfile="src/evaSlider.h" bodystart="41" bodyend="44"/>
+        <location file="src/evaSlider.h" line="40" column="18" bodyfile="src/evaSlider.h" bodystart="40" bodyend="43"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -177,9 +173,9 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="src/evaSlider.h" line="15" column="3" bodyfile="src/evaSlider.h" bodystart="16" bodyend="45"/>
+    <location file="src/evaSlider.h" line="15" column="3" bodyfile="src/evaSlider.h" bodystart="16" bodyend="44"/>
     <listofallmembers>
-      <member refid="classeva_1_1_slider_1a0b42ee37d0d3baa5294cf8dc882061b1" prot="public" virt="non-virtual"><scope>eva::Slider</scope><name>getValue</name></member>
+      <member refid="classeva_1_1_slider_1a22dd265d6942716bd0bfbab0191f6553" prot="public" virt="non-virtual"><scope>eva::Slider</scope><name>getValue</name></member>
       <member refid="classeva_1_1_slider_1a232d1b307281f6d37a89f8e9069cd8da" prot="public" virt="non-virtual"><scope>eva::Slider</scope><name>getValue</name></member>
       <member refid="classeva_1_1_slider_1ade6a3e0be6e049ade169822fb1abd8df" prot="public" virt="non-virtual"><scope>eva::Slider</scope><name>Slider</name></member>
     </listofallmembers>

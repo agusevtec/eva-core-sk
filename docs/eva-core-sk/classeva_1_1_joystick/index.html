@@ -844,14 +844,14 @@
 <tbody>
 <tr>
 <td style="text-align: right;"></td>
-<td style="text-align: left;"><a href="#function-joystick"><strong>Joystick</strong></a> (short aDeadZone=0, Args... args) <br><em>Constructs a</em> <a href="./"><em><strong>Joystick</strong></em></a> <em>with optional dead zone.</em></td>
+<td style="text-align: left;"><a href="#function-joystick"><strong>Joystick</strong></a> (unsigned char aDeadZone=0, Args... args) <br><em>Constructs a</em> <a href="./"><em><strong>Joystick</strong></em></a> <em>with optional dead zone.</em></td>
 </tr>
 <tr>
 <td style="text-align: right;">void</td>
 <td style="text-align: left;"><a href="#function-addtrim"><strong>addTrim</strong></a> (short trimIncrement) <br><em>adds trim adjustment value</em></td>
 </tr>
 <tr>
-<td style="text-align: right;">signed short</td>
+<td style="text-align: right;">unsigned char</td>
 <td style="text-align: left;"><a href="#function-getdeadzone"><strong>getDeadZone</strong></a> () <br><em>Gets current dead-zone value.</em></td>
 </tr>
 <tr>
@@ -860,7 +860,7 @@
 </tr>
 <tr>
 <td style="text-align: right;">signed short</td>
-<td style="text-align: left;"><a href="#function-getvalue-12"><strong>getValue</strong></a> () <br><em>Gets normalized joystick position with custom ranges.</em></td>
+<td style="text-align: left;"><a href="#function-getvalue-12"><strong>getValue</strong></a> (unsigned short aMinPos, unsigned short aMiddlePos, unsigned short aMaxPos) <br><em>Gets normalized joystick position with custom ranges.</em></td>
 </tr>
 <tr>
 <td style="text-align: right;">signed short</td>
@@ -868,7 +868,7 @@
 </tr>
 <tr>
 <td style="text-align: right;">void</td>
-<td style="text-align: left;"><a href="#function-setdeadzone"><strong>setDeadZone</strong></a> (short deadZone) <br><em>Sets dead-zone value.</em></td>
+<td style="text-align: left;"><a href="#function-setdeadzone"><strong>setDeadZone</strong></a> (unsigned char deadZone) <br><em>Sets dead-zone value.</em></td>
 </tr>
 <tr>
 <td style="text-align: right;">void</td>
@@ -893,7 +893,7 @@
 <p><em>Constructs a</em> <a href="./"><em><strong>Joystick</strong></em></a> <em>with optional dead zone.</em></p>
 <div class="codehilite"><pre><span></span><code><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span><span class="w"> </span><span class="n">Args</span><span class="o">&gt;</span>
 <span class="kr">inline</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">Joystick</span><span class="o">::</span><span class="n">Joystick</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="kt">short</span><span class="w"> </span><span class="n">aDeadZone</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">aDeadZone</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
 <span class="w">    </span><span class="n">Args</span><span class="p">...</span><span class="w"> </span><span class="n">args</span>
 <span class="p">)</span><span class="w"> </span>
 </code></pre></div>
@@ -920,7 +920,7 @@
 
 <h3 id="function-getdeadzone">function getDeadZone<a class="headerlink" href="#function-getdeadzone" title="Permanent link">&para;</a></h3>
 <p><em>Gets current dead-zone value.</em> </p>
-<div class="codehilite"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="kt">signed</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">Joystick</span><span class="o">::</span><span class="n">getDeadZone</span><span class="w"> </span><span class="p">()</span><span class="w"> </span>
+<div class="codehilite"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">Joystick</span><span class="o">::</span><span class="n">getDeadZone</span><span class="w"> </span><span class="p">()</span><span class="w"> </span>
 </code></pre></div>
 
 <p><strong>Returns:</strong></p>
@@ -938,18 +938,21 @@
 
 <h3 id="function-getvalue-12">function getValue [1/2]<a class="headerlink" href="#function-getvalue-12" title="Permanent link">&para;</a></h3>
 <p><em>Gets normalized joystick position with custom ranges.</em> </p>
-<div class="codehilite"><pre><span></span><code><span class="k">template</span><span class="o">&lt;</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">MINPOS</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">MIDDLEPOS</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">MAXPOS</span><span class="o">&gt;</span>
-<span class="kr">inline</span><span class="w"> </span><span class="kt">signed</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">Joystick</span><span class="o">::</span><span class="n">getValue</span><span class="w"> </span><span class="p">()</span><span class="w"> </span>
+<div class="codehilite"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="kt">signed</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">Joystick</span><span class="o">::</span><span class="n">getValue</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">aMinPos</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">aMiddlePos</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">aMaxPos</span>
+<span class="p">)</span><span class="w"> </span>
 </code></pre></div>
 
-<p><strong>Template parameters:</strong></p>
+<p><strong>Parameters:</strong></p>
 <ul>
-<li><code>MINPOS</code> Minimum analog value </li>
-<li><code>MIDDLEPOS</code> Center analog value </li>
-<li><code>MAXPOS</code> Maximum analog value </li>
+<li><code>aMinPos</code> Minimum analog value </li>
+<li><code>aMiddlePos</code> Center analog value </li>
+<li><code>aMaxPos</code> Maximum analog value </li>
 </ul>
 <p><strong>Returns:</strong></p>
-<p>Value from 1000 to 2000 </p>
+<p>Value from -1000 to 1000 </p>
 <hr>
 
 <h3 id="function-getvalue-22">function getValue [2/2]<a class="headerlink" href="#function-getvalue-22" title="Permanent link">&para;</a></h3>
@@ -964,7 +967,7 @@
 <h3 id="function-setdeadzone">function setDeadZone<a class="headerlink" href="#function-setdeadzone" title="Permanent link">&para;</a></h3>
 <p><em>Sets dead-zone value.</em> </p>
 <div class="codehilite"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">Joystick</span><span class="o">::</span><span class="n">setDeadZone</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="kt">short</span><span class="w"> </span><span class="n">deadZone</span>
+<span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">deadZone</span>
 <span class="p">)</span><span class="w"> </span>
 </code></pre></div>
 

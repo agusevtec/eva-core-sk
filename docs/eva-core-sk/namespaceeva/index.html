@@ -779,6 +779,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#typedef-pinmultiscrollbutton" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        typedef PinMultiScrollButton
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#typedef-pinmultiswitch" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -794,17 +805,6 @@
     <span class="md-ellipsis">
       
         typedef PinScrollButton
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#typedef-pinscrollmultibutton" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        typedef PinScrollMultiButton
       
     </span>
   </a>
@@ -859,7 +859,7 @@
   <a href="#typedef-pullupscrollbutton" class="md-nav__link">
     <span class="md-ellipsis">
       
-        typedef PullupScrollButton
+        typedef PullUpScrollButton
       
     </span>
   </a>
@@ -870,7 +870,7 @@
   <a href="#typedef-pullupswitch" class="md-nav__link">
     <span class="md-ellipsis">
       
-        typedef PullupSwitch
+        typedef PullUpSwitch
       
     </span>
   </a>
@@ -1240,16 +1240,16 @@
 <td style="text-align: left;"><a href="#typedef-pinmultibutton"><strong>PinMultiButton</strong></a>  <br><em>Multiple buttons on a single ADC pin using resistor ladder.</em></td>
 </tr>
 <tr>
+<td style="text-align: right;">typedef <a href="../classeva_1_1_scroll_button/"><strong>ScrollButton</strong></a>&lt; <a href="../classeva_1_1_quantize_decor/"><strong>QuantizeDecor</strong></a>&lt; <a href="../classeva_1_1_debounce_decor/"><strong>DebounceDecor</strong></a>&lt; <a href="../classeva_1_1_analog_pin_reader/"><strong>AnalogPinReader</strong></a>&lt; tPin, tPinMode &gt; &gt;, tLevels... &gt; &gt;</td>
+<td style="text-align: left;"><a href="#typedef-pinmultiscrollbutton"><strong>PinMultiScrollButton</strong></a>  <br><em>Multiple key-buttons on a single ADC pin using resistor ladder.</em></td>
+</tr>
+<tr>
 <td style="text-align: right;">typedef <a href="../classeva_1_1_switch/"><strong>Switch</strong></a>&lt; <a href="../classeva_1_1_quantize_decor/"><strong>QuantizeDecor</strong></a>&lt; <a href="../classeva_1_1_debounce_decor/"><strong>DebounceDecor</strong></a>&lt; <a href="../classeva_1_1_analog_pin_reader/"><strong>AnalogPinReader</strong></a>&lt; tPin, tPinMode &gt; &gt;, tLevels... &gt; &gt;</td>
 <td style="text-align: left;"><a href="#typedef-pinmultiswitch"><strong>PinMultiSwitch</strong></a>  <br><em>Multiple switches on a single ADC pin using resistor ladder.</em></td>
 </tr>
 <tr>
-<td style="text-align: right;">typedef <a href="../classeva_1_1_button/"><strong>Button</strong></a>&lt; <a href="../classeva_1_1_binarize_eq_decor/"><strong>BinarizeEqDecor</strong></a>&lt; <a href="../classeva_1_1_debounce_decor/"><strong>DebounceDecor</strong></a>&lt; <a href="../classeva_1_1_digital_pin_reader/"><strong>DigitalPinReader</strong></a>&lt; tPin, tPinMode &gt; &gt;, tActivatesOn &gt; &gt;</td>
+<td style="text-align: right;">typedef <a href="../classeva_1_1_scroll_button/"><strong>ScrollButton</strong></a>&lt; <a href="../classeva_1_1_binarize_eq_decor/"><strong>BinarizeEqDecor</strong></a>&lt; <a href="../classeva_1_1_debounce_decor/"><strong>DebounceDecor</strong></a>&lt; <a href="../classeva_1_1_digital_pin_reader/"><strong>DigitalPinReader</strong></a>&lt; tPin, tPinMode &gt; &gt;, tActivatesOn &gt; &gt;</td>
 <td style="text-align: left;"><a href="#typedef-pinscrollbutton"><strong>PinScrollButton</strong></a>  <br><em>Digital pin key-button with debouncing and level normalization.</em></td>
-</tr>
-<tr>
-<td style="text-align: right;">typedef <a href="../classeva_1_1_scroll_button/"><strong>ScrollButton</strong></a>&lt; <a href="../classeva_1_1_quantize_decor/"><strong>QuantizeDecor</strong></a>&lt; <a href="../classeva_1_1_debounce_decor/"><strong>DebounceDecor</strong></a>&lt; <a href="../classeva_1_1_analog_pin_reader/"><strong>AnalogPinReader</strong></a>&lt; tPin, tPinMode &gt; &gt;, tLevels... &gt; &gt;</td>
-<td style="text-align: left;"><a href="#typedef-pinscrollmultibutton"><strong>PinScrollMultiButton</strong></a>  <br><em>Multiple key-buttons on a single ADC pin using resistor ladder.</em></td>
 </tr>
 <tr>
 <td style="text-align: right;">typedef <a href="../classeva_1_1_slider/"><strong>Slider</strong></a>&lt; <a href="../classeva_1_1_analog_pin_reader/"><strong>AnalogPinReader</strong></a>&lt; tPin, tPinMode &gt;, tMinPos, tMaxPos &gt;</td>
@@ -1269,11 +1269,11 @@
 </tr>
 <tr>
 <td style="text-align: right;">typedef <a href="../classeva_1_1_scroll_button/"><strong>ScrollButton</strong></a>&lt; <a href="../classeva_1_1_binarize_eq_decor/"><strong>BinarizeEqDecor</strong></a>&lt; <a href="../classeva_1_1_debounce_decor/"><strong>DebounceDecor</strong></a>&lt; <a href="../classeva_1_1_digital_pin_reader/"><strong>DigitalPinReader</strong></a>&lt; tPin, INPUT_PULLUP &gt; &gt;, LOW &gt; &gt;</td>
-<td style="text-align: left;"><a href="#typedef-pullupscrollbutton"><strong>PullupScrollButton</strong></a>  <br><em>Pull-up key-button (active LOW, connect to GND).</em></td>
+<td style="text-align: left;"><a href="#typedef-pullupscrollbutton"><strong>PullUpScrollButton</strong></a>  <br><em>Pull-up key-button (active LOW, connect to GND).</em></td>
 </tr>
 <tr>
 <td style="text-align: right;">typedef PinSwitch&lt; tPin, INPUT_PULLUP, LOW &gt;</td>
-<td style="text-align: left;"><a href="#typedef-pullupswitch"><strong>PullupSwitch</strong></a>  <br><em>Pull-up switch (active LOW, connect to GND).</em></td>
+<td style="text-align: left;"><a href="#typedef-pullupswitch"><strong>PullUpSwitch</strong></a>  <br><em>Pull-up switch (active LOW, connect to GND).</em></td>
 </tr>
 </tbody>
 </table>
@@ -1416,6 +1416,30 @@
 <p><strong>See also:</strong> PinMultiSwitch For use cases without click detection </p>
 <hr>
 
+<h3 id="typedef-pinmultiscrollbutton">typedef PinMultiScrollButton<a class="headerlink" href="#typedef-pinmultiscrollbutton" title="Permanent link">&para;</a></h3>
+<p><em>Multiple key-buttons on a single ADC pin using resistor ladder.</em> </p>
+<div class="codehilite"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">PinMultiScrollButton</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ScrollButton</span><span class="o">&lt;</span><span class="n">QuantizeDecor</span><span class="o">&lt;</span><span class="n">DebounceDecor</span><span class="o">&lt;</span><span class="n">AnalogPinReader</span><span class="o">&lt;</span><span class="n">tPin</span><span class="p">,</span><span class="w"> </span><span class="n">tPinMode</span><span class="o">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">tLevels</span><span class="p">...</span><span class="o">&gt;&gt;</span><span class="p">;</span>
+</code></pre></div>
+
+<p>Hardware connection: </p>
+<div class="codehilite"><pre><span></span><code><span class="w"> </span><span class="n">ADC</span><span class="w"> </span><span class="n">Pin</span><span class="w">  </span><span class="o">-----+--</span><span class="n">R1</span><span class="o">--+--</span><span class="n">R2</span><span class="o">--+--</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="o">-</span><span class="n">Rn</span><span class="o">-+</span>
+<span class="p">(</span><span class="n">analog</span><span class="w"> </span><span class="n">in</span><span class="p">)</span><span class="w">    </span><span class="o">|</span><span class="w">      </span><span class="o">|</span><span class="w">      </span><span class="o">|</span><span class="w">           </span><span class="o">|</span>
+<span class="w">               </span><span class="err">\</span><span class="w">      </span><span class="err">\</span><span class="w">      </span><span class="err">\</span><span class="w">           </span>\
+<span class="w">               </span><span class="o">|</span><span class="w">      </span><span class="o">|</span><span class="w">      </span><span class="o">|</span><span class="w">           </span><span class="o">|</span>
+<span class="w"> </span><span class="n">GND</span><span class="w">      </span><span class="o">-----+------+------+--</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="o">----+</span>
+</code></pre></div>
+
+<p>Each button produces a different ADC value when pressed. The <a href="../classeva_1_1_quantize_decor/"><strong>QuantizeDecor</strong></a> maps these values to discrete button codes (1, 2, 3...). <a href="../classeva_1_1_debounce_decor/"><strong>DebounceDecor</strong></a> provides debouncing.</p>
+<p>Generates standard button events for each button, with the button number encoded in the event mask.</p>
+<p><strong>Template parameters:</strong></p>
+<ul>
+<li><code>tPin</code> Arduino analog pin number </li>
+<li><code>tPinMode</code> Pin mode (usually INPUT) </li>
+<li><code>tLevels</code> Threshold values for each button (expected ADC readings)</li>
+</ul>
+<p><strong>See also:</strong> PinMultiSwitch For use cases without click detection </p>
+<hr>
+
 <h3 id="typedef-pinmultiswitch">typedef PinMultiSwitch<a class="headerlink" href="#typedef-pinmultiswitch" title="Permanent link">&para;</a></h3>
 <p><em>Multiple switches on a single ADC pin using resistor ladder.</em> </p>
 <div class="codehilite"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">PinMultiSwitch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Switch</span><span class="o">&lt;</span><span class="n">QuantizeDecor</span><span class="o">&lt;</span><span class="n">DebounceDecor</span><span class="o">&lt;</span><span class="n">AnalogPinReader</span><span class="o">&lt;</span><span class="n">tPin</span><span class="p">,</span><span class="w"> </span><span class="n">tPinMode</span><span class="o">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">tLevels</span><span class="p">...</span><span class="o">&gt;&gt;</span><span class="p">;</span>
@@ -1424,9 +1448,9 @@
 <p>Hardware connection: </p>
 <div class="codehilite"><pre><span></span><code><span class="w"> </span><span class="n">ADC</span><span class="w"> </span><span class="n">Pin</span><span class="w">  </span><span class="o">-----+--</span><span class="n">R1</span><span class="o">--+--</span><span class="n">R2</span><span class="o">--+--</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="o">-</span><span class="n">Rn</span><span class="o">-+</span>
 <span class="p">(</span><span class="n">analog</span><span class="w"> </span><span class="n">in</span><span class="p">)</span><span class="w">    </span><span class="o">|</span><span class="w">      </span><span class="o">|</span><span class="w">      </span><span class="o">|</span><span class="w">           </span><span class="o">|</span>
-<span class="w">                </span><span class="err">\</span><span class="w">      </span><span class="err">\</span><span class="w">      </span><span class="err">\</span><span class="w">           </span>\
+<span class="w">               </span><span class="err">\</span><span class="w">      </span><span class="err">\</span><span class="w">      </span><span class="err">\</span><span class="w">           </span>\
 <span class="w">               </span><span class="o">|</span><span class="w">      </span><span class="o">|</span><span class="w">      </span><span class="o">|</span><span class="w">           </span><span class="o">|</span>
-<span class="w">   </span><span class="n">GND</span><span class="w">    </span><span class="o">-----+------+------+--</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="o">----+</span>
+<span class="w"> </span><span class="n">GND</span><span class="w">      </span><span class="o">-----+------+------+--</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="o">----+</span>
 </code></pre></div>
 
 <p>Each switch produces a different ADC value when activated. The <a href="../classeva_1_1_quantize_decor/"><strong>QuantizeDecor</strong></a> maps these values to discrete level codes (1, 2, 3...). <a href="../classeva_1_1_debounce_decor/"><strong>DebounceDecor</strong></a> provides debouncing.</p>
@@ -1440,7 +1464,7 @@
 
 <h3 id="typedef-pinscrollbutton">typedef PinScrollButton<a class="headerlink" href="#typedef-pinscrollbutton" title="Permanent link">&para;</a></h3>
 <p><em>Digital pin key-button with debouncing and level normalization.</em> </p>
-<div class="codehilite"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">PinScrollButton</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Button</span><span class="o">&lt;</span><span class="n">BinarizeEqDecor</span><span class="o">&lt;</span><span class="n">DebounceDecor</span><span class="o">&lt;</span><span class="n">DigitalPinReader</span><span class="o">&lt;</span><span class="n">tPin</span><span class="p">,</span><span class="w"> </span><span class="n">tPinMode</span><span class="o">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">tActivatesOn</span><span class="o">&gt;&gt;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">PinScrollButton</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ScrollButton</span><span class="o">&lt;</span><span class="n">BinarizeEqDecor</span><span class="o">&lt;</span><span class="n">DebounceDecor</span><span class="o">&lt;</span><span class="n">DigitalPinReader</span><span class="o">&lt;</span><span class="n">tPin</span><span class="p">,</span><span class="w"> </span><span class="n">tPinMode</span><span class="o">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">tActivatesOn</span><span class="o">&gt;&gt;</span><span class="p">;</span>
 </code></pre></div>
 
 <p>Combines:
@@ -1454,30 +1478,6 @@
 <li><code>tPinMode</code> Pin mode (INPUT, INPUT_PULLUP, etc.) </li>
 <li><code>tActivatesOn</code> Level that means "pressed" (LOW or HIGH) </li>
 </ul>
-<hr>
-
-<h3 id="typedef-pinscrollmultibutton">typedef PinScrollMultiButton<a class="headerlink" href="#typedef-pinscrollmultibutton" title="Permanent link">&para;</a></h3>
-<p><em>Multiple key-buttons on a single ADC pin using resistor ladder.</em> </p>
-<div class="codehilite"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">PinScrollMultiButton</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ScrollButton</span><span class="o">&lt;</span><span class="n">QuantizeDecor</span><span class="o">&lt;</span><span class="n">DebounceDecor</span><span class="o">&lt;</span><span class="n">AnalogPinReader</span><span class="o">&lt;</span><span class="n">tPin</span><span class="p">,</span><span class="w"> </span><span class="n">tPinMode</span><span class="o">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">tLevels</span><span class="p">...</span><span class="o">&gt;&gt;</span><span class="p">;</span>
-</code></pre></div>
-
-<p>Hardware connection: </p>
-<div class="codehilite"><pre><span></span><code><span class="w"> </span><span class="n">ADC</span><span class="w"> </span><span class="n">Pin</span><span class="w">  </span><span class="o">-----+--</span><span class="n">R1</span><span class="o">--+--</span><span class="n">R2</span><span class="o">--+--</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="o">-</span><span class="n">Rn</span><span class="o">-+</span>
-<span class="p">(</span><span class="n">analog</span><span class="w"> </span><span class="n">in</span><span class="p">)</span><span class="w">    </span><span class="o">|</span><span class="w">      </span><span class="o">|</span><span class="w">      </span><span class="o">|</span><span class="w">           </span><span class="o">|</span>
-<span class="w">                </span><span class="err">\</span><span class="w">      </span><span class="err">\</span><span class="w">      </span><span class="err">\</span><span class="w">           </span>\
-<span class="w">               </span><span class="o">|</span><span class="w">      </span><span class="o">|</span><span class="w">      </span><span class="o">|</span><span class="w">           </span><span class="o">|</span>
-<span class="w">   </span><span class="n">GND</span><span class="w">    </span><span class="o">-----+------+------+--</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="o">----+</span>
-</code></pre></div>
-
-<p>Each button produces a different ADC value when pressed. The <a href="../classeva_1_1_quantize_decor/"><strong>QuantizeDecor</strong></a> maps these values to discrete button codes (1, 2, 3...). <a href="../classeva_1_1_debounce_decor/"><strong>DebounceDecor</strong></a> provides debouncing.</p>
-<p>Generates standard button events for each button, with the button number encoded in the event mask.</p>
-<p><strong>Template parameters:</strong></p>
-<ul>
-<li><code>tPin</code> Arduino analog pin number </li>
-<li><code>tPinMode</code> Pin mode (usually INPUT) </li>
-<li><code>tLevels</code> Threshold values for each button (expected ADC readings)</li>
-</ul>
-<p><strong>See also:</strong> PinMultiSwitch For use cases without click detection </p>
 <hr>
 
 <h3 id="typedef-pinslider">typedef PinSlider<a class="headerlink" href="#typedef-pinslider" title="Permanent link">&para;</a></h3>
@@ -1540,9 +1540,9 @@
 </ul>
 <hr>
 
-<h3 id="typedef-pullupscrollbutton">typedef PullupScrollButton<a class="headerlink" href="#typedef-pullupscrollbutton" title="Permanent link">&para;</a></h3>
+<h3 id="typedef-pullupscrollbutton">typedef PullUpScrollButton<a class="headerlink" href="#typedef-pullupscrollbutton" title="Permanent link">&para;</a></h3>
 <p><em>Pull-up key-button (active LOW, connect to GND).</em> </p>
-<div class="codehilite"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">PullupScrollButton</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ScrollButton</span><span class="o">&lt;</span><span class="n">BinarizeEqDecor</span><span class="o">&lt;</span><span class="n">DebounceDecor</span><span class="o">&lt;</span><span class="n">DigitalPinReader</span><span class="o">&lt;</span><span class="n">tPin</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT_PULLUP</span><span class="o">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="o">&gt;&gt;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">PullUpScrollButton</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ScrollButton</span><span class="o">&lt;</span><span class="n">BinarizeEqDecor</span><span class="o">&lt;</span><span class="n">DebounceDecor</span><span class="o">&lt;</span><span class="n">DigitalPinReader</span><span class="o">&lt;</span><span class="n">tPin</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT_PULLUP</span><span class="o">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="o">&gt;&gt;</span><span class="p">;</span>
 </code></pre></div>
 
 <p>Convenience alias for the most common Arduino button wiring:
@@ -1555,9 +1555,9 @@
 </ul>
 <hr>
 
-<h3 id="typedef-pullupswitch">typedef PullupSwitch<a class="headerlink" href="#typedef-pullupswitch" title="Permanent link">&para;</a></h3>
+<h3 id="typedef-pullupswitch">typedef PullUpSwitch<a class="headerlink" href="#typedef-pullupswitch" title="Permanent link">&para;</a></h3>
 <p><em>Pull-up switch (active LOW, connect to GND).</em> </p>
-<div class="codehilite"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">PullupSwitch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PinSwitch</span><span class="o">&lt;</span><span class="n">tPin</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT_PULLUP</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="o">&gt;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">PullUpSwitch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PinSwitch</span><span class="o">&lt;</span><span class="n">tPin</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT_PULLUP</span><span class="p">,</span><span class="w"> </span><span class="n">LOW</span><span class="o">&gt;</span><span class="p">;</span>
 </code></pre></div>
 
 <p>Convenience alias for the most common Arduino switch wiring:

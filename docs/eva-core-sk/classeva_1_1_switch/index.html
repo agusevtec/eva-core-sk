@@ -790,6 +790,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#function-isenabled" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        function isEnabled
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#function-setlistener" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -818,10 +829,21 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#variable-curiosity" class="md-nav__link">
+  <a href="#variable-enabled" class="md-nav__link">
     <span class="md-ellipsis">
       
-        variable curiosity
+        variable enabled
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variable-eventmask" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        variable eventMask
       
     </span>
   </a>
@@ -1000,7 +1022,7 @@
 <tbody>
 <tr>
 <td style="text-align: right;"></td>
-<td style="text-align: left;"><a href="#function-switch"><strong>Switch</strong></a> (<a href="../classeva_1_1_i_handler/"><strong>IHandler</strong></a> * listener=nullptr, unsigned short eventMask=0, Args... args) <br><em>Constructs a</em> <a href="./"><em><strong>Switch</strong></em></a> <em>.</em></td>
+<td style="text-align: left;"><a href="#function-switch"><strong>Switch</strong></a> (<a href="../classeva_1_1_i_handler/"><strong>IHandler</strong></a> * listener=nullptr, unsigned char eventMask=0, Args... args) <br><em>Constructs a</em> <a href="./"><em><strong>Switch</strong></em></a> <em>.</em></td>
 </tr>
 <tr>
 <td style="text-align: right;"><a href="./#function-switch"><strong>Switch</strong></a> *</td>
@@ -1011,8 +1033,12 @@
 <td style="text-align: left;"><a href="#function-getvalue"><strong>getValue</strong></a> () <br><em>Gets the current level code.</em></td>
 </tr>
 <tr>
+<td style="text-align: right;">bool</td>
+<td style="text-align: left;"><a href="#function-isenabled"><strong>isEnabled</strong></a> () const<br><em>Checks if the switch is enabled.</em></td>
+</tr>
+<tr>
 <td style="text-align: right;"><a href="./#function-switch"><strong>Switch</strong></a> *</td>
-<td style="text-align: left;"><a href="#function-setlistener"><strong>setListener</strong></a> (<a href="../classeva_1_1_i_handler/"><strong>IHandler</strong></a> * listener, unsigned short eventMask) <br><em>Sets the event listener for this switch.</em></td>
+<td style="text-align: left;"><a href="#function-setlistener"><strong>setListener</strong></a> (<a href="../classeva_1_1_i_handler/"><strong>IHandler</strong></a> * listener, unsigned char eventMask) <br><em>Sets the event listener for this switch.</em></td>
 </tr>
 </tbody>
 </table>
@@ -1078,11 +1104,15 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: right;">unsigned char</td>
-<td style="text-align: left;"><a href="#variable-curiosity"><strong>curiosity</strong></a>   = <code>0</code><br></td>
+<td style="text-align: right;">bool</td>
+<td style="text-align: left;"><a href="#variable-enabled"><strong>enabled</strong></a>  <br></td>
 </tr>
 <tr>
-<td style="text-align: right;">signed char</td>
+<td style="text-align: right;">unsigned char</td>
+<td style="text-align: left;"><a href="#variable-eventmask"><strong>eventMask</strong></a>  <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">unsigned char</td>
 <td style="text-align: left;"><a href="#variable-levelcode"><strong>levelCode</strong></a>   = <code>0</code><br></td>
 </tr>
 <tr>
@@ -1158,7 +1188,7 @@
 <div class="codehilite"><pre><span></span><code><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span><span class="w"> </span><span class="n">Args</span><span class="o">&gt;</span>
 <span class="kr">inline</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">Switch</span><span class="o">::</span><span class="n">Switch</span><span class="w"> </span><span class="p">(</span>
 <span class="w">    </span><span class="n">IHandler</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">listener</span><span class="o">=</span><span class="nb">nullptr</span><span class="p">,</span>
-<span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">eventMask</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">eventMask</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
 <span class="w">    </span><span class="n">Args</span><span class="p">...</span><span class="w"> </span><span class="n">args</span>
 <span class="p">)</span><span class="w"> </span>
 </code></pre></div>
@@ -1196,11 +1226,20 @@
 <p>Level code (0 for inactive, positive value for active state) </p>
 <hr>
 
+<h3 id="function-isenabled">function isEnabled<a class="headerlink" href="#function-isenabled" title="Permanent link">&para;</a></h3>
+<p><em>Checks if the switch is enabled.</em> </p>
+<div class="codehilite"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">Switch</span><span class="o">::</span><span class="n">isEnabled</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span>
+</code></pre></div>
+
+<p><strong>Returns:</strong></p>
+<p>True if enabled, false otherwise </p>
+<hr>
+
 <h3 id="function-setlistener">function setListener<a class="headerlink" href="#function-setlistener" title="Permanent link">&para;</a></h3>
 <p><em>Sets the event listener for this switch.</em> </p>
 <div class="codehilite"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="n">Switch</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">Switch</span><span class="o">::</span><span class="n">setListener</span><span class="w"> </span><span class="p">(</span>
 <span class="w">    </span><span class="n">IHandler</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">listener</span><span class="p">,</span>
-<span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">eventMask</span>
+<span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">eventMask</span>
 <span class="p">)</span><span class="w"> </span>
 </code></pre></div>
 
@@ -1213,14 +1252,20 @@
 <p>Pointer to this for method chaining </p>
 <hr>
 <h2 id="protected-attributes-documentation">Protected Attributes Documentation<a class="headerlink" href="#protected-attributes-documentation" title="Permanent link">&para;</a></h2>
-<h3 id="variable-curiosity">variable curiosity<a class="headerlink" href="#variable-curiosity" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><code><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">Switch</span><span class="o">&lt;</span><span class="w"> </span><span class="n">TReader</span><span class="w"> </span><span class="o">&gt;::</span><span class="n">curiosity</span><span class="p">;</span>
+<h3 id="variable-enabled">variable enabled<a class="headerlink" href="#variable-enabled" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kt">bool</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">Switch</span><span class="o">&lt;</span><span class="w"> </span><span class="n">TReader</span><span class="w"> </span><span class="o">&gt;::</span><span class="n">enabled</span><span class="p">;</span>
+</code></pre></div>
+
+<hr>
+
+<h3 id="variable-eventmask">variable eventMask<a class="headerlink" href="#variable-eventmask" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">Switch</span><span class="o">&lt;</span><span class="w"> </span><span class="n">TReader</span><span class="w"> </span><span class="o">&gt;::</span><span class="n">eventMask</span><span class="p">;</span>
 </code></pre></div>
 
 <hr>
 
 <h3 id="variable-levelcode">variable levelCode<a class="headerlink" href="#variable-levelcode" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><code><span class="kt">signed</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">Switch</span><span class="o">&lt;</span><span class="w"> </span><span class="n">TReader</span><span class="w"> </span><span class="o">&gt;::</span><span class="n">levelCode</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><code><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">Switch</span><span class="o">&lt;</span><span class="w"> </span><span class="n">TReader</span><span class="w"> </span><span class="o">&gt;::</span><span class="n">levelCode</span><span class="p">;</span>
 </code></pre></div>
 
 <hr>

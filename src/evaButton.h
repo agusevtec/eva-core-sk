@@ -7,8 +7,8 @@ namespace eva
     static const unsigned short LONGPRESS_DELAY = 750;
 
     static const unsigned char ON_SHORTCLICK = 0x08;
-    static const unsigned char ON_LONGCLICK = 0x10;
-    static const unsigned char ON_LONGPRESS = 0x20;
+    static const unsigned char ON_LONGCLICK  = 0x10;
+    static const unsigned char ON_LONGPRESS  = 0x20;
 
     /**
      * @brief Button with press/release and click detection.
@@ -27,7 +27,7 @@ namespace eva
      * Long click threshold is fixed at 750ms.
      *
      * @tparam TReader Input reader type that returns numeric codes
-     *                (0 = no button, >0 = button identifier)
+     *                 (0 = no button, >0 = button identifier)
      *
      * @see Switch Base class for active/inactive state management
      * @see PinButton Digital pin button with debouncing (typical use)
@@ -38,13 +38,24 @@ namespace eva
     class Button : public Switch<TReader>
     {
     public:
-        /**
-         * @brief Constructs a Button
-         * @param listener Handler to receive button events
-         * @param eventMask Bitmask of events to listen for
-         * @param args Additional arguments passed to TReader constructor
-         */
         using Switch<TReader>::Switch;
+
+        /**
+         * @brief Enables or disables the button.
+         *
+         * Overridden to clear timing state when disabled.
+         *
+         * @param enabled True to enable, false to disable
+         * @return Pointer to this for method chaining
+         */
+        Button *enable(bool enabled)
+        {
+            if (!enabled)
+                this->pressTime = 0;
+
+            Switch<TReader>::enable(enabled);
+            return this;
+        }
 
     protected:
         bool checkLongPress(unsigned long now)
@@ -61,7 +72,7 @@ namespace eva
         void handleDeactivating(unsigned char wasLevelCode, unsigned long now)
         {
             Switch<TReader>::handleDeactivating(wasLevelCode);
-            this->notify((pressTime > 0) ? ON_SHORTCLICK : ON_LONGCLICK, wasLevelCode);
+            this->notify((this->pressTime > 0) ? ON_SHORTCLICK : ON_LONGCLICK, wasLevelCode);
             this->pressTime = 0;
         }
 
@@ -74,25 +85,26 @@ namespace eva
     private:
         void tick() override
         {
-            if (this->levelCode < 0)
+            if (!this->isEnabled())
                 return;
 
             unsigned long now = millis();
             unsigned char wasLevelCode = this->levelCode;
+
             if (!this->updateState())
                 return;
 
             if (this->checkChanging(wasLevelCode))
                 this->handleChanging();
 
-            if (checkLongPress(now))
-                handleLongPress();
-
             if (this->checkDeactivating(wasLevelCode))
                 handleDeactivating(wasLevelCode, now);
 
             if (this->checkActivating(wasLevelCode))
                 handleActivating(now);
+
+            if (checkLongPress(now))
+                handleLongPress();
         }
 
     protected:

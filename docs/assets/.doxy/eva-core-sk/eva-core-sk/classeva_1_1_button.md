@@ -92,6 +92,11 @@ Inherited by the following classes: [eva::ScrollButton](classeva_1_1_scroll_butt
 
 
 
+## Public Functions
+
+| Type | Name |
+| ---: | :--- |
+|  [**Button**](classeva_1_1_button.md) \* | [**enable**](#function-enable) (bool enabled) <br>_Enables or disables the button._  |
 
 
 ## Public Functions inherited from eva::Switch
@@ -100,10 +105,11 @@ See [eva::Switch](classeva_1_1_switch.md)
 
 | Type | Name |
 | ---: | :--- |
-|   | [**Switch**](classeva_1_1_switch.md#function-switch) ([**IHandler**](classeva_1_1_i_handler.md) \* listener=nullptr, unsigned short eventMask=0, Args... args) <br>_Constructs a_ [_**Switch**_](classeva_1_1_switch.md) _._ |
+|   | [**Switch**](classeva_1_1_switch.md#function-switch) ([**IHandler**](classeva_1_1_i_handler.md) \* listener=nullptr, unsigned char eventMask=0, Args... args) <br>_Constructs a_ [_**Switch**_](classeva_1_1_switch.md) _._ |
 |  [**Switch**](classeva_1_1_switch.md#function-switch) \* | [**enable**](classeva_1_1_switch.md#function-enable) (bool enabled) <br>_Enables or disables the switch._  |
 |  signed short | [**getValue**](classeva_1_1_switch.md#function-getvalue) () <br>_Gets the current level code._  |
-|  [**Switch**](classeva_1_1_switch.md#function-switch) \* | [**setListener**](classeva_1_1_switch.md#function-setlistener) ([**IHandler**](classeva_1_1_i_handler.md) \* listener, unsigned short eventMask) <br>_Sets the event listener for this switch._  |
+|  bool | [**isEnabled**](classeva_1_1_switch.md#function-isenabled) () const<br>_Checks if the switch is enabled._  |
+|  [**Switch**](classeva_1_1_switch.md#function-switch) \* | [**setListener**](classeva_1_1_switch.md#function-setlistener) ([**IHandler**](classeva_1_1_i_handler.md) \* listener, unsigned char eventMask) <br>_Sets the event listener for this switch._  |
 
 
 ## Public Functions inherited from eva::Tickable
@@ -158,8 +164,9 @@ See [eva::Switch](classeva_1_1_switch.md)
 
 | Type | Name |
 | ---: | :--- |
-|  unsigned char | [**curiosity**](classeva_1_1_switch.md#variable-curiosity)   = `0`<br> |
-|  signed char | [**levelCode**](classeva_1_1_switch.md#variable-levelcode)   = `0`<br> |
+|  bool | [**enabled**](classeva_1_1_switch.md#variable-enabled)  <br> |
+|  unsigned char | [**eventMask**](classeva_1_1_switch.md#variable-eventmask)  <br> |
+|  unsigned char | [**levelCode**](classeva_1_1_switch.md#variable-levelcode)   = `0`<br> |
 |  [**IHandler**](classeva_1_1_i_handler.md) \* | [**listener**](classeva_1_1_switch.md#variable-listener)   = `nullptr`<br> |
 
 
@@ -283,6 +290,45 @@ Long click threshold is fixed at 750ms.
 
 
     
+## Public Functions Documentation
+
+
+
+
+### function enable 
+
+_Enables or disables the button._ 
+```C++
+inline Button * eva::Button::enable (
+    bool enabled
+) 
+```
+
+
+
+Overridden to clear timing state when disabled.
+
+
+
+
+**Parameters:**
+
+
+* `enabled` True to enable, false to disable 
+
+
+
+**Returns:**
+
+Pointer to this for method chaining 
+
+
+
+
+
+        
+
+<hr>
 ## Protected Attributes Documentation
 
 

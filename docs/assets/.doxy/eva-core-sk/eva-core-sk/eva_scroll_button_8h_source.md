@@ -24,12 +24,21 @@ namespace eva
     public:
         using Button<TReader>::Button;
 
-    private:
+        ScrollButton *enable(bool enabled)
+        {
+            if (!enabled)
+                this->lastRepeatTime = 0;
+
+            Button<TReader>::enable(enabled);
+            return this;
+        }
+
+    protected:
         void handleLongPress(unsigned long now)
         {
             Button<TReader>::handleLongPress();
             this->notify(ON_REPEATKEY, this->levelCode);
-            this->lastRepeatTime = max((unsigned long)1, now);
+            this->lastRepeatTime = (now == 0) ? 1 : now;
         }
 
         void handleDeactivating(unsigned char wasLevelCode, unsigned long now)
@@ -40,54 +49,54 @@ namespace eva
 
         bool checkRepeatTime(unsigned long now)
         {
-            return (this->lastRepeatTime) && ((now - this->lastRepeatTime) > REPEAT_DELAY);
+            return (this->lastRepeatTime > 0) && ((now - this->lastRepeatTime) > REPEAT_DELAY);
         }
 
         void handleRepeatTime(unsigned long now)
         {
             this->notify(ON_REPEATKEY, this->levelCode);
-            this->lastRepeatTime = max((unsigned long)1, now);
+            this->lastRepeatTime = (now == 0) ? 1 : now;
         }
 
     private:
         void tick() override
         {
-            if (this->levelCode < 0)
+            if (!this->isEnabled())
                 return;
 
             unsigned long now = millis();
             unsigned char wasLevelCode = this->levelCode;
             if (!this->updateState())
                 return;
-                
+
             if (this->checkChanging(wasLevelCode))
                 this->handleChanging();
-
-            if (this->checkLongPress(now))
-                handleLongPress(now);
-
-            if (checkRepeatTime(now))
-                handleRepeatTime(now);
 
             if (this->checkDeactivating(wasLevelCode))
                 handleDeactivating(wasLevelCode, now);
 
             if (this->checkActivating(wasLevelCode))
                 this->handleActivating(now);
+
+            if (this->checkLongPress(now))
+                handleLongPress(now);
+
+            if (checkRepeatTime(now))
+                handleRepeatTime(now);
         }
 
-    private:
+    protected:
         unsigned long lastRepeatTime = 0;
     };
 
     template <int tPin, int tPinMode, int tActivatesOn>
-    using PinScrollButton = Button<BinarizeEqDecor<DebounceDecor<DigitalPinReader<tPin, tPinMode>>, tActivatesOn>>;
+    using PinScrollButton = ScrollButton<BinarizeEqDecor<DebounceDecor<DigitalPinReader<tPin, tPinMode>>, tActivatesOn>>;
 
     template <int tPin>
-    using PullupScrollButton = ScrollButton<BinarizeEqDecor<DebounceDecor<DigitalPinReader<tPin, INPUT_PULLUP>>, LOW>>;
+    using PullUpScrollButton = ScrollButton<BinarizeEqDecor<DebounceDecor<DigitalPinReader<tPin, INPUT_PULLUP>>, LOW>>;
 
     template <int tPin, int tPinMode, signed short... tLevels>
-    using PinScrollMultiButton = ScrollButton<QuantizeDecor<DebounceDecor<AnalogPinReader<tPin, tPinMode>>, tLevels...>>;
+    using PinMultiScrollButton = ScrollButton<QuantizeDecor<DebounceDecor<AnalogPinReader<tPin, tPinMode>>, tLevels...>>;
 };
 ```
 
