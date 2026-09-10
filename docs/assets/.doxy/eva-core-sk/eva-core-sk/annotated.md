@@ -26,7 +26,7 @@ Here are the classes, structs, unions and interfaces with brief descriptions:
     * **class** [**IReader**](classeva_1_1_i_reader.md) _Interface for value readers._     
     * **class** [**IReaderAdapter**](classeva_1_1_i_reader_adapter.md) _Adapter that converts any class with getValue() into an_ [_**IReader**_](classeva_1_1_i_reader.md) _._    
     * **class** [**Indicator**](classeva_1_1_indicator.md) _Basic indicator (LED) control._     
-    * **class** [**Joystick**](classeva_1_1_joystick.md) [_**Joystick**_](classeva_1_1_joystick.md) _axis reader (range 1000-1500-2000) with trim adjustment._    
+    * **class** [**Joystick**](classeva_1_1_joystick.md) [_**Joystick**_](classeva_1_1_joystick.md) _axis reader (range -1000 .. 0 .. 1000) with trim adjustment._    
     * **class** [**List**](classeva_1_1_list.md) _Simple singly-linked list container._     
     * **struct** [**ListIterator**](structeva_1_1_list_iterator.md) _Iterator node for_ [_**List**_](classeva_1_1_list.md) _._    
     * **struct** [**PinScrollMultiButton**](structeva_1_1_pin_scroll_multi_button.md) 
@@ -36,7 +36,7 @@ Here are the classes, structs, unions and interfaces with brief descriptions:
     * **class** [**RepeatTimer**](classeva_1_1_repeat_timer.md) _Timer that fires repeatedly at fixed intervals._     
     * **class** [**RingBuffer**](classeva_1_1_ring_buffer.md) _Fixed-capacity circular ring buffer._     
     * **class** [**ScrollButton**](classeva_1_1_scroll_button.md) [_**Button**_](classeva_1_1_button.md) _with auto-repeat (typematic) functionality._    
-    * **class** [**Slider**](classeva_1_1_slider.md) _Maps analog readings to 1000-2000 range._     
+    * **class** [**Slider**](classeva_1_1_slider.md) _Maps analog readings to 0-1000 range._     
     * **class** [**Switch**](classeva_1_1_switch.md) _Universal switch/button class for multi-valued input sources._     
     * **class** [**Tickable**](classeva_1_1_tickable.md) _Base class for objects that need periodic updates._     
 

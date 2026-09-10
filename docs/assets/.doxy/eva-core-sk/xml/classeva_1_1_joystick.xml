@@ -169,10 +169,10 @@
         <name>getValue</name>
         <qualifiedname>eva::Joystick::getValue</qualifiedname>
         <briefdescription>
-<para>Gets normalized joystick position (1000 to 2000). </para>
+<para>Gets normalized joystick position (-1000 to 1000). </para>
         </briefdescription>
         <detaileddescription>
-<para><simplesect kind="return"><para>Value from 1000 to 2000 </para>
+<para><simplesect kind="return"><para>Value from -1000 to 1000 </para>
 </simplesect>
 </para>
         </detaileddescription>
@@ -305,7 +305,7 @@
       </memberdef>
     </sectiondef>
     <briefdescription>
-<para><ref refid="classeva_1_1_joystick" kindref="compound">Joystick</ref> axis reader (range 1000-1500-2000) with trim adjustment. </para>
+<para><ref refid="classeva_1_1_joystick" kindref="compound">Joystick</ref> axis reader (range -1000 .. 0 .. 1000) with trim adjustment. </para>
     </briefdescription>
     <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>

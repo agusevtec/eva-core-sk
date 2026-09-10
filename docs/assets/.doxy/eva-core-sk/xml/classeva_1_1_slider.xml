@@ -93,7 +93,7 @@
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>Value from 1000 to 2000 </para>
+<simplesect kind="return"><para>Value from 0 to 1000 </para>
 </simplesect>
 </para>
         </detaileddescription>
@@ -111,7 +111,7 @@
 <para>Gets normalized slider position. </para>
         </briefdescription>
         <detaileddescription>
-<para><simplesect kind="return"><para>Value from 1000 to 2000 </para>
+<para><simplesect kind="return"><para>Value from 0 to 1000 </para>
 </simplesect>
 </para>
         </detaileddescription>
@@ -121,7 +121,7 @@
       </memberdef>
     </sectiondef>
     <briefdescription>
-<para>Maps analog readings to 1000-2000 range. </para>
+<para>Maps analog readings to 0-1000 range. </para>
     </briefdescription>
     <detaileddescription>
 <para><parameterlist kind="templateparam"><parameteritem>

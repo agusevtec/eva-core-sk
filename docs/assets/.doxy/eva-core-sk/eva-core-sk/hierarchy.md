@@ -6,9 +6,9 @@ This inheritance list is sorted roughly, but not completely, alphabetically:
 
 * **class** [**eva::AnalogMutablePinReader**](classeva_1_1_analog_mutable_pin_reader.md) _Reads analog pin value with runtime pin configuration._ 
 * **class** [**eva::AnalogPinReader**](classeva_1_1_analog_pin_reader.md) _Reads analog pin value._     
-    * **class** [**eva::Joystick**](classeva_1_1_joystick.md) [_**Joystick**_](classeva_1_1_joystick.md) _axis reader (range 1000-1500-2000) with trim adjustment._
-    * **class** [**eva::Joystick**](classeva_1_1_joystick.md) [_**Joystick**_](classeva_1_1_joystick.md) _axis reader (range 1000-1500-2000) with trim adjustment._
-    * **class** [**eva::Slider**](classeva_1_1_slider.md) _Maps analog readings to 1000-2000 range._ 
+    * **class** [**eva::Joystick**](classeva_1_1_joystick.md) [_**Joystick**_](classeva_1_1_joystick.md) _axis reader (range -1000 .. 0 .. 1000) with trim adjustment._
+    * **class** [**eva::Joystick**](classeva_1_1_joystick.md) [_**Joystick**_](classeva_1_1_joystick.md) _axis reader (range -1000 .. 0 .. 1000) with trim adjustment._
+    * **class** [**eva::Slider**](classeva_1_1_slider.md) _Maps analog readings to 0-1000 range._ 
 * **class** [**eva::Indicator**](classeva_1_1_indicator.md) _Basic indicator (LED) control._     
     * **class** [**eva::BlinkingIndicator**](classeva_1_1_blinking_indicator.md) [_**Indicator**_](classeva_1_1_indicator.md) _that blinks with specified period and duty cycle._    
         * **class** [**eva::CountdownIndicator**](classeva_1_1_countdown_indicator.md) [_**Indicator**_](classeva_1_1_indicator.md) _that blinks a specified number of times then notifies listener._
@@ -73,7 +73,7 @@ This inheritance list is sorted roughly, but not completely, alphabetically:
         * **class** [**eva::Button**](classeva_1_1_button.md) [_**Button**_](classeva_1_1_button.md) _with press/release and click detection._    
             * **class** [**eva::ScrollButton**](classeva_1_1_scroll_button.md) [_**Button**_](classeva_1_1_button.md) _with auto-repeat (typematic) functionality._
     * **class** [**eva::DebounceDecor**](classeva_1_1_debounce_decor.md) _Decorator that stabilizes readings by requiring value to be stable for a period._ 
-    * **class** [**eva::Joystick**](classeva_1_1_joystick.md) [_**Joystick**_](classeva_1_1_joystick.md) _axis reader (range 1000-1500-2000) with trim adjustment._
+    * **class** [**eva::Joystick**](classeva_1_1_joystick.md) [_**Joystick**_](classeva_1_1_joystick.md) _axis reader (range -1000 .. 0 .. 1000) with trim adjustment._
     * **class** [**eva::QuantizeDecor**](classeva_1_1_quantize_decor.md) _Decorator that quantizes analog readings to discrete levels._     
         * **class** [**eva::Switch**](classeva_1_1_switch.md) _Universal switch/button class for multi-valued input sources._     
             * **class** [**eva::Button**](classeva_1_1_button.md) [_**Button**_](classeva_1_1_button.md) _with press/release and click detection._    
@@ -89,7 +89,7 @@ This inheritance list is sorted roughly, but not completely, alphabetically:
             * **class** [**eva::ScrollButton**](classeva_1_1_scroll_button.md) [_**Button**_](classeva_1_1_button.md) _with auto-repeat (typematic) functionality._
         * **class** [**eva::Button**](classeva_1_1_button.md) [_**Button**_](classeva_1_1_button.md) _with press/release and click detection._    
             * **class** [**eva::ScrollButton**](classeva_1_1_scroll_button.md) [_**Button**_](classeva_1_1_button.md) _with auto-repeat (typematic) functionality._
-    * **class** [**eva::Slider**](classeva_1_1_slider.md) _Maps analog readings to 1000-2000 range._ 
+    * **class** [**eva::Slider**](classeva_1_1_slider.md) _Maps analog readings to 0-1000 range._ 
     * **class** [**eva::Switch**](classeva_1_1_switch.md) _Universal switch/button class for multi-valued input sources._     
         * **class** [**eva::Button**](classeva_1_1_button.md) [_**Button**_](classeva_1_1_button.md) _with press/release and click detection._    
             * **class** [**eva::ScrollButton**](classeva_1_1_scroll_button.md) [_**Button**_](classeva_1_1_button.md) _with auto-repeat (typematic) functionality._

@@ -5,7 +5,7 @@
 namespace eva
 {
   /**
-   * @brief Joystick axis reader (range 1000-1500-2000) with trim adjustment
+   * @brief Joystick axis reader (range -1000 .. 0 .. 1000) with trim adjustment
    * @param deadZone dead-zone value
    * @tparam TReader Underlying reader type
    * @tparam tMinPos Minimum analog value
@@ -44,8 +44,8 @@ namespace eva
     }
 
     /**
-     * @brief Gets normalized joystick position (1000 to 2000)
-     * @return Value from 1000 to 2000
+     * @brief Gets normalized joystick position (-1000 to 1000)
+     * @return Value from -1000 to 1000
      */
     signed short getValue()
     {

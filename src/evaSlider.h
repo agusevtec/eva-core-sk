@@ -6,7 +6,7 @@
 namespace eva
 {
   /**
-   * @brief Maps analog readings to 1000-2000 range
+   * @brief Maps analog readings to 0-1000 range
    * @tparam TReader Underlying reader type
    * @tparam tMinPos Minimum analog reading
    * @tparam tMaxPos Maximum analog reading
@@ -27,7 +27,7 @@ namespace eva
      * @brief Gets normalized slider position with custom range
      * @param aMinPos Minimum analog reading
      * @param aMaxPos Maximum analog reading
-     * @return Value from 1000 to 2000
+     * @return Value from 0 to 1000
      */
     signed short getValue(unsigned short aMinPos, unsigned short aMaxPos)
     {
@@ -35,7 +35,7 @@ namespace eva
     }
     /**
      * @brief Gets normalized slider position
-     * @return Value from 1000 to 2000
+     * @return Value from 0 to 1000
      */
     signed short getValue()
     {

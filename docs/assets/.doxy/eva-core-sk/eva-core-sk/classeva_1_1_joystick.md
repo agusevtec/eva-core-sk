@@ -10,7 +10,7 @@
 
 
 
-[_**Joystick**_](classeva_1_1_joystick.md) _axis reader (range 1000-1500-2000) with trim adjustment._[More...](#detailed-description)
+[_**Joystick**_](classeva_1_1_joystick.md) _axis reader (range -1000 .. 0 .. 1000) with trim adjustment._[More...](#detailed-description)
 
 * `#include <evaJoystick.h>`
 
@@ -60,7 +60,7 @@ Inherits the following classes: TReader
 |  unsigned char | [**getDeadZone**](#function-getdeadzone) () <br>_Gets current dead-zone value._  |
 |  signed short | [**getTrim**](#function-gettrim) () <br>_Gets current trim value._  |
 |  signed short | [**getValue**](#function-getvalue-12) (unsigned short aMinPos, unsigned short aMiddlePos, unsigned short aMaxPos) <br>_Gets normalized joystick position with custom ranges._  |
-|  signed short | [**getValue**](#function-getvalue-22) () <br>_Gets normalized joystick position (1000 to 2000)._  |
+|  signed short | [**getValue**](#function-getvalue-22) () <br>_Gets normalized joystick position (-1000 to 1000)._  |
 |  void | [**setDeadZone**](#function-setdeadzone) (unsigned char deadZone) <br>_Sets dead-zone value._  |
 |  void | [**setTrim**](#function-settrim) (short trim) <br>_Sets trim adjustment value._  |
 
@@ -267,7 +267,7 @@ Value from -1000 to 1000
 
 ### function getValue [2/2]
 
-_Gets normalized joystick position (1000 to 2000)._ 
+_Gets normalized joystick position (-1000 to 1000)._ 
 ```C++
 inline signed short eva::Joystick::getValue () 
 ```
@@ -278,7 +278,7 @@ inline signed short eva::Joystick::getValue ()
 
 **Returns:**
 
-Value from 1000 to 2000 
+Value from -1000 to 1000 
 
 
 

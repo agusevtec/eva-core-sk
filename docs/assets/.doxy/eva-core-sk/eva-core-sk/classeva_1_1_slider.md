@@ -10,7 +10,7 @@
 
 
 
-_Maps analog readings to 1000-2000 range._ [More...](#detailed-description)
+_Maps analog readings to 0-1000 range._ [More...](#detailed-description)
 
 * `#include <evaSlider.h>`
 
@@ -159,7 +159,7 @@ inline signed short eva::Slider::getValue (
 
 **Returns:**
 
-Value from 1000 to 2000 
+Value from 0 to 1000 
 
 
 
@@ -184,7 +184,7 @@ inline signed short eva::Slider::getValue ()
 
 **Returns:**
 
-Value from 1000 to 2000 
+Value from 0 to 1000 
 
 
 
