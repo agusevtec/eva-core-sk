@@ -15,6 +15,7 @@
     <innerfile refid="eva_list_8h">evaList.h</innerfile>
     <innerfile refid="eva_reader_decors_8h">evaReaderDecors.h</innerfile>
     <innerfile refid="eva_repeat_timer_8h">evaRepeatTimer.h</innerfile>
+    <innerfile refid="eva_ring_buffer_8h">evaRingBuffer.h</innerfile>
     <innerfile refid="eva_scroll_button_8h">evaScrollButton.h</innerfile>
     <innerfile refid="eva_slider_8h">evaSlider.h</innerfile>
     <innerfile refid="eva_std_readers_8h">evaStdReaders.h</innerfile>

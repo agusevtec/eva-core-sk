@@ -732,7 +732,7 @@
 <span class="w">            </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">pressTime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 <span class="w">        </span><span class="p">}</span>
 
-<span class="w">        </span><span class="kt">void</span><span class="w"> </span><span class="n">handleDeactivating</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">wasLevelCode</span><span class="p">,</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">now</span><span class="p">)</span>
+<span class="w">        </span><span class="kt">void</span><span class="w"> </span><span class="n">handleDeactivating</span><span class="p">(</span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">wasLevelCode</span><span class="p">)</span>
 <span class="w">        </span><span class="p">{</span>
 <span class="w">            </span><span class="n">Switch</span><span class="o">&lt;</span><span class="n">TReader</span><span class="o">&gt;::</span><span class="n">handleDeactivating</span><span class="p">(</span><span class="n">wasLevelCode</span><span class="p">);</span>
 <span class="w">            </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">notify</span><span class="p">((</span><span class="k">this</span><span class="o">-&gt;</span><span class="n">pressTime</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">ON_SHORTCLICK</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">ON_LONGCLICK</span><span class="p">,</span><span class="w"> </span><span class="n">wasLevelCode</span><span class="p">);</span>
@@ -761,7 +761,7 @@
 <span class="w">                </span><span class="k">this</span><span class="o">-&gt;</span><span class="n">handleChanging</span><span class="p">();</span>
 
 <span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="o">-&gt;</span><span class="n">checkDeactivating</span><span class="p">(</span><span class="n">wasLevelCode</span><span class="p">))</span>
-<span class="w">                </span><span class="n">handleDeactivating</span><span class="p">(</span><span class="n">wasLevelCode</span><span class="p">,</span><span class="w"> </span><span class="n">now</span><span class="p">);</span>
+<span class="w">                </span><span class="n">handleDeactivating</span><span class="p">(</span><span class="n">wasLevelCode</span><span class="p">);</span>
 
 <span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="o">-&gt;</span><span class="n">checkActivating</span><span class="p">(</span><span class="n">wasLevelCode</span><span class="p">))</span>
 <span class="w">                </span><span class="n">handleActivating</span><span class="p">(</span><span class="n">now</span><span class="p">);</span>

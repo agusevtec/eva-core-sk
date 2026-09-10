@@ -35,6 +35,8 @@
 
 | Type | Name |
 | ---: | :--- |
+| struct | [**PinScrollMultiButton**](structeva_1_1_pin_scroll_multi_button.md) &lt;tPin&gt;<br> |
+| struct | [**PullupScrollButton**](structeva_1_1_pullup_scroll_button.md) &lt;tPin&gt;<br> |
 | class | [**ScrollButton**](classeva_1_1_scroll_button.md) &lt;class TReader&gt;<br>[_**Button**_](classeva_1_1_button.md) _with auto-repeat (typematic) functionality._ |
 
 

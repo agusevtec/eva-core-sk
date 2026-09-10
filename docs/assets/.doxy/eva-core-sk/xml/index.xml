@@ -40,7 +40,7 @@
     <member refid="classeva_1_1_button_1a9041ef160115e99a2210b39eb4903575" kind="function"><name>enable</name></member>
     <member refid="classeva_1_1_button_1a1ba6399c323cbe75c2f60561b3b73d4b" kind="function"><name>checkLongPress</name></member>
     <member refid="classeva_1_1_button_1a4e1918442a4d051c6f58b12113816da5" kind="function"><name>handleLongPress</name></member>
-    <member refid="classeva_1_1_button_1a5c33f38750a43b0109d5274488866b8d" kind="function"><name>handleDeactivating</name></member>
+    <member refid="classeva_1_1_button_1ad6782e0a89e8347334b4549c581aed8d" kind="function"><name>handleDeactivating</name></member>
     <member refid="classeva_1_1_button_1a4dcf94c7a83f4956c307902cc7003f67" kind="function"><name>handleActivating</name></member>
     <member refid="classeva_1_1_button_1abebc2853c7518655d6938a20062c4533" kind="function"><name>tick</name></member>
   </compound>
@@ -172,6 +172,12 @@
     <member refid="structeva_1_1_list_iterator_1a1d2a502a56ce139f3a250cdd1213bba6" kind="variable"><name>next</name></member>
     <member refid="structeva_1_1_list_iterator_1acc56acea81145467c6a08e57325898f7" kind="function"><name>ListIterator</name></member>
   </compound>
+  <compound refid="structeva_1_1_pin_scroll_multi_button" kind="struct"><name>eva::PinScrollMultiButton</name>
+  </compound>
+  <compound refid="structeva_1_1_pullup_scroll_button" kind="struct"><name>eva::PullupScrollButton</name>
+  </compound>
+  <compound refid="structeva_1_1_pullup_switch" kind="struct"><name>eva::PullupSwitch</name>
+  </compound>
   <compound refid="classeva_1_1_quantize_decor" kind="class"><name>eva::QuantizeDecor</name>
     <member refid="classeva_1_1_quantize_decor_1a4e1443b7744f7f526846b60b2b6a3099" kind="variable"><name>levels</name></member>
     <member refid="classeva_1_1_quantize_decor_1a10c7aa2294a130e04a6a09d89d80bc83" kind="function"><name>QuantizeDecor</name></member>
@@ -189,6 +195,18 @@
     <member refid="classeva_1_1_repeat_timer_1a971246536c3cca838038b493c4da414c" kind="function"><name>DelayTimer</name></member>
     <member refid="classeva_1_1_repeat_timer_1a5889ee3ab5a8f31a35f8849c12be2323" kind="function"><name>DelayTimer</name></member>
     <member refid="classeva_1_1_repeat_timer_1a84f35ebcd37c05ac743599b1ae7f2eb5" kind="function"><name>tick</name></member>
+  </compound>
+  <compound refid="classeva_1_1_ring_buffer" kind="class"><name>eva::RingBuffer</name>
+    <member refid="classeva_1_1_ring_buffer_1ac8b76e9fcae1b64da9cd33ecea494ecb" kind="variable"><name>mBuffer</name></member>
+    <member refid="classeva_1_1_ring_buffer_1af0bdfe3b1e0077078811b529ccc1166c" kind="variable"><name>mHead</name></member>
+    <member refid="classeva_1_1_ring_buffer_1adb6dbee98902c481344eeb9b62f04c54" kind="variable"><name>mSize</name></member>
+    <member refid="classeva_1_1_ring_buffer_1acc66eac79e0080ec211212dd082dfe34" kind="function"><name>wrapIndex</name></member>
+    <member refid="classeva_1_1_ring_buffer_1a2e57f6faf13e3f8e0b5a35d301f50a9e" kind="function"><name>RingBuffer</name></member>
+    <member refid="classeva_1_1_ring_buffer_1ad749f3999e1b91cf7eb37523ea4d1acc" kind="function"><name>put</name></member>
+    <member refid="classeva_1_1_ring_buffer_1ac4d8e0a8be4749d05eec5409da922539" kind="function"><name>get</name></member>
+    <member refid="classeva_1_1_ring_buffer_1aec1fb94e33a56261b09355eb7035f58b" kind="function"><name>isEmpty</name></member>
+    <member refid="classeva_1_1_ring_buffer_1af95dc405b8bd1b6d5208090445ba0bd8" kind="function"><name>isFull</name></member>
+    <member refid="classeva_1_1_ring_buffer_1a516a7a2bacb8de90ef65aa50405c31fa" kind="function"><name>size</name></member>
   </compound>
   <compound refid="classeva_1_1_scroll_button" kind="class"><name>eva::ScrollButton</name>
     <member refid="classeva_1_1_scroll_button_1a7aa73d1a5a6a5862b4f989a0345773dc" kind="variable"><name>lastRepeatTime</name></member>
@@ -287,6 +305,8 @@
   <compound refid="eva_reader_decors_8h" kind="file"><name>evaReaderDecors.h</name>
   </compound>
   <compound refid="eva_repeat_timer_8h" kind="file"><name>evaRepeatTimer.h</name>
+  </compound>
+  <compound refid="eva_ring_buffer_8h" kind="file"><name>evaRingBuffer.h</name>
   </compound>
   <compound refid="eva_scroll_button_8h" kind="file"><name>evaScrollButton.h</name>
   </compound>

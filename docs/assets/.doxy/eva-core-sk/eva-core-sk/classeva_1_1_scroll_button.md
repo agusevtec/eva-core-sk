@@ -289,7 +289,7 @@ See [eva::Button](classeva_1_1_button.md)
 | ---: | :--- |
 |  bool | [**checkLongPress**](classeva_1_1_button.md#function-checklongpress) (unsigned long now) <br> |
 |  void | [**handleActivating**](classeva_1_1_button.md#function-handleactivating) (unsigned long now) <br> |
-|  void | [**handleDeactivating**](classeva_1_1_button.md#function-handledeactivating) (unsigned char wasLevelCode, unsigned long now) <br> |
+|  void | [**handleDeactivating**](classeva_1_1_button.md#function-handledeactivating) (unsigned char wasLevelCode) <br> |
 |  void | [**handleLongPress**](classeva_1_1_button.md#function-handlelongpress) () <br> |
 
 

@@ -18,6 +18,7 @@ Here is a list of all files with brief descriptions:
     * **file** [**evaList.h**](eva_list_8h.md)     
     * **file** [**evaReaderDecors.h**](eva_reader_decors_8h.md)     
     * **file** [**evaRepeatTimer.h**](eva_repeat_timer_8h.md)     
+    * **file** [**evaRingBuffer.h**](eva_ring_buffer_8h.md)     
     * **file** [**evaScrollButton.h**](eva_scroll_button_8h.md)     
     * **file** [**evaSlider.h**](eva_slider_8h.md)     
     * **file** [**evaStdReaders.h**](eva_std_readers_8h.md)     

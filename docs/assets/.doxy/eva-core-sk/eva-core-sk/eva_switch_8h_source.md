@@ -145,6 +145,12 @@ namespace eva
 
     template <int tPin, int tPinMode, signed short... tLevels>
     using PinMultiSwitch = Switch<QuantizeDecor<DebounceDecor<AnalogPinReader<tPin, tPinMode>>, tLevels...>>;
+
+    template <int tPin>
+    struct PullupSwitch
+    {
+        static_assert(tPin < 0, "PullupSwitch is deprecated and was renamed to PullUpSwitch!");
+    };
 };
 ```
 

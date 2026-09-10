@@ -63,6 +63,7 @@
       </node>
     </invincdepgraph>
     <innerclass refid="classeva_1_1_switch" prot="public">eva::Switch</innerclass>
+    <innerclass refid="structeva_1_1_pullup_switch" prot="public">eva::PullupSwitch</innerclass>
     <innernamespace refid="namespaceeva">eva</innernamespace>
     <briefdescription>
     </briefdescription>
@@ -206,7 +207,13 @@
 <codeline lineno="213"><highlight class="normal"></highlight></codeline>
 <codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>tPin,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>tPinMode,<sp/></highlight><highlight class="keywordtype">signed</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal">...<sp/>tLevels&gt;</highlight></codeline>
 <codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">PinMultiSwitch<sp/>=<sp/><ref refid="classeva_1_1_switch" kindref="compound">Switch&lt;QuantizeDecor&lt;DebounceDecor&lt;AnalogPinReader&lt;tPin, tPinMode&gt;</ref>&gt;,<sp/>tLevels...&gt;&gt;;</highlight></codeline>
-<codeline lineno="236"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"></highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>tPin&gt;</highlight></codeline>
+<codeline lineno="238" refid="structeva_1_1_pullup_switch" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structeva_1_1_pullup_switch" kindref="compound">PullupSwitch</ref></highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static_assert</highlight><highlight class="normal">(tPin<sp/>&lt;<sp/>0,<sp/></highlight><highlight class="stringliteral">&quot;PullupSwitch<sp/>is<sp/>deprecated<sp/>and<sp/>was<sp/>renamed<sp/>to<sp/>PullUpSwitch!&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="242"><highlight class="normal">};</highlight></codeline>
     </programlisting>
     <location file="src/evaSwitch.h"/>
   </compounddef>

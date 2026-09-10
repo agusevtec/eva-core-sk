@@ -53,8 +53,12 @@
 | class | [**Joystick**](classeva_1_1_joystick.md) &lt;class TReader, tMinPos, tMiddlePos, tMaxPos&gt;<br>[_**Joystick**_](classeva_1_1_joystick.md) _axis reader (range 1000-1500-2000) with trim adjustment._ |
 | class | [**List**](classeva_1_1_list.md) &lt;class ItemClass&gt;<br>_Simple singly-linked list container._  |
 | struct | [**ListIterator**](structeva_1_1_list_iterator.md) &lt;class ItemClass&gt;<br>_Iterator node for_ [_**List**_](classeva_1_1_list.md) _._ |
+| struct | [**PinScrollMultiButton**](structeva_1_1_pin_scroll_multi_button.md) &lt;tPin&gt;<br> |
+| struct | [**PullupScrollButton**](structeva_1_1_pullup_scroll_button.md) &lt;tPin&gt;<br> |
+| struct | [**PullupSwitch**](structeva_1_1_pullup_switch.md) &lt;tPin&gt;<br> |
 | class | [**QuantizeDecor**](classeva_1_1_quantize_decor.md) &lt;class TReader, tLevels&gt;<br>_Decorator that quantizes analog readings to discrete levels._  |
 | class | [**RepeatTimer**](classeva_1_1_repeat_timer.md) <br>_Timer that fires repeatedly at fixed intervals._  |
+| class | [**RingBuffer**](classeva_1_1_ring_buffer.md) &lt;typename T, N&gt;<br>_Fixed-capacity circular ring buffer._  |
 | class | [**ScrollButton**](classeva_1_1_scroll_button.md) &lt;class TReader&gt;<br>[_**Button**_](classeva_1_1_button.md) _with auto-repeat (typematic) functionality._ |
 | class | [**Slider**](classeva_1_1_slider.md) &lt;class TReader, tMinPos, tMaxPos&gt;<br>_Maps analog readings to 1000-2000 range._  |
 | class | [**Switch**](classeva_1_1_switch.md) &lt;class TReader&gt;<br>_Universal switch/button class for multi-valued input sources._  |

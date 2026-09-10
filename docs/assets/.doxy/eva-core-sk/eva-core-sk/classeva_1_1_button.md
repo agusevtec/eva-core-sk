@@ -220,7 +220,7 @@ See [eva::Switch](classeva_1_1_switch.md)
 | ---: | :--- |
 |  bool | [**checkLongPress**](#function-checklongpress) (unsigned long now) <br> |
 |  void | [**handleActivating**](#function-handleactivating) (unsigned long now) <br> |
-|  void | [**handleDeactivating**](#function-handledeactivating) (unsigned char wasLevelCode, unsigned long now) <br> |
+|  void | [**handleDeactivating**](#function-handledeactivating) (unsigned char wasLevelCode) <br> |
 |  void | [**handleLongPress**](#function-handlelongpress) () <br> |
 
 
@@ -383,8 +383,7 @@ inline void eva::Button::handleActivating (
 
 ```C++
 inline void eva::Button::handleDeactivating (
-    unsigned char wasLevelCode,
-    unsigned long now
+    unsigned char wasLevelCode
 ) 
 ```
 

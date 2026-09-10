@@ -26,8 +26,12 @@
     <innerclass refid="classeva_1_1_joystick" prot="public">eva::Joystick</innerclass>
     <innerclass refid="classeva_1_1_list" prot="public">eva::List</innerclass>
     <innerclass refid="structeva_1_1_list_iterator" prot="public">eva::ListIterator</innerclass>
+    <innerclass refid="structeva_1_1_pin_scroll_multi_button" prot="public">eva::PinScrollMultiButton</innerclass>
+    <innerclass refid="structeva_1_1_pullup_scroll_button" prot="public">eva::PullupScrollButton</innerclass>
+    <innerclass refid="structeva_1_1_pullup_switch" prot="public">eva::PullupSwitch</innerclass>
     <innerclass refid="classeva_1_1_quantize_decor" prot="public">eva::QuantizeDecor</innerclass>
     <innerclass refid="classeva_1_1_repeat_timer" prot="public">eva::RepeatTimer</innerclass>
+    <innerclass refid="classeva_1_1_ring_buffer" prot="public">eva::RingBuffer</innerclass>
     <innerclass refid="classeva_1_1_scroll_button" prot="public">eva::ScrollButton</innerclass>
     <innerclass refid="classeva_1_1_slider" prot="public">eva::Slider</innerclass>
     <innerclass refid="classeva_1_1_switch" prot="public">eva::Switch</innerclass>

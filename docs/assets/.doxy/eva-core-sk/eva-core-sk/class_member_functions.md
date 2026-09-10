@@ -56,6 +56,7 @@
 * **getDeadZone** ([**eva::Joystick**](classeva_1_1_joystick.md))
 * **getTrim** ([**eva::Joystick**](classeva_1_1_joystick.md))
 * **getLevel** ([**eva::QuantizeDecor**](classeva_1_1_quantize_decor.md))
+* **get** ([**eva::RingBuffer**](classeva_1_1_ring_buffer.md))
 
 
 ## h
@@ -77,7 +78,8 @@
 * **invoke** ([**eva::BlinkingIndicator**](classeva_1_1_blinking_indicator.md), [**eva::CountdownIndicator**](classeva_1_1_countdown_indicator.md), [**eva::Handler**](classeva_1_1_handler.md), [**eva::HandlerF**](classeva_1_1_handler_f.md), [**eva::IHandler**](classeva_1_1_i_handler.md))
 * **isRunning** ([**eva::DelayTimer**](classeva_1_1_delay_timer.md))
 * **indexOf** ([**eva::List**](classeva_1_1_list.md))
-* **isEmpty** ([**eva::List**](classeva_1_1_list.md))
+* **isEmpty** ([**eva::List**](classeva_1_1_list.md), [**eva::RingBuffer**](classeva_1_1_ring_buffer.md))
+* **isFull** ([**eva::RingBuffer**](classeva_1_1_ring_buffer.md))
 * **isEnabled** ([**eva::Switch**](classeva_1_1_switch.md))
 
 
@@ -106,6 +108,11 @@
 * **operator[]** ([**eva::List**](classeva_1_1_list.md))
 
 
+## p
+
+* **put** ([**eva::RingBuffer**](classeva_1_1_ring_buffer.md))
+
+
 ## q
 
 * **QuantizeDecor** ([**eva::QuantizeDecor**](classeva_1_1_quantize_decor.md))
@@ -116,6 +123,7 @@
 * **remove** ([**eva::List**](classeva_1_1_list.md))
 * **removeAt** ([**eva::List**](classeva_1_1_list.md))
 * **RepeatTimer** ([**eva::RepeatTimer**](classeva_1_1_repeat_timer.md))
+* **RingBuffer** ([**eva::RingBuffer**](classeva_1_1_ring_buffer.md))
 
 
 ## s
@@ -127,6 +135,7 @@
 * **setDeadZone** ([**eva::Joystick**](classeva_1_1_joystick.md))
 * **setTrim** ([**eva::Joystick**](classeva_1_1_joystick.md))
 * **setPeriod** ([**eva::RepeatTimer**](classeva_1_1_repeat_timer.md))
+* **size** ([**eva::RingBuffer**](classeva_1_1_ring_buffer.md))
 * **Slider** ([**eva::Slider**](classeva_1_1_slider.md))
 * **Switch** ([**eva::Switch**](classeva_1_1_switch.md))
 
@@ -141,6 +150,11 @@
 ## u
 
 * **updateState** ([**eva::Switch**](classeva_1_1_switch.md))
+
+
+## w
+
+* **wrapIndex** ([**eva::RingBuffer**](classeva_1_1_ring_buffer.md))
 
 
 ## ~

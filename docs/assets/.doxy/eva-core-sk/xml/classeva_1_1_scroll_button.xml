@@ -263,7 +263,7 @@
       <member refid="classeva_1_1_switch_1aff9730bfc3bf6699116a301c81882bcd" prot="protected" virt="non-virtual" ambiguityscope="eva::Switch::"><scope>eva::ScrollButton</scope><name>handleActivating</name></member>
       <member refid="classeva_1_1_switch_1ad03a1013196c31922f33a97222d30e86" prot="protected" virt="non-virtual"><scope>eva::ScrollButton</scope><name>handleChanging</name></member>
       <member refid="classeva_1_1_scroll_button_1a789c6905e323b964ad1199b7572ff364" prot="protected" virt="non-virtual"><scope>eva::ScrollButton</scope><name>handleDeactivating</name></member>
-      <member refid="classeva_1_1_switch_1a331fac6d20254dd52ba6fcdaae21476a" prot="protected" virt="non-virtual" ambiguityscope="eva::Switch::"><scope>eva::ScrollButton</scope><name>handleDeactivating</name></member>
+      <member refid="classeva_1_1_button_1ad6782e0a89e8347334b4549c581aed8d" prot="protected" virt="non-virtual" ambiguityscope="eva::Button::"><scope>eva::ScrollButton</scope><name>handleDeactivating</name></member>
       <member refid="classeva_1_1_scroll_button_1adb26b1be55f035a1c3fb3785e54e759d" prot="protected" virt="non-virtual"><scope>eva::ScrollButton</scope><name>handleLongPress</name></member>
       <member refid="classeva_1_1_button_1a4e1918442a4d051c6f58b12113816da5" prot="protected" virt="non-virtual" ambiguityscope="eva::Button::"><scope>eva::ScrollButton</scope><name>handleLongPress</name></member>
       <member refid="classeva_1_1_scroll_button_1a4f73503b73603c16142e0e7b2954170f" prot="protected" virt="non-virtual"><scope>eva::ScrollButton</scope><name>handleRepeatTime</name></member>

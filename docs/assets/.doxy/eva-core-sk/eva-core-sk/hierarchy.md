@@ -48,8 +48,12 @@ This inheritance list is sorted roughly, but not completely, alphabetically:
 * **class** [**eva::IReader**](classeva_1_1_i_reader.md) _Interface for value readers._     
     * **class** [**eva::IReaderAdapter**](classeva_1_1_i_reader_adapter.md) _Adapter that converts any class with getValue() into an_ [_**IReader**_](classeva_1_1_i_reader.md) _._
 * **class** [**eva::List**](classeva_1_1_list.md) _Simple singly-linked list container._ 
+* **class** [**eva::RingBuffer**](classeva_1_1_ring_buffer.md) _Fixed-capacity circular ring buffer._ 
 * **struct** [**eva::CallbackInfo**](structeva_1_1_callback_info.md) 
 * **struct** [**eva::ListIterator**](structeva_1_1_list_iterator.md) _Iterator node for_ [_**List**_](classeva_1_1_list.md) _._
+* **struct** [**eva::PinScrollMultiButton**](structeva_1_1_pin_scroll_multi_button.md) 
+* **struct** [**eva::PullupScrollButton**](structeva_1_1_pullup_scroll_button.md) 
+* **struct** [**eva::PullupSwitch**](structeva_1_1_pullup_switch.md) 
 * **class** **TReader**    
     * **class** [**eva::BinarizeEqDecor**](classeva_1_1_binarize_eq_decor.md) _Decorator that converts reading to binary based on level equality._     
         * **class** [**eva::Switch**](classeva_1_1_switch.md) _Universal switch/button class for multi-valued input sources._     
