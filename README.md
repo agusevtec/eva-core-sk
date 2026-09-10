@@ -63,7 +63,7 @@ Flexibility without performance loss. Everything resolves at compile time.
 - **Timers**: `DelayTimer`, `RepeatTimer`, `CountdownTimer`
 - **Indicators**: `Indicator`, `BlinkingIndicator`, `CountdownIndicator`
 - **Analog Inputs**: `Joystick`, `Slider`
-- **Utilities**: `List`
+- **Utilities**: `List`, `RingBuffer`
 
 ### Reader Decorators
 - `DebounceDecor` debouncing with 120ms stabilization
