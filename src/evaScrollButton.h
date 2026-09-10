@@ -175,13 +175,13 @@ namespace eva
     template <int tPin>
     struct PullupScrollButton
     {
-        static_assert(tPin < 0, "PullupSwitch is deprecated and was renamed to PullUpScrollButton!");
+        static_assert(tPin < 0, "PullupScrollButton is deprecated and was renamed to PullUpScrollButton!");
     };
 
     template <int tPin>
     struct PinScrollMultiButton
     {
-        static_assert(tPin < 0, "PullupSwitch is deprecated and was renamed to PinMultiScrollButton!");
+        static_assert(tPin < 0, "PinScrollMultiButton is deprecated and was renamed to PinMultiScrollButton!");
     };
 
 };
