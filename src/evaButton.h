@@ -69,7 +69,7 @@ namespace eva
             this->pressTime = 0;
         }
 
-        void handleDeactivating(unsigned char wasLevelCode, unsigned long now)
+        void handleDeactivating(unsigned char wasLevelCode)
         {
             Switch<TReader>::handleDeactivating(wasLevelCode);
             this->notify((this->pressTime > 0) ? ON_SHORTCLICK : ON_LONGCLICK, wasLevelCode);
@@ -98,7 +98,7 @@ namespace eva
                 this->handleChanging();
 
             if (this->checkDeactivating(wasLevelCode))
-                handleDeactivating(wasLevelCode, now);
+                handleDeactivating(wasLevelCode);
 
             if (this->checkActivating(wasLevelCode))
                 handleActivating(now);
