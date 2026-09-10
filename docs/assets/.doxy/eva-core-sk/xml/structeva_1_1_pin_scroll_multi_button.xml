@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+  <compounddef id="structeva_1_1_pin_scroll_multi_button" kind="struct" language="C++" prot="public">
+    <compoundname>eva::PinScrollMultiButton</compoundname>
+    <templateparamlist>
+      <param>
+        <type>int</type>
+        <declname>tPin</declname>
+        <defname>tPin</defname>
+      </param>
+    </templateparamlist>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/evaScrollButton.h" line="182" column="5" bodyfile="src/evaScrollButton.h" bodystart="183" bodyend="185"/>
+    <listofallmembers>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

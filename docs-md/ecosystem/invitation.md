@@ -29,7 +29,7 @@ You are an Arduino library author. Your project solves a specific problem. I pro
 ### What I Ask From You
 
 - Willingness to look at your library from a new perspective
-- Readiness to add example(s) using EVA-core-sk
+- Readiness to add example(s) using **EVA Сore | EVA Survival Kit**
 - Publish an EVA-compatible version of your library, with minor interface adaptations if they make users' lives easier
 
 ### What I Provide
