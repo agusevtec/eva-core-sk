@@ -4,13 +4,13 @@
 
 EVA is not just a library—it's an architectural ecosystem for Arduino. Its goal is to make user code modular, predictable, and reusable, regardless of project complexity.
 
-Projects in the EVA ecosystem live in the `eva` namespace and are built around three key ideas:
+Projects in the EVA ecosystem are built around three key ideas:
 
 - **Tickable** — everything that needs time becomes part of a single cycle
 - **Handler** — events instead of polling
 - **Template composition** — flexibility without performance loss
 
-Each module solves its own specific task, but they all speak the same language—the language of EVA.
+Each module solves its own specific task, but they all speak the same language.
 
 ## An Invitation to Collaborate
 
