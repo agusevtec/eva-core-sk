@@ -13,15 +13,16 @@ EVA is a concept of comfortable user code. A set of principles that make Arduino
 
 ---
 
-### The Four Pillars
+### The Three Pillars
 
-**First**, many components—either explicitly or implicitly—claim their own slice and only their slice of the famous Arduino loop(), and user code is encouraged to do the same. Timings become a natural part of the contract between objects—whether between user objects and library objects, or among user objects themselves.
+**Event-Driven Execution Over Polling.**
+Many components—either explicitly or implicitly—claim their own slice and only their slice of the famous Arduino `loop()`, and user code is encouraged to do the same. Timings become a natural part of the contract between objects—whether between user objects and library objects, or among user objects themselves. Components do not poll; they notify when something happens via lightweight `Handler` delegates that bind events to methods naturally.
 
-**Second**, the library provides everything needed to structure user code in an object-oriented way, which gives predictable initialization. When you refactor—moving members, splitting classes—the initialization order follows automatically. You never have to hunt for a forgotten `init()` call.
+**Propagation of Object-Oriented Architecture to User Code.**
+The layered architecture continues into user code in an object-oriented way. This creates many connection points, enables predictable initialization, and makes testing simple.
 
-**Third**, delegates via `Handler` bind events to methods naturally. Components do not poll. They notify when something happens.
-
-**Fourth**, the layered architecture continues into user code, creating many connection points and making testing simple.
+**Feature Construction via Template Decorators.**
+Instead of bloated classes trying to solve every edge case, complex behaviors are assembled out of simple primitives using template decorators. You wrap and compose functionality at compile time without paying a runtime memory penalty.
 
 ---
 

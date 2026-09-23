@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
   <compounddef id="eva_joystick_8h" kind="file" language="C++">
     <compoundname>evaJoystick.h</compoundname>
     <includes refid="eva_std_readers_8h" local="yes">evaStdReaders.h</includes>
@@ -37,7 +37,7 @@
 <codeline lineno="16" refid="classeva_1_1_joystick" refkind="compound"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classeva_1_1_joystick_1ad08815d85e3e8721d09ef913ec738d15" kindref="member">Joystick</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>TReader</highlight></codeline>
 <codeline lineno="17"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
 <codeline lineno="18"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="24" refid="classeva_1_1_joystick_1ad08815d85e3e8721d09ef913ec738d15" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classeva_1_1_joystick_1ad08815d85e3e8721d09ef913ec738d15" kindref="member">Joystick</ref>()<sp/>:<sp/>trim(0),<sp/>aDeadZone(0)</highlight></codeline>
+<codeline lineno="24" refid="classeva_1_1_joystick_1ad08815d85e3e8721d09ef913ec738d15" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classeva_1_1_joystick_1ad08815d85e3e8721d09ef913ec738d15" kindref="member">Joystick</ref>()<sp/>:<sp/>trim(0),<sp/>deadZone(0)</highlight></codeline>
 <codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="27"><highlight class="normal"></highlight></codeline>

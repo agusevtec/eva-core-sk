@@ -18,7 +18,7 @@ namespace eva
   class Joystick : public TReader
   {
   public:
-    Joystick() : trim(0), aDeadZone(0)
+    Joystick() : trim(0), deadZone(0)
     {
     }
 

@@ -303,10 +303,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#the-four-pillars" class="md-nav__link">
+  <a href="#the-three-pillars" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The Four Pillars
+        The Three Pillars
       
     </span>
   </a>
@@ -812,10 +812,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#the-four-pillars" class="md-nav__link">
+  <a href="#the-three-pillars" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The Four Pillars
+        The Three Pillars
       
     </span>
   </a>
@@ -880,11 +880,13 @@
 <li><strong>Refactoring-friendly</strong> — changing structure doesn't break behavior</li>
 </ul>
 <hr />
-<h3 id="the-four-pillars">The Four Pillars<a class="headerlink" href="#the-four-pillars" title="Permanent link">&para;</a></h3>
-<p><strong>First</strong>, many components—either explicitly or implicitly—claim their own slice and only their slice of the famous Arduino loop(), and user code is encouraged to do the same. Timings become a natural part of the contract between objects—whether between user objects and library objects, or among user objects themselves.</p>
-<p><strong>Second</strong>, the library provides everything needed to structure user code in an object-oriented way, which gives predictable initialization. When you refactor—moving members, splitting classes—the initialization order follows automatically. You never have to hunt for a forgotten <code>init()</code> call.</p>
-<p><strong>Third</strong>, delegates via <code>Handler</code> bind events to methods naturally. Components do not poll. They notify when something happens.</p>
-<p><strong>Fourth</strong>, the layered architecture continues into user code, creating many connection points and making testing simple.</p>
+<h3 id="the-three-pillars">The Three Pillars<a class="headerlink" href="#the-three-pillars" title="Permanent link">&para;</a></h3>
+<p><strong>Event-Driven Execution Over Polling.</strong>
+Many components—either explicitly or implicitly—claim their own slice and only their slice of the famous Arduino <code>loop()</code>, and user code is encouraged to do the same. Timings become a natural part of the contract between objects—whether between user objects and library objects, or among user objects themselves. Components do not poll; they notify when something happens via lightweight <code>Handler</code> delegates that bind events to methods naturally.</p>
+<p><strong>Propagation of Object-Oriented Architecture to User Code.</strong>
+The layered architecture continues into user code in an object-oriented way. This creates many connection points, enables predictable initialization, and makes testing simple.</p>
+<p><strong>Feature Construction via Template Decorators.</strong>
+Instead of bloated classes trying to solve every edge case, complex behaviors are assembled out of simple primitives using template decorators. You wrap and compose functionality at compile time without paying a runtime memory penalty.</p>
 <hr />
 <h3 id="implementation">Implementation<a class="headerlink" href="#implementation" title="Permanent link">&para;</a></h3>
 <p>EVA Core | EVA Survival Kit (eva-core-sk) is a concrete implementation of this concept—a library that puts these principles into practice. Architectural core with essential components for event-driven Arduino applications.</p>
