@@ -92,6 +92,8 @@ Full documentation is available at **[https://agusevtec.github.io/eva-core-sk](h
 
 Currently, the following projects are part of the ecosystem:
 
+EVA Filters - signal filtering library: https://github.com/agusevtec/eva-filters
+
 EVA Motors – micro-motor drivers: https://github.com/agusevtec/eva-motors
 
 EVA Boxy – declarative GUI framework: https://github.com/agusevtec/eva-boxy

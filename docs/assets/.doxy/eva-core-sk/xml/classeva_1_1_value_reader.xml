@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+  <compounddef id="classeva_1_1_value_reader" kind="class" language="C++" prot="public">
+    <compoundname>eva::ValueReader</compoundname>
+    <includes refid="eva_std_readers_8h" local="no">evaStdReaders.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classeva_1_1_value_reader_1a0338633c9228652fec82f5620761f40e" prot="private" static="no" mutable="no">
+        <type>signed short</type>
+        <definition>signed short eva::ValueReader::mValue</definition>
+        <argsstring></argsstring>
+        <name>mValue</name>
+        <qualifiedname>eva::ValueReader::mValue</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evaStdReaders.h" line="18" column="22" bodyfile="src/evaStdReaders.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classeva_1_1_value_reader_1af0375157814dae0659990b6a75213f57" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void eva::ValueReader::setValue</definition>
+        <argsstring>(signed short value)</argsstring>
+        <name>setValue</name>
+        <qualifiedname>eva::ValueReader::setValue</qualifiedname>
+        <param>
+          <type>signed short</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evaStdReaders.h" line="21" column="14" bodyfile="src/evaStdReaders.h" bodystart="21" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="function" id="classeva_1_1_value_reader_1a4fc357c0b0e2cbee77605419af1044ae" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>signed short</type>
+        <definition>signed short eva::ValueReader::getValue</definition>
+        <argsstring>() const</argsstring>
+        <name>getValue</name>
+        <qualifiedname>eva::ValueReader::getValue</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evaStdReaders.h" line="22" column="22" bodyfile="src/evaStdReaders.h" bodystart="22" bodyend="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classeva_1_1_value_reader_1ac24794add73f8614f55a8e085dc15d49" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool eva::ValueReader::isValid</definition>
+        <argsstring>() const</argsstring>
+        <name>isValid</name>
+        <qualifiedname>eva::ValueReader::isValid</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evaStdReaders.h" line="23" column="14" bodyfile="src/evaStdReaders.h" bodystart="23" bodyend="23"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Simple stateful reader acting as a bridge between raw control values and evaf filters. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>getValue()/isValid() are public because evaf filters call them. setValue() is public so that decorators can push the target value straight into the filter. </para>
+    </detaileddescription>
+    <location file="src/evaStdReaders.h" line="15" column="5" bodyfile="src/evaStdReaders.h" bodystart="16" bodyend="24"/>
+    <listofallmembers>
+      <member refid="classeva_1_1_value_reader_1a4fc357c0b0e2cbee77605419af1044ae" prot="public" virt="non-virtual"><scope>eva::ValueReader</scope><name>getValue</name></member>
+      <member refid="classeva_1_1_value_reader_1ac24794add73f8614f55a8e085dc15d49" prot="public" virt="non-virtual"><scope>eva::ValueReader</scope><name>isValid</name></member>
+      <member refid="classeva_1_1_value_reader_1a0338633c9228652fec82f5620761f40e" prot="private" virt="non-virtual"><scope>eva::ValueReader</scope><name>mValue</name></member>
+      <member refid="classeva_1_1_value_reader_1af0375157814dae0659990b6a75213f57" prot="public" virt="non-virtual"><scope>eva::ValueReader</scope><name>setValue</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
