@@ -18,10 +18,13 @@ namespace eva
   class Joystick : public TReader
   {
   public:
-    template <typename... Args>
-    Joystick(unsigned char aDeadZone = 0, Args... args) : TReader(args...) , trim(0)
+    Joystick() : trim(0), aDeadZone(0)
     {
-       setDeadZone(aDeadZone);
+    }
+
+    template <typename... Args>
+    Joystick(unsigned char aDeadZone, Args... args) : TReader(args...) , trim(0), deadZone(aDeadZone)
+    {
     }
 
     signed short getValue(unsigned short aMinPos, unsigned short aMiddlePos, unsigned short aMaxPos)

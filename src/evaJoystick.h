@@ -21,10 +21,18 @@ namespace eva
      * @param aDeadZone Dead-zone value (0-255)
      * @param args Additional arguments passed to TReader constructor
      */
-    template <typename... Args>
-    Joystick(unsigned char aDeadZone = 0, Args... args) : TReader(args...) , trim(0)
+    Joystick() : trim(0), deadZone(0)
     {
-       setDeadZone(aDeadZone);
+    }
+
+    /**
+     * @brief Constructs a Joystick with optional dead zone
+     * @param aDeadZone Dead-zone value (0-255)
+     * @param args Additional arguments passed to TReader constructor
+     */
+    template <typename... Args>
+    Joystick(unsigned char aDeadZone, Args... args) : TReader(args...) , trim(0), deadZone(aDeadZone)
+    {
     }
 
     /**

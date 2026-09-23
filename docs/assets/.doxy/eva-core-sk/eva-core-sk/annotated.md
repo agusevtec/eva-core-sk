@@ -39,4 +39,5 @@ Here are the classes, structs, unions and interfaces with brief descriptions:
     * **class** [**Slider**](classeva_1_1_slider.md) _Maps analog readings to 0-1000 range._     
     * **class** [**Switch**](classeva_1_1_switch.md) _Universal switch/button class for multi-valued input sources._     
     * **class** [**Tickable**](classeva_1_1_tickable.md) _Base class for objects that need periodic updates._     
+    * **class** [**ValueReader**](classeva_1_1_value_reader.md) _Simple stateful reader acting as a bridge between raw control values and evaf filters._     
 

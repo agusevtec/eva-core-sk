@@ -40,7 +40,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaJoystick.h" line="101" column="17" bodyfile="src/evaJoystick.h" bodystart="101" bodyend="-1"/>
+        <location file="src/evaJoystick.h" line="109" column="17" bodyfile="src/evaJoystick.h" bodystart="109" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classeva_1_1_joystick_1a554833b027987782b81f4f7363f37e1f" prot="private" static="no" mutable="no">
         <type>unsigned char</type>
@@ -54,11 +54,44 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaJoystick.h" line="102" column="19" bodyfile="src/evaJoystick.h" bodystart="102" bodyend="-1"/>
+        <location file="src/evaJoystick.h" line="110" column="19" bodyfile="src/evaJoystick.h" bodystart="110" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
-      <memberdef kind="function" id="classeva_1_1_joystick_1a9edb458556dbb6c95432d6ed97d7306e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classeva_1_1_joystick_1ad08815d85e3e8721d09ef913ec738d15" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>eva::Joystick&lt; TReader, tMinPos, tMiddlePos, tMaxPos &gt;::Joystick</definition>
+        <argsstring>()</argsstring>
+        <name>Joystick</name>
+        <qualifiedname>eva::Joystick::Joystick</qualifiedname>
+        <briefdescription>
+<para>Constructs a <ref refid="classeva_1_1_joystick" kindref="compound">Joystick</ref> with optional dead zone. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>aDeadZone</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Dead-zone value (0-255) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Additional arguments passed to TReader constructor </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evaJoystick.h" line="24" column="5" bodyfile="src/evaJoystick.h" bodystart="24" bodyend="26"/>
+      </memberdef>
+      <memberdef kind="function" id="classeva_1_1_joystick_1af5ee2b692e85827ebdd40bba53568400" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>typename...</type>
@@ -68,13 +101,12 @@
         </templateparamlist>
         <type></type>
         <definition>eva::Joystick&lt; TReader, tMinPos, tMiddlePos, tMaxPos &gt;::Joystick</definition>
-        <argsstring>(unsigned char aDeadZone=0, Args... args)</argsstring>
+        <argsstring>(unsigned char aDeadZone, Args... args)</argsstring>
         <name>Joystick</name>
         <qualifiedname>eva::Joystick::Joystick</qualifiedname>
         <param>
           <type>unsigned char</type>
           <declname>aDeadZone</declname>
-          <defval>0</defval>
         </param>
         <param>
           <type>Args...</type>
@@ -105,7 +137,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaJoystick.h" line="25" column="5" bodyfile="src/evaJoystick.h" bodystart="25" bodyend="28"/>
+        <location file="src/evaJoystick.h" line="34" column="5" bodyfile="src/evaJoystick.h" bodystart="34" bodyend="36"/>
       </memberdef>
       <memberdef kind="function" id="classeva_1_1_joystick_1a7a66e63f0a26f029c5c4b2be7d64ccc3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>signed short</type>
@@ -160,7 +192,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaJoystick.h" line="37" column="18" bodyfile="src/evaJoystick.h" bodystart="37" bodyend="44"/>
+        <location file="src/evaJoystick.h" line="45" column="18" bodyfile="src/evaJoystick.h" bodystart="45" bodyend="52"/>
       </memberdef>
       <memberdef kind="function" id="classeva_1_1_joystick_1a5ef74c82b6fc8cb91d96554762ca898c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>signed short</type>
@@ -178,7 +210,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaJoystick.h" line="50" column="18" bodyfile="src/evaJoystick.h" bodystart="50" bodyend="53"/>
+        <location file="src/evaJoystick.h" line="58" column="18" bodyfile="src/evaJoystick.h" bodystart="58" bodyend="61"/>
       </memberdef>
       <memberdef kind="function" id="classeva_1_1_joystick_1a04bac91178f262a442dc68cb224da3c9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -207,7 +239,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaJoystick.h" line="59" column="10" bodyfile="src/evaJoystick.h" bodystart="59" bodyend="62"/>
+        <location file="src/evaJoystick.h" line="67" column="10" bodyfile="src/evaJoystick.h" bodystart="67" bodyend="70"/>
       </memberdef>
       <memberdef kind="function" id="classeva_1_1_joystick_1a9994938fd1ac6124f492c80bbe3dfddc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -236,7 +268,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaJoystick.h" line="68" column="10" bodyfile="src/evaJoystick.h" bodystart="68" bodyend="71"/>
+        <location file="src/evaJoystick.h" line="76" column="10" bodyfile="src/evaJoystick.h" bodystart="76" bodyend="79"/>
       </memberdef>
       <memberdef kind="function" id="classeva_1_1_joystick_1a89d77fce5509cbf7949ee5a3adb4dc6f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>signed short</type>
@@ -254,7 +286,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaJoystick.h" line="77" column="18" bodyfile="src/evaJoystick.h" bodystart="77" bodyend="80"/>
+        <location file="src/evaJoystick.h" line="85" column="18" bodyfile="src/evaJoystick.h" bodystart="85" bodyend="88"/>
       </memberdef>
       <memberdef kind="function" id="classeva_1_1_joystick_1ac7b15d7def02b4bf3b2130b233bdb473" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -283,7 +315,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaJoystick.h" line="86" column="10" bodyfile="src/evaJoystick.h" bodystart="86" bodyend="89"/>
+        <location file="src/evaJoystick.h" line="94" column="10" bodyfile="src/evaJoystick.h" bodystart="94" bodyend="97"/>
       </memberdef>
       <memberdef kind="function" id="classeva_1_1_joystick_1a7e52ddfc83797d3e40fd2b56360c69e5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>unsigned char</type>
@@ -301,7 +333,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaJoystick.h" line="95" column="19" bodyfile="src/evaJoystick.h" bodystart="95" bodyend="98"/>
+        <location file="src/evaJoystick.h" line="103" column="19" bodyfile="src/evaJoystick.h" bodystart="103" bodyend="106"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -374,7 +406,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="src/evaJoystick.h" line="16" column="3" bodyfile="src/evaJoystick.h" bodystart="17" bodyend="103"/>
+    <location file="src/evaJoystick.h" line="16" column="3" bodyfile="src/evaJoystick.h" bodystart="17" bodyend="111"/>
     <listofallmembers>
       <member refid="classeva_1_1_joystick_1a9994938fd1ac6124f492c80bbe3dfddc" prot="public" virt="non-virtual"><scope>eva::Joystick</scope><name>addTrim</name></member>
       <member refid="classeva_1_1_joystick_1a554833b027987782b81f4f7363f37e1f" prot="private" virt="non-virtual"><scope>eva::Joystick</scope><name>deadZone</name></member>
@@ -382,7 +414,8 @@
       <member refid="classeva_1_1_joystick_1a89d77fce5509cbf7949ee5a3adb4dc6f" prot="public" virt="non-virtual"><scope>eva::Joystick</scope><name>getTrim</name></member>
       <member refid="classeva_1_1_joystick_1a7a66e63f0a26f029c5c4b2be7d64ccc3" prot="public" virt="non-virtual"><scope>eva::Joystick</scope><name>getValue</name></member>
       <member refid="classeva_1_1_joystick_1a5ef74c82b6fc8cb91d96554762ca898c" prot="public" virt="non-virtual"><scope>eva::Joystick</scope><name>getValue</name></member>
-      <member refid="classeva_1_1_joystick_1a9edb458556dbb6c95432d6ed97d7306e" prot="public" virt="non-virtual"><scope>eva::Joystick</scope><name>Joystick</name></member>
+      <member refid="classeva_1_1_joystick_1ad08815d85e3e8721d09ef913ec738d15" prot="public" virt="non-virtual"><scope>eva::Joystick</scope><name>Joystick</name></member>
+      <member refid="classeva_1_1_joystick_1af5ee2b692e85827ebdd40bba53568400" prot="public" virt="non-virtual"><scope>eva::Joystick</scope><name>Joystick</name></member>
       <member refid="classeva_1_1_joystick_1ac7b15d7def02b4bf3b2130b233bdb473" prot="public" virt="non-virtual"><scope>eva::Joystick</scope><name>setDeadZone</name></member>
       <member refid="classeva_1_1_joystick_1a04bac91178f262a442dc68cb224da3c9" prot="public" virt="non-virtual"><scope>eva::Joystick</scope><name>setTrim</name></member>
       <member refid="classeva_1_1_joystick_1a79de4d26d60171bf538f7e6700adf75a" prot="private" virt="non-virtual"><scope>eva::Joystick</scope><name>trim</name></member>

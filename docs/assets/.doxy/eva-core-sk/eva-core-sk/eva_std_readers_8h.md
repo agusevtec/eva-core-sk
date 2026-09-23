@@ -39,6 +39,7 @@
 | class | [**AnalogPinReader**](classeva_1_1_analog_pin_reader.md) &lt;tPin, tPinMode&gt;<br>_Reads analog pin value._  |
 | class | [**DigitalMutablePinReader**](classeva_1_1_digital_mutable_pin_reader.md) <br>_Reads digital pin value with runtime pin configuration._  |
 | class | [**DigitalPinReader**](classeva_1_1_digital_pin_reader.md) &lt;tPin, tPinMode&gt;<br>_Reads digital pin value._  |
+| class | [**ValueReader**](classeva_1_1_value_reader.md) <br>_Simple stateful reader acting as a bridge between raw control values and evaf filters._  |
 
 
 

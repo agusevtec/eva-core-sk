@@ -55,6 +55,7 @@ _Fixed-capacity circular ring buffer._ [More...](#detailed-description)
 | Type | Name |
 | ---: | :--- |
 |   | [**RingBuffer**](#function-ringbuffer) () <br> |
+|  void | [**clear**](#function-clear) () <br> |
 |  T | [**get**](#function-get) (unsigned char index) const<br> |
 |  bool | [**isEmpty**](#function-isempty) () const<br> |
 |  bool | [**isFull**](#function-isfull) () const<br> |
@@ -112,6 +113,19 @@ _Fixed-capacity circular ring buffer._ [More...](#detailed-description)
 
 ```C++
 inline eva::RingBuffer::RingBuffer () 
+```
+
+
+
+
+<hr>
+
+
+
+### function clear 
+
+```C++
+inline void eva::RingBuffer::clear () 
 ```
 
 

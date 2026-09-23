@@ -49,6 +49,7 @@ This inheritance list is sorted roughly, but not completely, alphabetically:
     * **class** [**eva::IReaderAdapter**](classeva_1_1_i_reader_adapter.md) _Adapter that converts any class with getValue() into an_ [_**IReader**_](classeva_1_1_i_reader.md) _._
 * **class** [**eva::List**](classeva_1_1_list.md) _Simple singly-linked list container._ 
 * **class** [**eva::RingBuffer**](classeva_1_1_ring_buffer.md) _Fixed-capacity circular ring buffer._ 
+* **class** [**eva::ValueReader**](classeva_1_1_value_reader.md) _Simple stateful reader acting as a bridge between raw control values and evaf filters._ 
 * **struct** [**eva::CallbackInfo**](structeva_1_1_callback_info.md) 
 * **struct** [**eva::ListIterator**](structeva_1_1_list_iterator.md) _Iterator node for_ [_**List**_](classeva_1_1_list.md) _._
 * **struct** [**eva::PinScrollMultiButton**](structeva_1_1_pin_scroll_multi_button.md) 

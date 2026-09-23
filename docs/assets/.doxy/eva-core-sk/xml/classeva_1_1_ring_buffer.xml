@@ -130,6 +130,20 @@
         </inbodydescription>
         <location file="src/evaRingBuffer.h" line="38" column="11" bodyfile="src/evaRingBuffer.h" bodystart="38" bodyend="43"/>
       </memberdef>
+      <memberdef kind="function" id="classeva_1_1_ring_buffer_1a21e92fc5d95eb926badcc85589ebca18" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void eva::RingBuffer&lt; T, N &gt;::clear</definition>
+        <argsstring>()</argsstring>
+        <name>clear</name>
+        <qualifiedname>eva::RingBuffer::clear</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evaRingBuffer.h" line="45" column="14" bodyfile="src/evaRingBuffer.h" bodystart="45" bodyend="49"/>
+      </memberdef>
       <memberdef kind="function" id="classeva_1_1_ring_buffer_1aec1fb94e33a56261b09355eb7035f58b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
         <definition>bool eva::RingBuffer&lt; T, N &gt;::isEmpty</definition>
@@ -142,7 +156,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaRingBuffer.h" line="45" column="14" bodyfile="src/evaRingBuffer.h" bodystart="45" bodyend="48"/>
+        <location file="src/evaRingBuffer.h" line="51" column="14" bodyfile="src/evaRingBuffer.h" bodystart="51" bodyend="54"/>
       </memberdef>
       <memberdef kind="function" id="classeva_1_1_ring_buffer_1af95dc405b8bd1b6d5208090445ba0bd8" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -156,7 +170,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaRingBuffer.h" line="50" column="14" bodyfile="src/evaRingBuffer.h" bodystart="50" bodyend="53"/>
+        <location file="src/evaRingBuffer.h" line="56" column="14" bodyfile="src/evaRingBuffer.h" bodystart="56" bodyend="59"/>
       </memberdef>
       <memberdef kind="function" id="classeva_1_1_ring_buffer_1a516a7a2bacb8de90ef65aa50405c31fa" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>unsigned char</type>
@@ -170,7 +184,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaRingBuffer.h" line="55" column="23" bodyfile="src/evaRingBuffer.h" bodystart="55" bodyend="58"/>
+        <location file="src/evaRingBuffer.h" line="61" column="23" bodyfile="src/evaRingBuffer.h" bodystart="61" bodyend="64"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -196,8 +210,9 @@
 </parameterlist>
 </para>
     </detaileddescription>
-    <location file="src/evaRingBuffer.h" line="11" column="5" bodyfile="src/evaRingBuffer.h" bodystart="12" bodyend="59"/>
+    <location file="src/evaRingBuffer.h" line="11" column="5" bodyfile="src/evaRingBuffer.h" bodystart="12" bodyend="65"/>
     <listofallmembers>
+      <member refid="classeva_1_1_ring_buffer_1a21e92fc5d95eb926badcc85589ebca18" prot="public" virt="non-virtual"><scope>eva::RingBuffer</scope><name>clear</name></member>
       <member refid="classeva_1_1_ring_buffer_1ac4d8e0a8be4749d05eec5409da922539" prot="public" virt="non-virtual"><scope>eva::RingBuffer</scope><name>get</name></member>
       <member refid="classeva_1_1_ring_buffer_1aec1fb94e33a56261b09355eb7035f58b" prot="public" virt="non-virtual"><scope>eva::RingBuffer</scope><name>isEmpty</name></member>
       <member refid="classeva_1_1_ring_buffer_1af95dc405b8bd1b6d5208090445ba0bd8" prot="public" virt="non-virtual"><scope>eva::RingBuffer</scope><name>isFull</name></member>

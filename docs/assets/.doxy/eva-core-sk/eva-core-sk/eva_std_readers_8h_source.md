@@ -14,6 +14,17 @@
 
 namespace eva
 {
+    class ValueReader
+    {
+    private:
+        signed short mValue = 0;
+
+    public:
+        void setValue(signed short value) { mValue = value; }
+        signed short getValue() const { return mValue; }
+        bool isValid() const { return true; }
+    };
+
     template <int tPin, int tPinMode>
     class DigitalPinReader
     {

@@ -69,6 +69,7 @@
 * **mBuffer** ([**eva::RingBuffer**](classeva_1_1_ring_buffer.md))
 * **mHead** ([**eva::RingBuffer**](classeva_1_1_ring_buffer.md))
 * **mSize** ([**eva::RingBuffer**](classeva_1_1_ring_buffer.md))
+* **mValue** ([**eva::ValueReader**](classeva_1_1_value_reader.md))
 
 
 ## n

@@ -140,7 +140,8 @@
   <compound refid="classeva_1_1_joystick" kind="class"><name>eva::Joystick</name>
     <member refid="classeva_1_1_joystick_1a79de4d26d60171bf538f7e6700adf75a" kind="variable"><name>trim</name></member>
     <member refid="classeva_1_1_joystick_1a554833b027987782b81f4f7363f37e1f" kind="variable"><name>deadZone</name></member>
-    <member refid="classeva_1_1_joystick_1a9edb458556dbb6c95432d6ed97d7306e" kind="function"><name>Joystick</name></member>
+    <member refid="classeva_1_1_joystick_1ad08815d85e3e8721d09ef913ec738d15" kind="function"><name>Joystick</name></member>
+    <member refid="classeva_1_1_joystick_1af5ee2b692e85827ebdd40bba53568400" kind="function"><name>Joystick</name></member>
     <member refid="classeva_1_1_joystick_1a7a66e63f0a26f029c5c4b2be7d64ccc3" kind="function"><name>getValue</name></member>
     <member refid="classeva_1_1_joystick_1a5ef74c82b6fc8cb91d96554762ca898c" kind="function"><name>getValue</name></member>
     <member refid="classeva_1_1_joystick_1a04bac91178f262a442dc68cb224da3c9" kind="function"><name>setTrim</name></member>
@@ -204,6 +205,7 @@
     <member refid="classeva_1_1_ring_buffer_1a2e57f6faf13e3f8e0b5a35d301f50a9e" kind="function"><name>RingBuffer</name></member>
     <member refid="classeva_1_1_ring_buffer_1ad749f3999e1b91cf7eb37523ea4d1acc" kind="function"><name>put</name></member>
     <member refid="classeva_1_1_ring_buffer_1ac4d8e0a8be4749d05eec5409da922539" kind="function"><name>get</name></member>
+    <member refid="classeva_1_1_ring_buffer_1a21e92fc5d95eb926badcc85589ebca18" kind="function"><name>clear</name></member>
     <member refid="classeva_1_1_ring_buffer_1aec1fb94e33a56261b09355eb7035f58b" kind="function"><name>isEmpty</name></member>
     <member refid="classeva_1_1_ring_buffer_1af95dc405b8bd1b6d5208090445ba0bd8" kind="function"><name>isFull</name></member>
     <member refid="classeva_1_1_ring_buffer_1a516a7a2bacb8de90ef65aa50405c31fa" kind="function"><name>size</name></member>
@@ -253,6 +255,12 @@
     <member refid="classeva_1_1_tickable_1a6b6ff95372ce0b94618029e05ed2b50a" kind="function"><name>~Tickable</name></member>
     <member refid="classeva_1_1_tickable_1aa59c892bc8901a7840e5af7e431a15a3" kind="function"><name>tac</name></member>
     <member refid="classeva_1_1_tickable_1ac7bb568a397ac2147fd6e292d2846ba6" kind="function"><name>tick</name></member>
+  </compound>
+  <compound refid="classeva_1_1_value_reader" kind="class"><name>eva::ValueReader</name>
+    <member refid="classeva_1_1_value_reader_1a0338633c9228652fec82f5620761f40e" kind="variable"><name>mValue</name></member>
+    <member refid="classeva_1_1_value_reader_1af0375157814dae0659990b6a75213f57" kind="function"><name>setValue</name></member>
+    <member refid="classeva_1_1_value_reader_1a4fc357c0b0e2cbee77605419af1044ae" kind="function"><name>getValue</name></member>
+    <member refid="classeva_1_1_value_reader_1ac24794add73f8614f55a8e085dc15d49" kind="function"><name>isValid</name></member>
   </compound>
   <compound refid="namespaceeva" kind="namespace"><name>eva</name>
     <member refid="eva_button_8h_1af9198a0d14714f20087c33741adcd243" kind="typedef"><name>PinButton</name></member>

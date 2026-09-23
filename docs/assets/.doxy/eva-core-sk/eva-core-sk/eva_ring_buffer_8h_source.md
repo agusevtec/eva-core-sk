@@ -47,6 +47,12 @@ namespace eva
             return mBuffer[physicalPos];
         }
 
+        void clear() 
+        {
+           mHead = 0;
+           mSize = 0;
+        }
+
         bool isEmpty() const
         {
             return mSize == 0;

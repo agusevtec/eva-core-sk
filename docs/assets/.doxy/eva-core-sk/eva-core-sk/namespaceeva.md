@@ -63,6 +63,7 @@
 | class | [**Slider**](classeva_1_1_slider.md) &lt;class TReader, tMinPos, tMaxPos&gt;<br>_Maps analog readings to 0-1000 range._  |
 | class | [**Switch**](classeva_1_1_switch.md) &lt;class TReader&gt;<br>_Universal switch/button class for multi-valued input sources._  |
 | class | [**Tickable**](classeva_1_1_tickable.md) <br>_Base class for objects that need periodic updates._  |
+| class | [**ValueReader**](classeva_1_1_value_reader.md) <br>_Simple stateful reader acting as a bridge between raw control values and evaf filters._  |
 
 
 ## Public Types

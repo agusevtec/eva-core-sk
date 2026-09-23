@@ -55,7 +55,8 @@ Inherits the following classes: TReader
 
 | Type | Name |
 | ---: | :--- |
-|   | [**Joystick**](#function-joystick) (unsigned char aDeadZone=0, Args... args) <br>_Constructs a_ [_**Joystick**_](classeva_1_1_joystick.md) _with optional dead zone._ |
+|   | [**Joystick**](#function-joystick-12) () <br>_Constructs a_ [_**Joystick**_](classeva_1_1_joystick.md) _with optional dead zone._ |
+|   | [**Joystick**](#function-joystick-22) (unsigned char aDeadZone, Args... args) <br>_Constructs a_ [_**Joystick**_](classeva_1_1_joystick.md) _with optional dead zone._ |
 |  void | [**addTrim**](#function-addtrim) (short trimIncrement) <br>_adds trim adjustment value_  |
 |  unsigned char | [**getDeadZone**](#function-getdeadzone) () <br>_Gets current dead-zone value._  |
 |  signed short | [**getTrim**](#function-gettrim) () <br>_Gets current trim value._  |
@@ -120,13 +121,39 @@ Inherits the following classes: TReader
 
 
 
-### function Joystick 
+### function Joystick [1/2]
+
+_Constructs a_ [_**Joystick**_](classeva_1_1_joystick.md) _with optional dead zone._
+```C++
+inline eva::Joystick::Joystick () 
+```
+
+
+
+
+
+**Parameters:**
+
+
+* `aDeadZone` Dead-zone value (0-255) 
+* `args` Additional arguments passed to TReader constructor 
+
+
+
+
+        
+
+<hr>
+
+
+
+### function Joystick [2/2]
 
 _Constructs a_ [_**Joystick**_](classeva_1_1_joystick.md) _with optional dead zone._
 ```C++
 template<typename... Args>
 inline eva::Joystick::Joystick (
-    unsigned char aDeadZone=0,
+    unsigned char aDeadZone,
     Args... args
 ) 
 ```
