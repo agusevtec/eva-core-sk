@@ -690,17 +690,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#detailed-description" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Detailed Description
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#public-functions-documentation" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -772,7 +761,7 @@
 
 <h1 id="class-evavaluereader">Class eva::ValueReader<a class="headerlink" href="#class-evavaluereader" title="Permanent link">&para;</a></h1>
 <p><a href="../annotated/"><strong>ClassList</strong></a> <strong>&gt;</strong> <a href="../namespaceeva/"><strong>eva</strong></a> <strong>&gt;</strong> <a href="./"><strong>ValueReader</strong></a></p>
-<p><em>Simple stateful reader acting as a bridge between raw control values and evaf filters.</em> <a href="#detailed-description">More...</a></p>
+<p><em>Simple stateful reader acting as a ground-level of proccessing pipe.</em> </p>
 <ul>
 <li><code>#include &lt;evaStdReaders.h&gt;</code></li>
 </ul>
@@ -799,8 +788,6 @@
 </tr>
 </tbody>
 </table>
-<h2 id="detailed-description">Detailed Description<a class="headerlink" href="#detailed-description" title="Permanent link">&para;</a></h2>
-<p>getValue()/isValid() are public because evaf filters call them. setValue() is public so that decorators can push the target value straight into the filter. </p>
 <h2 id="public-functions-documentation">Public Functions Documentation<a class="headerlink" href="#public-functions-documentation" title="Permanent link">&para;</a></h2>
 <h3 id="function-getvalue">function getValue<a class="headerlink" href="#function-getvalue" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="kt">signed</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">ValueReader</span><span class="o">::</span><span class="n">getValue</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="k">const</span>

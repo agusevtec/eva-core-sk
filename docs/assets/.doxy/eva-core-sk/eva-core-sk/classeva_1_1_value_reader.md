@@ -8,7 +8,7 @@
 
 
 
-_Simple stateful reader acting as a bridge between raw control values and evaf filters._ [More...](#detailed-description)
+_Simple stateful reader acting as a ground-level of proccessing pipe._ 
 
 * `#include <evaStdReaders.h>`
 
@@ -83,13 +83,6 @@ _Simple stateful reader acting as a bridge between raw control values and evaf f
 
 
 
-## Detailed Description
-
-
-getValue()/isValid() are public because evaf filters call them. setValue() is public so that decorators can push the target value straight into the filter. 
-
-
-    
 ## Public Functions Documentation
 
 

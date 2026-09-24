@@ -17,9 +17,7 @@ namespace eva
   {
   public:
     /**
-     * @brief Constructs a Joystick with optional dead zone
-     * @param aDeadZone Dead-zone value (0-255)
-     * @param args Additional arguments passed to TReader constructor
+     * @brief Constructs a Joystick with zero dead zone
      */
     Joystick() : trim(0), deadZone(0)
     {

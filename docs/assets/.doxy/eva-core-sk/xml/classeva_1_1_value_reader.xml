@@ -17,7 +17,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaStdReaders.h" line="18" column="22" bodyfile="src/evaStdReaders.h" bodystart="18" bodyend="-1"/>
+        <location file="src/evaStdReaders.h" line="13" column="22" bodyfile="src/evaStdReaders.h" bodystart="13" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -37,7 +37,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaStdReaders.h" line="21" column="14" bodyfile="src/evaStdReaders.h" bodystart="21" bodyend="21"/>
+        <location file="src/evaStdReaders.h" line="16" column="14" bodyfile="src/evaStdReaders.h" bodystart="16" bodyend="16"/>
       </memberdef>
       <memberdef kind="function" id="classeva_1_1_value_reader_1a4fc357c0b0e2cbee77605419af1044ae" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>signed short</type>
@@ -51,7 +51,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaStdReaders.h" line="22" column="22" bodyfile="src/evaStdReaders.h" bodystart="22" bodyend="22"/>
+        <location file="src/evaStdReaders.h" line="17" column="22" bodyfile="src/evaStdReaders.h" bodystart="17" bodyend="17"/>
       </memberdef>
       <memberdef kind="function" id="classeva_1_1_value_reader_1ac24794add73f8614f55a8e085dc15d49" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -65,16 +65,15 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaStdReaders.h" line="23" column="14" bodyfile="src/evaStdReaders.h" bodystart="23" bodyend="23"/>
+        <location file="src/evaStdReaders.h" line="18" column="14" bodyfile="src/evaStdReaders.h" bodystart="18" bodyend="18"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
-<para>Simple stateful reader acting as a bridge between raw control values and evaf filters. </para>
+<para>Simple stateful reader acting as a ground-level of proccessing pipe. </para>
     </briefdescription>
     <detaileddescription>
-<para>getValue()/isValid() are public because evaf filters call them. setValue() is public so that decorators can push the target value straight into the filter. </para>
     </detaileddescription>
-    <location file="src/evaStdReaders.h" line="15" column="5" bodyfile="src/evaStdReaders.h" bodystart="16" bodyend="24"/>
+    <location file="src/evaStdReaders.h" line="10" column="5" bodyfile="src/evaStdReaders.h" bodystart="11" bodyend="19"/>
     <listofallmembers>
       <member refid="classeva_1_1_value_reader_1a4fc357c0b0e2cbee77605419af1044ae" prot="public" virt="non-virtual"><scope>eva::ValueReader</scope><name>getValue</name></member>
       <member refid="classeva_1_1_value_reader_1ac24794add73f8614f55a8e085dc15d49" prot="public" virt="non-virtual"><scope>eva::ValueReader</scope><name>isValid</name></member>

@@ -32,7 +32,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaStdReaders.h" line="73" column="9" bodyfile="src/evaStdReaders.h" bodystart="73" bodyend="76"/>
+        <location file="src/evaStdReaders.h" line="68" column="9" bodyfile="src/evaStdReaders.h" bodystart="68" bodyend="71"/>
       </memberdef>
       <memberdef kind="function" id="classeva_1_1_analog_pin_reader_1ac3b62f56e23d6001b462027f9272117a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>signed short</type>
@@ -50,7 +50,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaStdReaders.h" line="82" column="22" bodyfile="src/evaStdReaders.h" bodystart="82" bodyend="85"/>
+        <location file="src/evaStdReaders.h" line="77" column="22" bodyfile="src/evaStdReaders.h" bodystart="77" bodyend="80"/>
       </memberdef>
       <memberdef kind="function" id="classeva_1_1_analog_pin_reader_1aac0792bce0b47a25645e0afbab0b845c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -68,7 +68,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaStdReaders.h" line="91" column="14" bodyfile="src/evaStdReaders.h" bodystart="91" bodyend="94"/>
+        <location file="src/evaStdReaders.h" line="86" column="14" bodyfile="src/evaStdReaders.h" bodystart="86" bodyend="89"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -118,7 +118,7 @@
         </childnode>
       </node>
     </inheritancegraph>
-    <location file="src/evaStdReaders.h" line="67" column="5" bodyfile="src/evaStdReaders.h" bodystart="68" bodyend="95"/>
+    <location file="src/evaStdReaders.h" line="62" column="5" bodyfile="src/evaStdReaders.h" bodystart="63" bodyend="90"/>
     <listofallmembers>
       <member refid="classeva_1_1_analog_pin_reader_1af3d3930bf025adf0f4e0c4e782084d12" prot="public" virt="non-virtual"><scope>eva::AnalogPinReader</scope><name>AnalogPinReader</name></member>
       <member refid="classeva_1_1_analog_pin_reader_1ac3b62f56e23d6001b462027f9272117a" prot="public" virt="non-virtual"><scope>eva::AnalogPinReader</scope><name>getValue</name></member>

@@ -5,12 +5,7 @@
 namespace eva
 {
     /**
-     * @brief Simple stateful reader acting as a bridge between raw control
-     *        values and evaf filters.
-     *
-     * getValue()/isValid() are public because evaf filters call them.
-     * setValue() is public so that decorators can push the target value
-     * straight into the filter.
+     * @brief Simple stateful reader acting as a ground-level of proccessing pipe
      */
     class ValueReader
     {
