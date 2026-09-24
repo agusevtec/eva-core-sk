@@ -20,7 +20,6 @@ private:
   PullUpButton<3> button{new Handler<App>(this, &App::onButtonPress), ON_PRESS};
   Indicator led{13};
   RepeatTimer tickTimer{1000, new Handler<App>(this, &App::onTickTimer)};
-  bool running = true;
 
 public:
   App()
@@ -31,8 +30,7 @@ public:
 
   void onButtonPress(void *, CallbackInfo)
   {
-    running = !running;
-    if (running)
+    if (!tickTimer.isRunning())
     {
       tickTimer.start();
       Serial.println("Timer resumed");
