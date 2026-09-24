@@ -27,7 +27,10 @@ void CountdownIndicator::invoke(void *msgSender, CallbackInfo)
 {
     if (msgSender == &(this->heartbeatTimer))
     {
-        if (--this->countdown > 0)
+        if (this->countdown > 0)
+            this->countdown--;
+
+        if (this->countdown > 0)
             this->startCycle();
 
         if (this->countdown == 0)
