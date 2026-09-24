@@ -881,10 +881,10 @@
 </ul>
 <hr />
 <h3 id="the-three-pillars">The Three Pillars<a class="headerlink" href="#the-three-pillars" title="Permanent link">&para;</a></h3>
-<p><strong>Event-Driven Execution Over Polling.</strong>
-Many components—either explicitly or implicitly—claim their own slice and only their slice of the famous Arduino <code>loop()</code>, and user code is encouraged to do the same. Timings become a natural part of the contract between objects—whether between user objects and library objects, or among user objects themselves. Components do not poll; they notify when something happens via lightweight <code>Handler</code> delegates that bind events to methods naturally.</p>
 <p><strong>Propagation of Object-Oriented Architecture to User Code.</strong>
-The layered architecture continues into user code in an object-oriented way. This creates many connection points, enables predictable initialization, and makes testing simple.</p>
+Many components—either explicitly or implicitly—claim their own slice, and only their slice, of the famous Arduino <code>loop()</code>, and user code is encouraged to do the same. Timings become a natural part of the contract between objects—whether between user objects and library objects, or among user objects themselves. The layered architecture continues into user code in an object-oriented way.</p>
+<p><strong>Event-Driven Execution Over Polling.</strong>
+Components do not poll; they notify when something happens via lightweight Handler delegates that bind events to methods naturally. Control flow becomes an explicit chain of reactions rather than a loop of checks.</p>
 <p><strong>Feature Construction via Template Decorators.</strong>
 Instead of bloated classes trying to solve every edge case, complex behaviors are assembled out of simple primitives using template decorators. You wrap and compose functionality at compile time without paying a runtime memory penalty.</p>
 <hr />

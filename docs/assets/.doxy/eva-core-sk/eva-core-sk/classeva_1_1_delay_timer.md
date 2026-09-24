@@ -121,7 +121,6 @@ See [eva::Tickable](classeva_1_1_tickable.md)
 | Type | Name |
 | ---: | :--- |
 |  [**IHandler**](classeva_1_1_i_handler.md) \* | [**listener**](#variable-listener)  <br> |
-|  unsigned long | [**nextFire**](#variable-nextfire)  <br> |
 
 
 
@@ -349,19 +348,6 @@ void eva::DelayTimer::stop ()
 
 ```C++
 IHandler* eva::DelayTimer::listener;
-```
-
-
-
-
-<hr>
-
-
-
-### variable nextFire 
-
-```C++
-unsigned long eva::DelayTimer::nextFire;
 ```
 
 

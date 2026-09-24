@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
   <compounddef id="classeva_1_1_delay_timer" kind="class" language="C++" prot="public">
     <compoundname>eva::DelayTimer</compoundname>
     <basecompoundref refid="classeva_1_1_tickable" prot="public" virt="non-virtual">eva::Tickable</basecompoundref>
@@ -7,20 +7,6 @@
     <derivedcompoundref refid="classeva_1_1_repeat_timer" prot="public" virt="non-virtual">eva::RepeatTimer</derivedcompoundref>
     <includes refid="eva_delay_timer_8h" local="no">evaDelayTimer.h</includes>
     <sectiondef kind="protected-attrib">
-      <memberdef kind="variable" id="classeva_1_1_delay_timer_1aaa15353150b005949a4cb0345ebf83ca" prot="protected" static="no" mutable="no">
-        <type>unsigned long</type>
-        <definition>unsigned long eva::DelayTimer::nextFire</definition>
-        <argsstring></argsstring>
-        <name>nextFire</name>
-        <qualifiedname>eva::DelayTimer::nextFire</qualifiedname>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="src/evaDelayTimer.h" line="64" column="23" bodyfile="src/evaDelayTimer.h" bodystart="64" bodyend="-1"/>
-      </memberdef>
       <memberdef kind="variable" id="classeva_1_1_delay_timer_1a79cfcb6054cd07ae88faa66e96e1a29f" prot="protected" static="no" mutable="no">
         <type><ref refid="classeva_1_1_i_handler" kindref="compound">IHandler</ref> *</type>
         <definition>IHandler* eva::DelayTimer::listener</definition>
@@ -33,7 +19,23 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaDelayTimer.h" line="65" column="18" bodyfile="src/evaDelayTimer.h" bodystart="65" bodyend="-1"/>
+        <location file="src/evaDelayTimer.h" line="64" column="18" bodyfile="src/evaDelayTimer.h" bodystart="64" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classeva_1_1_delay_timer_1aaa15353150b005949a4cb0345ebf83ca" prot="private" static="no" mutable="no">
+        <type>unsigned long</type>
+        <definition>unsigned long eva::DelayTimer::nextFire</definition>
+        <argsstring></argsstring>
+        <name>nextFire</name>
+        <qualifiedname>eva::DelayTimer::nextFire</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evaDelayTimer.h" line="67" column="23" bodyfile="src/evaDelayTimer.h" bodystart="67" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -296,14 +298,14 @@ Listener must be assigned via constructor or <ref refid="classeva_1_1_delay_time
         <link refid="classeva_1_1_tickable"/>
       </node>
     </collaborationgraph>
-    <location file="src/evaDelayTimer.h" line="11" column="5" bodyfile="src/evaDelayTimer.h" bodystart="12" bodyend="66"/>
+    <location file="src/evaDelayTimer.h" line="11" column="5" bodyfile="src/evaDelayTimer.h" bodystart="12" bodyend="68"/>
     <listofallmembers>
       <member refid="classeva_1_1_delay_timer_1aadecb847985e9b5c4e6c9e2a3f4e435d" prot="protected" virt="non-virtual"><scope>eva::DelayTimer</scope><name>checkTimeElapsed</name></member>
       <member refid="classeva_1_1_delay_timer_1a971246536c3cca838038b493c4da414c" prot="public" virt="non-virtual"><scope>eva::DelayTimer</scope><name>DelayTimer</name></member>
       <member refid="classeva_1_1_delay_timer_1a5889ee3ab5a8f31a35f8849c12be2323" prot="public" virt="non-virtual"><scope>eva::DelayTimer</scope><name>DelayTimer</name></member>
       <member refid="classeva_1_1_delay_timer_1a4d615ec24c146a2b46feea535a8e7830" prot="public" virt="non-virtual"><scope>eva::DelayTimer</scope><name>isRunning</name></member>
       <member refid="classeva_1_1_delay_timer_1a79cfcb6054cd07ae88faa66e96e1a29f" prot="protected" virt="non-virtual"><scope>eva::DelayTimer</scope><name>listener</name></member>
-      <member refid="classeva_1_1_delay_timer_1aaa15353150b005949a4cb0345ebf83ca" prot="protected" virt="non-virtual"><scope>eva::DelayTimer</scope><name>nextFire</name></member>
+      <member refid="classeva_1_1_delay_timer_1aaa15353150b005949a4cb0345ebf83ca" prot="private" virt="non-virtual"><scope>eva::DelayTimer</scope><name>nextFire</name></member>
       <member refid="classeva_1_1_tickable_1a865abbef0ee038e0db5eff81747949e7" prot="public" virt="non-virtual"><scope>eva::DelayTimer</scope><name>operator=</name></member>
       <member refid="classeva_1_1_tickable_1a698d78c5c54122f25b42080e001561d2" prot="public" virt="non-virtual"><scope>eva::DelayTimer</scope><name>operator=</name></member>
       <member refid="classeva_1_1_delay_timer_1a37416cde9f8aac62cadee90695e75efe" prot="public" virt="non-virtual"><scope>eva::DelayTimer</scope><name>setListener</name></member>

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.16.1" xml:lang="en-US">
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.17.0" xml:lang="en-US">
   <compound refid="classeva_1_1_analog_mutable_pin_reader" kind="class"><name>eva::AnalogMutablePinReader</name>
     <member refid="classeva_1_1_analog_mutable_pin_reader_1a08ee346aa4b49ab39ced906667e2e782" kind="variable"><name>mPin</name></member>
     <member refid="classeva_1_1_analog_mutable_pin_reader_1a92cc6b0de8a765356e0df96d43c12e30" kind="function"><name>AnalogMutablePinReader</name></member>
@@ -76,8 +76,8 @@
     <member refid="classeva_1_1_debounce_decor_1af6e5231badc84e9fc6481f1db0ae7c26" kind="function"><name>getValue</name></member>
   </compound>
   <compound refid="classeva_1_1_delay_timer" kind="class"><name>eva::DelayTimer</name>
-    <member refid="classeva_1_1_delay_timer_1aaa15353150b005949a4cb0345ebf83ca" kind="variable"><name>nextFire</name></member>
     <member refid="classeva_1_1_delay_timer_1a79cfcb6054cd07ae88faa66e96e1a29f" kind="variable"><name>listener</name></member>
+    <member refid="classeva_1_1_delay_timer_1aaa15353150b005949a4cb0345ebf83ca" kind="variable"><name>nextFire</name></member>
     <member refid="classeva_1_1_delay_timer_1a971246536c3cca838038b493c4da414c" kind="function"><name>DelayTimer</name></member>
     <member refid="classeva_1_1_delay_timer_1a5889ee3ab5a8f31a35f8849c12be2323" kind="function"><name>DelayTimer</name></member>
     <member refid="classeva_1_1_delay_timer_1a09341604aaf16757f0b663545ded5b62" kind="function"><name>start</name></member>

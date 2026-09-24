@@ -61,7 +61,9 @@ namespace eva
         void tick() override;
 
     protected:
-        unsigned long nextFire;
         IHandler *listener;
+
+        private:
+        unsigned long nextFire;
     };
 }

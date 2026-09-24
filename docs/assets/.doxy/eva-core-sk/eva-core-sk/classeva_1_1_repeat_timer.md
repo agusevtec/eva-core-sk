@@ -166,7 +166,6 @@ See [eva::DelayTimer](classeva_1_1_delay_timer.md)
 | Type | Name |
 | ---: | :--- |
 |  [**IHandler**](classeva_1_1_i_handler.md) \* | [**listener**](classeva_1_1_delay_timer.md#variable-listener)  <br> |
-|  unsigned long | [**nextFire**](classeva_1_1_delay_timer.md#variable-nextfire)  <br> |
 
 
 

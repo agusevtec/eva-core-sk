@@ -8,9 +8,8 @@ void CountdownTimer::start(unsigned short period, unsigned char count, IHandler 
 {
     this->period = period;
     this->remainingCount = count;
-    setListener(listener);
-    if (this->period > 0 && count > 0)
-        DelayTimer::start(this->period, this->listener);
+    if (count > 0)
+        DelayTimer::start(period, listener);
     else
         DelayTimer::stop();
 }
@@ -28,10 +27,13 @@ void CountdownTimer::tick()
     if (!this->checkTimeElapsed())
         return;
 
-    if (--this->remainingCount > 0)
-        this->nextFire += this->period;
+    if (this->remainingCount > 0)
+        this->remainingCount--;
+
+    if (this->remainingCount > 0)
+        DelayTimer::start(this->period);
     else
-        stop();
+        DelayTimer::stop();
 
     if (this->listener)
         this->listener->invoke((void *)this, {0, remainingCount});

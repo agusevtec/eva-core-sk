@@ -11,21 +11,18 @@ RepeatTimer::RepeatTimer(unsigned short period, IHandler *listener)
 void RepeatTimer::start(unsigned short period, IHandler *listener)
 {
     setPeriod(period);
-    setListener(listener);
-    if (this->period > 0)
-        DelayTimer::start(this->period, this->listener);
-    else
-        stop();
+    DelayTimer::start(period, listener);
 }
 
 void RepeatTimer::start(unsigned short period)
 {
-    start(period, this->listener);
+    setPeriod(period);
+    DelayTimer::start(period);
 }
 
 void RepeatTimer::start()
 {
-    start(this->period, this->listener);
+    DelayTimer::start(this->period);
 }
 
 void RepeatTimer::tick()
@@ -36,7 +33,7 @@ void RepeatTimer::tick()
     if (!this->checkTimeElapsed())
         return;
 
-    this->nextFire += this->period;
+    DelayTimer::start(this->period);
 
     if (this->listener)
         this->listener->invoke((void *)this, {0, 0});

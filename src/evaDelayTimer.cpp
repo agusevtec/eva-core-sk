@@ -18,15 +18,15 @@ eva::DelayTimer::DelayTimer(IHandler *listener)
 void DelayTimer::start(unsigned short delay, IHandler *listener)
 {
     setListener(listener);
-    this->nextFire = millis() + delay;
-    // zero value of this->nextFire means "disabled"
-    if (this->nextFire == 0)
-        this->nextFire = 1;
+    start(delay);
 }
 
 void eva::DelayTimer::start(unsigned short delay)
 {
-    start(delay, this->listener);
+    this->nextFire = millis() + delay;
+
+    if (this->nextFire == 0) // zero value of this->nextFire means "disabled"
+        this->nextFire = 1;
 }
 
 DelayTimer *eva::DelayTimer::setListener(IHandler *listener)
