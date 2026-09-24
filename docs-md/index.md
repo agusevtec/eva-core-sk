@@ -8,21 +8,22 @@ EVA is a concept of comfortable user code. A set of principles that make Arduino
 
 - **Self-documenting** — code reads like a story, not a puzzle
 - **Testability** — components can be verified in isolation
-- **Performance** — optimization focused on critical paths, not dogma
 - **Refactoring-friendly** — changing structure doesn't break behavior
 
 ---
 
 ### The Three Pillars
 
-**Propagation of Object-Oriented Architecture to User Code.**
-Many components—either explicitly or implicitly—claim their own slice, and only their slice, of the famous Arduino `loop()`, and user code is encouraged to do the same. Timings become a natural part of the contract between objects—whether between user objects and library objects, or among user objects themselves. The layered architecture continues into user code in an object-oriented way.
+The layered architecture continues into user code in an object-oriented way through three pillars:
 
-**Event-Driven Execution Over Polling.**
-Components do not poll; they notify when something happens via lightweight Handler delegates that bind events to methods naturally. Control flow becomes an explicit chain of reactions rather than a loop of checks.
+**Uniform Time Ownership.**
+Many components—either explicitly or implicitly—claim their own slice, and only their slice, of the famous Arduino `loop()`, and user code is encouraged to do the same. Timings become a natural part of the contract between objects—whether between user objects and library objects, or among user objects themselves.
 
 **Feature Construction via Template Decorators.**
-Instead of bloated classes trying to solve every edge case, complex behaviors are assembled out of simple primitives using template decorators. You wrap and compose functionality at compile time without paying a runtime memory penalty.
+Instead of bloated classes trying to solve every edge case, complex behaviors are assembled out of simple primitives using template decorators. You wrap and compose functionality at compile time.
+
+**Event-Driven Execution.**
+Components do not poll; they notify when something happens via OOP-friendly Handlers that bind events to methods naturally. Control flow becomes an explicit chain of reactions rather than a loop of checks.
 
 ---
 

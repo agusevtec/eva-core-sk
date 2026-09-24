@@ -876,17 +876,17 @@
 <ul>
 <li><strong>Self-documenting</strong> — code reads like a story, not a puzzle</li>
 <li><strong>Testability</strong> — components can be verified in isolation</li>
-<li><strong>Performance</strong> — optimization focused on critical paths, not dogma</li>
 <li><strong>Refactoring-friendly</strong> — changing structure doesn't break behavior</li>
 </ul>
 <hr />
 <h3 id="the-three-pillars">The Three Pillars<a class="headerlink" href="#the-three-pillars" title="Permanent link">&para;</a></h3>
-<p><strong>Propagation of Object-Oriented Architecture to User Code.</strong>
-Many components—either explicitly or implicitly—claim their own slice, and only their slice, of the famous Arduino <code>loop()</code>, and user code is encouraged to do the same. Timings become a natural part of the contract between objects—whether between user objects and library objects, or among user objects themselves. The layered architecture continues into user code in an object-oriented way.</p>
-<p><strong>Event-Driven Execution Over Polling.</strong>
-Components do not poll; they notify when something happens via lightweight Handler delegates that bind events to methods naturally. Control flow becomes an explicit chain of reactions rather than a loop of checks.</p>
+<p>The layered architecture continues into user code in an object-oriented way through three pillars:</p>
+<p><strong>Uniform Time Ownership.</strong>
+Many components—either explicitly or implicitly—claim their own slice, and only their slice, of the famous Arduino <code>loop()</code>, and user code is encouraged to do the same. Timings become a natural part of the contract between objects—whether between user objects and library objects, or among user objects themselves.</p>
 <p><strong>Feature Construction via Template Decorators.</strong>
-Instead of bloated classes trying to solve every edge case, complex behaviors are assembled out of simple primitives using template decorators. You wrap and compose functionality at compile time without paying a runtime memory penalty.</p>
+Instead of bloated classes trying to solve every edge case, complex behaviors are assembled out of simple primitives using template decorators. You wrap and compose functionality at compile time.</p>
+<p><strong>Event-Driven Execution.</strong>
+Components do not poll; they notify when something happens via OOP-friendly Handlers that bind events to methods naturally. Control flow becomes an explicit chain of reactions rather than a loop of checks.</p>
 <hr />
 <h3 id="implementation">Implementation<a class="headerlink" href="#implementation" title="Permanent link">&para;</a></h3>
 <p>EVA Core | EVA Survival Kit (eva-core-sk) is a concrete implementation of this concept—a library that puts these principles into practice. Architectural core with essential components for event-driven Arduino applications.</p>
