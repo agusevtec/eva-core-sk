@@ -1,5 +1,5 @@
 /**
- * eva Library - Indicators Demo
+ * EVA Core | EVA Survival Kit - Indicators Demo
  *
  * Demonstrates all indicator types:
  * - Basic Indicator (simple on/off)

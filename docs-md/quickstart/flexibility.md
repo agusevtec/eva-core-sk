@@ -60,8 +60,7 @@ using DifferentialSwitch = Switch<
 
 class App {
 private:
-  DifferentialSwitch joystickZone;
-  
+  Handler<App> onZoneEventHandler{ this, &App::onZoneEvent };
   void onZoneEvent(void* sender, CallbackInfo cbInfo) {
     unsigned short zone = cbInfo.eventArg;  // 1 or 2
     
@@ -74,13 +73,12 @@ private:
       Serial.println("Returned to center");
     }
   }
-  
+
+  DifferentialSwitch joystickZone;
+
 public:
   App() {
-    joystickZone.setListener(
-      new Handler<App>(this, &onZoneEvent),
-      ON_PRESS | ON_RELEASE
-    );
+    joystickZone.setListener(&onZoneEventHandler, ON_PRESS | ON_RELEASE);
   }
 };
 ```

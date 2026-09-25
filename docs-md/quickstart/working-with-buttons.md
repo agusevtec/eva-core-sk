@@ -98,21 +98,14 @@ using namespace eva;
 
 class App {
 private:
-  // Values are the expected analog readings for each button
-  PinMultiButton<A0, INPUT, 
-                 100,  // Button 1 threshold
-                 300,  // Button 2 threshold
-                 500,  // Button 3 threshold
-                 700>  // Button 4 threshold
-    buttonBank;
-  
+  Handler<App> onButtonEventHandler{ this, &App::onButtonEvent };
   void onButtonEvent(void* sender, CallbackInfo cbInfo) {
     // The button level is encoded in callback info
     unsigned char levelCode = cbInfo.eventArg;
-  
+
     // Get the actual threshold value that defines this level
     unsigned short threshold = buttonBank.getLevel(levelCode);
-  
+
     Serial.print("Received code: ");
     Serial.print(levelCode);
     Serial.print(" (threshold: ");
@@ -122,18 +115,23 @@ private:
     if (cbInfo.eventType & ON_SHORTCLICK) {
       Serial.println("short clicked");
     }
-    
+
     if (cbInfo.eventType & ON_LONGCLICK) {
       Serial.println("long pressed");
     }
   }
-  
+
+  // Values are the expected analog readings for each button
+  PinMultiButton<A0, INPUT,
+                 100,  // Button 1 threshold
+                 300,  // Button 2 threshold
+                 500,  // Button 3 threshold
+                 700>  // Button 4 threshold
+    buttonBank;
+
 public:
   App() {
-    buttonBank.setListener(
-      new Handler<App>(this, &App::onButtonEvent),
-      ON_SHORTCLICK | ON_LONGCLICK
-    );
+    buttonBank.setListener(&onButtonEventHandler, ON_SHORTCLICK | ON_LONGCLICK);
   }
 };
 
@@ -147,6 +145,7 @@ void loop() {
   eva::tac();
 }
 ```
+
 Event information: The handler receives a CallbackInfo structure containing both the event type (the event mask) and the button identifier (1 for first button, 2 for second, etc.)
 
 ## How `PinMultiButton` is Built

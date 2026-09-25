@@ -1,6 +1,6 @@
 /**
- * eva Library - RingBuffer Container Example
- * 
+ * EVA Core | EVA Survival Kit - RingBuffer Container Example
+ *
  * Simple demonstration of eva::RingBuffer container capabilities:
  * - Fixed capacity static allocation
  * - Adding elements (put)
@@ -14,30 +14,39 @@
 
 using namespace eva;
 
-struct Reading {
+struct Reading
+{
   int sensorId;
   int rawValue;
 };
 
-void demonstrateBasicOperations() {
+void demonstrateBasicOperations()
+{
   Serial.println("1. Creating RingBuffer (Capacity = 4):");
   RingBuffer<int, 4> buffer;
 
-  Serial.print("   isEmpty: "); Serial.println(buffer.isEmpty() ? "true" : "false");
-  Serial.print("   isFull:  "); Serial.println(buffer.isFull() ? "true" : "false");
-  Serial.print("   size:    "); Serial.println(buffer.size());
+  Serial.print("   isEmpty: ");
+  Serial.println(buffer.isEmpty() ? "true" : "false");
+  Serial.print("   isFull:  ");
+  Serial.println(buffer.isFull() ? "true" : "false");
+  Serial.print("   size:    ");
+  Serial.println(buffer.size());
 
   Serial.println("\n2. Pushing items into buffer:");
   buffer.put(10);
   buffer.put(20);
   buffer.put(30);
 
-  Serial.print("   size after 3 puts: "); Serial.println(buffer.size());
-  Serial.print("   isEmpty:           "); Serial.println(buffer.isEmpty() ? "true" : "false");
-  Serial.print("   isFull:            "); Serial.println(buffer.isFull() ? "true" : "false");
+  Serial.print("   size after 3 puts: ");
+  Serial.println(buffer.size());
+  Serial.print("   isEmpty:           ");
+  Serial.println(buffer.isEmpty() ? "true" : "false");
+  Serial.print("   isFull:            ");
+  Serial.println(buffer.isFull() ? "true" : "false");
 
   Serial.println("\n3. Accessing items by relative index (0 = oldest):");
-  for (unsigned char i = 0; i < buffer.size(); i++) {
+  for (unsigned char i = 0; i < buffer.size(); i++)
+  {
     Serial.print("   buffer.get(");
     Serial.print(i);
     Serial.print(") = ");
@@ -45,7 +54,8 @@ void demonstrateBasicOperations() {
   }
 }
 
-void demonstrateOverflowAndWrapAround() {
+void demonstrateOverflowAndWrapAround()
+{
   Serial.println("\n4. Filling to capacity and testing overflow:");
   RingBuffer<int, 3> buffer;
 
@@ -56,8 +66,11 @@ void demonstrateOverflowAndWrapAround() {
   Serial.print("   Filled 3 items. isFull: ");
   Serial.println(buffer.isFull() ? "true" : "false");
 
-  for (unsigned char i = 0; i < buffer.size(); i++) {
-    Serial.print("   ["); Serial.print(i); Serial.print("]: ");
+  for (unsigned char i = 0; i < buffer.size(); i++)
+  {
+    Serial.print("   [");
+    Serial.print(i);
+    Serial.print("]: ");
     Serial.println(buffer.get(i));
   }
 
@@ -67,13 +80,17 @@ void demonstrateOverflowAndWrapAround() {
   Serial.print("   size (remains max capacity): ");
   Serial.println(buffer.size());
 
-  for (unsigned char i = 0; i < buffer.size(); i++) {
-    Serial.print("   ["); Serial.print(i); Serial.print("]: ");
+  for (unsigned char i = 0; i < buffer.size(); i++)
+  {
+    Serial.print("   [");
+    Serial.print(i);
+    Serial.print("]: ");
     Serial.println(buffer.get(i));
   }
 }
 
-void demonstrateCustomStructBuffer() {
+void demonstrateCustomStructBuffer()
+{
   Serial.println("\n5. RingBuffer of custom structs:");
   RingBuffer<Reading, 3> sensorLog;
 
@@ -81,7 +98,8 @@ void demonstrateCustomStructBuffer() {
   sensorLog.put({2, 768});
   sensorLog.put({3, 1024});
 
-  for (unsigned char i = 0; i < sensorLog.size(); i++) {
+  for (unsigned char i = 0; i < sensorLog.size(); i++)
+  {
     Reading r = sensorLog.get(i);
     Serial.print("   Log [");
     Serial.print(i);
@@ -92,7 +110,8 @@ void demonstrateCustomStructBuffer() {
   }
 }
 
-void setup() {
+void setup()
+{
   Serial.begin(9600);
   Serial.println("=== RingBuffer Container Demo ===\n");
 
@@ -103,6 +122,7 @@ void setup() {
   Serial.println("\n=== Demo Complete ===");
 }
 
-void loop() {
+void loop()
+{
   // Nothing to do here - demo runs once in setup
 }

@@ -1,5 +1,6 @@
 /**
- * eva Library - Switch Initialization Variants
+ * EVA Core | EVA Survival Kit - Switch Initialization Variants
+ * (no dynamic allocation, handlers placed next to their methods)
  */
 
 #include <evaTac.h>
@@ -10,35 +11,7 @@ using namespace eva;
 class App
 {
 private:
-  // Simple toggle switch - reports both "ON" and "OFF" state changes
-  PullUpSwitch<2> toggleSwitch{new Handler<App>(this, &App::onToggleSwitch), ON_CHANGE};
-
-  // Push button - reports only press events (release ignored)
-  // With ON_PRESS | ON_RELEASE it behaves like a simple button (both press and release events)
-  // When using ON_PRESS | ON_RELEASE, value 0 means no button is active
-  PullUpSwitch<3> pushButton{new Handler<App>(this, &App::onPushButtonPress), ON_PRESS};
-
-  // Active HIGH toggle - reports both "ON" and "OFF" state changes
-  PinSwitch<4, INPUT, HIGH> activeHighSwitch{new Handler<App>(this, &App::onActiveHighSwitch), ON_CHANGE};
-
-  // Multi-position switch (e.g., rotary/selector) - reports which position is active
-  PinMultiSwitch<A0, INPUT, 0, 200, 400, 600> multiPositionSwitch{new Handler<App>(this, &App::onMultiPositionSwitch), ON_CHANGE};
-
-  // Multiple buttons on a single ADC pin using resistor ladder:
-  //   ADC Pin  -----+--R1--+--R2--+--R3--+--R4--+
-  //  (analog A1)    |      |      |      |      |
-  //                  \      \      \      \      \
-  //                 |      |      |      |      |
-  //      GND   -----+------+------+------+------+
-  //
-  // Each button produces different ADC value when pressed/
-  // Using ON_RELEASE to detect when button is released
-  //
-  // Note:
-  // The first value in the list (here is 0) is reserved to indicate "inactive" state
-  PinMultiSwitch<A1, INPUT_PULLUP, 0, 200, 400, 600> multiButtonPad{new Handler<App>(this, &App::onMultiButtonRelease), ON_RELEASE};
-
-  // Custom reader that reads two jumper pins as a 2-bit value (0-3)
+  // === Custom reader for jumper bank ===
   class JumpersBank
   {
   public:
@@ -50,7 +23,6 @@ private:
 
     signed short getValue()
     {
-      // Returns: 0,1,2,3 depending on jumper configuration
       return digitalRead(4) * 2 + digitalRead(5);
     }
 
@@ -59,27 +31,33 @@ private:
       return true;
     }
   };
-  // Jumper bank (2 pins) - reports 2-bit configuration value (0-3) on any change
-  Switch<DebounceDecor<JumpersBank>> jumperBank{new Handler<App>(this, &App::onJumperBankChanged), ON_CHANGE};
 
-public:
+  // ============================================================
+  //  Handlers + their methods, kept next to each other
+  //  (handlers declared first so switch objects below can use them)
+  // ============================================================
+
+  Handler<App> onToggleSwitchHandler{this, &App::onToggleSwitch};
   void onToggleSwitch(void *, CallbackInfo info)
   {
     Serial.print("Toggle switch (pin2): ");
     Serial.println(info.eventArg ? "ON" : "OFF");
   }
 
+  Handler<App> onPushButtonPressHandler{this, &App::onPushButtonPress};
   void onPushButtonPress(void *, CallbackInfo)
   {
     Serial.println("Push button (pin3): PRESSED");
   }
 
+  Handler<App> onActiveHighSwitchHandler{this, &App::onActiveHighSwitch};
   void onActiveHighSwitch(void *, CallbackInfo info)
   {
     Serial.print("Active HIGH switch (pin4): ");
     Serial.println(info.eventArg ? "ON" : "OFF");
   }
 
+  Handler<App> onMultiPositionHandler{this, &App::onMultiPositionSwitch};
   void onMultiPositionSwitch(void *, CallbackInfo info)
   {
     Serial.print("Multi-position switch (A0): ");
@@ -87,6 +65,7 @@ public:
     Serial.println(info.eventArg);
   }
 
+  Handler<App> onMultiButtonHandler{this, &App::onMultiButtonRelease};
   void onMultiButtonRelease(void *, CallbackInfo info)
   {
     Serial.print("Multi-button pad (A1): Button ");
@@ -94,11 +73,38 @@ public:
     Serial.println(" released");
   }
 
+  Handler<App> onJumperBankHandler{this, &App::onJumperBankChanged};
   void onJumperBankChanged(void *, CallbackInfo info)
   {
     Serial.print("Jumper bank (pins 4,5): Configuration ");
     Serial.println(info.eventArg);
   }
+
+  // ============================================================
+  //  Switch objects (reference the handlers above)
+  // ============================================================
+
+  // Simple toggle switch - reports both "ON" and "OFF" state changes
+  PullUpSwitch<2> toggleSwitch{&onToggleSwitchHandler, ON_CHANGE};
+
+  // Push button - reports only press events (release ignored)
+  PullUpSwitch<3> pushButton{&onPushButtonPressHandler, ON_PRESS};
+
+  // Active HIGH toggle - reports both "ON" and "OFF" state changes
+  PinSwitch<4, INPUT, HIGH> activeHighSwitch{&onActiveHighSwitchHandler, ON_CHANGE};
+
+  // Multi-position switch (e.g., rotary/selector) - reports which position is active
+  PinMultiSwitch<A0, INPUT, 0, 200, 400, 600>
+      multiPositionSwitch{&onMultiPositionHandler, ON_CHANGE};
+
+  // Multiple buttons on a single ADC pin using resistor ladder.
+  // First value (0) is reserved to indicate "inactive" state.
+  PinMultiSwitch<A1, INPUT_PULLUP, 0, 200, 400, 600>
+      multiButtonPad{&onMultiButtonHandler, ON_RELEASE};
+
+  // Jumper bank (2 pins) - reports 2-bit configuration value (0-3) on any change
+  Switch<DebounceDecor<JumpersBank>>
+      jumperBank{&onJumperBankHandler, ON_CHANGE};
 };
 
 void setup()

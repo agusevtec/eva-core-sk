@@ -1,5 +1,5 @@
 /**
- * eva Library - CountdownTimer Example (Connection Retry)
+ * EVA Core | EVA Survival Kit - CountdownTimer Example (Connection Retry)
  *
  * Simulates connection retry logic:
  * - Button press attempts to "connect"
@@ -17,17 +17,7 @@ using namespace eva;
 class App
 {
 private:
-  PullUpButton<3> connectButton{new Handler<App>(this, &App::onConnectPress), ON_PRESS};
-  BlinkingIndicator led{13};
-  CountdownTimer retryTimer{new Handler<App>(this, &App::onRetryTimer)};
-
-public:
-  App()
-  {
-    Serial.println("CountdownTimer Demo: Connection Retry");
-    Serial.println("Press button to start - retries 3 times");
-  }
-
+  Handler<App> onConnectPressHandler{this, &App::onConnectPress};
   void onConnectPress(void *, CallbackInfo)
   {
     Serial.println("\nStarting connection...");
@@ -35,6 +25,7 @@ public:
     retryTimer.start(1000, 3);
   }
 
+  Handler<App> onRetryTimerHandler{this, &App::onRetryTimer};
   void onRetryTimer(void *, CallbackInfo info)
   {
     // info.eventArg contains remaining retries (2,1,0)
@@ -51,6 +42,17 @@ public:
       Serial.println("All retries failed");
       led.off();
     }
+  }
+
+  PullUpButton<3> connectButton{&onConnectPressHandler, ON_PRESS};
+  BlinkingIndicator led{13};
+  CountdownTimer retryTimer{&onRetryTimerHandler};
+
+public:
+  App()
+  {
+    Serial.println("CountdownTimer Demo: Connection Retry");
+    Serial.println("Press button to start - retries 3 times");
   }
 };
 

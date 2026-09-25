@@ -983,14 +983,7 @@
 
 <span class="k">class</span><span class="w"> </span><span class="nc">App</span><span class="w"> </span><span class="p">{</span>
 <span class="k">private</span><span class="o">:</span>
-<span class="w">  </span><span class="c1">// Values are the expected analog readings for each button</span>
-<span class="w">  </span><span class="n">PinMultiButton</span><span class="o">&lt;</span><span class="n">A0</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT</span><span class="p">,</span><span class="w"> </span>
-<span class="w">                 </span><span class="mi">100</span><span class="p">,</span><span class="w">  </span><span class="c1">// Button 1 threshold</span>
-<span class="w">                 </span><span class="mi">300</span><span class="p">,</span><span class="w">  </span><span class="c1">// Button 2 threshold</span>
-<span class="w">                 </span><span class="mi">500</span><span class="p">,</span><span class="w">  </span><span class="c1">// Button 3 threshold</span>
-<span class="w">                 </span><span class="mi">700</span><span class="o">&gt;</span><span class="w">  </span><span class="c1">// Button 4 threshold</span>
-<span class="w">    </span><span class="n">buttonBank</span><span class="p">;</span>
-
+<span class="w">  </span><span class="n">Handler</span><span class="o">&lt;</span><span class="n">App</span><span class="o">&gt;</span><span class="w"> </span><span class="n">onButtonEventHandler</span><span class="p">{</span><span class="w"> </span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">App</span><span class="o">::</span><span class="n">onButtonEvent</span><span class="w"> </span><span class="p">};</span>
 <span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">onButtonEvent</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">CallbackInfo</span><span class="w"> </span><span class="n">cbInfo</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="c1">// The button level is encoded in callback info</span>
 <span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">levelCode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cbInfo</span><span class="p">.</span><span class="n">eventArg</span><span class="p">;</span>
@@ -1013,12 +1006,17 @@
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">}</span>
 
+<span class="w">  </span><span class="c1">// Values are the expected analog readings for each button</span>
+<span class="w">  </span><span class="n">PinMultiButton</span><span class="o">&lt;</span><span class="n">A0</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT</span><span class="p">,</span>
+<span class="w">                 </span><span class="mi">100</span><span class="p">,</span><span class="w">  </span><span class="c1">// Button 1 threshold</span>
+<span class="w">                 </span><span class="mi">300</span><span class="p">,</span><span class="w">  </span><span class="c1">// Button 2 threshold</span>
+<span class="w">                 </span><span class="mi">500</span><span class="p">,</span><span class="w">  </span><span class="c1">// Button 3 threshold</span>
+<span class="w">                 </span><span class="mi">700</span><span class="o">&gt;</span><span class="w">  </span><span class="c1">// Button 4 threshold</span>
+<span class="w">    </span><span class="n">buttonBank</span><span class="p">;</span>
+
 <span class="k">public</span><span class="o">:</span>
 <span class="w">  </span><span class="n">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">buttonBank</span><span class="p">.</span><span class="n">setListener</span><span class="p">(</span>
-<span class="w">      </span><span class="k">new</span><span class="w"> </span><span class="n">Handler</span><span class="o">&lt;</span><span class="n">App</span><span class="o">&gt;</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">App</span><span class="o">::</span><span class="n">onButtonEvent</span><span class="p">),</span>
-<span class="w">      </span><span class="n">ON_SHORTCLICK</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">ON_LONGCLICK</span>
-<span class="w">    </span><span class="p">);</span>
+<span class="w">    </span><span class="n">buttonBank</span><span class="p">.</span><span class="n">setListener</span><span class="p">(</span><span class="o">&amp;</span><span class="n">onButtonEventHandler</span><span class="p">,</span><span class="w"> </span><span class="n">ON_SHORTCLICK</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">ON_LONGCLICK</span><span class="p">);</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">};</span>
 

@@ -1,5 +1,5 @@
 /**
- * eva Library - Slider and Joystick Examples
+ * EVA Core | EVA Survival Kit - Slider and Joystick Examples
  */
 
 #include <evaTac.h>
