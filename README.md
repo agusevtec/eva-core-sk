@@ -1,8 +1,8 @@
 # EVA Core | EVA Survival Kit (eva-core-sk)
 
-A library providing the architectural core with essential components for event-driven Arduino applications.
+**Coming from C#, Java, JS, or Python?** The library is your natural habitat — OOP, handlers, events, composition. The only twist: template decorators instead of runtime polymorphism.
 
-It implements—and in fact defines—a concept: Extremely Versatile Architecture (EVA). This approach is designed to make user code comfortable and intuitive. Instead of fighting with loop() and filling it with ever-growing state-checking code, you build your application from components that know how to update themselves. A single call to eva::tac() drives everything.
+**Coming from Arduino?** The library is how you organize user code once `loop()` is no longer enough. It implements and in fact defines a concept: Extremely Versatile Architecture (EVA). This approach is designed to make user code comfortable and intuitive. Instead of fighting with loop() and filling it with ever-growing state-checking code, you build your application from components that know how to update themselves. A single call to eva::tac() drives everything.
 
 ## Quick Example
 
@@ -59,7 +59,6 @@ Flexibility without performance loss. Everything resolves at compile time.
 
 ### Survival Kit (SK)
 - **Buttons**: `Switch`, `Button`, `ScrollButton` and its variations
-- **Switches**: `PinSwitch`, `PullupSwitch`, `PulldownSwitch`
 - **Timers**: `DelayTimer`, `RepeatTimer`, `CountdownTimer`
 - **Indicators**: `Indicator`, `BlinkingIndicator`, `CountdownIndicator`
 - **Analog Inputs**: `Joystick`, `Slider`

@@ -1,10 +1,22 @@
 # Why EVA?
 
+If you come from Java, C#, JavaScript, or Python — EVA is just three letters,
+and your natural habitat. OOP, delegates, events, composition over inheritance,
+predictable construction — all the things you already reach for. The only twist
+is that features are assembled at compile time via template decorators instead
+of runtime polymorphism. Think of it as your comfy slippers, tailored for a
+microcontroller.
+
+If you grew up in the Arduino world — read on.
+
+---
+
 ## Extremely Versatile Architecture (EVA)
 
 ### Declaration
 
-EVA is a concept of comfortable user code. A set of principles that make Arduino development enjoyable rather than painful:
+EVA is a concept of comfortable user code. A set of principles that make Arduino
+development enjoyable rather than painful:
 
 - **Self-documenting** — code reads like a story, not a puzzle
 - **Testability** — components can be verified in isolation
@@ -14,32 +26,49 @@ EVA is a concept of comfortable user code. A set of principles that make Arduino
 
 ### The Three Pillars
 
-The layered architecture continues into user code in an object-oriented way through three pillars:
+The layered architecture continues into user code in an object-oriented way
+through three pillars:
 
 **Uniform Time Ownership.**
-Many components—either explicitly or implicitly—claim their own slice, and only their slice, of the famous Arduino `loop()`, and user code is encouraged to do the same. Timings become a natural part of the contract between objects—whether between user objects and library objects, or among user objects themselves.
+Many components—either explicitly or implicitly—claim their own slice, and only
+their slice, of the famous Arduino `loop()`, and user code is encouraged to do
+the same. Timings become a natural part of the contract between objects—whether
+between user objects and library objects, or among user objects themselves.
 
 **Feature Construction via Template Decorators.**
-Instead of bloated classes trying to solve every edge case, complex behaviors are assembled out of simple primitives using template decorators. You wrap and compose functionality at compile time.
+Instead of bloated classes trying to solve every edge case, complex behaviors
+are assembled out of simple primitives using template decorators. You wrap and
+compose functionality at compile time.
 
 **Event-Driven Execution.**
-Components do not poll; they notify when something happens via OOP-friendly Handlers that bind events to methods naturally. Control flow becomes an explicit chain of reactions rather than a loop of checks.
+Components do not poll; they notify when something happens via OOP-friendly
+Handlers that bind events to methods naturally. Control flow becomes an explicit
+chain of reactions rather than a loop of checks.
 
 ---
 
 ### Implementation
 
-EVA Core | EVA Survival Kit (eva-core-sk) is a concrete implementation of this concept—a library that puts these principles into practice. Architectural core with essential components for event-driven Arduino applications.
+EVA Core | EVA Survival Kit (eva-core-sk) is a concrete implementation of this
+concept—a library that puts these principles into practice. Architectural core
+with essential components for event-driven Arduino applications.
 
 **eva-core-sk** is organized into two distinct domains:
 
-- **Core** — the engine: `Tickable`, `Handler`, `IReader`, `Heartbeat`. These are the fundamental building blocks that make the concept work.
-- **Survival Kit (SK)** — ready-to-use components: `Button`, `Switch`, `Timer`, `Indicator`, and more. These are what you reach for when building actual applications.
+- **Core** — the engine: `Tickable`, `Handler`, `IReader`, `Heartbeat`. These
+  are the fundamental building blocks that make the concept work.
+- **Survival Kit (SK)** — ready-to-use components: `Button`, `Switch`, `Timer`,
+  `Indicator`, and more. These are what you reach for when building actual
+  applications.
 
 ---
 
 ### The Result
 
-When you write code in the spirit of EVA—composing components, letting them manage their own time, communicating through events—something unexpected happens.
+When you write code in the spirit of EVA—composing components, letting them
+manage their own time, communicating through events—something unexpected
+happens.
 
-Coming back to your own code later becomes **genuinely pleasant**. EVA makes your code feel like it was written by someone who **cared** about the person who would read it next—even if that person is future you.
+Coming back to your own code later becomes **genuinely pleasant**. EVA makes
+your code feel like it was written by someone who **cared** about the person who
+would read it next—even if that person is future you.
