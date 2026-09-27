@@ -25,6 +25,8 @@ namespace eva
     template <class T>
     class Handler : public IHandler
     {
+        T *msgReceiver;
+        void (T::*method)(void *, CallbackInfo);
     public:
         Handler(T *msgReceiver, void (T::*method)(void *, CallbackInfo))
             : msgReceiver(msgReceiver), method(method)
@@ -35,10 +37,6 @@ namespace eva
         {
             (this->msgReceiver->*method)(msgSender, cbInfo);
         }
-
-    private:
-        void (T::*method)(void *, CallbackInfo);
-        T *msgReceiver;
     };
 
     /**
