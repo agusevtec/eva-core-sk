@@ -43,10 +43,6 @@ public:
       return 0;  // Center zone (nothing happening)
     return 2;    // Right zone
   }
-  bool isValid()
-  {
-    return true;
-  }
 };
 
 // Step 3: Assemble into a Button
@@ -109,6 +105,10 @@ public:
   
   signed short getValue() {
     return lastValue;
+  }
+  bool isValid()
+  {
+    return true;
   }
 };
 

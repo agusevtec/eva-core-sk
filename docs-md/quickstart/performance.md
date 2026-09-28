@@ -45,6 +45,10 @@ public:
     if (digitalRead(5) == LOW) return 'r';  // Right button
     return 0;  // No button
   }
+  bool isValid()
+  {
+    return true;
+  }
 };
 
 
