@@ -165,8 +165,7 @@ test(list_can_remove_last_element) {
     assertEqual(*list[0], 10);
     assertEqual(*list[1], 20);
 }
-
-// Поиск
+       
 test(list_can_find_index_of_item) {
     List<int> list;
     list.append(10);

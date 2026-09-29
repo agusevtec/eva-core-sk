@@ -118,7 +118,7 @@ test(heartbeat_multiple_in_chain) {
 }
 
 test(heartbeat_minimal_period) {
-    TestHeartbeat hb(1); // Самый маленький период
+    TestHeartbeat hb(1); 
     
     hb.heartbeatCount = 0;
     
@@ -132,7 +132,6 @@ test(heartbeat_no_extra_calls) {
     
     hb.heartbeatCount = 0;
     
-    // Вызываем tac() много раз за короткое время
     for (int i = 0; i < 10; i++) {
         delay(5);
         eva::tac();
