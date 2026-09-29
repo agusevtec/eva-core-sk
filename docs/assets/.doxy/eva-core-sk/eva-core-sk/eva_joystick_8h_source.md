@@ -14,7 +14,7 @@
 
 namespace eva
 {
-  template <class TReader, unsigned short tMinPos = 0, unsigned short tMiddlePos = 512, unsigned short tMaxPos = 1024>
+  template <class TReader, signed short tMinPos = 0, signed short tMiddlePos = 512, signed short tMaxPos = 1024>
   class Joystick : public TReader
   {
   public:
@@ -27,7 +27,7 @@ namespace eva
     {
     }
 
-    signed short getValue(unsigned short aMinPos, unsigned short aMiddlePos, unsigned short aMaxPos)
+    signed short getValue(signed short aMinPos, signed short aMiddlePos, signed short aMaxPos)
     {
       signed short value = TReader::getValue();
       if ((value < aMiddlePos) ^ (aMinPos < aMaxPos))
@@ -71,9 +71,9 @@ namespace eva
     unsigned char deadZone;
   };
 
-  template <int tPin, int tPinMode, unsigned short tMinPos, unsigned short tMaxPos>
+  template <int tPin, int tPinMode, signed short tMinPos, signed short tMaxPos>
   using PinSymmetricJoystick = Joystick<AnalogPinReader<tPin, tPinMode>, tMinPos, (tMaxPos + tMinPos) / 2, tMaxPos>;
-  template <int tPin, int tPinMode, unsigned short tMinPos, unsigned short tMiddlePos, unsigned short tMaxPos>
+  template <int tPin, int tPinMode, signed short tMinPos, signed short tMiddlePos, signed short tMaxPos>
   using PinJoystick = Joystick<AnalogPinReader<tPin, tPinMode>, tMinPos, tMiddlePos, tMaxPos>;
 };
 ```

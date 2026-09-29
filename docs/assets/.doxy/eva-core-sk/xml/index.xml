@@ -142,7 +142,7 @@
     <member refid="classeva_1_1_joystick_1a554833b027987782b81f4f7363f37e1f" kind="variable"><name>deadZone</name></member>
     <member refid="classeva_1_1_joystick_1ad08815d85e3e8721d09ef913ec738d15" kind="function"><name>Joystick</name></member>
     <member refid="classeva_1_1_joystick_1af5ee2b692e85827ebdd40bba53568400" kind="function"><name>Joystick</name></member>
-    <member refid="classeva_1_1_joystick_1a7a66e63f0a26f029c5c4b2be7d64ccc3" kind="function"><name>getValue</name></member>
+    <member refid="classeva_1_1_joystick_1a3f2e83e7af1f43de5e028c279b099988" kind="function"><name>getValue</name></member>
     <member refid="classeva_1_1_joystick_1a5ef74c82b6fc8cb91d96554762ca898c" kind="function"><name>getValue</name></member>
     <member refid="classeva_1_1_joystick_1a04bac91178f262a442dc68cb224da3c9" kind="function"><name>setTrim</name></member>
     <member refid="classeva_1_1_joystick_1a9994938fd1ac6124f492c80bbe3dfddc" kind="function"><name>addTrim</name></member>
@@ -221,7 +221,7 @@
   </compound>
   <compound refid="classeva_1_1_slider" kind="class"><name>eva::Slider</name>
     <member refid="classeva_1_1_slider_1ade6a3e0be6e049ade169822fb1abd8df" kind="function"><name>Slider</name></member>
-    <member refid="classeva_1_1_slider_1a22dd265d6942716bd0bfbab0191f6553" kind="function"><name>getValue</name></member>
+    <member refid="classeva_1_1_slider_1a063dc8182f6d94d5dc24ec2733f1eca0" kind="function"><name>getValue</name></member>
     <member refid="classeva_1_1_slider_1a232d1b307281f6d37a89f8e9069cd8da" kind="function"><name>getValue</name></member>
   </compound>
   <compound refid="classeva_1_1_switch" kind="class"><name>eva::Switch</name>

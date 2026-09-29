@@ -9,19 +9,19 @@
         <type>class TReader</type>
       </param>
       <param>
-        <type>unsigned short</type>
+        <type>signed short</type>
         <declname>tMinPos</declname>
         <defname>tMinPos</defname>
         <defval>0</defval>
       </param>
       <param>
-        <type>unsigned short</type>
+        <type>signed short</type>
         <declname>tMiddlePos</declname>
         <defname>tMiddlePos</defname>
         <defval>512</defval>
       </param>
       <param>
-        <type>unsigned short</type>
+        <type>signed short</type>
         <declname>tMaxPos</declname>
         <defname>tMaxPos</defname>
         <defval>1024</defval>
@@ -121,22 +121,22 @@
         </inbodydescription>
         <location file="src/evaJoystick.h" line="32" column="5" bodyfile="src/evaJoystick.h" bodystart="32" bodyend="34"/>
       </memberdef>
-      <memberdef kind="function" id="classeva_1_1_joystick_1a7a66e63f0a26f029c5c4b2be7d64ccc3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classeva_1_1_joystick_1a3f2e83e7af1f43de5e028c279b099988" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>signed short</type>
         <definition>signed short eva::Joystick&lt; TReader, tMinPos, tMiddlePos, tMaxPos &gt;::getValue</definition>
-        <argsstring>(unsigned short aMinPos, unsigned short aMiddlePos, unsigned short aMaxPos)</argsstring>
+        <argsstring>(signed short aMinPos, signed short aMiddlePos, signed short aMaxPos)</argsstring>
         <name>getValue</name>
         <qualifiedname>eva::Joystick::getValue</qualifiedname>
         <param>
-          <type>unsigned short</type>
+          <type>signed short</type>
           <declname>aMinPos</declname>
         </param>
         <param>
-          <type>unsigned short</type>
+          <type>signed short</type>
           <declname>aMiddlePos</declname>
         </param>
         <param>
-          <type>unsigned short</type>
+          <type>signed short</type>
           <declname>aMaxPos</declname>
         </param>
         <briefdescription>
@@ -394,7 +394,7 @@
       <member refid="classeva_1_1_joystick_1a554833b027987782b81f4f7363f37e1f" prot="private" virt="non-virtual"><scope>eva::Joystick</scope><name>deadZone</name></member>
       <member refid="classeva_1_1_joystick_1a7e52ddfc83797d3e40fd2b56360c69e5" prot="public" virt="non-virtual"><scope>eva::Joystick</scope><name>getDeadZone</name></member>
       <member refid="classeva_1_1_joystick_1a89d77fce5509cbf7949ee5a3adb4dc6f" prot="public" virt="non-virtual"><scope>eva::Joystick</scope><name>getTrim</name></member>
-      <member refid="classeva_1_1_joystick_1a7a66e63f0a26f029c5c4b2be7d64ccc3" prot="public" virt="non-virtual"><scope>eva::Joystick</scope><name>getValue</name></member>
+      <member refid="classeva_1_1_joystick_1a3f2e83e7af1f43de5e028c279b099988" prot="public" virt="non-virtual"><scope>eva::Joystick</scope><name>getValue</name></member>
       <member refid="classeva_1_1_joystick_1a5ef74c82b6fc8cb91d96554762ca898c" prot="public" virt="non-virtual"><scope>eva::Joystick</scope><name>getValue</name></member>
       <member refid="classeva_1_1_joystick_1ad08815d85e3e8721d09ef913ec738d15" prot="public" virt="non-virtual"><scope>eva::Joystick</scope><name>Joystick</name></member>
       <member refid="classeva_1_1_joystick_1af5ee2b692e85827ebdd40bba53568400" prot="public" virt="non-virtual"><scope>eva::Joystick</scope><name>Joystick</name></member>

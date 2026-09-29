@@ -2,7 +2,7 @@
 
 # Class eva::Slider
 
-**template &lt;class TReader, unsigned short tMinPos, unsigned short tMaxPos&gt;**
+**template &lt;class TReader, signed short tMinPos, signed short tMaxPos&gt;**
 
 
 
@@ -56,7 +56,7 @@ Inherits the following classes: TReader
 | Type | Name |
 | ---: | :--- |
 |   | [**Slider**](#function-slider) (Args... args) <br>_Constructs a_ [_**Slider**_](classeva_1_1_slider.md) _._ |
-|  signed short | [**getValue**](#function-getvalue-12) (unsigned short aMinPos, unsigned short aMaxPos) <br>_Gets normalized slider position with custom range._  |
+|  signed short | [**getValue**](#function-getvalue-12) (signed short aMinPos, signed short aMaxPos) <br>_Gets normalized slider position with custom range._  |
 |  signed short | [**getValue**](#function-getvalue-22) () <br>_Gets normalized slider position._  |
 
 
@@ -140,8 +140,8 @@ inline eva::Slider::Slider (
 _Gets normalized slider position with custom range._ 
 ```C++
 inline signed short eva::Slider::getValue (
-    unsigned short aMinPos,
-    unsigned short aMaxPos
+    signed short aMinPos,
+    signed short aMaxPos
 ) 
 ```
 

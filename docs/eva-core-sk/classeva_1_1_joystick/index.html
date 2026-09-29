@@ -837,7 +837,7 @@
 
 
 <h1 id="class-evajoystick">Class eva::Joystick<a class="headerlink" href="#class-evajoystick" title="Permanent link">&para;</a></h1>
-<p><strong>template &lt;class TReader, unsigned short tMinPos, unsigned short tMiddlePos, unsigned short tMaxPos&gt;</strong></p>
+<p><strong>template &lt;class TReader, signed short tMinPos, signed short tMiddlePos, signed short tMaxPos&gt;</strong></p>
 <p><a href="../annotated/"><strong>ClassList</strong></a> <strong>&gt;</strong> <a href="../namespaceeva/"><strong>eva</strong></a> <strong>&gt;</strong> <a href="./"><strong>Joystick</strong></a></p>
 <p><a href="./"><em><strong>Joystick</strong></em></a> <em>axis reader (range -1000 .. 0 .. 1000) with trim adjustment.</em><a href="#detailed-description">More...</a></p>
 <ul>
@@ -875,7 +875,7 @@
 </tr>
 <tr>
 <td style="text-align: right;">signed short</td>
-<td style="text-align: left;"><a href="#function-getvalue-12"><strong>getValue</strong></a> (unsigned short aMinPos, unsigned short aMiddlePos, unsigned short aMaxPos) <br><em>Gets normalized joystick position with custom ranges.</em></td>
+<td style="text-align: left;"><a href="#function-getvalue-12"><strong>getValue</strong></a> (signed short aMinPos, signed short aMiddlePos, signed short aMaxPos) <br><em>Gets normalized joystick position with custom ranges.</em></td>
 </tr>
 <tr>
 <td style="text-align: right;">signed short</td>
@@ -961,9 +961,9 @@
 <h3 id="function-getvalue-12">function getValue [1/2]<a class="headerlink" href="#function-getvalue-12" title="Permanent link">&para;</a></h3>
 <p><em>Gets normalized joystick position with custom ranges.</em> </p>
 <div class="codehilite"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="kt">signed</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">Joystick</span><span class="o">::</span><span class="n">getValue</span><span class="w"> </span><span class="p">(</span>
-<span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">aMinPos</span><span class="p">,</span>
-<span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">aMiddlePos</span><span class="p">,</span>
-<span class="w">    </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">aMaxPos</span>
+<span class="w">    </span><span class="kt">signed</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">aMinPos</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">signed</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">aMiddlePos</span><span class="p">,</span>
+<span class="w">    </span><span class="kt">signed</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">aMaxPos</span>
 <span class="p">)</span><span class="w"> </span>
 </code></pre></div>
 

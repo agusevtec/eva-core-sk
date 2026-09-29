@@ -222,12 +222,12 @@
             <defname>tPinMode</defname>
           </param>
           <param>
-            <type>unsigned short</type>
+            <type>signed short</type>
             <declname>tMinPos</declname>
             <defname>tMinPos</defname>
           </param>
           <param>
-            <type>unsigned short</type>
+            <type>signed short</type>
             <declname>tMaxPos</declname>
             <defname>tMaxPos</defname>
           </param>
@@ -293,17 +293,17 @@
             <defname>tPinMode</defname>
           </param>
           <param>
-            <type>unsigned short</type>
+            <type>signed short</type>
             <declname>tMinPos</declname>
             <defname>tMinPos</defname>
           </param>
           <param>
-            <type>unsigned short</type>
+            <type>signed short</type>
             <declname>tMiddlePos</declname>
             <defname>tMiddlePos</defname>
           </param>
           <param>
-            <type>unsigned short</type>
+            <type>signed short</type>
             <declname>tMaxPos</declname>
             <defname>tMaxPos</defname>
           </param>
@@ -538,7 +538,7 @@
       <memberdef kind="typedef" id="eva_slider_8h_1ac03e4e3ae7a608331da6629a8d2fccd1" prot="public" static="no">
         <templateparamlist>
           <param>
-            <type>unsigned short</type>
+            <type>signed short</type>
             <declname>tPin</declname>
             <defname>tPin</defname>
           </param>
@@ -548,12 +548,12 @@
             <defname>tPinMode</defname>
           </param>
           <param>
-            <type>unsigned short</type>
+            <type>signed short</type>
             <declname>tMinPos</declname>
             <defname>tMinPos</defname>
           </param>
           <param>
-            <type>unsigned short</type>
+            <type>signed short</type>
             <declname>tMaxPos</declname>
             <defname>tMaxPos</defname>
           </param>

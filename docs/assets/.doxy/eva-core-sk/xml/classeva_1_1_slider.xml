@@ -9,13 +9,13 @@
         <type>class TReader</type>
       </param>
       <param>
-        <type>unsigned short</type>
+        <type>signed short</type>
         <declname>tMinPos</declname>
         <defname>tMinPos</defname>
         <defval>0</defval>
       </param>
       <param>
-        <type>unsigned short</type>
+        <type>signed short</type>
         <declname>tMaxPos</declname>
         <defname>tMaxPos</defname>
         <defval>1024</defval>
@@ -58,18 +58,18 @@
         </inbodydescription>
         <location file="src/evaSlider.h" line="23" column="5" bodyfile="src/evaSlider.h" bodystart="23" bodyend="25"/>
       </memberdef>
-      <memberdef kind="function" id="classeva_1_1_slider_1a22dd265d6942716bd0bfbab0191f6553" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classeva_1_1_slider_1a063dc8182f6d94d5dc24ec2733f1eca0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>signed short</type>
         <definition>signed short eva::Slider&lt; TReader, tMinPos, tMaxPos &gt;::getValue</definition>
-        <argsstring>(unsigned short aMinPos, unsigned short aMaxPos)</argsstring>
+        <argsstring>(signed short aMinPos, signed short aMaxPos)</argsstring>
         <name>getValue</name>
         <qualifiedname>eva::Slider::getValue</qualifiedname>
         <param>
-          <type>unsigned short</type>
+          <type>signed short</type>
           <declname>aMinPos</declname>
         </param>
         <param>
-          <type>unsigned short</type>
+          <type>signed short</type>
           <declname>aMaxPos</declname>
         </param>
         <briefdescription>
@@ -175,7 +175,7 @@
     </collaborationgraph>
     <location file="src/evaSlider.h" line="15" column="3" bodyfile="src/evaSlider.h" bodystart="16" bodyend="44"/>
     <listofallmembers>
-      <member refid="classeva_1_1_slider_1a22dd265d6942716bd0bfbab0191f6553" prot="public" virt="non-virtual"><scope>eva::Slider</scope><name>getValue</name></member>
+      <member refid="classeva_1_1_slider_1a063dc8182f6d94d5dc24ec2733f1eca0" prot="public" virt="non-virtual"><scope>eva::Slider</scope><name>getValue</name></member>
       <member refid="classeva_1_1_slider_1a232d1b307281f6d37a89f8e9069cd8da" prot="public" virt="non-virtual"><scope>eva::Slider</scope><name>getValue</name></member>
       <member refid="classeva_1_1_slider_1ade6a3e0be6e049ade169822fb1abd8df" prot="public" virt="non-virtual"><scope>eva::Slider</scope><name>Slider</name></member>
     </listofallmembers>
