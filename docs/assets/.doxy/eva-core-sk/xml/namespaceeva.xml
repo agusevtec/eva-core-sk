@@ -1,42 +1,42 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
   <compounddef id="namespaceeva" kind="namespace" language="C++">
     <compoundname>eva</compoundname>
-    <innerclass refid="classeva_1_1_analog_mutable_pin_reader" prot="public">eva::AnalogMutablePinReader</innerclass>
-    <innerclass refid="classeva_1_1_analog_pin_reader" prot="public">eva::AnalogPinReader</innerclass>
-    <innerclass refid="classeva_1_1_binarize_eq_decor" prot="public">eva::BinarizeEqDecor</innerclass>
-    <innerclass refid="classeva_1_1_binarize_gt_decor" prot="public">eva::BinarizeGtDecor</innerclass>
-    <innerclass refid="classeva_1_1_binarize_lt_decor" prot="public">eva::BinarizeLtDecor</innerclass>
     <innerclass refid="classeva_1_1_blinking_indicator" prot="public">eva::BlinkingIndicator</innerclass>
     <innerclass refid="classeva_1_1_button" prot="public">eva::Button</innerclass>
-    <innerclass refid="structeva_1_1_callback_info" prot="public">eva::CallbackInfo</innerclass>
     <innerclass refid="classeva_1_1_countdown_indicator" prot="public">eva::CountdownIndicator</innerclass>
     <innerclass refid="classeva_1_1_countdown_timer" prot="public">eva::CountdownTimer</innerclass>
-    <innerclass refid="classeva_1_1_debounce_decor" prot="public">eva::DebounceDecor</innerclass>
     <innerclass refid="classeva_1_1_delay_timer" prot="public">eva::DelayTimer</innerclass>
-    <innerclass refid="classeva_1_1_digital_mutable_pin_reader" prot="public">eva::DigitalMutablePinReader</innerclass>
-    <innerclass refid="classeva_1_1_digital_pin_reader" prot="public">eva::DigitalPinReader</innerclass>
+    <innerclass refid="structeva_1_1_callback_info" prot="public">eva::CallbackInfo</innerclass>
+    <innerclass refid="classeva_1_1_i_handler" prot="public">eva::IHandler</innerclass>
     <innerclass refid="classeva_1_1_handler" prot="public">eva::Handler</innerclass>
     <innerclass refid="classeva_1_1_handler_f" prot="public">eva::HandlerF</innerclass>
     <innerclass refid="classeva_1_1_heartbeat" prot="public">eva::Heartbeat</innerclass>
-    <innerclass refid="classeva_1_1_i_handler" prot="public">eva::IHandler</innerclass>
     <innerclass refid="classeva_1_1_indicator" prot="public">eva::Indicator</innerclass>
     <innerclass refid="classeva_1_1_i_reader" prot="public">eva::IReader</innerclass>
     <innerclass refid="classeva_1_1_i_reader_adapter" prot="public">eva::IReaderAdapter</innerclass>
     <innerclass refid="classeva_1_1_joystick" prot="public">eva::Joystick</innerclass>
-    <innerclass refid="classeva_1_1_list" prot="public">eva::List</innerclass>
     <innerclass refid="structeva_1_1_list_iterator" prot="public">eva::ListIterator</innerclass>
-    <innerclass refid="structeva_1_1_pin_scroll_multi_button" prot="public">eva::PinScrollMultiButton</innerclass>
-    <innerclass refid="structeva_1_1_pullup_scroll_button" prot="public">eva::PullupScrollButton</innerclass>
-    <innerclass refid="structeva_1_1_pullup_switch" prot="public">eva::PullupSwitch</innerclass>
+    <innerclass refid="classeva_1_1_list" prot="public">eva::List</innerclass>
+    <innerclass refid="classeva_1_1_debounce_decor" prot="public">eva::DebounceDecor</innerclass>
+    <innerclass refid="classeva_1_1_binarize_eq_decor" prot="public">eva::BinarizeEqDecor</innerclass>
+    <innerclass refid="classeva_1_1_binarize_lt_decor" prot="public">eva::BinarizeLtDecor</innerclass>
+    <innerclass refid="classeva_1_1_binarize_gt_decor" prot="public">eva::BinarizeGtDecor</innerclass>
     <innerclass refid="classeva_1_1_quantize_decor" prot="public">eva::QuantizeDecor</innerclass>
     <innerclass refid="classeva_1_1_repeat_timer" prot="public">eva::RepeatTimer</innerclass>
     <innerclass refid="classeva_1_1_ring_buffer" prot="public">eva::RingBuffer</innerclass>
     <innerclass refid="classeva_1_1_scroll_button" prot="public">eva::ScrollButton</innerclass>
+    <innerclass refid="structeva_1_1_pullup_scroll_button" prot="public">eva::PullupScrollButton</innerclass>
+    <innerclass refid="structeva_1_1_pin_scroll_multi_button" prot="public">eva::PinScrollMultiButton</innerclass>
     <innerclass refid="classeva_1_1_slider" prot="public">eva::Slider</innerclass>
-    <innerclass refid="classeva_1_1_switch" prot="public">eva::Switch</innerclass>
-    <innerclass refid="classeva_1_1_tickable" prot="public">eva::Tickable</innerclass>
     <innerclass refid="classeva_1_1_value_reader" prot="public">eva::ValueReader</innerclass>
+    <innerclass refid="classeva_1_1_digital_pin_reader" prot="public">eva::DigitalPinReader</innerclass>
+    <innerclass refid="classeva_1_1_analog_pin_reader" prot="public">eva::AnalogPinReader</innerclass>
+    <innerclass refid="classeva_1_1_analog_mutable_pin_reader" prot="public">eva::AnalogMutablePinReader</innerclass>
+    <innerclass refid="classeva_1_1_digital_mutable_pin_reader" prot="public">eva::DigitalMutablePinReader</innerclass>
+    <innerclass refid="classeva_1_1_switch" prot="public">eva::Switch</innerclass>
+    <innerclass refid="structeva_1_1_pullup_switch" prot="public">eva::PullupSwitch</innerclass>
+    <innerclass refid="classeva_1_1_tickable" prot="public">eva::Tickable</innerclass>
     <sectiondef kind="typedef">
       <memberdef kind="typedef" id="eva_button_8h_1af9198a0d14714f20087c33741adcd243" prot="public" static="no">
         <templateparamlist>

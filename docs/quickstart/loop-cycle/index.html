@@ -872,7 +872,7 @@
 <p><code>timer</code> is created with a 1000ms period</p>
 </li>
 <li>
-<p><code>new Handler&lt;MyAppScheduler&gt;(this, &amp;MyAppScheduler::onHeartBeat)</code> creates a handler that calls <code>onHeartBeat</code> when the timer fires</p>
+<p><code>Handler&lt;MyAppScheduler&gt;(this, &amp;onHeartBeat)</code> creates a handler that calls <code>onHeartBeat</code> when the timer fires because handler is passed to the timer</p>
 </li>
 </ul>
 <p>The library handles the rest, letting you focus on your application logic rather than wiring management.</p>

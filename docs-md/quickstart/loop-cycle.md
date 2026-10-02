@@ -61,7 +61,7 @@ void loop() {
 
 - `timer` is created with a 1000ms period
 
-- `new Handler<MyAppScheduler>(this, &MyAppScheduler::onHeartBeat)` creates a handler that calls `onHeartBeat` when the timer fires
+- `Handler<MyAppScheduler>(this, &onHeartBeat)` creates a handler that calls `onHeartBeat` when the timer fires because handler is passed to the timer
 
 The library handles the rest, letting you focus on your application logic rather than wiring management.
 
