@@ -13,7 +13,7 @@ void setup() {
 }
 
 void loop() {
-  eva::tac(); // updates all components
+  eva::tac(); // tick all components
 }
 ```
 

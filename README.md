@@ -34,7 +34,7 @@ void setup() {
 }
 
 void loop() {
-  eva::tac();  // One call drives everything
+  eva::tac();  // Tick all components. One call drives everything
 }
 ```
 
