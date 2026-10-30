@@ -85,7 +85,7 @@ Full documentation is available at **[https://agusevtec.github.io/eva-core-sk](h
 - [Quick Start: loop() and Tickable](https://agusevtec.github.io/eva-core-sk/quickstart/loop-cycle)
 - [Working with Buttons](https://agusevtec.github.io/eva-core-sk/quickstart/working-with-buttons)
 - [Flexibility: Beyond Standard Inputs](https://agusevtec.github.io/eva-core-sk/quickstart/flexibility)
-- [Optimization: Performance Without Compromise](https://agusevtec.github.io/eva-core-sk/quickstart/performance)
+- [Optimization: Performance](https://agusevtec.github.io/eva-core-sk/quickstart/performance)
 
 ## Ecosystem
 
