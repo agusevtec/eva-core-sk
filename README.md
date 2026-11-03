@@ -97,7 +97,7 @@ EVA Motors – micro-motor drivers and their behavioural modifiers: https://gith
 
 EVA Boxy – declarative GUI framework: https://github.com/agusevtec/eva-boxy
 
-**Want to make your library part of the ecosystem?** [Read the invitation](https://agusevtec.github.io/eva-core-sk/ecosystem/invitation)
+**Want to make your library part of the ecosystem?** [Read the invitation](https://agusevtec.github.io/eva-core-sk/ecosystem/ecosystem)
 
 ## Installation
 
