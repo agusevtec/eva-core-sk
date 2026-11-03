@@ -2,7 +2,7 @@
 
 **Coming from C#, Java, JS, or Python?** The library is your natural habitat — OOP, handlers, events, composition. The only twist: template decorators instead of runtime polymorphism.
 
-**Coming from Arduino?** The library is how you organize user code once `loop()` is no longer enough. It implements and in fact defines a concept: Extremely Versatile Architecture (EVA). This approach is designed to make user code comfortable and intuitive. Instead of fighting with loop() and filling it with ever-growing state-checking code, you build your application from components that know how to update themselves. A single call to eva::tac() drives everything.
+**Coming from Arduino?** The library is how you organize user code once `loop()` is no longer enough. It implements, and in effect defines, a concept: Extremely Versatile Architecture (EVA). This approach is designed to make user code comfortable and intuitive. Instead of fighting with loop() and filling it with ever-growing state-checking code, you build your application from components that know how to update themselves. A single call to eva::tac() drives everything.
 
 ## Quick Example
 
@@ -93,7 +93,7 @@ Currently, the following projects are part of the ecosystem:
 
 EVA Filters - signal filtering library: https://github.com/agusevtec/eva-filters
 
-EVA Motors – micro-motor drivers: https://github.com/agusevtec/eva-motors
+EVA Motors – micro-motor drivers and their behavioural modifiers: https://github.com/agusevtec/eva-motors
 
 EVA Boxy – declarative GUI framework: https://github.com/agusevtec/eva-boxy
 

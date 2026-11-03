@@ -13,7 +13,7 @@ nav:
     - Flexibility: quickstart/flexibility.md
   - Ecosystem:
     - Motivation: ecosystem/motivation.md
-    - Invitation: ecosystem/invitation.md
+    - Projects: ecosystem/ecosystem.md
 
   - API Reference:
       - Classes: eva-core-sk/annotated.md
