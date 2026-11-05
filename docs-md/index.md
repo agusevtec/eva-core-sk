@@ -26,24 +26,20 @@ development enjoyable rather than painful:
 
 ### The Three Core Principles
 
-The layered architecture continues into user code in an object-oriented way
-through three principles:
+These principles are intended to make user code comfortable to work with when
+it is designed as a set of interacting components:
 
-**Everything that needs time joins a single update chain.**
+**Getting time from `loop()` should be simple.**
+A component should have a simple way to get time from the `loop()` cycle — without
+threading an `update()` method through every object.
 
-Getting time from loop() should be simple. When you design a component,
-you should have a simple way to get time from the loop() cycle — without 
-threading an update() method through every object.
+**Notifying another component should be simple.**
+A component should have a simple way to notify through another component's method.
 
-**Components don't poll, they notify.**
+**Components should be embeddable mid-chain.**
+A component should be embeddable into the middle of a data-processing chain, not
+only at its end.
 
-Notifying another component should be simple. When you design components, 
-you should have a simple way to notify through another component's method
-
-**Flexibility without performance loss**
-
-Components should be embeddable mid-chain. You should have a way to embed 
-components into the middle of a data-processing chain, not only at its end.
 
 ---
 

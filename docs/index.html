@@ -889,18 +889,16 @@ development enjoyable rather than painful:</p>
 </ul>
 <hr />
 <h3 id="the-three-core-principles">The Three Core Principles<a class="headerlink" href="#the-three-core-principles" title="Permanent link">&para;</a></h3>
-<p>The layered architecture continues into user code in an object-oriented way
-through three principles:</p>
-<p><strong>Everything that needs time joins a single update chain.</strong></p>
-<p>Getting time from loop() should be simple. When you design a component,
-you should have a simple way to get time from the loop() cycle — without 
-threading an update() method through every object.</p>
-<p><strong>Components don't poll, they notify.</strong></p>
-<p>Notifying another component should be simple. When you design components, 
-you should have a simple way to notify through another component's method</p>
-<p><strong>Flexibility without performance loss</strong></p>
-<p>Components should be embeddable mid-chain. You should have a way to embed 
-components into the middle of a data-processing chain, not only at its end.</p>
+<p>These principles are intended to make user code comfortable to work with when
+it is designed as a set of interacting components:</p>
+<p><strong>Getting time from <code>loop()</code> should be simple.</strong>
+A component should have a simple way to get time from the <code>loop()</code> cycle — without
+threading an <code>update()</code> method through every object.</p>
+<p><strong>Notifying another component should be simple.</strong>
+A component should have a simple way to notify through another component's method.</p>
+<p><strong>Components should be embeddable mid-chain.</strong>
+A component should be embeddable into the middle of a data-processing chain, not
+only at its end.</p>
 <hr />
 <h3 id="implementation">Implementation<a class="headerlink" href="#implementation" title="Permanent link">&para;</a></h3>
 <p>EVA Core | EVA Survival Kit (eva-core-sk) is a concrete implementation of this
