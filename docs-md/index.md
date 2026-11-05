@@ -24,26 +24,26 @@ development enjoyable rather than painful:
 
 ---
 
-### The Three Pillars
+### The Three Core Principles
 
 The layered architecture continues into user code in an object-oriented way
-through three pillars:
+through three principles:
 
-**Uniform Time Ownership.**
-Many components—either explicitly or implicitly—claim their own slice, and only
-their slice, of the famous Arduino `loop()`, and user code is encouraged to do
-the same. Timings become a natural part of the contract between objects—whether
-between user objects and library objects, or among user objects themselves.
+**Everything that needs time joins a single update chain.**
 
-**Feature Construction via Template Decorators.**
-Instead of bloated classes trying to solve every edge case, complex behaviors
-are assembled out of simple primitives using template decorators. You wrap and
-compose functionality at compile time.
+Getting time from loop() should be simple. When you design a component,
+you should have a simple way to get time from the loop() cycle — without 
+threading an update() method through every object.
 
-**Event-Driven Execution.**
-Components do not poll; they notify when something happens via OOP-friendly
-Handlers that bind events to methods naturally. Control flow becomes an explicit
-chain of reactions rather than a loop of checks.
+**Components don't poll, they notify.**
+
+Notifying another component should be simple. When you design components, 
+you should have a simple way to notify through another component's method
+
+**Flexibility without performance loss**
+
+Components should be embeddable mid-chain. You should have a way to embed 
+components into the middle of a data-processing chain, not only at its end.
 
 ---
 

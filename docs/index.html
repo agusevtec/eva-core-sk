@@ -303,10 +303,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#the-three-pillars" class="md-nav__link">
+  <a href="#the-three-core-principles" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The Three Pillars
+        The Three Core Principles
       
     </span>
   </a>
@@ -812,10 +812,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#the-three-pillars" class="md-nav__link">
+  <a href="#the-three-core-principles" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The Three Pillars
+        The Three Core Principles
       
     </span>
   </a>
@@ -888,22 +888,19 @@ development enjoyable rather than painful:</p>
 <li><strong>Refactoring-friendly</strong> — changing structure doesn't break behavior</li>
 </ul>
 <hr />
-<h3 id="the-three-pillars">The Three Pillars<a class="headerlink" href="#the-three-pillars" title="Permanent link">&para;</a></h3>
+<h3 id="the-three-core-principles">The Three Core Principles<a class="headerlink" href="#the-three-core-principles" title="Permanent link">&para;</a></h3>
 <p>The layered architecture continues into user code in an object-oriented way
-through three pillars:</p>
-<p><strong>Uniform Time Ownership.</strong>
-Many components—either explicitly or implicitly—claim their own slice, and only
-their slice, of the famous Arduino <code>loop()</code>, and user code is encouraged to do
-the same. Timings become a natural part of the contract between objects—whether
-between user objects and library objects, or among user objects themselves.</p>
-<p><strong>Feature Construction via Template Decorators.</strong>
-Instead of bloated classes trying to solve every edge case, complex behaviors
-are assembled out of simple primitives using template decorators. You wrap and
-compose functionality at compile time.</p>
-<p><strong>Event-Driven Execution.</strong>
-Components do not poll; they notify when something happens via OOP-friendly
-Handlers that bind events to methods naturally. Control flow becomes an explicit
-chain of reactions rather than a loop of checks.</p>
+through three principles:</p>
+<p><strong>Everything that needs time joins a single update chain.</strong></p>
+<p>Getting time from loop() should be simple. When you design a component,
+you should have a simple way to get time from the loop() cycle — without 
+threading an update() method through every object.</p>
+<p><strong>Components don't poll, they notify.</strong></p>
+<p>Notifying another component should be simple. When you design components, 
+you should have a simple way to notify through another component's method</p>
+<p><strong>Flexibility without performance loss</strong></p>
+<p>Components should be embeddable mid-chain. You should have a way to embed 
+components into the middle of a data-processing chain, not only at its end.</p>
 <hr />
 <h3 id="implementation">Implementation<a class="headerlink" href="#implementation" title="Permanent link">&para;</a></h3>
 <p>EVA Core | EVA Survival Kit (eva-core-sk) is a concrete implementation of this
