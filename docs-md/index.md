@@ -27,7 +27,7 @@ development enjoyable rather than painful:
 ### The Three Core Principles
 
 These principles are intended to make user code comfortable to work with when
-it is designed as a set of interacting components:
+designing it as a set of interacting components:
 
 **Getting time from `loop()` should be simple.**
 A component should have a simple way to get time from the `loop()` cycle — without
@@ -40,6 +40,7 @@ A component should have a simple way to notify through another component's metho
 A component should be embeddable into the middle of a data-processing chain, not
 only at its end.
 
+> Note. The library itself is built on the same principles internally.
 
 ---
 

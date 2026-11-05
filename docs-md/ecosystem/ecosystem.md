@@ -16,4 +16,4 @@ Each project follows the same architectural principles, so they compose naturall
 
 ## Join the Ecosystem
 
-If you publish a library that uses EVA Core directly, or through one of the ecosystem projects, you are welcome to have it listed here — just open an Issue in the EVA Core repository to get in touch and add your project to the ecosystem. As a matter of community convention (not a trademark license), ecosystem members are also welcome to use EVA as part of their library name or namespace to indicate that the project belongs to the ecosystem.
+If you publish your own library that uses EVA Core directly, or through one of the ecosystem projects, you are welcome to have it listed here — just open an Issue in the EVA Core repository to get in touch and add your project to the ecosystem. As a matter of community convention (not a trademark license), ecosystem members are also welcome to use EVA as part of their library name or namespace to indicate that the project belongs to the ecosystem.
