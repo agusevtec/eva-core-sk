@@ -32,8 +32,11 @@ A component should be embeddable into the middle of a data-processing chain, not
 only at its end.
 
 Together, these principles shape user code that is:
-- **Self-documenting** — code reads like a story, not a puzzle
+
+- **Self-documenting** — code reads like a story
+
 - **Testable** — components can be verified in isolation
+
 - **Refactoring-friendly** — changing structure doesn't break behavior
 
 ### Implementation
