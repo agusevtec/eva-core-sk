@@ -336,17 +336,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#one-sentence" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        One sentence
-      
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -862,17 +851,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#one-sentence" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        One sentence
-      
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -1036,17 +1014,6 @@ Time reaches only <code>FrameSource</code> — from <code>tac()</code>. <code>Pa
 No layer holds a reference to the concrete type of its neighbour. <code>FrameSource</code> holds <code>IHandler&amp;</code> — it does not know it is talking to a <code>PacketAssembler</code>. <code>PacketAssembler</code> holds <code>IHandler&amp;</code> — it does not know it is talking to a <code>PacketConsumer</code>. The only thing any layer can do with its neighbour is <code>invoke()</code>. That is the entire contract, and it is one-directional: data flows inward, and there is no back channel in the type at all. Replace any layer with another <code>IHandler</code> — the neighbours do not change. That is weak coupling: hard ownership, soft dependencies.</p>
 <p><strong>What this gives you.</strong>
 You can nest a fourth, fifth, tenth layer — <code>FrameSource</code> does not change. You can replace <code>FrameSource</code> — <code>PacketAssembler</code> does not change. You can replace <code>PacketAssembler</code> — <code>PacketConsumer</code> does not change. <code>loop()</code> never changes.</p>
-<h4 id="one-sentence">One sentence<a class="headerlink" href="#one-sentence" title="Permanent link">&para;</a></h4>
-<blockquote>
-<p>Hard ownership, soft dependencies: each layer knows only an <code>IHandler&amp;</code> for its neighbour and receives time from <code>tac()</code> instead of passing <code>update()</code> down the chain. <code>loop()</code> never changes.</p>
-</blockquote>
-<hr />
-<p>When you write code in the spirit of EVA—composing components, letting them
-manage their own time, communicating through events—something unexpected
-happens.</p>
-<p>Coming back to your own code later becomes <strong>genuinely pleasant</strong>. EVA makes
-your code feel like it was written by someone who <strong>cared</strong> about the person who
-would read it next—even if that person is future you.</p>
 
 
 

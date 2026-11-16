@@ -151,16 +151,3 @@ No layer holds a reference to the concrete type of its neighbour. `FrameSource` 
 **What this gives you.**
 You can nest a fourth, fifth, tenth layer — `FrameSource` does not change. You can replace `FrameSource` — `PacketAssembler` does not change. You can replace `PacketAssembler` — `PacketConsumer` does not change. `loop()` never changes.
 
-#### One sentence
-
-> Hard ownership, soft dependencies: each layer knows only an `IHandler&` for its neighbour and receives time from `tac()` instead of passing `update()` down the chain. `loop()` never changes.
-
----
-
-When you write code in the spirit of EVA—composing components, letting them
-manage their own time, communicating through events—something unexpected
-happens.
-
-Coming back to your own code later becomes **genuinely pleasant**. EVA makes
-your code feel like it was written by someone who **cared** about the person who
-would read it next—even if that person is future you.
