@@ -303,17 +303,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#the-three-core-principles" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The Three Core Principles
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#implementation" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -325,13 +314,41 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#the-result" class="md-nav__link">
+  <a href="#an-example-of-eva-core-in-action" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The Result
+        An Example of EVA Core in Action
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="An Example of EVA Core in Action">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-good-here" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is good here
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#one-sentence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        One sentence
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -812,17 +829,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#the-three-core-principles" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The Three Core Principles
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#implementation" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -834,13 +840,41 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#the-result" class="md-nav__link">
+  <a href="#an-example-of-eva-core-in-action" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The Result
+        An Example of EVA Core in Action
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="An Example of EVA Core in Action">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-good-here" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is good here
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#one-sentence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        One sentence
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -880,17 +914,10 @@ microcontroller.</p>
 <hr />
 <h2 id="extremely-versatile-architecture-eva">Extremely Versatile Architecture (EVA)<a class="headerlink" href="#extremely-versatile-architecture-eva" title="Permanent link">&para;</a></h2>
 <h3 id="declaration">Declaration<a class="headerlink" href="#declaration" title="Permanent link">&para;</a></h3>
-<p>EVA is a concept of comfortable user code. A set of principles that make Arduino
-development enjoyable rather than painful:</p>
-<ul>
-<li><strong>Self-documenting</strong> — code reads like a story, not a puzzle</li>
-<li><strong>Testability</strong> — components can be verified in isolation</li>
-<li><strong>Refactoring-friendly</strong> — changing structure doesn't break behavior</li>
-</ul>
-<hr />
-<h3 id="the-three-core-principles">The Three Core Principles<a class="headerlink" href="#the-three-core-principles" title="Permanent link">&para;</a></h3>
-<p>These principles are intended to make user code comfortable to work with when
-designing it as a set of interacting components:</p>
+<p>EVA is a concept of comfortable user code — a set of principles that make
+Arduino development enjoyable rather than painful. When user code is designed
+as a set of interacting components, these principles make it comfortable to
+work with:</p>
 <p><strong>Getting time from <code>loop()</code> should be simple.</strong>
 A component should have a simple way to get time from the <code>loop()</code> cycle — without
 threading an <code>update()</code> method through every object.</p>
@@ -899,24 +926,113 @@ A component should have a simple way to notify through another component's metho
 <p><strong>Components should be embeddable mid-chain.</strong>
 A component should be embeddable into the middle of a data-processing chain, not
 only at its end.</p>
+<p>Together, these principles shape user code that is:
+- <strong>Self-documenting</strong> — code reads like a story, not a puzzle
+- <strong>Testable</strong> — components can be verified in isolation
+- <strong>Refactoring-friendly</strong> — changing structure doesn't break behavior</p>
+<h3 id="implementation">Implementation<a class="headerlink" href="#implementation" title="Permanent link">&para;</a></h3>
+<p><strong>EVA Core</strong> is a concrete implementation of this concept — an architectural
+core that puts these principles into practice. It provides the fundamental
+building blocks for event-driven Arduino applications:</p>
+<ul>
+<li><code>Tickable</code> — time from <code>loop()</code></li>
+<li><code>IHandler</code> — notification through another component's method</li>
+<li><code>IReader</code> — composable data-processing chains</li>
+</ul>
+<p><strong>EVA Survival Kit (SK)</strong> is a set of ready-to-use components — <code>Button</code>,
+<code>Switch</code>, <code>Timer</code>, <code>Indicator</code>, <code>Heartbeat</code> and more. These are what you reach for when
+building actual applications. The components themselves are built on the same
+principles internally.</p>
+<p>Core and SK are shipped together as a single package, <code>eva-core-sk</code>.</p>
+<hr />
+<h3 id="an-example-of-eva-core-in-action">An Example of EVA Core in Action<a class="headerlink" href="#an-example-of-eva-core-in-action" title="Permanent link">&para;</a></h3>
+<p>Picture a device that receives a stream of frames and must assemble them into a packet: accumulate several frames, wait until a full packet is ready, and only then hand it over to the application logic. Three roles: <strong>frame source</strong>, <strong>packet assembler</strong>, <strong>packet consumer</strong>.</p>
+<p>Here is what this nesting doll looks like. <code>FrameSource</code> is the innermost layer, <code>PacketConsumer</code> is the outermost by ownership:</p>
+<div class="codehilite"><pre><span></span><code>        ┌──────────────────────────────────────────────┐
+        │ PacketConsumer                               │
+        │   ┌──────────────────────────────────────┐   │
+        │   │ PacketAssembler                      │   │
+        │   │   ┌──────────────────────────────┐   │   │
+        │   │   │ FrameSource                  │   │   │
+        │   │   │   (innermost layer)          │   │   │
+        │   │   └──────────────────────────────┘   │   │
+        │   └──────────────────────────────────────┘   │
+        └──────────────────────────────────────────────┘
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;evaTac.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;evaHandler.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;evaTickable.h&gt;</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">FrameSource</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">Tickable</span><span class="w"> </span><span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+<span class="w">  </span><span class="n">FrameSource</span><span class="p">(</span><span class="n">eva</span><span class="o">::</span><span class="n">IHandler</span><span class="w"> </span><span class="o">&amp;</span><span class="n">h</span><span class="p">)</span>
+<span class="w">    </span><span class="o">:</span><span class="w"> </span><span class="n">frameHandler</span><span class="p">(</span><span class="n">h</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+
+<span class="k">private</span><span class="o">:</span>
+<span class="w">  </span><span class="c1">// Own slice of loop(): no update() is called into us from outside.</span>
+<span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="n">tick</span><span class="p">()</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// ...</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">true</span><span class="cm">/* a frame has arrived */</span><span class="p">)</span>
+<span class="w">      </span><span class="n">frameHandler</span><span class="p">.</span><span class="n">invoke</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="cm">/*ON_FRAME*/</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="cm">/*frameId*/</span><span class="w"> </span><span class="p">});</span><span class="w">  </span><span class="c1">// dataflow out</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="k">private</span><span class="o">:</span>
+<span class="w">  </span><span class="n">eva</span><span class="o">::</span><span class="n">IHandler</span><span class="w"> </span><span class="o">&amp;</span><span class="n">frameHandler</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">PacketAssembler</span><span class="w"> </span><span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+<span class="w">  </span><span class="n">PacketAssembler</span><span class="p">(</span><span class="n">eva</span><span class="o">::</span><span class="n">IHandler</span><span class="w"> </span><span class="o">&amp;</span><span class="n">h</span><span class="p">)</span>
+<span class="w">    </span><span class="o">:</span><span class="w"> </span><span class="n">packetHandler</span><span class="p">(</span><span class="n">h</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+
+<span class="k">private</span><span class="o">:</span>
+<span class="w">  </span><span class="c1">// Inbound dataflow: frames arrive here, no update() involved.</span>
+<span class="w">  </span><span class="n">eva</span><span class="o">::</span><span class="n">Handler</span><span class="o">&lt;</span><span class="n">PacketAssembler</span><span class="o">&gt;</span><span class="w"> </span><span class="n">onFrameHandler</span><span class="p">{</span><span class="w"> </span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">PacketAssembler</span><span class="o">::</span><span class="n">onFrame</span><span class="w"> </span><span class="p">};</span>
+<span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">onFrame</span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">CallbackInfo</span><span class="w"> </span><span class="n">cbinfo</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// ...</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">true</span><span class="cm">/* packet is assembled */</span><span class="p">)</span>
+<span class="w">      </span><span class="n">packetHandler</span><span class="p">.</span><span class="n">invoke</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mi">0</span><span class="cm">/*ON_ASSEMBLED*/</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="cm">/*PACKED_ID*/</span><span class="p">});</span><span class="w">  </span><span class="c1">// dataflow out</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="k">private</span><span class="o">:</span>
+<span class="w">  </span><span class="n">FrameSource</span><span class="w"> </span><span class="n">frameSource</span><span class="p">{</span><span class="w"> </span><span class="n">onFrameHandler</span><span class="w"> </span><span class="p">};</span>
+<span class="w">  </span><span class="n">eva</span><span class="o">::</span><span class="n">IHandler</span><span class="w"> </span><span class="o">&amp;</span><span class="n">packetHandler</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">PacketConsumer</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// Inbound dataflow: packets arrive here, no update() involved.</span>
+<span class="w">  </span><span class="n">eva</span><span class="o">::</span><span class="n">Handler</span><span class="o">&lt;</span><span class="n">PacketConsumer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">onPacketHandler</span><span class="p">{</span><span class="w"> </span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">PacketConsumer</span><span class="o">::</span><span class="n">onPacket</span><span class="w"> </span><span class="p">};</span>
+
+<span class="w">  </span><span class="n">PacketAssembler</span><span class="w"> </span><span class="n">assembler</span><span class="p">{</span><span class="w"> </span><span class="n">onPacketHandler</span><span class="w"> </span><span class="p">};</span>
+
+<span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">onPacket</span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">CallbackInfo</span><span class="w"> </span><span class="n">cbinfo</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="cm">/* handled the packet */</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">};</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">static</span><span class="w"> </span><span class="n">PacketConsumer</span><span class="w"> </span><span class="n">consumer</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">eva</span><span class="o">::</span><span class="n">tac</span><span class="p">();</span><span class="w">  </span><span class="c1">// the only place time is pulled; dataflow is separate</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h4 id="what-is-good-here">What is good here<a class="headerlink" href="#what-is-good-here" title="Permanent link">&para;</a></h4>
+<p>Hard ownership does not mean hard coupling.</p>
+<p><strong><code>update()</code> is not threaded through the layers.</strong>
+Time reaches only <code>FrameSource</code> — from <code>tac()</code>. <code>PacketAssembler</code> and <code>PacketConsumer</code> take no part in the time loop: they do not transfer <code>update()</code> to <code>FrameSource</code>. The depth of composition is <strong>not equal</strong> to the depth of <code>update()</code> propagation.</p>
+<p><strong><code>IHandler</code> is the only channel — that is where weak coupling comes from.</strong>
+No layer holds a reference to the concrete type of its neighbour. <code>FrameSource</code> holds <code>IHandler&amp;</code> — it does not know it is talking to a <code>PacketAssembler</code>. <code>PacketAssembler</code> holds <code>IHandler&amp;</code> — it does not know it is talking to a <code>PacketConsumer</code>. The only thing any layer can do with its neighbour is <code>invoke()</code>. That is the entire contract, and it is one-directional: data flows inward, and there is no back channel in the type at all. Replace any layer with another <code>IHandler</code> — the neighbours do not change. That is weak coupling: hard ownership, soft dependencies.</p>
+<p><strong>What this gives you.</strong>
+You can nest a fourth, fifth, tenth layer — <code>FrameSource</code> does not change. You can replace <code>FrameSource</code> — <code>PacketAssembler</code> does not change. You can replace <code>PacketAssembler</code> — <code>PacketConsumer</code> does not change. <code>loop()</code> never changes.</p>
+<h4 id="one-sentence">One sentence<a class="headerlink" href="#one-sentence" title="Permanent link">&para;</a></h4>
 <blockquote>
-<p>Note. The library itself is built on the same principles internally.</p>
+<p>Hard ownership, soft dependencies: each layer knows only an <code>IHandler&amp;</code> for its neighbour and receives time from <code>tac()</code> instead of passing <code>update()</code> down the chain. <code>loop()</code> never changes.</p>
 </blockquote>
 <hr />
-<h3 id="implementation">Implementation<a class="headerlink" href="#implementation" title="Permanent link">&para;</a></h3>
-<p>EVA Core | EVA Survival Kit (eva-core-sk) is a concrete implementation of this
-concept—a library that puts these principles into practice. Architectural core
-with essential components for event-driven Arduino applications.</p>
-<p><strong>eva-core-sk</strong> is organized into two distinct domains:</p>
-<ul>
-<li><strong>Core</strong> — the engine: <code>Tickable</code>, <code>Handler</code>, <code>IReader</code>, <code>Heartbeat</code>. These
-  are the fundamental building blocks that make the concept work.</li>
-<li><strong>Survival Kit (SK)</strong> — ready-to-use components: <code>Button</code>, <code>Switch</code>, <code>Timer</code>,
-  <code>Indicator</code>, and more. These are what you reach for when building actual
-  applications.</li>
-</ul>
-<hr />
-<h3 id="the-result">The Result<a class="headerlink" href="#the-result" title="Permanent link">&para;</a></h3>
 <p>When you write code in the spirit of EVA—composing components, letting them
 manage their own time, communicating through events—something unexpected
 happens.</p>
