@@ -15,10 +15,8 @@ If you grew up in the Arduino world — read on.
 
 ### Declaration
 
-EVA is a concept of comfortable user code — a set of principles that make
-Arduino development enjoyable rather than painful. When user code is designed
-as a set of interacting components, these principles make it comfortable to
-work with:
+EVA is a concept for ergonomic user code — a set of principles that make the 
+decomposition of an Arduino project into a set of interacting components enjoyable:
 
 **Getting time from `loop()` should be simple.**
 A component should have a simple way to get time from the `loop()` cycle — without
@@ -84,25 +82,25 @@ Here is what this nesting doll looks like. `FrameSource` is the innermost layer,
 
 class FrameSource : public eva::Tickable {
 public:
-  FrameSource(eva::IHandler &h)
-    : frameHandler(h) {}
+  FrameSource(eva::IHandler &listener)
+    : _listener(listener) {}
 
 private:
   // Own slice of loop(): no update() is called into us from outside.
   void tick() override {
     // ...
     if (true/* a frame has arrived */)
-      frameHandler.invoke(this, { 0 /*ON_FRAME*/, 0 /*frameId*/ });  // dataflow out
+      _listener.invoke(this, { 0 /*ON_FRAME*/, 0 /*frameId*/ });  // dataflow out
   }
 
 private:
-  eva::IHandler &frameHandler;
+  eva::IHandler &_listener;
 };
 
 class PacketAssembler {
 public:
   PacketAssembler(eva::IHandler &h)
-    : packetHandler(h) {}
+    : _listener(listener) {}
 
 private:
   // Inbound dataflow: frames arrive here, no update() involved.
@@ -110,23 +108,24 @@ private:
   void onFrame(void *sender, eva::CallbackInfo cbinfo) {
     // ...
     if (true/* packet is assembled */)
-      packetHandler.invoke(this, { 0/*ON_ASSEMBLED*/, 0 /*PACKED_ID*/});  // dataflow out
+      _listener.invoke(this, { 0/*ON_ASSEMBLED*/, 0 /*PACKED_ID*/});  // dataflow out
   }
 
 private:
   FrameSource frameSource{ onFrameHandler };
-  eva::IHandler &packetHandler;
+  eva::IHandler &_listener;
 };
 
 class PacketConsumer {
   // Inbound dataflow: packets arrive here, no update() involved.
+
   eva::Handler<PacketConsumer> onPacketHandler{ this, &PacketConsumer::onPacket };
-
-  PacketAssembler assembler{ onPacketHandler };
-
   void onPacket(void *sender, eva::CallbackInfo cbinfo) {
     /* handled the packet */
   }
+private:
+
+  PacketAssembler assembler{ onPacketHandler };
 };
 
 void setup() {
