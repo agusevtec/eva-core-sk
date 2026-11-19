@@ -11,7 +11,7 @@ Look at how buttons are built:
 
 ```cpp
 template <int tPin, int PINMODE, int tActivatesOn>
-using PinButton = Button<BinarizeEqDecor<DebounceDecor<DigitalPinReader<tPin, PINMODE>>, tActivatesOn>>;
+using PinButton = Button<BinarizeEqDecor<DebounceDecor<DigitalPinReader<tPin, tPinMode>>, tActivatesOn>>;
 ```
 
 This entire chain resolves at compile time. 
@@ -101,8 +101,9 @@ The library offers different ways to handle events, each with different trade-of
 ### Handler Templates (Convenient)
 ```cpp
 class App{
-  RepeatTimer pt = {1000, new Handler<App>(this, &App::onTimer)};
+  RepeatTimer pt = {1000, &onTimerHandler};
   
+  Handler<App> onTimerHandler{this, &onTimer};
   void onTimer(void* sender, CallbackInfo cbInfo) {
     // Handle event directly
   }
