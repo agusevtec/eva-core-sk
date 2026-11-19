@@ -55,11 +55,11 @@ Flexibility without performance loss. Everything resolves at compile time.
 - `Tickable` base class for all updateable objects
 - `IHandler` / `Handler` / `HandlerF` event handling
 - `IReader` / `IReaderAdapter` input abstraction
-- `Heartbeat` base class for objects that need periodic updates at fixed intervals
 
 ### Survival Kit (SK)
 - **Buttons**: `Switch`, `Button`, `ScrollButton` and its variations
 - **Timers**: `DelayTimer`, `RepeatTimer`, `CountdownTimer`
+- **Heartbeat**: base class for objects that need periodic updates at fixed intervals
 - **Indicators**: `Indicator`, `BlinkingIndicator`, `CountdownIndicator`
 - **Analog Inputs**: `Joystick`, `Slider`
 - **Utilities**: `List`, `RingBuffer`
