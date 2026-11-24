@@ -1,11 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.17.0" xml:lang="en-US">
-  <compound refid="classeva_1_1_analog_mutable_pin_reader" kind="class"><name>eva::AnalogMutablePinReader</name>
-    <member refid="classeva_1_1_analog_mutable_pin_reader_1a08ee346aa4b49ab39ced906667e2e782" kind="variable"><name>mPin</name></member>
-    <member refid="classeva_1_1_analog_mutable_pin_reader_1a92cc6b0de8a765356e0df96d43c12e30" kind="function"><name>AnalogMutablePinReader</name></member>
-    <member refid="classeva_1_1_analog_mutable_pin_reader_1a2ffe7021b05bca7a8614c61154b132a5" kind="function"><name>getValue</name></member>
-    <member refid="classeva_1_1_analog_mutable_pin_reader_1a4463004fbbf1bba8f06ab6b1b722aabe" kind="function"><name>isValid</name></member>
-  </compound>
   <compound refid="classeva_1_1_analog_pin_reader" kind="class"><name>eva::AnalogPinReader</name>
     <member refid="classeva_1_1_analog_pin_reader_1af3d3930bf025adf0f4e0c4e782084d12" kind="function"><name>AnalogPinReader</name></member>
     <member refid="classeva_1_1_analog_pin_reader_1ac3b62f56e23d6001b462027f9272117a" kind="function"><name>getValue</name></member>
@@ -16,12 +10,12 @@
     <member refid="classeva_1_1_binarize_eq_decor_1af8d695546e78545496897339d441675c" kind="function"><name>getValue</name></member>
   </compound>
   <compound refid="classeva_1_1_binarize_gt_decor" kind="class"><name>eva::BinarizeGtDecor</name>
-    <member refid="classeva_1_1_binarize_gt_decor_1a42ba74c17a32d504bacdcd3672695f56" kind="function"><name>BinarizeGtDecor</name></member>
-    <member refid="classeva_1_1_binarize_gt_decor_1a40b0d169827803f9a35baf71cc81f595" kind="function"><name>getValue</name></member>
+    <member refid="classeva_1_1_binarize_gt_decor_1a71f7e9edac6212e929a21f9440ab7107" kind="function"><name>BinarizeGtDecor</name></member>
+    <member refid="classeva_1_1_binarize_gt_decor_1ab7dc2a078ff37e5b5011755981faaeed" kind="function"><name>getValue</name></member>
   </compound>
   <compound refid="classeva_1_1_binarize_lt_decor" kind="class"><name>eva::BinarizeLtDecor</name>
-    <member refid="classeva_1_1_binarize_lt_decor_1ae41006242abb502e4f2711ee7ea54ce2" kind="function"><name>BinarizeLtDecor</name></member>
-    <member refid="classeva_1_1_binarize_lt_decor_1a373cd51632badfce41af685e92b7ef3e" kind="function"><name>getValue</name></member>
+    <member refid="classeva_1_1_binarize_lt_decor_1afdf6e506139b1b342f1173e83a61a454" kind="function"><name>BinarizeLtDecor</name></member>
+    <member refid="classeva_1_1_binarize_lt_decor_1a8316e8b504c30ebc2d36905ed50c438b" kind="function"><name>getValue</name></member>
   </compound>
   <compound refid="classeva_1_1_blinking_indicator" kind="class"><name>eva::BlinkingIndicator</name>
     <member refid="classeva_1_1_blinking_indicator_1ae4aacd65df101c369f0505b256554501" kind="variable"><name>heartbeatTimer</name></member>
@@ -70,10 +64,10 @@
     <member refid="classeva_1_1_countdown_timer_1af134fa838e3417c5b93e27635922d2dd" kind="function"><name>tick</name></member>
   </compound>
   <compound refid="classeva_1_1_debounce_decor" kind="class"><name>eva::DebounceDecor</name>
-    <member refid="classeva_1_1_debounce_decor_1a8393a59114e20d8a91d7aa693feb6f72" kind="variable"><name>keepValueTill</name></member>
-    <member refid="classeva_1_1_debounce_decor_1a08dbb439a2fbbe2a6c303305f9f500e1" kind="variable"><name>keepedValue</name></member>
-    <member refid="classeva_1_1_debounce_decor_1a769bb08dfd558fc125fa6db710da3b63" kind="function"><name>DebounceDecor</name></member>
-    <member refid="classeva_1_1_debounce_decor_1af6e5231badc84e9fc6481f1db0ae7c26" kind="function"><name>getValue</name></member>
+    <member refid="classeva_1_1_debounce_decor_1a963a2d9426e00a986de5df691dfeb908" kind="variable"><name>keepValueTill</name></member>
+    <member refid="classeva_1_1_debounce_decor_1ab5ba31a0d2310ec919dfb0749bb024a4" kind="variable"><name>keepedValue</name></member>
+    <member refid="classeva_1_1_debounce_decor_1af25add2de31d0f751877370d5628dbba" kind="function"><name>DebounceDecor</name></member>
+    <member refid="classeva_1_1_debounce_decor_1afb50eb768ee7d96632c521f1d99a6809" kind="function"><name>getValue</name></member>
   </compound>
   <compound refid="classeva_1_1_delay_timer" kind="class"><name>eva::DelayTimer</name>
     <member refid="classeva_1_1_delay_timer_1a79cfcb6054cd07ae88faa66e96e1a29f" kind="variable"><name>listener</name></member>
@@ -87,12 +81,6 @@
     <member refid="classeva_1_1_delay_timer_1a0e61d51bcd42b77a47381496ddb8445c" kind="function"><name>stop</name></member>
     <member refid="classeva_1_1_delay_timer_1aadecb847985e9b5c4e6c9e2a3f4e435d" kind="function"><name>checkTimeElapsed</name></member>
     <member refid="classeva_1_1_delay_timer_1a7cf30bb1be1a9a5002fde64adc479096" kind="function"><name>tick</name></member>
-  </compound>
-  <compound refid="classeva_1_1_digital_mutable_pin_reader" kind="class"><name>eva::DigitalMutablePinReader</name>
-    <member refid="classeva_1_1_digital_mutable_pin_reader_1a82aa5070d13c3c5552d984317780eb7f" kind="variable"><name>mPin</name></member>
-    <member refid="classeva_1_1_digital_mutable_pin_reader_1ab3d9e772516fb4ea0e5ccd200d589a09" kind="function"><name>DigitalMutablePinReader</name></member>
-    <member refid="classeva_1_1_digital_mutable_pin_reader_1a409d2097e566fb298b8ca32127759ba1" kind="function"><name>getValue</name></member>
-    <member refid="classeva_1_1_digital_mutable_pin_reader_1ab24d218c9e9e765ade6230ce2c7803fc" kind="function"><name>isValid</name></member>
   </compound>
   <compound refid="classeva_1_1_digital_pin_reader" kind="class"><name>eva::DigitalPinReader</name>
     <member refid="classeva_1_1_digital_pin_reader_1a0b1d39dd58ec2e24ee4251fd6f733217" kind="function"><name>DigitalPinReader</name></member>
@@ -172,6 +160,12 @@
     <member refid="structeva_1_1_list_iterator_1a673ff85eaf58de491d4710d7fb6c5226" kind="variable"><name>item</name></member>
     <member refid="structeva_1_1_list_iterator_1a1d2a502a56ce139f3a250cdd1213bba6" kind="variable"><name>next</name></member>
     <member refid="structeva_1_1_list_iterator_1acc56acea81145467c6a08e57325898f7" kind="function"><name>ListIterator</name></member>
+  </compound>
+  <compound refid="classeva_1_1_mutable_analog_pin_reader" kind="class"><name>eva::MutableAnalogPinReader</name>
+    <member refid="classeva_1_1_mutable_analog_pin_reader_1afff01000229f27954e4e51cc1f6282cc" kind="variable"><name>mPin</name></member>
+    <member refid="classeva_1_1_mutable_analog_pin_reader_1af733e989813451dfba7c8645a9fe5b9c" kind="function"><name>MutableAnalogPinReader</name></member>
+    <member refid="classeva_1_1_mutable_analog_pin_reader_1a5ab7e7ff9c750fe20b4b18051aec1ef2" kind="function"><name>getValue</name></member>
+    <member refid="classeva_1_1_mutable_analog_pin_reader_1a2effe476707b703ac70dfc8e6c3024ff" kind="function"><name>isValid</name></member>
   </compound>
   <compound refid="structeva_1_1_pin_scroll_multi_button" kind="struct"><name>eva::PinScrollMultiButton</name>
   </compound>
@@ -272,6 +266,8 @@
     <member refid="eva_scroll_button_8h_1aa374389acf46536b8e8337e737939121" kind="typedef"><name>PullUpScrollButton</name></member>
     <member refid="eva_scroll_button_8h_1ad6543f957969285c707e88a02a1b3203" kind="typedef"><name>PinMultiScrollButton</name></member>
     <member refid="eva_slider_8h_1ac03e4e3ae7a608331da6629a8d2fccd1" kind="typedef"><name>PinSlider</name></member>
+    <member refid="eva_std_readers_8h_1afae3163041084b63a54ef6453284e6e2" kind="typedef"><name>MutableAnalogPinReader</name></member>
+    <member refid="eva_std_readers_8h_1ad2ffc090e05c377d4f58618fcd861895" kind="typedef"><name>DigitalMutablePinReader</name></member>
     <member refid="eva_switch_8h_1ae0d08ef231652fb40bdca61ef40cc049" kind="typedef"><name>PinSwitch</name></member>
     <member refid="eva_switch_8h_1ad9d265475784a9e3f036c7c929db82bf" kind="typedef"><name>PullUpSwitch</name></member>
     <member refid="eva_switch_8h_1ac9703ece4c0d2a523525b34aecd9b97f" kind="typedef"><name>PinMultiSwitch</name></member>
@@ -279,7 +275,7 @@
     <member refid="eva_button_8h_1a9f0afdfaa61b59c313463ec31444bc58" kind="variable"><name>ON_SHORTCLICK</name></member>
     <member refid="eva_button_8h_1ae072ea6457bf4f70dfe4420571701571" kind="variable"><name>ON_LONGCLICK</name></member>
     <member refid="eva_button_8h_1a8084941916bac4c197a6e7b08d033134" kind="variable"><name>ON_LONGPRESS</name></member>
-    <member refid="eva_reader_decors_8h_1a415459cc564ee6c2cc1ceae1879fd24a" kind="variable"><name>DEBOUNCE_DELAY</name></member>
+    <member refid="eva_reader_decors_8h_1ada7a91a75efcf0805f9903188946c9fb" kind="variable"><name>kDebounceDelay</name></member>
     <member refid="eva_scroll_button_8h_1a6144cad481d8224faf85ab8f640aa324" kind="variable"><name>REPEAT_DELAY</name></member>
     <member refid="eva_scroll_button_8h_1af559901eaff180228ddd5e69d98cb89e" kind="variable"><name>ON_REPEATKEY</name></member>
     <member refid="eva_switch_8h_1a0dc3da3ced5a1c2b4e4d2acc8b381254" kind="variable"><name>ON_PRESS</name></member>

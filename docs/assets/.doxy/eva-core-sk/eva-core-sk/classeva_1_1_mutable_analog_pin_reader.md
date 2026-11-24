@@ -1,10 +1,10 @@
 
 
-# Class eva::AnalogMutablePinReader
+# Class eva::MutableAnalogPinReader
 
 
 
-[**ClassList**](annotated.md) **>** [**eva**](namespaceeva.md) **>** [**AnalogMutablePinReader**](classeva_1_1_analog_mutable_pin_reader.md)
+[**ClassList**](annotated.md) **>** [**eva**](namespaceeva.md) **>** [**MutableAnalogPinReader**](classeva_1_1_mutable_analog_pin_reader.md)
 
 
 
@@ -52,7 +52,7 @@ _Reads analog pin value with runtime pin configuration._
 
 | Type | Name |
 | ---: | :--- |
-|   | [**AnalogMutablePinReader**](#function-analogmutablepinreader) (uint8\_t aPin, uint8\_t aMode) <br>_Constructs an_ [_**AnalogMutablePinReader**_](classeva_1_1_analog_mutable_pin_reader.md) _and configures pin._ |
+|   | [**MutableAnalogPinReader**](#function-mutableanalogpinreader) (uint8\_t aPin, uint8\_t aMode) <br>_Constructs an AnalogMutablePinReader and configures pin._  |
 |  signed short | [**getValue**](#function-getvalue) () <br>_Reads analog pin value._  |
 |  bool | [**isValid**](#function-isvalid) () <br>_Checks if reader is valid._  |
 
@@ -88,11 +88,11 @@ _Reads analog pin value with runtime pin configuration._
 
 
 
-### function AnalogMutablePinReader 
+### function MutableAnalogPinReader 
 
-_Constructs an_ [_**AnalogMutablePinReader**_](classeva_1_1_analog_mutable_pin_reader.md) _and configures pin._
+_Constructs an AnalogMutablePinReader and configures pin._ 
 ```C++
-eva::AnalogMutablePinReader::AnalogMutablePinReader (
+eva::MutableAnalogPinReader::MutableAnalogPinReader (
     uint8_t aPin,
     uint8_t aMode
 ) 
@@ -121,7 +121,7 @@ eva::AnalogMutablePinReader::AnalogMutablePinReader (
 
 _Reads analog pin value._ 
 ```C++
-signed short eva::AnalogMutablePinReader::getValue () 
+signed short eva::MutableAnalogPinReader::getValue () 
 ```
 
 
@@ -146,7 +146,7 @@ ADC reading (0-1023)
 
 _Checks if reader is valid._ 
 ```C++
-bool eva::AnalogMutablePinReader::isValid () 
+bool eva::MutableAnalogPinReader::isValid () 
 ```
 
 

@@ -117,6 +117,7 @@ namespace eva
     private:
         uint8_t mPin;
     };
+    using MutableAnalogPinReader = AnalogMutablePinReader
 
     /**
      * @brief Reads digital pin value with runtime pin configuration
@@ -146,5 +147,7 @@ namespace eva
     private:
         uint8_t mPin;
     };
+
+    using DigitalMutablePinReader = MutableDigitalPinReader;
 
 };

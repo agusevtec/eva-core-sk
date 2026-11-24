@@ -35,10 +35,9 @@
 
 | Type | Name |
 | ---: | :--- |
-| class | [**AnalogMutablePinReader**](classeva_1_1_analog_mutable_pin_reader.md) <br>_Reads analog pin value with runtime pin configuration._  |
 | class | [**AnalogPinReader**](classeva_1_1_analog_pin_reader.md) &lt;tPin, tPinMode&gt;<br>_Reads analog pin value._  |
-| class | [**DigitalMutablePinReader**](classeva_1_1_digital_mutable_pin_reader.md) <br>_Reads digital pin value with runtime pin configuration._  |
 | class | [**DigitalPinReader**](classeva_1_1_digital_pin_reader.md) &lt;tPin, tPinMode&gt;<br>_Reads digital pin value._  |
+| class | [**MutableAnalogPinReader**](classeva_1_1_mutable_analog_pin_reader.md) <br>_Reads analog pin value with runtime pin configuration._  |
 | class | [**ValueReader**](classeva_1_1_value_reader.md) <br>_Simple stateful reader acting as a ground-level of proccessing pipe._  |
 
 

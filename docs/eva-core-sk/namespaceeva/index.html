@@ -746,6 +746,28 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#typedef-digitalmutablepinreader" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        typedef DigitalMutablePinReader
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#typedef-mutableanalogpinreader" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        typedef MutableAnalogPinReader
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#typedef-pinbutton" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -895,17 +917,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#variable-debounce_delay" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        variable DEBOUNCE_DELAY
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#variable-longpress_delay" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -998,6 +1009,17 @@
     <span class="md-ellipsis">
       
         variable REPEAT_DELAY
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variable-kdebouncedelay" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        variable kDebounceDelay
       
     </span>
   </a>
@@ -1098,10 +1120,6 @@
 <tbody>
 <tr>
 <td style="text-align: right;">class</td>
-<td style="text-align: left;"><a href="../classeva_1_1_analog_mutable_pin_reader/"><strong>AnalogMutablePinReader</strong></a> <br><em>Reads analog pin value with runtime pin configuration.</em></td>
-</tr>
-<tr>
-<td style="text-align: right;">class</td>
 <td style="text-align: left;"><a href="../classeva_1_1_analog_pin_reader/"><strong>AnalogPinReader</strong></a> &lt;tPin, tPinMode&gt;<br><em>Reads analog pin value.</em></td>
 </tr>
 <tr>
@@ -1110,11 +1128,11 @@
 </tr>
 <tr>
 <td style="text-align: right;">class</td>
-<td style="text-align: left;"><a href="../classeva_1_1_binarize_gt_decor/"><strong>BinarizeGtDecor</strong></a> &lt;class TReader, THRESHOLD&gt;<br><em>Decorator that converts analog reading to binary based on 'greater than' threshold condition.</em></td>
+<td style="text-align: left;"><a href="../classeva_1_1_binarize_gt_decor/"><strong>BinarizeGtDecor</strong></a> &lt;class TReader, tThreshold&gt;<br><em>Decorator that converts analog reading to binary based on 'greater than' threshold condition.</em></td>
 </tr>
 <tr>
 <td style="text-align: right;">class</td>
-<td style="text-align: left;"><a href="../classeva_1_1_binarize_lt_decor/"><strong>BinarizeLtDecor</strong></a> &lt;class TReader, THRESHOLD&gt;<br><em>Decorator that converts analog reading to binary based on 'less than' threshold condition.</em></td>
+<td style="text-align: left;"><a href="../classeva_1_1_binarize_lt_decor/"><strong>BinarizeLtDecor</strong></a> &lt;class TReader, tThreshold&gt;<br><em>Decorator that converts analog reading to binary based on 'less than' threshold condition.</em></td>
 </tr>
 <tr>
 <td style="text-align: right;">class</td>
@@ -1138,15 +1156,11 @@
 </tr>
 <tr>
 <td style="text-align: right;">class</td>
-<td style="text-align: left;"><a href="../classeva_1_1_debounce_decor/"><strong>DebounceDecor</strong></a> &lt;class TReader&gt;<br><em>Decorator that stabilizes readings by requiring value to be stable for a period.</em></td>
+<td style="text-align: left;"><a href="../classeva_1_1_debounce_decor/"><strong>DebounceDecor</strong></a> &lt;class TReader, tDebounceDelay&gt;<br><em>Rate-limiting decorator for contact-bounce suppression.</em></td>
 </tr>
 <tr>
 <td style="text-align: right;">class</td>
 <td style="text-align: left;"><a href="../classeva_1_1_delay_timer/"><strong>DelayTimer</strong></a> <br><em>One-shot timer that fires after a delay.</em></td>
-</tr>
-<tr>
-<td style="text-align: right;">class</td>
-<td style="text-align: left;"><a href="../classeva_1_1_digital_mutable_pin_reader/"><strong>DigitalMutablePinReader</strong></a> <br><em>Reads digital pin value with runtime pin configuration.</em></td>
 </tr>
 <tr>
 <td style="text-align: right;">class</td>
@@ -1191,6 +1205,10 @@
 <tr>
 <td style="text-align: right;">struct</td>
 <td style="text-align: left;"><a href="../structeva_1_1_list_iterator/"><strong>ListIterator</strong></a> &lt;class ItemClass&gt;<br><em>Iterator node for</em> <a href="../classeva_1_1_list/"><em><strong>List</strong></em></a> <em>.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">class</td>
+<td style="text-align: left;"><a href="../classeva_1_1_mutable_analog_pin_reader/"><strong>MutableAnalogPinReader</strong></a> <br><em>Reads analog pin value with runtime pin configuration.</em></td>
 </tr>
 <tr>
 <td style="text-align: right;">struct</td>
@@ -1247,6 +1265,14 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td style="text-align: right;">typedef MutableDigitalPinReader</td>
+<td style="text-align: left;"><a href="#typedef-digitalmutablepinreader"><strong>DigitalMutablePinReader</strong></a>  <br></td>
+</tr>
+<tr>
+<td style="text-align: right;">typedef AnalogMutablePinReader class MutableDigitalPinReader { public: MutableDigitalPinReader(uint8_t aPin, uint8_t aMode); signed short getValue(); bool isValid(); private: uint8_t mPin; }</td>
+<td style="text-align: left;"><a href="#typedef-mutableanalogpinreader"><strong>MutableAnalogPinReader</strong></a>  <br></td>
+</tr>
 <tr>
 <td style="text-align: right;">typedef <a href="../classeva_1_1_button/"><strong>Button</strong></a>&lt; <a href="../classeva_1_1_binarize_eq_decor/"><strong>BinarizeEqDecor</strong></a>&lt; <a href="../classeva_1_1_debounce_decor/"><strong>DebounceDecor</strong></a>&lt; <a href="../classeva_1_1_digital_pin_reader/"><strong>DigitalPinReader</strong></a>&lt; tPin, tPinMode &gt; &gt;, tActivatesOn &gt; &gt;</td>
 <td style="text-align: left;"><a href="#typedef-pinbutton"><strong>PinButton</strong></a>  <br><em>Digital pin button with debouncing and level normalization.</em></td>
@@ -1308,10 +1334,6 @@
 <tbody>
 <tr>
 <td style="text-align: right;">const unsigned short</td>
-<td style="text-align: left;"><a href="#variable-debounce_delay"><strong>DEBOUNCE_DELAY</strong></a>   = <code>120</code><br></td>
-</tr>
-<tr>
-<td style="text-align: right;">const unsigned short</td>
 <td style="text-align: left;"><a href="#variable-longpress_delay"><strong>LONGPRESS_DELAY</strong></a>   = <code>750</code><br></td>
 </tr>
 <tr>
@@ -1346,6 +1368,10 @@
 <td style="text-align: right;">const unsigned short</td>
 <td style="text-align: left;"><a href="#variable-repeat_delay"><strong>REPEAT_DELAY</strong></a>   = <code>300</code><br></td>
 </tr>
+<tr>
+<td style="text-align: right;">const unsigned short</td>
+<td style="text-align: left;"><a href="#variable-kdebouncedelay"><strong>kDebounceDelay</strong></a>   = <code>120</code><br></td>
+</tr>
 </tbody>
 </table>
 <h2 id="public-functions">Public Functions<a class="headerlink" href="#public-functions" title="Permanent link">&para;</a></h2>
@@ -1379,6 +1405,35 @@
 </tbody>
 </table>
 <h2 id="public-types-documentation">Public Types Documentation<a class="headerlink" href="#public-types-documentation" title="Permanent link">&para;</a></h2>
+<h3 id="typedef-digitalmutablepinreader">typedef DigitalMutablePinReader<a class="headerlink" href="#typedef-digitalmutablepinreader" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">DigitalMutablePinReader</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MutableDigitalPinReader</span><span class="p">;</span>
+</code></pre></div>
+
+<hr>
+
+<h3 id="typedef-mutableanalogpinreader">typedef MutableAnalogPinReader<a class="headerlink" href="#typedef-mutableanalogpinreader" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">MutableAnalogPinReader</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AnalogMutablePinReader</span>
+
+
+<span class="w">   </span><span class="k">class</span><span class="w"> </span><span class="nc">MutableDigitalPinReader</span>
+<span class="w">   </span><span class="p">{</span>
+<span class="w">   </span><span class="k">public</span><span class="o">:</span>
+
+<span class="w">       </span><span class="n">MutableDigitalPinReader</span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">aPin</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">aMode</span><span class="p">);</span>
+
+
+<span class="w">       </span><span class="kt">signed</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="nf">getValue</span><span class="p">();</span>
+
+
+<span class="w">       </span><span class="kt">bool</span><span class="w"> </span><span class="nf">isValid</span><span class="p">();</span>
+
+<span class="w">   </span><span class="k">private</span><span class="o">:</span>
+<span class="w">       </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">mPin</span><span class="p">;</span>
+<span class="w">   </span><span class="p">};</span>
+</code></pre></div>
+
+<hr>
+
 <h3 id="typedef-pinbutton">typedef PinButton<a class="headerlink" href="#typedef-pinbutton" title="Permanent link">&para;</a></h3>
 <p><em>Digital pin button with debouncing and level normalization.</em> </p>
 <div class="codehilite"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">PinButton</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Button</span><span class="o">&lt;</span><span class="n">BinarizeEqDecor</span><span class="o">&lt;</span><span class="n">DebounceDecor</span><span class="o">&lt;</span><span class="n">DigitalPinReader</span><span class="o">&lt;</span><span class="n">tPin</span><span class="p">,</span><span class="w"> </span><span class="n">tPinMode</span><span class="o">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">tActivatesOn</span><span class="o">&gt;&gt;</span><span class="p">;</span>
@@ -1589,12 +1644,6 @@
 </ul>
 <hr>
 <h2 id="public-static-attributes-documentation">Public Static Attributes Documentation<a class="headerlink" href="#public-static-attributes-documentation" title="Permanent link">&para;</a></h2>
-<h3 id="variable-debounce_delay">variable DEBOUNCE_DELAY<a class="headerlink" href="#variable-debounce_delay" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">DEBOUNCE_DELAY</span><span class="p">;</span>
-</code></pre></div>
-
-<hr>
-
 <h3 id="variable-longpress_delay">variable LONGPRESS_DELAY<a class="headerlink" href="#variable-longpress_delay" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">LONGPRESS_DELAY</span><span class="p">;</span>
 </code></pre></div>
@@ -1645,6 +1694,12 @@
 
 <h3 id="variable-repeat_delay">variable REPEAT_DELAY<a class="headerlink" href="#variable-repeat_delay" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">REPEAT_DELAY</span><span class="p">;</span>
+</code></pre></div>
+
+<hr>
+
+<h3 id="variable-kdebouncedelay">variable kDebounceDelay<a class="headerlink" href="#variable-kdebouncedelay" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">kDebounceDelay</span><span class="p">;</span>
 </code></pre></div>
 
 <hr>

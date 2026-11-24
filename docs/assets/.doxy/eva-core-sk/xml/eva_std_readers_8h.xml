@@ -56,8 +56,7 @@
     <innerclass refid="classeva_1_1_value_reader" prot="public">eva::ValueReader</innerclass>
     <innerclass refid="classeva_1_1_digital_pin_reader" prot="public">eva::DigitalPinReader</innerclass>
     <innerclass refid="classeva_1_1_analog_pin_reader" prot="public">eva::AnalogPinReader</innerclass>
-    <innerclass refid="classeva_1_1_analog_mutable_pin_reader" prot="public">eva::AnalogMutablePinReader</innerclass>
-    <innerclass refid="classeva_1_1_digital_mutable_pin_reader" prot="public">eva::DigitalMutablePinReader</innerclass>
+    <innerclass refid="classeva_1_1_mutable_analog_pin_reader" prot="public">eva::MutableAnalogPinReader</innerclass>
     <innernamespace refid="namespaceeva">eva</innernamespace>
     <briefdescription>
     </briefdescription>
@@ -120,33 +119,36 @@
 <codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
 <codeline lineno="91"><highlight class="normal"></highlight></codeline>
-<codeline lineno="95" refid="classeva_1_1_analog_mutable_pin_reader" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classeva_1_1_analog_mutable_pin_reader_1a92cc6b0de8a765356e0df96d43c12e30" kindref="member">AnalogMutablePinReader</ref></highlight></codeline>
+<codeline lineno="95" refid="classeva_1_1_mutable_analog_pin_reader" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classeva_1_1_mutable_analog_pin_reader_1af733e989813451dfba7c8645a9fe5b9c" kindref="member">MutableAnalogPinReader</ref></highlight></codeline>
 <codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="103" refid="classeva_1_1_analog_mutable_pin_reader_1a92cc6b0de8a765356e0df96d43c12e30" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classeva_1_1_analog_mutable_pin_reader_1a92cc6b0de8a765356e0df96d43c12e30" kindref="member">AnalogMutablePinReader</ref>(uint8_t<sp/>aPin,<sp/>uint8_t<sp/>aMode);</highlight></codeline>
+<codeline lineno="103" refid="classeva_1_1_mutable_analog_pin_reader_1af733e989813451dfba7c8645a9fe5b9c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classeva_1_1_mutable_analog_pin_reader_1af733e989813451dfba7c8645a9fe5b9c" kindref="member">MutableAnalogPinReader</ref>(uint8_t<sp/>aPin,<sp/>uint8_t<sp/>aMode);</highlight></codeline>
 <codeline lineno="104"><highlight class="normal"></highlight></codeline>
-<codeline lineno="109" refid="classeva_1_1_analog_mutable_pin_reader_1a2ffe7021b05bca7a8614c61154b132a5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">signed</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/><ref refid="classeva_1_1_analog_mutable_pin_reader_1a2ffe7021b05bca7a8614c61154b132a5" kindref="member">getValue</ref>();</highlight></codeline>
+<codeline lineno="109" refid="classeva_1_1_mutable_analog_pin_reader_1a5ab7e7ff9c750fe20b4b18051aec1ef2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">signed</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/><ref refid="classeva_1_1_mutable_analog_pin_reader_1a5ab7e7ff9c750fe20b4b18051aec1ef2" kindref="member">getValue</ref>();</highlight></codeline>
 <codeline lineno="110"><highlight class="normal"></highlight></codeline>
-<codeline lineno="115" refid="classeva_1_1_analog_mutable_pin_reader_1a4463004fbbf1bba8f06ab6b1b722aabe" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classeva_1_1_analog_mutable_pin_reader_1a4463004fbbf1bba8f06ab6b1b722aabe" kindref="member">isValid</ref>();</highlight></codeline>
+<codeline lineno="115" refid="classeva_1_1_mutable_analog_pin_reader_1a2effe476707b703ac70dfc8e6c3024ff" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classeva_1_1_mutable_analog_pin_reader_1a2effe476707b703ac70dfc8e6c3024ff" kindref="member">isValid</ref>();</highlight></codeline>
 <codeline lineno="116"><highlight class="normal"></highlight></codeline>
 <codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
 <codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/>mPin;</highlight></codeline>
 <codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
-<codeline lineno="120"><highlight class="normal"></highlight></codeline>
-<codeline lineno="124" refid="classeva_1_1_digital_mutable_pin_reader" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classeva_1_1_digital_mutable_pin_reader_1ab3d9e772516fb4ea0e5ccd200d589a09" kindref="member">DigitalMutablePinReader</ref></highlight></codeline>
-<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="132" refid="classeva_1_1_digital_mutable_pin_reader_1ab3d9e772516fb4ea0e5ccd200d589a09" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classeva_1_1_digital_mutable_pin_reader_1ab3d9e772516fb4ea0e5ccd200d589a09" kindref="member">DigitalMutablePinReader</ref>(uint8_t<sp/>aPin,<sp/>uint8_t<sp/>aMode);</highlight></codeline>
-<codeline lineno="133"><highlight class="normal"></highlight></codeline>
-<codeline lineno="138" refid="classeva_1_1_digital_mutable_pin_reader_1a409d2097e566fb298b8ca32127759ba1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">signed</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/><ref refid="classeva_1_1_digital_mutable_pin_reader_1a409d2097e566fb298b8ca32127759ba1" kindref="member">getValue</ref>();</highlight></codeline>
-<codeline lineno="139"><highlight class="normal"></highlight></codeline>
-<codeline lineno="144" refid="classeva_1_1_digital_mutable_pin_reader_1ab24d218c9e9e765ade6230ce2c7803fc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classeva_1_1_digital_mutable_pin_reader_1ab24d218c9e9e765ade6230ce2c7803fc" kindref="member">isValid</ref>();</highlight></codeline>
-<codeline lineno="145"><highlight class="normal"></highlight></codeline>
-<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/>mPin;</highlight></codeline>
-<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
-<codeline lineno="149"><highlight class="normal"></highlight></codeline>
-<codeline lineno="150"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="classeva_1_1_mutable_analog_pin_reader" kindref="compound">MutableAnalogPinReader</ref><sp/>=<sp/>AnalogMutablePinReader</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">MutableDigitalPinReader</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MutableDigitalPinReader(uint8_t<sp/>aPin,<sp/>uint8_t<sp/>aMode);</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">signed</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/>getValue();</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isValid();</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/>mPin;</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">DigitalMutablePinReader<sp/>=<sp/>MutableDigitalPinReader;</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal">};</highlight></codeline>
     </programlisting>
     <location file="src/evaStdReaders.h"/>
   </compounddef>

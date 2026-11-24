@@ -29,19 +29,17 @@
 
 | Type | Name |
 | ---: | :--- |
-| class | [**AnalogMutablePinReader**](classeva_1_1_analog_mutable_pin_reader.md) <br>_Reads analog pin value with runtime pin configuration._  |
 | class | [**AnalogPinReader**](classeva_1_1_analog_pin_reader.md) &lt;tPin, tPinMode&gt;<br>_Reads analog pin value._  |
 | class | [**BinarizeEqDecor**](classeva_1_1_binarize_eq_decor.md) &lt;class TReader, tActivatesOn&gt;<br>_Decorator that converts reading to binary based on level equality._  |
-| class | [**BinarizeGtDecor**](classeva_1_1_binarize_gt_decor.md) &lt;class TReader, THRESHOLD&gt;<br>_Decorator that converts analog reading to binary based on 'greater than' threshold condition._  |
-| class | [**BinarizeLtDecor**](classeva_1_1_binarize_lt_decor.md) &lt;class TReader, THRESHOLD&gt;<br>_Decorator that converts analog reading to binary based on 'less than' threshold condition._  |
+| class | [**BinarizeGtDecor**](classeva_1_1_binarize_gt_decor.md) &lt;class TReader, tThreshold&gt;<br>_Decorator that converts analog reading to binary based on 'greater than' threshold condition._  |
+| class | [**BinarizeLtDecor**](classeva_1_1_binarize_lt_decor.md) &lt;class TReader, tThreshold&gt;<br>_Decorator that converts analog reading to binary based on 'less than' threshold condition._  |
 | class | [**BlinkingIndicator**](classeva_1_1_blinking_indicator.md) <br>[_**Indicator**_](classeva_1_1_indicator.md) _that blinks with specified period and duty cycle._ |
 | class | [**Button**](classeva_1_1_button.md) &lt;class TReader&gt;<br>[_**Button**_](classeva_1_1_button.md) _with press/release and click detection._ |
 | struct | [**CallbackInfo**](structeva_1_1_callback_info.md) <br> |
 | class | [**CountdownIndicator**](classeva_1_1_countdown_indicator.md) <br>[_**Indicator**_](classeva_1_1_indicator.md) _that blinks a specified number of times then notifies listener._ |
 | class | [**CountdownTimer**](classeva_1_1_countdown_timer.md) <br>_Timer that fires a specified number of times at fixed intervals._  |
-| class | [**DebounceDecor**](classeva_1_1_debounce_decor.md) &lt;class TReader&gt;<br>_Decorator that stabilizes readings by requiring value to be stable for a period._  |
+| class | [**DebounceDecor**](classeva_1_1_debounce_decor.md) &lt;class TReader, tDebounceDelay&gt;<br>_Rate-limiting decorator for contact-bounce suppression._  |
 | class | [**DelayTimer**](classeva_1_1_delay_timer.md) <br>_One-shot timer that fires after a delay._  |
-| class | [**DigitalMutablePinReader**](classeva_1_1_digital_mutable_pin_reader.md) <br>_Reads digital pin value with runtime pin configuration._  |
 | class | [**DigitalPinReader**](classeva_1_1_digital_pin_reader.md) &lt;tPin, tPinMode&gt;<br>_Reads digital pin value._  |
 | class | [**Handler**](classeva_1_1_handler.md) &lt;class T&gt;<br>[_**Handler**_](classeva_1_1_handler.md) _that calls a member method._ |
 | class | [**HandlerF**](classeva_1_1_handler_f.md) <br>[_**Handler**_](classeva_1_1_handler.md) _that calls a free function._ |
@@ -53,6 +51,7 @@
 | class | [**Joystick**](classeva_1_1_joystick.md) &lt;class TReader, tMinPos, tMiddlePos, tMaxPos&gt;<br>[_**Joystick**_](classeva_1_1_joystick.md) _axis reader (range -1000 .. 0 .. 1000) with trim adjustment._ |
 | class | [**List**](classeva_1_1_list.md) &lt;class ItemClass&gt;<br>_Simple singly-linked list container._  |
 | struct | [**ListIterator**](structeva_1_1_list_iterator.md) &lt;class ItemClass&gt;<br>_Iterator node for_ [_**List**_](classeva_1_1_list.md) _._ |
+| class | [**MutableAnalogPinReader**](classeva_1_1_mutable_analog_pin_reader.md) <br>_Reads analog pin value with runtime pin configuration._  |
 | struct | [**PinScrollMultiButton**](structeva_1_1_pin_scroll_multi_button.md) &lt;tPin&gt;<br> |
 | struct | [**PullupScrollButton**](structeva_1_1_pullup_scroll_button.md) &lt;tPin&gt;<br> |
 | struct | [**PullupSwitch**](structeva_1_1_pullup_switch.md) &lt;tPin&gt;<br> |
@@ -70,6 +69,8 @@
 
 | Type | Name |
 | ---: | :--- |
+| typedef MutableDigitalPinReader | [**DigitalMutablePinReader**](#typedef-digitalmutablepinreader)  <br> |
+| typedef AnalogMutablePinReader class MutableDigitalPinReader { public: MutableDigitalPinReader(uint8\_t aPin, uint8\_t aMode); signed short getValue(); bool isValid(); private: uint8\_t mPin; } | [**MutableAnalogPinReader**](#typedef-mutableanalogpinreader)  <br> |
 | typedef [**Button**](classeva_1_1_button.md)&lt; [**BinarizeEqDecor**](classeva_1_1_binarize_eq_decor.md)&lt; [**DebounceDecor**](classeva_1_1_debounce_decor.md)&lt; [**DigitalPinReader**](classeva_1_1_digital_pin_reader.md)&lt; tPin, tPinMode &gt; &gt;, tActivatesOn &gt; &gt; | [**PinButton**](#typedef-pinbutton)  <br>_Digital pin button with debouncing and level normalization._  |
 | typedef [**Joystick**](classeva_1_1_joystick.md)&lt; [**AnalogPinReader**](classeva_1_1_analog_pin_reader.md)&lt; tPin, tPinMode &gt;, tMinPos, tMiddlePos, tMaxPos &gt; | [**PinJoystick**](#typedef-pinjoystick)  <br>_Pin-based joystick with custom center position._  |
 | typedef [**Button**](classeva_1_1_button.md)&lt; [**QuantizeDecor**](classeva_1_1_quantize_decor.md)&lt; [**DebounceDecor**](classeva_1_1_debounce_decor.md)&lt; [**AnalogPinReader**](classeva_1_1_analog_pin_reader.md)&lt; tPin, tPinMode &gt; &gt;, tLevels... &gt; &gt; | [**PinMultiButton**](#typedef-pinmultibutton)  <br>_Multiple buttons on a single ADC pin using resistor ladder._  |
@@ -92,7 +93,6 @@
 
 | Type | Name |
 | ---: | :--- |
-|  const unsigned short | [**DEBOUNCE\_DELAY**](#variable-debounce_delay)   = `120`<br> |
 |  const unsigned short | [**LONGPRESS\_DELAY**](#variable-longpress_delay)   = `750`<br> |
 |  const unsigned char | [**ON\_CHANGE**](#variable-on_change)   = `0x04`<br> |
 |  const unsigned char | [**ON\_LONGCLICK**](#variable-on_longclick)   = `0x10`<br> |
@@ -102,6 +102,7 @@
 |  const unsigned char | [**ON\_REPEATKEY**](#variable-on_repeatkey)   = `0x40`<br> |
 |  const unsigned char | [**ON\_SHORTCLICK**](#variable-on_shortclick)   = `0x08`<br> |
 |  const unsigned short | [**REPEAT\_DELAY**](#variable-repeat_delay)   = `300`<br> |
+|  const unsigned short | [**kDebounceDelay**](#variable-kdebouncedelay)   = `120`<br> |
 
 
 
@@ -156,6 +157,49 @@
 
 ## Public Types Documentation
 
+
+
+
+### typedef DigitalMutablePinReader 
+
+```C++
+using eva::DigitalMutablePinReader = MutableDigitalPinReader;
+```
+
+
+
+
+<hr>
+
+
+
+### typedef MutableAnalogPinReader 
+
+```C++
+using eva::MutableAnalogPinReader = AnalogMutablePinReader
+
+   
+   class MutableDigitalPinReader
+   {
+   public:
+       
+       MutableDigitalPinReader(uint8_t aPin, uint8_t aMode);
+
+       
+       signed short getValue();
+
+       
+       bool isValid();
+
+   private:
+       uint8_t mPin;
+   };
+```
+
+
+
+
+<hr>
 
 
 
@@ -594,19 +638,6 @@ Convenience alias for the most common Arduino switch wiring:
 
 
 
-### variable DEBOUNCE\_DELAY 
-
-```C++
-const unsigned short eva::DEBOUNCE_DELAY;
-```
-
-
-
-
-<hr>
-
-
-
 ### variable LONGPRESS\_DELAY 
 
 ```C++
@@ -715,6 +746,19 @@ const unsigned char eva::ON_SHORTCLICK;
 
 ```C++
 const unsigned short eva::REPEAT_DELAY;
+```
+
+
+
+
+<hr>
+
+
+
+### variable kDebounceDelay 
+
+```C++
+const unsigned short eva::kDebounceDelay;
 ```
 
 

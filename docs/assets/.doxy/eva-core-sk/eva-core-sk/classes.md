@@ -4,8 +4,6 @@
 
 ## a
 
-* [**AnalogMutablePinReader**](classeva_1_1_analog_mutable_pin_reader.md)
-([**eva**](namespaceeva.md))
 * [**AnalogPinReader**](classeva_1_1_analog_pin_reader.md)
 ([**eva**](namespaceeva.md))
 
@@ -39,8 +37,6 @@
 * [**DebounceDecor**](classeva_1_1_debounce_decor.md)
 ([**eva**](namespaceeva.md))
 * [**DelayTimer**](classeva_1_1_delay_timer.md)
-([**eva**](namespaceeva.md))
-* [**DigitalMutablePinReader**](classeva_1_1_digital_mutable_pin_reader.md)
 ([**eva**](namespaceeva.md))
 * [**DigitalPinReader**](classeva_1_1_digital_pin_reader.md)
 ([**eva**](namespaceeva.md))
@@ -79,6 +75,12 @@
 * [**List**](classeva_1_1_list.md)
 ([**eva**](namespaceeva.md))
 * [**ListIterator**](structeva_1_1_list_iterator.md)
+([**eva**](namespaceeva.md))
+
+
+## m
+
+* [**MutableAnalogPinReader**](classeva_1_1_mutable_analog_pin_reader.md)
 ([**eva**](namespaceeva.md))
 
 

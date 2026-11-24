@@ -2,7 +2,7 @@
 
 # Class eva::DebounceDecor
 
-**template &lt;class TReader&gt;**
+**template &lt;class TReader, int tDebounceDelay&gt;**
 
 
 
@@ -10,7 +10,7 @@
 
 
 
-_Decorator that stabilizes readings by requiring value to be stable for a period._ [More...](#detailed-description)
+_Rate-limiting decorator for contact-bounce suppression._ [More...](#detailed-description)
 
 * `#include <evaReaderDecors.h>`
 
@@ -88,12 +88,19 @@ Inherits the following classes: TReader
 ## Detailed Description
 
 
+The first change of the underlying reading is accepted immediately; after that, further changes are ignored for tDebounceDelay ms. Readings taken during that window return the accepted value without polling the underlying reader.
+
+
+Note: this is NOT a "value must stay stable for tDebounceDelay ms" debounce. Short glitches that occur right after an accepted change are filtered out by the lock window, but a glitch that arrives when no lock is active will be accepted as a new value.
+
+
 
 
 **Template parameters:**
 
 
 * `TReader` Underlying reader type 
+* `tDebounceDelay` Lock window after an accepted change, ms 
 
 
 

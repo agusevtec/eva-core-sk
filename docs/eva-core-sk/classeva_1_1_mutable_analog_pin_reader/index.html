@@ -21,7 +21,7 @@
     
     
       
-        <title>Class eva::AnalogMutablePinReader - EVA Core | EVA Survival Kit</title>
+        <title>Class eva::MutableAnalogPinReader - EVA Core | EVA Survival Kit</title>
       
     
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#class-evaanalogmutablepinreader" class="md-skip">
+        <a href="#class-evamutableanalogpinreader" class="md-skip">
           Skip to content
         </a>
       
@@ -98,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Class eva::AnalogMutablePinReader
+              Class eva::MutableAnalogPinReader
             
           </span>
         </div>
@@ -702,10 +702,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#function-analogmutablepinreader" class="md-nav__link">
+  <a href="#function-mutableanalogpinreader" class="md-nav__link">
     <span class="md-ellipsis">
       
-        function AnalogMutablePinReader
+        function MutableAnalogPinReader
       
     </span>
   </a>
@@ -759,8 +759,8 @@
   
 
 
-<h1 id="class-evaanalogmutablepinreader">Class eva::AnalogMutablePinReader<a class="headerlink" href="#class-evaanalogmutablepinreader" title="Permanent link">&para;</a></h1>
-<p><a href="../annotated/"><strong>ClassList</strong></a> <strong>&gt;</strong> <a href="../namespaceeva/"><strong>eva</strong></a> <strong>&gt;</strong> <a href="./"><strong>AnalogMutablePinReader</strong></a></p>
+<h1 id="class-evamutableanalogpinreader">Class eva::MutableAnalogPinReader<a class="headerlink" href="#class-evamutableanalogpinreader" title="Permanent link">&para;</a></h1>
+<p><a href="../annotated/"><strong>ClassList</strong></a> <strong>&gt;</strong> <a href="../namespaceeva/"><strong>eva</strong></a> <strong>&gt;</strong> <a href="./"><strong>MutableAnalogPinReader</strong></a></p>
 <p><em>Reads analog pin value with runtime pin configuration.</em> </p>
 <ul>
 <li><code>#include &lt;evaStdReaders.h&gt;</code></li>
@@ -776,7 +776,7 @@
 <tbody>
 <tr>
 <td style="text-align: right;"></td>
-<td style="text-align: left;"><a href="#function-analogmutablepinreader"><strong>AnalogMutablePinReader</strong></a> (uint8_t aPin, uint8_t aMode) <br><em>Constructs an</em> <a href="./"><em><strong>AnalogMutablePinReader</strong></em></a> <em>and configures pin.</em></td>
+<td style="text-align: left;"><a href="#function-mutableanalogpinreader"><strong>MutableAnalogPinReader</strong></a> (uint8_t aPin, uint8_t aMode) <br><em>Constructs an AnalogMutablePinReader and configures pin.</em></td>
 </tr>
 <tr>
 <td style="text-align: right;">signed short</td>
@@ -789,9 +789,9 @@
 </tbody>
 </table>
 <h2 id="public-functions-documentation">Public Functions Documentation<a class="headerlink" href="#public-functions-documentation" title="Permanent link">&para;</a></h2>
-<h3 id="function-analogmutablepinreader">function AnalogMutablePinReader<a class="headerlink" href="#function-analogmutablepinreader" title="Permanent link">&para;</a></h3>
-<p><em>Constructs an</em> <a href="./"><em><strong>AnalogMutablePinReader</strong></em></a> <em>and configures pin.</em></p>
-<div class="codehilite"><pre><span></span><code><span class="n">eva</span><span class="o">::</span><span class="n">AnalogMutablePinReader</span><span class="o">::</span><span class="n">AnalogMutablePinReader</span><span class="w"> </span><span class="p">(</span>
+<h3 id="function-mutableanalogpinreader">function MutableAnalogPinReader<a class="headerlink" href="#function-mutableanalogpinreader" title="Permanent link">&para;</a></h3>
+<p><em>Constructs an AnalogMutablePinReader and configures pin.</em> </p>
+<div class="codehilite"><pre><span></span><code><span class="n">eva</span><span class="o">::</span><span class="n">MutableAnalogPinReader</span><span class="o">::</span><span class="n">MutableAnalogPinReader</span><span class="w"> </span><span class="p">(</span>
 <span class="w">    </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">aPin</span><span class="p">,</span>
 <span class="w">    </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">aMode</span>
 <span class="p">)</span><span class="w"> </span>
@@ -806,7 +806,7 @@
 
 <h3 id="function-getvalue">function getValue<a class="headerlink" href="#function-getvalue" title="Permanent link">&para;</a></h3>
 <p><em>Reads analog pin value.</em> </p>
-<div class="codehilite"><pre><span></span><code><span class="kt">signed</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">AnalogMutablePinReader</span><span class="o">::</span><span class="n">getValue</span><span class="w"> </span><span class="p">()</span><span class="w"> </span>
+<div class="codehilite"><pre><span></span><code><span class="kt">signed</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">MutableAnalogPinReader</span><span class="o">::</span><span class="n">getValue</span><span class="w"> </span><span class="p">()</span><span class="w"> </span>
 </code></pre></div>
 
 <p><strong>Returns:</strong></p>
@@ -815,7 +815,7 @@
 
 <h3 id="function-isvalid">function isValid<a class="headerlink" href="#function-isvalid" title="Permanent link">&para;</a></h3>
 <p><em>Checks if reader is valid.</em> </p>
-<div class="codehilite"><pre><span></span><code><span class="kt">bool</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">AnalogMutablePinReader</span><span class="o">::</span><span class="n">isValid</span><span class="w"> </span><span class="p">()</span><span class="w"> </span>
+<div class="codehilite"><pre><span></span><code><span class="kt">bool</span><span class="w"> </span><span class="n">eva</span><span class="o">::</span><span class="n">MutableAnalogPinReader</span><span class="o">::</span><span class="n">isValid</span><span class="w"> </span><span class="p">()</span><span class="w"> </span>
 </code></pre></div>
 
 <p><strong>Returns:</strong></p>

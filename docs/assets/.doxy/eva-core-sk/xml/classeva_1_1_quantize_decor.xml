@@ -29,7 +29,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaReaderDecors.h" line="206" column="28" bodyfile="src/evaReaderDecors.h" bodystart="206" bodyend="206"/>
+        <location file="src/evaReaderDecors.h" line="219" column="28" bodyfile="src/evaReaderDecors.h" bodystart="219" bodyend="219"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -67,7 +67,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaReaderDecors.h" line="170" column="9" bodyfile="src/evaReaderDecors.h" bodystart="170" bodyend="172"/>
+        <location file="src/evaReaderDecors.h" line="183" column="9" bodyfile="src/evaReaderDecors.h" bodystart="183" bodyend="185"/>
       </memberdef>
       <memberdef kind="function" id="classeva_1_1_quantize_decor_1aecc057c9193f48f8bccd3519fcb372f9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>signed short</type>
@@ -85,7 +85,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaReaderDecors.h" line="177" column="22" bodyfile="src/evaReaderDecors.h" bodystart="177" bodyend="191"/>
+        <location file="src/evaReaderDecors.h" line="190" column="22" bodyfile="src/evaReaderDecors.h" bodystart="190" bodyend="204"/>
       </memberdef>
       <memberdef kind="function" id="classeva_1_1_quantize_decor_1ad3ceb49cbc77ee34423cccccb695a9dc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>signed short</type>
@@ -98,7 +98,7 @@
           <declname>index</declname>
         </param>
         <briefdescription>
-<para>Gets threshold value for a level. </para>
+<para>Gets Threshold value for a level. </para>
         </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
@@ -110,13 +110,13 @@
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>Threshold value </para>
+<simplesect kind="return"><para>threshold value </para>
 </simplesect>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaReaderDecors.h" line="198" column="22" bodyfile="src/evaReaderDecors.h" bodystart="198" bodyend="203"/>
+        <location file="src/evaReaderDecors.h" line="211" column="22" bodyfile="src/evaReaderDecors.h" bodystart="211" bodyend="216"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -136,7 +136,7 @@
 <parametername>tLevels</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Threshold values for each level </para>
+<para>threshold values for each level </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
@@ -182,7 +182,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="src/evaReaderDecors.h" line="160" column="5" bodyfile="src/evaReaderDecors.h" bodystart="161" bodyend="207"/>
+    <location file="src/evaReaderDecors.h" line="173" column="5" bodyfile="src/evaReaderDecors.h" bodystart="174" bodyend="220"/>
     <listofallmembers>
       <member refid="classeva_1_1_quantize_decor_1ad3ceb49cbc77ee34423cccccb695a9dc" prot="public" virt="non-virtual"><scope>eva::QuantizeDecor</scope><name>getLevel</name></member>
       <member refid="classeva_1_1_quantize_decor_1aecc057c9193f48f8bccd3519fcb372f9" prot="public" virt="non-virtual"><scope>eva::QuantizeDecor</scope><name>getValue</name></member>

@@ -57,7 +57,7 @@ Inherited by the following classes: [eva::Switch](classeva_1_1_switch.md)
 | Type | Name |
 | ---: | :--- |
 |   | [**QuantizeDecor**](#function-quantizedecor) (Args... args) <br>_Constructs a_ [_**QuantizeDecor**_](classeva_1_1_quantize_decor.md) _._ |
-|  signed short | [**getLevel**](#function-getlevel) (unsigned char index) <br>_Gets threshold value for a level._  |
+|  signed short | [**getLevel**](#function-getlevel) (unsigned char index) <br>_Gets Threshold value for a level._  |
 |  signed short | [**getValue**](#function-getvalue) () <br>_Gets quantized level index._  |
 
 
@@ -96,7 +96,7 @@ Inherited by the following classes: [eva::Switch](classeva_1_1_switch.md)
 
 
 * `TReader` Underlying reader type 
-* `tLevels` Threshold values for each level 
+* `tLevels` threshold values for each level 
 
 
 
@@ -137,7 +137,7 @@ inline eva::QuantizeDecor::QuantizeDecor (
 
 ### function getLevel 
 
-_Gets threshold value for a level._ 
+_Gets Threshold value for a level._ 
 ```C++
 inline signed short eva::QuantizeDecor::getLevel (
     unsigned char index
@@ -157,7 +157,7 @@ inline signed short eva::QuantizeDecor::getLevel (
 
 **Returns:**
 
-Threshold value 
+threshold value 
 
 
 

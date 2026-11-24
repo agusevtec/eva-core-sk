@@ -64,10 +64,24 @@ namespace eva
         }
     };
 
-    class AnalogMutablePinReader
+    class MutableAnalogPinReader
     {
     public:
-        AnalogMutablePinReader(uint8_t aPin, uint8_t aMode);
+        MutableAnalogPinReader(uint8_t aPin, uint8_t aMode);
+
+        signed short getValue();
+
+        bool isValid();
+
+    private:
+        uint8_t mPin;
+    };
+    using MutableAnalogPinReader = AnalogMutablePinReader
+
+    class MutableDigitalPinReader
+    {
+    public:
+        MutableDigitalPinReader(uint8_t aPin, uint8_t aMode);
 
         signed short getValue();
 
@@ -77,18 +91,7 @@ namespace eva
         uint8_t mPin;
     };
 
-    class DigitalMutablePinReader
-    {
-    public:
-        DigitalMutablePinReader(uint8_t aPin, uint8_t aMode);
-
-        signed short getValue();
-
-        bool isValid();
-
-    private:
-        uint8_t mPin;
-    };
+    using DigitalMutablePinReader = MutableDigitalPinReader;
 
 };
 ```

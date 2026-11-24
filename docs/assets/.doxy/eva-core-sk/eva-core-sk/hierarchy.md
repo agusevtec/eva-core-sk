@@ -4,7 +4,6 @@
 This inheritance list is sorted roughly, but not completely, alphabetically:
 
 
-* **class** [**eva::AnalogMutablePinReader**](classeva_1_1_analog_mutable_pin_reader.md) _Reads analog pin value with runtime pin configuration._ 
 * **class** [**eva::AnalogPinReader**](classeva_1_1_analog_pin_reader.md) _Reads analog pin value._     
     * **class** [**eva::Joystick**](classeva_1_1_joystick.md) [_**Joystick**_](classeva_1_1_joystick.md) _axis reader (range -1000 .. 0 .. 1000) with trim adjustment._
     * **class** [**eva::Joystick**](classeva_1_1_joystick.md) [_**Joystick**_](classeva_1_1_joystick.md) _axis reader (range -1000 .. 0 .. 1000) with trim adjustment._
@@ -43,11 +42,11 @@ This inheritance list is sorted roughly, but not completely, alphabetically:
             * **class** [**eva::ScrollButton**](classeva_1_1_scroll_button.md) [_**Button**_](classeva_1_1_button.md) _with auto-repeat (typematic) functionality._
         * **class** [**eva::Button**](classeva_1_1_button.md) [_**Button**_](classeva_1_1_button.md) _with press/release and click detection._    
             * **class** [**eva::ScrollButton**](classeva_1_1_scroll_button.md) [_**Button**_](classeva_1_1_button.md) _with auto-repeat (typematic) functionality._
-* **class** [**eva::DigitalMutablePinReader**](classeva_1_1_digital_mutable_pin_reader.md) _Reads digital pin value with runtime pin configuration._ 
 * **class** [**eva::DigitalPinReader**](classeva_1_1_digital_pin_reader.md) _Reads digital pin value._ 
 * **class** [**eva::IReader**](classeva_1_1_i_reader.md) _Interface for value readers._     
     * **class** [**eva::IReaderAdapter**](classeva_1_1_i_reader_adapter.md) _Adapter that converts any class with getValue() into an_ [_**IReader**_](classeva_1_1_i_reader.md) _._
 * **class** [**eva::List**](classeva_1_1_list.md) _Simple singly-linked list container._ 
+* **class** [**eva::MutableAnalogPinReader**](classeva_1_1_mutable_analog_pin_reader.md) _Reads analog pin value with runtime pin configuration._ 
 * **class** [**eva::RingBuffer**](classeva_1_1_ring_buffer.md) _Fixed-capacity circular ring buffer._ 
 * **class** [**eva::ValueReader**](classeva_1_1_value_reader.md) _Simple stateful reader acting as a ground-level of proccessing pipe._ 
 * **struct** [**eva::CallbackInfo**](structeva_1_1_callback_info.md) 
@@ -73,7 +72,7 @@ This inheritance list is sorted roughly, but not completely, alphabetically:
             * **class** [**eva::ScrollButton**](classeva_1_1_scroll_button.md) [_**Button**_](classeva_1_1_button.md) _with auto-repeat (typematic) functionality._
         * **class** [**eva::Button**](classeva_1_1_button.md) [_**Button**_](classeva_1_1_button.md) _with press/release and click detection._    
             * **class** [**eva::ScrollButton**](classeva_1_1_scroll_button.md) [_**Button**_](classeva_1_1_button.md) _with auto-repeat (typematic) functionality._
-    * **class** [**eva::DebounceDecor**](classeva_1_1_debounce_decor.md) _Decorator that stabilizes readings by requiring value to be stable for a period._ 
+    * **class** [**eva::DebounceDecor**](classeva_1_1_debounce_decor.md) _Rate-limiting decorator for contact-bounce suppression._ 
     * **class** [**eva::Joystick**](classeva_1_1_joystick.md) [_**Joystick**_](classeva_1_1_joystick.md) _axis reader (range -1000 .. 0 .. 1000) with trim adjustment._
     * **class** [**eva::QuantizeDecor**](classeva_1_1_quantize_decor.md) _Decorator that quantizes analog readings to discrete levels._     
         * **class** [**eva::Switch**](classeva_1_1_switch.md) _Universal switch/button class for multi-valued input sources._     

@@ -14,7 +14,7 @@
 
 namespace eva
 {
-    static const unsigned short DEBOUNCE_DELAY = 120;
+    static const unsigned short kDebounceDelay = 120;
 
     inline static bool in_between(signed short x, signed short a, signed short b)
     {
@@ -24,7 +24,8 @@ namespace eva
             return true;
         return false;
     }
-    template <class TReader>
+
+    template <class TReader, int tDebounceDelay = kDebounceDelay>
     class DebounceDecor : public TReader
     {
     public:
@@ -45,7 +46,7 @@ namespace eva
 
             if (value != this->keepedValue)
             {
-                this->keepValueTill = now + DEBOUNCE_DELAY;
+                this->keepValueTill = now + tDebounceDelay;
                 this->keepedValue = value;
             }
             return this->keepedValue;
@@ -71,7 +72,7 @@ namespace eva
         }
     };
 
-    template <class TReader, int THRESHOLD>
+    template <class TReader, int tThreshold>
     class BinarizeLtDecor : public TReader
     {
     public:
@@ -81,13 +82,13 @@ namespace eva
         }
         signed short getValue()
         {
-            if (TReader::getValue() <= THRESHOLD)
+            if (TReader::getValue() < tThreshold)
                 return 1;
             return 0;
         }
     };
 
-    template <class TReader, int THRESHOLD>
+    template <class TReader, int tThreshold>
     class BinarizeGtDecor : public TReader
     {
     public:
@@ -97,7 +98,7 @@ namespace eva
         }
         signed short getValue()
         {
-            if (TReader::getValue() >= THRESHOLD)
+            if (TReader::getValue() > tThreshold)
                 return 1;
             return 0;
         }
@@ -131,7 +132,7 @@ namespace eva
 
         signed short getLevel(unsigned char index)
         {
-            if ((index < 0) || (index > sizeof...(tLevels)))
+            if ((index > sizeof...(tLevels)))
                 return 0;
             return this->levels[index];
         }

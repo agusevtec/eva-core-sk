@@ -749,10 +749,24 @@
 <span class="w">        </span><span class="p">}</span>
 <span class="w">    </span><span class="p">};</span>
 
-<span class="w">    </span><span class="k">class</span><span class="w"> </span><span class="nc">AnalogMutablePinReader</span>
+<span class="w">    </span><span class="k">class</span><span class="w"> </span><span class="nc">MutableAnalogPinReader</span>
 <span class="w">    </span><span class="p">{</span>
 <span class="w">    </span><span class="k">public</span><span class="o">:</span>
-<span class="w">        </span><span class="n">AnalogMutablePinReader</span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">aPin</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">aMode</span><span class="p">);</span>
+<span class="w">        </span><span class="n">MutableAnalogPinReader</span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">aPin</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">aMode</span><span class="p">);</span>
+
+<span class="w">        </span><span class="kt">signed</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="nf">getValue</span><span class="p">();</span>
+
+<span class="w">        </span><span class="kt">bool</span><span class="w"> </span><span class="nf">isValid</span><span class="p">();</span>
+
+<span class="w">    </span><span class="k">private</span><span class="o">:</span>
+<span class="w">        </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">mPin</span><span class="p">;</span>
+<span class="w">    </span><span class="p">};</span>
+<span class="w">    </span><span class="k">using</span><span class="w"> </span><span class="n">MutableAnalogPinReader</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AnalogMutablePinReader</span>
+
+<span class="w">    </span><span class="k">class</span><span class="w"> </span><span class="nc">MutableDigitalPinReader</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="o">:</span>
+<span class="w">        </span><span class="n">MutableDigitalPinReader</span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">aPin</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">aMode</span><span class="p">);</span>
 
 <span class="w">        </span><span class="kt">signed</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="nf">getValue</span><span class="p">();</span>
 
@@ -762,18 +776,7 @@
 <span class="w">        </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">mPin</span><span class="p">;</span>
 <span class="w">    </span><span class="p">};</span>
 
-<span class="w">    </span><span class="k">class</span><span class="w"> </span><span class="nc">DigitalMutablePinReader</span>
-<span class="w">    </span><span class="p">{</span>
-<span class="w">    </span><span class="k">public</span><span class="o">:</span>
-<span class="w">        </span><span class="n">DigitalMutablePinReader</span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">aPin</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">aMode</span><span class="p">);</span>
-
-<span class="w">        </span><span class="kt">signed</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="nf">getValue</span><span class="p">();</span>
-
-<span class="w">        </span><span class="kt">bool</span><span class="w"> </span><span class="nf">isValid</span><span class="p">();</span>
-
-<span class="w">    </span><span class="k">private</span><span class="o">:</span>
-<span class="w">        </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">mPin</span><span class="p">;</span>
-<span class="w">    </span><span class="p">};</span>
+<span class="w">    </span><span class="k">using</span><span class="w"> </span><span class="n">DigitalMutablePinReader</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MutableDigitalPinReader</span><span class="p">;</span>
 
 <span class="p">};</span>
 </code></pre></div>

@@ -50,7 +50,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaReaderDecors.h" line="82" column="9" bodyfile="src/evaReaderDecors.h" bodystart="82" bodyend="84"/>
+        <location file="src/evaReaderDecors.h" line="95" column="9" bodyfile="src/evaReaderDecors.h" bodystart="95" bodyend="97"/>
       </memberdef>
       <memberdef kind="function" id="classeva_1_1_binarize_eq_decor_1af8d695546e78545496897339d441675c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>signed short</type>
@@ -68,7 +68,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/evaReaderDecors.h" line="90" column="22" bodyfile="src/evaReaderDecors.h" bodystart="90" bodyend="93"/>
+        <location file="src/evaReaderDecors.h" line="103" column="22" bodyfile="src/evaReaderDecors.h" bodystart="103" bodyend="106"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -122,7 +122,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="src/evaReaderDecors.h" line="74" column="5" bodyfile="src/evaReaderDecors.h" bodystart="75" bodyend="94"/>
+    <location file="src/evaReaderDecors.h" line="87" column="5" bodyfile="src/evaReaderDecors.h" bodystart="88" bodyend="107"/>
     <listofallmembers>
       <member refid="classeva_1_1_binarize_eq_decor_1a93f43eff2158fa4024391326f01984b7" prot="public" virt="non-virtual"><scope>eva::BinarizeEqDecor</scope><name>BinarizeEqDecor</name></member>
       <member refid="classeva_1_1_binarize_eq_decor_1af8d695546e78545496897339d441675c" prot="public" virt="non-virtual"><scope>eva::BinarizeEqDecor</scope><name>getValue</name></member>

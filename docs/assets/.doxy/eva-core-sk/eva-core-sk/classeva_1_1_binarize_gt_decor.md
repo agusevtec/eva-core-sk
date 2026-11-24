@@ -2,7 +2,7 @@
 
 # Class eva::BinarizeGtDecor
 
-**template &lt;class TReader, int THRESHOLD&gt;**
+**template &lt;class TReader, int tThreshold&gt;**
 
 
 
@@ -94,7 +94,7 @@ Inherits the following classes: TReader
 
 
 * `TReader` Underlying reader type 
-* `THRESHOLD` Threshold value 
+* `tThreshold` threshold value 
 
 
 
@@ -146,7 +146,7 @@ inline signed short eva::BinarizeGtDecor::getValue ()
 
 **Returns:**
 
-1 if value &gt;= THRESHOLD, 0 otherwise 
+1 if value &gt;= threshold, 0 otherwise 
 
 
 

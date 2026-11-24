@@ -5,7 +5,7 @@
 
 ## d
 
-* **DEBOUNCE\_DELAY** ([**eva**](namespaceeva.md))
+* **DigitalMutablePinReader** ([**eva**](namespaceeva.md))
 
 
 ## i
@@ -13,9 +13,19 @@
 * **in\_between** ([**eva**](namespaceeva.md))
 
 
+## k
+
+* **kDebounceDelay** ([**eva**](namespaceeva.md))
+
+
 ## l
 
 * **LONGPRESS\_DELAY** ([**eva**](namespaceeva.md))
+
+
+## m
+
+* **MutableAnalogPinReader** ([**eva**](namespaceeva.md))
 
 
 ## o
