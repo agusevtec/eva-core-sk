@@ -4,7 +4,7 @@
 
 namespace eva
 {
-    static const unsigned short DEBOUNCE_DELAY = 120;
+    static const unsigned short kDebounceDelay = 120;
 
     /**
      * @brief Checks if value x is between a and b (inclusive)
@@ -21,11 +21,24 @@ namespace eva
             return true;
         return false;
     }
+
     /**
-     * @brief Decorator that stabilizes readings by requiring value to be stable for a period
+     * @brief Rate-limiting decorator for contact-bounce suppression.
+     *
+     * The first change of the underlying reading is accepted immediately;
+     * after that, further changes are ignored for tDebounceDelay ms.
+     * Readings taken during that window return the accepted value without
+     * polling the underlying reader.
+     *
+     * Note: this is NOT a "value must stay stable for tDebounceDelay ms"
+     * debounce. Short glitches that occur right after an accepted change
+     * are filtered out by the lock window, but a glitch that arrives when
+     * no lock is active will be accepted as a new value.
+     *
      * @tparam TReader Underlying reader type
+     * @tparam tDebounceDelay Lock window after an accepted change, ms
      */
-    template <class TReader>
+    template <class TReader, int tDebounceDelay = kDebounceDelay>
     class DebounceDecor : public TReader
     {
     public:
@@ -54,7 +67,7 @@ namespace eva
 
             if (value != this->keepedValue)
             {
-                this->keepValueTill = now + DEBOUNCE_DELAY;
+                this->keepValueTill = now + tDebounceDelay;
                 this->keepedValue = value;
             }
             return this->keepedValue;
@@ -96,9 +109,9 @@ namespace eva
     /**
      * @brief Decorator that converts analog reading to binary based on 'less than' threshold condition
      * @tparam TReader Underlying reader type
-     * @tparam THRESHOLD Threshold value
+     * @tparam tThreshold threshold value
      */
-    template <class TReader, int THRESHOLD>
+    template <class TReader, int tThreshold>
     class BinarizeLtDecor : public TReader
     {
     public:
@@ -112,11 +125,11 @@ namespace eva
         }
         /**
          * @brief Gets binary value based on less than comparison
-         * @return 1 if value <= THRESHOLD, 0 otherwise
+         * @return 1 if value <= threshold, 0 otherwise
          */
         signed short getValue()
         {
-            if (TReader::getValue() <= THRESHOLD)
+            if (TReader::getValue() < tThreshold)
                 return 1;
             return 0;
         }
@@ -125,9 +138,9 @@ namespace eva
     /**
      * @brief Decorator that converts analog reading to binary based on 'greater than' threshold condition
      * @tparam TReader Underlying reader type
-     * @tparam THRESHOLD Threshold value
+     * @tparam tThreshold threshold value
      */
-    template <class TReader, int THRESHOLD>
+    template <class TReader, int tThreshold>
     class BinarizeGtDecor : public TReader
     {
     public:
@@ -141,11 +154,11 @@ namespace eva
         }
         /**
          * @brief Gets binary value based on greater than comparison
-         * @return 1 if value >= THRESHOLD, 0 otherwise
+         * @return 1 if value >= threshold, 0 otherwise
          */
         signed short getValue()
         {
-            if (TReader::getValue() >= THRESHOLD)
+            if (TReader::getValue() > tThreshold)
                 return 1;
             return 0;
         }
@@ -154,7 +167,7 @@ namespace eva
     /**
      * @brief Decorator that quantizes analog readings to discrete levels
      * @tparam TReader Underlying reader type
-     * @tparam tLevels Threshold values for each level
+     * @tparam tLevels threshold values for each level
      */
     template <class TReader, signed short... tLevels>
     class QuantizeDecor : public TReader
@@ -191,13 +204,13 @@ namespace eva
         }
 
         /**
-         * @brief Gets threshold value for a level
+         * @brief Gets Threshold value for a level
          * @param index Level index
-         * @return Threshold value
+         * @return threshold value
          */
         signed short getLevel(unsigned char index)
         {
-            if ((index < 0) || (index > sizeof...(tLevels)))
+            if ((index > sizeof...(tLevels)))
                 return 0;
             return this->levels[index];
         }
