@@ -92,7 +92,7 @@ namespace eva
     /**
      * @brief Reads analog pin value with runtime pin configuration
      */
-    class AnalogMutablePinReader
+    class MutableAnalogPinReader
     {
     public:
         /**
@@ -100,7 +100,7 @@ namespace eva
          * @param aPin Arduino analog pin number
          * @param aMode Pin mode
          */
-        AnalogMutablePinReader(uint8_t aPin, uint8_t aMode);
+        MutableAnalogPinReader(uint8_t aPin, uint8_t aMode);
 
         /**
          * @brief Reads analog pin value
@@ -121,7 +121,7 @@ namespace eva
     /**
      * @brief Reads digital pin value with runtime pin configuration
      */
-    class DigitalMutablePinReader
+    class MutableDigitalPinReader
     {
     public:
         /**
@@ -129,7 +129,7 @@ namespace eva
          * @param aPin Arduino digital pin number
          * @param aMode Pin mode
          */
-        DigitalMutablePinReader(uint8_t aPin, uint8_t aMode);
+        MutableDigitalPinReader(uint8_t aPin, uint8_t aMode);
 
         /**
          * @brief Reads digital pin value
