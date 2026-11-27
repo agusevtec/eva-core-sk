@@ -127,4 +127,4 @@ namespace eva
    */
   template <int tPin, int tPinMode, signed short tMinPos, signed short tMiddlePos, signed short tMaxPos>
   using PinJoystick = Joystick<AnalogPinReader<tPin, tPinMode>, tMinPos, tMiddlePos, tMaxPos>;
-};
+}

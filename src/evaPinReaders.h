@@ -137,4 +137,4 @@ namespace eva
 
     using DigitalMutablePinReader = MutableDigitalPinReader;
 
-};
+}

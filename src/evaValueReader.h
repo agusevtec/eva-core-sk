@@ -15,4 +15,4 @@ namespace eva
         signed short getValue() const { return mValue; }
         bool isValid() const { return true; }
     };
-};
+}

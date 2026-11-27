@@ -239,4 +239,4 @@ namespace eva
     {
         static_assert(tPin < 0, "PullupSwitch is deprecated and was renamed to PullUpSwitch!");
     };
-};
+}

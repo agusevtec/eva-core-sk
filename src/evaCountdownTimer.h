@@ -53,4 +53,4 @@ namespace eva
         unsigned short period;
         unsigned char remainingCount;
     };
-};
+}

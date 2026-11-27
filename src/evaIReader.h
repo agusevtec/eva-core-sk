@@ -52,4 +52,4 @@ namespace eva
             return T::isValid();
         }
     };
-};
+}

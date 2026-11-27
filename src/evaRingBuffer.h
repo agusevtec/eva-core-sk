@@ -63,5 +63,4 @@ namespace eva
             return mSize;
         }
     };
-
 }

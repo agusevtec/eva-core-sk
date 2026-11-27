@@ -51,4 +51,4 @@ namespace eva
    */
   template <signed short tPin, int tPinMode, signed short tMinPos, signed short tMaxPos>
   using PinSlider = Slider<AnalogPinReader<tPin, tPinMode>, tMinPos, tMaxPos>;
-};
+}

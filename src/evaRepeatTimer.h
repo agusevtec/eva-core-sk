@@ -66,4 +66,4 @@ namespace eva
     private:
         unsigned short period;
     };
-};
+}

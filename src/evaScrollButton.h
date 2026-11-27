@@ -184,4 +184,4 @@ namespace eva
         static_assert(tPin < 0, "PinScrollMultiButton is deprecated and was renamed to PinMultiScrollButton!");
     };
 
-};
+}
