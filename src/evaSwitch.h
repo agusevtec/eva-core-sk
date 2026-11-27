@@ -2,7 +2,7 @@
 
 #include "evaTickable.h"
 #include "evaHandler.h"
-#include "evaStdReaders.h"
+#include "evaPinReaders.h"
 #include "evaReaderDecors.h"
 
 namespace eva

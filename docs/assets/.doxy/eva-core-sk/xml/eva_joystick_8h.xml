@@ -2,7 +2,7 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
   <compounddef id="eva_joystick_8h" kind="file" language="C++">
     <compoundname>evaJoystick.h</compoundname>
-    <includes refid="eva_std_readers_8h" local="yes">evaStdReaders.h</includes>
+    <includes refid="eva_pin_readers_8h" local="yes">evaPinReaders.h</includes>
     <incdepgraph>
       <node id="3">
         <label>Arduino.h</label>
@@ -14,8 +14,8 @@
         </childnode>
       </node>
       <node id="2">
-        <label>evaStdReaders.h</label>
-        <link refid="eva_std_readers_8h_source"/>
+        <label>evaPinReaders.h</label>
+        <link refid="eva_pin_readers_8h_source"/>
         <childnode refid="3" relation="include">
         </childnode>
       </node>
@@ -29,7 +29,7 @@
     <programlisting>
 <codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="2"><highlight class="normal"></highlight></codeline>
-<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;evaStdReaders.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;evaPinReaders.h&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="4"><highlight class="normal"></highlight></codeline>
 <codeline lineno="5"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">eva</highlight></codeline>
 <codeline lineno="6"><highlight class="normal">{</highlight></codeline>

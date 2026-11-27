@@ -10,7 +10,7 @@
 ```C++
 #pragma once
 
-#include "evaStdReaders.h"
+#include "evaPinReaders.h"
 #include <Arduino.h>
 
 namespace eva

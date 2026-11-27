@@ -167,6 +167,12 @@
     <member refid="classeva_1_1_mutable_analog_pin_reader_1a5ab7e7ff9c750fe20b4b18051aec1ef2" kind="function"><name>getValue</name></member>
     <member refid="classeva_1_1_mutable_analog_pin_reader_1a2effe476707b703ac70dfc8e6c3024ff" kind="function"><name>isValid</name></member>
   </compound>
+  <compound refid="classeva_1_1_mutable_digital_pin_reader" kind="class"><name>eva::MutableDigitalPinReader</name>
+    <member refid="classeva_1_1_mutable_digital_pin_reader_1a80acfe30542582624d2c5df7dcda3057" kind="variable"><name>mPin</name></member>
+    <member refid="classeva_1_1_mutable_digital_pin_reader_1a4fdea54cf01e60b9a240540e31b8c666" kind="function"><name>MutableDigitalPinReader</name></member>
+    <member refid="classeva_1_1_mutable_digital_pin_reader_1a148ae09cd418c7f66ff0242a0fc3573c" kind="function"><name>getValue</name></member>
+    <member refid="classeva_1_1_mutable_digital_pin_reader_1a9f78e718337f1309918ac360dd77612f" kind="function"><name>isValid</name></member>
+  </compound>
   <compound refid="structeva_1_1_pin_scroll_multi_button" kind="struct"><name>eva::PinScrollMultiButton</name>
   </compound>
   <compound refid="structeva_1_1_pullup_scroll_button" kind="struct"><name>eva::PullupScrollButton</name>
@@ -262,12 +268,12 @@
     <member refid="eva_button_8h_1a9bf94744712e9d318f23811b0df20a98" kind="typedef"><name>PinMultiButton</name></member>
     <member refid="eva_joystick_8h_1a232f7055517f268cb4aad660303a7e05" kind="typedef"><name>PinSymmetricJoystick</name></member>
     <member refid="eva_joystick_8h_1a07f376d7a2629453b5aa013507902a17" kind="typedef"><name>PinJoystick</name></member>
+    <member refid="eva_pin_readers_8h_1a06967ecf6b15323c44c8a1162eee1f6a" kind="typedef"><name>AnalogMutablePinReader</name></member>
+    <member refid="eva_pin_readers_8h_1ad2ffc090e05c377d4f58618fcd861895" kind="typedef"><name>DigitalMutablePinReader</name></member>
     <member refid="eva_scroll_button_8h_1ade9dd8c850d22b3b5cadb2682c80ff7a" kind="typedef"><name>PinScrollButton</name></member>
     <member refid="eva_scroll_button_8h_1aa374389acf46536b8e8337e737939121" kind="typedef"><name>PullUpScrollButton</name></member>
     <member refid="eva_scroll_button_8h_1ad6543f957969285c707e88a02a1b3203" kind="typedef"><name>PinMultiScrollButton</name></member>
     <member refid="eva_slider_8h_1ac03e4e3ae7a608331da6629a8d2fccd1" kind="typedef"><name>PinSlider</name></member>
-    <member refid="eva_std_readers_8h_1afae3163041084b63a54ef6453284e6e2" kind="typedef"><name>MutableAnalogPinReader</name></member>
-    <member refid="eva_std_readers_8h_1ad2ffc090e05c377d4f58618fcd861895" kind="typedef"><name>DigitalMutablePinReader</name></member>
     <member refid="eva_switch_8h_1ae0d08ef231652fb40bdca61ef40cc049" kind="typedef"><name>PinSwitch</name></member>
     <member refid="eva_switch_8h_1ad9d265475784a9e3f036c7c929db82bf" kind="typedef"><name>PullUpSwitch</name></member>
     <member refid="eva_switch_8h_1ac9703ece4c0d2a523525b34aecd9b97f" kind="typedef"><name>PinMultiSwitch</name></member>
@@ -305,6 +311,8 @@
   <compound refid="eva_joystick_8h" kind="file"><name>evaJoystick.h</name>
   </compound>
   <compound refid="eva_list_8h" kind="file"><name>evaList.h</name>
+  </compound>
+  <compound refid="eva_pin_readers_8h" kind="file"><name>evaPinReaders.h</name>
   </compound>
   <compound refid="eva_reader_decors_8h" kind="file"><name>evaReaderDecors.h</name>
   </compound>

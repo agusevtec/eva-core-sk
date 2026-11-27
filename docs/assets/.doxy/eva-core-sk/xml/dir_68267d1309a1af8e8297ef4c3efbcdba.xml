@@ -13,6 +13,7 @@
     <innerfile refid="eva_i_reader_8h">evaIReader.h</innerfile>
     <innerfile refid="eva_joystick_8h">evaJoystick.h</innerfile>
     <innerfile refid="eva_list_8h">evaList.h</innerfile>
+    <innerfile refid="eva_pin_readers_8h">evaPinReaders.h</innerfile>
     <innerfile refid="eva_reader_decors_8h">evaReaderDecors.h</innerfile>
     <innerfile refid="eva_repeat_timer_8h">evaRepeatTimer.h</innerfile>
     <innerfile refid="eva_ring_buffer_8h">evaRingBuffer.h</innerfile>

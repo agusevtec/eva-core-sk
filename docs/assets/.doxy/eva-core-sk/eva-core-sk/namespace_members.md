@@ -3,6 +3,11 @@
 
 
 
+## a
+
+* **AnalogMutablePinReader** ([**eva**](namespaceeva.md))
+
+
 ## d
 
 * **DigitalMutablePinReader** ([**eva**](namespaceeva.md))
@@ -21,11 +26,6 @@
 ## l
 
 * **LONGPRESS\_DELAY** ([**eva**](namespaceeva.md))
-
-
-## m
-
-* **MutableAnalogPinReader** ([**eva**](namespaceeva.md))
 
 
 ## o

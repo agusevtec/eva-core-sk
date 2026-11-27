@@ -65,7 +65,7 @@
 
 * **method** ([**eva::Handler**](classeva_1_1_handler.md))
 * **msgReceiver** ([**eva::Handler**](classeva_1_1_handler.md))
-* **mPin** ([**eva::MutableAnalogPinReader**](classeva_1_1_mutable_analog_pin_reader.md))
+* **mPin** ([**eva::MutableAnalogPinReader**](classeva_1_1_mutable_analog_pin_reader.md), [**eva::MutableDigitalPinReader**](classeva_1_1_mutable_digital_pin_reader.md))
 * **mBuffer** ([**eva::RingBuffer**](classeva_1_1_ring_buffer.md))
 * **mHead** ([**eva::RingBuffer**](classeva_1_1_ring_buffer.md))
 * **mSize** ([**eva::RingBuffer**](classeva_1_1_ring_buffer.md))

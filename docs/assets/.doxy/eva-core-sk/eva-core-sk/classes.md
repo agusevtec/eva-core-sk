@@ -82,6 +82,8 @@
 
 * [**MutableAnalogPinReader**](classeva_1_1_mutable_analog_pin_reader.md)
 ([**eva**](namespaceeva.md))
+* [**MutableDigitalPinReader**](classeva_1_1_mutable_digital_pin_reader.md)
+([**eva**](namespaceeva.md))
 
 
 ## p

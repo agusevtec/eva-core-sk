@@ -52,6 +52,7 @@
 | class | [**List**](classeva_1_1_list.md) &lt;class ItemClass&gt;<br>_Simple singly-linked list container._  |
 | struct | [**ListIterator**](structeva_1_1_list_iterator.md) &lt;class ItemClass&gt;<br>_Iterator node for_ [_**List**_](classeva_1_1_list.md) _._ |
 | class | [**MutableAnalogPinReader**](classeva_1_1_mutable_analog_pin_reader.md) <br>_Reads analog pin value with runtime pin configuration._  |
+| class | [**MutableDigitalPinReader**](classeva_1_1_mutable_digital_pin_reader.md) <br>_Reads digital pin value with runtime pin configuration._  |
 | struct | [**PinScrollMultiButton**](structeva_1_1_pin_scroll_multi_button.md) &lt;tPin&gt;<br> |
 | struct | [**PullupScrollButton**](structeva_1_1_pullup_scroll_button.md) &lt;tPin&gt;<br> |
 | struct | [**PullupSwitch**](structeva_1_1_pullup_switch.md) &lt;tPin&gt;<br> |
@@ -69,8 +70,8 @@
 
 | Type | Name |
 | ---: | :--- |
-| typedef MutableDigitalPinReader | [**DigitalMutablePinReader**](#typedef-digitalmutablepinreader)  <br> |
-| typedef AnalogMutablePinReader class MutableDigitalPinReader { public: MutableDigitalPinReader(uint8\_t aPin, uint8\_t aMode); signed short getValue(); bool isValid(); private: uint8\_t mPin; } | [**MutableAnalogPinReader**](#typedef-mutableanalogpinreader)  <br> |
+| typedef [**MutableAnalogPinReader**](classeva_1_1_mutable_analog_pin_reader.md) | [**AnalogMutablePinReader**](#typedef-analogmutablepinreader)  <br> |
+| typedef [**MutableDigitalPinReader**](classeva_1_1_mutable_digital_pin_reader.md) | [**DigitalMutablePinReader**](#typedef-digitalmutablepinreader)  <br> |
 | typedef [**Button**](classeva_1_1_button.md)&lt; [**BinarizeEqDecor**](classeva_1_1_binarize_eq_decor.md)&lt; [**DebounceDecor**](classeva_1_1_debounce_decor.md)&lt; [**DigitalPinReader**](classeva_1_1_digital_pin_reader.md)&lt; tPin, tPinMode &gt; &gt;, tActivatesOn &gt; &gt; | [**PinButton**](#typedef-pinbutton)  <br>_Digital pin button with debouncing and level normalization._  |
 | typedef [**Joystick**](classeva_1_1_joystick.md)&lt; [**AnalogPinReader**](classeva_1_1_analog_pin_reader.md)&lt; tPin, tPinMode &gt;, tMinPos, tMiddlePos, tMaxPos &gt; | [**PinJoystick**](#typedef-pinjoystick)  <br>_Pin-based joystick with custom center position._  |
 | typedef [**Button**](classeva_1_1_button.md)&lt; [**QuantizeDecor**](classeva_1_1_quantize_decor.md)&lt; [**DebounceDecor**](classeva_1_1_debounce_decor.md)&lt; [**AnalogPinReader**](classeva_1_1_analog_pin_reader.md)&lt; tPin, tPinMode &gt; &gt;, tLevels... &gt; &gt; | [**PinMultiButton**](#typedef-pinmultibutton)  <br>_Multiple buttons on a single ADC pin using resistor ladder._  |
@@ -160,10 +161,10 @@
 
 
 
-### typedef DigitalMutablePinReader 
+### typedef AnalogMutablePinReader 
 
 ```C++
-using eva::DigitalMutablePinReader = MutableDigitalPinReader;
+using eva::AnalogMutablePinReader = MutableAnalogPinReader;
 ```
 
 
@@ -173,27 +174,10 @@ using eva::DigitalMutablePinReader = MutableDigitalPinReader;
 
 
 
-### typedef MutableAnalogPinReader 
+### typedef DigitalMutablePinReader 
 
 ```C++
-using eva::MutableAnalogPinReader = AnalogMutablePinReader
-
-   
-   class MutableDigitalPinReader
-   {
-   public:
-       
-       MutableDigitalPinReader(uint8_t aPin, uint8_t aMode);
-
-       
-       signed short getValue();
-
-       
-       bool isValid();
-
-   private:
-       uint8_t mPin;
-   };
+using eva::DigitalMutablePinReader = MutableDigitalPinReader;
 ```
 
 

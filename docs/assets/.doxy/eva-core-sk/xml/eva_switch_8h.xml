@@ -4,7 +4,7 @@
     <compoundname>evaSwitch.h</compoundname>
     <includes refid="eva_tickable_8h" local="yes">evaTickable.h</includes>
     <includes refid="eva_handler_8h" local="yes">evaHandler.h</includes>
-    <includes refid="eva_std_readers_8h" local="yes">evaStdReaders.h</includes>
+    <includes refid="eva_pin_readers_8h" local="yes">evaPinReaders.h</includes>
     <includes refid="eva_reader_decors_8h" local="yes">evaReaderDecors.h</includes>
     <includedby refid="eva_button_8h" local="yes">src/evaButton.h</includedby>
     <incdepgraph>
@@ -15,15 +15,15 @@
         <label>evaHandler.h</label>
         <link refid="eva_handler_8h_source"/>
       </node>
-      <node id="6">
-        <label>evaReaderDecors.h</label>
-        <link refid="eva_reader_decors_8h_source"/>
+      <node id="4">
+        <label>evaPinReaders.h</label>
+        <link refid="eva_pin_readers_8h_source"/>
         <childnode refid="5" relation="include">
         </childnode>
       </node>
-      <node id="4">
-        <label>evaStdReaders.h</label>
-        <link refid="eva_std_readers_8h_source"/>
+      <node id="6">
+        <label>evaReaderDecors.h</label>
+        <link refid="eva_reader_decors_8h_source"/>
         <childnode refid="5" relation="include">
         </childnode>
       </node>
@@ -74,7 +74,7 @@
 <codeline lineno="2"><highlight class="normal"></highlight></codeline>
 <codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;evaTickable.h&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;evaHandler.h&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;evaStdReaders.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;evaPinReaders.h&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;evaReaderDecors.h&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="7"><highlight class="normal"></highlight></codeline>
 <codeline lineno="8"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">eva</highlight></codeline>

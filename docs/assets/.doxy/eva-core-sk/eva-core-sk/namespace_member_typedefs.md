@@ -3,14 +3,14 @@
 
 
 
+## a
+
+* **AnalogMutablePinReader** ([**eva**](namespaceeva.md))
+
+
 ## d
 
 * **DigitalMutablePinReader** ([**eva**](namespaceeva.md))
-
-
-## m
-
-* **MutableAnalogPinReader** ([**eva**](namespaceeva.md))
 
 
 ## p

@@ -10,7 +10,7 @@
 
 
 
-* `#include <Arduino.h>`
+* `#include "evaPinReaders.h"`
 
 
 
@@ -24,21 +24,8 @@
 
 
 
-## Namespaces
-
-| Type | Name |
-| ---: | :--- |
-| namespace | [**eva**](namespaceeva.md) <br> |
 
 
-## Classes
-
-| Type | Name |
-| ---: | :--- |
-| class | [**AnalogPinReader**](classeva_1_1_analog_pin_reader.md) &lt;tPin, tPinMode&gt;<br>_Reads analog pin value._  |
-| class | [**DigitalPinReader**](classeva_1_1_digital_pin_reader.md) &lt;tPin, tPinMode&gt;<br>_Reads digital pin value._  |
-| class | [**MutableAnalogPinReader**](classeva_1_1_mutable_analog_pin_reader.md) <br>_Reads analog pin value with runtime pin configuration._  |
-| class | [**ValueReader**](classeva_1_1_value_reader.md) <br>_Simple stateful reader acting as a ground-level of proccessing pipe._  |
 
 
 

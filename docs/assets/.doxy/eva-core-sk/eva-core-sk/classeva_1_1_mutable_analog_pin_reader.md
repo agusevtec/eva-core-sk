@@ -10,7 +10,7 @@
 
 _Reads analog pin value with runtime pin configuration._ 
 
-* `#include <evaStdReaders.h>`
+* `#include <evaPinReaders.h>`
 
 
 
@@ -166,5 +166,5 @@ Always true
 <hr>
 
 ------------------------------
-The documentation for this class was generated from the following file `src/evaStdReaders.h`
+The documentation for this class was generated from the following file `src/evaPinReaders.h`
 

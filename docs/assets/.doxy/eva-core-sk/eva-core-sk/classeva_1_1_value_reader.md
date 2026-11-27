@@ -10,7 +10,7 @@
 
 _Simple stateful reader acting as a ground-level of proccessing pipe._ 
 
-* `#include <evaStdReaders.h>`
+* `#include <evaPinReaders.h>`
 
 
 
@@ -128,5 +128,5 @@ inline void eva::ValueReader::setValue (
 <hr>
 
 ------------------------------
-The documentation for this class was generated from the following file `src/evaStdReaders.h`
+The documentation for this class was generated from the following file `src/evaPinReaders.h`
 

@@ -194,7 +194,7 @@ namespace eva
             if (!TReader::isValid())
                 return 0;
 
-            unsigned char i;
+            unsigned char i = 1;
             for (i = 1; i < sizeof...(tLevels) - 1; i++)
                 if (in_between(value, this->levels[i - 1] + this->levels[i], this->levels[i] + this->levels[i + 1]))
                     return i;

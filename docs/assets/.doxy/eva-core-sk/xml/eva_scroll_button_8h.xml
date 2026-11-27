@@ -17,6 +17,12 @@
         <label>evaHandler.h</label>
         <link refid="eva_handler_8h_source"/>
       </node>
+      <node id="6">
+        <label>evaPinReaders.h</label>
+        <link refid="eva_pin_readers_8h_source"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
       <node id="8">
         <label>evaReaderDecors.h</label>
         <link refid="eva_reader_decors_8h_source"/>
@@ -27,12 +33,6 @@
         <label>src/evaScrollButton.h</label>
         <link refid="eva_scroll_button_8h"/>
         <childnode refid="2" relation="include">
-        </childnode>
-      </node>
-      <node id="6">
-        <label>evaStdReaders.h</label>
-        <link refid="eva_std_readers_8h_source"/>
-        <childnode refid="7" relation="include">
         </childnode>
       </node>
       <node id="3">

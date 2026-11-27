@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+  <compounddef id="classeva_1_1_mutable_digital_pin_reader" kind="class" language="C++" prot="public">
+    <compoundname>eva::MutableDigitalPinReader</compoundname>
+    <includes refid="eva_pin_readers_8h" local="no">evaPinReaders.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classeva_1_1_mutable_digital_pin_reader_1a80acfe30542582624d2c5df7dcda3057" prot="private" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t eva::MutableDigitalPinReader::mPin</definition>
+        <argsstring></argsstring>
+        <name>mPin</name>
+        <qualifiedname>eva::MutableDigitalPinReader::mPin</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evaPinReaders.h" line="148" column="17" bodyfile="src/evaPinReaders.h" bodystart="148" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classeva_1_1_mutable_digital_pin_reader_1a4fdea54cf01e60b9a240540e31b8c666" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>eva::MutableDigitalPinReader::MutableDigitalPinReader</definition>
+        <argsstring>(uint8_t aPin, uint8_t aMode)</argsstring>
+        <name>MutableDigitalPinReader</name>
+        <qualifiedname>eva::MutableDigitalPinReader::MutableDigitalPinReader</qualifiedname>
+        <param>
+          <type>uint8_t</type>
+          <declname>aPin</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>aMode</declname>
+        </param>
+        <briefdescription>
+<para>Constructs a DigitalMutablePinReader and configures pin. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>aPin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Arduino digital pin number </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>aMode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pin mode </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evaPinReaders.h" line="133" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classeva_1_1_mutable_digital_pin_reader_1a148ae09cd418c7f66ff0242a0fc3573c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>signed short</type>
+        <definition>signed short eva::MutableDigitalPinReader::getValue</definition>
+        <argsstring>()</argsstring>
+        <name>getValue</name>
+        <qualifiedname>eva::MutableDigitalPinReader::getValue</qualifiedname>
+        <briefdescription>
+<para>Reads digital pin value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>HIGH or LOW </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evaPinReaders.h" line="139" column="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classeva_1_1_mutable_digital_pin_reader_1a9f78e718337f1309918ac360dd77612f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool eva::MutableDigitalPinReader::isValid</definition>
+        <argsstring>()</argsstring>
+        <name>isValid</name>
+        <qualifiedname>eva::MutableDigitalPinReader::isValid</qualifiedname>
+        <briefdescription>
+<para>Checks if reader is valid. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Always true </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evaPinReaders.h" line="145" column="14"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Reads digital pin value with runtime pin configuration. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/evaPinReaders.h" line="125" column="5" bodyfile="src/evaPinReaders.h" bodystart="126" bodyend="149"/>
+    <listofallmembers>
+      <member refid="classeva_1_1_mutable_digital_pin_reader_1a148ae09cd418c7f66ff0242a0fc3573c" prot="public" virt="non-virtual"><scope>eva::MutableDigitalPinReader</scope><name>getValue</name></member>
+      <member refid="classeva_1_1_mutable_digital_pin_reader_1a9f78e718337f1309918ac360dd77612f" prot="public" virt="non-virtual"><scope>eva::MutableDigitalPinReader</scope><name>isValid</name></member>
+      <member refid="classeva_1_1_mutable_digital_pin_reader_1a80acfe30542582624d2c5df7dcda3057" prot="private" virt="non-virtual"><scope>eva::MutableDigitalPinReader</scope><name>mPin</name></member>
+      <member refid="classeva_1_1_mutable_digital_pin_reader_1a4fdea54cf01e60b9a240540e31b8c666" prot="public" virt="non-virtual"><scope>eva::MutableDigitalPinReader</scope><name>MutableDigitalPinReader</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

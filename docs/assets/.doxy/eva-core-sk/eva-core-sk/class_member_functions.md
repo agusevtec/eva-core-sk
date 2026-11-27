@@ -48,7 +48,7 @@
 
 ## g
 
-* **getValue** ([**eva::AnalogPinReader**](classeva_1_1_analog_pin_reader.md), [**eva::BinarizeEqDecor**](classeva_1_1_binarize_eq_decor.md), [**eva::BinarizeGtDecor**](classeva_1_1_binarize_gt_decor.md), [**eva::BinarizeLtDecor**](classeva_1_1_binarize_lt_decor.md), [**eva::DebounceDecor**](classeva_1_1_debounce_decor.md), [**eva::DigitalPinReader**](classeva_1_1_digital_pin_reader.md), [**eva::IReader**](classeva_1_1_i_reader.md), [**eva::IReaderAdapter**](classeva_1_1_i_reader_adapter.md), [**eva::Joystick**](classeva_1_1_joystick.md), [**eva::MutableAnalogPinReader**](classeva_1_1_mutable_analog_pin_reader.md), [**eva::QuantizeDecor**](classeva_1_1_quantize_decor.md), [**eva::Slider**](classeva_1_1_slider.md), [**eva::Switch**](classeva_1_1_switch.md), [**eva::ValueReader**](classeva_1_1_value_reader.md))
+* **getValue** ([**eva::AnalogPinReader**](classeva_1_1_analog_pin_reader.md), [**eva::BinarizeEqDecor**](classeva_1_1_binarize_eq_decor.md), [**eva::BinarizeGtDecor**](classeva_1_1_binarize_gt_decor.md), [**eva::BinarizeLtDecor**](classeva_1_1_binarize_lt_decor.md), [**eva::DebounceDecor**](classeva_1_1_debounce_decor.md), [**eva::DigitalPinReader**](classeva_1_1_digital_pin_reader.md), [**eva::IReader**](classeva_1_1_i_reader.md), [**eva::IReaderAdapter**](classeva_1_1_i_reader_adapter.md), [**eva::Joystick**](classeva_1_1_joystick.md), [**eva::MutableAnalogPinReader**](classeva_1_1_mutable_analog_pin_reader.md), [**eva::MutableDigitalPinReader**](classeva_1_1_mutable_digital_pin_reader.md), [**eva::QuantizeDecor**](classeva_1_1_quantize_decor.md), [**eva::Slider**](classeva_1_1_slider.md), [**eva::Switch**](classeva_1_1_switch.md), [**eva::ValueReader**](classeva_1_1_value_reader.md))
 * **getRemaining** ([**eva::CountdownTimer**](classeva_1_1_countdown_timer.md))
 * **getPeriod** ([**eva::Heartbeat**](classeva_1_1_heartbeat.md))
 * **getDeadZone** ([**eva::Joystick**](classeva_1_1_joystick.md))
@@ -71,7 +71,7 @@
 
 ## i
 
-* **isValid** ([**eva::AnalogPinReader**](classeva_1_1_analog_pin_reader.md), [**eva::DigitalPinReader**](classeva_1_1_digital_pin_reader.md), [**eva::IReader**](classeva_1_1_i_reader.md), [**eva::IReaderAdapter**](classeva_1_1_i_reader_adapter.md), [**eva::MutableAnalogPinReader**](classeva_1_1_mutable_analog_pin_reader.md), [**eva::ValueReader**](classeva_1_1_value_reader.md))
+* **isValid** ([**eva::AnalogPinReader**](classeva_1_1_analog_pin_reader.md), [**eva::DigitalPinReader**](classeva_1_1_digital_pin_reader.md), [**eva::IReader**](classeva_1_1_i_reader.md), [**eva::IReaderAdapter**](classeva_1_1_i_reader_adapter.md), [**eva::MutableAnalogPinReader**](classeva_1_1_mutable_analog_pin_reader.md), [**eva::MutableDigitalPinReader**](classeva_1_1_mutable_digital_pin_reader.md), [**eva::ValueReader**](classeva_1_1_value_reader.md))
 * **Indicator** ([**eva::BlinkingIndicator**](classeva_1_1_blinking_indicator.md), [**eva::Indicator**](classeva_1_1_indicator.md))
 * **invoke** ([**eva::BlinkingIndicator**](classeva_1_1_blinking_indicator.md), [**eva::CountdownIndicator**](classeva_1_1_countdown_indicator.md), [**eva::Handler**](classeva_1_1_handler.md), [**eva::HandlerF**](classeva_1_1_handler_f.md), [**eva::IHandler**](classeva_1_1_i_handler.md))
 * **isRunning** ([**eva::DelayTimer**](classeva_1_1_delay_timer.md))
@@ -95,6 +95,7 @@
 ## m
 
 * **MutableAnalogPinReader** ([**eva::MutableAnalogPinReader**](classeva_1_1_mutable_analog_pin_reader.md))
+* **MutableDigitalPinReader** ([**eva::MutableDigitalPinReader**](classeva_1_1_mutable_digital_pin_reader.md))
 
 
 ## n

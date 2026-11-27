@@ -47,6 +47,7 @@ This inheritance list is sorted roughly, but not completely, alphabetically:
     * **class** [**eva::IReaderAdapter**](classeva_1_1_i_reader_adapter.md) _Adapter that converts any class with getValue() into an_ [_**IReader**_](classeva_1_1_i_reader.md) _._
 * **class** [**eva::List**](classeva_1_1_list.md) _Simple singly-linked list container._ 
 * **class** [**eva::MutableAnalogPinReader**](classeva_1_1_mutable_analog_pin_reader.md) _Reads analog pin value with runtime pin configuration._ 
+* **class** [**eva::MutableDigitalPinReader**](classeva_1_1_mutable_digital_pin_reader.md) _Reads digital pin value with runtime pin configuration._ 
 * **class** [**eva::RingBuffer**](classeva_1_1_ring_buffer.md) _Fixed-capacity circular ring buffer._ 
 * **class** [**eva::ValueReader**](classeva_1_1_value_reader.md) _Simple stateful reader acting as a ground-level of proccessing pipe._ 
 * **struct** [**eva::CallbackInfo**](structeva_1_1_callback_info.md) 

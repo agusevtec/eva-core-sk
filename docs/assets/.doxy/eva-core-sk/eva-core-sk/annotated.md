@@ -28,6 +28,7 @@ Here are the classes, structs, unions and interfaces with brief descriptions:
     * **class** [**List**](classeva_1_1_list.md) _Simple singly-linked list container._     
     * **struct** [**ListIterator**](structeva_1_1_list_iterator.md) _Iterator node for_ [_**List**_](classeva_1_1_list.md) _._    
     * **class** [**MutableAnalogPinReader**](classeva_1_1_mutable_analog_pin_reader.md) _Reads analog pin value with runtime pin configuration._     
+    * **class** [**MutableDigitalPinReader**](classeva_1_1_mutable_digital_pin_reader.md) _Reads digital pin value with runtime pin configuration._     
     * **struct** [**PinScrollMultiButton**](structeva_1_1_pin_scroll_multi_button.md) 
     * **struct** [**PullupScrollButton**](structeva_1_1_pullup_scroll_button.md) 
     * **struct** [**PullupSwitch**](structeva_1_1_pullup_switch.md) 

@@ -18,15 +18,15 @@
         <label>evaHandler.h</label>
         <link refid="eva_handler_8h_source"/>
       </node>
-      <node id="7">
-        <label>evaReaderDecors.h</label>
-        <link refid="eva_reader_decors_8h_source"/>
+      <node id="5">
+        <label>evaPinReaders.h</label>
+        <link refid="eva_pin_readers_8h_source"/>
         <childnode refid="6" relation="include">
         </childnode>
       </node>
-      <node id="5">
-        <label>evaStdReaders.h</label>
-        <link refid="eva_std_readers_8h_source"/>
+      <node id="7">
+        <label>evaReaderDecors.h</label>
+        <link refid="eva_reader_decors_8h_source"/>
         <childnode refid="6" relation="include">
         </childnode>
       </node>

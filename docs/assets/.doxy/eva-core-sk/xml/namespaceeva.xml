@@ -25,6 +25,7 @@
     <innerclass refid="classeva_1_1_list" prot="public">eva::List</innerclass>
     <innerclass refid="structeva_1_1_list_iterator" prot="public">eva::ListIterator</innerclass>
     <innerclass refid="classeva_1_1_mutable_analog_pin_reader" prot="public">eva::MutableAnalogPinReader</innerclass>
+    <innerclass refid="classeva_1_1_mutable_digital_pin_reader" prot="public">eva::MutableDigitalPinReader</innerclass>
     <innerclass refid="structeva_1_1_pin_scroll_multi_button" prot="public">eva::PinScrollMultiButton</innerclass>
     <innerclass refid="structeva_1_1_pullup_scroll_button" prot="public">eva::PullupScrollButton</innerclass>
     <innerclass refid="structeva_1_1_pullup_switch" prot="public">eva::PullupSwitch</innerclass>
@@ -363,6 +364,34 @@
         </inbodydescription>
         <location file="src/evaJoystick.h" line="129" column="3" bodyfile="src/evaJoystick.h" bodystart="129" bodyend="-1"/>
       </memberdef>
+      <memberdef kind="typedef" id="eva_pin_readers_8h_1a06967ecf6b15323c44c8a1162eee1f6a" prot="public" static="no">
+        <type><ref refid="classeva_1_1_mutable_analog_pin_reader" kindref="compound">MutableAnalogPinReader</ref></type>
+        <definition>using eva::AnalogMutablePinReader = MutableAnalogPinReader</definition>
+        <argsstring></argsstring>
+        <name>AnalogMutablePinReader</name>
+        <qualifiedname>eva::AnalogMutablePinReader</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evaPinReaders.h" line="120" column="5" bodyfile="src/evaPinReaders.h" bodystart="120" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="eva_pin_readers_8h_1ad2ffc090e05c377d4f58618fcd861895" prot="public" static="no">
+        <type><ref refid="classeva_1_1_mutable_digital_pin_reader" kindref="compound">MutableDigitalPinReader</ref></type>
+        <definition>using eva::DigitalMutablePinReader = MutableDigitalPinReader</definition>
+        <argsstring></argsstring>
+        <name>DigitalMutablePinReader</name>
+        <qualifiedname>eva::DigitalMutablePinReader</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/evaPinReaders.h" line="151" column="5" bodyfile="src/evaPinReaders.h" bodystart="151" bodyend="-1"/>
+      </memberdef>
       <memberdef kind="typedef" id="eva_scroll_button_8h_1ade9dd8c850d22b3b5cadb2682c80ff7a" prot="public" static="no">
         <templateparamlist>
           <param>
@@ -604,51 +633,6 @@
         <inbodydescription>
         </inbodydescription>
         <location file="src/evaSlider.h" line="53" column="3" bodyfile="src/evaSlider.h" bodystart="53" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="typedef" id="eva_std_readers_8h_1afae3163041084b63a54ef6453284e6e2" prot="public" static="no">
-        <type>AnalogMutablePinReader class MutableDigitalPinReader { public: MutableDigitalPinReader(uint8_t aPin, uint8_t aMode); signed short getValue(); bool isValid(); private: uint8_t mPin; }</type>
-        <definition>using eva::MutableAnalogPinReader = AnalogMutablePinReader
-
-   
-   class MutableDigitalPinReader
-   {
-   public:
-       
-       MutableDigitalPinReader(uint8_t aPin, uint8_t aMode);
-
-       
-       signed short getValue();
-
-       
-       bool isValid();
-
-   private:
-       uint8_t mPin;
-   }</definition>
-        <argsstring></argsstring>
-        <name>MutableAnalogPinReader</name>
-        <qualifiedname>eva::MutableAnalogPinReader</qualifiedname>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="src/evaStdReaders.h" line="120" column="5" bodyfile="src/evaStdReaders.h" bodystart="120" bodyend="149"/>
-      </memberdef>
-      <memberdef kind="typedef" id="eva_std_readers_8h_1ad2ffc090e05c377d4f58618fcd861895" prot="public" static="no">
-        <type>MutableDigitalPinReader</type>
-        <definition>using eva::DigitalMutablePinReader = MutableDigitalPinReader</definition>
-        <argsstring></argsstring>
-        <name>DigitalMutablePinReader</name>
-        <qualifiedname>eva::DigitalMutablePinReader</qualifiedname>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="src/evaStdReaders.h" line="151" column="5" bodyfile="src/evaStdReaders.h" bodystart="151" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="eva_switch_8h_1ae0d08ef231652fb40bdca61ef40cc049" prot="public" static="no">
         <templateparamlist>
